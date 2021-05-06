@@ -1,0 +1,55 @@
+[[main]]
+  name = "Inicio"
+  url = ""
+  weight = -110
+
+[[main]]
+  name = "Archivos"
+  url = "post/rich-content/"
+  weight = -109
+
+# Submenus are done this way: parent -> identifier
+[[main]]
+  name = "Enlaces"
+  identifier = "Links"
+  weight = -108
+[[main]]
+  parent = "Enlaces"
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/"
+[[main]]
+  parent = "Enlaces"
+  name = "Twitter"
+  url = "https://twitter.com/"
+
+[[main]]
+  name = "Sobre mi"
+  url = "about/"
+  weight = -107
+
+# social menu links
+[[social]]
+  name = "twitter"
+  type = "social"
+  weight = 1
+  url = "https://twitter.com/fcchbo"
+[[social]]
+  name = "instagram"
+  weight = 2
+  url = "https://instagram.com/fcchbo"
+[[social]]
+  name = "linkedin"
+  weight = 3
+  url = "https://www.linkedin.com/in/freddy-fcch/"
+[[social]]
+  name = "github"
+  weight = 4
+  url = "https://github.com/fcchn4"
+[[social]]
+  name = "gitlab"
+  weight = 5
+  url = "https://gitlab.com/fcch"
+[[social]]
+  name = "rss"
+  weight = 6
+  url = "index.xml"
