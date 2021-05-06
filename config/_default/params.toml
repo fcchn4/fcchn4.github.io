@@ -6,7 +6,7 @@ introDescription = "Technologist, perpetual student, computer security enthusias
 # showShare = false
 
 # Google analytics Id
-ga_analytics = "XXXXXXXXXX"
+ga_analytics = "UA-154973733-1"
 
 # limit the number of taxonomies links shown on the sidebar of each page by default.
 numberOfTagsShown = 14
