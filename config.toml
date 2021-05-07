@@ -1,0 +1,4 @@
+baseURL = "http://blog.fcch.xyz/"
+languageCode = "en-us"
+title = "Fcch - Blog"
+theme = "hugo-clarity"

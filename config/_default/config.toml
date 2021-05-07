@@ -1,0 +1,21 @@
+baseurl = "https://blog.fcch.xyz/"
+# title = "Text for test"  
+# Edit directly from config/_default/languages.toml 
+# alternatively, uncomment this and remove `title` entry from the aforemention file.
+copyright = "Fcch Blog | 2019 - 2021"
+# canonifyurls = true
+paginate = 10
+theme = "hugo-clarity"
+disqusShortname = ""
+
+DefaultContentLanguage = "es"
+# [languages]
+# config/_default/languages.toml
+
+# [menus]
+# config/_default/menus/menu.xx.toml
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
