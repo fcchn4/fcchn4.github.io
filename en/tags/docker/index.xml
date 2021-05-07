@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Fcch Blog | Notes, guides and reminders</title>
+    <link>https://blog.fcch.xyz/en/tags/docker/</link>
+    <description>Recent content in docker on Fcch Blog | Notes, guides and reminders</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fcch Blog | 2019 - 2021</copyright>
+    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Limit in Docker</title>
+      <link>https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/</guid>
+      <description>
+        
+          &lt;p&gt;Cuando creamos un nuevo contenedor, el mismo tiene acceso ilimitado a los recursos del sistema, así que si uno ocupa toda la memoria los demás contenedores serán afectados o en su defecto el sistema operativo se queda sin recursos.&lt;/p&gt;
+&lt;p&gt;Docker tiene la posibilidad de aplicar un límite de memoria a un contenedor específico.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creando-un-contenedor&#34;&gt;Creando un Contenedor&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker run --name dell -it debian bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;obteniendo-información-del-contenedor&#34;&gt;Obteniendo Información del Contenedor&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker inspect dell &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &amp;#39;Memory&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Para &lt;strong&gt;&amp;quot;Memory&amp;quot;: 0&lt;/strong&gt; el valor &lt;strong&gt;0&lt;/strong&gt; indica que el contenedor no tiene valor limitado de memoria, es decir que utilizará todo lo que tenga disponible el host, posiblemente afectando a otros contenedores que estén dentro del mismo host.&lt;/p&gt;
+&lt;h2 id=&#34;actualizando-la-memoria-del-contenedor&#34;&gt;Actualizando la Memoria del Contenedor&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker update -m 256MB dell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En las pruebas existieron problemas en sistemas operativos Debian y Ubuntu:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Este problema se debe a que el &lt;a href=&#34;https://en.wikipedia.org/wiki/Cgroups&#34;&gt;&lt;strong&gt;cgroup&lt;/strong&gt;&lt;/a&gt; no esta montado en el sistema, para que se monte editamos el archivo archivo &lt;strong&gt;grub&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo vim /etc/default/grub
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    ...
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    GRUB_CMDLINE_LINUX_DEFAULT=&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    GRUB_CMDLINE_LINUX=&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Actualizamos el &lt;strong&gt;grub&lt;/strong&gt; y reiniciamos el sistema:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo update-grub
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    $ sudo update-grub2
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    $ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por último volvemos a ejecutar el comando para actualizar la memoria y verificamos el estado de la memoria:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-update-mem.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,6 +5,16 @@
   <url>
     <loc>https://blog.fcch.xyz/post/web/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/web/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/web/"
+                />
   </url>
   
   <url>
@@ -25,11 +35,31 @@
   <url>
     <loc>https://blog.fcch.xyz/tags/git/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/git/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/git/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/gitlab/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/gitlab/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/gitlab/"
+                />
   </url>
   
   <url>
@@ -40,21 +70,61 @@
   <url>
     <loc>https://blog.fcch.xyz/tags/hugo/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/hugo/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/categories/hugo/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/hugo/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/web/hugo-framework-gitlab-pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/"
+                />
   </url>
   
   <url>
@@ -90,36 +160,106 @@
   <url>
     <loc>https://blog.fcch.xyz/categories/web/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/web/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/web/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/infrastructure/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/infrastructure/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/infrastructure/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/bash/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/bash/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/bash/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/cloud/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/cloud/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/cloud/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/digitalocean/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/digitalocean/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/digitalocean/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/doctl/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/doctl/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/doctl/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/"
+                />
   </url>
   
   <url>
@@ -140,61 +280,181 @@
   <url>
     <loc>https://blog.fcch.xyz/post/gnu-linux/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/gnu-linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/gnu-linux/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/variety/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/variety/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/variety/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/cgroup/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/cgroup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/cgroup/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/docker/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/docker/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/grub/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/grub/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/grub/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/nodejs/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/nodejs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/nodejs/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/npm/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/npm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/npm/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/variety/npm-eacces/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/variety/npm-eacces/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/variety/npm-eacces/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/gnu-linux/apuntes-fedora-32/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/fedora/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/fedora/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/fedora/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/categories/gnu-linux/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/gnu-linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/gnu-linux/"
+                />
   </url>
   
   <url>
@@ -205,26 +465,76 @@
   <url>
     <loc>https://blog.fcch.xyz/tags/cms/</loc>
     <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/cms/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/cms/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/wordpress/</loc>
     <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/wordpress/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/wordpress/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/web/wordpress-algunos-detalles/</loc>
     <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/web/wordpress-algunos-detalles/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/web/wordpress-algunos-detalles/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/</loc>
     <lastmod>2020-01-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/github/</loc>
     <lastmod>2020-01-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/github/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/github/"
+                />
   </url>
   
   <url>
@@ -305,21 +615,61 @@
   <url>
     <loc>https://blog.fcch.xyz/tags/spip/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/spip/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/spip/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/categories/spip/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/spip/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/spip/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/post/web/spip-otra-forma-instalar/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/web/spip-otra-forma-instalar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/web/spip-otra-forma-instalar/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/tags/web/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/web/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/web/"
+                />
   </url>
   
 </urlset>
