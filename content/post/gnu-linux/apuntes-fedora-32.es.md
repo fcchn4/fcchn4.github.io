@@ -28,7 +28,7 @@ Buscando me encontré con [**__git_ps1**](https://fedoraproject.org/wiki/Git_qui
 
 Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces: 
 
-```bash
+```cmd
 # Instalción Git
 dnf install git
 
@@ -39,17 +39,19 @@ Para colorear el prompt y obtener los datos deseados tenemos que agregar los sig
 
 **Descripción de los datos:**
 
-- **__git_ps1:** *Variable del script.*
-- **t:** *Obtiene la hora, minutos y segundos.*
-- **W:** *Muestra el nombre de carpeta actual.*
-- **source:** *Ruta del script __git_ps1.*
-- **export GIT_PS1_SHOWCOLORHINTS:** *Color para los datos git.*
-- **export GIT_PS1_SHOWDIRTYSTATE:** *Muestra el estado actual del repo.*
-- **export GIT_PS1_SHOWUNTRACKEDFILES:** *Mostrar archivos sin seguimiento.*
-- **export PROMPT_COMMAND:** *Personalización del prompt.*
-- **\[\033[0;31m\]:** *Color Rojo.*
-- **\[\033[0;33m\]:** *Color Amarillo.*
-- **\[\033[0;32m\]:** *Color Verde.*
+```text
+- __git_ps1: Variable del script.
+- t: Obtiene la hora, minutos y segundos.
+- W: Muestra el nombre de carpeta actual.
+- source: Ruta del script __git_ps1.
+- export GIT_PS1_SHOWCOLORHINTS: Color para los datos git.
+- export GIT_PS1_SHOWDIRTYSTATE: Muestra el estado actual del repo.
+- export GIT_PS1_SHOWUNTRACKEDFILES: Mostrar archivos sin seguimiento.
+- export PROMPT_COMMAND: Personalización del prompt.
+- \[\033[0;31m\]: Color Rojo.
+- \[\033[0;33m\]: Color Amarillo.
+- \[\033[0;32m\]: Color Verde.
+```
 
 ```bash
 # Prompt personalizado ~/.bashrc
@@ -66,7 +68,7 @@ Luego de instalar Docker CE desde el repositorio [**oficial**](https://docs.dock
 
 Para solucionar el problema agregamos la interface **docker0** en la zona de confianza del firewall.
 
-```bash
+```cmd
 firewall-cmd --permanent --zone=trusted --add-interface=docker0
 firewall-cmd --reload
 ```
@@ -77,7 +79,7 @@ Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al
 
 **NVIDIA Driver 390xxx - repositorio RPMFusion**
 
-```bash
+```cmd
 ## Habilitando NVIDIA RPM Fusion
 dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 

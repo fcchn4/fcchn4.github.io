@@ -47,7 +47,7 @@ Muchos utilizan servidores DNS de los proveedores como [**Digital Ocean**](https
 
 Puede verificar los nuevos registros con el siguiente comando:
 
-```sh
+```cmd
     $ dig subdominio.dominio.info +nostats +nocomments +nocmd
 ```
 
@@ -55,7 +55,7 @@ Puede verificar los nuevos registros con el siguiente comando:
 
 Luego de crear el repositorio en Github, debemos clonarlo, ingresar al repositorio y crear una nueva rama de desarrollo:
 
-```sh
+```cmd
 $ git clone URL/repositorio
 $ cd hugo-static-site
 $ git checkout -b development
@@ -65,7 +65,7 @@ $ git push origin development
 
 Luego se debe crear la rama maestra que será independiente de la rama de  desarrollo, la maestra se usará para publicar el sitio.
 
-```sh
+```cmd
 $ git checkout --orphan master
 $ git reset --hard
 $ echo '<h1>Hello World</h1>' > index.html
@@ -76,7 +76,7 @@ $ git checkout development
 
 Con las ramas creadas y clasificadas podemos iniciar con crear las plantillas con [**Hugo**](https://gohugo.io/).
 
-```sh
+```cmd
 $ cd ..
 $ hugo new site hugo-static-site --force
 $ cd hugo-static-site
@@ -84,25 +84,25 @@ $ cd hugo-static-site
 
 También se debe hacer que el directorio **public** haga referencia a la rama **master**.
 
-```sh
+```cmd
 $ git worktree add -B master public origin/master
 ```
 
 Para inicializar el nuevo sitio instalamos un tema de nuestra preferencia, para el ejemplo utilizaremos el tema [**goa**](https://themes.gohugo.io/hugo-goa/).
 
-```sh
+```cmd
 $ git submodule add https://github.com/shenoybr/hugo-goa themes/goa
 ```
 
 Agregamos el nueva tema al archivo **config.toml**.
 
-```sh
+```cmd
 $ echo 'theme = "goa"' >> config.toml
 ```
 
 Creamos el nuevo y primer post.
 
-```sh
+```cmd
 $ hugo new posts/first-post.md
 ```
 
@@ -110,13 +110,13 @@ Y asegúrese de que en el archivo creado esté marcado como **draft: false** par
 
 Con todo lo anterior podemos hacer una previsualización de todo lo trabajado con el servidor web que proporciona [**Hugo**](https://gohugo.io/).
 
-```sh
+```cmd
 $ hugo server --watch -D
 ```
 
 Cuando verificamos que todo este bien, iniciamos la generación del sitio.
 
-```sh
+```cmd
 $ hugo -D 
 ```
 
@@ -124,7 +124,7 @@ El comando anterior creara los archivos estáticos en el directorio **public**.
 
 Con los archivos estáticos generados, subimos los cambios realizados en [**Hugo**](https://gohugo.io/) a la rama **development**.
 
-```sh
+```cmd
 $ git add .
 $ git commit -m 'Initialized hugo site'
 $ git push origin development
@@ -132,7 +132,7 @@ $ git push origin development
 
 Como el directorio **public** apunta a otra rama: **master**, debemos subir los archivos estáticos también.
 
-```sh
+```cmd
 $ cd public
 $ git add .
 $ git commit -m 'publishing first-post'
@@ -143,7 +143,7 @@ Con estos ultimos pasos deberiamos tener un sitio web funcionando en el subdomin
 
 ## Clonación del repositorio
 
-```sh
+```cmd
 $ git clone -b nombre_branch --recurse-submodules URL/repositorio
 $ cd repositorio
 $ mkdir public
@@ -152,7 +152,7 @@ $ git worktree add -B master public origin/master
 
 ## Eliminando submodulos
 
-```sh
+```cmd
 $ git submodule deinit -f -- ruta/nombre_submodulo
 $ rm -rf .git/modules/ruta/nombre_submodulo
 $ git rm -f ruta/submodulo

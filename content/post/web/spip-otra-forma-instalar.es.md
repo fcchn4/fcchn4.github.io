@@ -24,7 +24,7 @@ thumbnail = "images/spip-svn/logo-spip-400.png"
 
 Existen diferentes métodos de instalación en el [sitio oficial](https://www.spip.net/es_download), se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la **Instalación Automática** que consiste en descargar el archivo **spip_loader.php** y ejecutarlo desde un navegador web.
 
-El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de [SPIP](https://www.spip.net/) utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que utilizo para poder realizar las actualizaciones de forma automática en una sola linea de comando.
+El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de [SPIP](https://www.spip.net/) utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola linea de comando.
 
 ## Descarga SPIP
 
@@ -32,7 +32,7 @@ Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la 
 
 Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama [**spip-3.2**](https://www.spip.net/es_download) ejecutando:
 
-```sh
+```cmd
 $ mkdir spip-core
 $ cd spip-core
 $ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
@@ -44,21 +44,21 @@ Luego de terminar la descarga tendremos una estructura de archivos similar a est
 
 - Para las actualizaciones del CMS solo se debe ejecutar:
 
-```sh
+```cmd
 $ svn upgrade
 $ svn update 
 ```
 
 - Para realizar las personalizaciones en SPIP sin riesgo a perder la información después de las actualizaciones se deben crear los siguientes directorios:
 
-```sh
+```cmd
 $ mkdir -p plugins/auto
 $ mkdir squelettes
 ```
 
 - Para iniciar la instalación de SPIP necesitamos tener los directorios **IMG**, **tmp**, **local** y **config** con permisos 777 y en lo posible con usuario y grupo **www-data**:
 
-```sh
+```cmd
 $ chown -R www-data:www-data IMG tmp local config
 $ chmod 777 IMG tmp local config
 ```

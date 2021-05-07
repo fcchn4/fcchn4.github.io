@@ -62,7 +62,7 @@ add_filter('the_generator', '__return_false');
 
 La configuración se puede realizar en **.htaccess** como en el archivo de configuración del servidor web.
 
-```bash
+```cmd
 ## Para Apache
 # .htaccess
 ....

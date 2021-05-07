@@ -27,7 +27,7 @@ thumbnail = "images/doctl-digitalocean/doctl.png"
 
 Lo primero que toco hacer es descarga e instalar el binario, esto para la versión actual **1.54.0**:
 
-```bash
+```cmd
   $ cd ~
   $ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
   $ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
@@ -48,9 +48,9 @@ La cadena del token solo se muestra una vez, entonces copie y guarde en un lugar
 
 El Token API otorga acceso a "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" para su cuenta de **[digitalocean](https://digitalocean.com)**. Pase la cadena del Token cuando se solicite, al ejecutar el comando de "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**".
 
-Puede utilizar varias cuentas, utilizando diferentes nombres, para esta función el parametro **--context** lo permite.
+Puede utilizar varias cuentas, utilizando diferentes nombres, para esta función el parámetro **--context** lo permite.
 
-```bash
+```cmd
   $ doctl auth init --context <NOMBRE_CUENTA1>
   $ doctl auth init --context <NOMBRE_CUENTA2>
   $ doctl auth init --context <NOMBRE_CUENTA3>
@@ -58,13 +58,13 @@ Puede utilizar varias cuentas, utilizando diferentes nombres, para esta función
 
 Se puede listar todas las cuentas con el siguiente comando:
 
-```bash
+```cmd
   $ doctl auth list
 ```
 
 Para cambiar entre las diferentes cuentas existentes:
 
-```bash
+```cmd
   $ doctl auth switch --context <NOMBRE_CUENTA_DISPONIBLE>
 ```
 
@@ -74,25 +74,25 @@ Podemos utilizar "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/re
 
 - **Verificar Cuenta** 
 
-```bash
+```cmd
   $ doctl account get
 ```
 
 - **Listar Droplets**
 
-```bash
+```cmd
   $ doctl compute droplet list
 ```
 
 - **Crear Droplet**
 
-```bash
+```cmd
   $ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <NOMBRE_DROPLET>
 ```
 
 - **Eliminar Droplet**
 
-```bash
+```cmd
   $ doctl compute droplet delete <ID_DROPLET>
 ```
 

@@ -30,13 +30,13 @@ Ya hicimos un post para crear un blog con [**Hugo Framework + Github Pages**](ht
 
 Luego de instalar [**Hugo Framework**](https://github.com/gohugoio/hugo/releases), podemos utilizar el comando **hugo** desde una terminal para inicializar el proyecto.
 
-```sh
+```cmd
 $ hugo new site usuario.gitlab.io --force
 ```
 
 ### - Preparamos el Sitio Web y archivos Git
 
-```sh
+```cmd
 $ cd usuario.gitlab.io
 $ git init
 $ echo public > .gitignore
@@ -51,7 +51,7 @@ Antes de subir el proyecto a un repositorio [**Gitlab**](https://gitlab.com), ed
 
 [**Gitlab**](https://gitlab.com) utiliza HTTPS para obtener código fuente en los **runner** compartidos, entonces:
 
-```sh
+```cmd
 ## Para un fork que pertenece al mismo grupo o usuario
 $ vim .gitmodules
 -- [submodule "themes/theme_name"]
@@ -72,7 +72,7 @@ $ git submodule update
 
 Creamos el archivo **.gitlab-ci.yml** para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo seria el siguiente:
 
-```sh
+```cmd
 $ vim .gitlab-ci.yml
 -- image: registry.gitlab.com/pages/hugo:latest
 -- 
@@ -101,7 +101,7 @@ Para crear el repositorio debemos hacerlo con el nombre **usuario.gitlab.io** do
 
 Luego de crear el repositorio agreamos el código, luego de agregar el URL al proyecto:
 
-```sh
+```cmd
 $ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
 $ git add .
 $ git commit -m 'Hugo gitlab page'
@@ -150,17 +150,17 @@ Para el subdominio **www.dominio.com** se debe crear un registro **CNAME** con l
 
 ![](/images/hugo-gitlab/gitlab-subdominio-cname.png)
 
-El registro **CNAME** para el subdominio **www.dominio.com** con el valor **usuario.gitlab.io.**, luego un registro **TXT** con los valores que facilita **Gitlab Pages**.
+El registro **CNAME** para el subdominio **www.dominio.com** con el valor "**usuario.gitlab.io.**", luego un registro **TXT** con los valores que facilita **Gitlab Pages**.
 
 ## Clonación del repositorio
 
-```sh
+```cmd
 $ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
 ```
 
 ## Eliminando submodulos
 
-```sh
+```cmd
 $ git submodule deinit -f -- themes/theme_name
 $ rm -rf .git/modules/themes/themes_name
 $ git rm -f themes/themes_name
