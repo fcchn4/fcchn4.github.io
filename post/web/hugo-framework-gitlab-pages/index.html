@@ -186,34 +186,34 @@
 <p>Ya hicimos un post para crear un blog con <a href="https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/"><strong>Hugo Framework + Github Pages</strong></a>, en esta oportunidad haremos un pequeño demo para utilizar <strong>Hugo Framework + Gitlab Pages</strong>, utilizando el dominio por defecto como <strong>USUARIO.gitlab.io</strong> y luego personalizaremos el dominio a uno propio.</p>
 <h2 id="paso-1-iniciamos-el-proyecto-hugo-en-local">Paso 1: Iniciamos el proyecto Hugo en local</h2>
 <p>Luego de instalar <a href="https://github.com/gohugoio/hugo/releases"><strong>Hugo Framework</strong></a>, podemos utilizar el comando <strong>hugo</strong> desde una terminal para inicializar el proyecto.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ hugo new site usuario.gitlab.io --force
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo new site usuario.gitlab.io --force
 </code></pre></div><h3 id="--preparamos-el-sitio-web-y-archivos-git">- Preparamos el Sitio Web y archivos Git</h3>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ <span class="nb">cd</span> usuario.gitlab.io
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ cd usuario.gitlab.io
 <span class="ln">2</span>$ git init
-<span class="ln">3</span>$ <span class="nb">echo</span> public &gt; .gitignore
+<span class="ln">3</span>$ echo public <span class="p">&gt;</span> .gitignore
 <span class="ln">4</span>$ git submodule add https://github.com/dev_name/theme_name themes/theme_name
-<span class="ln">5</span>$ <span class="nb">echo</span> <span class="s1">&#39;theme = &#34;theme_name&#34;&#39;</span> &gt;&gt; config.toml
+<span class="ln">5</span>$ echo &#39;theme = <span class="s2">&#34;theme_name&#34;</span>&#39; <span class="p">&gt;&gt;</span> config.toml
 <span class="ln">6</span>$ hugo new posts/first-post.md
 </code></pre></div><h3 id="--requerimientos-gitlab-pages">- Requerimientos Gitlab Pages</h3>
 <p>Antes de subir el proyecto a un repositorio <a href="https://gitlab.com"><strong>Gitlab</strong></a>, editamos el archivo <strong>.gitmodules</strong> para agregar URL relativas.</p>
 <p><a href="https://gitlab.com"><strong>Gitlab</strong></a> utiliza HTTPS para obtener código fuente en los <strong>runner</strong> compartidos, entonces:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln"> 1</span><span class="c1">## Para un fork que pertenece al mismo grupo o usuario</span>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span>## Para un fork que pertenece al mismo grupo o usuario
 <span class="ln"> 2</span>$ vim .gitmodules
-<span class="ln"> 3</span>-- <span class="o">[</span>submodule <span class="s2">&#34;themes/theme_name&#34;</span><span class="o">]</span>
-<span class="ln"> 4</span>-- <span class="nv">path</span> <span class="o">=</span> themes/theme_name
-<span class="ln"> 5</span>-- <span class="nv">url</span> <span class="o">=</span> ../../dev_name/theme_name.git <span class="c1">## Línea nueva</span>
+<span class="ln"> 3</span>-- [submodule <span class="s2">&#34;themes/theme_name&#34;</span>]
+<span class="ln"> 4</span>-- path = themes/theme_name
+<span class="ln"> 5</span>-- url = ../../dev_name/theme_name.git ## Línea nueva
 <span class="ln"> 6</span>
-<span class="ln"> 7</span><span class="c1">## Para un proyecto fuera del grupo o usuario</span>
+<span class="ln"> 7</span>## Para un proyecto fuera del grupo o usuario
 <span class="ln"> 8</span>$ vim .gitmodules
-<span class="ln"> 9</span>-- <span class="o">[</span>submodule <span class="s2">&#34;themes/theme_name&#34;</span><span class="o">]</span>
-<span class="ln">10</span>-- <span class="nv">path</span> <span class="o">=</span> themes/theme_name
-<span class="ln">11</span>-- <span class="nv">url</span> <span class="o">=</span> https://gitlab.com/dev_name/theme_name.git <span class="c1">## Línea nueva</span>
+<span class="ln"> 9</span>-- [submodule <span class="s2">&#34;themes/theme_name&#34;</span>]
+<span class="ln">10</span>-- path = themes/theme_name
+<span class="ln">11</span>-- url = https://gitlab.com/dev_name/theme_name.git ## Línea nueva
 <span class="ln">12</span>
-<span class="ln">13</span><span class="c1">## Actualizamos los submódulos</span>
+<span class="ln">13</span>## Actualizamos los submódulos
 <span class="ln">14</span>$ git submodule update
 </code></pre></div><h3 id="--gitlab-ci">- Gitlab CI</h3>
 <p>Creamos el archivo <strong>.gitlab-ci.yml</strong> para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo seria el siguiente:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln"> 1</span>$ vim .gitlab-ci.yml
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span>$ vim .gitlab-ci.yml
 <span class="ln"> 2</span>-- image: registry.gitlab.com/pages/hugo:latest
 <span class="ln"> 3</span>-- 
 <span class="ln"> 4</span>-- variables:
@@ -236,9 +236,9 @@
 </code></pre></div><h3 id="--repositorio-gitlab">- Repositorio Gitlab</h3>
 <p>Para crear el repositorio debemos hacerlo con el nombre <strong>usuario.gitlab.io</strong> donde ¨usuario¨ es el nombre de usuario de <strong>Gitlab</strong>, tambien se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio <strong>grupo.gitlab.io</strong>.</p>
 <p>Luego de crear el repositorio agreamos el código, luego de agregar el URL al proyecto:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
 <span class="ln">2</span>$ git add .
-<span class="ln">3</span>$ git commit -m <span class="s1">&#39;Hugo gitlab page&#39;</span>
+<span class="ln">3</span>$ git commit -m &#39;Hugo gitlab page&#39;
 <span class="ln">4</span>$ git push origin master
 </code></pre></div><h3 id="--verificamos-el-despliegue-en-el-repositorio">- Verificamos el despliegue en el repositorio</h3>
 <p>Si todo salió bien deberiamos tener una salida similar a la imagen, <strong>Repositorio -&gt; CI/CD -&gt; Pipelines</strong>.</p>
@@ -265,11 +265,11 @@
 <p><img src="/images/hugo-gitlab/gitlab-domain.png" alt=""></p>
 <p>Para el subdominio <strong><a href="http://www.dominio.com">www.dominio.com</a></strong> se debe crear un registro <strong>CNAME</strong> con los valores que facilita <strong>Gitlab Pages</strong>.</p>
 <p><img src="/images/hugo-gitlab/gitlab-subdominio-cname.png" alt=""></p>
-<p>El registro <strong>CNAME</strong> para el subdominio <strong><a href="http://www.dominio.com">www.dominio.com</a></strong> con el valor <strong>usuario.gitlab.io.</strong>, luego un registro <strong>TXT</strong> con los valores que facilita <strong>Gitlab Pages</strong>.</p>
+<p>El registro <strong>CNAME</strong> para el subdominio <strong><a href="http://www.dominio.com">www.dominio.com</a></strong> con el valor &quot;<strong>usuario.gitlab.io.</strong>&quot;, luego un registro <strong>TXT</strong> con los valores que facilita <strong>Gitlab Pages</strong>.</p>
 <h2 id="clonación-del-repositorio">Clonación del repositorio</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
 </code></pre></div><h2 id="eliminando-submodulos">Eliminando submodulos</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git submodule deinit -f -- themes/theme_name
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git submodule deinit -f -- themes/theme_name
 <span class="ln">2</span>$ rm -rf .git/modules/themes/themes_name
 <span class="ln">3</span>$ git rm -f themes/themes_name
 <span class="ln">4</span>$ git submodule status

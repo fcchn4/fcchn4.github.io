@@ -22,34 +22,34 @@
 &lt;p&gt;Ya hicimos un post para crear un blog con &lt;a href=&#34;https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/&#34;&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, en esta oportunidad haremos un pequeño demo para utilizar &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, utilizando el dominio por defecto como &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; y luego personalizaremos el dominio a uno propio.&lt;/p&gt;
 &lt;h2 id=&#34;paso-1-iniciamos-el-proyecto-hugo-en-local&#34;&gt;Paso 1: Iniciamos el proyecto Hugo en local&lt;/h2&gt;
 &lt;p&gt;Luego de instalar &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, podemos utilizar el comando &lt;strong&gt;hugo&lt;/strong&gt; desde una terminal para inicializar el proyecto.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo new site usuario.gitlab.io --force
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo new site usuario.gitlab.io --force
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--preparamos-el-sitio-web-y-archivos-git&#34;&gt;- Preparamos el Sitio Web y archivos Git&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; usuario.gitlab.io
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cd usuario.gitlab.io
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git init
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; public &amp;gt; .gitignore
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ echo public &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; .gitignore
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git submodule add https://github.com/dev_name/theme_name themes/theme_name
-&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;theme = &amp;#34;theme_name&amp;#34;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; config.toml
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ echo &amp;#39;theme = &lt;span class=&#34;s2&#34;&gt;&amp;#34;theme_name&amp;#34;&lt;/span&gt;&amp;#39; &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; config.toml
 &lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ hugo new posts/first-post.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--requerimientos-gitlab-pages&#34;&gt;- Requerimientos Gitlab Pages&lt;/h3&gt;
 &lt;p&gt;Antes de subir el proyecto a un repositorio &lt;a href=&#34;https://gitlab.com&#34;&gt;&lt;strong&gt;Gitlab&lt;/strong&gt;&lt;/a&gt;, editamos el archivo &lt;strong&gt;.gitmodules&lt;/strong&gt; para agregar URL relativas.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://gitlab.com&#34;&gt;&lt;strong&gt;Gitlab&lt;/strong&gt;&lt;/a&gt; utiliza HTTPS para obtener código fuente en los &lt;strong&gt;runner&lt;/strong&gt; compartidos, entonces:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Para un fork que pertenece al mismo grupo o usuario&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## Para un fork que pertenece al mismo grupo o usuario
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ vim .gitmodules
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;-- &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;submodule &lt;span class=&#34;s2&#34;&gt;&amp;#34;themes/theme_name&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; themes/theme_name
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; ../../dev_name/theme_name.git &lt;span class=&#34;c1&#34;&gt;## Línea nueva&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;-- [submodule &lt;span class=&#34;s2&#34;&gt;&amp;#34;themes/theme_name&amp;#34;&lt;/span&gt;]
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;-- path = themes/theme_name
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;-- url = ../../dev_name/theme_name.git ## Línea nueva
 &lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Para un proyecto fuera del grupo o usuario&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;## Para un proyecto fuera del grupo o usuario
 &lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ vim .gitmodules
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-- &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;submodule &lt;span class=&#34;s2&#34;&gt;&amp;#34;themes/theme_name&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; themes/theme_name
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; https://gitlab.com/dev_name/theme_name.git &lt;span class=&#34;c1&#34;&gt;## Línea nueva&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-- [submodule &lt;span class=&#34;s2&#34;&gt;&amp;#34;themes/theme_name&amp;#34;&lt;/span&gt;]
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;-- path = themes/theme_name
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-- url = https://gitlab.com/dev_name/theme_name.git ## Línea nueva
 &lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Actualizamos los submódulos&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;## Actualizamos los submódulos
 &lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;$ git submodule update
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--gitlab-ci&#34;&gt;- Gitlab CI&lt;/h3&gt;
 &lt;p&gt;Creamos el archivo &lt;strong&gt;.gitlab-ci.yml&lt;/strong&gt; para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo seria el siguiente:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ vim .gitlab-ci.yml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ vim .gitlab-ci.yml
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;-- image: registry.gitlab.com/pages/hugo:latest
 &lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;-- 
 &lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;-- variables:
@@ -72,9 +72,9 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--repositorio-gitlab&#34;&gt;- Repositorio Gitlab&lt;/h3&gt;
 &lt;p&gt;Para crear el repositorio debemos hacerlo con el nombre &lt;strong&gt;usuario.gitlab.io&lt;/strong&gt; donde ¨usuario¨ es el nombre de usuario de &lt;strong&gt;Gitlab&lt;/strong&gt;, tambien se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio &lt;strong&gt;grupo.gitlab.io&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Luego de crear el repositorio agreamos el código, luego de agregar el URL al proyecto:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git add .
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;Hugo gitlab page&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git commit -m &amp;#39;Hugo gitlab page&amp;#39;
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git push origin master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--verificamos-el-despliegue-en-el-repositorio&#34;&gt;- Verificamos el despliegue en el repositorio&lt;/h3&gt;
 &lt;p&gt;Si todo salió bien deberiamos tener una salida similar a la imagen, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
@@ -101,11 +101,11 @@
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Para el subdominio &lt;strong&gt;&lt;a href=&#34;http://www.dominio.com&#34;&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; se debe crear un registro &lt;strong&gt;CNAME&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;El registro &lt;strong&gt;CNAME&lt;/strong&gt; para el subdominio &lt;strong&gt;&lt;a href=&#34;http://www.dominio.com&#34;&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; con el valor &lt;strong&gt;usuario.gitlab.io.&lt;/strong&gt;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;El registro &lt;strong&gt;CNAME&lt;/strong&gt; para el subdominio &lt;strong&gt;&lt;a href=&#34;http://www.dominio.com&#34;&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; con el valor &amp;quot;&lt;strong&gt;usuario.gitlab.io.&lt;/strong&gt;&amp;quot;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;clonación-del-repositorio&#34;&gt;Clonación del repositorio&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;eliminando-submodulos&#34;&gt;Eliminando submodulos&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git submodule deinit -f -- themes/theme_name
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git submodule deinit -f -- themes/theme_name
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ rm -rf .git/modules/themes/themes_name
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git rm -f themes/themes_name
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git submodule status
@@ -157,19 +157,19 @@
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;remove_action(&amp;#39;wp_head&amp;#39;, &amp;#39;wp_generator&amp;#39;);
 &lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;add_filter(&amp;#39;the_generator&amp;#39;, &amp;#39;__return_false&amp;#39;);
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La configuración se puede realizar en &lt;strong&gt;.htaccess&lt;/strong&gt; como en el archivo de configuración del servidor web.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Para Apache&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# .htaccess&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## Para Apache
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;# .htaccess
 &lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;....
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&amp;lt;Files readme.html&amp;gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;Files readme.html&amp;gt;
 &lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;	Order allow,deny
 &lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;	Deny from all
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&amp;lt;/Files&amp;gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;/Files&amp;gt;
 &lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Para Nginx&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# dominio.conf&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;location readme&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;html&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;	deny  all&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;## Para Nginx
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;# dominio.conf
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;location readme\.html{
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;	deny  all;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
       </description>
@@ -201,56 +201,56 @@
 &lt;p&gt;Muchos utilizan servidores DNS de los proveedores como &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;&lt;strong&gt;Digital Ocean&lt;/strong&gt;&lt;/a&gt; o &lt;a href=&#34;https://www.linode.com/&#34;&gt;&lt;strong&gt;Linode&lt;/strong&gt;&lt;/a&gt; para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Puede verificar los nuevos registros con el siguiente comando:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;iniciamos-el-sitio-con-hugo&#34;&gt;Iniciamos el Sitio con Hugo&lt;/h2&gt;
 &lt;p&gt;Luego de crear el repositorio en Github, debemos clonarlo, ingresar al repositorio y crear una nueva rama de desarrollo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone URL/repositorio
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; hugo-static-site
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone URL/repositorio
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ cd hugo-static-site
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git checkout -b development
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; public &amp;gt; .gitignore
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ echo public &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; .gitignore
 &lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ git push origin development
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Luego se debe crear la rama maestra que será independiente de la rama de  desarrollo, la maestra se usará para publicar el sitio.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git checkout --orphan master
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git checkout --orphan master
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git reset --hard
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;h1&amp;gt;Hello World&amp;lt;/h1&amp;gt;&amp;#39;&lt;/span&gt; &amp;gt; index.html
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ echo &amp;#39;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;h1&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;Hello World&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;/h1&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;&amp;#39; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; index.html
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git commit -am &lt;span class=&#34;s2&#34;&gt;&amp;#34;First index.html&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ git push origin master
 &lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ git checkout development
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con las ramas creadas y clasificadas podemos iniciar con crear las plantillas con &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cd ..
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ hugo new site hugo-static-site --force
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; hugo-static-site
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ cd hugo-static-site
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;También se debe hacer que el directorio &lt;strong&gt;public&lt;/strong&gt; haga referencia a la rama &lt;strong&gt;master&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git worktree add -B master public origin/master
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git worktree add -B master public origin/master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para inicializar el nuevo sitio instalamos un tema de nuestra preferencia, para el ejemplo utilizaremos el tema &lt;a href=&#34;https://themes.gohugo.io/hugo-goa/&#34;&gt;&lt;strong&gt;goa&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git submodule add https://github.com/shenoybr/hugo-goa themes/goa
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git submodule add https://github.com/shenoybr/hugo-goa themes/goa
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Agregamos el nueva tema al archivo &lt;strong&gt;config.toml&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;theme = &amp;#34;goa&amp;#34;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; config.toml
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ echo &amp;#39;theme = &lt;span class=&#34;s2&#34;&gt;&amp;#34;goa&amp;#34;&lt;/span&gt;&amp;#39; &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; config.toml
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Creamos el nuevo y primer post.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo new posts/first-post.md
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo new posts/first-post.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y asegúrese de que en el archivo creado esté marcado como &lt;strong&gt;draft: false&lt;/strong&gt; para que pueda publicarse.&lt;/p&gt;
 &lt;p&gt;Con todo lo anterior podemos hacer una previsualización de todo lo trabajado con el servidor web que proporciona &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo server --watch -D
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo server --watch -D
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Cuando verificamos que todo este bien, iniciamos la generación del sitio.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo -D 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo -D 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El comando anterior creara los archivos estáticos en el directorio &lt;strong&gt;public&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Con los archivos estáticos generados, subimos los cambios realizados en &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; a la rama &lt;strong&gt;development&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git add .
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;Initialized hugo site&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git add .
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git commit -m &amp;#39;Initialized hugo site&amp;#39;
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git push origin development
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Como el directorio &lt;strong&gt;public&lt;/strong&gt; apunta a otra rama: &lt;strong&gt;master&lt;/strong&gt;, debemos subir los archivos estáticos también.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; public
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cd public
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git add .
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;publishing first-post&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git commit -m &amp;#39;publishing first-post&amp;#39;
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git push origin master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con estos ultimos pasos deberiamos tener un sitio web funcionando en el subdominio configurado en Github Pages o con el subdominio personal.&lt;/p&gt;
 &lt;h2 id=&#34;clonación-del-repositorio&#34;&gt;Clonación del repositorio&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone -b nombre_branch --recurse-submodules URL/repositorio
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; repositorio
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone -b nombre_branch --recurse-submodules URL/repositorio
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ cd repositorio
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ mkdir public
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git worktree add -B master public origin/master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;eliminando-submodulos&#34;&gt;Eliminando submodulos&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git submodule deinit -f -- ruta/nombre_submodulo
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git submodule deinit -f -- ruta/nombre_submodulo
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ rm -rf .git/modules/ruta/nombre_submodulo
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git rm -f ruta/submodulo
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git submodule status
@@ -275,30 +275,30 @@
           &lt;p&gt;&lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; es un &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt; francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Existen diferentes métodos de instalación en el &lt;a href=&#34;https://www.spip.net/es_download&#34;&gt;sitio oficial&lt;/a&gt;, se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la &lt;strong&gt;Instalación Automática&lt;/strong&gt; que consiste en descargar el archivo &lt;strong&gt;spip_loader.php&lt;/strong&gt; y ejecutarlo desde un navegador web.&lt;/p&gt;
-&lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que utilizo para poder realizar las actualizaciones de forma automática en una sola linea de comando.&lt;/p&gt;
+&lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola linea de comando.&lt;/p&gt;
 &lt;h2 id=&#34;descarga-spip&#34;&gt;Descarga SPIP&lt;/h2&gt;
 &lt;p&gt;Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la maquina local o con algun proveedor de su preferencia.&lt;/p&gt;
 &lt;p&gt;Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama &lt;a href=&#34;https://www.spip.net/es_download&#34;&gt;&lt;strong&gt;spip-3.2&lt;/strong&gt;&lt;/a&gt; ejecutando:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir spip-core
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; spip-core
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir spip-core
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ cd spip-core
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Luego de terminar la descarga tendremos una estructura de archivos similar a esta:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-tree.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Para las actualizaciones del CMS solo se debe ejecutar:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ svn upgrade
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ svn upgrade
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ svn update 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;Para realizar las personalizaciones en SPIP sin riesgo a perder la información después de las actualizaciones se deben crear los siguientes directorios:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir -p plugins/auto
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir -p plugins/auto
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ mkdir squelettes
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;Para iniciar la instalación de SPIP necesitamos tener los directorios &lt;strong&gt;IMG&lt;/strong&gt;, &lt;strong&gt;tmp&lt;/strong&gt;, &lt;strong&gt;local&lt;/strong&gt; y &lt;strong&gt;config&lt;/strong&gt; con permisos 777 y en lo posible con usuario y grupo &lt;strong&gt;www-data&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ chown -R www-data:www-data IMG tmp &lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt; config
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ chmod &lt;span class=&#34;m&#34;&gt;777&lt;/span&gt; IMG tmp &lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt; config
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ chown -R www-data:www-data IMG tmp local config
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ chmod 777 IMG tmp local config
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La estrutura de directorios debería quedar de la siguiente forma:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;instalación-spip&#34;&gt;Instalación SPIP&lt;/h2&gt;

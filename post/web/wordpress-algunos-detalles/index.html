@@ -207,19 +207,19 @@
 <span class="ln">4</span>remove_action(&#39;wp_head&#39;, &#39;wp_generator&#39;);
 <span class="ln">5</span>add_filter(&#39;the_generator&#39;, &#39;__return_false&#39;);
 </code></pre></div><p>La configuración se puede realizar en <strong>.htaccess</strong> como en el archivo de configuración del servidor web.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1">## Para Apache</span>
-<span class="ln"> 2</span><span class="c1"># .htaccess</span>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span>## Para Apache
+<span class="ln"> 2</span># .htaccess
 <span class="ln"> 3</span>....
-<span class="ln"> 4</span>&lt;Files readme.html&gt;
+<span class="ln"> 4</span><span class="p">&lt;</span>Files readme.html&gt;
 <span class="ln"> 5</span>	Order allow,deny
 <span class="ln"> 6</span>	Deny from all
-<span class="ln"> 7</span>&lt;/Files&gt;
+<span class="ln"> 7</span><span class="p">&lt;</span>/Files&gt;
 <span class="ln"> 8</span>
-<span class="ln"> 9</span><span class="c1">## Para Nginx</span>
-<span class="ln">10</span><span class="c1"># dominio.conf</span>
-<span class="ln">11</span>location readme<span class="se">\.</span>html<span class="o">{</span>
-<span class="ln">12</span>	deny  all<span class="p">;</span>
-<span class="ln">13</span><span class="o">}</span>
+<span class="ln"> 9</span>## Para Nginx
+<span class="ln">10</span># dominio.conf
+<span class="ln">11</span>location readme\.html{
+<span class="ln">12</span>	deny  all;
+<span class="ln">13</span>}
 </code></pre></div>
 
   </article>

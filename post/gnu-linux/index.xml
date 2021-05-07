@@ -20,23 +20,23 @@
 &lt;p&gt;Docker tiene la posibilidad de aplicar un límite de memoria a un contenedor específico.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;creando-un-contenedor&#34;&gt;Creando un Contenedor&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker run --name dell -it debian bash
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker run --name dell -it debian bash
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;obteniendo-información-del-contenedor&#34;&gt;Obteniendo Información del Contenedor&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker inspect dell &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;Memory&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker inspect dell &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &amp;#39;Memory&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Para &lt;strong&gt;&amp;quot;Memory&amp;quot;: 0&lt;/strong&gt; el valor &lt;strong&gt;0&lt;/strong&gt; indica que el contenedor no tiene valor limitado de memoria, es decir que utilizará todo lo que tenga disponible el host, posiblemente afectando a otros contenedores que estén dentro del mismo host.&lt;/p&gt;
 &lt;h2 id=&#34;actualizando-la-memoria-del-contenedor&#34;&gt;Actualizando la Memoria del Contenedor&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker update -m 256MB dell
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker update -m 256MB dell
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En las pruebas existieron problemas en sistemas operativos Debian y Ubuntu:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Este problema se debe a que el &lt;a href=&#34;https://en.wikipedia.org/wiki/Cgroups&#34;&gt;&lt;strong&gt;cgroup&lt;/strong&gt;&lt;/a&gt; no esta montado en el sistema, para que se monte editamos el archivo archivo &lt;strong&gt;grub&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo vim /etc/default/grub
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo vim /etc/default/grub
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    ...
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;GRUB_CMDLINE_LINUX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    GRUB_CMDLINE_LINUX_DEFAULT=&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    GRUB_CMDLINE_LINUX=&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Actualizamos el &lt;strong&gt;grub&lt;/strong&gt; y reiniciamos el sistema:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo update-grub
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo update-grub
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    $ sudo update-grub2
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    $ sudo reboot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por último volvemos a ejecutar el comando para actualizar la memoria y verificamos el estado de la memoria:&lt;/p&gt;
@@ -59,26 +59,24 @@
 &lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
 &lt;p&gt;Buscando me encontré con &lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedo de esta forma:&lt;/p&gt;
 &lt;p&gt;Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Instalción Git&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# Instalción Git
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;dnf install git
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Script /usr/share/git-core/contrib/completion/git-prompt.sh&lt;/span&gt;  
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;# Script /usr/share/git-core/contrib/completion/git-prompt.sh  
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Descripción de los datos:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;__git_ps1:&lt;/strong&gt; &lt;em&gt;Variable del script.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;t:&lt;/strong&gt; &lt;em&gt;Obtiene la hora, minutos y segundos.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;W:&lt;/strong&gt; &lt;em&gt;Muestra el nombre de carpeta actual.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;source:&lt;/strong&gt; &lt;em&gt;Ruta del script __git_ps1.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;export GIT_PS1_SHOWCOLORHINTS:&lt;/strong&gt; &lt;em&gt;Color para los datos git.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;export GIT_PS1_SHOWDIRTYSTATE:&lt;/strong&gt; &lt;em&gt;Muestra el estado actual del repo.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;export GIT_PS1_SHOWUNTRACKEDFILES:&lt;/strong&gt; &lt;em&gt;Mostrar archivos sin seguimiento.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;export PROMPT_COMMAND:&lt;/strong&gt; &lt;em&gt;Personalización del prompt.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[\033[0;31m]:&lt;/strong&gt; &lt;em&gt;Color Rojo.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[\033[0;33m]:&lt;/strong&gt; &lt;em&gt;Color Amarillo.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[\033[0;32m]:&lt;/strong&gt; &lt;em&gt;Color Verde.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Prompt personalizado ~/.bashrc&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;- __git_ps1: Variable del script.
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;- t: Obtiene la hora, minutos y segundos.
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;- W: Muestra el nombre de carpeta actual.
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;- source: Ruta del script __git_ps1.
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;- export GIT_PS1_SHOWCOLORHINTS: Color para los datos git.
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;- export GIT_PS1_SHOWDIRTYSTATE: Muestra el estado actual del repo.
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;- export GIT_PS1_SHOWUNTRACKEDFILES: Mostrar archivos sin seguimiento.
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;- export PROMPT_COMMAND: Personalización del prompt.
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;- \[\033[0;31m\]: Color Rojo.
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;- \[\033[0;33m\]: Color Amarillo.
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;- \[\033[0;32m\]: Color Verde.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Prompt personalizado ~/.bashrc&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /usr/share/git-core/contrib/completion/git-prompt.sh
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWCOLORHINTS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWDIRTYSTATE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
@@ -87,22 +85,22 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-ce&#34;&gt;Docker CE&lt;/h2&gt;
 &lt;p&gt;Luego de instalar Docker CE desde el repositorio &lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;oficial&lt;/strong&gt;&lt;/a&gt; y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.&lt;/p&gt;
 &lt;p&gt;Para solucionar el problema agregamos la interface &lt;strong&gt;docker0&lt;/strong&gt; en la zona de confianza del firewall.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;firewall-cmd --permanent --zone&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;trusted --add-interface&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;docker0
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;firewall-cmd --permanent --zone=trusted --add-interface=docker0
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;firewall-cmd --reload
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;cinnamon&#34;&gt;Cinnamon&lt;/h2&gt;
 &lt;p&gt;Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es &lt;strong&gt;NOUVEAU&lt;/strong&gt; controlador de código abierto, instalamos el controlador &lt;strong&gt;NVIDIA Corporation GF119 [NVS 310]&lt;/strong&gt; para mejorar el rendimiento en el vídeo.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NVIDIA Driver 390xxx - repositorio RPMFusion&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Habilitando NVIDIA RPM Fusion&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## Habilitando NVIDIA RPM Fusion
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 &lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Listando controladores disponibles&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;## Listando controladores disponibles
 &lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;dnf repository-packages rpmfusion-nonfree-nvidia-driver info
 &lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Instalación del controlador&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;## Instalación del controlador
 &lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
 &lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;dnf install xorg-x11-drv-nvidia-390xx-cuda
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Pruebas y control de rendimiento&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;## Pruebas y control de rendimiento
 &lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;dnf install -y gwe
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;

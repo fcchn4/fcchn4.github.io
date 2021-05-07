@@ -185,26 +185,24 @@
 <p>Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar <a href="https://github.com/ohmybash/oh-my-bash"><strong>Oh-my-bash</strong></a>, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.</p>
 <p>Buscando me encontré con <a href="https://fedoraproject.org/wiki/Git_quick_reference"><strong>__git_ps1</strong></a> que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración <strong>~/.bashrc</strong>, y quedo de esta forma:</p>
 <p>Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Instalción Git</span>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span># Instalción Git
 <span class="ln">2</span>dnf install git
 <span class="ln">3</span>
-<span class="ln">4</span><span class="c1"># Script /usr/share/git-core/contrib/completion/git-prompt.sh</span>  
+<span class="ln">4</span># Script /usr/share/git-core/contrib/completion/git-prompt.sh  
 </code></pre></div><p>Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:</p>
 <p><strong>Descripción de los datos:</strong></p>
-<ul>
-<li><strong>__git_ps1:</strong> <em>Variable del script.</em></li>
-<li><strong>t:</strong> <em>Obtiene la hora, minutos y segundos.</em></li>
-<li><strong>W:</strong> <em>Muestra el nombre de carpeta actual.</em></li>
-<li><strong>source:</strong> <em>Ruta del script __git_ps1.</em></li>
-<li><strong>export GIT_PS1_SHOWCOLORHINTS:</strong> <em>Color para los datos git.</em></li>
-<li><strong>export GIT_PS1_SHOWDIRTYSTATE:</strong> <em>Muestra el estado actual del repo.</em></li>
-<li><strong>export GIT_PS1_SHOWUNTRACKEDFILES:</strong> <em>Mostrar archivos sin seguimiento.</em></li>
-<li><strong>export PROMPT_COMMAND:</strong> <em>Personalización del prompt.</em></li>
-<li><strong>[\033[0;31m]:</strong> <em>Color Rojo.</em></li>
-<li><strong>[\033[0;33m]:</strong> <em>Color Amarillo.</em></li>
-<li><strong>[\033[0;32m]:</strong> <em>Color Verde.</em></li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Prompt personalizado ~/.bashrc</span>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln"> 1</span>- __git_ps1: Variable del script.
+<span class="ln"> 2</span>- t: Obtiene la hora, minutos y segundos.
+<span class="ln"> 3</span>- W: Muestra el nombre de carpeta actual.
+<span class="ln"> 4</span>- source: Ruta del script __git_ps1.
+<span class="ln"> 5</span>- export GIT_PS1_SHOWCOLORHINTS: Color para los datos git.
+<span class="ln"> 6</span>- export GIT_PS1_SHOWDIRTYSTATE: Muestra el estado actual del repo.
+<span class="ln"> 7</span>- export GIT_PS1_SHOWUNTRACKEDFILES: Mostrar archivos sin seguimiento.
+<span class="ln"> 8</span>- export PROMPT_COMMAND: Personalización del prompt.
+<span class="ln"> 9</span>- \[\033[0;31m\]: Color Rojo.
+<span class="ln">10</span>- \[\033[0;33m\]: Color Amarillo.
+<span class="ln">11</span>- \[\033[0;32m\]: Color Verde.
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Prompt personalizado ~/.bashrc</span>
 <span class="ln">2</span><span class="nb">source</span> /usr/share/git-core/contrib/completion/git-prompt.sh
 <span class="ln">3</span><span class="nb">export</span> <span class="nv">GIT_PS1_SHOWCOLORHINTS</span><span class="o">=</span><span class="nb">true</span>
 <span class="ln">4</span><span class="nb">export</span> <span class="nv">GIT_PS1_SHOWDIRTYSTATE</span><span class="o">=</span><span class="nb">true</span>
@@ -213,22 +211,22 @@
 </code></pre></div><h2 id="docker-ce">Docker CE</h2>
 <p>Luego de instalar Docker CE desde el repositorio <a href="https://docs.docker.com/engine/install/fedora/"><strong>oficial</strong></a> y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.</p>
 <p>Para solucionar el problema agregamos la interface <strong>docker0</strong> en la zona de confianza del firewall.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>firewall-cmd --permanent --zone<span class="o">=</span>trusted --add-interface<span class="o">=</span>docker0
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>firewall-cmd --permanent --zone=trusted --add-interface=docker0
 <span class="ln">2</span>firewall-cmd --reload
 </code></pre></div><h2 id="cinnamon">Cinnamon</h2>
 <p>Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es <strong>NOUVEAU</strong> controlador de código abierto, instalamos el controlador <strong>NVIDIA Corporation GF119 [NVS 310]</strong> para mejorar el rendimiento en el vídeo.</p>
 <p><strong>NVIDIA Driver 390xxx - repositorio RPMFusion</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1">## Habilitando NVIDIA RPM Fusion</span>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span>## Habilitando NVIDIA RPM Fusion
 <span class="ln"> 2</span>dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 <span class="ln"> 3</span>
-<span class="ln"> 4</span><span class="c1">## Listando controladores disponibles</span>
+<span class="ln"> 4</span>## Listando controladores disponibles
 <span class="ln"> 5</span>dnf repository-packages rpmfusion-nonfree-nvidia-driver info
 <span class="ln"> 6</span>
-<span class="ln"> 7</span><span class="c1">## Instalación del controlador</span>
+<span class="ln"> 7</span>## Instalación del controlador
 <span class="ln"> 8</span>dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
 <span class="ln"> 9</span>dnf install xorg-x11-drv-nvidia-390xx-cuda
 <span class="ln">10</span>
-<span class="ln">11</span><span class="c1">## Pruebas y control de rendimiento</span>
+<span class="ln">11</span>## Pruebas y control de rendimiento
 <span class="ln">12</span>dnf install -y gwe
 </code></pre></div><h2 id="referencias">Referencias</h2>
 <ul>

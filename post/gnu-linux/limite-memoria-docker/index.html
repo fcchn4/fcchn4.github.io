@@ -185,23 +185,23 @@
 <p>Docker tiene la posibilidad de aplicar un límite de memoria a un contenedor específico.</p>
 <p><img src="/images/docker-limite-mem/kernel-panic.jpg" alt=""></p>
 <h2 id="creando-un-contenedor">Creando un Contenedor</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>    $ docker run --name dell -it debian bash
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ docker run --name dell -it debian bash
 </code></pre></div><h2 id="obteniendo-información-del-contenedor">Obteniendo Información del Contenedor</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>    $ docker inspect dell <span class="p">|</span> grep -i <span class="s1">&#39;Memory&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ docker inspect dell <span class="p">|</span> grep -i &#39;Memory&#39;
 </code></pre></div><p><img src="/images/docker-limite-mem/docker-memory.png" alt=""></p>
 <p>Para <strong>&quot;Memory&quot;: 0</strong> el valor <strong>0</strong> indica que el contenedor no tiene valor limitado de memoria, es decir que utilizará todo lo que tenga disponible el host, posiblemente afectando a otros contenedores que estén dentro del mismo host.</p>
 <h2 id="actualizando-la-memoria-del-contenedor">Actualizando la Memoria del Contenedor</h2>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>    $ docker update -m 256MB dell
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ docker update -m 256MB dell
 </code></pre></div><p>En las pruebas existieron problemas en sistemas operativos Debian y Ubuntu:</p>
 <p><img src="/images/docker-limite-mem/docker-kernel-fail.png" alt=""></p>
 <p>Este problema se debe a que el <a href="https://en.wikipedia.org/wiki/Cgroups"><strong>cgroup</strong></a> no esta montado en el sistema, para que se monte editamos el archivo archivo <strong>grub</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>    $ sudo vim /etc/default/grub
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ sudo vim /etc/default/grub
 <span class="ln">2</span>    ...
-<span class="ln">3</span>    <span class="nv">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&#34;cgroup_enable=memory swapaccount=1&#34;</span>
-<span class="ln">4</span>    <span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&#34;cgroup_enable=memory swapaccount=1&#34;</span>
+<span class="ln">3</span>    GRUB_CMDLINE_LINUX_DEFAULT=<span class="s2">&#34;cgroup_enable=memory swapaccount=1&#34;</span>
+<span class="ln">4</span>    GRUB_CMDLINE_LINUX=<span class="s2">&#34;cgroup_enable=memory swapaccount=1&#34;</span>
 <span class="ln">5</span>    ...
 </code></pre></div><p>Actualizamos el <strong>grub</strong> y reiniciamos el sistema:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>    $ sudo update-grub
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ sudo update-grub
 <span class="ln">2</span>    $ sudo update-grub2
 <span class="ln">3</span>    $ sudo reboot
 </code></pre></div><p>Por último volvemos a ejecutar el comando para actualizar la memoria y verificamos el estado de la memoria:</p>

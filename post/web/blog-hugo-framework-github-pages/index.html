@@ -198,56 +198,56 @@
 <p>Muchos utilizan servidores DNS de los proveedores como <a href="https://www.digitalocean.com/"><strong>Digital Ocean</strong></a> o <a href="https://www.linode.com/"><strong>Linode</strong></a> para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:</p>
 <p><img src="/images/hugo-github/bind9-subdomain.png" alt=""></p>
 <p>Puede verificar los nuevos registros con el siguiente comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
 </code></pre></div><h2 id="iniciamos-el-sitio-con-hugo">Iniciamos el Sitio con Hugo</h2>
 <p>Luego de crear el repositorio en Github, debemos clonarlo, ingresar al repositorio y crear una nueva rama de desarrollo:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git clone URL/repositorio
-<span class="ln">2</span>$ <span class="nb">cd</span> hugo-static-site
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git clone URL/repositorio
+<span class="ln">2</span>$ cd hugo-static-site
 <span class="ln">3</span>$ git checkout -b development
-<span class="ln">4</span>$ <span class="nb">echo</span> public &gt; .gitignore
+<span class="ln">4</span>$ echo public <span class="p">&gt;</span> .gitignore
 <span class="ln">5</span>$ git push origin development
 </code></pre></div><p>Luego se debe crear la rama maestra que será independiente de la rama de  desarrollo, la maestra se usará para publicar el sitio.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git checkout --orphan master
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git checkout --orphan master
 <span class="ln">2</span>$ git reset --hard
-<span class="ln">3</span>$ <span class="nb">echo</span> <span class="s1">&#39;&lt;h1&gt;Hello World&lt;/h1&gt;&#39;</span> &gt; index.html
+<span class="ln">3</span>$ echo &#39;<span class="p">&lt;</span>h1<span class="p">&gt;</span>Hello World<span class="p">&lt;</span>/h1<span class="p">&gt;</span>&#39; <span class="p">&gt;</span> index.html
 <span class="ln">4</span>$ git commit -am <span class="s2">&#34;First index.html&#34;</span>
 <span class="ln">5</span>$ git push origin master
 <span class="ln">6</span>$ git checkout development
 </code></pre></div><p>Con las ramas creadas y clasificadas podemos iniciar con crear las plantillas con <a href="https://gohugo.io/"><strong>Hugo</strong></a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ <span class="nb">cd</span> ..
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ cd ..
 <span class="ln">2</span>$ hugo new site hugo-static-site --force
-<span class="ln">3</span>$ <span class="nb">cd</span> hugo-static-site
+<span class="ln">3</span>$ cd hugo-static-site
 </code></pre></div><p>También se debe hacer que el directorio <strong>public</strong> haga referencia a la rama <strong>master</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git worktree add -B master public origin/master
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git worktree add -B master public origin/master
 </code></pre></div><p>Para inicializar el nuevo sitio instalamos un tema de nuestra preferencia, para el ejemplo utilizaremos el tema <a href="https://themes.gohugo.io/hugo-goa/"><strong>goa</strong></a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git submodule add https://github.com/shenoybr/hugo-goa themes/goa
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git submodule add https://github.com/shenoybr/hugo-goa themes/goa
 </code></pre></div><p>Agregamos el nueva tema al archivo <strong>config.toml</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ <span class="nb">echo</span> <span class="s1">&#39;theme = &#34;goa&#34;&#39;</span> &gt;&gt; config.toml
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ echo &#39;theme = <span class="s2">&#34;goa&#34;</span>&#39; <span class="p">&gt;&gt;</span> config.toml
 </code></pre></div><p>Creamos el nuevo y primer post.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ hugo new posts/first-post.md
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo new posts/first-post.md
 </code></pre></div><p>Y asegúrese de que en el archivo creado esté marcado como <strong>draft: false</strong> para que pueda publicarse.</p>
 <p>Con todo lo anterior podemos hacer una previsualización de todo lo trabajado con el servidor web que proporciona <a href="https://gohugo.io/"><strong>Hugo</strong></a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ hugo server --watch -D
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo server --watch -D
 </code></pre></div><p>Cuando verificamos que todo este bien, iniciamos la generación del sitio.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ hugo -D 
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo -D 
 </code></pre></div><p>El comando anterior creara los archivos estáticos en el directorio <strong>public</strong>.</p>
 <p>Con los archivos estáticos generados, subimos los cambios realizados en <a href="https://gohugo.io/"><strong>Hugo</strong></a> a la rama <strong>development</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git add .
-<span class="ln">2</span>$ git commit -m <span class="s1">&#39;Initialized hugo site&#39;</span>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git add .
+<span class="ln">2</span>$ git commit -m &#39;Initialized hugo site&#39;
 <span class="ln">3</span>$ git push origin development
 </code></pre></div><p>Como el directorio <strong>public</strong> apunta a otra rama: <strong>master</strong>, debemos subir los archivos estáticos también.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ <span class="nb">cd</span> public
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ cd public
 <span class="ln">2</span>$ git add .
-<span class="ln">3</span>$ git commit -m <span class="s1">&#39;publishing first-post&#39;</span>
+<span class="ln">3</span>$ git commit -m &#39;publishing first-post&#39;
 <span class="ln">4</span>$ git push origin master
 </code></pre></div><p>Con estos ultimos pasos deberiamos tener un sitio web funcionando en el subdominio configurado en Github Pages o con el subdominio personal.</p>
 <h2 id="clonación-del-repositorio">Clonación del repositorio</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git clone -b nombre_branch --recurse-submodules URL/repositorio
-<span class="ln">2</span>$ <span class="nb">cd</span> repositorio
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git clone -b nombre_branch --recurse-submodules URL/repositorio
+<span class="ln">2</span>$ cd repositorio
 <span class="ln">3</span>$ mkdir public
 <span class="ln">4</span>$ git worktree add -B master public origin/master
 </code></pre></div><h2 id="eliminando-submodulos">Eliminando submodulos</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="ln">1</span>$ git submodule deinit -f -- ruta/nombre_submodulo
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git submodule deinit -f -- ruta/nombre_submodulo
 <span class="ln">2</span>$ rm -rf .git/modules/ruta/nombre_submodulo
 <span class="ln">3</span>$ git rm -f ruta/submodulo
 <span class="ln">4</span>$ git submodule status
