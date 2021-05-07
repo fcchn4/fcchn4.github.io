@@ -14,7 +14,7 @@ categories = [
 series = ["Fedora Guide"]
 thumbnail = "images/fedora-32/fedora32-400.jpg"
 +++
-Después de actualizar mi Sistema Operativo [**Fedora 30**](https://getfedora.org/es/) a [**Fedora 32**](https://getfedora.org/es/), estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de [**Gnome 3.36**](https://www.gnome.org/) a [**Cinnamon 4.4**](https://es.wikipedia.org/wiki/Cinnamon).
+When after update my Operating System [**Fedora 30**](https://getfedora.org/es/) to [**Fedora 32**](https://getfedora.org/es/), I was solving some problems with Docker CE, I custom the Prompt in my Console and change [**Gnome 3.36**](https://www.gnome.org/) to [**Cinnamon 4.4**](https://es.wikipedia.org/wiki/Cinnamon).
 
 <!--more-->
 
