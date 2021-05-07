@@ -245,21 +245,61 @@
   <url>
     <loc>https://blog.fcch.xyz/categories/blog/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/tags/fcch/</loc>
-    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/blog/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/series/fcch-blog/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/series/fcch-blog/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/series/fcch-blog/"
+                />
   </url>
   
   <url>
     <loc>https://blog.fcch.xyz/about/</loc>
     <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/html/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/html/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/html/"
+                />
   </url>
   
   <url>
