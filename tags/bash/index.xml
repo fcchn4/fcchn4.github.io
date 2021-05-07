@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Fcch Blog | Apuntes, guías y recordatorios</title>
+    <link>https://blog.fcch.xyz/tags/bash/</link>
+    <description>Recent content in bash on Fcch Blog | Apuntes, guías y recordatorios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fcch Blog | 2019 - 2021</copyright>
+    <lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Doctl Cli - Digitalocean</title>
+      <link>https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/</link>
+      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/</guid>
+      <description>
+        
+          &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; también dispone de un CLI para manejar la infraestructura &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot;, que tiene un funcionamiento similar a &lt;strong&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html&#34;&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;instalación-del-binario&#34;&gt;Instalación del Binario&lt;/h2&gt;
+&lt;p&gt;Lo primero que toco hacer es descarga e instalar el binario, esto para la versión actual &lt;strong&gt;1.54.0&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  $ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  $ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;  $ sudo mv ~/doctl /usr/local/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;crear-un-token-api&#34;&gt;Crear un Token API&lt;/h2&gt;
+&lt;p&gt;Antes de utilizar &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot;, es necesario crear un Token API de &lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; para su cuenta, con acceso de lectura y escritura desde la página &lt;strong&gt;Aplicaciones&lt;/strong&gt; y &lt;strong&gt;API&lt;/strong&gt; en el panel de control.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/token-api-name.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;La cadena del token solo se muestra una vez, entonces copie y guarde en un lugar seguro.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/token-api-value.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;acceso-a-cuenta-con-token-api-y-doctl&#34;&gt;Acceso a cuenta con Token API y doctl&lt;/h2&gt;
+&lt;p&gt;El Token API otorga acceso a &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; para su cuenta de &lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;digitalocean&lt;/a&gt;&lt;/strong&gt;. Pase la cadena del Token cuando se solicite, al ejecutar el comando de &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Puede utilizar varias cuentas, utilizando diferentes nombres, para esta función el parametro &lt;strong&gt;--context&lt;/strong&gt; lo permite.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ doctl auth init --context &amp;lt;NOMBRE_CUENTA1&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  $ doctl auth init --context &amp;lt;NOMBRE_CUENTA2&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  $ doctl auth init --context &amp;lt;NOMBRE_CUENTA3&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se puede listar todas las cuentas con el siguiente comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ doctl auth list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para cambiar entre las diferentes cuentas existentes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ doctl auth switch --context &amp;lt;NOMBRE_CUENTA_DISPONIBLE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ejemplos-de-uso&#34;&gt;Ejemplos de uso&lt;/h2&gt;
+&lt;p&gt;Podemos utilizar &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; en diferentes casos.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Verificar Cuenta&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ doctl account get
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Listar Droplets&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ doctl compute droplet list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Crear Droplet&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb &amp;lt;NOMBRE_DROPLET&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Eliminar Droplet&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;  $ doctl compute droplet delete &amp;lt;ID_DROPLET&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/&#34;&gt;&lt;strong&gt;APIS CLIS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/&#34;&gt;&lt;strong&gt;DOCTL CLI&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Limite de Memoria en Docker</title>
+      <link>https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/</guid>
+      <description>
+        
+          &lt;p&gt;Cuando creamos un nuevo contenedor, el mismo tiene acceso ilimitado a los recursos del sistema, así que si uno ocupa toda la memoria los demás contenedores serán afectados o en su defecto el sistema operativo se queda sin recursos.&lt;/p&gt;
+&lt;p&gt;Docker tiene la posibilidad de aplicar un límite de memoria a un contenedor específico.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creando-un-contenedor&#34;&gt;Creando un Contenedor&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker run --name dell -it debian bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;obteniendo-información-del-contenedor&#34;&gt;Obteniendo Información del Contenedor&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker inspect dell &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;Memory&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Para &lt;strong&gt;&amp;quot;Memory&amp;quot;: 0&lt;/strong&gt; el valor &lt;strong&gt;0&lt;/strong&gt; indica que el contenedor no tiene valor limitado de memoria, es decir que utilizará todo lo que tenga disponible el host, posiblemente afectando a otros contenedores que estén dentro del mismo host.&lt;/p&gt;
+&lt;h2 id=&#34;actualizando-la-memoria-del-contenedor&#34;&gt;Actualizando la Memoria del Contenedor&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ docker update -m 256MB dell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En las pruebas existieron problemas en sistemas operativos Debian y Ubuntu:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Este problema se debe a que el &lt;a href=&#34;https://en.wikipedia.org/wiki/Cgroups&#34;&gt;&lt;strong&gt;cgroup&lt;/strong&gt;&lt;/a&gt; no esta montado en el sistema, para que se monte editamos el archivo archivo &lt;strong&gt;grub&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo vim /etc/default/grub
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    ...
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;GRUB_CMDLINE_LINUX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Actualizamos el &lt;strong&gt;grub&lt;/strong&gt; y reiniciamos el sistema:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ sudo update-grub
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    $ sudo update-grub2
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    $ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por último volvemos a ejecutar el comando para actualizar la memoria y verificamos el estado de la memoria:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-update-mem.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>NPM EACCES</title>
+      <link>https://blog.fcch.xyz/post/variety/npm-eacces/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/variety/npm-eacces/</guid>
+      <description>
+        
+          &lt;p&gt;Me toco probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Al ejecutar el comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ npm install -g &amp;lt;NOMBRE_PAQUETE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se presento un problema de permisos &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; y para solucionar el problema de forma inmediata era ejecutarlo con &lt;strong&gt;sudo&lt;/strong&gt;, esta práctica es común pero no es lo que buscamos.&lt;/p&gt;
+&lt;p&gt;Buscando encotré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;&lt;strong&gt;NPM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;creación-del-nuevo-directorio&#34;&gt;Creación del Nuevo Directorio&lt;/h2&gt;
+&lt;p&gt;Creamos una carpeta nueva donde se instalarán los nuevos programas:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ mkdir ~/.npm-global
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configure-npm-para-la-nueva-ruta-del-directorio&#34;&gt;Configure NPM para la Nueva Ruta del Directorio&lt;/h2&gt;
+&lt;p&gt;Con el comando &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;/a&gt; cambiamos la ruta del directorio de instalación de paquetes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ npm config &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; prefix &lt;span class=&#34;s1&#34;&gt;&amp;#39;~/.npm-global&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;variable-de-entorno&#34;&gt;Variable de Entorno&lt;/h2&gt;
+&lt;p&gt;En algunos casos, hay guías que te sugieren crear un archivo &lt;strong&gt;.profile&lt;/strong&gt; para crear la variable, en este ejemplo agregamos la variable al archivo &lt;strong&gt;.bashrc&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;NPM_CONFIG_PREFIX=~/.npm-global&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;actualizamos-variables&#34;&gt;Actualizamos Variables&lt;/h2&gt;
+&lt;p&gt;Actualizamos las variables con el siguiente comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ &lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;probamos-la-instalación-sin-sudo&#34;&gt;Probamos la Instalación sin sudo&lt;/h2&gt;
+&lt;p&gt;Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer &lt;strong&gt;sudo&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ npm install -g &amp;lt;NOMBRE_PAQUETE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Apuntes Fedora 32</title>
+      <link>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</guid>
+      <description>
+        
+          &lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prompt-terminal&#34;&gt;Prompt Terminal&lt;/h2&gt;
+&lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
+&lt;p&gt;Buscando me encontré con &lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedo de esta forma:&lt;/p&gt;
+&lt;p&gt;Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Instalción Git&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;dnf install git
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Script /usr/share/git-core/contrib/completion/git-prompt.sh&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Descripción de los datos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;__git_ps1:&lt;/strong&gt; &lt;em&gt;Variable del script.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;t:&lt;/strong&gt; &lt;em&gt;Obtiene la hora, minutos y segundos.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;W:&lt;/strong&gt; &lt;em&gt;Muestra el nombre de carpeta actual.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;source:&lt;/strong&gt; &lt;em&gt;Ruta del script __git_ps1.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;export GIT_PS1_SHOWCOLORHINTS:&lt;/strong&gt; &lt;em&gt;Color para los datos git.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;export GIT_PS1_SHOWDIRTYSTATE:&lt;/strong&gt; &lt;em&gt;Muestra el estado actual del repo.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;export GIT_PS1_SHOWUNTRACKEDFILES:&lt;/strong&gt; &lt;em&gt;Mostrar archivos sin seguimiento.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;export PROMPT_COMMAND:&lt;/strong&gt; &lt;em&gt;Personalización del prompt.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[\033[0;31m]:&lt;/strong&gt; &lt;em&gt;Color Rojo.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[\033[0;33m]:&lt;/strong&gt; &lt;em&gt;Color Amarillo.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[\033[0;32m]:&lt;/strong&gt; &lt;em&gt;Color Verde.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Prompt personalizado ~/.bashrc&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /usr/share/git-core/contrib/completion/git-prompt.sh
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWCOLORHINTS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWDIRTYSTATE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWUNTRACKEDFILES&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;__git_ps1 &amp;#34;\[\033[01;33m\]\t\[\033[00m\] \[\033[01;31m\][\W]\[\033[00m\]&amp;#34; &amp;#34; \\\$ &amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-ce&#34;&gt;Docker CE&lt;/h2&gt;
+&lt;p&gt;Luego de instalar Docker CE desde el repositorio &lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;oficial&lt;/strong&gt;&lt;/a&gt; y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.&lt;/p&gt;
+&lt;p&gt;Para solucionar el problema agregamos la interface &lt;strong&gt;docker0&lt;/strong&gt; en la zona de confianza del firewall.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;firewall-cmd --permanent --zone&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;trusted --add-interface&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;docker0
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;firewall-cmd --reload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;cinnamon&#34;&gt;Cinnamon&lt;/h2&gt;
+&lt;p&gt;Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es &lt;strong&gt;NOUVEAU&lt;/strong&gt; controlador de código abierto, instalamos el controlador &lt;strong&gt;NVIDIA Corporation GF119 [NVS 310]&lt;/strong&gt; para mejorar el rendimiento en el vídeo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NVIDIA Driver 390xxx - repositorio RPMFusion&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Habilitando NVIDIA RPM Fusion&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Listando controladores disponibles&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;dnf repository-packages rpmfusion-nonfree-nvidia-driver info
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Instalación del controlador&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;dnf install xorg-x11-drv-nvidia-390xx-cuda
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Pruebas y control de rendimiento&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;dnf install -y gwe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;Docker Fedora&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;Fedora Git Reference&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

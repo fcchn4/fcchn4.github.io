@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/web/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/git/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/gitlab/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/gu%C3%ADa-web/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/hugo/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/hugo/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/web/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/infrastructure/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/bash/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/cloud/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/digitalocean/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/doctl/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/gu%C3%ADa-servidores/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/infraestructura/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/servidores/</loc>
+    <lastmod>2020-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/gnu-linux/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/variety/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/cgroup/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/docker/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/grub/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/nodejs/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/npm/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/variety/npm-eacces/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</loc>
+    <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/fedora/</loc>
+    <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/gnu-linux/</loc>
+    <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/gu%C3%ADa-fedora/</loc>
+    <lastmod>2020-05-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/cms/</loc>
+    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/wordpress/</loc>
+    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/web/wordpress-algunos-detalles/</loc>
+    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/</loc>
+    <lastmod>2020-01-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/github/</loc>
+    <lastmod>2020-01-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/blog/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/fcch/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/fcch-blog/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/about/</loc>
+    <lastmod>2020-01-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/spip/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/spip/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/web/spip-otra-forma-instalar/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/web/</loc>
+    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gitlab on Fcch Blog | Apuntes, guías y recordatorios</title>
+    <link>https://blog.fcch.xyz/tags/gitlab/</link>
+    <description>Recent content in gitlab on Fcch Blog | Apuntes, guías y recordatorios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fcch Blog | 2019 - 2021</copyright>
+    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Framework y Gitlab Pages</title>
+      <link>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</guid>
+      <description>
+        
+          &lt;p&gt;Una de las primeras ideas para tener un sitio web o blog es utilizar algún &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; como &lt;a href=&#34;https://es.wordpress.org/&#34;&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://www.drupal.org/&#34;&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; o el buen &lt;a href=&#34;https://www.spip.net/es_rubrique23.html&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, todos estos desarrollados con &lt;a href=&#34;https://www.php.net&#34;&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; y requieren de una base de datos para funcionar, un servidor o hosting.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Una de las soluciones que existen para evitar comprar un hosting o servidor, es generar sitios estáticos con alguna herramienta como &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/a&gt; o mi preferido &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, estos combinados con &lt;a href=&#34;https://about.gitlab.com/stages-devops-lifecycle/pages/&#34;&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt; o &lt;a href=&#34;https://pages.github.com/&#34;&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ya hicimos un post para crear un blog con &lt;a href=&#34;https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/&#34;&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, en esta oportunidad haremos un pequeño demo para utilizar &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, utilizando el dominio por defecto como &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; y luego personalizaremos el dominio a uno propio.&lt;/p&gt;
+&lt;h2 id=&#34;paso-1-iniciamos-el-proyecto-hugo-en-local&#34;&gt;Paso 1: Iniciamos el proyecto Hugo en local&lt;/h2&gt;
+&lt;p&gt;Luego de instalar &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, podemos utilizar el comando &lt;strong&gt;hugo&lt;/strong&gt; desde una terminal para inicializar el proyecto.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo new site usuario.gitlab.io --force
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--preparamos-el-sitio-web-y-archivos-git&#34;&gt;- Preparamos el Sitio Web y archivos Git&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; usuario.gitlab.io
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git init
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; public &amp;gt; .gitignore
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git submodule add https://github.com/dev_name/theme_name themes/theme_name
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;theme = &amp;#34;theme_name&amp;#34;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; config.toml
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ hugo new posts/first-post.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--requerimientos-gitlab-pages&#34;&gt;- Requerimientos Gitlab Pages&lt;/h3&gt;
+&lt;p&gt;Antes de subir el proyecto a un repositorio &lt;a href=&#34;https://gitlab.com&#34;&gt;&lt;strong&gt;Gitlab&lt;/strong&gt;&lt;/a&gt;, editamos el archivo &lt;strong&gt;.gitmodules&lt;/strong&gt; para agregar URL relativas.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitlab.com&#34;&gt;&lt;strong&gt;Gitlab&lt;/strong&gt;&lt;/a&gt; utiliza HTTPS para obtener código fuente en los &lt;strong&gt;runner&lt;/strong&gt; compartidos, entonces:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Para un fork que pertenece al mismo grupo o usuario&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ vim .gitmodules
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;-- &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;submodule &lt;span class=&#34;s2&#34;&gt;&amp;#34;themes/theme_name&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; themes/theme_name
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; ../../dev_name/theme_name.git &lt;span class=&#34;c1&#34;&gt;## Línea nueva&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Para un proyecto fuera del grupo o usuario&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ vim .gitmodules
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-- &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;submodule &lt;span class=&#34;s2&#34;&gt;&amp;#34;themes/theme_name&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; themes/theme_name
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; https://gitlab.com/dev_name/theme_name.git &lt;span class=&#34;c1&#34;&gt;## Línea nueva&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Actualizamos los submódulos&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;$ git submodule update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--gitlab-ci&#34;&gt;- Gitlab CI&lt;/h3&gt;
+&lt;p&gt;Creamos el archivo &lt;strong&gt;.gitlab-ci.yml&lt;/strong&gt; para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo seria el siguiente:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ vim .gitlab-ci.yml
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;-- image: registry.gitlab.com/pages/hugo:latest
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;-- 
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;-- variables:
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;--   GIT_SUBMODULE_STRATEGY: recursive
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;-- 
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;-- test:
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;--   script:
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;--   - hugo
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;--   except:
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;--   - master
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;-- 
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;-- pages:
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;--   script:
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;--   - hugo
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;--   artifacts:
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;--     paths:
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;--     - public
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;--   only:
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;--   - master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--repositorio-gitlab&#34;&gt;- Repositorio Gitlab&lt;/h3&gt;
+&lt;p&gt;Para crear el repositorio debemos hacerlo con el nombre &lt;strong&gt;usuario.gitlab.io&lt;/strong&gt; donde ¨usuario¨ es el nombre de usuario de &lt;strong&gt;Gitlab&lt;/strong&gt;, tambien se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio &lt;strong&gt;grupo.gitlab.io&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Luego de crear el repositorio agreamos el código, luego de agregar el URL al proyecto:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git add .
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;Hugo gitlab page&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;--verificamos-el-despliegue-en-el-repositorio&#34;&gt;- Verificamos el despliegue en el repositorio&lt;/h3&gt;
+&lt;p&gt;Si todo salió bien deberiamos tener una salida similar a la imagen, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Luego podemos verificar con la URL: &lt;strong&gt;&lt;a href=&#34;http://usuario.gitlab.io&#34;&gt;http://usuario.gitlab.io&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;paso-2-gitlab-dominio-personalizado&#34;&gt;Paso 2: Gitlab Dominio personalizado&lt;/h2&gt;
+&lt;p&gt;Con lo realizado anteriormente y si no existió algún problema podemos personalizar el dominio a uno que elijamos nosotros, para el ejemplo utilizaremos el dominio &lt;strong&gt;dominio.com&lt;/strong&gt; y &lt;strong&gt;&lt;a href=&#34;http://www.dominio.com&#34;&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;--creando-dominios&#34;&gt;- Creando Dominios&lt;/h3&gt;
+&lt;p&gt;En &lt;strong&gt;Gitlab&lt;/strong&gt; podemos ingresar al espacio &lt;strong&gt;Repositorio -&amp;gt; Settings -&amp;gt; Papes&lt;/strong&gt; y agregar el dominio y subdominio elegidos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Para dominio.com&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Para &lt;a href=&#34;http://www.dominio.com&#34;&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.&lt;/p&gt;
+&lt;h3 id=&#34;--registros-dns-y-verificaciones-gitlab&#34;&gt;- Registros DNS y Verificaciones Gitlab&lt;/h3&gt;
+&lt;p&gt;Para el dominio raiz &lt;strong&gt;dominio.com&lt;/strong&gt; se debe crear un registro &lt;strong&gt;A&lt;/strong&gt; con los siguientes datos:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;El registro &lt;strong&gt;A&lt;/strong&gt; para el dominio raiz &lt;strong&gt;dominio.com&lt;/strong&gt; con el valor &lt;strong&gt;35.185.44.232&lt;/strong&gt;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Luego de crear los registros podemos verificar desde &lt;strong&gt;Gitlab&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Para el subdominio &lt;strong&gt;&lt;a href=&#34;http://www.dominio.com&#34;&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; se debe crear un registro &lt;strong&gt;CNAME&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;El registro &lt;strong&gt;CNAME&lt;/strong&gt; para el subdominio &lt;strong&gt;&lt;a href=&#34;http://www.dominio.com&#34;&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; con el valor &lt;strong&gt;usuario.gitlab.io.&lt;/strong&gt;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;clonación-del-repositorio&#34;&gt;Clonación del repositorio&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;eliminando-submodulos&#34;&gt;Eliminando submodulos&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git submodule deinit -f -- themes/theme_name
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ rm -rf .git/modules/themes/themes_name
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git rm -f themes/themes_name
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git submodule status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://about.gitlab.com/stages-devops-lifecycle/pages/&#34;&gt;&lt;strong&gt;Gitlab Stages DevOps&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/&#34;&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.gitlab.com/ee/user/project/pages/custom_domains_ssl_tls_certification/index.html&#34;&gt;&lt;strong&gt;Custom Domains SSL TLS Certification&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.gitlab.com/ee/ci/git_submodules.html&#34;&gt;&lt;strong&gt;Gitlab Git Submodules&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitlab.com/pages&#34;&gt;&lt;strong&gt;GitLab Pages examples&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
