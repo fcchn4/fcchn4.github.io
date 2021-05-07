@@ -98,5 +98,5 @@ Podemos utilizar "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/re
 
 ## Referencias
 
-- [APIS CLIS](https://www.digitalocean.com/docs/apis-clis/)
-- [DOCTL CLI](https://www.digitalocean.com/docs/apis-clis/doctl/)
+- [**APIS CLIS**](https://www.digitalocean.com/docs/apis-clis/)
+- [**DOCTL CLI**](https://www.digitalocean.com/docs/apis-clis/doctl/)

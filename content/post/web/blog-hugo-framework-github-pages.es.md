@@ -15,13 +15,13 @@ categories = [
 ]
 series = ["Guía Web"]
 aliases = ["web"]
-thumbnail = "images/hugo-github/logo-hugo-github.png"
+thumbnail = "images/hugo-github/logo-hugo-github-400.png"
 +++
 Desde hace un tiempo estuve intentando crear un blog personal, la primera idea fue usar algún [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) conocido como [**Wordpress**](https://es.wordpress.org/) o [**Drupal**](https://www.drupal.org/) pero ninguno llego a gustarme, luego use [**SPIP**](https://www.spip.net/es_rubrique23.html) por un tiempo donde pude aprender mucho de este [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) Francés, pero mantener un sitio de solo publicaciones con texto y algunas imágenes no era el mas apropiado.
 
 <!--more-->
 
-![](/images/hugo-github/logo-hugo-github.png)
+![](/images/hugo-github/logo-hugo-github-400.png)
 
 Luego estuve viendo los blogs de amigos y el que me llamo la atención fue de [**donkeysharp**](https://blog.donkeysharp.xyz/) donde se utiliza [**Hugo Framework**](https://gohugo.io/), un generador páginas estáticas a partir de plantillas predeterminadas, también utiliza [**Github Pages**](https://pages.github.com/) que te permite crear un sitio estático en un subdominio del tipo **usuario.github.io**, el mismo también te permite crear un sitio con un dominio o subdominio personal de la forma **www.dominio.info** o también **blog.dominio.info**, con esta información me puse a trabajar en el nuevo blog.
 
@@ -161,6 +161,6 @@ $ git submodule status
 
 ## Referencias
 
-- https://blog.donkeysharp.xyz/
-- https://gohugo.io/hosting-and-deployment/hosting-on-github/
-- https://gohugo.io/getting-started/quick-start/
+- [**Donkeysharp**](https://blog.donkeysharp.xyz/)
+- [**Hosting on Github**](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+- [**Hugo Quick Start**](https://gohugo.io/getting-started/quick-start/)

@@ -169,8 +169,8 @@ $ git submodule status
 
 ## Referencias
 
-- [Gitlab Stages DevOps](https://about.gitlab.com/stages-devops-lifecycle/pages/)
-- [Gitlab Pages](https://docs.gitlab.com/ee/user/project/pages/)
-- [Custom Domains SSL TLS Certification](https://docs.gitlab.com/ee/user/project/pages/custom_domains_ssl_tls_certification/index.html)
-- [Gitlab Git Submodules](https://docs.gitlab.com/ee/ci/git_submodules.html)
-- [GitLab Pages examples](https://gitlab.com/pages)
+- [**Gitlab Stages DevOps**](https://about.gitlab.com/stages-devops-lifecycle/pages/)
+- [**Gitlab Pages**](https://docs.gitlab.com/ee/user/project/pages/)
+- [**Custom Domains SSL TLS Certification**](https://docs.gitlab.com/ee/user/project/pages/custom_domains_ssl_tls_certification/index.html)
+- [**Gitlab Git Submodules**](https://docs.gitlab.com/ee/ci/git_submodules.html)
+- [**GitLab Pages examples**](https://gitlab.com/pages)

@@ -21,6 +21,8 @@ Me toco probar el despliegue de aplicaciones **NodeJS** donde necesitaba instala
 
 <!--more-->
 
+![](/images/npm-eacces/npm-error-img.png)
+
 Al ejecutar el comando:
 
 ```bash

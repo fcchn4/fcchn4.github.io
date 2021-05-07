@@ -12,13 +12,13 @@ categories = [
     "gnu-linux",
 ]
 series = ["Guía Fedora"]
-thumbnail = "images/fedora-32/fedora32.jpg"
+thumbnail = "images/fedora-32/fedora32-400.jpg"
 +++
 Después de actualizar mi Sistema Operativo [**Fedora 30**](https://getfedora.org/es/) a [**Fedora 32**](https://getfedora.org/es/), estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de [**Gnome 3.36**](https://www.gnome.org/) a [**Cinnamon 4.4**](https://es.wikipedia.org/wiki/Cinnamon).
 
 <!--more-->
 
-![](/images/fedora-32/fedora32.jpg)
+![](/images/fedora-32/fedora32-400.jpg)
 
 ## Prompt Terminal
 
@@ -94,5 +94,5 @@ dnf install -y gwe
 
 ## Referencias
 
-- https://docs.docker.com/engine/install/fedora/
-- https://fedoraproject.org/wiki/Git_quick_reference
+- [**Docker Fedora**](https://docs.docker.com/engine/install/fedora/)
+- [**Fedora Git Reference**](https://fedoraproject.org/wiki/Git_quick_reference)
