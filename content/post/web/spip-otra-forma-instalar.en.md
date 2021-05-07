@@ -1,8 +1,8 @@
 +++
-title = "SPIP, Otra Forma de Instalar"
+title = "SPIP, Another Way to Install"
 author = "Fcch"
 date = "2020-01-06"
-description = "Guía Web"
+description = "Web Guide"
 featured = true
 tags = [
     "web",
@@ -13,7 +13,7 @@ categories = [
     "web",
     "spip",
 ]
-series = ["Guía Web"]
+series = ["Web Guide"]
 thumbnail = "images/spip-svn/logo-spip-400.png"
 +++
 [SPIP](https://www.spip.net/) es un [CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.

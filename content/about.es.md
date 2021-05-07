@@ -24,6 +24,7 @@ Me gusta aprender sobre tecnología y participar en comunidades de Software Libr
 - Infraestructura
 
 ## Comunidades
+
 Comunidades a las que sigo, en las que participo o participé:
 
 - [**Fedora Project**](https://fedoraproject.org/)
@@ -34,6 +35,7 @@ Comunidades a las que sigo, en las que participo o participé:
 - [**SPIP**](https://spip.net)
 
 ## Amigos
+
 Sigo el contenido de varios blog de amigos, entre los principales: 
 
 - [**Donkeysharp**](https://blog.donkeysharp.xyz)

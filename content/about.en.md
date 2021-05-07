@@ -20,7 +20,7 @@ I like to learn about technology and participate in Free Software communities, I
 - DevOps
 - Cloud Computing
 - SecOps
-- Informatic security
+- Cybersecurity
 - Infrastructure
 
 ## Communities

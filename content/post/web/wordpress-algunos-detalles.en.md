@@ -1,8 +1,8 @@
 +++
-title = "Wordpress, Algunos Detalles"
+title = "Wordpress, Some Details"
 author = "Fcch"
 date = "2020-04-09"
-description = "Guía Web"
+description = "Web Guide"
 featured = true
 tags = [
     "wordpress",
@@ -11,7 +11,7 @@ tags = [
 categories = [
     "web",
 ]
-series = ["Guía Web"]
+series = ["Web Guide"]
 thumbnail = "images/wordpress-detalles/logo-wordpress-400.png"
 +++
 Estuve colaborando con algunas empresas que realizaban cambios en su sitios web, donde se utilizaba [Wordpress](https://wordpress.org/) como [CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) base, estos sitios web estaban siendo cambiados de servidor, actualizando a la versión mas actual o verificando actualizaciones en sus complementos, en el proceso se presentaron diferentes problemas, me toco ver la documentación oficial [Wordpress Codex](https://codex.wordpress.org/) y en Google para darles solución.

@@ -1,8 +1,8 @@
 +++
-title = "Blog con Hugo Framework y Github Pages"
+title = "Blog with Hugo Framework and Github Pages"
 author = "Fcch"
 date = "2020-01-11"
-description = "Guía Web"
+description = "Web Guide"
 featured = true
 tags = [
     "hugo",
@@ -13,7 +13,7 @@ categories = [
     "web",
     "hugo",
 ]
-series = ["Guía Web"]
+series = ["Web Guide"]
 aliases = ["web"]
 thumbnail = "images/hugo-github/logo-hugo-github-400.png"
 +++
