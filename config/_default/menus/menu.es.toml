@@ -4,19 +4,29 @@
   weight = -110
 
 [[main]]
-  name = "Cloud"
-  url = "post/rich-content/"
+  name = "GNU/Linux"
+  url = "post/gnu-linux/"
   weight = -109
 
 [[main]]
-  name = "Fedora"
-  url = "post/rich-content/"
+  name = "Infraestructura"
+  url = "post/infrastructure/"
   weight = -108
 
 [[main]]
-  name = "Sobre mi"
-  url = "about/"
+  name = "Web"
+  url = "post/web/"
   weight = -107
+
+[[main]]
+  name = "Variedad"
+  url = "post/variety/"
+  weight = -106
+
+[[main]]
+  name = "Sobre mí"
+  url = "about/"
+  weight = -105
 
 # social menu links
 [[social]]

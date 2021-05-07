@@ -1,4 +1,4 @@
 +++
 author = "Fcch"
-description = "A theme based on VMware's Clarity Design System for publishing technical blogs with Hugo."
+description = "Espacio personal de contenido tecnológico Fcch Blog"
 +++

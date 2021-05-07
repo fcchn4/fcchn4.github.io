@@ -1,25 +1,42 @@
 +++
-title = "About"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
-author = "Hugo Authors"
+title = "Fcch Blog"
+description = "Fcch Blog, es mi espacio personal donde intento compartir todo lo que aprendo."
+date = "2020-01-07"
+aliases = ["about-us", "contact"]
+author = "Fcch"
+featured = true
+tags = [
+    "fcch"
+]
+categories = [
+    "web",
+    "blog",
+]
+series = ["Fcch Blog"]
+thumbnail = "images/logo/site-logo-fcch-400.png"
 +++
+Me gusta aprender sobre tecnología y participar en comunidades de Software Libre, aprendo sobre:
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+- Software Libre y Open Source
+- DevOps
+- Cloud Computing 
+- SecOps
+- Seguridad Informática
+- Infraestructura
 
-Hugo makes use of a variety of open source projects including:
+## Comunidades
+Comunidades a las que sigo, en las que participo o participé:
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+- [Fedora Project](https://fedoraproject.org/)
+- [r00thouse](https://www.hacklab.org.bo/)
+- [Software Libre Bolivia](https://www.softwarelibre.org.bo/)
+- [DragonJar](https://comunidad.dragonjar.info/)
+- [SPIP](https://spip.net)
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+## Amigos
+Sigo el contenido de varios blog de amigos, entre los principales: 
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+- [Donkeysharp](https://blog.donkeysharp.xyz)
+- [El rincón de Zerial](https://blog.zerial.org)
+- [Lorddemon](https://blog.lorddemon.org/)
+- [Crhystamils](https://blog.crhystamils.xyz/)
