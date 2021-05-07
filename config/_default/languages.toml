@@ -3,9 +3,8 @@
   LanguageName = "Spanish"
   weight = 1
   
-#[en]
-#  title = "Fcch Blog | Notes, guides and reminders"
-#  LanguageName = "English"
-#  weight = 2
-
-  
+[en]
+  title = "Fcch Blog | Notes, guides and reminders"
+  LanguageName = "English"
+  weight = 2
+ 

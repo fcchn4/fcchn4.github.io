@@ -1,6 +1,6 @@
 +++
 title = "Fcch Blog"
-description = "Fcch Blog, es mi espacio personal donde intento compartir todo lo que aprendo."
+description = "Fcch Blog, this is my personal space where tried to share everything I learn."
 date = "2020-01-07"
 aliases = ["about-me", "contact"]
 author = "Fcch"
@@ -14,17 +14,18 @@ categories = [
 series = ["Fcch Blog"]
 thumbnail = "images/logo/site-logo-fcch-400.png"
 +++
-Me gusta aprender sobre tecnología y participar en comunidades de Software Libre, aprendo sobre:
+I like to learn about technology and participate in Free Software communities, I learn about:
 
-- Software Libre y Open Source
+- Free Software and Open Source
 - DevOps
-- Cloud Computing 
+- Cloud Computing
 - SecOps
-- Seguridad Informática
-- Infraestructura
+- Informatic security
+- Infrastructure
 
-## Comunidades
-Comunidades a las que sigo, en las que participo o participé:
+## Communities
+
+Communities I follow, in which I participate or participated:
 
 - [**Fedora Project**](https://fedoraproject.org/)
 - [**Hackmeeting Bolivia**](https://hackmeeting.org.bo/)
@@ -33,8 +34,9 @@ Comunidades a las que sigo, en las que participo o participé:
 - [**DragonJar**](https://comunidad.dragonjar.info/)
 - [**SPIP**](https://spip.net)
 
-## Amigos
-Sigo el contenido de varios blog de amigos, entre los principales: 
+## Friends
+
+I follow the content of several friends' blogs, among the main ones:
 
 - [**Donkeysharp**](https://blog.donkeysharp.xyz)
 - [**El rincón de Zerial**](https://blog.zerial.org)
