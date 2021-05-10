@@ -17,6 +17,7 @@ categories = [
 series = ["Servers"]
 thumbnail = "images/doctl-digitalocean/doctl.png"
 +++
+
 **[Digitalocean](https://digitalocean.com)** also has a CLI to manage the "**[DOCTL](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" infrastructure, which works similarly to **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)**, this tool allows us to avoid using the web interface of this provider.
 
 <!--more-->

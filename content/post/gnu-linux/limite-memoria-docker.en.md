@@ -17,6 +17,7 @@ categories = [
 series = ["Servers"]
 thumbnail = "images/docker-limite-mem/kernel-panic.jpg"
 +++
+
 When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.
 
 Docker has the ability to apply a memory limit to a specific container.
@@ -72,3 +73,8 @@ $ sudo reboot
 Finally we run the command to update the memory again and check the memory status:
 
 ![](/images/docker-limite-mem/docker-update-mem.png)
+
+## References
+
+- [**Fedora Magazine**](https://fedoramagazine.org/docker-and-fedora-32/)
+- [**Fedora Wiki**](https://fedoraproject.org/wiki/Changes/CGroupsV2)

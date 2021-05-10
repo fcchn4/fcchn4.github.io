@@ -17,6 +17,7 @@ series = ["Web"]
 aliases = ["web"]
 thumbnail = "images/hugo-github/logo-hugo-github-400.png"
 +++
+
 For some time I was trying to create a personal blog, the first idea was to use a [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) known as [**Wordpress**](https://es.wordpress.org/) or [**Drupal**](https://www.drupal.org/) but I didn't like any of them, then I used [**SPIP**](https://www.spip.net/es_rubrique23.html) for a while where I could learn a lot about this French [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos), but keep a site of only publications with text and some images was not the most appropriate.
 
 <!--more-->

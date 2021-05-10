@@ -16,6 +16,7 @@ categories = [
 series = ["Web"]
 thumbnail = "images/hugo-gitlab/hugo-gitlab.png"
 +++
+
 Una de las primeras ideas para tener un sitio web o blog es utilizar algún [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) como [**Wordpress**](https://es.wordpress.org/), [**Drupal**](https://www.drupal.org/) o el buen [**SPIP**](https://www.spip.net/es_rubrique23.html), todos estos desarrollados con [**PHP**](https://www.php.net) y requieren de una base de datos para funcionar, un servidor o hosting.
 
 <!--more-->

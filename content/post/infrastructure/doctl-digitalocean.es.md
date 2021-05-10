@@ -17,6 +17,7 @@ categories = [
 series = ["Servidores"]
 thumbnail = "images/doctl-digitalocean/doctl.png"
 +++
+
 **[Digitalocean](https://digitalocean.com)** también dispone de un CLI para manejar la infraestructura "**[DOCTL](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**", que tiene un funcionamiento similar a **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)**, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.
 
 <!--more-->

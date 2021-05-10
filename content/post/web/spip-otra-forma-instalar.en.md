@@ -16,6 +16,7 @@ categories = [
 series = ["Web"]
 thumbnail = "images/spip-svn/logo-spip-400.png"
 +++
+
 [SPIP](https://www.spip.net/) is a French [CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) with simple installation, you do not need PHP and MySQL knowledge to proceed with the installation, it contains a web configuration menu and a simple administration space.
 
 <!--more-->

@@ -16,6 +16,7 @@ categories = [
 series = ["Web"]
 thumbnail = "images/hugo-gitlab/hugo-gitlab.png"
 +++
+
 One of the first ideas to have a website or blog is to use a [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) like [**Wordpress**](https://es.wordpress.org/), [**Drupal**](https://www.drupal.org/) or the good [**SPIP**](https://www.spip.net/es_rubrique23.html), all of these developed with [**PHP**](https://www.php.net) and require a database to function, a server or hosting.
 
 <!--more-->

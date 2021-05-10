@@ -80,5 +80,5 @@ location readme\.html{
 
 ## References
 
-- [Wordpress](https://wordpress.org/)
-- [Wordpress Codex](https://codex.wordpress.org/)
+- [**Wordpress**](https://wordpress.org/)
+- [**Wordpress Codex**](https://codex.wordpress.org/)

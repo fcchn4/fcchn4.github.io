@@ -72,3 +72,8 @@ To test the new functionality we execute the same command without prepending **s
 ```cmd
 $ npm install -g <NOMBRE_PAQUETE>
 ```
+
+## References
+
+- [**NodeJS**](https://nodejs.org/en/docs/guides/)
+- [**NodeJs Errors**](https://nodejs.org/api/errors.html)

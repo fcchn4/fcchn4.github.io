@@ -16,6 +16,7 @@ categories = [
 series = ["Servidores"]
 thumbnail = "images/npm-eacces/npm-error-img.png"
 +++
+
 Me toco probar el despliegue de aplicaciones **NodeJS** donde necesitaba instalar paquetes globales, instalar paquetes **NodeJS** globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.
 
 <!--more-->
@@ -71,3 +72,8 @@ Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer **s
 ```cmd
 $ npm install -g <NOMBRE_PAQUETE>
 ```
+
+## Referencias
+
+- [**NodeJS**](https://nodejs.org/en/docs/guides/)
+- [**NodeJs Errors**](https://nodejs.org/api/errors.html)
