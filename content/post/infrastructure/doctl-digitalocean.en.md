@@ -14,89 +14,89 @@ categories = [
     "Infrastructure",
     "Servers",
 ]
-series = ["Servers Guide"]
+series = ["Servers"]
 thumbnail = "images/doctl-digitalocean/doctl.png"
 +++
-**[Digitalocean](https://digitalocean.com)** también dispone de un CLI para manejar la infraestructura "**[DOCTL](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**", que tiene un funcionamiento similar a **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)**, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.
+**[Digitalocean](https://digitalocean.com)** also has a CLI to manage the "**[DOCTL](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" infrastructure, which works similarly to **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)**, this tool allows us to avoid using the web interface of this provider.
 
 <!--more-->
 
 ![](/images/doctl-digitalocean/doctl.png)
 
-## Instalación del Binario
+## Install Binary Tools
 
-Lo primero que toco hacer es descarga e instalar el binario, esto para la versión actual **1.54.0**:
+The first thing I have to do is download and install the binary, this for the current version **1.54.0**:
 
 ```cmd
-  $ cd ~
-  $ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
-  $ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
-  $ sudo mv ~/doctl /usr/local/bin
+$ cd ~
+$ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
+$ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
+$ sudo mv ~/doctl /usr/local/bin
 ```
 
-## Crear un Token API
+## Create Token API
 
-Antes de utilizar "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**", es necesario crear un Token API de **[digitalocean](https://digitalocean.com)** para su cuenta, con acceso de lectura y escritura desde la página **Aplicaciones** y **API** en el panel de control. 
+Before using "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**", you need to create a **[digitalocean](https://digitalocean.com)** API Token for your account, with read and write access from the **Applications** and **API** page in the control panel.
 
 ![](/images/doctl-digitalocean/token-api-name.png)
 
-La cadena del token solo se muestra una vez, entonces copie y guarde en un lugar seguro.
+The token string is only shown once, so please copy and keep in a safe place.
 
 ![](/images/doctl-digitalocean/token-api-value.png)
 
-## Acceso a cuenta con Token API y doctl
+## Account Access with Token API and doctl
 
-El Token API otorga acceso a "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" para su cuenta de **[digitalocean](https://digitalocean.com)**. Pase la cadena del Token cuando se solicite, al ejecutar el comando de "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**".
+The Token API grants access to "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" for your **[digitalocean](https://digitalocean.com)** account. Pass the Token string when prompted, when executing the "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" command.
 
-Puede utilizar varias cuentas, utilizando diferentes nombres, para esta función el parámetro **--context** lo permite.
-
-```cmd
-  $ doctl auth init --context <NOMBRE_CUENTA1>
-  $ doctl auth init --context <NOMBRE_CUENTA2>
-  $ doctl auth init --context <NOMBRE_CUENTA3>
-```
-
-Se puede listar todas las cuentas con el siguiente comando:
+You can use multiple accounts, using different names, for this function the **--context** parameter allows it.
 
 ```cmd
-  $ doctl auth list
+$ doctl auth init --context <NOMBRE_CUENTA1>
+$ doctl auth init --context <NOMBRE_CUENTA2>
+$ doctl auth init --context <NOMBRE_CUENTA3>
 ```
 
-Para cambiar entre las diferentes cuentas existentes:
+All accounts can be listed with the following command:
 
 ```cmd
-  $ doctl auth switch --context <NOMBRE_CUENTA_DISPONIBLE>
+$ doctl auth list
 ```
 
-## Ejemplos de uso
-
-Podemos utilizar "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" en diferentes casos.
-
-- **Verificar Cuenta** 
+To switch between the different existing accounts:
 
 ```cmd
-  $ doctl account get
+$ doctl auth switch --context <NOMBRE_CUENTA_DISPONIBLE>
 ```
 
-- **Listar Droplets**
+## Examples of use
+
+We can use "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**" in different cases.
+
+- **Account verify** 
 
 ```cmd
-  $ doctl compute droplet list
+$ doctl account get
 ```
 
-- **Crear Droplet**
+- **List Droplets**
 
 ```cmd
-  $ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <NOMBRE_DROPLET>
+$ doctl compute droplet list
 ```
 
-- **Eliminar Droplet**
+- **Create Droplet**
 
 ```cmd
-  $ doctl compute droplet delete <ID_DROPLET>
+$ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <NOMBRE_DROPLET>
 ```
 
-## Referencias
+- **Delete Droplet**
+
+```cmd
+$ doctl compute droplet delete <ID_DROPLET>
+```
+
+## References
 
 - [**APIS CLIS**](https://www.digitalocean.com/docs/apis-clis/)
 - [**DOCTL CLI**](https://www.digitalocean.com/docs/apis-clis/doctl/)

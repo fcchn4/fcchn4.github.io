@@ -14,7 +14,7 @@ categories = [
     "Infraestructura",
     "Servidores",
 ]
-series = ["Guía Servidores"]
+series = ["Servidores"]
 thumbnail = "images/doctl-digitalocean/doctl.png"
 +++
 **[Digitalocean](https://digitalocean.com)** también dispone de un CLI para manejar la infraestructura "**[DOCTL](https://www.digitalocean.com/docs/apis-clis/doctl/reference/)**", que tiene un funcionamiento similar a **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)**, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.
@@ -25,13 +25,13 @@ thumbnail = "images/doctl-digitalocean/doctl.png"
 
 ## Instalación del Binario
 
-Lo primero que toco hacer es descarga e instalar el binario, esto para la versión actual **1.54.0**:
+Lo primero que toco hacer es descargar e instalar el binario, esto para la versión actual **1.54.0**:
 
 ```cmd
-  $ cd ~
-  $ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
-  $ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
-  $ sudo mv ~/doctl /usr/local/bin
+$ cd ~
+$ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
+$ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
+$ sudo mv ~/doctl /usr/local/bin
 ```
 
 ## Crear un Token API
@@ -51,21 +51,21 @@ El Token API otorga acceso a "**[doctl](https://www.digitalocean.com/docs/apis-c
 Puede utilizar varias cuentas, utilizando diferentes nombres, para esta función el parámetro **--context** lo permite.
 
 ```cmd
-  $ doctl auth init --context <NOMBRE_CUENTA1>
-  $ doctl auth init --context <NOMBRE_CUENTA2>
-  $ doctl auth init --context <NOMBRE_CUENTA3>
+$ doctl auth init --context <NOMBRE_CUENTA1>
+$ doctl auth init --context <NOMBRE_CUENTA2>
+$ doctl auth init --context <NOMBRE_CUENTA3>
 ```
 
 Se puede listar todas las cuentas con el siguiente comando:
 
 ```cmd
-  $ doctl auth list
+$ doctl auth list
 ```
 
 Para cambiar entre las diferentes cuentas existentes:
 
 ```cmd
-  $ doctl auth switch --context <NOMBRE_CUENTA_DISPONIBLE>
+$ doctl auth switch --context <NOMBRE_CUENTA_DISPONIBLE>
 ```
 
 ## Ejemplos de uso
@@ -75,25 +75,25 @@ Podemos utilizar "**[doctl](https://www.digitalocean.com/docs/apis-clis/doctl/re
 - **Verificar Cuenta** 
 
 ```cmd
-  $ doctl account get
+$ doctl account get
 ```
 
 - **Listar Droplets**
 
 ```cmd
-  $ doctl compute droplet list
+$ doctl compute droplet list
 ```
 
 - **Crear Droplet**
 
 ```cmd
-  $ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <NOMBRE_DROPLET>
+$ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <NOMBRE_DROPLET>
 ```
 
 - **Eliminar Droplet**
 
 ```cmd
-  $ doctl compute droplet delete <ID_DROPLET>
+$ doctl compute droplet delete <ID_DROPLET>
 ```
 
 ## Referencias
