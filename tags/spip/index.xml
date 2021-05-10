@@ -43,7 +43,7 @@
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ chown -R www-data:www-data IMG tmp local config
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ chmod 777 IMG tmp local config
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La estrutura de directorios debería quedar de la siguiente forma:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La estructura de directorios debería quedar de la siguiente forma:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;instalación-spip&#34;&gt;Instalación SPIP&lt;/h2&gt;
 &lt;p&gt;Con todos los preparativos listos podemos inicar la instalación de &lt;a href=&#34;https://www.spip.net/&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -104,6 +104,13 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.spip.net/en_rubrique25.html&#34;&gt;&lt;strong&gt;SPIP Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://programmer.spip.net/&#34;&gt;&lt;strong&gt;SPIP Programmer&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://contrib.spip.net/&#34;&gt;&lt;strong&gt;SPIP Contrib&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.spip.net/?lang=fr&#34;&gt;&lt;strong&gt;SPIP Blog&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
         
       </description>
     </item>

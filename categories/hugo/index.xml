@@ -144,10 +144,10 @@
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-github/github-page.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.&lt;/p&gt;
 &lt;h2 id=&#34;configuración-dns-bind9&#34;&gt;Configuración DNS Bind9&lt;/h2&gt;
-&lt;p&gt;Muchos utilizan servidores DNS de los proveedores como &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;&lt;strong&gt;Digital Ocean&lt;/strong&gt;&lt;/a&gt; o &lt;a href=&#34;https://www.linode.com/&#34;&gt;&lt;strong&gt;Linode&lt;/strong&gt;&lt;/a&gt; para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:&lt;/p&gt;
+&lt;p&gt;Muchos utilizan servidores DNS de los proveedores como &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;&lt;strong&gt;digitalocean&lt;/strong&gt;&lt;/a&gt; o &lt;a href=&#34;https://www.linode.com/&#34;&gt;&lt;strong&gt;linode&lt;/strong&gt;&lt;/a&gt; para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Puede verificar los nuevos registros con el siguiente comando:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ dig subdominio.dominio.info +nostats +nocomments +nocmd
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;iniciamos-el-sitio-con-hugo&#34;&gt;Iniciamos el Sitio con Hugo&lt;/h2&gt;
 &lt;p&gt;Luego de crear el repositorio en Github, debemos clonarlo, ingresar al repositorio y crear una nueva rama de desarrollo:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git clone URL/repositorio
@@ -179,7 +179,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo server --watch -D
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Cuando verificamos que todo este bien, iniciamos la generación del sitio.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ hugo -D 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El comando anterior creara los archivos estáticos en el directorio &lt;strong&gt;public&lt;/strong&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El comando anterior crea los archivos estáticos en el directorio &lt;strong&gt;public&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Con los archivos estáticos generados, subimos los cambios realizados en &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; a la rama &lt;strong&gt;development&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ git add .
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ git commit -m &amp;#39;Initialized hugo site&amp;#39;

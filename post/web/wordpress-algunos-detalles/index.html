@@ -183,7 +183,7 @@
     
     <p>Estuve colaborando con algunas empresas que realizaban cambios en su sitios web, donde se utilizaba <a href="https://wordpress.org/">Wordpress</a> como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> base, estos sitios web estaban siendo cambiados de servidor, actualizando a la versión mas actual o verificando actualizaciones en sus complementos, en el proceso se presentaron diferentes problemas, me toco ver la documentación oficial <a href="https://codex.wordpress.org/">Wordpress Codex</a> y en Google para darles solución.</p>
 <p><img src="/images/wordpress-detalles/logo-wordpress-400.png" alt=""></p>
-<h2 id="migración-del-cms">Migración del CMS</h2>
+<h2 id="migración-de-wordpress">Migración de Wordpress</h2>
 <p>Anteriormente los sitios web estaban alojados en proveedores de <strong>hosting (hospedaje web)</strong>, los nuevos servidores donde se encuentran actualmente alojados cuentan con servicios web realizando <strong>reverse-proxy</strong>  o <strong>balanceo de carga</strong>, para este caso fue necesario especificar algunas instancias en el archivo de configuración <strong>wp-config.php</strong> para que los archivos <strong>CSS</strong> y <strong>JS</strong> carguen de forma de correcta, otro problema que existió fue que la seguridad para el protocolo <strong>HTTPS</strong> mostraba el error de &quot;Contenido mixto&quot;, entonces la solución de estos problemas se agrego lo siguiente:</p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="ln"> 1</span># wp-config.php
 <span class="ln"> 2</span>define( &#39;DB_COLLATE&#39;, &#39;&#39; );
@@ -195,13 +195,13 @@
 <span class="ln"> 8</span>if (strpos($_SERVER[&#39;HTTP_X_FORWARDED_PROTO&#39;], &#39;https&#39;) !== false)
 <span class="ln"> 9</span>       $_SERVER[&#39;HTTPS&#39;]=&#39;on&#39;;
 <span class="ln">10</span>.....
-</code></pre></div><h2 id="actualización-del-cms">Actualización del CMS</h2>
+</code></pre></div><h2 id="actualización-de-wordpress">Actualización de Wordpress</h2>
 <p>Como es normal los proveedores de <strong>hosting</strong> facilitan un servicio FTP para subir archivos, la forma de actualización también se hacia via FTP, los nuevos servidores no contaba con un servicio FTP, la primera solución que se quiso dar fue utilizando SSH (con claves publicas y privadas), pero al final se opto por realizar las actualizaciones de forma directa desde <strong>Wordpress</strong>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="ln">1</span># wp-config.php
 <span class="ln">2</span>....
 <span class="ln">3</span>/** Actualizaciones directas */
 <span class="ln">4</span>define(‘FS_METHOD’,’direct’);
-</code></pre></div><h2 id="ocultar-información-sensible--del-cms">Ocultar Información Sensible  del CMS</h2>
+</code></pre></div><h2 id="ocultar-información-sensible--de-wordpress">Ocultar Información Sensible  de Wordpress</h2>
 <p>Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utliza y el archivo <strong>readme.html</strong>, para estos casos se tuvo que modificar dos archivos <strong>functions.php</strong> y <strong>.htaccess (o en su defecto el archivo de configuración del servidor web)</strong>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="ln">1</span># wp-content/themes/nombre_tema/functions.php
 <span class="ln">2</span>....
@@ -222,7 +222,11 @@
 <span class="ln">11</span>location readme\.html{
 <span class="ln">12</span>	deny  all;
 <span class="ln">13</span>}
-</code></pre></div>
+</code></pre></div><h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://wordpress.org/">Wordpress</a></li>
+<li><a href="https://codex.wordpress.org/">Wordpress Codex</a></li>
+</ul>
 
 <h3>Traducciones:</h3>
 <ul>
@@ -333,8 +337,8 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">Series</h2>
       <nav class="tags_nav">
-        <a href='https://blog.fcch.xyz/series/gu%C3%ADa-web/' class="post_tag button button_translucent" title="guía-web">
-          GUÍA-WEB
+        <a href='https://blog.fcch.xyz/series/web/' class="post_tag button button_translucent" title="web">
+          WEB
           <span class="button_tally">4</span>
         </a>
         

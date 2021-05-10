@@ -197,10 +197,10 @@
 <p><img src="/images/hugo-github/github-page.png" alt=""></p>
 <p>Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.</p>
 <h2 id="configuración-dns-bind9">Configuración DNS Bind9</h2>
-<p>Muchos utilizan servidores DNS de los proveedores como <a href="https://www.digitalocean.com/"><strong>Digital Ocean</strong></a> o <a href="https://www.linode.com/"><strong>Linode</strong></a> para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:</p>
+<p>Muchos utilizan servidores DNS de los proveedores como <a href="https://www.digitalocean.com/"><strong>digitalocean</strong></a> o <a href="https://www.linode.com/"><strong>linode</strong></a> para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:</p>
 <p><img src="/images/hugo-github/bind9-subdomain.png" alt=""></p>
 <p>Puede verificar los nuevos registros con el siguiente comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ dig subdominio.dominio.info +nostats +nocomments +nocmd
 </code></pre></div><h2 id="iniciamos-el-sitio-con-hugo">Iniciamos el Sitio con Hugo</h2>
 <p>Luego de crear el repositorio en Github, debemos clonarlo, ingresar al repositorio y crear una nueva rama de desarrollo:</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git clone URL/repositorio
@@ -232,7 +232,7 @@
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo server --watch -D
 </code></pre></div><p>Cuando verificamos que todo este bien, iniciamos la generación del sitio.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo -D 
-</code></pre></div><p>El comando anterior creara los archivos estáticos en el directorio <strong>public</strong>.</p>
+</code></pre></div><p>El comando anterior crea los archivos estáticos en el directorio <strong>public</strong>.</p>
 <p>Con los archivos estáticos generados, subimos los cambios realizados en <a href="https://gohugo.io/"><strong>Hugo</strong></a> a la rama <strong>development</strong>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git add .
 <span class="ln">2</span>$ git commit -m &#39;Initialized hugo site&#39;
@@ -369,8 +369,8 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">Series</h2>
       <nav class="tags_nav">
-        <a href='https://blog.fcch.xyz/series/gu%C3%ADa-web/' class="post_tag button button_translucent" title="guía-web">
-          GUÍA-WEB
+        <a href='https://blog.fcch.xyz/series/web/' class="post_tag button button_translucent" title="web">
+          WEB
           <span class="button_tally">4</span>
         </a>
         

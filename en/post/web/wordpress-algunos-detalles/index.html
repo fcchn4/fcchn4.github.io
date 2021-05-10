@@ -181,10 +181,10 @@
   </div>
 
     
-    <p>Estuve colaborando con algunas empresas que realizaban cambios en su sitios web, donde se utilizaba <a href="https://wordpress.org/">Wordpress</a> como <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> base, estos sitios web estaban siendo cambiados de servidor, actualizando a la versión mas actual o verificando actualizaciones en sus complementos, en el proceso se presentaron diferentes problemas, me toco ver la documentación oficial <a href="https://codex.wordpress.org/">Wordpress Codex</a> y en Google para darles solución.</p>
+    <p>I was collaborating with some companies that made changes to their websites, where <a href="https://wordpress.org/">Wordpress</a> was used as the base <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a>, these websites were being changed servers, updating to the most current version or verifying updates in their add-ons, in the process different problems arose , I had to see the official <a href="https://codex.wordpress.org/">Wordpress Codex</a> documentation and Google to give them a solution.</p>
 <p><img src="/images/wordpress-detalles/logo-wordpress-400.png" alt=""></p>
-<h2 id="migración-del-cms">Migración del CMS</h2>
-<p>Anteriormente los sitios web estaban alojados en proveedores de <strong>hosting (hospedaje web)</strong>, los nuevos servidores donde se encuentran actualmente alojados cuentan con servicios web realizando <strong>reverse-proxy</strong>  o <strong>balanceo de carga</strong>, para este caso fue necesario especificar algunas instancias en el archivo de configuración <strong>wp-config.php</strong> para que los archivos <strong>CSS</strong> y <strong>JS</strong> carguen de forma de correcta, otro problema que existió fue que la seguridad para el protocolo <strong>HTTPS</strong> mostraba el error de &quot;Contenido mixto&quot;, entonces la solución de estos problemas se agrego lo siguiente:</p>
+<h2 id="wordpress-migration">Wordpress Migration</h2>
+<p>Previously the websites were hosted by <strong>hosting providers (web hosting)</strong>, the new servers where they are currently hosted have web services performing <strong>reverse-proxy</strong> or <strong>load balancing</strong>, for this In case it was necessary to specify some instances in the configuration file <strong>wp-config.php</strong> so that the <strong>CSS</strong> and <strong>JS</strong> files load correctly, another problem that existed was that the security for the <strong>HTTPS</strong> protocol showed the error of &quot;Mixed content&quot;, then the solution of these problems was added the following:</p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="ln"> 1</span># wp-config.php
 <span class="ln"> 2</span>define( &#39;DB_COLLATE&#39;, &#39;&#39; );
 <span class="ln"> 3</span>.....
@@ -195,21 +195,21 @@
 <span class="ln"> 8</span>if (strpos($_SERVER[&#39;HTTP_X_FORWARDED_PROTO&#39;], &#39;https&#39;) !== false)
 <span class="ln"> 9</span>       $_SERVER[&#39;HTTPS&#39;]=&#39;on&#39;;
 <span class="ln">10</span>.....
-</code></pre></div><h2 id="actualización-del-cms">Actualización del CMS</h2>
-<p>Como es normal los proveedores de <strong>hosting</strong> facilitan un servicio FTP para subir archivos, la forma de actualización también se hacia via FTP, los nuevos servidores no contaba con un servicio FTP, la primera solución que se quiso dar fue utilizando SSH (con claves publicas y privadas), pero al final se opto por realizar las actualizaciones de forma directa desde <strong>Wordpress</strong>.</p>
+</code></pre></div><h2 id="wordpress-update">Wordpress Update</h2>
+<p>As is normal, <strong>hosting</strong> providers provide an FTP service to upload files, the update method was also done via FTP, the new servers did not have an FTP service, the first solution that was wanted was using SSH ( with public and private keys), but in the end it was decided to carry out the updates directly from <strong>Wordpress</strong>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="ln">1</span># wp-config.php
 <span class="ln">2</span>....
 <span class="ln">3</span>/** Actualizaciones directas */
 <span class="ln">4</span>define(‘FS_METHOD’,’direct’);
-</code></pre></div><h2 id="ocultar-información-sensible--del-cms">Ocultar Información Sensible  del CMS</h2>
-<p>Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utliza y el archivo <strong>readme.html</strong>, para estos casos se tuvo que modificar dos archivos <strong>functions.php</strong> y <strong>.htaccess (o en su defecto el archivo de configuración del servidor web)</strong>.</p>
+</code></pre></div><h2 id="hide-sensitive-wordpress-information">Hide Sensitive Wordpress Information</h2>
+<p>Another detail that existed was that sensitive CMS information was shown, such as the version used and the <strong>readme.html</strong> file, for these cases two files <strong>functions.php</strong> and <strong>.htaccess</strong> (or, failing that, the web server configuration file).</p>
 <div class="highlight"><pre class="chroma"><code class="language-php" data-lang="php"><span class="ln">1</span># wp-content/themes/nombre_tema/functions.php
 <span class="ln">2</span>....
 <span class="ln">3</span>/** Ocultar version */
 <span class="ln">4</span>remove_action(&#39;wp_head&#39;, &#39;wp_generator&#39;);
 <span class="ln">5</span>add_filter(&#39;the_generator&#39;, &#39;__return_false&#39;);
-</code></pre></div><p>La configuración se puede realizar en <strong>.htaccess</strong> como en el archivo de configuración del servidor web.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span>## Para Apache
+</code></pre></div><p>The configuration can be done in <strong>.htaccess</strong> as in the web server configuration file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span>## For Apache
 <span class="ln"> 2</span># .htaccess
 <span class="ln"> 3</span>....
 <span class="ln"> 4</span><span class="p">&lt;</span>Files readme.html&gt;
@@ -217,12 +217,16 @@
 <span class="ln"> 6</span>	Deny from all
 <span class="ln"> 7</span><span class="p">&lt;</span>/Files&gt;
 <span class="ln"> 8</span>
-<span class="ln"> 9</span>## Para Nginx
+<span class="ln"> 9</span>## For Nginx
 <span class="ln">10</span># dominio.conf
 <span class="ln">11</span>location readme\.html{
 <span class="ln">12</span>	deny  all;
 <span class="ln">13</span>}
-</code></pre></div>
+</code></pre></div><h2 id="references">References</h2>
+<ul>
+<li><a href="https://wordpress.org/">Wordpress</a></li>
+<li><a href="https://codex.wordpress.org/">Wordpress Codex</a></li>
+</ul>
 
 <h3>Translations:</h3>
 <ul>
@@ -333,8 +337,8 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">Series</h2>
       <nav class="tags_nav">
-        <a href='https://blog.fcch.xyz/en/series/web-guide/' class="post_tag button button_translucent" title="web-guide">
-          WEB-GUIDE
+        <a href='https://blog.fcch.xyz/en/series/web/' class="post_tag button button_translucent" title="web">
+          WEB
           <span class="button_tally">4</span>
         </a>
         

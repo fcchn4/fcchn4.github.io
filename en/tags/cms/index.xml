@@ -16,10 +16,10 @@
       <guid>https://blog.fcch.xyz/en/post/web/wordpress-algunos-detalles/</guid>
       <description>
         
-          &lt;p&gt;Estuve colaborando con algunas empresas que realizaban cambios en su sitios web, donde se utilizaba &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt; como &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt; base, estos sitios web estaban siendo cambiados de servidor, actualizando a la versión mas actual o verificando actualizaciones en sus complementos, en el proceso se presentaron diferentes problemas, me toco ver la documentación oficial &lt;a href=&#34;https://codex.wordpress.org/&#34;&gt;Wordpress Codex&lt;/a&gt; y en Google para darles solución.&lt;/p&gt;
+          &lt;p&gt;I was collaborating with some companies that made changes to their websites, where &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt; was used as the base &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt;, these websites were being changed servers, updating to the most current version or verifying updates in their add-ons, in the process different problems arose , I had to see the official &lt;a href=&#34;https://codex.wordpress.org/&#34;&gt;Wordpress Codex&lt;/a&gt; documentation and Google to give them a solution.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/wordpress-detalles/logo-wordpress-400.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;migración-del-cms&#34;&gt;Migración del CMS&lt;/h2&gt;
-&lt;p&gt;Anteriormente los sitios web estaban alojados en proveedores de &lt;strong&gt;hosting (hospedaje web)&lt;/strong&gt;, los nuevos servidores donde se encuentran actualmente alojados cuentan con servicios web realizando &lt;strong&gt;reverse-proxy&lt;/strong&gt;  o &lt;strong&gt;balanceo de carga&lt;/strong&gt;, para este caso fue necesario especificar algunas instancias en el archivo de configuración &lt;strong&gt;wp-config.php&lt;/strong&gt; para que los archivos &lt;strong&gt;CSS&lt;/strong&gt; y &lt;strong&gt;JS&lt;/strong&gt; carguen de forma de correcta, otro problema que existió fue que la seguridad para el protocolo &lt;strong&gt;HTTPS&lt;/strong&gt; mostraba el error de &amp;quot;Contenido mixto&amp;quot;, entonces la solución de estos problemas se agrego lo siguiente:&lt;/p&gt;
+&lt;h2 id=&#34;wordpress-migration&#34;&gt;Wordpress Migration&lt;/h2&gt;
+&lt;p&gt;Previously the websites were hosted by &lt;strong&gt;hosting providers (web hosting)&lt;/strong&gt;, the new servers where they are currently hosted have web services performing &lt;strong&gt;reverse-proxy&lt;/strong&gt; or &lt;strong&gt;load balancing&lt;/strong&gt;, for this In case it was necessary to specify some instances in the configuration file &lt;strong&gt;wp-config.php&lt;/strong&gt; so that the &lt;strong&gt;CSS&lt;/strong&gt; and &lt;strong&gt;JS&lt;/strong&gt; files load correctly, another problem that existed was that the security for the &lt;strong&gt;HTTPS&lt;/strong&gt; protocol showed the error of &amp;quot;Mixed content&amp;quot;, then the solution of these problems was added the following:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;# wp-config.php
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;define( &amp;#39;DB_COLLATE&amp;#39;, &amp;#39;&amp;#39; );
 &lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;.....
@@ -30,21 +30,21 @@
 &lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;if (strpos($_SERVER[&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;], &amp;#39;https&amp;#39;) !== false)
 &lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;       $_SERVER[&amp;#39;HTTPS&amp;#39;]=&amp;#39;on&amp;#39;;
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;.....
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;actualización-del-cms&#34;&gt;Actualización del CMS&lt;/h2&gt;
-&lt;p&gt;Como es normal los proveedores de &lt;strong&gt;hosting&lt;/strong&gt; facilitan un servicio FTP para subir archivos, la forma de actualización también se hacia via FTP, los nuevos servidores no contaba con un servicio FTP, la primera solución que se quiso dar fue utilizando SSH (con claves publicas y privadas), pero al final se opto por realizar las actualizaciones de forma directa desde &lt;strong&gt;Wordpress&lt;/strong&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wordpress-update&#34;&gt;Wordpress Update&lt;/h2&gt;
+&lt;p&gt;As is normal, &lt;strong&gt;hosting&lt;/strong&gt; providers provide an FTP service to upload files, the update method was also done via FTP, the new servers did not have an FTP service, the first solution that was wanted was using SSH ( with public and private keys), but in the end it was decided to carry out the updates directly from &lt;strong&gt;Wordpress&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# wp-config.php
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;....
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;/** Actualizaciones directas */
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;define(‘FS_METHOD’,’direct’);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ocultar-información-sensible--del-cms&#34;&gt;Ocultar Información Sensible  del CMS&lt;/h2&gt;
-&lt;p&gt;Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utliza y el archivo &lt;strong&gt;readme.html&lt;/strong&gt;, para estos casos se tuvo que modificar dos archivos &lt;strong&gt;functions.php&lt;/strong&gt; y &lt;strong&gt;.htaccess (o en su defecto el archivo de configuración del servidor web)&lt;/strong&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;hide-sensitive-wordpress-information&#34;&gt;Hide Sensitive Wordpress Information&lt;/h2&gt;
+&lt;p&gt;Another detail that existed was that sensitive CMS information was shown, such as the version used and the &lt;strong&gt;readme.html&lt;/strong&gt; file, for these cases two files &lt;strong&gt;functions.php&lt;/strong&gt; and &lt;strong&gt;.htaccess&lt;/strong&gt; (or, failing that, the web server configuration file).&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# wp-content/themes/nombre_tema/functions.php
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;....
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;/** Ocultar version */
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;remove_action(&amp;#39;wp_head&amp;#39;, &amp;#39;wp_generator&amp;#39;);
 &lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;add_filter(&amp;#39;the_generator&amp;#39;, &amp;#39;__return_false&amp;#39;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La configuración se puede realizar en &lt;strong&gt;.htaccess&lt;/strong&gt; como en el archivo de configuración del servidor web.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## Para Apache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The configuration can be done in &lt;strong&gt;.htaccess&lt;/strong&gt; as in the web server configuration file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## For Apache
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;# .htaccess
 &lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;....
 &lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;Files readme.html&amp;gt;
@@ -52,12 +52,16 @@
 &lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;	Deny from all
 &lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;/Files&amp;gt;
 &lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;## Para Nginx
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;## For Nginx
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;# dominio.conf
 &lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;location readme\.html{
 &lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;	deny  all;
 &lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codex.wordpress.org/&#34;&gt;Wordpress Codex&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
         
       </description>
     </item>
@@ -70,48 +74,48 @@
       <guid>https://blog.fcch.xyz/en/post/web/spip-otra-forma-instalar/</guid>
       <description>
         
-          &lt;p&gt;&lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; es un &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt; francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.&lt;/p&gt;
+          &lt;p&gt;&lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; is a French &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt; with simple installation, you do not need PHP and MySQL knowledge to proceed with the installation, it contains a web configuration menu and a simple administration space.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Existen diferentes métodos de instalación en el &lt;a href=&#34;https://www.spip.net/es_download&#34;&gt;sitio oficial&lt;/a&gt;, se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la &lt;strong&gt;Instalación Automática&lt;/strong&gt; que consiste en descargar el archivo &lt;strong&gt;spip_loader.php&lt;/strong&gt; y ejecutarlo desde un navegador web.&lt;/p&gt;
-&lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola linea de comando.&lt;/p&gt;
-&lt;h2 id=&#34;descarga-spip&#34;&gt;Descarga SPIP&lt;/h2&gt;
-&lt;p&gt;Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la maquina local o con algun proveedor de su preferencia.&lt;/p&gt;
-&lt;p&gt;Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama &lt;a href=&#34;https://www.spip.net/es_download&#34;&gt;&lt;strong&gt;spip-3.2&lt;/strong&gt;&lt;/a&gt; ejecutando:&lt;/p&gt;
+&lt;p&gt;There are different installation methods on the &lt;a href=&#34;https://www.spip.net/es_download&#34;&gt;official site&lt;/a&gt;, you can download the Zip file to unzip and prepare the installation, another way that exists is to start the &lt;strong&gt;Automatic Installation&lt;/strong&gt; which consists of downloading the &lt;strong&gt;spip_loader.php&lt;/strong&gt; file and running it from a web browser.&lt;/p&gt;
+&lt;p&gt;The method that is not used very often is to download from an official &lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; repository using the old and reliable Subversion (SVN), this installation method is the one that is commonly used to be able to perform updates automatically in a single line command.&lt;/p&gt;
+&lt;h2 id=&#34;download-spip&#34;&gt;Download SPIP&lt;/h2&gt;
+&lt;p&gt;We start the download assuming that you already have a web server on the local machine or with a provider of your choice.&lt;/p&gt;
+&lt;p&gt;To start the download of SPIP, to have the latest stable version 3.2.7 we must download the branch &lt;a href=&#34;https://www.spip.net/es_download&#34;&gt;&lt;strong&gt;spip-3.2&lt;/strong&gt;&lt;/a&gt; executing:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir spip-core
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ cd spip-core
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Luego de terminar la descarga tendremos una estructura de archivos similar a esta:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After finishing the download we will have a file structure similar to this:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-tree.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Para las actualizaciones del CMS solo se debe ejecutar:&lt;/li&gt;
+&lt;li&gt;For CMS updates, just run:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ svn upgrade
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ svn update 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Para realizar las personalizaciones en SPIP sin riesgo a perder la información después de las actualizaciones se deben crear los siguientes directorios:&lt;/li&gt;
+&lt;li&gt;To make the customizations in SPIP without risk of losing the information after the updates, the following directories must be created:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir -p plugins/auto
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ mkdir squelettes
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Para iniciar la instalación de SPIP necesitamos tener los directorios &lt;strong&gt;IMG&lt;/strong&gt;, &lt;strong&gt;tmp&lt;/strong&gt;, &lt;strong&gt;local&lt;/strong&gt; y &lt;strong&gt;config&lt;/strong&gt; con permisos 777 y en lo posible con usuario y grupo &lt;strong&gt;www-data&lt;/strong&gt;:&lt;/li&gt;
+&lt;li&gt;To start the installation of SPIP we need to have the &lt;strong&gt;IMG&lt;/strong&gt;, &lt;strong&gt;tmp&lt;/strong&gt;, &lt;strong&gt;local&lt;/strong&gt; and &lt;strong&gt;config&lt;/strong&gt; directories with &lt;strong&gt;777&lt;/strong&gt; permissions and if possible with the user and group &lt;strong&gt;www-data&lt;/strong&gt;:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ chown -R www-data:www-data IMG tmp local config
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ chmod 777 IMG tmp local config
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La estrutura de directorios debería quedar de la siguiente forma:&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The directory structure should be as follows:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;instalación-spip&#34;&gt;Instalación SPIP&lt;/h2&gt;
-&lt;p&gt;Con todos los preparativos listos podemos inicar la instalación de &lt;a href=&#34;https://www.spip.net/&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Para iniciar la instalación de &lt;a href=&#34;https://www.spip.net/&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; abrimos el navegador web de nuestra preferencia y dependiendo al caso ingresamos a la URL:&lt;/p&gt;
+&lt;h2 id=&#34;install-spip&#34;&gt;Install SPIP&lt;/h2&gt;
+&lt;p&gt;With all the preparations ready we can start the installation of &lt;a href=&#34;https://www.spip.net/&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To start the installation of &lt;a href=&#34;https://www.spip.net/&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; we open the web browser of our preference and depending on the case we enter the URL:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;http://localhost/ecrire&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://dominio.com/ecrire&#34;&gt;https://dominio.com/ecrire&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;http://IP-server/ecrire&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;esto depende de la configuración del servidor web, si esta trabajando en local o desde un proveedor del servicio.&lt;/p&gt;
+&lt;p&gt;this depends on the configuration of the web server, if you are working locally or from a service provider.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol&gt;
-&lt;li&gt;Cuando ingresamos a la URL tenemos la bienvenida de SPIP, donde se puede elegir el idioma de instalación:&lt;/li&gt;
+&lt;li&gt;When we enter the URL we have the SPIP welcome, where you can choose the installation language:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -119,17 +123,17 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Luego tenemos el menu para la conexión a la base de datos, en este caso se dan dos opciones, la primera es &lt;strong&gt;MySQL&lt;/strong&gt; donde se deben ingresar el usuario y contraseña.&lt;/li&gt;
+&lt;li&gt;Then we have the menu for the connection to the database, in this case two options are given, the first is &lt;strong&gt;MySQL&lt;/strong&gt; where the username and password must be entered.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rapida.&lt;/p&gt;
+&lt;p&gt;For the example we will use the SQLite3 database for a quick installation.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Ahora se crea una base de datos con nombre y prefijo &lt;a href=&#34;https://www.spip.net/&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, esto en el caso de no existir bases de datos existentes.&lt;/li&gt;
+&lt;li&gt;Now a database with &lt;a href=&#34;https://www.spip.net/&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; name and prefix is created, this in the case of no existing databases.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -137,7 +141,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;Luego de crear la base de datos ahora se debe ingresar los datos para el usuario que administrará el CMS.&lt;/li&gt;
+&lt;li&gt;After creating the database, you must now enter the data for the user who will manage the CMS.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -145,7 +149,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;Por último se despliega la instalación listando los plugins que son parte del CMS.&lt;/li&gt;
+&lt;li&gt;Finally, the installation is displayed, listing the plugins that are part of the CMS.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -153,11 +157,18 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Si todo salio bien deberiamos poder ingresar al espacio de Administración &lt;strong&gt;espacio privado&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;If everything went well, we should be able to enter the Administration area &lt;strong&gt;private area&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.spip.net/en_rubrique25.html&#34;&gt;&lt;strong&gt;SPIP Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://programmer.spip.net/&#34;&gt;&lt;strong&gt;SPIP Programmer&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://contrib.spip.net/&#34;&gt;&lt;strong&gt;SPIP Contrib&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.spip.net/?lang=fr&#34;&gt;&lt;strong&gt;SPIP Blog&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
         
       </description>
     </item>

@@ -182,48 +182,48 @@
   </div>
 
     
-    <p><a href="https://www.spip.net/">SPIP</a> es un <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.</p>
+    <p><a href="https://www.spip.net/">SPIP</a> is a French <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos">CMS</a> with simple installation, you do not need PHP and MySQL knowledge to proceed with the installation, it contains a web configuration menu and a simple administration space.</p>
 <p><img src="/images/spip-svn/logo-spip-400.png" alt=""></p>
-<p>Existen diferentes métodos de instalación en el <a href="https://www.spip.net/es_download">sitio oficial</a>, se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la <strong>Instalación Automática</strong> que consiste en descargar el archivo <strong>spip_loader.php</strong> y ejecutarlo desde un navegador web.</p>
-<p>El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de <a href="https://www.spip.net/">SPIP</a> utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola linea de comando.</p>
-<h2 id="descarga-spip">Descarga SPIP</h2>
-<p>Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la maquina local o con algun proveedor de su preferencia.</p>
-<p>Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama <a href="https://www.spip.net/es_download"><strong>spip-3.2</strong></a> ejecutando:</p>
+<p>There are different installation methods on the <a href="https://www.spip.net/es_download">official site</a>, you can download the Zip file to unzip and prepare the installation, another way that exists is to start the <strong>Automatic Installation</strong> which consists of downloading the <strong>spip_loader.php</strong> file and running it from a web browser.</p>
+<p>The method that is not used very often is to download from an official <a href="https://www.spip.net/">SPIP</a> repository using the old and reliable Subversion (SVN), this installation method is the one that is commonly used to be able to perform updates automatically in a single line command.</p>
+<h2 id="download-spip">Download SPIP</h2>
+<p>We start the download assuming that you already have a web server on the local machine or with a provider of your choice.</p>
+<p>To start the download of SPIP, to have the latest stable version 3.2.7 we must download the branch <a href="https://www.spip.net/es_download"><strong>spip-3.2</strong></a> executing:</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ mkdir spip-core
 <span class="ln">2</span>$ cd spip-core
 <span class="ln">3</span>$ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
-</code></pre></div><p>Luego de terminar la descarga tendremos una estructura de archivos similar a esta:</p>
+</code></pre></div><p>After finishing the download we will have a file structure similar to this:</p>
 <p><img src="/images/spip-svn/spip-tree.png" alt=""></p>
 <ul>
-<li>Para las actualizaciones del CMS solo se debe ejecutar:</li>
+<li>For CMS updates, just run:</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ svn upgrade
 <span class="ln">2</span>$ svn update 
 </code></pre></div><ul>
-<li>Para realizar las personalizaciones en SPIP sin riesgo a perder la información después de las actualizaciones se deben crear los siguientes directorios:</li>
+<li>To make the customizations in SPIP without risk of losing the information after the updates, the following directories must be created:</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ mkdir -p plugins/auto
 <span class="ln">2</span>$ mkdir squelettes
 </code></pre></div><ul>
-<li>Para iniciar la instalación de SPIP necesitamos tener los directorios <strong>IMG</strong>, <strong>tmp</strong>, <strong>local</strong> y <strong>config</strong> con permisos 777 y en lo posible con usuario y grupo <strong>www-data</strong>:</li>
+<li>To start the installation of SPIP we need to have the <strong>IMG</strong>, <strong>tmp</strong>, <strong>local</strong> and <strong>config</strong> directories with <strong>777</strong> permissions and if possible with the user and group <strong>www-data</strong>:</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ chown -R www-data:www-data IMG tmp local config
 <span class="ln">2</span>$ chmod 777 IMG tmp local config
-</code></pre></div><p>La estrutura de directorios debería quedar de la siguiente forma:</p>
+</code></pre></div><p>The directory structure should be as follows:</p>
 <p><img src="/images/spip-svn/spip-tree-complete.png" alt=""></p>
-<h2 id="instalación-spip">Instalación SPIP</h2>
-<p>Con todos los preparativos listos podemos inicar la instalación de <a href="https://www.spip.net/"><strong>SPIP</strong></a>.</p>
-<p>Para iniciar la instalación de <a href="https://www.spip.net/"><strong>SPIP</strong></a> abrimos el navegador web de nuestra preferencia y dependiendo al caso ingresamos a la URL:</p>
+<h2 id="install-spip">Install SPIP</h2>
+<p>With all the preparations ready we can start the installation of <a href="https://www.spip.net/"><strong>SPIP</strong></a>.</p>
+<p>To start the installation of <a href="https://www.spip.net/"><strong>SPIP</strong></a> we open the web browser of our preference and depending on the case we enter the URL:</p>
 <ul>
 <li>http://localhost/ecrire</li>
 <li><a href="https://dominio.com/ecrire">https://dominio.com/ecrire</a></li>
 <li>http://IP-server/ecrire</li>
 </ul>
-<p>esto depende de la configuración del servidor web, si esta trabajando en local o desde un proveedor del servicio.</p>
+<p>this depends on the configuration of the web server, if you are working locally or from a service provider.</p>
 <ul>
 <li>
 <ol>
-<li>Cuando ingresamos a la URL tenemos la bienvenida de SPIP, donde se puede elegir el idioma de instalación:</li>
+<li>When we enter the URL we have the SPIP welcome, where you can choose the installation language:</li>
 </ol>
 </li>
 </ul>
@@ -231,17 +231,17 @@
 <ul>
 <li>
 <ol start="2">
-<li>Luego tenemos el menu para la conexión a la base de datos, en este caso se dan dos opciones, la primera es <strong>MySQL</strong> donde se deben ingresar el usuario y contraseña.</li>
+<li>Then we have the menu for the connection to the database, in this case two options are given, the first is <strong>MySQL</strong> where the username and password must be entered.</li>
 </ol>
 </li>
 </ul>
 <p><img src="/images/spip-svn/spip-demo-02.png" alt=""></p>
-<p>Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rapida.</p>
+<p>For the example we will use the SQLite3 database for a quick installation.</p>
 <p><img src="/images/spip-svn/spip-demo-03.png" alt=""></p>
 <ul>
 <li>
 <ol start="3">
-<li>Ahora se crea una base de datos con nombre y prefijo <a href="https://www.spip.net/"><strong>SPIP</strong></a>, esto en el caso de no existir bases de datos existentes.</li>
+<li>Now a database with <a href="https://www.spip.net/"><strong>SPIP</strong></a> name and prefix is created, this in the case of no existing databases.</li>
 </ol>
 </li>
 </ul>
@@ -249,7 +249,7 @@
 <ul>
 <li>
 <ol start="4">
-<li>Luego de crear la base de datos ahora se debe ingresar los datos para el usuario que administrará el CMS.</li>
+<li>After creating the database, you must now enter the data for the user who will manage the CMS.</li>
 </ol>
 </li>
 </ul>
@@ -257,7 +257,7 @@
 <ul>
 <li>
 <ol start="5">
-<li>Por último se despliega la instalación listando los plugins que son parte del CMS.</li>
+<li>Finally, the installation is displayed, listing the plugins that are part of the CMS.</li>
 </ol>
 </li>
 </ul>
@@ -265,11 +265,18 @@
 <ul>
 <li>
 <ol start="6">
-<li>Si todo salio bien deberiamos poder ingresar al espacio de Administración <strong>espacio privado</strong>.</li>
+<li>If everything went well, we should be able to enter the Administration area <strong>private area</strong>.</li>
 </ol>
 </li>
 </ul>
 <p><img src="/images/spip-svn/spip-demo-07.png" alt=""></p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.spip.net/en_rubrique25.html"><strong>SPIP Official Website</strong></a></li>
+<li><a href="https://programmer.spip.net/"><strong>SPIP Programmer</strong></a></li>
+<li><a href="https://contrib.spip.net/"><strong>SPIP Contrib</strong></a></li>
+<li><a href="https://blog.spip.net/?lang=fr"><strong>SPIP Blog</strong></a></li>
+</ul>
 
 <h3>Translations:</h3>
 <ul>
@@ -380,8 +387,8 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">Series</h2>
       <nav class="tags_nav">
-        <a href='https://blog.fcch.xyz/en/series/web-guide/' class="post_tag button button_translucent" title="web-guide">
-          WEB-GUIDE
+        <a href='https://blog.fcch.xyz/en/series/web/' class="post_tag button button_translucent" title="web">
+          WEB
           <span class="button_tally">4</span>
         </a>
         

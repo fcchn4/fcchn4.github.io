@@ -182,78 +182,78 @@
   </div>
 
     
-    <p>Desde hace un tiempo estuve intentando crear un blog personal, la primera idea fue usar algún <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"><strong>CMS</strong></a> conocido como <a href="https://es.wordpress.org/"><strong>Wordpress</strong></a> o <a href="https://www.drupal.org/"><strong>Drupal</strong></a> pero ninguno llego a gustarme, luego use <a href="https://www.spip.net/es_rubrique23.html"><strong>SPIP</strong></a> por un tiempo donde pude aprender mucho de este <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"><strong>CMS</strong></a> Francés, pero mantener un sitio de solo publicaciones con texto y algunas imágenes no era el mas apropiado.</p>
+    <p>For some time I was trying to create a personal blog, the first idea was to use a <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"><strong>CMS</strong></a> known as <a href="https://es.wordpress.org/"><strong>Wordpress</strong></a> or <a href="https://www.drupal.org/"><strong>Drupal</strong></a> but I didn't like any of them, then I used <a href="https://www.spip.net/es_rubrique23.html"><strong>SPIP</strong></a> for a while where I could learn a lot about this French <a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"><strong>CMS</strong></a>, but keep a site of only publications with text and some images was not the most appropriate.</p>
 <p><img src="/images/hugo-github/logo-hugo-github-400.png" alt=""></p>
-<p>Luego estuve viendo los blogs de amigos y el que me llamo la atención fue de <a href="https://blog.donkeysharp.xyz/"><strong>donkeysharp</strong></a> donde se utiliza <a href="https://gohugo.io/"><strong>Hugo Framework</strong></a>, un generador páginas estáticas a partir de plantillas predeterminadas, también utiliza <a href="https://pages.github.com/"><strong>Github Pages</strong></a> que te permite crear un sitio estático en un subdominio del tipo <strong>usuario.github.io</strong>, el mismo también te permite crear un sitio con un dominio o subdominio personal de la forma <strong><a href="http://www.dominio.info">www.dominio.info</a></strong> o también <strong>blog.dominio.info</strong>, con esta información me puse a trabajar en el nuevo blog.</p>
-<h2 id="github-y-github-pages">Github y Github Pages</h2>
-<p>El primer paso fue crear un nuevo repositorio en Github, algunas guías recomiendan que el repositorio tenga el nombre de la forma <strong>usuario.github.io</strong>, en mi caso solo utilice un subdomino personal.</p>
+<p>Then I was looking at the blogs of friends and the one that caught my attention was <a href="https://blog.donkeysharp.xyz/"><strong>donkeysharp</strong></a> where <a href="https://gohugo.io/"><strong>Hugo Framework</strong></a> is used, a static page generator from default templates, it also uses <a href="https://pages.github.com/"><strong>Github Pages</strong></a> that allows you to create a static site in a user type <strong>usuario.github.io</strong>, it also allows you to create a site with a personal domain or subdomain in the form <strong><a href="http://www.dominio.info">www.dominio.info</a></strong> or also <strong>blog.dominio.info</strong>, with this information I started to work on the new blog.</p>
+<h2 id="github-and-github-pages">Github and Github Pages</h2>
+<p>The first step was to create a new repository on Github, some guides recommend that the repository has the name of the form <strong>user.github.io</strong>, in my case just use a personal sub-domain.</p>
 <ul>
-<li><strong>Creando el Repositorio Nuevo</strong></li>
+<li><strong>Creating the New Repository</strong></li>
 </ul>
 <p><img src="/images/hugo-github/github-repo.png" alt=""></p>
 <ul>
-<li><strong>Configurando el Repositorio</strong></li>
+<li><strong>Configuring the Repository</strong></li>
 </ul>
 <p><img src="/images/hugo-github/github-page.png" alt=""></p>
-<p>Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.</p>
-<h2 id="configuración-dns-bind9">Configuración DNS Bind9</h2>
-<p>Muchos utilizan servidores DNS de los proveedores como <a href="https://www.digitalocean.com/"><strong>Digital Ocean</strong></a> o <a href="https://www.linode.com/"><strong>Linode</strong></a> para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:</p>
+<p>With these two steps completed we will have the repository and the subdomain with the user ready to work, in the case of the personal subdomain, the necessary records should be created in the DNS server.</p>
+<h2 id="configuration-dns-bind9">Configuration DNS Bind9</h2>
+<p>Many use DNS servers from providers such as <a href="https://www.digitalocean.com/"><strong>digitalocean</strong></a> or <a href="https://www.linode.com/"><strong>linode</strong></a> to manage their domain, in the case of using Bind9 the following records must be created:</p>
 <p><img src="/images/hugo-github/bind9-subdomain.png" alt=""></p>
-<p>Puede verificar los nuevos registros con el siguiente comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
-</code></pre></div><h2 id="iniciamos-el-sitio-con-hugo">Iniciamos el Sitio con Hugo</h2>
-<p>Luego de crear el repositorio en Github, debemos clonarlo, ingresar al repositorio y crear una nueva rama de desarrollo:</p>
+<p>You can check the new records with the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ dig subdominio.dominio.info +nostats +nocomments +nocmd
+</code></pre></div><h2 id="start-hugo-website">Start Hugo Website</h2>
+<p>After creating the repository on Github, we must clone it, enter the repository and create a new development branch:</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git clone URL/repositorio
 <span class="ln">2</span>$ cd hugo-static-site
 <span class="ln">3</span>$ git checkout -b development
 <span class="ln">4</span>$ echo public <span class="p">&gt;</span> .gitignore
 <span class="ln">5</span>$ git push origin development
-</code></pre></div><p>Luego se debe crear la rama maestra que será independiente de la rama de  desarrollo, la maestra se usará para publicar el sitio.</p>
+</code></pre></div><p>Then the master branch must be created that will be independent from the development branch, the master branch will be used to publish the site.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git checkout --orphan master
 <span class="ln">2</span>$ git reset --hard
 <span class="ln">3</span>$ echo &#39;<span class="p">&lt;</span>h1<span class="p">&gt;</span>Hello World<span class="p">&lt;</span>/h1<span class="p">&gt;</span>&#39; <span class="p">&gt;</span> index.html
 <span class="ln">4</span>$ git commit -am <span class="s2">&#34;First index.html&#34;</span>
 <span class="ln">5</span>$ git push origin master
 <span class="ln">6</span>$ git checkout development
-</code></pre></div><p>Con las ramas creadas y clasificadas podemos iniciar con crear las plantillas con <a href="https://gohugo.io/"><strong>Hugo</strong></a>.</p>
+</code></pre></div><p>With the branches created and classified we can start with creating the templates with <a href="https://gohugo.io/"><strong>Hugo</strong></a>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ cd ..
 <span class="ln">2</span>$ hugo new site hugo-static-site --force
 <span class="ln">3</span>$ cd hugo-static-site
-</code></pre></div><p>También se debe hacer que el directorio <strong>public</strong> haga referencia a la rama <strong>master</strong>.</p>
+</code></pre></div><p>The <strong>public</strong> directory must also be made to reference the <strong>master</strong> branch.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git worktree add -B master public origin/master
-</code></pre></div><p>Para inicializar el nuevo sitio instalamos un tema de nuestra preferencia, para el ejemplo utilizaremos el tema <a href="https://themes.gohugo.io/hugo-goa/"><strong>goa</strong></a>.</p>
+</code></pre></div><p>To initialize the new site we install a theme of our preference, for the example we will use the <a href="https://themes.gohugo.io/hugo-goa/"><strong>goa</strong></a> theme.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git submodule add https://github.com/shenoybr/hugo-goa themes/goa
-</code></pre></div><p>Agregamos el nueva tema al archivo <strong>config.toml</strong>.</p>
+</code></pre></div><p>We add the new theme to the <strong>config.toml</strong> file.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ echo &#39;theme = <span class="s2">&#34;goa&#34;</span>&#39; <span class="p">&gt;&gt;</span> config.toml
-</code></pre></div><p>Creamos el nuevo y primer post.</p>
+</code></pre></div><p>We create the new and first post.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo new posts/first-post.md
-</code></pre></div><p>Y asegúrese de que en el archivo creado esté marcado como <strong>draft: false</strong> para que pueda publicarse.</p>
-<p>Con todo lo anterior podemos hacer una previsualización de todo lo trabajado con el servidor web que proporciona <a href="https://gohugo.io/"><strong>Hugo</strong></a>.</p>
+</code></pre></div><p>And make sure that in the created file it is marked as <strong>draft: false</strong> so that it can be published.</p>
+<p>With all of the above we can make a preview of everything worked with the web server provided by <a href="https://gohugo.io/"><strong>Hugo</strong></a>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo server --watch -D
-</code></pre></div><p>Cuando verificamos que todo este bien, iniciamos la generación del sitio.</p>
+</code></pre></div><p>When we verify that everything is fine, we start the generation of the site.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ hugo -D 
-</code></pre></div><p>El comando anterior creara los archivos estáticos en el directorio <strong>public</strong>.</p>
-<p>Con los archivos estáticos generados, subimos los cambios realizados en <a href="https://gohugo.io/"><strong>Hugo</strong></a> a la rama <strong>development</strong>.</p>
+</code></pre></div><p>The above command creates the static files in the <strong>public</strong> directory.</p>
+<p>With the static files generated, we upload the changes made to <a href="https://gohugo.io/"><strong>Hugo</strong></a> to the <strong>development</strong> branch.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git add .
 <span class="ln">2</span>$ git commit -m &#39;Initialized hugo site&#39;
 <span class="ln">3</span>$ git push origin development
-</code></pre></div><p>Como el directorio <strong>public</strong> apunta a otra rama: <strong>master</strong>, debemos subir los archivos estáticos también.</p>
+</code></pre></div><p>Since the public directory points to another branch: <strong>master</strong>, we must upload the static files as well.</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ cd public
 <span class="ln">2</span>$ git add .
 <span class="ln">3</span>$ git commit -m &#39;publishing first-post&#39;
 <span class="ln">4</span>$ git push origin master
-</code></pre></div><p>Con estos ultimos pasos deberiamos tener un sitio web funcionando en el subdominio configurado en Github Pages o con el subdominio personal.</p>
-<h2 id="clonación-del-repositorio">Clonación del repositorio</h2>
+</code></pre></div><p>With these last steps we should have a website working in the subdomain configured in Github Pages or with the personal subdomain.</p>
+<h2 id="clone-repository">Clone Repository</h2>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git clone -b nombre_branch --recurse-submodules URL/repositorio
 <span class="ln">2</span>$ cd repositorio
 <span class="ln">3</span>$ mkdir public
 <span class="ln">4</span>$ git worktree add -B master public origin/master
-</code></pre></div><h2 id="eliminando-submodulos">Eliminando submodulos</h2>
+</code></pre></div><h2 id="delete-submodules">Delete Submodules</h2>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ git submodule deinit -f -- ruta/nombre_submodulo
 <span class="ln">2</span>$ rm -rf .git/modules/ruta/nombre_submodulo
 <span class="ln">3</span>$ git rm -f ruta/submodulo
 <span class="ln">4</span>$ git submodule status
-</code></pre></div><h2 id="referencias">Referencias</h2>
+</code></pre></div><h2 id="references">References</h2>
 <ul>
 <li><a href="https://blog.donkeysharp.xyz/"><strong>Donkeysharp</strong></a></li>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/"><strong>Hosting on Github</strong></a></li>
@@ -369,8 +369,8 @@
     <div>
       <h2 class="mt-4 taxonomy" id="series-section">Series</h2>
       <nav class="tags_nav">
-        <a href='https://blog.fcch.xyz/en/series/web-guide/' class="post_tag button button_translucent" title="web-guide">
-          WEB-GUIDE
+        <a href='https://blog.fcch.xyz/en/series/web/' class="post_tag button button_translucent" title="web">
+          WEB
           <span class="button_tally">4</span>
         </a>
         

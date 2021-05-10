@@ -16,10 +16,10 @@
       <guid>https://blog.fcch.xyz/en/post/web/wordpress-algunos-detalles/</guid>
       <description>
         
-          &lt;p&gt;Estuve colaborando con algunas empresas que realizaban cambios en su sitios web, donde se utilizaba &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt; como &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt; base, estos sitios web estaban siendo cambiados de servidor, actualizando a la versión mas actual o verificando actualizaciones en sus complementos, en el proceso se presentaron diferentes problemas, me toco ver la documentación oficial &lt;a href=&#34;https://codex.wordpress.org/&#34;&gt;Wordpress Codex&lt;/a&gt; y en Google para darles solución.&lt;/p&gt;
+          &lt;p&gt;I was collaborating with some companies that made changes to their websites, where &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt; was used as the base &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt;, these websites were being changed servers, updating to the most current version or verifying updates in their add-ons, in the process different problems arose , I had to see the official &lt;a href=&#34;https://codex.wordpress.org/&#34;&gt;Wordpress Codex&lt;/a&gt; documentation and Google to give them a solution.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/wordpress-detalles/logo-wordpress-400.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;migración-del-cms&#34;&gt;Migración del CMS&lt;/h2&gt;
-&lt;p&gt;Anteriormente los sitios web estaban alojados en proveedores de &lt;strong&gt;hosting (hospedaje web)&lt;/strong&gt;, los nuevos servidores donde se encuentran actualmente alojados cuentan con servicios web realizando &lt;strong&gt;reverse-proxy&lt;/strong&gt;  o &lt;strong&gt;balanceo de carga&lt;/strong&gt;, para este caso fue necesario especificar algunas instancias en el archivo de configuración &lt;strong&gt;wp-config.php&lt;/strong&gt; para que los archivos &lt;strong&gt;CSS&lt;/strong&gt; y &lt;strong&gt;JS&lt;/strong&gt; carguen de forma de correcta, otro problema que existió fue que la seguridad para el protocolo &lt;strong&gt;HTTPS&lt;/strong&gt; mostraba el error de &amp;quot;Contenido mixto&amp;quot;, entonces la solución de estos problemas se agrego lo siguiente:&lt;/p&gt;
+&lt;h2 id=&#34;wordpress-migration&#34;&gt;Wordpress Migration&lt;/h2&gt;
+&lt;p&gt;Previously the websites were hosted by &lt;strong&gt;hosting providers (web hosting)&lt;/strong&gt;, the new servers where they are currently hosted have web services performing &lt;strong&gt;reverse-proxy&lt;/strong&gt; or &lt;strong&gt;load balancing&lt;/strong&gt;, for this In case it was necessary to specify some instances in the configuration file &lt;strong&gt;wp-config.php&lt;/strong&gt; so that the &lt;strong&gt;CSS&lt;/strong&gt; and &lt;strong&gt;JS&lt;/strong&gt; files load correctly, another problem that existed was that the security for the &lt;strong&gt;HTTPS&lt;/strong&gt; protocol showed the error of &amp;quot;Mixed content&amp;quot;, then the solution of these problems was added the following:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;# wp-config.php
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;define( &amp;#39;DB_COLLATE&amp;#39;, &amp;#39;&amp;#39; );
 &lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;.....
@@ -30,21 +30,21 @@
 &lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;if (strpos($_SERVER[&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;], &amp;#39;https&amp;#39;) !== false)
 &lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;       $_SERVER[&amp;#39;HTTPS&amp;#39;]=&amp;#39;on&amp;#39;;
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;.....
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;actualización-del-cms&#34;&gt;Actualización del CMS&lt;/h2&gt;
-&lt;p&gt;Como es normal los proveedores de &lt;strong&gt;hosting&lt;/strong&gt; facilitan un servicio FTP para subir archivos, la forma de actualización también se hacia via FTP, los nuevos servidores no contaba con un servicio FTP, la primera solución que se quiso dar fue utilizando SSH (con claves publicas y privadas), pero al final se opto por realizar las actualizaciones de forma directa desde &lt;strong&gt;Wordpress&lt;/strong&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wordpress-update&#34;&gt;Wordpress Update&lt;/h2&gt;
+&lt;p&gt;As is normal, &lt;strong&gt;hosting&lt;/strong&gt; providers provide an FTP service to upload files, the update method was also done via FTP, the new servers did not have an FTP service, the first solution that was wanted was using SSH ( with public and private keys), but in the end it was decided to carry out the updates directly from &lt;strong&gt;Wordpress&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# wp-config.php
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;....
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;/** Actualizaciones directas */
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;define(‘FS_METHOD’,’direct’);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ocultar-información-sensible--del-cms&#34;&gt;Ocultar Información Sensible  del CMS&lt;/h2&gt;
-&lt;p&gt;Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utliza y el archivo &lt;strong&gt;readme.html&lt;/strong&gt;, para estos casos se tuvo que modificar dos archivos &lt;strong&gt;functions.php&lt;/strong&gt; y &lt;strong&gt;.htaccess (o en su defecto el archivo de configuración del servidor web)&lt;/strong&gt;.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;hide-sensitive-wordpress-information&#34;&gt;Hide Sensitive Wordpress Information&lt;/h2&gt;
+&lt;p&gt;Another detail that existed was that sensitive CMS information was shown, such as the version used and the &lt;strong&gt;readme.html&lt;/strong&gt; file, for these cases two files &lt;strong&gt;functions.php&lt;/strong&gt; and &lt;strong&gt;.htaccess&lt;/strong&gt; (or, failing that, the web server configuration file).&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# wp-content/themes/nombre_tema/functions.php
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;....
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;/** Ocultar version */
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;remove_action(&amp;#39;wp_head&amp;#39;, &amp;#39;wp_generator&amp;#39;);
 &lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;add_filter(&amp;#39;the_generator&amp;#39;, &amp;#39;__return_false&amp;#39;);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La configuración se puede realizar en &lt;strong&gt;.htaccess&lt;/strong&gt; como en el archivo de configuración del servidor web.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## Para Apache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The configuration can be done in &lt;strong&gt;.htaccess&lt;/strong&gt; as in the web server configuration file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## For Apache
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;# .htaccess
 &lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;....
 &lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;Files readme.html&amp;gt;
@@ -52,12 +52,16 @@
 &lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;	Deny from all
 &lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;/Files&amp;gt;
 &lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;## Para Nginx
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;## For Nginx
 &lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;# dominio.conf
 &lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;location readme\.html{
 &lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;	deny  all;
 &lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codex.wordpress.org/&#34;&gt;Wordpress Codex&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
         
       </description>
     </item>

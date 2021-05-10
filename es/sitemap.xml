@@ -63,11 +63,6 @@
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/series/gu%C3%ADa-web/</loc>
-    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.fcch.xyz/tags/hugo/</loc>
     <lastmod>2021-01-20T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -154,6 +149,21 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://blog.fcch.xyz/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/web/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/series/web/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/series/web/"
                 />
   </url>
   
