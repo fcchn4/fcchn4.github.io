@@ -19,8 +19,8 @@
   weight = -107
 
 [[main]]
-  name = "Variedad"
-  url = "post/variety/"
+  name = "Nube"
+  url = "post/cloud/"
   weight = -106
 
 [[main]]
