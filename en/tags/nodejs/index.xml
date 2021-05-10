@@ -37,7 +37,11 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;we-test-the-installation-without-sudo&#34;&gt;We test the Installation without sudo&lt;/h2&gt;
 &lt;p&gt;To test the new functionality we execute the same command without prepending &lt;strong&gt;sudo&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ npm install -g &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodejs.org/en/docs/guides/&#34;&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodejs.org/api/errors.html&#34;&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
         
       </description>
     </item>
