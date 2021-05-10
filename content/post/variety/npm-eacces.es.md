@@ -13,7 +13,7 @@ categories = [
     "Infraestructura",
     "Servidores",
 ]
-series = ["Guía Servidores"]
+series = ["Servidores"]
 thumbnail = "images/npm-eacces/npm-error-img.png"
 +++
 Me toco probar el despliegue de aplicaciones **NodeJS** donde necesitaba instalar paquetes globales, instalar paquetes **NodeJS** globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.
@@ -25,7 +25,7 @@ Me toco probar el despliegue de aplicaciones **NodeJS** donde necesitaba instala
 Al ejecutar el comando:
 
 ```cmd
-    $ npm install -g <NOMBRE_PAQUETE>
+$ npm install -g <NOMBRE_PAQUETE>
 ```
 
 Se presento un problema de permisos **npm ERR! code EACCES** y para solucionar el problema de forma inmediata era ejecutarlo con **sudo**, esta práctica es común pero no es lo que buscamos.
@@ -37,7 +37,7 @@ Buscando encontré que la solución para evitar el comando sudo es cambiar manua
 Creamos una carpeta nueva donde se instalarán los nuevos programas:
 
 ```cmd
-    $ mkdir ~/.npm-global
+$ mkdir ~/.npm-global
 ```
 
 ## Configure NPM para la Nueva Ruta del Directorio
@@ -45,15 +45,15 @@ Creamos una carpeta nueva donde se instalarán los nuevos programas:
 Con el comando [**npm**](https://nodejs.org/en/) cambiamos la ruta del directorio de instalación de paquetes:
 
 ```cmd
-    $ npm config set prefix '~/.npm-global'
+$ npm config set prefix '~/.npm-global'
 ```
 
-## Variable de Entorno
+## Variables de Entorno
 
 En algunos casos, hay guías que te sugieren crear un archivo **.profile** para crear la variable, en este ejemplo agregamos la variable al archivo **.bashrc**:
 
 ```cmd
-    $ echo 'NPM_CONFIG_PREFIX=~/.npm-global' >> ~/.bashrc
+$ echo 'NPM_CONFIG_PREFIX=~/.npm-global' >> ~/.bashrc
 ```
 
 ## Actualizamos Variables
@@ -61,7 +61,7 @@ En algunos casos, hay guías que te sugieren crear un archivo **.profile** para 
 Actualizamos las variables con el siguiente comando:
 
 ```cmd
-    $ source ~/.bashrc
+$ source ~/.bashrc
 ```
 
 ## Probamos la Instalación sin sudo
@@ -69,5 +69,5 @@ Actualizamos las variables con el siguiente comando:
 Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer **sudo**:
 
 ```cmd
-    $ npm install -g <NOMBRE_PAQUETE>
+$ npm install -g <NOMBRE_PAQUETE>
 ```

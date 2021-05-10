@@ -13,61 +13,62 @@ categories = [
     "Infrastructure",
     "Servers",
 ]
-series = ["Servers Guide"]
+series = ["Servers"]
 thumbnail = "images/npm-eacces/npm-error-img.png"
 +++
-Me toco probar el despliegue de aplicaciones **NodeJS** donde necesitaba instalar paquetes globales, instalar paquetes **NodeJS** globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.
+
+I had to test the implementation of a **NodeJS** application where I needed to install global packages, the installation of global **NodeJS** packages in the operating system does not seem to be a good practice, so we found a solution to this problem.
 
 <!--more-->
 
 ![](/images/npm-eacces/npm-error-img.png)
 
-Al ejecutar el comando:
+When running the command:
 
 ```cmd
-    $ npm install -g <NOMBRE_PAQUETE>
+$ npm install -g <NOMBRE_PAQUETE>
 ```
 
-Se presento un problema de permisos **npm ERR! code EACCES** y para solucionar el problema de forma inmediata era ejecutarlo con **sudo**, esta práctica es común pero no es lo que buscamos.
+The problem is for permissions with **npm ERR! code EACCES** and to solve the problem immediately it was to execute it with **sudo**, this practice is common but it's not a good practice.
 
-Buscando encontré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de [**NPM**](https://nodejs.org/en/).
+Searching I found that the solution to avoid the sudo command is to manually change the default **NPM** directory.
 
-## Creación del Nuevo Directorio
+## Create the New Directory
 
-Creamos una carpeta nueva donde se instalarán los nuevos programas:
+We create a new folder where the new programs will be installed:
 
 ```cmd
-    $ mkdir ~/.npm-global
+$ mkdir ~/.npm-global
 ```
 
-## Configure NPM para la Nueva Ruta del Directorio
+## Configure NPM for the New Directory Path
 
-Con el comando [**npm**](https://nodejs.org/en/) cambiamos la ruta del directorio de instalación de paquetes:
+With the [**npm**](https://nodejs.org/en/) command we change the path of the package installation directory:
 
 ```cmd
-    $ npm config set prefix '~/.npm-global'
+$ npm config set prefix '~/.npm-global'
 ```
 
-## Variable de Entorno
+## Environment Variables
 
-En algunos casos, hay guías que te sugieren crear un archivo **.profile** para crear la variable, en este ejemplo agregamos la variable al archivo **.bashrc**:
+In some cases, there are guides that suggest you create a **.profile** file to create the variable, in this example we add the variable to the **.bashrc** file:
 
 ```cmd
-    $ echo 'NPM_CONFIG_PREFIX=~/.npm-global' >> ~/.bashrc
+$ echo 'NPM_CONFIG_PREFIX=~/.npm-global' >> ~/.bashrc
 ```
 
-## Actualizamos Variables
+## Update Variables
 
-Actualizamos las variables con el siguiente comando:
+We update the variables with the following command:
 
 ```cmd
-    $ source ~/.bashrc
+$ source ~/.bashrc
 ```
 
-## Probamos la Instalación sin sudo
+## We test the Installation without sudo
 
-Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer **sudo**:
+To test the new functionality we execute the same command without prepending **sudo**:
 
 ```cmd
-    $ npm install -g <NOMBRE_PAQUETE>
+$ npm install -g <NOMBRE_PAQUETE>
 ```
