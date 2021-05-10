@@ -188,7 +188,7 @@
 <p>Buscando me encontré con <a href="https://fedoraproject.org/wiki/Git_quick_reference"><strong>__git_ps1</strong></a> que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración <strong>~/.bashrc</strong>, y quedo de esta forma:</p>
 <p>Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:</p>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span># Instalción Git
-<span class="ln">2</span>dnf install git
+<span class="ln">2</span>$ sudo dnf install git
 <span class="ln">3</span>
 <span class="ln">4</span># Script /usr/share/git-core/contrib/completion/git-prompt.sh  
 </code></pre></div><p>Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:</p>
@@ -213,23 +213,23 @@
 </code></pre></div><h2 id="docker-ce">Docker CE</h2>
 <p>Luego de instalar Docker CE desde el repositorio <a href="https://docs.docker.com/engine/install/fedora/"><strong>oficial</strong></a> y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.</p>
 <p>Para solucionar el problema agregamos la interface <strong>docker0</strong> en la zona de confianza del firewall.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>firewall-cmd --permanent --zone=trusted --add-interface=docker0
-<span class="ln">2</span>firewall-cmd --reload
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+<span class="ln">2</span>$ sudo firewall-cmd --reload
 </code></pre></div><h2 id="cinnamon">Cinnamon</h2>
 <p>Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es <strong>NOUVEAU</strong> controlador de código abierto, instalamos el controlador <strong>NVIDIA Corporation GF119 [NVS 310]</strong> para mejorar el rendimiento en el vídeo.</p>
 <p><strong>NVIDIA Driver 390xxx - repositorio RPMFusion</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span>## Habilitando NVIDIA RPM Fusion
-<span class="ln"> 2</span>dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln"> 1</span># Habilitando NVIDIA RPM Fusion
+<span class="ln"> 2</span>$ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 <span class="ln"> 3</span>
-<span class="ln"> 4</span>## Listando controladores disponibles
-<span class="ln"> 5</span>dnf repository-packages rpmfusion-nonfree-nvidia-driver info
+<span class="ln"> 4</span># Listando controladores disponibles
+<span class="ln"> 5</span>$ sudo dnf repository-packages rpmfusion-nonfree-nvidia-driver info
 <span class="ln"> 6</span>
-<span class="ln"> 7</span>## Instalación del controlador
-<span class="ln"> 8</span>dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
-<span class="ln"> 9</span>dnf install xorg-x11-drv-nvidia-390xx-cuda
+<span class="ln"> 7</span># Instalación del controlador
+<span class="ln"> 8</span>$ sudo dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
+<span class="ln"> 9</span>$ sudo dnf install xorg-x11-drv-nvidia-390xx-cuda
 <span class="ln">10</span>
-<span class="ln">11</span>## Pruebas y control de rendimiento
-<span class="ln">12</span>dnf install -y gwe
+<span class="ln">11</span># Pruebas y control de rendimiento
+<span class="ln">12</span>$ sudo dnf install -y gwe
 </code></pre></div><h2 id="referencias">Referencias</h2>
 <ul>
 <li><a href="https://docs.docker.com/engine/install/fedora/"><strong>Docker Fedora</strong></a></li>
@@ -352,7 +352,7 @@
         
         <a href='https://blog.fcch.xyz/series/gu%C3%ADa-servidores/' class="post_tag button button_translucent" title="guía-servidores">
           GUÍA-SERVIDORES
-          <span class="button_tally">3</span>
+          <span class="button_tally">2</span>
         </a>
         
         <a href='https://blog.fcch.xyz/series/fcch-blog/' class="post_tag button button_translucent" title="fcch-blog">
@@ -360,8 +360,13 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/series/gu%C3%ADa-fedora/' class="post_tag button button_translucent" title="guía-fedora">
-          GUÍA-FEDORA
+        <a href='https://blog.fcch.xyz/series/fedora/' class="post_tag button button_translucent" title="fedora">
+          FEDORA
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://blog.fcch.xyz/series/servidores/' class="post_tag button button_translucent" title="servidores">
+          SERVIDORES
           <span class="button_tally">1</span>
         </a>
         

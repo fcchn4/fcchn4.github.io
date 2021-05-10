@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fedora on Fcch Blog | Apuntes, guías y recordatorios</title>
+    <link>https://blog.fcch.xyz/series/fedora/</link>
+    <description>Recent content in Fedora on Fcch Blog | Apuntes, guías y recordatorios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fcch Blog | 2019 - 2021</copyright>
+    <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/series/fedora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apuntes Fedora 32</title>
+      <link>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</guid>
+      <description>
+        
+          &lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prompt-terminal&#34;&gt;Prompt Terminal&lt;/h2&gt;
+&lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
+&lt;p&gt;Buscando me encontré con &lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedo de esta forma:&lt;/p&gt;
+&lt;p&gt;Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# Instalción Git
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo dnf install git
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;# Script /usr/share/git-core/contrib/completion/git-prompt.sh  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Descripción de los datos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;- __git_ps1: Variable del script.
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;- t: Obtiene la hora, minutos y segundos.
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;- W: Muestra el nombre de carpeta actual.
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;- source: Ruta del script __git_ps1.
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;- export GIT_PS1_SHOWCOLORHINTS: Color para los datos git.
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;- export GIT_PS1_SHOWDIRTYSTATE: Muestra el estado actual del repo.
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;- export GIT_PS1_SHOWUNTRACKEDFILES: Mostrar archivos sin seguimiento.
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;- export PROMPT_COMMAND: Personalización del prompt.
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;- \[\033[0;31m\]: Color Rojo.
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;- \[\033[0;33m\]: Color Amarillo.
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;- \[\033[0;32m\]: Color Verde.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Prompt personalizado ~/.bashrc&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /usr/share/git-core/contrib/completion/git-prompt.sh
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWCOLORHINTS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWDIRTYSTATE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWUNTRACKEDFILES&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;__git_ps1 &amp;#34;\[\033[01;33m\]\t\[\033[00m\] \[\033[01;31m\][\W]\[\033[00m\]&amp;#34; &amp;#34; \\\$ &amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-ce&#34;&gt;Docker CE&lt;/h2&gt;
+&lt;p&gt;Luego de instalar Docker CE desde el repositorio &lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;oficial&lt;/strong&gt;&lt;/a&gt; y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.&lt;/p&gt;
+&lt;p&gt;Para solucionar el problema agregamos la interface &lt;strong&gt;docker0&lt;/strong&gt; en la zona de confianza del firewall.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo firewall-cmd --reload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;cinnamon&#34;&gt;Cinnamon&lt;/h2&gt;
+&lt;p&gt;Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es &lt;strong&gt;NOUVEAU&lt;/strong&gt; controlador de código abierto, instalamos el controlador &lt;strong&gt;NVIDIA Corporation GF119 [NVS 310]&lt;/strong&gt; para mejorar el rendimiento en el vídeo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NVIDIA Driver 390xxx - repositorio RPMFusion&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;# Habilitando NVIDIA RPM Fusion
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;# Listando controladores disponibles
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ sudo dnf repository-packages rpmfusion-nonfree-nvidia-driver info
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;# Instalación del controlador
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ sudo dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;$ sudo dnf install xorg-x11-drv-nvidia-390xx-cuda
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;# Pruebas y control de rendimiento
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;$ sudo dnf install -y gwe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;Docker Fedora&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;Fedora Git Reference&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
