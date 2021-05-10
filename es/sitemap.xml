@@ -263,12 +263,12 @@
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/series/gu%C3%ADa-servidores/</loc>
+    <loc>https://blog.fcch.xyz/categories/infraestructura/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/categories/infraestructura/</loc>
+    <loc>https://blog.fcch.xyz/series/servidores/</loc>
     <lastmod>2020-12-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -353,6 +353,11 @@
   </url>
   
   <url>
+    <loc>https://blog.fcch.xyz/series/gu%C3%ADa-servidores/</loc>
+    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -410,11 +415,6 @@
                 hreflang="es"
                 href="https://blog.fcch.xyz/post/variety/npm-eacces/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/series/servidores/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>

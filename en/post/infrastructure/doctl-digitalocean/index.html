@@ -183,48 +183,48 @@
   </div>
 
     
-    <p><strong><a href="https://digitalocean.com">Digitalocean</a></strong> también dispone de un CLI para manejar la infraestructura &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">DOCTL</a></strong>&quot;, que tiene un funcionamiento similar a <strong><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html">AWS CLI</a></strong>, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.</p>
+    <p><strong><a href="https://digitalocean.com">Digitalocean</a></strong> also has a CLI to manage the &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">DOCTL</a></strong>&quot; infrastructure, which works similarly to <strong><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html">AWS CLI</a></strong>, this tool allows us to avoid using the web interface of this provider.</p>
 <p><img src="/images/doctl-digitalocean/doctl.png" alt=""></p>
-<h2 id="instalación-del-binario">Instalación del Binario</h2>
-<p>Lo primero que toco hacer es descarga e instalar el binario, esto para la versión actual <strong>1.54.0</strong>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ cd ~
-<span class="ln">2</span>  $ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
-<span class="ln">3</span>  $ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
-<span class="ln">4</span>  $ sudo mv ~/doctl /usr/local/bin
-</code></pre></div><h2 id="crear-un-token-api">Crear un Token API</h2>
-<p>Antes de utilizar &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot;, es necesario crear un Token API de <strong><a href="https://digitalocean.com">digitalocean</a></strong> para su cuenta, con acceso de lectura y escritura desde la página <strong>Aplicaciones</strong> y <strong>API</strong> en el panel de control.</p>
+<h2 id="install-binary-tools">Install Binary Tools</h2>
+<p>The first thing I have to do is download and install the binary, this for the current version <strong>1.54.0</strong>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ cd ~
+<span class="ln">2</span>$ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
+<span class="ln">3</span>$ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
+<span class="ln">4</span>$ sudo mv ~/doctl /usr/local/bin
+</code></pre></div><h2 id="create-token-api">Create Token API</h2>
+<p>Before using &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot;, you need to create a <strong><a href="https://digitalocean.com">digitalocean</a></strong> API Token for your account, with read and write access from the <strong>Applications</strong> and <strong>API</strong> page in the control panel.</p>
 <p><img src="/images/doctl-digitalocean/token-api-name.png" alt=""></p>
-<p>La cadena del token solo se muestra una vez, entonces copie y guarde en un lugar seguro.</p>
+<p>The token string is only shown once, so please copy and keep in a safe place.</p>
 <p><img src="/images/doctl-digitalocean/token-api-value.png" alt=""></p>
-<h2 id="acceso-a-cuenta-con-token-api-y-doctl">Acceso a cuenta con Token API y doctl</h2>
-<p>El Token API otorga acceso a &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot; para su cuenta de <strong><a href="https://digitalocean.com">digitalocean</a></strong>. Pase la cadena del Token cuando se solicite, al ejecutar el comando de &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot;.</p>
-<p>Puede utilizar varias cuentas, utilizando diferentes nombres, para esta función el parámetro <strong>--context</strong> lo permite.</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ doctl auth init --context <span class="p">&lt;</span>NOMBRE_CUENTA1&gt;
-<span class="ln">2</span>  $ doctl auth init --context <span class="p">&lt;</span>NOMBRE_CUENTA2&gt;
-<span class="ln">3</span>  $ doctl auth init --context <span class="p">&lt;</span>NOMBRE_CUENTA3&gt;
-</code></pre></div><p>Se puede listar todas las cuentas con el siguiente comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ doctl auth list
-</code></pre></div><p>Para cambiar entre las diferentes cuentas existentes:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ doctl auth switch --context <span class="p">&lt;</span>NOMBRE_CUENTA_DISPONIBLE&gt;
-</code></pre></div><h2 id="ejemplos-de-uso">Ejemplos de uso</h2>
-<p>Podemos utilizar &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot; en diferentes casos.</p>
+<h2 id="account-access-with-token-api-and-doctl">Account Access with Token API and doctl</h2>
+<p>The Token API grants access to &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot; for your <strong><a href="https://digitalocean.com">digitalocean</a></strong> account. Pass the Token string when prompted, when executing the &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot; command.</p>
+<p>You can use multiple accounts, using different names, for this function the <strong>--context</strong> parameter allows it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl auth init --context <span class="p">&lt;</span>NOMBRE_CUENTA1&gt;
+<span class="ln">2</span>$ doctl auth init --context <span class="p">&lt;</span>NOMBRE_CUENTA2&gt;
+<span class="ln">3</span>$ doctl auth init --context <span class="p">&lt;</span>NOMBRE_CUENTA3&gt;
+</code></pre></div><p>All accounts can be listed with the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl auth list
+</code></pre></div><p>To switch between the different existing accounts:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl auth switch --context <span class="p">&lt;</span>NOMBRE_CUENTA_DISPONIBLE&gt;
+</code></pre></div><h2 id="examples-of-use">Examples of use</h2>
+<p>We can use &quot;<strong><a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/">doctl</a></strong>&quot; in different cases.</p>
 <ul>
-<li><strong>Verificar Cuenta</strong></li>
+<li><strong>Account verify</strong></li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ doctl account get
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl account get
 </code></pre></div><ul>
-<li><strong>Listar Droplets</strong></li>
+<li><strong>List Droplets</strong></li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ doctl compute droplet list
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute droplet list
 </code></pre></div><ul>
-<li><strong>Crear Droplet</strong></li>
+<li><strong>Create Droplet</strong></li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <span class="p">&lt;</span>NOMBRE_DROPLET&gt;
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <span class="p">&lt;</span>NOMBRE_DROPLET&gt;
 </code></pre></div><ul>
-<li><strong>Eliminar Droplet</strong></li>
+<li><strong>Delete Droplet</strong></li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>  $ doctl compute droplet delete <span class="p">&lt;</span>ID_DROPLET&gt;
-</code></pre></div><h2 id="referencias">Referencias</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute droplet delete <span class="p">&lt;</span>ID_DROPLET&gt;
+</code></pre></div><h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.digitalocean.com/docs/apis-clis/"><strong>APIS CLIS</strong></a></li>
 <li><a href="https://www.digitalocean.com/docs/apis-clis/doctl/"><strong>DOCTL CLI</strong></a></li>
@@ -344,8 +344,8 @@
           <span class="button_tally">4</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/en/series/servers-guide/' class="post_tag button button_translucent" title="servers-guide">
-          SERVERS-GUIDE
+        <a href='https://blog.fcch.xyz/en/series/servers/' class="post_tag button button_translucent" title="servers">
+          SERVERS
           <span class="button_tally">2</span>
         </a>
         
@@ -359,8 +359,8 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/en/series/servers/' class="post_tag button button_translucent" title="servers">
-          SERVERS
+        <a href='https://blog.fcch.xyz/en/series/servers-guide/' class="post_tag button button_translucent" title="servers-guide">
+          SERVERS-GUIDE
           <span class="button_tally">1</span>
         </a>
         
