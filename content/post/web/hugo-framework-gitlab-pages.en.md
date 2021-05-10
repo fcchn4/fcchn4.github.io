@@ -13,28 +13,28 @@ categories = [
     "web",
     "hugo",
 ]
-series = ["Web Guide"]
+series = ["Web"]
 thumbnail = "images/hugo-gitlab/hugo-gitlab.png"
 +++
-Una de las primeras ideas para tener un sitio web o blog es utilizar algún [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) como [**Wordpress**](https://es.wordpress.org/), [**Drupal**](https://www.drupal.org/) o el buen [**SPIP**](https://www.spip.net/es_rubrique23.html), todos estos desarrollados con [**PHP**](https://www.php.net) y requieren de una base de datos para funcionar, un servidor o hosting.
+One of the first ideas to have a website or blog is to use a [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) like [**Wordpress**](https://es.wordpress.org/), [**Drupal**](https://www.drupal.org/) or the good [**SPIP**](https://www.spip.net/es_rubrique23.html), all of these developed with [**PHP**](https://www.php.net) and require a database to function, a server or hosting.
 
 <!--more-->
 
 ![](/images/hugo-gitlab/hugo-gitlab.png)
 
-Una de las soluciones que existen para evitar comprar un hosting o servidor, es generar sitios estáticos con alguna herramienta como [**Jekyll**](https://jekyllrb.com/) o mi preferido [**Hugo Framework**](https://gohugo.io/), estos combinados con [**Gitlab Pages**](https://about.gitlab.com/stages-devops-lifecycle/pages/) o [**Github Pages**](https://pages.github.com/).
+One of the solutions that exist to avoid buying a hosting or server is to generate static sites with a tool like [**Jekyll**](https://jekyllrb.com/) or my favorite [**Hugo Framework**](https://gohugo.io/), these combined with [**Gitlab Pages**](https://about.gitlab.com/stages-devops-lifecycle/pages/) or [**Github Pages**](https://pages.github.com/).
 
-Ya hicimos un post para crear un blog con [**Hugo Framework + Github Pages**](https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/), en esta oportunidad haremos un pequeño demo para utilizar **Hugo Framework + Gitlab Pages**, utilizando el dominio por defecto como **USUARIO.gitlab.io** y luego personalizaremos el dominio a uno propio.
+We already made a post to create a blog with [**Hugo Framework + Github Pages**](https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/), this time we will make a small demo to use **Hugo Framework + Gitlab Pages**, using the default domain as **USUARIO.gitlab.io** and then we will customize the domain to our own.
 
-## Paso 1: Iniciamos el proyecto Hugo en local
+## Step 1: We started the Hugo Project Locally
 
-Luego de instalar [**Hugo Framework**](https://github.com/gohugoio/hugo/releases), podemos utilizar el comando **hugo** desde una terminal para inicializar el proyecto.
+After installing [**Hugo Framework**](https://github.com/gohugoio/hugo/releases), we can use the **hugo** command from a terminal to initialize the project.
 
 ```cmd
 $ hugo new site usuario.gitlab.io --force
 ```
 
-### - Preparamos el Sitio Web y archivos Git
+### - We prepare the Website and Git files
 
 ```cmd
 $ cd usuario.gitlab.io
@@ -45,32 +45,32 @@ $ echo 'theme = "theme_name"' >> config.toml
 $ hugo new posts/first-post.md
 ```
 
-### - Requerimientos Gitlab Pages
+### - Gitlab Pages Requirements
 
-Antes de subir el proyecto a un repositorio [**Gitlab**](https://gitlab.com), editamos el archivo **.gitmodules** para agregar URL relativas.
+Before uploading the project to a [**Gitlab**](https://gitlab.com) repository, we edit the **.gitmodules** file to add relative URLs.
 
-[**Gitlab**](https://gitlab.com) utiliza HTTPS para obtener código fuente en los **runner** compartidos, entonces:
+[**Gitlab**](https://gitlab.com) uses HTTPS to get source code on shared **runners**, so:
 
 ```cmd
-## Para un fork que pertenece al mismo grupo o usuario
+## For a fork that belongs to the same group or user
 $ vim .gitmodules
 -- [submodule "themes/theme_name"]
 -- path = themes/theme_name
--- url = ../../dev_name/theme_name.git ## Línea nueva
+-- url = ../../dev_name/theme_name.git ## New line
 
-## Para un proyecto fuera del grupo o usuario
+## For a project outside the group or user
 $ vim .gitmodules
 -- [submodule "themes/theme_name"]
 -- path = themes/theme_name
--- url = https://gitlab.com/dev_name/theme_name.git ## Línea nueva
+-- url = https://gitlab.com/dev_name/theme_name.git ## New line
 
-## Actualizamos los submódulos
+## Update submodules
 $ git submodule update
 ```
 
 ### - Gitlab CI
 
-Creamos el archivo **.gitlab-ci.yml** para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo seria el siguiente:
+We create the **.gitlab-ci.yml** file to deploy the project when pushing to the repository, the content for this file would be the following:
 
 ```cmd
 $ vim .gitlab-ci.yml
@@ -95,11 +95,11 @@ $ vim .gitlab-ci.yml
 --   - master
 ```
 
-### - Repositorio Gitlab
+### - Gitlab Repository
 
-Para crear el repositorio debemos hacerlo con el nombre **usuario.gitlab.io** donde ¨usuario¨ es el nombre de usuario de **Gitlab**, tambien se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio **grupo.gitlab.io**.
+To create the repository we must do it with the name **usuario.gitlab.io** where ¨user¨ is the **Gitlab** username, you can also create a group and use the group name for the name of repository **grupo.gitlab.io**.
 
-Luego de crear el repositorio agreamos el código, luego de agregar el URL al proyecto:
+After creating the repository we add the code, after adding the URL to the project:
 
 ```cmd
 $ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
@@ -108,57 +108,57 @@ $ git commit -m 'Hugo gitlab page'
 $ git push origin master
 ```
 
-### - Verificamos el despliegue en el repositorio
+### - We verify the deployment in the repository
 
-Si todo salió bien deberiamos tener una salida similar a la imagen, **Repositorio -> CI/CD -> Pipelines**.
+If everything went well we should have an output similar to the image, **Repositorio -> CI/CD -> Pipelines**.
 
 ![](/images/hugo-gitlab/gitlab-ci-deploy.png)
 
-Luego podemos verificar con la URL: **http://usuario.gitlab.io**
+Then we can check with the URL: **http://usuario.gitlab.io**
 
-## Paso 2: Gitlab Dominio personalizado
+## Step 2: Gitlab Custom Domain
 
-Con lo realizado anteriormente y si no existió algún problema podemos personalizar el dominio a uno que elijamos nosotros, para el ejemplo utilizaremos el dominio **dominio.com** y **www.dominio.com**.
+With what has been done previously and if there was no problem we can customize the domain to one of our own choosing, for the example we will use the domain **domain.com** and **www.domain.com**.
 
-### - Creando Dominios
+### - Creating Domains
 
-En **Gitlab** podemos ingresar al espacio **Repositorio -> Settings -> Papes** y agregar el dominio y subdominio elegidos:
+In **Gitlab** we can enter the **Repository -> Settings -> Papes** space and add the chosen domain and subdomain:
 
-- **Para dominio.com**
+- **For dominio.com**
 
 ![](/images/hugo-gitlab/gitlab-domain-add.png)
 
-- **Para www.dominio.com**
+- **For www.dominio.com**
 
 ![](/images/hugo-gitlab/gitlab-domain-add-www.png)
 
-Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.
+With these two steps completed we will have the repository and the subdomain with the user ready to work, in the case of the personal subdomain, the necessary records should be created in the DNS server.
 
-### - Registros DNS y Verificaciones Gitlab
+### - DNS Records and Gitlab Checks
 
-Para el dominio raiz **dominio.com** se debe crear un registro **A** con los siguientes datos:
+For the root domain **domain.com** an **A** record must be created with the following data:
 
 ![](/images/hugo-gitlab/gitlab-dns-record-root.png)
 
-El registro **A** para el dominio raiz **dominio.com** con el valor **35.185.44.232**, luego un registro **TXT** con los valores que facilita **Gitlab Pages**.
+The **A** record for the root domain **domain.com** with the value **35.185.44.232**, then a **TXT** record with the values provided by **Gitlab Pages**.
 
-Luego de crear los registros podemos verificar desde **Gitlab**:
+After creating the records we can verify from **Gitlab**:
 
 ![](/images/hugo-gitlab/gitlab-domain.png)
 
-Para el subdominio **www.dominio.com** se debe crear un registro **CNAME** con los valores que facilita **Gitlab Pages**.
+For the subdomain **www.dominio.com** a record **CNAME** must be created with the values provided by **Gitlab Pages**.
 
 ![](/images/hugo-gitlab/gitlab-subdominio-cname.png)
 
-El registro **CNAME** para el subdominio **www.dominio.com** con el valor "**usuario.gitlab.io.**", luego un registro **TXT** con los valores que facilita **Gitlab Pages**.
+The **CNAME** record for the subdomain **www.domain.com** with the value "**usuario.gitlab.io.**", then a **TXT** record with the values provided **Gitlab Pages**.
 
-## Clonación del repositorio
+## Clone repository
 
 ```cmd
 $ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
 ```
 
-## Eliminando submodulos
+## Delete submodules
 
 ```cmd
 $ git submodule deinit -f -- themes/theme_name
@@ -167,7 +167,7 @@ $ git rm -f themes/themes_name
 $ git submodule status
 ```
 
-## Referencias
+## References
 
 - [**Gitlab Stages DevOps**](https://about.gitlab.com/stages-devops-lifecycle/pages/)
 - [**Gitlab Pages**](https://docs.gitlab.com/ee/user/project/pages/)

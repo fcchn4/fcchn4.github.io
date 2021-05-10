@@ -13,7 +13,7 @@ categories = [
     "web",
     "spip",
 ]
-series = ["Guía Web"]
+series = ["Web"]
 thumbnail = "images/spip-svn/logo-spip-400.png"
 +++
 [SPIP](https://www.spip.net/) es un [CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.
@@ -63,7 +63,7 @@ $ chown -R www-data:www-data IMG tmp local config
 $ chmod 777 IMG tmp local config
 ```
 
-La estrutura de directorios debería quedar de la siguiente forma:
+La estructura de directorios debería quedar de la siguiente forma:
 
 ![](/images/spip-svn/spip-tree-complete.png)
 
@@ -106,3 +106,10 @@ Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rapi
 - 6. Si todo salio bien deberiamos poder ingresar al espacio de Administración **espacio privado**.
 
 ![](/images/spip-svn/spip-demo-07.png)
+
+## Referencias
+
+- [**SPIP Official Website**](https://www.spip.net/en_rubrique25.html)
+- [**SPIP Programmer**](https://programmer.spip.net/)
+- [**SPIP Contrib**](https://contrib.spip.net/)
+- [**SPIP Blog**](https://blog.spip.net/?lang=fr)

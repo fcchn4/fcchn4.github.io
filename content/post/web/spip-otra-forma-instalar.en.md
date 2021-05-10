@@ -13,24 +13,24 @@ categories = [
     "web",
     "spip",
 ]
-series = ["Web Guide"]
+series = ["Web"]
 thumbnail = "images/spip-svn/logo-spip-400.png"
 +++
-[SPIP](https://www.spip.net/) es un [CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.
+[SPIP](https://www.spip.net/) is a French [CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) with simple installation, you do not need PHP and MySQL knowledge to proceed with the installation, it contains a web configuration menu and a simple administration space.
 
 <!--more-->
 
 ![](/images/spip-svn/logo-spip-400.png)
 
-Existen diferentes métodos de instalación en el [sitio oficial](https://www.spip.net/es_download), se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la **Instalación Automática** que consiste en descargar el archivo **spip_loader.php** y ejecutarlo desde un navegador web.
+There are different installation methods on the [official site](https://www.spip.net/es_download), you can download the Zip file to unzip and prepare the installation, another way that exists is to start the **Automatic Installation** which consists of downloading the **spip_loader.php** file and running it from a web browser.
 
-El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de [SPIP](https://www.spip.net/) utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola linea de comando.
+The method that is not used very often is to download from an official [SPIP](https://www.spip.net/) repository using the old and reliable Subversion (SVN), this installation method is the one that is commonly used to be able to perform updates automatically in a single line command.
 
-## Descarga SPIP
+## Download SPIP
 
-Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la maquina local o con algun proveedor de su preferencia.
+We start the download assuming that you already have a web server on the local machine or with a provider of your choice.
 
-Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama [**spip-3.2**](https://www.spip.net/es_download) ejecutando:
+To start the download of SPIP, to have the latest stable version 3.2.7 we must download the branch [**spip-3.2**](https://www.spip.net/es_download) executing:
 
 ```cmd
 $ mkdir spip-core
@@ -38,71 +38,78 @@ $ cd spip-core
 $ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
 ```
 
-Luego de terminar la descarga tendremos una estructura de archivos similar a esta:
+After finishing the download we will have a file structure similar to this:
 
 ![](/images/spip-svn/spip-tree.png)
 
-- Para las actualizaciones del CMS solo se debe ejecutar:
+- For CMS updates, just run:
 
 ```cmd
 $ svn upgrade
 $ svn update 
 ```
 
-- Para realizar las personalizaciones en SPIP sin riesgo a perder la información después de las actualizaciones se deben crear los siguientes directorios:
+- To make the customizations in SPIP without risk of losing the information after the updates, the following directories must be created:
 
 ```cmd
 $ mkdir -p plugins/auto
 $ mkdir squelettes
 ```
 
-- Para iniciar la instalación de SPIP necesitamos tener los directorios **IMG**, **tmp**, **local** y **config** con permisos 777 y en lo posible con usuario y grupo **www-data**:
+- To start the installation of SPIP we need to have the **IMG**, **tmp**, **local** and **config** directories with **777** permissions and if possible with the user and group **www-data**:
 
 ```cmd
 $ chown -R www-data:www-data IMG tmp local config
 $ chmod 777 IMG tmp local config
 ```
 
-La estrutura de directorios debería quedar de la siguiente forma:
+The directory structure should be as follows:
 
 ![](/images/spip-svn/spip-tree-complete.png)
 
-## Instalación SPIP
+## Install SPIP
 
-Con todos los preparativos listos podemos inicar la instalación de [**SPIP**](https://www.spip.net/).
+With all the preparations ready we can start the installation of [**SPIP**](https://www.spip.net/).
 
-Para iniciar la instalación de [**SPIP**](https://www.spip.net/) abrimos el navegador web de nuestra preferencia y dependiendo al caso ingresamos a la URL:
+To start the installation of [**SPIP**](https://www.spip.net/) we open the web browser of our preference and depending on the case we enter the URL:
 
 - http://localhost/ecrire
 - https://dominio.com/ecrire
 - http://IP-server/ecrire
 
-esto depende de la configuración del servidor web, si esta trabajando en local o desde un proveedor del servicio.
+this depends on the configuration of the web server, if you are working locally or from a service provider.
 
-- 1. Cuando ingresamos a la URL tenemos la bienvenida de SPIP, donde se puede elegir el idioma de instalación:
+- 1. When we enter the URL we have the SPIP welcome, where you can choose the installation language:
 
 ![](/images/spip-svn/spip-demo-01.png)
 
-- 2. Luego tenemos el menu para la conexión a la base de datos, en este caso se dan dos opciones, la primera es **MySQL** donde se deben ingresar el usuario y contraseña.
+- 2. Then we have the menu for the connection to the database, in this case two options are given, the first is **MySQL** where the username and password must be entered.
 
 ![](/images/spip-svn/spip-demo-02.png)
 
-Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rapida.
+For the example we will use the SQLite3 database for a quick installation.
 
 ![](/images/spip-svn/spip-demo-03.png)
 
-- 3. Ahora se crea una base de datos con nombre y prefijo [**SPIP**](https://www.spip.net/), esto en el caso de no existir bases de datos existentes.
+- 3. Now a database with [**SPIP**](https://www.spip.net/) name and prefix is created, this in the case of no existing databases.
 
 ![](/images/spip-svn/spip-demo-04.png)
 
-- 4. Luego de crear la base de datos ahora se debe ingresar los datos para el usuario que administrará el CMS.
+- 4. After creating the database, you must now enter the data for the user who will manage the CMS.
 
 ![](/images/spip-svn/spip-demo-05.png)
 
-- 5. Por último se despliega la instalación listando los plugins que son parte del CMS.
+- 5. Finally, the installation is displayed, listing the plugins that are part of the CMS.
 
 ![](/images/spip-svn/spip-demo-06.png)
 
-- 6. Si todo salio bien deberiamos poder ingresar al espacio de Administración **espacio privado**.
+- 6. If everything went well, we should be able to enter the Administration area **private area**.
 
 ![](/images/spip-svn/spip-demo-07.png)
+
+## References
+
+- [**SPIP Official Website**](https://www.spip.net/en_rubrique25.html)
+- [**SPIP Programmer**](https://programmer.spip.net/)
+- [**SPIP Contrib**](https://contrib.spip.net/)
+- [**SPIP Blog**](https://blog.spip.net/?lang=fr)

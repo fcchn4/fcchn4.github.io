@@ -13,47 +13,47 @@ categories = [
     "web",
     "hugo",
 ]
-series = ["Web Guide"]
+series = ["Web"]
 aliases = ["web"]
 thumbnail = "images/hugo-github/logo-hugo-github-400.png"
 +++
-Desde hace un tiempo estuve intentando crear un blog personal, la primera idea fue usar algún [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) conocido como [**Wordpress**](https://es.wordpress.org/) o [**Drupal**](https://www.drupal.org/) pero ninguno llego a gustarme, luego use [**SPIP**](https://www.spip.net/es_rubrique23.html) por un tiempo donde pude aprender mucho de este [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) Francés, pero mantener un sitio de solo publicaciones con texto y algunas imágenes no era el mas apropiado.
+For some time I was trying to create a personal blog, the first idea was to use a [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos) known as [**Wordpress**](https://es.wordpress.org/) or [**Drupal**](https://www.drupal.org/) but I didn't like any of them, then I used [**SPIP**](https://www.spip.net/es_rubrique23.html) for a while where I could learn a lot about this French [**CMS**](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos), but keep a site of only publications with text and some images was not the most appropriate.
 
 <!--more-->
 
 ![](/images/hugo-github/logo-hugo-github-400.png)
 
-Luego estuve viendo los blogs de amigos y el que me llamo la atención fue de [**donkeysharp**](https://blog.donkeysharp.xyz/) donde se utiliza [**Hugo Framework**](https://gohugo.io/), un generador páginas estáticas a partir de plantillas predeterminadas, también utiliza [**Github Pages**](https://pages.github.com/) que te permite crear un sitio estático en un subdominio del tipo **usuario.github.io**, el mismo también te permite crear un sitio con un dominio o subdominio personal de la forma **www.dominio.info** o también **blog.dominio.info**, con esta información me puse a trabajar en el nuevo blog.
+Then I was looking at the blogs of friends and the one that caught my attention was [**donkeysharp**](https://blog.donkeysharp.xyz/) where [**Hugo Framework**](https://gohugo.io/) is used, a static page generator from default templates, it also uses [**Github Pages**](https://pages.github.com/) that allows you to create a static site in a user type **usuario.github.io**, it also allows you to create a site with a personal domain or subdomain in the form **www.dominio.info** or also **blog.dominio.info**, with this information I started to work on the new blog.
 
-## Github y Github Pages 
+## Github and Github Pages 
 
-El primer paso fue crear un nuevo repositorio en Github, algunas guías recomiendan que el repositorio tenga el nombre de la forma **usuario.github.io**, en mi caso solo utilice un subdomino personal.
+The first step was to create a new repository on Github, some guides recommend that the repository has the name of the form **user.github.io**, in my case just use a personal sub-domain.
 
-- **Creando el Repositorio Nuevo**
+- **Creating the New Repository**
 
 ![](/images/hugo-github/github-repo.png)
 
-- **Configurando el Repositorio**
+- **Configuring the Repository**
 
 ![](/images/hugo-github/github-page.png)
 
-Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.
+With these two steps completed we will have the repository and the subdomain with the user ready to work, in the case of the personal subdomain, the necessary records should be created in the DNS server.
 
-## Configuración DNS Bind9
+## Configuration DNS Bind9
 
-Muchos utilizan servidores DNS de los proveedores como [**Digital Ocean**](https://www.digitalocean.com/) o [**Linode**](https://www.linode.com/) para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:
+Many use DNS servers from providers such as [**digitalocean**](https://www.digitalocean.com/) or [**linode**](https://www.linode.com/) to manage their domain, in the case of using Bind9 the following records must be created:
 
 ![](/images/hugo-github/bind9-subdomain.png)
 
-Puede verificar los nuevos registros con el siguiente comando:
+You can check the new records with the following command:
 
 ```cmd
-    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
+$ dig subdominio.dominio.info +nostats +nocomments +nocmd
 ```
 
-## Iniciamos el Sitio con Hugo
+## Start Hugo Website
 
-Luego de crear el repositorio en Github, debemos clonarlo, ingresar al repositorio y crear una nueva rama de desarrollo:
+After creating the repository on Github, we must clone it, enter the repository and create a new development branch:
 
 ```cmd
 $ git clone URL/repositorio
@@ -63,7 +63,7 @@ $ echo public > .gitignore
 $ git push origin development
 ```
 
-Luego se debe crear la rama maestra que será independiente de la rama de  desarrollo, la maestra se usará para publicar el sitio.
+Then the master branch must be created that will be independent from the development branch, the master branch will be used to publish the site.
 
 ```cmd
 $ git checkout --orphan master
@@ -74,7 +74,7 @@ $ git push origin master
 $ git checkout development
 ```
 
-Con las ramas creadas y clasificadas podemos iniciar con crear las plantillas con [**Hugo**](https://gohugo.io/).
+With the branches created and classified we can start with creating the templates with [**Hugo**](https://gohugo.io/).
 
 ```cmd
 $ cd ..
@@ -82,47 +82,47 @@ $ hugo new site hugo-static-site --force
 $ cd hugo-static-site
 ```
 
-También se debe hacer que el directorio **public** haga referencia a la rama **master**.
+The **public** directory must also be made to reference the **master** branch.
 
 ```cmd
 $ git worktree add -B master public origin/master
 ```
 
-Para inicializar el nuevo sitio instalamos un tema de nuestra preferencia, para el ejemplo utilizaremos el tema [**goa**](https://themes.gohugo.io/hugo-goa/).
+To initialize the new site we install a theme of our preference, for the example we will use the [**goa**](https://themes.gohugo.io/hugo-goa/) theme.
 
 ```cmd
 $ git submodule add https://github.com/shenoybr/hugo-goa themes/goa
 ```
 
-Agregamos el nueva tema al archivo **config.toml**.
+We add the new theme to the **config.toml** file.
 
 ```cmd
 $ echo 'theme = "goa"' >> config.toml
 ```
 
-Creamos el nuevo y primer post.
+We create the new and first post.
 
 ```cmd
 $ hugo new posts/first-post.md
 ```
 
-Y asegúrese de que en el archivo creado esté marcado como **draft: false** para que pueda publicarse.
+And make sure that in the created file it is marked as **draft: false** so that it can be published.
 
-Con todo lo anterior podemos hacer una previsualización de todo lo trabajado con el servidor web que proporciona [**Hugo**](https://gohugo.io/).
+With all of the above we can make a preview of everything worked with the web server provided by [**Hugo**](https://gohugo.io/).
 
 ```cmd
 $ hugo server --watch -D
 ```
 
-Cuando verificamos que todo este bien, iniciamos la generación del sitio.
+When we verify that everything is fine, we start the generation of the site.
 
 ```cmd
 $ hugo -D 
 ```
 
-El comando anterior creara los archivos estáticos en el directorio **public**. 
+The above command creates the static files in the **public** directory.
 
-Con los archivos estáticos generados, subimos los cambios realizados en [**Hugo**](https://gohugo.io/) a la rama **development**.
+With the static files generated, we upload the changes made to [**Hugo**](https://gohugo.io/) to the **development** branch.
 
 ```cmd
 $ git add .
@@ -130,7 +130,7 @@ $ git commit -m 'Initialized hugo site'
 $ git push origin development
 ```
 
-Como el directorio **public** apunta a otra rama: **master**, debemos subir los archivos estáticos también.
+Since the public directory points to another branch: **master**, we must upload the static files as well.
 
 ```cmd
 $ cd public
@@ -139,9 +139,9 @@ $ git commit -m 'publishing first-post'
 $ git push origin master
 ```
 
-Con estos ultimos pasos deberiamos tener un sitio web funcionando en el subdominio configurado en Github Pages o con el subdominio personal.
+With these last steps we should have a website working in the subdomain configured in Github Pages or with the personal subdomain.
 
-## Clonación del repositorio
+## Clone Repository
 
 ```cmd
 $ git clone -b nombre_branch --recurse-submodules URL/repositorio
@@ -150,7 +150,7 @@ $ mkdir public
 $ git worktree add -B master public origin/master
 ```
 
-## Eliminando submodulos
+## Delete Submodules
 
 ```cmd
 $ git submodule deinit -f -- ruta/nombre_submodulo
@@ -159,7 +159,7 @@ $ git rm -f ruta/submodulo
 $ git submodule status
 ```
 
-## Referencias
+## References
 
 - [**Donkeysharp**](https://blog.donkeysharp.xyz/)
 - [**Hosting on Github**](https://gohugo.io/hosting-and-deployment/hosting-on-github/)

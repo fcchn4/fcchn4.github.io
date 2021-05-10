@@ -13,7 +13,7 @@ categories = [
     "web",
     "hugo",
 ]
-series = ["Guía Web"]
+series = ["Web"]
 aliases = ["web"]
 thumbnail = "images/hugo-github/logo-hugo-github-400.png"
 +++
@@ -41,14 +41,14 @@ Con estos dos pasos terminados tendremos el repositorio y el subdominio con el u
 
 ## Configuración DNS Bind9
 
-Muchos utilizan servidores DNS de los proveedores como [**Digital Ocean**](https://www.digitalocean.com/) o [**Linode**](https://www.linode.com/) para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:
+Muchos utilizan servidores DNS de los proveedores como [**digitalocean**](https://www.digitalocean.com/) o [**linode**](https://www.linode.com/) para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:
 
 ![](/images/hugo-github/bind9-subdomain.png)
 
 Puede verificar los nuevos registros con el siguiente comando:
 
 ```cmd
-    $ dig subdominio.dominio.info +nostats +nocomments +nocmd
+$ dig subdominio.dominio.info +nostats +nocomments +nocmd
 ```
 
 ## Iniciamos el Sitio con Hugo
@@ -120,7 +120,7 @@ Cuando verificamos que todo este bien, iniciamos la generación del sitio.
 $ hugo -D 
 ```
 
-El comando anterior creara los archivos estáticos en el directorio **public**. 
+El comando anterior crea los archivos estáticos en el directorio **public**. 
 
 Con los archivos estáticos generados, subimos los cambios realizados en [**Hugo**](https://gohugo.io/) a la rama **development**.
 
