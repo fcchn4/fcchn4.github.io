@@ -11,7 +11,7 @@ tags = [
 categories = [
     "gnu-linux",
 ]
-series = ["Fedora Guide"]
+series = ["Fedora"]
 thumbnail = "images/fedora-32/fedora32-400.jpg"
 +++
 When after update my Operating System [**Fedora 30**](https://getfedora.org/es/) to [**Fedora 32**](https://getfedora.org/es/), I was solving some problems with Docker CE, I custom the Prompt in my Console and change [**Gnome 3.36**](https://www.gnome.org/) to [**Cinnamon 4.4**](https://es.wikipedia.org/wiki/Cinnamon).
@@ -22,35 +22,36 @@ When after update my Operating System [**Fedora 30**](https://getfedora.org/es/)
 
 ## Prompt Terminal
 
-Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar [**Oh-my-bash**](https://github.com/ohmybash/oh-my-bash), que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.
+Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective is not use [**Oh-my-bash**](https://github.com/ohmybash/oh-my-bash), which is a set of scripts to customize the prompt where you can choose between various stiles options.
 
-Buscando me encontré con [**__git_ps1**](https://fedoraproject.org/wiki/Git_quick_reference) que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración **~/.bashrc**, y quedo de esta forma: 
+Searching, I found [**__git_ps1**](https://fedoraproject.org/wiki/Git_quick_reference), which is a script that allows you to obtain information about a git repository, it shows you the branch you are currently in, or if there is any change in said repository, I already had a problem solved and I only have to color the prompt get the time and the current directory path, I add these changes to my configuration file **~/.bashrc**, and it looks like this: 
 
-Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces: 
+
+When you have the git package installed, then you have the script in the operating system, if you don't have git installed then:
 
 ```cmd
-# Instalción Git
-dnf install git
+# Install Git
+$ sudo dnf install git
 
 # Script /usr/share/git-core/contrib/completion/git-prompt.sh  
 ```
 
-Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:
+To color the prompt and obtain the desired data we have to add the following data:
 
-**Descripción de los datos:**
+**Data Description:**
 
 ```text
-- __git_ps1: Variable del script.
-- t: Obtiene la hora, minutos y segundos.
-- W: Muestra el nombre de carpeta actual.
-- source: Ruta del script __git_ps1.
-- export GIT_PS1_SHOWCOLORHINTS: Color para los datos git.
-- export GIT_PS1_SHOWDIRTYSTATE: Muestra el estado actual del repo.
-- export GIT_PS1_SHOWUNTRACKEDFILES: Mostrar archivos sin seguimiento.
-- export PROMPT_COMMAND: Personalización del prompt.
-- \[\033[0;31m\]: Color Rojo.
-- \[\033[0;33m\]: Color Amarillo.
-- \[\033[0;32m\]: Color Verde.
+- __git_ps1: Script variable.
+- t: Get the time, minutes and seconds.
+- W: Shows name the current file.
+- source: Script route __git_ps1.
+- export GIT_PS1_SHOWCOLORHINTS: Data color for git.
+- export GIT_PS1_SHOWDIRTYSTATE: Show the current state for repo.
+- export GIT_PS1_SHOWUNTRACKEDFILES: Show untracked files.
+- export PROMPT_COMMAND: Custom prompt.
+- \[\033[0;31m\]: Red Color.
+- \[\033[0;33m\]: Yellow Color.
+- \[\033[0;32m\]: Green Color.
 ```
 
 ```bash
@@ -64,37 +65,37 @@ export PROMPT_COMMAND='__git_ps1 "\[\033[01;33m\]\t\[\033[00m\] \[\033[01;31m\][
 
 ## Docker CE
 
-Luego de instalar Docker CE desde el repositorio [**oficial**](https://docs.docker.com/engine/install/fedora/) y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.
+After installing Docker CE from the [**oficial**](https://docs.docker.com/engine/install/fedora/) repository and making the necessary configurations, it turns out that the containers had no internet access, after checking the internal Docker DNS, I found that I had an error with the firewall.
 
-Para solucionar el problema agregamos la interface **docker0** en la zona de confianza del firewall.
+To solve the problem we add the interface **docker0** in the trusted zone of the firewall.
 
 ```cmd
-firewall-cmd --permanent --zone=trusted --add-interface=docker0
-firewall-cmd --reload
+$ sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+$ sudo firewall-cmd --reload
 ```
 
 ## Cinnamon 
 
-Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es **NOUVEAU** controlador de código abierto, instalamos el controlador **NVIDIA Corporation GF119 [NVS 310]** para mejorar el rendimiento en el vídeo.
+Before upgrading to Fedora 32, the graphical environment I was using was Gnome 3, when presenting performance problems and high memory consumption I chose to change to Cinnamon 4.4, one of the important details is that the default driver for the video card is **NOUVEAU** open source driver, we installed **NVIDIA Corporation GF119 [NVS 310]** driver to improve video performance.
 
-**NVIDIA Driver 390xxx - repositorio RPMFusion**
+**NVIDIA Driver 390xxx - RPMFusion Repository**
 
 ```cmd
-## Habilitando NVIDIA RPM Fusion
-dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+# Enable NVIDIA RPM Fusion
+$ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 
-## Listando controladores disponibles
-dnf repository-packages rpmfusion-nonfree-nvidia-driver info
+# List available drivers
+$ sudo dnf repository-packages rpmfusion-nonfree-nvidia-driver info
 
-## Instalación del controlador
-dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
-dnf install xorg-x11-drv-nvidia-390xx-cuda
+# Install driver
+$ sudo dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
+$ sudo dnf install xorg-x11-drv-nvidia-390xx-cuda
 
-## Pruebas y control de rendimiento
-dnf install -y gwe
+# Test and control for performance
+$ sudo dnf install -y gwe
 ```
 
-## Referencias
+## References
 
 - [**Docker Fedora**](https://docs.docker.com/engine/install/fedora/)
 - [**Fedora Git Reference**](https://fedoraproject.org/wiki/Git_quick_reference)

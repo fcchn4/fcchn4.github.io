@@ -1,6 +1,6 @@
 # Fcch Blog - Hugo Framework
 
-- [Fcch How To](https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/)
+- [Fcch How To](https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/)
 
 ## Iniciando Proyecto 
 
@@ -28,7 +28,7 @@ $ hugo server --watch -D
 # Subir cuerpo completo del proyecto
 $ git add .
 $ git commit -m 'first hugo'
-$ git push origin master
+$ git push origin main
 ```
 
 ## Creando rama para despliegue
@@ -45,7 +45,7 @@ $ git push origin deploy
 
 ```bash
 # Cambio de rama deploy
-$ git checkout master
+$ git checkout main
 $ mkdir public
 $ git worktree add -B deploy public origin/deploy
 

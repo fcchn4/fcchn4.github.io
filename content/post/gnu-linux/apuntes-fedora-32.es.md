@@ -11,7 +11,7 @@ tags = [
 categories = [
     "gnu-linux",
 ]
-series = ["Guía Fedora"]
+series = ["Fedora"]
 thumbnail = "images/fedora-32/fedora32-400.jpg"
 +++
 Después de actualizar mi Sistema Operativo [**Fedora 30**](https://getfedora.org/es/) a [**Fedora 32**](https://getfedora.org/es/), estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de [**Gnome 3.36**](https://www.gnome.org/) a [**Cinnamon 4.4**](https://es.wikipedia.org/wiki/Cinnamon).
@@ -30,7 +30,7 @@ Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en
 
 ```cmd
 # Instalción Git
-dnf install git
+$ sudo dnf install git
 
 # Script /usr/share/git-core/contrib/completion/git-prompt.sh  
 ```
@@ -69,8 +69,8 @@ Luego de instalar Docker CE desde el repositorio [**oficial**](https://docs.dock
 Para solucionar el problema agregamos la interface **docker0** en la zona de confianza del firewall.
 
 ```cmd
-firewall-cmd --permanent --zone=trusted --add-interface=docker0
-firewall-cmd --reload
+$ sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+$ sudo firewall-cmd --reload
 ```
 
 ## Cinnamon 
@@ -80,18 +80,18 @@ Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al
 **NVIDIA Driver 390xxx - repositorio RPMFusion**
 
 ```cmd
-## Habilitando NVIDIA RPM Fusion
-dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+# Habilitando NVIDIA RPM Fusion
+$ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
 
-## Listando controladores disponibles
-dnf repository-packages rpmfusion-nonfree-nvidia-driver info
+# Listando controladores disponibles
+$ sudo dnf repository-packages rpmfusion-nonfree-nvidia-driver info
 
-## Instalación del controlador
-dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
-dnf install xorg-x11-drv-nvidia-390xx-cuda
+# Instalación del controlador
+$ sudo dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
+$ sudo dnf install xorg-x11-drv-nvidia-390xx-cuda
 
-## Pruebas y control de rendimiento
-dnf install -y gwe
+# Pruebas y control de rendimiento
+$ sudo dnf install -y gwe
 ```
 
 ## Referencias
