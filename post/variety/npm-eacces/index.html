@@ -185,24 +185,24 @@
     <p>Me toco probar el despliegue de aplicaciones <strong>NodeJS</strong> donde necesitaba instalar paquetes globales, instalar paquetes <strong>NodeJS</strong> globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.</p>
 <p><img src="/images/npm-eacces/npm-error-img.png" alt=""></p>
 <p>Al ejecutar el comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
 </code></pre></div><p>Se presento un problema de permisos <strong>npm ERR! code EACCES</strong> y para solucionar el problema de forma inmediata era ejecutarlo con <strong>sudo</strong>, esta práctica es común pero no es lo que buscamos.</p>
 <p>Buscando encontré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de <a href="https://nodejs.org/en/"><strong>NPM</strong></a>.</p>
 <h2 id="creación-del-nuevo-directorio">Creación del Nuevo Directorio</h2>
 <p>Creamos una carpeta nueva donde se instalarán los nuevos programas:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ mkdir ~/.npm-global
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ mkdir ~/.npm-global
 </code></pre></div><h2 id="configure-npm-para-la-nueva-ruta-del-directorio">Configure NPM para la Nueva Ruta del Directorio</h2>
 <p>Con el comando <a href="https://nodejs.org/en/"><strong>npm</strong></a> cambiamos la ruta del directorio de instalación de paquetes:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ npm config set prefix &#39;~/.npm-global&#39;
-</code></pre></div><h2 id="variable-de-entorno">Variable de Entorno</h2>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ npm config set prefix &#39;~/.npm-global&#39;
+</code></pre></div><h2 id="variables-de-entorno">Variables de Entorno</h2>
 <p>En algunos casos, hay guías que te sugieren crear un archivo <strong>.profile</strong> para crear la variable, en este ejemplo agregamos la variable al archivo <strong>.bashrc</strong>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ echo &#39;NPM_CONFIG_PREFIX=~/.npm-global&#39; <span class="p">&gt;&gt;</span> ~/.bashrc
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ echo &#39;NPM_CONFIG_PREFIX=~/.npm-global&#39; <span class="p">&gt;&gt;</span> ~/.bashrc
 </code></pre></div><h2 id="actualizamos-variables">Actualizamos Variables</h2>
 <p>Actualizamos las variables con el siguiente comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ source ~/.bashrc
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ source ~/.bashrc
 </code></pre></div><h2 id="probamos-la-instalación-sin-sudo">Probamos la Instalación sin sudo</h2>
 <p>Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer <strong>sudo</strong>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
 </code></pre></div>
 
 <h3>Traducciones:</h3>
@@ -321,7 +321,7 @@
         
         <a href='https://blog.fcch.xyz/series/servidores/' class="post_tag button button_translucent" title="servidores">
           SERVIDORES
-          <span class="button_tally">2</span>
+          <span class="button_tally">3</span>
         </a>
         
         <a href='https://blog.fcch.xyz/series/fcch-blog/' class="post_tag button button_translucent" title="fcch-blog">
@@ -331,11 +331,6 @@
         
         <a href='https://blog.fcch.xyz/series/fedora/' class="post_tag button button_translucent" title="fedora">
           FEDORA
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://blog.fcch.xyz/series/gu%C3%ADa-servidores/' class="post_tag button button_translucent" title="guía-servidores">
-          GUÍA-SERVIDORES
           <span class="button_tally">1</span>
         </a>
         

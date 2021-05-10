@@ -153,7 +153,7 @@
 </svg></span>
     <span class="post_date">
       Aug 12, 2020</span>
-    <span class="post_time"> · 1 min read</span><span>&nbsp;· <a href='https://blog.fcch.xyz/en/tags/nodejs' title="nodejs" class="post_tag button button_translucent">nodejs
+    <span class="post_time"> · 2 min read</span><span>&nbsp;· <a href='https://blog.fcch.xyz/en/tags/nodejs' title="nodejs" class="post_tag button button_translucent">nodejs
         </a><a href='https://blog.fcch.xyz/en/tags/npm' title="npm" class="post_tag button button_translucent">npm
         </a><a href='https://blog.fcch.xyz/en/tags/bash' title="bash" class="post_tag button button_translucent">bash
         </a>
@@ -182,27 +182,27 @@
   </div>
 
     
-    <p>Me toco probar el despliegue de aplicaciones <strong>NodeJS</strong> donde necesitaba instalar paquetes globales, instalar paquetes <strong>NodeJS</strong> globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.</p>
+    <p>I had to test the implementation of a <strong>NodeJS</strong> application where I needed to install global packages, the installation of global <strong>NodeJS</strong> packages in the operating system does not seem to be a good practice, so we found a solution to this problem.</p>
 <p><img src="/images/npm-eacces/npm-error-img.png" alt=""></p>
-<p>Al ejecutar el comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
-</code></pre></div><p>Se presento un problema de permisos <strong>npm ERR! code EACCES</strong> y para solucionar el problema de forma inmediata era ejecutarlo con <strong>sudo</strong>, esta práctica es común pero no es lo que buscamos.</p>
-<p>Buscando encontré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de <a href="https://nodejs.org/en/"><strong>NPM</strong></a>.</p>
-<h2 id="creación-del-nuevo-directorio">Creación del Nuevo Directorio</h2>
-<p>Creamos una carpeta nueva donde se instalarán los nuevos programas:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ mkdir ~/.npm-global
-</code></pre></div><h2 id="configure-npm-para-la-nueva-ruta-del-directorio">Configure NPM para la Nueva Ruta del Directorio</h2>
-<p>Con el comando <a href="https://nodejs.org/en/"><strong>npm</strong></a> cambiamos la ruta del directorio de instalación de paquetes:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ npm config set prefix &#39;~/.npm-global&#39;
-</code></pre></div><h2 id="variable-de-entorno">Variable de Entorno</h2>
-<p>En algunos casos, hay guías que te sugieren crear un archivo <strong>.profile</strong> para crear la variable, en este ejemplo agregamos la variable al archivo <strong>.bashrc</strong>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ echo &#39;NPM_CONFIG_PREFIX=~/.npm-global&#39; <span class="p">&gt;&gt;</span> ~/.bashrc
-</code></pre></div><h2 id="actualizamos-variables">Actualizamos Variables</h2>
-<p>Actualizamos las variables con el siguiente comando:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ source ~/.bashrc
-</code></pre></div><h2 id="probamos-la-instalación-sin-sudo">Probamos la Instalación sin sudo</h2>
-<p>Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer <strong>sudo</strong>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>    $ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
+<p>When running the command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
+</code></pre></div><p>The problem is for permissions with <strong>npm ERR! code EACCES</strong> and to solve the problem immediately it was to execute it with <strong>sudo</strong>, this practice is common but it's not a good practice.</p>
+<p>Searching I found that the solution to avoid the sudo command is to manually change the default <strong>NPM</strong> directory.</p>
+<h2 id="create-the-new-directory">Create the New Directory</h2>
+<p>We create a new folder where the new programs will be installed:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ mkdir ~/.npm-global
+</code></pre></div><h2 id="configure-npm-for-the-new-directory-path">Configure NPM for the New Directory Path</h2>
+<p>With the <a href="https://nodejs.org/en/"><strong>npm</strong></a> command we change the path of the package installation directory:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ npm config set prefix &#39;~/.npm-global&#39;
+</code></pre></div><h2 id="environment-variables">Environment Variables</h2>
+<p>In some cases, there are guides that suggest you create a <strong>.profile</strong> file to create the variable, in this example we add the variable to the <strong>.bashrc</strong> file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ echo &#39;NPM_CONFIG_PREFIX=~/.npm-global&#39; <span class="p">&gt;&gt;</span> ~/.bashrc
+</code></pre></div><h2 id="update-variables">Update Variables</h2>
+<p>We update the variables with the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ source ~/.bashrc
+</code></pre></div><h2 id="we-test-the-installation-without-sudo">We test the Installation without sudo</h2>
+<p>To test the new functionality we execute the same command without prepending <strong>sudo</strong>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ npm install -g <span class="p">&lt;</span>NOMBRE_PAQUETE&gt;
 </code></pre></div>
 
 <h3>Translations:</h3>
@@ -321,7 +321,7 @@
         
         <a href='https://blog.fcch.xyz/en/series/servers/' class="post_tag button button_translucent" title="servers">
           SERVERS
-          <span class="button_tally">2</span>
+          <span class="button_tally">3</span>
         </a>
         
         <a href='https://blog.fcch.xyz/en/series/fcch-blog/' class="post_tag button button_translucent" title="fcch-blog">
@@ -331,11 +331,6 @@
         
         <a href='https://blog.fcch.xyz/en/series/fedora/' class="post_tag button button_translucent" title="fedora">
           FEDORA
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://blog.fcch.xyz/en/series/servers-guide/' class="post_tag button button_translucent" title="servers-guide">
-          SERVERS-GUIDE
           <span class="button_tally">1</span>
         </a>
         

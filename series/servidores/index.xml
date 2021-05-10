@@ -103,5 +103,39 @@
       </description>
     </item>
     
+    <item>
+      <title>NPM EACCES</title>
+      <link>https://blog.fcch.xyz/post/variety/npm-eacces/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/variety/npm-eacces/</guid>
+      <description>
+        
+          &lt;p&gt;Me toco probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Al ejecutar el comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ npm install -g &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se presento un problema de permisos &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; y para solucionar el problema de forma inmediata era ejecutarlo con &lt;strong&gt;sudo&lt;/strong&gt;, esta práctica es común pero no es lo que buscamos.&lt;/p&gt;
+&lt;p&gt;Buscando encontré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;&lt;strong&gt;NPM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;creación-del-nuevo-directorio&#34;&gt;Creación del Nuevo Directorio&lt;/h2&gt;
+&lt;p&gt;Creamos una carpeta nueva donde se instalarán los nuevos programas:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir ~/.npm-global
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configure-npm-para-la-nueva-ruta-del-directorio&#34;&gt;Configure NPM para la Nueva Ruta del Directorio&lt;/h2&gt;
+&lt;p&gt;Con el comando &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;/a&gt; cambiamos la ruta del directorio de instalación de paquetes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ npm config set prefix &amp;#39;~/.npm-global&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;variables-de-entorno&#34;&gt;Variables de Entorno&lt;/h2&gt;
+&lt;p&gt;En algunos casos, hay guías que te sugieren crear un archivo &lt;strong&gt;.profile&lt;/strong&gt; para crear la variable, en este ejemplo agregamos la variable al archivo &lt;strong&gt;.bashrc&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ echo &amp;#39;NPM_CONFIG_PREFIX=~/.npm-global&amp;#39; &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;actualizamos-variables&#34;&gt;Actualizamos Variables&lt;/h2&gt;
+&lt;p&gt;Actualizamos las variables con el siguiente comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;probamos-la-instalación-sin-sudo&#34;&gt;Probamos la Instalación sin sudo&lt;/h2&gt;
+&lt;p&gt;Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer &lt;strong&gt;sudo&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ npm install -g &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>
