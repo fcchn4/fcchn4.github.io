@@ -110,10 +110,10 @@
     
     <item>
       <title>NPM EACCES</title>
-      <link>https://blog.fcch.xyz/post/variety/npm-eacces/</link>
+      <link>https://blog.fcch.xyz/post/gnu-linux/npm-eacces/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/post/variety/npm-eacces/</guid>
+      <guid>https://blog.fcch.xyz/post/gnu-linux/npm-eacces/</guid>
       <description>
         
           &lt;p&gt;Me toco probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;

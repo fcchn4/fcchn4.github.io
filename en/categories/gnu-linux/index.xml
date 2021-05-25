@@ -7,7 +7,162 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Fcch Blog | 2019 - 2021</copyright>
-    <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/categories/gnu-linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/categories/gnu-linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Momento Tmux</title>
+      <link>https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/</guid>
+      <description>
+        
+          &lt;h2 id=&#34;breve-introducción&#34;&gt;Breve Introducción&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-00.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lo-básico&#34;&gt;Lo Básico&lt;/h2&gt;
+&lt;p&gt;Primero debemos ejecutar el comando &lt;strong&gt;tmux&lt;/strong&gt;, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a &lt;strong&gt;tmux&lt;/strong&gt;, en mi caso utilizare la combinación &lt;strong&gt;ctrl + b&lt;/strong&gt; que es la configuración por defecto luego de la instalación:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Descripción&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Comando&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Dividir terminal en horizontal&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + &amp;quot;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Dividir terminal en vertical&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + %&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel izquierda&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys izquierda&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel derecha&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys derecha&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel arriba&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys arriba&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel abajo&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys abajo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Ver numero de terminal&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + q&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Saltar de un panel a otro&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cerra panel actual&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cerra la ventana actual&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + &amp;amp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Recorre los diseños de paneles&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + space&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cerra panel actual&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Ayuda tmux&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + ?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Listar todas las sesiones&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;tmux ls&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Versión&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;tmux -V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;funcionalidades-muy-útiles&#34;&gt;Funcionalidades muy útiles&lt;/h2&gt;
+&lt;p&gt;Un función muy útil en &lt;strong&gt;tmux&lt;/strong&gt; es el &lt;strong&gt;modo comados&lt;/strong&gt;, que nos permite ingresar comandos que nos faciliten tareas de forma mas simple.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Descripción&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Comando&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Modo comando&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + :&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Activa sincronización de paneles&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:setw synchronize-panes on&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Desactiva sincronización de paneles&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:setw synchronize-panes off&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia arriba&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -U&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia abajo&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la izquierda&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -L&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la derecha&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -R&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia arriba&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -U 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia abajo&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -D 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la izquierda&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -L 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la derecha&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -R 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;algunas-demos&#34;&gt;Algunas demos&lt;/h2&gt;
+&lt;p&gt;Ejecutamos &lt;strong&gt;tmux&lt;/strong&gt;, dividimos en diferentes paneles:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sincronización de paneles:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Trabajo con paneles y redimenciones con &lt;strong&gt;ctrl + b + space&lt;/strong&gt; y &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;&lt;strong&gt;Tmux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
     <item>
       <title>Notes Fedora 32</title>
       <link>https://blog.fcch.xyz/en/post/gnu-linux/apuntes-fedora-32/</link>

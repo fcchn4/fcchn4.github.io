@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fcch Blog | Apuntes, guías y recordatorios</title>
+    <link>https://blog.fcch.xyz/post/cloud/</link>
+    <description>Recent content on Fcch Blog | Apuntes, guías y recordatorios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fcch Blog | 2019 - 2021</copyright>
+    <lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/post/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruta de Aprendizaje</title>
+      <link>https://blog.fcch.xyz/post/cloud/learning-path/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/cloud/learning-path/</guid>
+      <description>
+        
+          &lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificarme &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;En mi busqueda de infromación encontre esta descripción del camino completo hacia una certificación &lt;strong&gt;Profecional&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;documentación-inicial&#34;&gt;Documentación Inicial&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/&#34;&gt;&lt;strong&gt;AWS Certificación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-cloud-practitioner/&#34;&gt;&lt;strong&gt;AWS Certified Cloud Practitioner&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-solutions-architect-associate/&#34;&gt;&lt;strong&gt;AWS Certified Solutions Architect – Associate&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;aws-certified-cloud-practitioner-clf-c01&#34;&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
+&lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Servicios disponibles y sus casos de uso comunes.&lt;/li&gt;
+&lt;li&gt;Principios de arquitectura de AWS Cloud (a nivel conceptual).&lt;/li&gt;
+&lt;li&gt;Seguridad de la cuenta y cumplimiento.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Los candidatos también deben demostrar una comprensión de la economía de la nube de AWS, como:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Costos.&lt;/li&gt;
+&lt;li&gt;Facturación y análisis.&lt;/li&gt;
+&lt;li&gt;La propuesta de valor de AWS Cloud.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Con estos conocimientos los candidatos podran validar la capacidad para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Explicar el valor de AWS Cloud.&lt;/li&gt;
+&lt;li&gt;Comprender y explicar el modelo de responsabilidad compartida de AWS.&lt;/li&gt;
+&lt;li&gt;Comprender las mejores prácticas de seguridad en la nube de AWS.&lt;/li&gt;
+&lt;li&gt;Comprender los costos, la economía y las prácticas de facturación de AWS Cloud.&lt;/li&gt;
+&lt;li&gt;Describir y posicionar los servicios centrales de AWS, incluidos el procesamiento, la red, las bases de datos y el almacenamiento.&lt;/li&gt;
+&lt;li&gt;Identificar los servicios de AWS para casos de uso comunes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tipos-de-respuesta&#34;&gt;Tipos de respuesta&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Opción múltiple: Tienen una respuesta correcta y tres respuestas incorrectas.&lt;/li&gt;
+&lt;li&gt;Respuesta múltiple: Tiene dos o más respuestas correctas de cinco o más opciones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;contenido-del-examen&#34;&gt;Contenido del examen&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Etapa&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;% de Calificación&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 1: Conceptos en la nube&lt;/td&gt;
+&lt;td&gt;26%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 2: Seguridad y cumplimiento&lt;/td&gt;
+&lt;td&gt;25%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 3: Tecnología&lt;/td&gt;
+&lt;td&gt;33%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 4: Facturación y precios&lt;/td&gt;
+&lt;td&gt;16%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;TOTAL&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;100%&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 1: Conceptos de la nube&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[1.1] Definir la nube de AWS y su propuesta de valor&lt;/li&gt;
+&lt;li&gt;[1.2] Identificar aspectos de la economía de la nube de AWS&lt;/li&gt;
+&lt;li&gt;[1.3] Enumere los diferentes principios de diseño de la arquitectura en la nube&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 2: seguridad y cumplimiento&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[2.1] Definir el modelo de responsabilidad compartida de AWS&lt;/li&gt;
+&lt;li&gt;[2.2] Definir los conceptos de cumplimiento y seguridad de la nube de AWS&lt;/li&gt;
+&lt;li&gt;[2.3] Identificar las capacidades de administración de acceso de AWS&lt;/li&gt;
+&lt;li&gt;[2.4] Identificar recursos para soporte de seguridad&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 3: Tecnología&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[3.1] Definir métodos de implementación y operación en la nube de AWS&lt;/li&gt;
+&lt;li&gt;[3.2] Definir la infraestructura global de AWS&lt;/li&gt;
+&lt;li&gt;[3.3] Identificar los servicios centrales de AWS&lt;/li&gt;
+&lt;li&gt;[3.4] Identificar recursos para el apoyo tecnológico&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 4: Facturación y precios&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[4.1] Comparar y contrastar los distintos modelos de precios de AWS&lt;/li&gt;
+&lt;li&gt;[4.2] Reconocer las diversas estructuras de cuentas en relación con la facturación y los precios de AWS&lt;/li&gt;
+&lt;li&gt;[4.3] Identificar los recursos disponibles para soporte de facturación&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,10 +10,10 @@
     <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NPM EACCES</title>
-      <link>https://blog.fcch.xyz/en/post/variety/npm-eacces/</link>
+      <link>https://blog.fcch.xyz/en/post/gnu-linux/npm-eacces/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/variety/npm-eacces/</guid>
+      <guid>https://blog.fcch.xyz/en/post/gnu-linux/npm-eacces/</guid>
       <description>
         
           &lt;p&gt;I had to test the implementation of a &lt;strong&gt;NodeJS&lt;/strong&gt; application where I needed to install global packages, the installation of global &lt;strong&gt;NodeJS&lt;/strong&gt; packages in the operating system does not seem to be a good practice, so we found a solution to this problem.&lt;/p&gt;
