@@ -1,8 +1,8 @@
 +++
-title = "Momento Tmux"
+title = "Tmux Moment"
 author = "Fcch"
 date = "2021-05-25"
-description = "Guía simple de comandos Tmux"
+description = "Simple guide for Tmux commands"
 featured = true
 tags = [
     "linux",
@@ -14,70 +14,67 @@ categories = [
 series = ["Tmux"]
 thumbnail = "images/tmux-moment/tmux-00.png"
 +++
-
-## Breve Introducción
-
-**tmux** es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. **tmux** puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.
+**tmux** is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. **tmux** may be detached from a screen and continue running in the background, then later reattached.
 
 <!--more-->
 
 ![](/images/tmux-moment/tmux-00.png)
 
-## Lo Básico
+## The Basics
 
-Primero debemos ejecutar el comando **tmux**, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a **tmux**, en mi caso utilizare la combinación **ctrl + b** que es la configuración por defecto luego de la instalación:
+First we must execute the command **tmux**, within it we can perform different actions, for these actions we must send commands to **tmux**, in my case I will use the combination **ctrl + b** which is the configuration by default after installation:
 
-| **Descripción**                | **Comando**               |
+| **Description**                | **Command**               |
 | :----------------------------- | :------------------------ |
-| Dividir terminal en horizontal | ctrl + b + "              |
-| Dividir terminal en vertical   | ctrl + b + %              |
-| Cambiar a panel izquierda      | ctrl + b + keys izquierda |
-| Cambiar a panel derecha        | ctrl + b + keys derecha   |
-| Cambiar a panel arriba         | ctrl + b + keys arriba    |
-| Cambiar a panel abajo          | ctrl + b + keys abajo     |
-| Ver numero de terminal         | ctrl + b + q              |
-| Saltar de un panel a otro      | ctrl + b + o              |
-| Cerra panel actual             | ctrl + b + x              |
-| Cerra la ventana actual        | ctrl + b + &              |
-| Recorre los diseños de paneles | ctrl + b + space          |
-| Cerra panel actual             | ctrl + b + x              |
-| Ayuda tmux                     | ctrl + b + ?              |
-| Listar todas las sesiones      | tmux ls                   |
-| Versión                        | tmux -V                   |
+| Split terminal horizontally    | ctrl + b + "              |
+| Split terminal vertically      | ctrl + b + %              |
+| Switch to left panel           | ctrl + b + keys left      |
+| Switch to right panel          | ctrl + b + keys right     |
+| Switch to panel up             | ctrl + b + keys up        |
+| Switch to panel down           | ctrl + b + keys down      |
+| See terminal number            | ctrl + b + q              |
+| Jump from one panel to another | ctrl + b + o              |
+| Close current panel            | ctrl + b + x              |
+| Close the current window       | ctrl + b + &              |
+| Cycle through panel layouts    | ctrl + b + space          |
+| Close current panel            | ctrl + b + x              |
+| Help tmux                      | ctrl + b + ?              |
+| List all sessions              | tmux ls                   |
+| Version                        | tmux -V                   |
 
-## Funcionalidades muy útiles
+## Very Useful Features
 
-Un función muy útil en **tmux** es el **modo comados**, que nos permite ingresar comandos que nos faciliten tareas de forma mas simple.
+A very useful function in **tmux** is the **command mode**, which allows us to enter commands that facilitate tasks in a simpler way.
 
-| **Descripción**                        | **Comando**                 |
+| **Description**                        | **Command**                 |
 | :------------------------------------- | :-------------------------- |
-| Modo comando                           | ctrl + b + :                |
-| Activa sincronización de paneles       | :setw synchronize-panes on  |
-| Desactiva sincronización de paneles    | :setw synchronize-panes off |
-| Redimencionar panel hacia arriba       | :resize-pane -U             |
-| Redimencionar panel hacia abajo        | :resize-pane -D             |
-| Redimencionar panel hacia la izquierda | :resize-pane -L             |
-| Redimencionar panel hacia la derecha   | :resize-pane -R             |
-| Redimencionar panel hacia arriba       | :resize-pane -U 10          |
-| Redimencionar panel hacia abajo        | :resize-pane -D 10          |
-| Redimencionar panel hacia la izquierda | :resize-pane -L 10          |
-| Redimencionar panel hacia la derecha   | :resize-pane -R 10          |
+| Command mode                           | ctrl + b + :                |
+| Activate panel synchronization         | :setw synchronize-panes on  |
+| Turn off panel sync                    | :setw synchronize-panes off |
+| Resize panel up                        | :resize-pane -U             |
+| Resize panel down                      | :resize-pane -D             |
+| Resize panel to the left               | :resize-pane -L             |
+| Resize panel to the right              | :resize-pane -R             |
+| Resize panel up 10                     | :resize-pane -U 10          |
+| Resize panel down 10                   | :resize-pane -D 10          |
+| Resize panel to the left 10            | :resize-pane -L 10          |
+| Resize panel to the right 10           | :resize-pane -R 10          |
 
-## Algunas demos
+## Some Demos
 
-Ejecutamos **tmux**, dividimos en diferentes paneles:
+We execute **tmux**, we divide into different panels the terminal:
 
 ![](/images/tmux-moment/tmux-01.gif)
 
-Sincronización de paneles:
+Panel synchronization:
 
 ![](/images/tmux-moment/tmux-02.gif)
 
-Trabajo con paneles y redimenciones con **ctrl + b + space** y **ctrl + b + q**:
+Work with panels and resizes with **ctrl + b + space** and **ctrl + b + q**:
 
 ![](/images/tmux-moment/tmux-03.gif)
 
-## Referencias
+## References
 
 - [**Tmux Wiki**](https://github.com/tmux/tmux/wiki)
 - [**Tmux**](https://github.com/tmux/tmux)

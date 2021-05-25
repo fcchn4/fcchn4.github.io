@@ -14,9 +14,6 @@ categories = [
 series = ["Tmux"]
 thumbnail = "images/tmux-moment/tmux-00.png"
 +++
-
-## Breve Introducción
-
 **tmux** es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. **tmux** puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.
 
 <!--more-->
