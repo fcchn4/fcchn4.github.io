@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-figures="" class="page">
   <head>
-<title>Momento Tmux | Fcch Blog | Notes, guides and reminders</title>
+<title>Tmux Moment | Fcch Blog | Notes, guides and reminders</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,13 +19,13 @@
 <meta property="og:locale:alternate" content="es" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Guía simple de comandos Tmux">
+<meta name="description" content="Simple guide for Tmux commands">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@fcchbo">
-<meta name="twitter:title" content="Momento Tmux" />
+<meta name="twitter:title" content="Tmux Moment" />
 <meta property="og:url" content="https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/" />
-<meta property="og:title" content="Momento Tmux" />
-<meta property="og:description" content="Guía simple de comandos Tmux" />
+<meta property="og:title" content="Tmux Moment" />
+<meta property="og:description" content="Simple guide for Tmux commands" />
 <meta property="og:image" content="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://blog.fcch.xyz/icons/apple-touch-icon.png">
@@ -146,7 +146,7 @@
   
 <div class="grid-inverse wrap content">
   <article class="post_content">
-    <h1 class="post_title">Momento Tmux</h1>
+    <h1 class="post_title">Tmux Moment</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <use xlink:href="#calendar"></use>
@@ -160,7 +160,7 @@
     <span class="page_only">&nbsp;·
   <div class="post_share">
     Share:
-    <a href="https://twitter.com/intent/tweet?text=Momento%20Tmux&url=https%3a%2f%2fblog.fcch.xyz%2fen%2fpost%2fgnu-linux%2ftmux-moment%2f&tw_p=tweetbutton" class="twitter" title="Share Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=Tmux%20Moment&url=https%3a%2f%2fblog.fcch.xyz%2fen%2fpost%2fgnu-linux%2ftmux-moment%2f&tw_p=tweetbutton" class="twitter" title="Share Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
@@ -181,145 +181,144 @@
   </div>
 
     
-    <h2 id="breve-introducción">Breve Introducción</h2>
-<p><strong>tmux</strong> es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. <strong>tmux</strong> puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.</p>
+    <p><strong>tmux</strong> is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. <strong>tmux</strong> may be detached from a screen and continue running in the background, then later reattached.</p>
 <p><img src="/images/tmux-moment/tmux-00.png" alt=""></p>
-<h2 id="lo-básico">Lo Básico</h2>
-<p>Primero debemos ejecutar el comando <strong>tmux</strong>, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a <strong>tmux</strong>, en mi caso utilizare la combinación <strong>ctrl + b</strong> que es la configuración por defecto luego de la instalación:</p>
+<h2 id="the-basics">The Basics</h2>
+<p>First we must execute the command <strong>tmux</strong>, within it we can perform different actions, for these actions we must send commands to <strong>tmux</strong>, in my case I will use the combination <strong>ctrl + b</strong> which is the configuration by default after installation:</p>
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Descripción</strong></th>
-<th align="left"><strong>Comando</strong></th>
+<th align="left"><strong>Description</strong></th>
+<th align="left"><strong>Command</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Dividir terminal en horizontal</td>
+<td align="left">Split terminal horizontally</td>
 <td align="left">ctrl + b + &quot;</td>
 </tr>
 <tr>
-<td align="left">Dividir terminal en vertical</td>
+<td align="left">Split terminal vertically</td>
 <td align="left">ctrl + b + %</td>
 </tr>
 <tr>
-<td align="left">Cambiar a panel izquierda</td>
-<td align="left">ctrl + b + keys izquierda</td>
+<td align="left">Switch to left panel</td>
+<td align="left">ctrl + b + keys left</td>
 </tr>
 <tr>
-<td align="left">Cambiar a panel derecha</td>
-<td align="left">ctrl + b + keys derecha</td>
+<td align="left">Switch to right panel</td>
+<td align="left">ctrl + b + keys right</td>
 </tr>
 <tr>
-<td align="left">Cambiar a panel arriba</td>
-<td align="left">ctrl + b + keys arriba</td>
+<td align="left">Switch to panel up</td>
+<td align="left">ctrl + b + keys up</td>
 </tr>
 <tr>
-<td align="left">Cambiar a panel abajo</td>
-<td align="left">ctrl + b + keys abajo</td>
+<td align="left">Switch to panel down</td>
+<td align="left">ctrl + b + keys down</td>
 </tr>
 <tr>
-<td align="left">Ver numero de terminal</td>
+<td align="left">See terminal number</td>
 <td align="left">ctrl + b + q</td>
 </tr>
 <tr>
-<td align="left">Saltar de un panel a otro</td>
+<td align="left">Jump from one panel to another</td>
 <td align="left">ctrl + b + o</td>
 </tr>
 <tr>
-<td align="left">Cerra panel actual</td>
+<td align="left">Close current panel</td>
 <td align="left">ctrl + b + x</td>
 </tr>
 <tr>
-<td align="left">Cerra la ventana actual</td>
+<td align="left">Close the current window</td>
 <td align="left">ctrl + b + &amp;</td>
 </tr>
 <tr>
-<td align="left">Recorre los diseños de paneles</td>
+<td align="left">Cycle through panel layouts</td>
 <td align="left">ctrl + b + space</td>
 </tr>
 <tr>
-<td align="left">Cerra panel actual</td>
+<td align="left">Close current panel</td>
 <td align="left">ctrl + b + x</td>
 </tr>
 <tr>
-<td align="left">Ayuda tmux</td>
+<td align="left">Help tmux</td>
 <td align="left">ctrl + b + ?</td>
 </tr>
 <tr>
-<td align="left">Listar todas las sesiones</td>
+<td align="left">List all sessions</td>
 <td align="left">tmux ls</td>
 </tr>
 <tr>
-<td align="left">Versión</td>
+<td align="left">Version</td>
 <td align="left">tmux -V</td>
 </tr>
 </tbody>
 </table>
-<h2 id="funcionalidades-muy-útiles">Funcionalidades muy útiles</h2>
-<p>Un función muy útil en <strong>tmux</strong> es el <strong>modo comados</strong>, que nos permite ingresar comandos que nos faciliten tareas de forma mas simple.</p>
+<h2 id="very-useful-features">Very Useful Features</h2>
+<p>A very useful function in <strong>tmux</strong> is the <strong>command mode</strong>, which allows us to enter commands that facilitate tasks in a simpler way.</p>
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Descripción</strong></th>
-<th align="left"><strong>Comando</strong></th>
+<th align="left"><strong>Description</strong></th>
+<th align="left"><strong>Command</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Modo comando</td>
+<td align="left">Command mode</td>
 <td align="left">ctrl + b + :</td>
 </tr>
 <tr>
-<td align="left">Activa sincronización de paneles</td>
+<td align="left">Activate panel synchronization</td>
 <td align="left">:setw synchronize-panes on</td>
 </tr>
 <tr>
-<td align="left">Desactiva sincronización de paneles</td>
+<td align="left">Turn off panel sync</td>
 <td align="left">:setw synchronize-panes off</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia arriba</td>
+<td align="left">Resize panel up</td>
 <td align="left">:resize-pane -U</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia abajo</td>
+<td align="left">Resize panel down</td>
 <td align="left">:resize-pane -D</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia la izquierda</td>
+<td align="left">Resize panel to the left</td>
 <td align="left">:resize-pane -L</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia la derecha</td>
+<td align="left">Resize panel to the right</td>
 <td align="left">:resize-pane -R</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia arriba</td>
+<td align="left">Resize panel up 10</td>
 <td align="left">:resize-pane -U 10</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia abajo</td>
+<td align="left">Resize panel down 10</td>
 <td align="left">:resize-pane -D 10</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia la izquierda</td>
+<td align="left">Resize panel to the left 10</td>
 <td align="left">:resize-pane -L 10</td>
 </tr>
 <tr>
-<td align="left">Redimencionar panel hacia la derecha</td>
+<td align="left">Resize panel to the right 10</td>
 <td align="left">:resize-pane -R 10</td>
 </tr>
 </tbody>
 </table>
-<h2 id="algunas-demos">Algunas demos</h2>
-<p>Ejecutamos <strong>tmux</strong>, dividimos en diferentes paneles:</p>
+<h2 id="some-demos">Some Demos</h2>
+<p>We execute <strong>tmux</strong>, we divide into different panels the terminal:</p>
 <p><img src="/images/tmux-moment/tmux-01.gif" alt=""></p>
-<p>Sincronización de paneles:</p>
+<p>Panel synchronization:</p>
 <p><img src="/images/tmux-moment/tmux-02.gif" alt=""></p>
-<p>Trabajo con paneles y redimenciones con <strong>ctrl + b + space</strong> y <strong>ctrl + b + q</strong>:</p>
+<p>Work with panels and resizes with <strong>ctrl + b + space</strong> and <strong>ctrl + b + q</strong>:</p>
 <p><img src="/images/tmux-moment/tmux-03.gif" alt=""></p>
-<h2 id="referencias">Referencias</h2>
+<h2 id="references">References</h2>
 <ul>
 <li><a href="https://github.com/tmux/tmux/wiki"><strong>Tmux Wiki</strong></a></li>
 <li><a href="https://github.com/tmux/tmux"><strong>Tmux</strong></a></li>

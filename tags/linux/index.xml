@@ -16,8 +16,7 @@
       <guid>https://blog.fcch.xyz/post/gnu-linux/tmux-moment/</guid>
       <description>
         
-          &lt;h2 id=&#34;breve-introducción&#34;&gt;Breve Introducción&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-00.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;lo-básico&#34;&gt;Lo Básico&lt;/h2&gt;
 &lt;p&gt;Primero debemos ejecutar el comando &lt;strong&gt;tmux&lt;/strong&gt;, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a &lt;strong&gt;tmux&lt;/strong&gt;, en mi caso utilizare la combinación &lt;strong&gt;ctrl + b&lt;/strong&gt; que es la configuración por defecto luego de la instalación:&lt;/p&gt;
