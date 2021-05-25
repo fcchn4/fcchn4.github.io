@@ -14,6 +14,7 @@ categories = [
 series = ["Tmux"]
 thumbnail = "images/tmux-moment/tmux-00.png"
 +++
+
 **tmux** is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. **tmux** may be detached from a screen and continue running in the background, then later reattached.
 
 <!--more-->
@@ -24,23 +25,23 @@ thumbnail = "images/tmux-moment/tmux-00.png"
 
 First we must execute the command **tmux**, within it we can perform different actions, for these actions we must send commands to **tmux**, in my case I will use the combination **ctrl + b** which is the configuration by default after installation:
 
-| **Description**                | **Command**               |
-| :----------------------------- | :------------------------ |
-| Split terminal horizontally    | ctrl + b + "              |
-| Split terminal vertically      | ctrl + b + %              |
-| Switch to left panel           | ctrl + b + keys left      |
-| Switch to right panel          | ctrl + b + keys right     |
-| Switch to panel up             | ctrl + b + keys up        |
-| Switch to panel down           | ctrl + b + keys down      |
-| See terminal number            | ctrl + b + q              |
-| Jump from one panel to another | ctrl + b + o              |
-| Close current panel            | ctrl + b + x              |
-| Close the current window       | ctrl + b + &              |
-| Cycle through panel layouts    | ctrl + b + space          |
-| Close current panel            | ctrl + b + x              |
-| Help tmux                      | ctrl + b + ?              |
-| List all sessions              | tmux ls                   |
-| Version                        | tmux -V                   |
+| **Description**                | **Command**           |
+| :----------------------------- | :-------------------- |
+| Split terminal horizontally    | ctrl + b + "          |
+| Split terminal vertically      | ctrl + b + %          |
+| Switch to left panel           | ctrl + b + keys left  |
+| Switch to right panel          | ctrl + b + keys right |
+| Switch to panel up             | ctrl + b + keys up    |
+| Switch to panel down           | ctrl + b + keys down  |
+| See terminal number            | ctrl + b + q          |
+| Jump from one panel to another | ctrl + b + o          |
+| Close current panel            | ctrl + b + x          |
+| Close the current window       | ctrl + b + &          |
+| Cycle through panel layouts    | ctrl + b + space      |
+| Close current panel            | ctrl + b + x          |
+| Help tmux                      | ctrl + b + ?          |
+| List all sessions              | tmux ls               |
+| Version                        | tmux -V               |
 
 ## Very Useful Features
 

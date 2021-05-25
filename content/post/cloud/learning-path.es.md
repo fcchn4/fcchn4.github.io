@@ -71,26 +71,32 @@ Con estos conocimientos los candidatos podran validar la capacidad para:
 
 **Etapa 1: Conceptos de la nube**
 
-- [1.1] Definir la nube de AWS y su propuesta de valor
-- [1.2] Identificar aspectos de la economía de la nube de AWS
-- [1.3] Enumere los diferentes principios de diseño de la arquitectura en la nube
+- [1.1] Definir la nube de AWS y su propuesta de valor.
+- [1.2] Identificar aspectos de la economía de la nube de AWS.
+- [1.3] Enumere los diferentes principios de diseño de la arquitectura en la nube.
 
-**Etapa 2: seguridad y cumplimiento**
+**Etapa 2: Seguridad y cumplimiento**
 
-- [2.1] Definir el modelo de responsabilidad compartida de AWS
-- [2.2] Definir los conceptos de cumplimiento y seguridad de la nube de AWS
-- [2.3] Identificar las capacidades de administración de acceso de AWS
-- [2.4] Identificar recursos para soporte de seguridad
+- [2.1] Definir el modelo de responsabilidad compartida de AWS.
+- [2.2] Definir los conceptos de cumplimiento y seguridad de la nube de AWS.
+- [2.3] Identificar las capacidades de administración de acceso de AWS.
+- [2.4] Identificar recursos para soporte de seguridad.
 
 **Etapa 3: Tecnología**
 
-- [3.1] Definir métodos de implementación y operación en la nube de AWS
-- [3.2] Definir la infraestructura global de AWS
-- [3.3] Identificar los servicios centrales de AWS
-- [3.4] Identificar recursos para el apoyo tecnológico
+- [3.1] Definir métodos de implementación y operación en la nube de AWS.
+- [3.2] Definir la infraestructura global de AWS.
+- [3.3] Identificar los servicios centrales de AWS.
+- [3.4] Identificar recursos para el apoyo tecnológico.
 
 **Etapa 4: Facturación y precios**
 
-- [4.1] Comparar y contrastar los distintos modelos de precios de AWS
-- [4.2] Reconocer las diversas estructuras de cuentas en relación con la facturación y los precios de AWS
-- [4.3] Identificar los recursos disponibles para soporte de facturación
+- [4.1] Comparar y contrastar los distintos modelos de precios de AWS.
+- [4.2] Reconocer las diversas estructuras de cuentas en relación con la facturación y los precios de AWS.
+- [4.3] Identificar los recursos disponibles para soporte de facturación.
+
+## Contenido Personal
+
+## Referencias
+
+- [**AWS Documentation**](https://docs.aws.amazon.com/)
