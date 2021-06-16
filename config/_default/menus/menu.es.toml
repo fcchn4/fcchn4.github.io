@@ -33,11 +33,11 @@
   name = "twitter"
   type = "social"
   weight = 1
-  url = "https://twitter.com/fcchbo"
+  url = "https://twitter.com/fcchn4"
 [[social]]
   name = "instagram"
   weight = 2
-  url = "https://instagram.com/fcchbo"
+  url = "https://instagram.com/fcchn4"
 [[social]]
   name = "linkedin"
   weight = 3
