@@ -4,8 +4,8 @@
   weight = -110
 
 [[main]]
-  name = "GNU/Linux"
-  url = "post/gnu-linux/"
+  name = "Web"
+  url = "post/web/"
   weight = -109
 
 [[main]]
@@ -14,19 +14,14 @@
   weight = -108
 
 [[main]]
-  name = "Web"
-  url = "post/web/"
+  name = "Notes"
+  url = "post/notes/"
   weight = -107
-
-[[main]]
-  name = "Cloud"
-  url = "post/cloud/"
-  weight = -106
 
 [[main]]
   name = "About me"
   url = "about/"
-  weight = -105
+  weight = -106
 
 # social menu links
 [[social]]
