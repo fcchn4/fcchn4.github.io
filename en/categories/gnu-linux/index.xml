@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/categories/gnu-linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux Moment</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/tmux-moment/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/tmux-moment/</guid>
       <description>
         
           &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. &lt;strong&gt;tmux&lt;/strong&gt; may be detached from a screen and continue running in the background, then later reattached.&lt;/p&gt;
@@ -164,10 +164,10 @@
     
     <item>
       <title>Notes Fedora 32</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/apuntes-fedora-32/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/</link>
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/apuntes-fedora-32/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/</guid>
       <description>
         
           &lt;p&gt;When after update my Operating System &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;

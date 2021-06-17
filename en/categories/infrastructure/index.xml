@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/categories/infrastructure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Learning Path AWS</title>
-      <link>https://blog.fcch.xyz/en/post/cloud/learning-path/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/learning-path/</link>
       <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/cloud/learning-path/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/learning-path/</guid>
       <description>
         
           &lt;p&gt;This is a personal learning guide to obtain knowledge about &lt;strong&gt;AWS&lt;/strong&gt; technologies, this guide aims to certify me in &lt;strong&gt;AWS&lt;/strong&gt; based on the available certifications, in the short term the main objectives are &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; and &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
@@ -180,10 +180,10 @@
     
     <item>
       <title>Memory Limit in Docker</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/</link>
+      <link>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/</guid>
+      <guid>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</guid>
       <description>
         
           &lt;p&gt;When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.&lt;/p&gt;
@@ -222,10 +222,10 @@
     
     <item>
       <title>NPM EACCES</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/npm-eacces/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/npm-eacces/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/npm-eacces/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/npm-eacces/</guid>
       <description>
         
           &lt;p&gt;I had to test the implementation of a &lt;strong&gt;NodeJS&lt;/strong&gt; application where I needed to install global packages, the installation of global &lt;strong&gt;NodeJS&lt;/strong&gt; packages in the operating system does not seem to be a good practice, so we found a solution to this problem.&lt;/p&gt;

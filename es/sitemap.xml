@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.fcch.xyz/post/gnu-linux/</loc>
+    <loc>https://blog.fcch.xyz/post/notes/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.fcch.xyz/en/post/gnu-linux/"
+                href="https://blog.fcch.xyz/en/post/notes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://blog.fcch.xyz/post/gnu-linux/"
+                href="https://blog.fcch.xyz/post/notes/"
                 />
   </url>
   
@@ -78,17 +78,17 @@
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/post/gnu-linux/tmux-moment/</loc>
+    <loc>https://blog.fcch.xyz/post/notes/tmux-moment/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/"
+                href="https://blog.fcch.xyz/en/post/notes/tmux-moment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://blog.fcch.xyz/post/gnu-linux/tmux-moment/"
+                href="https://blog.fcch.xyz/post/notes/tmux-moment/"
                 />
   </url>
   
@@ -149,21 +149,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://blog.fcch.xyz/series/tmux/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/post/cloud/</loc>
-    <lastmod>2021-05-10T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/post/cloud/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/post/cloud/"
                 />
   </url>
   
@@ -233,17 +218,17 @@
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/post/cloud/learning-path/</loc>
+    <loc>https://blog.fcch.xyz/post/notes/learning-path/</loc>
     <lastmod>2021-05-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.fcch.xyz/en/post/cloud/learning-path/"
+                href="https://blog.fcch.xyz/en/post/notes/learning-path/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://blog.fcch.xyz/post/cloud/learning-path/"
+                href="https://blog.fcch.xyz/post/notes/learning-path/"
                 />
   </url>
   
@@ -498,17 +483,17 @@
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/</loc>
+    <loc>https://blog.fcch.xyz/post/infrastructure/limite-memoria-docker/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/"
+                href="https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://blog.fcch.xyz/post/gnu-linux/limite-memoria-docker/"
+                href="https://blog.fcch.xyz/post/infrastructure/limite-memoria-docker/"
                 />
   </url>
   
@@ -543,32 +528,32 @@
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/post/gnu-linux/npm-eacces/</loc>
+    <loc>https://blog.fcch.xyz/post/notes/npm-eacces/</loc>
     <lastmod>2020-08-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.fcch.xyz/en/post/gnu-linux/npm-eacces/"
+                href="https://blog.fcch.xyz/en/post/notes/npm-eacces/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://blog.fcch.xyz/post/gnu-linux/npm-eacces/"
+                href="https://blog.fcch.xyz/post/notes/npm-eacces/"
                 />
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</loc>
+    <loc>https://blog.fcch.xyz/post/notes/apuntes-fedora-32/</loc>
     <lastmod>2020-05-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.fcch.xyz/en/post/gnu-linux/apuntes-fedora-32/"
+                href="https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/"
+                href="https://blog.fcch.xyz/post/notes/apuntes-fedora-32/"
                 />
   </url>
   

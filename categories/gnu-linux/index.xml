@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/categories/gnu-linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Momento Tmux</title>
-      <link>https://blog.fcch.xyz/post/gnu-linux/tmux-moment/</link>
+      <link>https://blog.fcch.xyz/post/notes/tmux-moment/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/post/gnu-linux/tmux-moment/</guid>
+      <guid>https://blog.fcch.xyz/post/notes/tmux-moment/</guid>
       <description>
         
           &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;
@@ -164,10 +164,10 @@
     
     <item>
       <title>Apuntes Fedora 32</title>
-      <link>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</link>
+      <link>https://blog.fcch.xyz/post/notes/apuntes-fedora-32/</link>
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/post/gnu-linux/apuntes-fedora-32/</guid>
+      <guid>https://blog.fcch.xyz/post/notes/apuntes-fedora-32/</guid>
       <description>
         
           &lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;

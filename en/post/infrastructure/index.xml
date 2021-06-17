@@ -66,5 +66,47 @@
       </description>
     </item>
     
+    <item>
+      <title>Memory Limit in Docker</title>
+      <link>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</guid>
+      <description>
+        
+          &lt;p&gt;When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.&lt;/p&gt;
+&lt;p&gt;Docker has the ability to apply a memory limit to a specific container.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;creating-a-container&#34;&gt;Creating a Container&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ docker run --name dell -it debian bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;obtaining-container-information&#34;&gt;Obtaining Container Information&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ docker inspect dell &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &amp;#39;Memory&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;&amp;quot;Memory&amp;quot;: 0&lt;/strong&gt; the value &lt;strong&gt;0&lt;/strong&gt;  indicates that the container doesn&#39;t have a limited memory value, that is, it will use everything that the host has available, possibly affecting other containers that are within the same host.&lt;/p&gt;
+&lt;h2 id=&#34;update-container-memory&#34;&gt;Update Container Memory&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ docker update -m 256MB dell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In testing there were problems on Debian and Ubuntu operating systems:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This problem is due to the fact that the &lt;a href=&#34;https://en.wikipedia.org/wiki/Cgroups&#34;&gt;&lt;strong&gt;cgroup&lt;/strong&gt;&lt;/a&gt; is not mounted on the system, to mount it we edit the file &lt;strong&gt;grub&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo vim /etc/default/grub
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;    ...
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;    GRUB_CMDLINE_LINUX_DEFAULT=&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;    GRUB_CMDLINE_LINUX=&lt;span class=&#34;s2&#34;&gt;&amp;#34;cgroup_enable=memory swapaccount=1&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;    ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Update &lt;strong&gt;grub&lt;/strong&gt; and restart system:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo update-grub
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo update-grub2
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally we run the command to update the memory again and check the memory status:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/docker-limite-mem/docker-update-mem.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://fedoramagazine.org/docker-and-fedora-32/&#34;&gt;&lt;strong&gt;Fedora Magazine&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fedoraproject.org/wiki/Changes/CGroupsV2&#34;&gt;&lt;strong&gt;Fedora Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

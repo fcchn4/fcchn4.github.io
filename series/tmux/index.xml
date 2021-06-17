@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/series/tmux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Momento Tmux</title>
-      <link>https://blog.fcch.xyz/post/gnu-linux/tmux-moment/</link>
+      <link>https://blog.fcch.xyz/post/notes/tmux-moment/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/post/gnu-linux/tmux-moment/</guid>
+      <guid>https://blog.fcch.xyz/post/notes/tmux-moment/</guid>
       <description>
         
           &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;

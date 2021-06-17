@@ -10,10 +10,10 @@
     <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux Moment</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/tmux-moment/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/tmux-moment/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/tmux-moment/</guid>
       <description>
         
           &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. &lt;strong&gt;tmux&lt;/strong&gt; may be detached from a screen and continue running in the background, then later reattached.&lt;/p&gt;
@@ -222,10 +222,10 @@
     
     <item>
       <title>Memory Limit in Docker</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/</link>
+      <link>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/limite-memoria-docker/</guid>
+      <guid>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</guid>
       <description>
         
           &lt;p&gt;When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.&lt;/p&gt;
@@ -264,10 +264,10 @@
     
     <item>
       <title>NPM EACCES</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/npm-eacces/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/npm-eacces/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/npm-eacces/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/npm-eacces/</guid>
       <description>
         
           &lt;p&gt;I had to test the implementation of a &lt;strong&gt;NodeJS&lt;/strong&gt; application where I needed to install global packages, the installation of global &lt;strong&gt;NodeJS&lt;/strong&gt; packages in the operating system does not seem to be a good practice, so we found a solution to this problem.&lt;/p&gt;
@@ -302,10 +302,10 @@
     
     <item>
       <title>Notes Fedora 32</title>
-      <link>https://blog.fcch.xyz/en/post/gnu-linux/apuntes-fedora-32/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/</link>
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/gnu-linux/apuntes-fedora-32/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/</guid>
       <description>
         
           &lt;p&gt;When after update my Operating System &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fcch Blog | Apuntes, guías y recordatorios</title>
+    <link>https://blog.fcch.xyz/post/notes/</link>
+    <description>Recent content on Fcch Blog | Apuntes, guías y recordatorios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fcch Blog | 2019 - 2021</copyright>
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/post/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Momento Tmux</title>
+      <link>https://blog.fcch.xyz/post/notes/tmux-moment/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/tmux-moment/</guid>
+      <description>
+        
+          &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-00.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;lo-básico&#34;&gt;Lo Básico&lt;/h2&gt;
+&lt;p&gt;Primero debemos ejecutar el comando &lt;strong&gt;tmux&lt;/strong&gt;, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a &lt;strong&gt;tmux&lt;/strong&gt;, en mi caso utilizare la combinación &lt;strong&gt;ctrl + b&lt;/strong&gt; que es la configuración por defecto luego de la instalación:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Descripción&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Comando&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Dividir terminal en horizontal&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + &amp;quot;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Dividir terminal en vertical&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + %&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel izquierda&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys izquierda&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel derecha&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys derecha&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel arriba&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys arriba&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cambiar a panel abajo&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + keys abajo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Ver numero de terminal&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + q&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Saltar de un panel a otro&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + o&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cerra panel actual&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cerra la ventana actual&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + &amp;amp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Recorre los diseños de paneles&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + space&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Cerra panel actual&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + x&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Ayuda tmux&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + ?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Listar todas las sesiones&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;tmux ls&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Versión&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;tmux -V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;funcionalidades-muy-útiles&#34;&gt;Funcionalidades muy útiles&lt;/h2&gt;
+&lt;p&gt;Un función muy útil en &lt;strong&gt;tmux&lt;/strong&gt; es el &lt;strong&gt;modo comados&lt;/strong&gt;, que nos permite ingresar comandos que nos faciliten tareas de forma mas simple.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Descripción&lt;/strong&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Comando&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Modo comando&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ctrl + b + :&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Activa sincronización de paneles&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:setw synchronize-panes on&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Desactiva sincronización de paneles&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:setw synchronize-panes off&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia arriba&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -U&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia abajo&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la izquierda&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -L&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la derecha&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -R&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia arriba&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -U 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia abajo&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -D 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la izquierda&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -L 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Redimencionar panel hacia la derecha&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;:resize-pane -R 10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;algunas-demos&#34;&gt;Algunas demos&lt;/h2&gt;
+&lt;p&gt;Ejecutamos &lt;strong&gt;tmux&lt;/strong&gt;, dividimos en diferentes paneles:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sincronización de paneles:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Trabajo con paneles y redimenciones con &lt;strong&gt;ctrl + b + space&lt;/strong&gt; y &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;&lt;strong&gt;Tmux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Ruta de Aprendizaje</title>
+      <link>https://blog.fcch.xyz/post/notes/learning-path/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/learning-path/</guid>
+      <description>
+        
+          &lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificarme &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;En mi busqueda de infromación encontre esta descripción del camino completo hacia una certificación &lt;strong&gt;Profecional&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;documentación-inicial&#34;&gt;Documentación Inicial&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/&#34;&gt;&lt;strong&gt;AWS Certificación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-cloud-practitioner/&#34;&gt;&lt;strong&gt;AWS Certified Cloud Practitioner&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-solutions-architect-associate/&#34;&gt;&lt;strong&gt;AWS Certified Solutions Architect – Associate&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;aws-certified-cloud-practitioner-clf-c01&#34;&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
+&lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Servicios disponibles y sus casos de uso comunes.&lt;/li&gt;
+&lt;li&gt;Principios de arquitectura de AWS Cloud (a nivel conceptual).&lt;/li&gt;
+&lt;li&gt;Seguridad de la cuenta y cumplimiento.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Los candidatos también deben demostrar una comprensión de la economía de la nube de AWS, como:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Costos.&lt;/li&gt;
+&lt;li&gt;Facturación y análisis.&lt;/li&gt;
+&lt;li&gt;La propuesta de valor de AWS Cloud.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Con estos conocimientos los candidatos podran validar la capacidad para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Explicar el valor de AWS Cloud.&lt;/li&gt;
+&lt;li&gt;Comprender y explicar el modelo de responsabilidad compartida de AWS.&lt;/li&gt;
+&lt;li&gt;Comprender las mejores prácticas de seguridad en la nube de AWS.&lt;/li&gt;
+&lt;li&gt;Comprender los costos, la economía y las prácticas de facturación de AWS Cloud.&lt;/li&gt;
+&lt;li&gt;Describir y posicionar los servicios centrales de AWS, incluidos el procesamiento, la red, las bases de datos y el almacenamiento.&lt;/li&gt;
+&lt;li&gt;Identificar los servicios de AWS para casos de uso comunes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tipos-de-respuesta&#34;&gt;Tipos de respuesta&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Opción múltiple: Tienen una respuesta correcta y tres respuestas incorrectas.&lt;/li&gt;
+&lt;li&gt;Respuesta múltiple: Tiene dos o más respuestas correctas de cinco o más opciones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;contenido-del-examen&#34;&gt;Contenido del examen&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Etapa&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;% de Calificación&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 1: Conceptos en la nube&lt;/td&gt;
+&lt;td&gt;26%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 2: Seguridad y cumplimiento&lt;/td&gt;
+&lt;td&gt;25%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 3: Tecnología&lt;/td&gt;
+&lt;td&gt;33%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 4: Facturación y precios&lt;/td&gt;
+&lt;td&gt;16%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;TOTAL&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;100%&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 1: Conceptos de la nube&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[1.1] Definir la nube de AWS y su propuesta de valor.&lt;/li&gt;
+&lt;li&gt;[1.2] Identificar aspectos de la economía de la nube de AWS.&lt;/li&gt;
+&lt;li&gt;[1.3] Enumere los diferentes principios de diseño de la arquitectura en la nube.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 2: Seguridad y cumplimiento&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[2.1] Definir el modelo de responsabilidad compartida de AWS.&lt;/li&gt;
+&lt;li&gt;[2.2] Definir los conceptos de cumplimiento y seguridad de la nube de AWS.&lt;/li&gt;
+&lt;li&gt;[2.3] Identificar las capacidades de administración de acceso de AWS.&lt;/li&gt;
+&lt;li&gt;[2.4] Identificar recursos para soporte de seguridad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 3: Tecnología&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[3.1] Definir métodos de implementación y operación en la nube de AWS.&lt;/li&gt;
+&lt;li&gt;[3.2] Definir la infraestructura global de AWS.&lt;/li&gt;
+&lt;li&gt;[3.3] Identificar los servicios centrales de AWS.&lt;/li&gt;
+&lt;li&gt;[3.4] Identificar recursos para el apoyo tecnológico.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 4: Facturación y precios&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[4.1] Comparar y contrastar los distintos modelos de precios de AWS.&lt;/li&gt;
+&lt;li&gt;[4.2] Reconocer las diversas estructuras de cuentas en relación con la facturación y los precios de AWS.&lt;/li&gt;
+&lt;li&gt;[4.3] Identificar los recursos disponibles para soporte de facturación.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;contenido-personal&#34;&gt;Contenido Personal&lt;/h2&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34;&gt;&lt;strong&gt;AWS Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>NPM EACCES</title>
+      <link>https://blog.fcch.xyz/post/notes/npm-eacces/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/npm-eacces/</guid>
+      <description>
+        
+          &lt;p&gt;Me toco probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Al ejecutar el comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ npm install -g &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se presento un problema de permisos &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; y para solucionar el problema de forma inmediata era ejecutarlo con &lt;strong&gt;sudo&lt;/strong&gt;, esta práctica es común pero no es lo que buscamos.&lt;/p&gt;
+&lt;p&gt;Buscando encontré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;&lt;strong&gt;NPM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;creación-del-nuevo-directorio&#34;&gt;Creación del Nuevo Directorio&lt;/h2&gt;
+&lt;p&gt;Creamos una carpeta nueva donde se instalarán los nuevos programas:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir ~/.npm-global
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configure-npm-para-la-nueva-ruta-del-directorio&#34;&gt;Configure NPM para la Nueva Ruta del Directorio&lt;/h2&gt;
+&lt;p&gt;Con el comando &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;/a&gt; cambiamos la ruta del directorio de instalación de paquetes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ npm config set prefix &amp;#39;~/.npm-global&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;variables-de-entorno&#34;&gt;Variables de Entorno&lt;/h2&gt;
+&lt;p&gt;En algunos casos, hay guías que te sugieren crear un archivo &lt;strong&gt;.profile&lt;/strong&gt; para crear la variable, en este ejemplo agregamos la variable al archivo &lt;strong&gt;.bashrc&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ echo &amp;#39;NPM_CONFIG_PREFIX=~/.npm-global&amp;#39; &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;actualizamos-variables&#34;&gt;Actualizamos Variables&lt;/h2&gt;
+&lt;p&gt;Actualizamos las variables con el siguiente comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;probamos-la-instalación-sin-sudo&#34;&gt;Probamos la Instalación sin sudo&lt;/h2&gt;
+&lt;p&gt;Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer &lt;strong&gt;sudo&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ npm install -g &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodejs.org/en/docs/guides/&#34;&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nodejs.org/api/errors.html&#34;&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Apuntes Fedora 32</title>
+      <link>https://blog.fcch.xyz/post/notes/apuntes-fedora-32/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/apuntes-fedora-32/</guid>
+      <description>
+        
+          &lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prompt-terminal&#34;&gt;Prompt Terminal&lt;/h2&gt;
+&lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
+&lt;p&gt;Buscando me encontré con &lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedo de esta forma:&lt;/p&gt;
+&lt;p&gt;Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# Instalción Git
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo dnf install git
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;# Script /usr/share/git-core/contrib/completion/git-prompt.sh  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Descripción de los datos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;- __git_ps1: Variable del script.
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;- t: Obtiene la hora, minutos y segundos.
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;- W: Muestra el nombre de carpeta actual.
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;- source: Ruta del script __git_ps1.
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;- export GIT_PS1_SHOWCOLORHINTS: Color para los datos git.
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;- export GIT_PS1_SHOWDIRTYSTATE: Muestra el estado actual del repo.
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;- export GIT_PS1_SHOWUNTRACKEDFILES: Mostrar archivos sin seguimiento.
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;- export PROMPT_COMMAND: Personalización del prompt.
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;- \[\033[0;31m\]: Color Rojo.
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;- \[\033[0;33m\]: Color Amarillo.
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;- \[\033[0;32m\]: Color Verde.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Prompt personalizado ~/.bashrc&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /usr/share/git-core/contrib/completion/git-prompt.sh
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWCOLORHINTS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWDIRTYSTATE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWUNTRACKEDFILES&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;__git_ps1 &amp;#34;\[\033[01;33m\]\t\[\033[00m\] \[\033[01;31m\][\W]\[\033[00m\]&amp;#34; &amp;#34; \\\$ &amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-ce&#34;&gt;Docker CE&lt;/h2&gt;
+&lt;p&gt;Luego de instalar Docker CE desde el repositorio &lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;oficial&lt;/strong&gt;&lt;/a&gt; y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.&lt;/p&gt;
+&lt;p&gt;Para solucionar el problema agregamos la interface &lt;strong&gt;docker0&lt;/strong&gt; en la zona de confianza del firewall.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo firewall-cmd --reload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;cinnamon&#34;&gt;Cinnamon&lt;/h2&gt;
+&lt;p&gt;Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es &lt;strong&gt;NOUVEAU&lt;/strong&gt; controlador de código abierto, instalamos el controlador &lt;strong&gt;NVIDIA Corporation GF119 [NVS 310]&lt;/strong&gt; para mejorar el rendimiento en el vídeo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NVIDIA Driver 390xxx - repositorio RPMFusion&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;# Habilitando NVIDIA RPM Fusion
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;# Listando controladores disponibles
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ sudo dnf repository-packages rpmfusion-nonfree-nvidia-driver info
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;# Instalación del controlador
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ sudo dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;$ sudo dnf install xorg-x11-drv-nvidia-390xx-cuda
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;# Pruebas y control de rendimiento
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;$ sudo dnf install -y gwe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;Docker Fedora&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;Fedora Git Reference&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
