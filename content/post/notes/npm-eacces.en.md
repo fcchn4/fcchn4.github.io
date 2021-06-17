@@ -14,7 +14,7 @@ categories = [
     "Servers",
 ]
 series = ["Servers"]
-thumbnail = "images/aws-learning-path/fcch-route.png"
+thumbnail = "images/npm-eacces/npm-error-img.png"
 +++
 
 I had to test the implementation of a **NodeJS** application where I needed to install global packages, the installation of global **NodeJS** packages in the operating system does not seem to be a good practice, so we found a solution to this problem.
