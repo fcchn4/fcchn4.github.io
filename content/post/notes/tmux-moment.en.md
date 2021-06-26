@@ -5,13 +5,12 @@ date = "2021-05-25"
 description = "Simple guide for Tmux commands"
 featured = true
 tags = [
-    "linux",
-    "bash"
+    "bash",
 ]
 categories = [
-    "gnu-linux",
+    "notes",
 ]
-series = ["Tmux"]
+series = ["Linux"]
 thumbnail = "images/tmux-moment/tmux-00.png"
 +++
 

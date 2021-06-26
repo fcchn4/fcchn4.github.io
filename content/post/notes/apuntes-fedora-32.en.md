@@ -6,12 +6,11 @@ description = "Some notes for Fedora and version 32"
 featured = true
 tags = [
     "fedora",
-    "bash"
 ]
 categories = [
-    "gnu-linux",
+    "Infrastructure",
 ]
-series = ["Fedora"]
+series = ["GNU-Linux"]
 thumbnail = "images/fedora-32/fedora32-400.jpg"
 +++
 

@@ -5,14 +5,12 @@ date = "2020-08-12"
 description = "Servers and Infrastructure Guide"
 featured = true
 tags = [
-    "bash",
     "docker",
     "grub",
     "cgroup"
 ]
 categories = [
     "Infrastructure",
-    "Servers",
 ]
 series = ["Servers"]
 thumbnail = "images/docker-limite-mem/kernel-panic.jpg"

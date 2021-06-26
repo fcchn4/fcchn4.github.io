@@ -6,12 +6,10 @@ description = "Guía Servidores e Infraestructura"
 featured = true
 tags = [
     "nodejs",
-    "npm",
-    "bash"
+    "npm"
 ]
 categories = [
     "Infraestructura",
-    "Servidores",
 ]
 series = ["Servidores"]
 thumbnail = "images/npm-eacces/npm-error-img.png"

@@ -5,15 +5,13 @@ date = "2020-01-06"
 description = "Guía Web"
 featured = true
 tags = [
-    "web",
     "spip",
-    "cms"
+    "php"
 ]
 categories = [
     "web",
-    "spip",
 ]
-series = ["Web"]
+series = ["CMS"]
 thumbnail = "images/spip-svn/logo-spip-400.png"
 +++
 

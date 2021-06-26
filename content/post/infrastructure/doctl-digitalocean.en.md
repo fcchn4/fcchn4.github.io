@@ -5,14 +5,12 @@ date = "2020-12-30"
 description = "Servers and Infrastructure Guide"
 featured = true
 tags = [
-    "bash",
     "cloud",
     "digitalocean",
     "doctl"
 ]
 categories = [
     "Infrastructure",
-    "Servers",
 ]
 series = ["Servers"]
 thumbnail = "images/doctl-digitalocean/doctl.png"

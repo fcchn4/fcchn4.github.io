@@ -6,12 +6,11 @@ description = "Algunos apuntes para Fedora y la versión 32"
 featured = true
 tags = [
     "fedora",
-    "bash"
 ]
 categories = [
-    "gnu-linux",
+    "Infraestructura",
 ]
-series = ["Fedora"]
+series = ["GNU-Linux"]
 thumbnail = "images/fedora-32/fedora32-400.jpg"
 +++
 

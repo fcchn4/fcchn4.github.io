@@ -6,12 +6,12 @@ description = "Web Guide"
 featured = true
 tags = [
     "wordpress",
-    "cms"
+    "php"
 ]
 categories = [
     "web",
 ]
-series = ["Web"]
+series = ["CMS"]
 thumbnail = "images/wordpress-detalles/logo-wordpress-400.png"
 +++
 I was collaborating with some companies that made changes to their websites, where [Wordpress](https://wordpress.org/) was used as the base [CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos), these websites were being changed servers, updating to the most current version or verifying updates in their add-ons, in the process different problems arose , I had to see the official [Wordpress Codex](https://codex.wordpress.org/) documentation and Google to give them a solution.

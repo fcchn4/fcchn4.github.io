@@ -6,11 +6,9 @@ description = "A personal learning guide with goals"
 featured = true
 tags = [
   "aws",
-  "ci-cd"
 ]
 categories = [
     "Infrastructure",
-    "Cloud",
 ]
 series = ["Cloud"]
 thumbnail = "images/aws-learning-path/fcch-route.png"

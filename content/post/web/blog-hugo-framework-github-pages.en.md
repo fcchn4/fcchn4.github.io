@@ -5,16 +5,13 @@ date = "2020-01-11"
 description = "Web Guide"
 featured = true
 tags = [
-    "hugo",
     "git",
     "github"
 ]
 categories = [
     "web",
-    "hugo",
 ]
-series = ["Web"]
-aliases = ["web"]
+series = ["Hugo"]
 thumbnail = "images/hugo-github/logo-hugo-github-400.png"
 +++
 

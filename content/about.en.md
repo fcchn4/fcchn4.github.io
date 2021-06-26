@@ -5,13 +5,13 @@ date = "2020-01-07"
 aliases = ["about-me", "contact"]
 author = "Fcch"
 featured = true
-tags = [
-    "html"
-]
-categories = [
-    "blog",
-]
-series = ["Fcch Blog"]
+#tags = [
+#    "html"
+#]
+#categories = [
+#    "blog",
+#]
+#series = ["Fcch Blog"]
 thumbnail = "images/logo/site-logo-fcch-400.png"
 +++
 I like to learn about technology and participate in Free Software communities, I learn about:

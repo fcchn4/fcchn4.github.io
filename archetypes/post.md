@@ -1,22 +1,22 @@
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-description: "Article description."
-featured: true # Destacados
-draft: true
-toc: false
-# menu: main
-featureImage: "/images/path/file.jpg" # Imagen destacada
-thumbnail: "/images/path/thumbnail.png" # Imagen de miniatura
-shareImage: "/images/path/share.png" # Imagen separada para RRSS
-codeMaxLines: 10 
-codeLineNumbers: false
-figurePositionShow: true
-categories:
-  - Technology
-tags:
-  - Tag_name1
-  - Tag_name2
----
++++
+title = "{{ replace .Name "-" " " | title }}"
+author = "Fcch"
+date = "{{ .Date }}"
+description = "Article description."
+featured = true # Destacados
+tags = [
+    "TAG_NAME_1",
+    "TAG_NAME_2"
+]
+categories = [
+    "CATEGORY_NAME",
+]
+series = ["NAME_SERIE"]
+thumbnail = "images/path/image.jpg"
++++
 
 **Insert Lead paragraph here.**
+
+<!--more-->
+
+![](/images/path/image.jpg)

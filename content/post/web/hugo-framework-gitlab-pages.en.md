@@ -5,15 +5,13 @@ date = "2021-01-20"
 description = "Web Guide"
 featured = true
 tags = [
-    "hugo",
     "git",
     "gitlab"
 ]
 categories = [
     "web",
-    "hugo",
 ]
-series = ["Web"]
+series = ["Hugo"]
 thumbnail = "images/hugo-gitlab/hugo-gitlab.png"
 +++
 
