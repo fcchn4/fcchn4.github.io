@@ -207,7 +207,7 @@
 <h2 id="previous-configurations">Previous Configurations</h2>
 <ul>
 <li>
-<p><a href="https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster"><strong>Necessary RPI configurations</strong></a>: Before installing the K3s binaries it is necessary to make some extra configurations in the <a href="https://www.raspberrypi.org/"><strong>Raspberry Pi</strong></a> operating system, we will use <strong>Raspbian Buster</strong> for this laboratory.</p>
+<p><a href="https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster"><strong>Necessary RPI configurations</strong></a>: Before installing the <strong>K3s</strong> binaries it is necessary to make some extra configurations in the <a href="https://www.raspberrypi.org/"><strong>Raspberry Pi</strong></a> operating system, we will use <strong>Raspbian Buster</strong> for this laboratory.</p>
 </li>
 <li>
 <p><strong>Enabling legacy iptables on Raspbian Buster</strong></p>
@@ -230,11 +230,11 @@
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ curl -sfL https://get.k3s.io <span class="p">|</span> sh -
 </code></pre></div><p>This script will install all the necessary tools such as:</p>
 <ul>
-<li>kubectl</li>
-<li>crictl</li>
-<li>ctr</li>
-<li>k3s-killall.sh</li>
-<li>k3s-uninstall.sh</li>
+<li><strong>kubectl</strong></li>
+<li><strong>crictl</strong></li>
+<li><strong>ctr</strong></li>
+<li><strong>k3s-killall.sh</strong></li>
+<li><strong>k3s-uninstall.sh</strong></li>
 </ul>
 <p>It will also create the configuration file <strong>/etc/rancher/k3s/k3s.yaml</strong></p>
 <h2 id="install-worker-nodes">Install Worker Nodes</h2>

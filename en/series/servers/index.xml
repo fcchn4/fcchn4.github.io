@@ -44,7 +44,7 @@
 &lt;h2 id=&#34;previous-configurations&#34;&gt;Previous Configurations&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster&#34;&gt;&lt;strong&gt;Necessary RPI configurations&lt;/strong&gt;&lt;/a&gt;: Before installing the K3s binaries it is necessary to make some extra configurations in the &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi&lt;/strong&gt;&lt;/a&gt; operating system, we will use &lt;strong&gt;Raspbian Buster&lt;/strong&gt; for this laboratory.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster&#34;&gt;&lt;strong&gt;Necessary RPI configurations&lt;/strong&gt;&lt;/a&gt;: Before installing the &lt;strong&gt;K3s&lt;/strong&gt; binaries it is necessary to make some extra configurations in the &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi&lt;/strong&gt;&lt;/a&gt; operating system, we will use &lt;strong&gt;Raspbian Buster&lt;/strong&gt; for this laboratory.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Enabling legacy iptables on Raspbian Buster&lt;/strong&gt;&lt;/p&gt;
@@ -67,11 +67,11 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ curl -sfL https://get.k3s.io &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This script will install all the necessary tools such as:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;kubectl&lt;/li&gt;
-&lt;li&gt;crictl&lt;/li&gt;
-&lt;li&gt;ctr&lt;/li&gt;
-&lt;li&gt;k3s-killall.sh&lt;/li&gt;
-&lt;li&gt;k3s-uninstall.sh&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;kubectl&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;crictl&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ctr&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;k3s-killall.sh&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;k3s-uninstall.sh&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;It will also create the configuration file &lt;strong&gt;/etc/rancher/k3s/k3s.yaml&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;install-worker-nodes&#34;&gt;Install Worker Nodes&lt;/h2&gt;
