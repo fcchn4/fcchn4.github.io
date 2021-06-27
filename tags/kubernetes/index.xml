@@ -9,15 +9,101 @@
     <copyright>Fcch Blog | 2019 - 2021</copyright>
     <lastBuildDate>Sat, 26 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>K3s Apuntes</title>
-      <link>https://blog.fcch.xyz/post/infrastructure/k3s-notes/</link>
+      <title>K3s Apuntes - Parte 1</title>
+      <link>https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/</link>
       <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/post/infrastructure/k3s-notes/</guid>
+      <guid>https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/</guid>
       <description>
         
-          &lt;p&gt;&lt;strong&gt;Insert Lead paragraph here.&lt;/strong&gt;&lt;/p&gt;
+          &lt;p&gt;Experimentando con &lt;a href=&#34;https://docs.docker.com/engine/swarm/&#34;&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt; me puse a la tarea de armar algo con los &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, luego de estar googleando y charlando con &lt;a href=&#34;https://twitter.com/donkeysharp&#34;&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, me recomendó usar &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; que es una distribución de &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; con backend de almacenamiento ligero basado en &lt;a href=&#34;https://www.sqlite.org/index.html&#34;&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; compatible con arquitectura &lt;a href=&#34;https://en.wikipedia.org/wiki/ARM_architecture&#34;&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Revisamos la documentación oficial de &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; y pude armar mi laboratorio, el tipo de ejercicio que se desarrollara sera un &lt;strong&gt;Server node&lt;/strong&gt; y cuatro &lt;strong&gt;Worker nodes&lt;/strong&gt; con la  base de datos &lt;a href=&#34;https://www.sqlite.org/index.html&#34;&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;arquitectura&#34;&gt;Arquitectura&lt;/h2&gt;
+&lt;p&gt;Existen dos tipos de nodos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Server node&lt;/strong&gt;, es el nodo que ejecuta &lt;strong&gt;k3s server&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Worker node&lt;/strong&gt;, es el nodo que ejecuta &lt;strong&gt;k3s agent&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;También existen dos formas de implementación:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Un solo servidor con una base de datos integrada&lt;/strong&gt;, en esta configuración, cada nodo de agente está registrado en el mismo &lt;strong&gt;Server node&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-single-server.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Servidor K3s de Alta Disponibilidad con una base de datos externa&lt;/strong&gt;, que se compone de:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dos o más &lt;strong&gt;nodos de servidor&lt;/strong&gt; que servirán a la API de &lt;strong&gt;Kubernetes&lt;/strong&gt; y ejecutarán otros servicios del plano de control.&lt;/li&gt;
+&lt;li&gt;Un &lt;strong&gt;almacén de datos externo&lt;/strong&gt; (a diferencia del almacén de datos SQLite incorporado que se usa en configuraciones de un solo servidor).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-ha-server.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2.1 &lt;strong&gt;Direcciones de registro fija para nodos agente&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;En la configuración del servidor de alta disponibilidad, cada nodo también debe registrarse con la API de &lt;strong&gt;Kubernetes&lt;/strong&gt; mediante una dirección de registro fija, después del registro, los nodos del agente establecen una conexión directamente con uno de los &lt;strong&gt;Server nodes&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/k3s-production-setup.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuraciones-previas&#34;&gt;Configuraciones Previas&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster&#34;&gt;&lt;strong&gt;Configuraciones necesarias RPI&lt;/strong&gt;&lt;/a&gt;: Antes de instlar los binarios de &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; es necesario realizar unas configuraciones extra en el sistema operativo de las &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi&lt;/strong&gt;&lt;/a&gt;, utilizaremos &lt;strong&gt;Raspbian Buster&lt;/strong&gt; para este laboratorio.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Habilitar iptables heredados en Raspbian Buster&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Raspbian Buster&lt;/strong&gt; utiliza de forma predeterminada en &lt;strong&gt;nftables&lt;/strong&gt; en lugar de &lt;strong&gt;iptables&lt;/strong&gt;. Las funciones de red de &lt;strong&gt;K3s&lt;/strong&gt; requieren &lt;strong&gt;iptables&lt;/strong&gt; y no funcionan con &lt;strong&gt;nftables&lt;/strong&gt;, para solucionar este problema debemos realizar el cambio correspondiente.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo iptables -F
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Habilitando cgroups para Raspbian Buster&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Las instalaciones estándar de &lt;strong&gt;Raspbian Buster&lt;/strong&gt; no se inicializan con &lt;strong&gt;cgroups&lt;/strong&gt; habilitado. &lt;strong&gt;K3S&lt;/strong&gt; necesita &lt;strong&gt;cgroups&lt;/strong&gt; inicializado como un servicio systemd. Se puede habilitar &lt;strong&gt;cgroups&lt;/strong&gt; agregando &lt;strong&gt;cgroup_memory=1&lt;/strong&gt; y &lt;strong&gt;cgroup_enable=memory&lt;/strong&gt; en &lt;strong&gt;/boot/cmdline.txt&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# Dentro del archivo cmdline.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;console=serial0,115200 console=tty1 root=PARTUUID=58b06195-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con estos cambios aplicados se debe reiniciar el sistema operativo en los &lt;strong&gt;Raspberry Pi&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;instalación-del-server-node&#34;&gt;Instalación del Server node&lt;/h2&gt;
+&lt;p&gt;Según la documentación oficial podemos utilizar los scripts oficiales para instalar los binarios para el &lt;strong&gt;Server node&lt;/strong&gt; de &lt;strong&gt;K3s&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ curl -sfL https://get.k3s.io &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este script instalará todas la herramientas necesarias como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kubectl&lt;/li&gt;
+&lt;li&gt;crictl&lt;/li&gt;
+&lt;li&gt;ctr&lt;/li&gt;
+&lt;li&gt;k3s-killall.sh&lt;/li&gt;
+&lt;li&gt;k3s-uninstall.sh&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;También creara el archivo de configuración &lt;strong&gt;/etc/rancher/k3s/k3s.yaml&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;instalación-de-worker-nodes&#34;&gt;Instalación de Worker Nodes&lt;/h2&gt;
+&lt;p&gt;Luego de la instalación del servidor &lt;strong&gt;K3s&lt;/strong&gt; podemos agregar nodos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ curl -sfL https://get.k3s.io &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;K3S_URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://myserver:6443 &lt;span class=&#34;nv&#34;&gt;K3S_TOKEN&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;mynodetoken sh -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;donde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;K3S_URL&lt;/strong&gt;: Esta es la dirección IP o el dominio del servidor &lt;strong&gt;K3s&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;K3S_TOKEN&lt;/strong&gt;: Es un token que se almacena en el servidor &lt;strong&gt;K3s&lt;/strong&gt;, &lt;strong&gt;/var/lib/rancher/k3s/server/node-token&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Es necesario que el hostname de los nuevos nodos sean diferentes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;operaciones-básicas&#34;&gt;Operaciones Básicas&lt;/h2&gt;
+&lt;p&gt;Podemos ejecutar los comandos comunes de &lt;strong&gt;Kubernetes&lt;/strong&gt; o utilizar el comando &lt;strong&gt;K3s&lt;/strong&gt;, a estos dos comandos debemos anteponerle el comando &lt;strong&gt;sudo&lt;/strong&gt; para que se ejecuten las ordenes sin problemas.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo k3s kubectl get nodes
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# o también&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ sudo kubectl get nodes
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ sudo kubectl get pods --all-namespaces
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Control daemon:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo systemctl status k3s
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo systemctl stop k3s
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/quick-start/&#34;&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/&#34;&gt;&lt;strong&gt;Server Config&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/install-options/&#34;&gt;&lt;strong&gt;Install Options&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/&#34;&gt;&lt;strong&gt;Kube Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/&#34;&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/architecture/&#34;&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
         
       </description>
     </item>
