@@ -185,8 +185,8 @@
 <h2 id="arquitectura">Arquitectura</h2>
 <p>Existen dos tipos de nodos:</p>
 <ol>
-<li><strong>Server node</strong>, es el nodo que ejecuta <strong>k3s server</strong>.</li>
-<li><strong>Worker node</strong>, es el nodo que ejecuta <strong>k3s agent</strong>.</li>
+<li><strong>Server node</strong>, es el nodo que ejecuta <strong>K3s server</strong>.</li>
+<li><strong>Worker node</strong>, es el nodo que ejecuta <strong>K3s agent</strong>.</li>
 </ol>
 <p>También existen dos formas de implementación:</p>
 <ol>
@@ -209,7 +209,7 @@
 <h2 id="configuraciones-previas">Configuraciones Previas</h2>
 <ul>
 <li>
-<p><a href="https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster"><strong>Configuraciones necesarias RPI</strong></a>: Antes de instlar los binarios de <a href="https://k3s.io/"><strong>K3s</strong></a> es necesario realizar unas configuraciones extra en el sistema operativo de las <a href="https://www.raspberrypi.org/"><strong>Raspberry Pi</strong></a>, utilizaremos <strong>Raspbian Buster</strong> para este laboratorio.</p>
+<p><a href="https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster"><strong>Configuraciones necesarias RPI</strong></a>: Antes de instalar los binarios de <a href="https://k3s.io/"><strong>K3s</strong></a> es necesario realizar unas configuraciones extra en el sistema operativo de las <a href="https://www.raspberrypi.org/"><strong>Raspberry Pi</strong></a>, utilizaremos <strong>Raspbian Buster</strong> para este laboratorio.</p>
 </li>
 <li>
 <p><strong>Habilitar iptables heredados en Raspbian Buster</strong></p>
@@ -223,7 +223,7 @@
 </code></pre></div><ul>
 <li><strong>Habilitando cgroups para Raspbian Buster</strong></li>
 </ul>
-<p>Las instalaciones estándar de <strong>Raspbian Buster</strong> no se inicializan con <strong>cgroups</strong> habilitado. <strong>K3S</strong> necesita <strong>cgroups</strong> inicializado como un servicio systemd. Se puede habilitar <strong>cgroups</strong> agregando <strong>cgroup_memory=1</strong> y <strong>cgroup_enable=memory</strong> en <strong>/boot/cmdline.txt</strong>.</p>
+<p>Las instalaciones estándar de <strong>Raspbian Buster</strong> no se inicializan con <strong>cgroups</strong> habilitado. <strong>K3s</strong> necesita <strong>cgroups</strong> inicializado como un servicio systemd. Se puede habilitar <strong>cgroups</strong> agregando <strong>cgroup_memory=1</strong> y <strong>cgroup_enable=memory</strong> en <strong>/boot/cmdline.txt</strong>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span># Dentro del archivo cmdline.txt
 <span class="ln">2</span>console=serial0,115200 console=tty1 root=PARTUUID=58b06195-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory
 </code></pre></div><p>Con estos cambios aplicados se debe reiniciar el sistema operativo en los <strong>Raspberry Pi</strong>.</p>
@@ -232,11 +232,11 @@
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ curl -sfL https://get.k3s.io <span class="p">|</span> sh -
 </code></pre></div><p>Este script instalará todas la herramientas necesarias como:</p>
 <ul>
-<li>kubectl</li>
-<li>crictl</li>
-<li>ctr</li>
-<li>k3s-killall.sh</li>
-<li>k3s-uninstall.sh</li>
+<li><strong>kubectl</strong></li>
+<li><strong>crictl</strong></li>
+<li><strong>ctr</strong></li>
+<li><strong>k3s-killall.sh</strong></li>
+<li><strong>k3s-uninstall.sh</strong></li>
 </ul>
 <p>También creara el archivo de configuración <strong>/etc/rancher/k3s/k3s.yaml</strong></p>
 <h2 id="instalación-de-worker-nodes">Instalación de Worker Nodes</h2>
@@ -259,13 +259,13 @@
 <span class="ln">2</span>$ sudo systemctl stop k3s
 </code></pre></div><h2 id="referencias">Referencias</h2>
 <ul>
-<li><a href="https://rancher.com/docs/k3s/latest/en/quick-start/"><strong>Quick Start</strong></a></li>
-<li><a href="https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/"><strong>Server Config</strong></a></li>
-<li><a href="https://rancher.com/docs/k3s/latest/en/installation/install-options/"><strong>Install Options</strong></a></li>
+<li><a href="https://rancher.com/docs/k3s/latest/en/quick-start/"><strong>Inicio Rapido</strong></a></li>
+<li><a href="https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/"><strong>Configuración del Servidor</strong></a></li>
+<li><a href="https://rancher.com/docs/k3s/latest/en/installation/install-options/"><strong>Opciones de Instalación</strong></a></li>
 <li><a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"><strong>Kube Dashboard</strong></a></li>
 <li><a href="https://rancher.com/docs/"><strong>Docs K3S</strong></a></li>
-<li><a href="https://k3s.io/"><strong>Official Website</strong></a></li>
-<li><a href="https://rancher.com/docs/k3s/latest/en/architecture/"><strong>Architecture</strong></a></li>
+<li><a href="https://k3s.io/"><strong>Web Oficial</strong></a></li>
+<li><a href="https://rancher.com/docs/k3s/latest/en/architecture/"><strong>Arquitectura</strong></a></li>
 </ul>
 
 <h3>Traducciones:</h3>

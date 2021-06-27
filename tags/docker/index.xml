@@ -22,8 +22,8 @@
 &lt;h2 id=&#34;arquitectura&#34;&gt;Arquitectura&lt;/h2&gt;
 &lt;p&gt;Existen dos tipos de nodos:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Server node&lt;/strong&gt;, es el nodo que ejecuta &lt;strong&gt;k3s server&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Worker node&lt;/strong&gt;, es el nodo que ejecuta &lt;strong&gt;k3s agent&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server node&lt;/strong&gt;, es el nodo que ejecuta &lt;strong&gt;K3s server&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Worker node&lt;/strong&gt;, es el nodo que ejecuta &lt;strong&gt;K3s agent&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;También existen dos formas de implementación:&lt;/p&gt;
 &lt;ol&gt;
@@ -46,7 +46,7 @@
 &lt;h2 id=&#34;configuraciones-previas&#34;&gt;Configuraciones Previas&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster&#34;&gt;&lt;strong&gt;Configuraciones necesarias RPI&lt;/strong&gt;&lt;/a&gt;: Antes de instlar los binarios de &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; es necesario realizar unas configuraciones extra en el sistema operativo de las &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi&lt;/strong&gt;&lt;/a&gt;, utilizaremos &lt;strong&gt;Raspbian Buster&lt;/strong&gt; para este laboratorio.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster&#34;&gt;&lt;strong&gt;Configuraciones necesarias RPI&lt;/strong&gt;&lt;/a&gt;: Antes de instalar los binarios de &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; es necesario realizar unas configuraciones extra en el sistema operativo de las &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi&lt;/strong&gt;&lt;/a&gt;, utilizaremos &lt;strong&gt;Raspbian Buster&lt;/strong&gt; para este laboratorio.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Habilitar iptables heredados en Raspbian Buster&lt;/strong&gt;&lt;/p&gt;
@@ -60,7 +60,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Habilitando cgroups para Raspbian Buster&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Las instalaciones estándar de &lt;strong&gt;Raspbian Buster&lt;/strong&gt; no se inicializan con &lt;strong&gt;cgroups&lt;/strong&gt; habilitado. &lt;strong&gt;K3S&lt;/strong&gt; necesita &lt;strong&gt;cgroups&lt;/strong&gt; inicializado como un servicio systemd. Se puede habilitar &lt;strong&gt;cgroups&lt;/strong&gt; agregando &lt;strong&gt;cgroup_memory=1&lt;/strong&gt; y &lt;strong&gt;cgroup_enable=memory&lt;/strong&gt; en &lt;strong&gt;/boot/cmdline.txt&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Las instalaciones estándar de &lt;strong&gt;Raspbian Buster&lt;/strong&gt; no se inicializan con &lt;strong&gt;cgroups&lt;/strong&gt; habilitado. &lt;strong&gt;K3s&lt;/strong&gt; necesita &lt;strong&gt;cgroups&lt;/strong&gt; inicializado como un servicio systemd. Se puede habilitar &lt;strong&gt;cgroups&lt;/strong&gt; agregando &lt;strong&gt;cgroup_memory=1&lt;/strong&gt; y &lt;strong&gt;cgroup_enable=memory&lt;/strong&gt; en &lt;strong&gt;/boot/cmdline.txt&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# Dentro del archivo cmdline.txt
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;console=serial0,115200 console=tty1 root=PARTUUID=58b06195-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con estos cambios aplicados se debe reiniciar el sistema operativo en los &lt;strong&gt;Raspberry Pi&lt;/strong&gt;.&lt;/p&gt;
@@ -69,11 +69,11 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ curl -sfL https://get.k3s.io &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este script instalará todas la herramientas necesarias como:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;kubectl&lt;/li&gt;
-&lt;li&gt;crictl&lt;/li&gt;
-&lt;li&gt;ctr&lt;/li&gt;
-&lt;li&gt;k3s-killall.sh&lt;/li&gt;
-&lt;li&gt;k3s-uninstall.sh&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;kubectl&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;crictl&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ctr&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;k3s-killall.sh&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;k3s-uninstall.sh&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;También creara el archivo de configuración &lt;strong&gt;/etc/rancher/k3s/k3s.yaml&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;instalación-de-worker-nodes&#34;&gt;Instalación de Worker Nodes&lt;/h2&gt;
@@ -96,13 +96,13 @@
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ sudo systemctl stop k3s
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/quick-start/&#34;&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/&#34;&gt;&lt;strong&gt;Server Config&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/install-options/&#34;&gt;&lt;strong&gt;Install Options&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/quick-start/&#34;&gt;&lt;strong&gt;Inicio Rapido&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/&#34;&gt;&lt;strong&gt;Configuración del Servidor&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/install-options/&#34;&gt;&lt;strong&gt;Opciones de Instalación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/&#34;&gt;&lt;strong&gt;Kube Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/&#34;&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/architecture/&#34;&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;Web Oficial&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/architecture/&#34;&gt;&lt;strong&gt;Arquitectura&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
         
       </description>
