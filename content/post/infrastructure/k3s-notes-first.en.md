@@ -52,7 +52,7 @@ In the high availability server configuration, each node must also register with
 
 ## Previous Configurations
 
-- [**Necessary RPI configurations**](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster): Before installing the K3s binaries it is necessary to make some extra configurations in the [**Raspberry Pi**](https://www.raspberrypi.org/) operating system, we will use **Raspbian Buster** for this laboratory.
+- [**Necessary RPI configurations**](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster): Before installing the **K3s** binaries it is necessary to make some extra configurations in the [**Raspberry Pi**](https://www.raspberrypi.org/) operating system, we will use **Raspbian Buster** for this laboratory.
 
 - **Enabling legacy iptables on Raspbian Buster**
 
@@ -86,11 +86,11 @@ $ curl -sfL https://get.k3s.io | sh -
 
 This script will install all the necessary tools such as:
 
-- kubectl
-- crictl
-- ctr
-- k3s-killall.sh
-- k3s-uninstall.sh
+- **kubectl**
+- **crictl**
+- **ctr**
+- **k3s-killall.sh**
+- **k3s-uninstall.sh**
 
 It will also create the configuration file **/etc/rancher/k3s/k3s.yaml**
 
