@@ -16,7 +16,8 @@
       <guid>https://blog.fcch.xyz/post/notes/bandit-solved/</guid>
       <description>
         
-          &lt;p&gt;El enlace para poder jugar un momento: &lt;a href=&#34;https://overthewire.org/wargames/bandit/&#34;&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+          &lt;p&gt;They are war games offered by the OverTheWire community that help us learn and practice security concepts in the form of fun games.&lt;/p&gt;
+&lt;p&gt;El enlace para poder jugar un momento: &lt;a href=&#34;https://overthewire.org/wargames/bandit/&#34;&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/bandit/otw-bandit.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Iniciamos!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -456,7 +457,10 @@
 &lt;ul&gt;
 &lt;li&gt;At this moment, level 34 does not exist yet.&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://overthewire.org/wargames/bandit/&#34;&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
         
       </description>
     </item>
