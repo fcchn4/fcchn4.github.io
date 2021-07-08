@@ -14,7 +14,7 @@ series = ["Linux"]
 thumbnail = "images/bandit/otw-bandit.jpg"
 +++
 
-They are war games offered by the OverTheWire community that help us learn and practice security concepts in the form of fun games.
+Son juegos de guerra ofrecidos por la comunidad OverTheWire que nos ayudan a aprender y practicar conceptos de seguridad en forma de juegos divertidos.
 
 El enlace para poder jugar un momento: [**Over the wire, Bandit**](https://overthewire.org/wargames/bandit/)
 

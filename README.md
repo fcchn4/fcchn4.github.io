@@ -58,6 +58,7 @@ $ rm -r * && rm -r .gitignore .gitmodules
 
 ```bash
 $ git clone --recurse-submodules git@github.com:fcchn4/fcchn4.github.io.git
+$ cd fcchn4.github.io
 $ mkdir public
 $ git worktree add -B deploy public origin/deploy
 ```
