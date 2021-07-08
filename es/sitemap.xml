@@ -3,6 +3,141 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.fcch.xyz/post/notes/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/notes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/notes/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/apuntes/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/apuntes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/apuntes/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/notes/bandit-solved/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/notes/bandit-solved/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/notes/bandit-solved/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/bash/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/bash/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/bash/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/categories/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/linux/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/series/linux/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/series/linux/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/post/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/series/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/series/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.fcch.xyz/tags/</loc>
+    <lastmod>2021-07-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.fcch.xyz/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://blog.fcch.xyz/tags/"
+                />
+  </url>
+  
+  <url>
     <loc>https://blog.fcch.xyz/post/infrastructure/</loc>
     <lastmod>2021-06-26T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -14,21 +149,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://blog.fcch.xyz/post/infrastructure/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/categories/</loc>
-    <lastmod>2021-06-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/categories/"
                 />
   </url>
   
@@ -98,103 +218,8 @@
   </url>
   
   <url>
-    <loc>https://blog.fcch.xyz/post/</loc>
-    <lastmod>2021-06-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/post/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/series/</loc>
-    <lastmod>2021-06-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/series/"
-                />
-  </url>
-  
-  <url>
     <loc>https://blog.fcch.xyz/series/servidores/</loc>
     <lastmod>2021-06-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/tags/</loc>
-    <lastmod>2021-06-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/post/notes/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/post/notes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/post/notes/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/categories/apuntes/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/tags/bash/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/tags/bash/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/tags/bash/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://blog.fcch.xyz/series/linux/</loc>
-    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/series/linux/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/series/linux/"
-                />
   </url>
   
   <url>

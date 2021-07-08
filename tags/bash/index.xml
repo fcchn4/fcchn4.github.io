@@ -7,7 +7,460 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Fcch Blog | 2019 - 2021</copyright>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit Soluciones</title>
+      <link>https://blog.fcch.xyz/post/notes/bandit-solved/</link>
+      <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/bandit-solved/</guid>
+      <description>
+        
+          &lt;p&gt;El enlace para poder jugar un momento: &lt;a href=&#34;https://overthewire.org/wargames/bandit/&#34;&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/bandit/otw-bandit.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Iniciamos!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Usuario: bandit0&lt;/li&gt;
+&lt;li&gt;Puerto: 2220&lt;/li&gt;
+&lt;li&gt;Contraseña: bandit0&lt;/li&gt;
+&lt;li&gt;URL: banditlabs.overthewire.org&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;bandit-level-0--level-1&#34;&gt;Bandit Level 0 → Level 1&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH : ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit0@bandit.labs.overthewire.org&#34;&gt;bandit0@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat readme
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-1--level-2&#34;&gt;Bandit Level 1 → Level 2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SSH:  ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit1@bandit.labs.overthewire.org&#34;&gt;bandit1@bandit.labs.overthewire.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Solución:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat /home/bandit1/-
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-2--level-3&#34;&gt;Bandit Level 2 → Level 3&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit2@bandit.labs.overthewire.org&#34;&gt;bandit2@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat spaces&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;in&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;this&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;filename
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-3--level-4&#34;&gt;Bandit Level 3 → Level 4&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit3@bandit.labs.overthewire.org&#34;&gt;bandit3@bandit.labs.overthewire.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Solución:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; inhere/
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ ls -la
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ cat .hidden
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-4--level-5&#34;&gt;Bandit Level 4 → Level 5&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH:  ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit4@bandit.labs.overthewire.org&#34;&gt;bandit4@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; inhere/
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ ls -la
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ file /home/bandit4/inhere/-*
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ cat /home/bandit4/inhere/-file07
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-5--level-6&#34;&gt;Bandit Level 5 → Level 6&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit5@bandit.labs.overthewire.org&#34;&gt;bandit5@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ find . -size 1033c ! -executable
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ cat ./inhere/maybehere07/.file2
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-6--level-7&#34;&gt;Bandit Level 6 → Level 7&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit6@bandit.labs.overthewire.org&#34;&gt;bandit6@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ find / -size 33c -group bandit6 -user bandit7 2&amp;gt;/dev/null
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ ls -l /var/lib/dpkg/info/bandit7.password
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ cat /var/lib/dpkg/info/bandit7.password
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-7--level-8&#34;&gt;Bandit Level 7 → Level 8&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit7@bandit.labs.overthewire.org&#34;&gt;bandit7@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ grep &lt;span class=&#34;s1&#34;&gt;&amp;#39;millionth&amp;#39;&lt;/span&gt; data.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-8--level-9&#34;&gt;Bandit Level 8 → Level 9&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit8@bandit.labs.overthewire.org&#34;&gt;bandit8@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat data.txt &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sort &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; uniq -u
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-9--level-10&#34;&gt;Bandit Level 9 → Level 10&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit9@bandit.labs.overthewire.org&#34;&gt;bandit9@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ strings data.txt &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep &lt;span class=&#34;s1&#34;&gt;&amp;#39;=&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==========&lt;/span&gt; truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-10--level-11&#34;&gt;Bandit Level 10 → Level 11&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit10@bandit.labs.overthewire.org&#34;&gt;bandit10@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat data.txt
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ base64 -d data.txt 
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-11--level-12&#34;&gt;Bandit Level 11 → Level 12&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit11@bandit.labs.overthewire.org&#34;&gt;bandit11@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat data.txt &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr a-zA-Z n-za-mN-ZA-M
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-12--level-13&#34;&gt;Bandit Level 12 → Level 13&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit12@bandit.labs.overthewire.org&#34;&gt;bandit12@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir /tmp/fcch
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ cp data.txt /tmp/fcch/data.raw
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/fcch/
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ xxd -r data.raw &amp;gt; data1
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## $ file nombre_datos&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## $ gzip -cd data1 &amp;gt; data2&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## $ bzip2 -d data2 output_file: data2.out&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## $ tar -xvf data*&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-13--level-14&#34;&gt;Bandit Level 13 → Level 14&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit13@bandit.labs.overthewire.org&#34;&gt;bandit13@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat sshkey.private
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ ssh -i sshkey.private bandit14@localhost 
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ cat /etc/bandit_pass/bandit14
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-14--level-15&#34;&gt;Bandit Level 14 → Level 15&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -i sshkey.private bandit14@localhost&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cat /etc/bandit_pass/bandit14
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ telnet localhost &lt;span class=&#34;m&#34;&gt;30000&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;BfMYroe26WYalil77FoDi9qh59eK5xNr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-15--level-16&#34;&gt;Bandit Level 15 → Level 16&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit15@bandit.labs.overthewire.org&#34;&gt;bandit15@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;BfMYroe26WYalil77FoDi9qh59eK5xNr&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; openssl s_client -quiet -connect localhost:30001
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;cluFn7wTiGryunymYOu4RcffSxQluehd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-16--level-17&#34;&gt;Bandit Level 16 → Level 17&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit16@bandit.labs.overthewire.org&#34;&gt;bandit16@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ nmap -sT localhost -p 31000-32000
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; fcch &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; nc localhost &lt;span class=&#34;m&#34;&gt;31046&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Lo mismo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; fcch &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; nc localhost &lt;span class=&#34;m&#34;&gt;31518&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Nada&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; fcch &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; nc localhost &lt;span class=&#34;m&#34;&gt;31691&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Lo mismo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; fcch &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; nc localhost &lt;span class=&#34;m&#34;&gt;31790&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Nada&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; fcch &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; nc localhost &lt;span class=&#34;m&#34;&gt;31960&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Lo mismo&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; cluFn7wTiGryunymYOu4RcffSxQluehd &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; openssl s_client -quiet -connect localhost:31518
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;cluFn7wTiGryunymYOu4RcffSxQluehd &lt;span class=&#34;c1&#34;&gt;## Se descarta&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; cluFn7wTiGryunymYOu4RcffSxQluehd &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; openssl s_client -quiet -connect localhost:31790
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;-----BEGIN RSA PRIVATE KEY-----
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+&lt;span class=&#34;ln&#34;&gt;20&lt;/span&gt;JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+&lt;span class=&#34;ln&#34;&gt;21&lt;/span&gt;x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+&lt;span class=&#34;ln&#34;&gt;22&lt;/span&gt;KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+&lt;span class=&#34;ln&#34;&gt;23&lt;/span&gt;J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+&lt;span class=&#34;ln&#34;&gt;24&lt;/span&gt;d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+&lt;span class=&#34;ln&#34;&gt;25&lt;/span&gt;YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+&lt;span class=&#34;ln&#34;&gt;26&lt;/span&gt;vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
+&lt;span class=&#34;ln&#34;&gt;27&lt;/span&gt;+TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+&lt;span class=&#34;ln&#34;&gt;28&lt;/span&gt;8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+&lt;span class=&#34;ln&#34;&gt;29&lt;/span&gt;SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+&lt;span class=&#34;ln&#34;&gt;30&lt;/span&gt;HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+&lt;span class=&#34;ln&#34;&gt;31&lt;/span&gt;SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+&lt;span class=&#34;ln&#34;&gt;32&lt;/span&gt;R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+&lt;span class=&#34;ln&#34;&gt;33&lt;/span&gt;Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+&lt;span class=&#34;ln&#34;&gt;34&lt;/span&gt;R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+&lt;span class=&#34;ln&#34;&gt;35&lt;/span&gt;L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+&lt;span class=&#34;ln&#34;&gt;36&lt;/span&gt;blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+&lt;span class=&#34;ln&#34;&gt;37&lt;/span&gt;YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+&lt;span class=&#34;ln&#34;&gt;38&lt;/span&gt;77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+&lt;span class=&#34;ln&#34;&gt;39&lt;/span&gt;dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+&lt;span class=&#34;ln&#34;&gt;40&lt;/span&gt;vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;41&lt;/span&gt;-----END RSA PRIVATE KEY-----
+&lt;span class=&#34;ln&#34;&gt;42&lt;/span&gt;$ mkdir /tmp/fcch-16
+&lt;span class=&#34;ln&#34;&gt;43&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/fcch-16
+&lt;span class=&#34;ln&#34;&gt;44&lt;/span&gt;$ vim sshkey.private &lt;span class=&#34;c1&#34;&gt;## Paste ssh key&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;45&lt;/span&gt;$ chmod &lt;span class=&#34;m&#34;&gt;600&lt;/span&gt; sshkey.private
+&lt;span class=&#34;ln&#34;&gt;46&lt;/span&gt;$ ssh -i sshkey.private bandit17@localhost
+&lt;span class=&#34;ln&#34;&gt;47&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Como se obtuvo la clave ssh privada para el nivel 17 entonces se pasa al reto 18&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-17--level-18&#34;&gt;Bandit Level 17 → Level 18&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -i sshkey.private bandit17@localhost&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ diff passwords.old passwords.new
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ grep kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd passwords.new
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-18--level-19&#34;&gt;Bandit Level 18 → Level 19&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit18@bandit.labs.overthewire.org&#34;&gt;bandit18@bandit.labs.overthewire.org&lt;/a&gt; &amp;quot;cat /home/bandit18/readme&amp;quot;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ssh -o &lt;span class=&#34;nv&#34;&gt;PubkeyAuthentication&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;no -p2220 bandit18@bandit.labs.overthewire.org &lt;span class=&#34;s2&#34;&gt;&amp;#34;cat /home/bandit18/readme&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-19--level-20&#34;&gt;Bandit Level 19 → Level 20&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit19@bandit.labs.overthewire.org&#34;&gt;bandit19@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ ls -l 
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ file bandit20-do
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ ./bandit20-do
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ ./bandit20-do --help
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ find / -user bandit20 2&amp;gt;/dev/null
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;$ cat /etc/dpkg/.info20.txt
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;$ ./bandit20-do cat /etc/dpkg//.info20.txt
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ cat /etc/bandit_pass/bandit20
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;$ ./bandit20-do cat /etc/bandit_pass/bandit20
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-20--level-21&#34;&gt;Bandit Level 20 → Level 21&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit20@bandit.labs.overthewire.org&#34;&gt;bandit20@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ nc -l -p &lt;span class=&#34;m&#34;&gt;4321&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ nc localhost &lt;span class=&#34;m&#34;&gt;4321&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;GbKksEFF4yrVs6il55v6gwY5aVje5f0j&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; nc -l -p &lt;span class=&#34;m&#34;&gt;4321&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ ./suconnect &lt;span class=&#34;m&#34;&gt;4321&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-21--level-22&#34;&gt;Bandit Level 21 → Level 22&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit21@bandit.labs.overthewire.org&#34;&gt;bandit21@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /etc/cron.d/
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ ls -l
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ cat cronjob_bandit22
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ /usr/bin/cronjob_bandit22.sh
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-22--level-23&#34;&gt;Bandit Level 22 → Level 23&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit22@bandit.labs.overthewire.org&#34;&gt;bandit22@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /etc/cron.d/
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ ls -l 
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ cat cronjob_bandit23
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ cat /usr/bin/cronjob_bandit23.sh
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;-- &lt;span class=&#34;c1&#34;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;myname&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;whoami&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;mytarget&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; I am user &lt;span class=&#34;nv&#34;&gt;$myname&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; md5sum &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f 1&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;-- &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Copying passwordfile /etc/bandit_pass/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$myname&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; to /tmp/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$mytarget&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-- cat /etc/bandit_pass/&lt;span class=&#34;nv&#34;&gt;$myname&lt;/span&gt; &amp;gt; /tmp/&lt;span class=&#34;nv&#34;&gt;$mytarget&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;$ /usr/bin/cronjob_bandit23.sh
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## whoami = bandit22&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;$ &lt;span class=&#34;nv&#34;&gt;myname&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;bandit23
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;$ &lt;span class=&#34;nv&#34;&gt;mytarget&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; I am user &lt;span class=&#34;nv&#34;&gt;$myname&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; md5sum &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d &lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f 1&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Copying passwordfile /etc/bandit_pass/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$myname&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; to /tmp/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$mytarget&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;$ cat /etc/bandit_pass/&lt;span class=&#34;nv&#34;&gt;$myname&lt;/span&gt; &amp;gt; /tmp/&lt;span class=&#34;nv&#34;&gt;$mytarget&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-23--level-24&#34;&gt;Bandit Level 23 → Level 24&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit23@bandit.labs.overthewire.org&#34;&gt;bandit23@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /etc/cron.d/
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ ls -l 
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ cat cronjob_bandit24
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ cat /usr/bin/cronjob_bandit24.sh
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ mkdir /tmp/fcchx
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/fcchx
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;$ touch getx.sh
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ chmod &lt;span class=&#34;m&#34;&gt;777&lt;/span&gt; getx.sh
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;$ ls -la getx.sh
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;$ vim getx.sh
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-- &lt;span class=&#34;c1&#34;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;-- cat /etc/bandit_pass/bandit24 &amp;gt; /tmp/fcchx/password
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;$ touch password
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;$ chmod &lt;span class=&#34;m&#34;&gt;666&lt;/span&gt; password
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;$ ls -la password
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;$ cp getx.sh /var/spool/bandit24/
+&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;## Wait 5 sec.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;$ cat password
+&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-24--level-25&#34;&gt;Bandit Level 24 → Level 25&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit24@bandit.labs.overthewire.org&#34;&gt;bandit24@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ mkdir fcch-pass25&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; fcch-pass25&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; touch genpass.sh
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ vim genpass.sh
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;-- &lt;span class=&#34;c1&#34;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;-- &lt;span class=&#34;nv&#34;&gt;pass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;-- &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; i in &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;0000..9999&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt; 
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;-- &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;--    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$pass&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$i&lt;/span&gt; &amp;gt;&amp;gt; pass25.txt
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-- &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;$ cat pass25,txt &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; nc localhost &lt;span class=&#34;m&#34;&gt;30001&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-25--level-26&#34;&gt;Bandit Level 25 → Level 26&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit25@bandit.labs.overthewire.org&#34;&gt;bandit25@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ file bandit26.sshkey
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ ssh -i bandit26.sshkey bandit26@localhost
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ cat /etc/passwd
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ cat /etc/passwd &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep bandit26
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ cat /usr/bin/showtext
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;-- &lt;span class=&#34;c1&#34;&gt;#!/bin/sh&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;-- &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;TERM&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linux
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;-- more ~/text.txt
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-- &lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Por el comando &amp;#34;more&amp;#34; en el script se debe redimensionar la ventana de la terminal a un tamaño pequeño.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;$ ssh -i bandit26.sshkey bandit26@localhost
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# -- More -- con esta pantalla podemos ingresar a la pantalla de ayuda del comando &amp;#34;More&amp;#34; tecleando &amp;#34;h&amp;#34;, luego podemos iniciar el editor vi tecleando la tecla &amp;#34;v&amp;#34; (/usr/bin/vi), dentro del editor tecleamos &amp;#34;:set shell=/bin/bash&amp;#34; y aun dentro de vi &amp;#34;:shell&amp;#34;.&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;$ cat /etc/bandit_pass/bandit26
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-26--level-27&#34;&gt;Bandit Level 26 → Level 27&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -i bandit26.sshkey bandit26@localhost&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ls -la
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ file bandit27-do
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ cat text.txt
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ ./bandit27-do id
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ ./bandit27-do whoami
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;cat /etc/bandit_pass/bandit27&amp;#39;&lt;/span&gt; &amp;gt; /tmp/getpass27.sh
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;$ chmod a+x /tmp/getpass27.sh
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;$ ./bandit27-do /tmp/getpass27.sh
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;3ba3118a22e93127a4ed485be72ef5ea
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-27--level-28&#34;&gt;Bandit Level 27 → Level 28&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit27@bandit.labs.overthewire.org&#34;&gt;bandit27@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir /tmp/fcch-git
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/fcch-git
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ cat repo/README
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-28--level-29&#34;&gt;Bandit Level 28 → Level 29&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit28@bandit.labs.overthewire.org&#34;&gt;bandit28@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ mkdir /tmp/fcch28git
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/fcch28git
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; repo
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ ls -la 
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;$ ls -la .git
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;$ git log
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ git diff b67405defc6ef44210c53345fc953e6a21338cc7 186a1038cc54d1358d42d468cdc8e3cc28a93fcb
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;$ git diff b67405defc6ef44210c53345fc953e6a21338cc7 073c27c130e6ee407e12faad1dd3848a110c4f95
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;$ git diff 186a1038cc54d1358d42d468cdc8e3cc28a93fcb 073c27c130e6ee407e12faad1dd3848a110c4f95
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;bbc96594b4e001778eee9975372716b2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-29--level-30&#34;&gt;Bandit Level 29 → Level 30&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit29@bandit.labs.overthewire.org&#34;&gt;bandit29@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir /tmp/fcch29git
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/fcch29git
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ cat README.md
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ git branch
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ git branch -a
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ git checkout dev
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;$ git log 
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;$ git diff 33ce2e95d9c5d6fb0a40e5ee9a2926903646b4e3 a8af722fccd4206fc3780bd3ede35b2c03886d9b
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;5b90576bedb2cc04c86a9e924ce42faf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-30--level-31&#34;&gt;Bandit Level 30 → Level 31&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit30@bandit.labs.overthewire.org&#34;&gt;bandit30@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; repo
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ cat README.md
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ git branch -a
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ git show-branch --all
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;$ git log
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;$ cat .git/packed-refs
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ git show-ref --tags -d
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;$ git show --name-only secret
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;47e603bb428404d265f59c42920d81e5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-31--level-32&#34;&gt;Bandit Level 31 → Level 32&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit31@bandit.labs.overthewire.org&#34;&gt;bandit31@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;$ mkdir /tmp/fcch31git
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /tmp/fcch31git
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; repo
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ ls -la
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;$ cat README.md
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;$ touch key.txt
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;$ vim key.txt
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;-- May I come in?
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;$ cat .gitignore
+&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;-- *.txt
+&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;$ git add	-f key.txt
+&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;$ git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;add key&amp;#39;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;$ git push origin master
+&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;-- remote: Well &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;! Here is the password &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; the next level:
+&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;-- remote: 56a9bf19c63d650ce78e6ec0354ee45e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-32--level-33&#34;&gt;Bandit Level 32 → Level 33&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit32@bandit.labs.overthewire.org&#34;&gt;bandit32@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Solución:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ls
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ clear
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&amp;gt;&amp;gt; &lt;span class=&#34;nv&#34;&gt;$0&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;$ ls -la 
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ file uppershell
+&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;$ cat uppershell
+&lt;span class=&#34;ln&#34;&gt;8&lt;/span&gt;$ cat /etc/bandit_pass/bandit33
+&lt;span class=&#34;ln&#34;&gt;9&lt;/span&gt;c9c3199ddf4121b10cf581a98d51caee
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-33--level-34&#34;&gt;Bandit Level 33 → Level 34&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;At this moment, level 34 does not exist yet.&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
     <item>
       <title>Momento Tmux</title>
       <link>https://blog.fcch.xyz/post/notes/tmux-moment/</link>
