@@ -14,7 +14,11 @@ series = ["Linux"]
 thumbnail = "images/bandit/otw-bandit.jpg"
 +++
 
+They are war games offered by the OverTheWire community that help us learn and practice security concepts in the form of fun games.
+
 El enlace para poder jugar un momento: [**Over the wire, Bandit**](https://overthewire.org/wargames/bandit/)
+
+<!--more-->
 
 ![](/images/bandit/otw-bandit.jpg)
 
@@ -549,3 +553,6 @@ c9c3199ddf4121b10cf581a98d51caee
 
 * At this moment, level 34 does not exist yet.
 
+## Referencias
+
+- [**Over the wire, Bandit**](https://overthewire.org/wargames/bandit/)

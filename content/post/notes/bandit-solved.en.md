@@ -549,3 +549,6 @@ c9c3199ddf4121b10cf581a98d51caee
 
 * At this moment, level 34 does not exist yet.
 
+## References
+
+- [**Over the wire, Bandit**](https://overthewire.org/wargames/bandit/)
