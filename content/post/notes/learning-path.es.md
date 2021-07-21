@@ -22,12 +22,6 @@ En mi busqueda de infromación encontre esta descripción del camino completo ha
 
 ![](/images/aws-learning-path/aws-route-complete.png)
 
-## Documentación Inicial
-
-- [**AWS Certificación**](https://aws.amazon.com/certification/)
-- [**AWS Certified Cloud Practitioner**](https://aws.amazon.com/certification/certified-cloud-practitioner/)
-- [**AWS Certified Solutions Architect – Associate**](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
-
 ## AWS Certified Cloud Practitioner (CLF-C01)
 
 El examen **AWS Certified Cloud Practitioner (CLF-C01)** exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como: 
@@ -93,8 +87,87 @@ Con estos conocimientos los candidatos podran validar la capacidad para:
 - [4.2] Reconocer las diversas estructuras de cuentas en relación con la facturación y los precios de AWS.
 - [4.3] Identificar los recursos disponibles para soporte de facturación.
 
+## AWS Certified Solutions Architect Associate
+
+Los conocimientos para esta certificación se dividen en aproximadamente 14 capítulos, estos son:
+
+1. Introducción AWS.
+2. Amazon Simple Storage Service (Amazon S3) y Amazon Glacier Storage.
+3. Amazon Elastic Compute Cloud (Amazon EC2) y Amazon Elastic Block Store (Amazon EBS).
+4. Amazon Virtual Private Cloud (Amazon VPC).
+5. Elastic Load Balancing, Amazon CloudWatch y Auto Scaling.
+6. AWS Identity y Access Management (IAM).
+7. Databases y AWS.
+8. SOS, SWF y SNS.
+9. Domain Name System (DNS) y Amazon Route 53.
+10. Amazon ElastiCache.
+11. Additional Key Services.
+12. Security on AWS.
+13. AWS Risk y Compliance.
+14. Architecture Best practices.
+
 ## Contenido Personal
+
+Contenido en español, conceptos de los servicios de AWS:
+
+**Módulo 1 - Introducción a la nube de AWS**
+
+1. Introducción a la Nube de AWS.
+2. Introducción a las Interfaces de AWS.
+
+**Módulo 2 - Servicios principales de AWS**
+
+1. Amazon Elastic Compute Cloud - EC2.
+2. Amazon Elastic Block Store - EBS.
+3. Amazon Simple Storage Service - S3.
+4. Infraestructura Global de AWS.
+5. Amazon Virtual Private Cloud - VPC.
+6. Grupos de Seguridad.
+
+**Módulo 3 - Servicios integrados de AWS**
+
+1. Balanceador de Carga de Aplicaciones.
+2. Auto Scaling.
+3. Amazon Route 53.
+4. Amazon Relational Database Service - RDS.
+5. AWS Lambda.
+6. AWS Elastic BeanStalk.
+7. Amazon Simple Notification Service - SNS.
+8. Amazon CloudWatch.
+9. Amazon CloudFront.
+10. AWS CloudFormation.
+
+**Módulo 4 - Arquitectura de AWS**
+
+1. El Marco de Buena Infraestructura de AWS.
+2. Tolerancia a Errores y Alta Disponibilidad.
+3. Alojamiento Web.
+
+**Módulo 5 - Seguridad de AWS** 
+
+1. Introducción a los Recursos de Seguridad de AWS.
+2. El Modelo de Responsabilidad Compartida.
+3. Indentity and Access Managment - IAM.
+4. Amazon Inspector.
+5. AWS Shield.
+6. Conformidad de Seguridad de AWS.
+
+**Módulo 6 - Precios y soporte**
+
+1. Aspectos Fundamentales de los Precios.
+2. Información sobre los precios.
+3. AWS Thusted Advisor.
+4. Planes de AWS Support.
+
+[**Descargar Contenido Markdown**](/downloads/aws-certification.tar.gz)
 
 ## Referencias
 
+- [**AWS Certificación**](https://aws.amazon.com/certification/)
+- [**AWS Certified Cloud Practitioner**](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+- [**AWS Certified Solutions Architect – Associate**](https://aws.amazon.com/certification/certified-solutions-architect-associate/)
 - [**AWS Documentation**](https://docs.aws.amazon.com/)
+- [**Prepárese para los exámenes de AWS Certification**](https://aws.amazon.com/es/certification/certification-prep/)
+- [**Cloud Fundamentals**](https://www.aws.training/)
+- [**Preguntas Frecuentes**](https://aws.amazon.com/es/certification/faqs/)
+- [**AWS Beneficios**](https://aws.amazon.com/es/certification/benefits/)
