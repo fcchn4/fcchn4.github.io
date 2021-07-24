@@ -159,7 +159,7 @@ Content in Spanish, concepts of AWS services:
 3. AWS Thusted Advisor.
 4. AWS Support plans.
 
-[**Download Content - Markdown in Spanish**](/downloads/aws-certification.tar.gz)
+[**Spanish content repository**](https://github.com/fcchn4/aws-practitioner)
 
 ## References
 

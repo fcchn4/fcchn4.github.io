@@ -159,7 +159,7 @@ Contenido en español, conceptos de los servicios de AWS:
 3. AWS Thusted Advisor.
 4. Planes de AWS Support.
 
-[**Descargar Contenido Markdown**](/downloads/aws-certification.tar.gz)
+[**Repositorio de Contenido**](https://github.com/fcchn4/aws-practitioner)
 
 ## Referencias
 
