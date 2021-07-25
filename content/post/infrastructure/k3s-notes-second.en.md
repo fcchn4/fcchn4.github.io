@@ -1,7 +1,7 @@
 +++
-title = "K3s Apuntes - Parte 1"
+title = "K3s Apuntes - Parte 2"
 author = "Fcch"
-date = "2021-06-26"
+date = "2021-07-24"
 description = "Apuntes para Kubernetes con K3s en Raspberry Pi"
 featured = true
 tags = [
@@ -13,14 +13,14 @@ categories = [
     "Infraestructura",
 ]
 series = ["Servidores"]
-thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-1.png"
+thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-2.png"
 +++
 
 Experimentando con [**Docker Swarm**](https://docs.docker.com/engine/swarm/) me puse a la tarea de armar algo con los [**Raspberry Pi (RPI v3, RPI v4)**](https://www.raspberrypi.org/) que tengo en mi laboratorio, luego de estar googleando y charlando con [**Sergio**](https://twitter.com/donkeysharp), me recomendó usar [**K3s**](https://k3s.io/) que es una distribución de [**Kubernetes**](https://kubernetes.io/) con backend de almacenamiento ligero basado en [**sqlite3**](https://www.sqlite.org/index.html) compatible con arquitectura [**ARM**](https://en.wikipedia.org/wiki/ARM_architecture).
 
 <!--more-->
 
-![](/images/k3s-kubernetes/k3s-kubernetes-part-1.png)
+![](/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg)
 
 Revisamos la documentación oficial de [**K3s**](https://rancher.com/docs/k3s/latest/en/) y pude armar mi laboratorio, el tipo de ejercicio que se desarrollara sera un **Server node** y cuatro **Worker nodes** con la  base de datos [**sqlite3**](https://www.sqlite.org/index.html).
 

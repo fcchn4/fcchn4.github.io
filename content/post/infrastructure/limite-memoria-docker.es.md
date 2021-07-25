@@ -3,7 +3,7 @@ title = "Limite de Memoria en Docker"
 author = "Fcch"
 date = "2020-08-12"
 description = "Guía Servidores e Infraestructura"
-featured = true
+featured = false
 tags = [
     "docker",
     "grub",

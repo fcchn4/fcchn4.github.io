@@ -13,14 +13,14 @@ categories = [
     "Infrastructure",
 ]
 series = ["Servers"]
-thumbnail = "images/k3s-kubernetes/k3s-kubernetes.png"
+thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-1.png"
 +++
 
 Experimenting with [**Docker Swarm**](https://docs.docker.com/engine/swarm/), I got to the task of building something with the [**Raspberry Pi (RPI v3, RPI v4)**](https://www.raspberrypi.org/) that I have in my lab, after googling a lot and chatting with my friend [**Sergio**](https://twitter.com/donkeysharp), he recommended using [**K3s**](https://k3s.io/) which is a [**Kubernetes**](https://kubernetes.io/) distribution with backend [**sqlite3**](https://www.sqlite.org/index.html) based lightweight storage system compatible with [**ARM**](https://en.wikipedia.org/wiki/ARM_architecture) architecture.
 
 <!--more-->
 
-![](/images/k3s-kubernetes/k3s-kubernetes.png)
+![](/images/k3s-kubernetes/k3s-kubernetes-part-1.png)
 
 I reviewed the official [**K3s**](https://rancher.com/docs/k3s/latest/en/) documentation and I was able to set up my laboratory, the type of exercise that will be developed will be a **Server node** and four **Worker nodes** with the [**sqlite3**](https://www.sqlite.org/index.html) database.
 

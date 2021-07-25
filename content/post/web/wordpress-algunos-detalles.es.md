@@ -3,7 +3,7 @@ title = "Wordpress, Algunos Detalles"
 author = "Fcch"
 date = "2020-04-09"
 description = "Guía Web"
-featured = true
+featured = false
 tags = [
     "wordpress",
     "php"

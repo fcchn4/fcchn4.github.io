@@ -3,7 +3,7 @@ title = "Apuntes Fedora 32"
 author = "Fcch"
 date = "2020-05-25"
 description = "Algunos apuntes para Fedora y la versión 32"
-featured = true
+featured = false
 tags = [
     "fedora",
 ]

@@ -3,7 +3,7 @@ title = "Notes Fedora 32"
 author = "Fcch"
 date = "2020-05-25"
 description = "Some notes for Fedora and version 32"
-featured = true
+featured = false
 tags = [
     "fedora",
 ]

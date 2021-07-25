@@ -3,7 +3,7 @@ title = "Doctl Cli - Digitalocean"
 author = "Fcch"
 date = "2020-12-30"
 description = "Servers and Infrastructure Guide"
-featured = true
+featured = false
 tags = [
     "cloud",
     "digitalocean",
