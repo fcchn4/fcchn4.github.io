@@ -121,7 +121,13 @@
 &lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ kubectl config get-contexts
 &lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# List all available nodes&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ kubectl get nodes
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;articles-k3s&#34;&gt;Articles K3s&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/&#34;&gt;&lt;strong&gt;K3s - Part 1&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/&#34;&gt;&lt;strong&gt;K3s - Part 2&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/&#34;&gt;&lt;strong&gt;K3s - Part 3&lt;/strong&gt;&lt;/a&gt; (in process)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/quick-start/&#34;&gt;&lt;strong&gt;Quick start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/&#34;&gt;&lt;strong&gt;Kube Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
