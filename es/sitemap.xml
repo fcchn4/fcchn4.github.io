@@ -50,16 +50,6 @@
   <url>
     <loc>https://blog.fcch.xyz/categories/infraestructura/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/categories/infraestructura/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/categories/infraestructura/"
-                />
   </url>
   
   <url>
@@ -140,16 +130,6 @@
   <url>
     <loc>https://blog.fcch.xyz/series/servidores/</loc>
     <lastmod>2021-07-24T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.fcch.xyz/en/series/servidores/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://blog.fcch.xyz/series/servidores/"
-                />
   </url>
   
   <url>
