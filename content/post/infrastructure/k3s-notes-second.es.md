@@ -40,33 +40,109 @@ Podemos describir algunos componentes importantes:
 2. **etcd**: Base de datos de tipo *clave-valor* consistente y de alta disponibilidad utilizado como almacén de respaldo de Kubernetes para todos los datos del clúster.
 3. **kube-scheduler**: Componente del plano de control que busca pods recién creados sin un nodo asignado y selecciona un nodo para que se ejecuten.
 4. **kube-controller-manager**: Componente del plano de control que ejecuta los procesos del controlador.
-    - *Controlador de nodo*: responsable de notar y responder cuando los nodos se caen.
+
+    - *Controlador de nodo*: Responsable de notar y responder cuando los nodos se caen.
     - *Controlador de trabajo*: Busca objetos de trabajo que representan tareas únicas y luego crea pods para ejecutar esas tareas hasta su finalización.
     - *Controlador de puntos finales*: Completa el objeto de puntos finales (es decir, se une a servicios y pods).
     - *Controladores de cuentas de servicio y tokens*: Crea cuentas predeterminadas y tokens de acceso a la API para nuevos espacios de nombres.
+
 5. **cloud-controller-manager**: Un componente del plano de control de Kubernetes que incorpora una lógica de control específica de la nube (se ejecuta en un solo proceso con *kube-controller-manager*).
 
-    - *Controlador de nodo*: para verificar el proveedor de la nube para determinar si un nodo se ha eliminado en la nube después de que deja de responder
-    - *Controlador de ruta*: para configurar rutas en la infraestructura de nube subyacente
-    - Controlador de servicio*: para crear, actualizar y eliminar equilibradores de carga de proveedores de nube
-6. **kubelet**: Un agente que se ejecuta en cada nodo del clúster. Se asegura de que los contenedores se ejecuten en un Pod.
+    - *Controlador de nodo*: Para verificar el proveedor de la nube para determinar si un nodo se ha eliminado en la nube después de que deja de responder.
+    - *Controlador de ruta*: Para configurar rutas en la infraestructura de nube subyacente.
+    - Controlador de servicio*: Para crear, actualizar y eliminar equilibradores de carga de proveedores de nube.
 
+6. **kubelet**: Un agente que se ejecuta en cada nodo del clúster, se asegura de que los contenedores se ejecuten en un Pod.
 7. **kube-proxy**: Es un proxy de red que se ejecuta en cada nodo de su clúster, implementando parte del concepto de servicio de Kubernetes.
 8. **container runtime**: El tiempo de ejecución del contenedor es el software responsable de ejecutar los contenedores.
+9. **kube-scheduler**: Componente del plano de control que busca pods recién creados sin un nodo asignado y selecciona un nodo para que se ejecuten.
 
-## Configuraciones Previas
+## Instalación Kubectl
 
-## Instalación del Server node
+Para poder trabajar con nuestro cluter **RPI** de [K3s](https://k3s.io/), podemos trabajar desde el **Server Node** o instalar [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) en nuestra computadora personal, para este caso instalaremos el paquete para una distribución [GNU/Linux](https://www.gnu.org/home.es.html), [Debian Buster 10](https://debian.org) agregando el repositorio de la siguiente forma:
 
-## Instalación de Worker Nodes
+```bash
+# Actualizar e instalar los paquetes necesarios
+$ sudo apt-get update
+$ sudo apt-get install -y apt-transport-https ca-certificates curl
+# Descargamos la clave de firma pública
+$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+# Agregar el repositorio oficial
+$ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+# Actualizar nuevamente e instalamos el paquete
+$ sudo apt install update
+$ sudo apt install -y kubectl
+```
 
-## Operaciones Básicas
+## Configuración de Kubectl con el Cluster K3s
+
+Para trabajar desde nuestra computadora personal, tenemos que crear un archivo de configuración dentro de la carpeta **.kube** el archivo de configuración debe tener el nombre **config**, la carpeta y el archivo deben ser creados con los permisos adecuados:
+
+```bash
+$ mkdir ~/.kube
+$ touch ~/.kube/config
+$ chmod 775 ~/.kube
+$ chmod 420 ~/.kube/config
+```
+
+El contenido del archivo **config** debe ser similar a este:
+
+```yaml
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: CONTENIDO_DEL_CERTIFICADO
+    server: https://IP_O_DOMINIO:6443
+  name: default
+contexts:
+- context:
+    cluster: default
+    user: default
+  name: default
+current-context: default
+kind: Config
+preferences: {}
+users:
+- name: default
+  user:
+    client-certificate-data: CONTENIDO_DEL_CERTIFICADO
+    client-key-data: CONTENIDO_DE_LA_CLAVE_DEL_CERTIFICADO
+```
+
+Estos datos se pueden obtener desde el **Server Node**, exactamente el dato se encuentra en **/etc/rancher/k3s/k3s.yaml**.
+
+## Pruebas Después de la Instalación
+
+Desde nuestra computadora local podemos ejecutar los siguientes comandos:
+
+```bash
+$ kubectl version
+# Si existe algún problema con el anterior comando podemos ejecutar:
+$ kubectl version --client=true
+```
+
+Si todo está correcto tendremos una salida similar a esta:
+
+![](/images/k3s-kubernetes/kubectl-version-tests-v2.png)
+
+Useful commands to start:
+
+```bash
+# Get help
+$ kubectl --help
+# List all contexts in your kubeconfig file
+$ kubectl config get-contexts
+# List all available nodes
+$ kubectl get nodes
+```
 
 ## Referencias
 
-- [**Inicio Rapido**](https://rancher.com/docs/k3s/latest/en/quick-start/)
+- [**Inicio Rápido**](https://rancher.com/docs/k3s/latest/en/quick-start/)
 - [**Kube Dashboard**](https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/)
 - [**Docs K3S**](https://rancher.com/docs/)
 - [**Conceptos Kubernetes**](https://kubernetes.io/docs/concepts/_print/)
 - [**Docs Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 - [**etcd**](https://etcd.io/)
+- [**Cluster Admin Access**](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/)
+- [**Cluster Accesss**](https://rancher.com/docs/k3s/latest/en/cluster-access/)

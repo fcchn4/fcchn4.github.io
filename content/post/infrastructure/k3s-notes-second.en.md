@@ -16,122 +16,133 @@ series = ["Servidores"]
 thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-2.png"
 +++
 
-Experimentando con [**Docker Swarm**](https://docs.docker.com/engine/swarm/) me puse a la tarea de armar algo con los [**Raspberry Pi (RPI v3, RPI v4)**](https://www.raspberrypi.org/) que tengo en mi laboratorio, luego de estar googleando y charlando con [**Sergio**](https://twitter.com/donkeysharp), me recomendó usar [**K3s**](https://k3s.io/) que es una distribución de [**Kubernetes**](https://kubernetes.io/) con backend de almacenamiento ligero basado en [**sqlite3**](https://www.sqlite.org/index.html) compatible con arquitectura [**ARM**](https://en.wikipedia.org/wiki/ARM_architecture).
+We continue with the tests in our small cluster with [**K3s**](https://k3s.io/) built on the [**Raspberry Pi (RPI v3, RPI v4)**](https://www.raspberrypi.org/) that I have in my laboratory, for the tests we use the official [**K3s - Rancher**](https://rancher.com/docs/k3s/latest/en/) documentation and also the official [**Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/) documentation.
 
 <!--more-->
 
 ![](/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg)
 
-Revisamos la documentación oficial de [**K3s**](https://rancher.com/docs/k3s/latest/en/) y pude armar mi laboratorio, el tipo de ejercicio que se desarrollara sera un **Server node** y cuatro **Worker nodes** con la  base de datos [**sqlite3**](https://www.sqlite.org/index.html).
+In the image we have as a detail:
 
-## Arquitectura
+1. **Three Raspberry Pi 4, Model B** (1 Server Node and 2 Worker Nodes).
+2. **Two Raspberry Pi 3, Model B** (2 Worker Nodes,).
+3. One **8-port Tp-Link TL-SG1008D Gigabit Desktop Switch**.
 
-Existen dos tipos de nodos:
+## Basic concepts
 
-1. **Server node**, es el nodo que ejecuta **K3s server**.
-2. **Worker node**, es el nodo que ejecuta **K3s agent**.
+With the Kubernetes components:
 
-También existen dos formas de implementación:
+![](/images/k3s-kubernetes/components-of-kubernetes.png)
 
-1. **Un solo servidor con una base de datos integrada**, en esta configuración, cada nodo de agente está registrado en el mismo **Server node**.
+We can describe some important components:
 
-![](/images/k3s-kubernetes/k3s-architecture-single-server.png)
+1. **kube-apiserver**: The API server is a component of the Kubernetes control plane that exposes the Kubernetes API. The API server is the front end for the Kubernetes control plane.
+2. **etcd**: Consistent, highly available *key-value* database used as the Kubernetes backing store for all data in the cluster.
+3. **kube-scheduler**: A control plane component that searches for newly created pods without an assigned node and selects a node to run.
+4. **kube-controller-manager**: Control plane component that runs controller processes.
 
-2. **Servidor K3s de Alta Disponibilidad con una base de datos externa**, que se compone de:
+    - *Node controller*: Responsible for noticing and responding when nodes go down.
+    - *Job controller*: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
+    - *Endpoints controller*: Populates the Endpoints object (that is, joins Services & Pods).
+    - *Service Account & Token controllers*: Create default accounts and API access tokens for new namespaces.
 
-   - Dos o más **nodos de servidor** que servirán a la API de **Kubernetes** y ejecutarán otros servicios del plano de control.
-   - Un **almacén de datos externo** (a diferencia del almacén de datos SQLite incorporado que se usa en configuraciones de un solo servidor).
+5. **cloud-controller-manager**: A Kubernetes control plane component that incorporates cloud-specific control logic (runs in a single process with *kube-controller-manager*).
 
-![](/images/k3s-kubernetes/k3s-architecture-ha-server.png)
+    - *Node controller*: For checking the cloud provider to determine if a node has been deleted in the cloud after it stops responding.
+    - *Route controller*: For setting up routes in the underlying cloud infrastructure.
+    - *Service controller*: For creating, updating and deleting cloud provider load balancers.
 
-2.1 **Direcciones de registro fija para nodos agente**
+6. **kubelet**: An agent running on each node in the cluster ensures that the containers run on a Pod.
+7. **kube-proxy**: It is a network proxy that runs on every node in your cluster, implementing part of the Kubernetes service concept.
+8. **container runtime**: The container runtime is the software responsible for running the containers.
+9. **kube-scheduler**: A control plane component that searches for newly created pods without an assigned node and selects a node to run.
 
-En la configuración del servidor de alta disponibilidad, cada nodo también debe registrarse con la API de **Kubernetes** mediante una dirección de registro fija, después del registro, los nodos del agente establecen una conexión directamente con uno de los **Server nodes**.
+## Install Kubectl
 
-![](/images/k3s-kubernetes/k3s-production-setup.svg)
-
-## Configuraciones Previas
-
-- [**Configuraciones necesarias RPI**](https://rancher.com/docs/k3s/latest/en/advanced/#enabling-legacy-iptables-on-raspbian-buster): Antes de instalar los binarios de [**K3s**](https://k3s.io/) es necesario realizar unas configuraciones extra en el sistema operativo de las [**Raspberry Pi**](https://www.raspberrypi.org/), utilizaremos **Raspbian Buster** para este laboratorio.
-
-- **Habilitar iptables heredados en Raspbian Buster**
-
-**Raspbian Buster** utiliza de forma predeterminada en **nftables** en lugar de **iptables**. Las funciones de red de **K3s** requieren **iptables** y no funcionan con **nftables**, para solucionar este problema debemos realizar el cambio correspondiente.
-
-```bash
-$ sudo iptables -F
-$ sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
-$ sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
-$ sudo reboot
-```
-
-- **Habilitando cgroups para Raspbian Buster**
-
-Las instalaciones estándar de **Raspbian Buster** no se inicializan con **cgroups** habilitado. **K3s** necesita **cgroups** inicializado como un servicio systemd. Se puede habilitar **cgroups** agregando **cgroup_memory=1** y **cgroup_enable=memory** en **/boot/cmdline.txt**.
-
-```text
-# Dentro del archivo cmdline.txt
-console=serial0,115200 console=tty1 root=PARTUUID=58b06195-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory
-```
-
-Con estos cambios aplicados se debe reiniciar el sistema operativo en los **Raspberry Pi**.
-
-## Instalación del Server node
-
-Según la documentación oficial podemos utilizar los scripts oficiales para instalar los binarios para el **Server node** de **K3s**:
+In order to work with our [K3s](https://k3s.io/) **RPI** cluster, we can work from the **Server Node** or install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) on our personal computer, in this case we will install the package for a [GNU/Linux](https://www.gnu.org/home.en.html) distribution, [**Debian Buster 10**](https://debian.org), adding the repository as follows:
 
 ```bash
-$ curl -sfL https://get.k3s.io | sh -
+# Update and install the necessary packages
+$ sudo apt-get update
+$ sudo apt-get install -y apt-transport-https ca-certificates curl
+# We download the public signature key
+$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+# Add the official repository
+$ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+# Update again and install the package
+$ sudo apt install update
+$ sudo apt install -y kubectl
 ```
 
-Este script instalará todas la herramientas necesarias como: 
+## Kubectl Configuration with Cluster K3s
 
-- **kubectl**
-- **crictl**
-- **ctr**
-- **k3s-killall.sh**
-- **k3s-uninstall.sh**
-
-También creara el archivo de configuración **/etc/rancher/k3s/k3s.yaml**
-
-## Instalación de Worker Nodes
-
-Luego de la instalación del servidor **K3s** podemos agregar nodos: 
+To work from our personal computer, we have to create a configuration file inside the **.kube** folder, the configuration file must have the name **config**, the folder and the file must be created with the appropriate permissions :
 
 ```bash
-$ curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -
+$ mkdir ~/.kube
+$ touch ~/.kube/config
+$ chmod 775 ~/.kube
+$ chmod 420 ~/.kube/config
 ```
 
-donde:
+The content of the **config** file should look like this:
 
-- **K3S_URL**: Esta es la dirección IP o el dominio del servidor **K3s**.
-- **K3S_TOKEN**: Es un token que se almacena en el servidor **K3s**, **/var/lib/rancher/k3s/server/node-token**
-- Es necesario que el hostname de los nuevos nodos sean diferentes.
-
-## Operaciones Básicas
-
-Podemos ejecutar los comandos comunes de **Kubernetes** o utilizar el comando **K3s**, a estos dos comandos debemos anteponerle el comando **sudo** para que se ejecuten las ordenes sin problemas.
-
-```bash
-$ sudo k3s kubectl get nodes
-# o también
-$ sudo kubectl get nodes
-$ sudo kubectl get pods --all-namespaces
+```yaml
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: CERTIFICATE_CONTENT
+    server: https://IP_OR_DOMAIN:6443
+  name: default
+contexts:
+- context:
+    cluster: default
+    user: default
+  name: default
+current-context: default
+kind: Config
+preferences: {}
+users:
+- name: default
+  user:
+    client-certificate-data: CERTIFICATE_CONTENT
+    client-key-data: CERTIFICATE_CONTENT_KEY
 ```
 
-Control daemon:
+This data can be obtained from the **Server Node**, exactly the data is in **/etc/rancher/k3s/k3s.yaml**.
+
+## Testing After Installation
+
+From our local computer we can execute the following commands:
 
 ```bash
-$ sudo systemctl status k3s
-$ sudo systemctl stop k3s
+$ kubectl version
+# If there is a problem with the previous command we can execute:
+$ kubectl version --client=true
+```
+
+If everything is correct we will have an output similar to this:
+
+![](/images/k3s-kubernetes/kubectl-version-tests-v2.png)
+
+Comandos útiles para iniciar:
+
+```bash
+# Obtener ayuda
+$ kubectl --help
+# Listar todos los contextos en su archivo kubeconfig
+$ kubectl config get-contexts
+# Listar todos los nodos disponibles
+$ kubectl get nodes
 ```
 
 ## Referencias
 
-- [**Inicio Rapido**](https://rancher.com/docs/k3s/latest/en/quick-start/)
-- [**Configuración del Servidor**](https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/)
-- [**Opciones de Instalación**](https://rancher.com/docs/k3s/latest/en/installation/install-options/)
+- [**Quick start**](https://rancher.com/docs/k3s/latest/en/quick-start/)
 - [**Kube Dashboard**](https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/)
 - [**Docs K3S**](https://rancher.com/docs/)
-- [**Web Oficial**](https://k3s.io/)
-- [**Arquitectura**](https://rancher.com/docs/k3s/latest/en/architecture/)
+- [**Kubernetes Concepts**](https://kubernetes.io/docs/concepts/_print/)
+- [**Docs Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+- [**etcd**](https://etcd.io/)
+- [**Cluster Admin Access**](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/)
+- [**Cluster Accesss**](https://rancher.com/docs/k3s/latest/en/cluster-access/)
