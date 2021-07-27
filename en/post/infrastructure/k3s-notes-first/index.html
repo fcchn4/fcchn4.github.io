@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/" />
 <meta property="og:title" content="K3s Notes - Part 1" />
 <meta property="og:description" content="Notes for Kubernetes with K3s on Raspberry Pi" />
-<meta property="og:image" content="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes.png" />
+<meta property="og:image" content="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://blog.fcch.xyz/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://blog.fcch.xyz/icons/favicon-32x32.png">
@@ -180,7 +180,7 @@
 
     
     <p>Experimenting with <a href="https://docs.docker.com/engine/swarm/"><strong>Docker Swarm</strong></a>, I got to the task of building something with the <a href="https://www.raspberrypi.org/"><strong>Raspberry Pi (RPI v3, RPI v4)</strong></a> that I have in my lab, after googling a lot and chatting with my friend <a href="https://twitter.com/donkeysharp"><strong>Sergio</strong></a>, he recommended using <a href="https://k3s.io/"><strong>K3s</strong></a> which is a <a href="https://kubernetes.io/"><strong>Kubernetes</strong></a> distribution with backend <a href="https://www.sqlite.org/index.html"><strong>sqlite3</strong></a> based lightweight storage system compatible with <a href="https://en.wikipedia.org/wiki/ARM_architecture"><strong>ARM</strong></a> architecture.</p>
-<p><img src="/images/k3s-kubernetes/k3s-kubernetes.png" alt=""></p>
+<p><img src="/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt=""></p>
 <p>I reviewed the official <a href="https://rancher.com/docs/k3s/latest/en/"><strong>K3s</strong></a> documentation and I was able to set up my laboratory, the type of exercise that will be developed will be a <strong>Server node</strong> and four <strong>Worker nodes</strong> with the <a href="https://www.sqlite.org/index.html"><strong>sqlite3</strong></a> database.</p>
 <h2 id="architecture">Architecture</h2>
 <p>There are two types of nodes:</p>
@@ -286,6 +286,9 @@
     <h2 class="mt-4">Featured Posts</h2>
     <ul>
       <li>
+        <a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/" class="nav-link" title="K3s Apuntes - Parte 2">K3s Apuntes - Parte 2</a>
+      </li>
+      <li>
         <a href="https://blog.fcch.xyz/en/post/notes/tmux-moment/" class="nav-link" title="Tmux Moment">Tmux Moment</a>
       </li>
       <li>
@@ -295,23 +298,17 @@
         <a href="https://blog.fcch.xyz/en/post/web/hugo-framework-gitlab-pages/" class="nav-link" title="Hugo Framework and Gitlab Pages">Hugo Framework and Gitlab Pages</a>
       </li>
       <li>
-        <a href="https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/" class="nav-link" title="Doctl Cli - Digitalocean">Doctl Cli - Digitalocean</a>
+        <a href="https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/" class="nav-link" title="Blog with Hugo Framework and Github Pages">Blog with Hugo Framework and Github Pages</a>
       </li>
       <li>
-        <a href="https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/" class="nav-link" title="Memory Limit in Docker">Memory Limit in Docker</a>
-      </li>
-      <li>
-        <a href="https://blog.fcch.xyz/en/post/notes/npm-eacces/" class="nav-link" title="NPM EACCES">NPM EACCES</a>
-      </li>
-      <li>
-        <a href="https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/" class="nav-link" title="Notes Fedora 32">Notes Fedora 32</a>
-      </li>
-      <li>
-        <a href="https://blog.fcch.xyz/en/post/web/wordpress-algunos-detalles/" class="nav-link" title="Wordpress, Some Details">Wordpress, Some Details</a>
+        <a href="https://blog.fcch.xyz/en/post/web/spip-otra-forma-instalar/" class="nav-link" title="SPIP, Another Way to Install">SPIP, Another Way to Install</a>
       </li>
     </ul>
     <h2 class="mt-4">Recent Posts</h2>
     <ul class="flex-column">
+      <li>
+        <a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/" class="nav-link" title="K3s Apuntes - Parte 2">K3s Apuntes - Parte 2</a>
+      </li>
       <li>
         <a href="https://blog.fcch.xyz/en/post/notes/bandit-solved/" class="nav-link" title="Bandit Solved">Bandit Solved</a>
       </li>
@@ -333,9 +330,6 @@
       <li>
         <a href="https://blog.fcch.xyz/en/post/notes/npm-eacces/" class="nav-link" title="NPM EACCES">NPM EACCES</a>
       </li>
-      <li>
-        <a href="https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/" class="nav-link" title="Notes Fedora 32">Notes Fedora 32</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categories</h2>
@@ -352,6 +346,11 @@
         
         <a href='https://blog.fcch.xyz/en/categories/apuntes/' class="post_tag button button_translucent" title="apuntes">
           APUNTES
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://blog.fcch.xyz/en/categories/infraestructura/' class="post_tag button button_translucent" title="infraestructura">
+          INFRAESTRUCTURA
           <span class="button_tally">1</span>
         </a>
         
@@ -396,24 +395,39 @@
           <span class="button_tally">1</span>
         </a>
         
+        <a href='https://blog.fcch.xyz/en/series/servidores/' class="post_tag button button_translucent" title="servidores">
+          SERVIDORES
+          <span class="button_tally">1</span>
+        </a>
+        
         
       </nav>
     </div>
     <div>
       <h2 class="mt-4 taxonomy" id="tags-section">Tags</h2>
       <nav class="tags_nav">
+        <a href='https://blog.fcch.xyz/en/tags/docker/' class="post_tag button button_translucent" title="docker">
+          DOCKER
+          <span class="button_tally">3</span>
+        </a>
+        
         <a href='https://blog.fcch.xyz/en/tags/bash/' class="post_tag button button_translucent" title="bash">
           BASH
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/en/tags/docker/' class="post_tag button button_translucent" title="docker">
-          DOCKER
+        <a href='https://blog.fcch.xyz/en/tags/git/' class="post_tag button button_translucent" title="git">
+          GIT
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/en/tags/git/' class="post_tag button button_translucent" title="git">
-          GIT
+        <a href='https://blog.fcch.xyz/en/tags/k3s/' class="post_tag button button_translucent" title="k3s">
+          K3S
+          <span class="button_tally">2</span>
+        </a>
+        
+        <a href='https://blog.fcch.xyz/en/tags/kubernetes/' class="post_tag button button_translucent" title="kubernetes">
+          KUBERNETES
           <span class="button_tally">2</span>
         </a>
         
@@ -462,16 +476,6 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/en/tags/grub/' class="post_tag button button_translucent" title="grub">
-          GRUB
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='https://blog.fcch.xyz/en/tags/k3s/' class="post_tag button button_translucent" title="k3s">
-          K3S
-          <span class="button_tally">1</span>
-        </a>
-        
         
         <br>
         <div class="post_tags_toggle button">All Tags</div>
@@ -498,7 +502,7 @@
             </a>
             
             
-            <a href='https://blog.fcch.xyz/en/tags/docker/' class=" post_tag button button_translucent" data-position=2 title="docker">DOCKER<span class="button_tally">2</span>
+            <a href='https://blog.fcch.xyz/en/tags/docker/' class=" post_tag button button_translucent" data-position=3 title="docker">DOCKER<span class="button_tally">3</span>
             </a>
             
             
@@ -526,11 +530,11 @@
             </a>
             
             
-            <a href='https://blog.fcch.xyz/en/tags/k3s/' class=" post_tag button button_translucent" data-position=1 title="k3s">K3S<span class="button_tally">1</span>
+            <a href='https://blog.fcch.xyz/en/tags/k3s/' class=" post_tag button button_translucent" data-position=2 title="k3s">K3S<span class="button_tally">2</span>
             </a>
             
             
-            <a href='https://blog.fcch.xyz/en/tags/kubernetes/' class=" post_tag button button_translucent" data-position=1 title="kubernetes">KUBERNETES<span class="button_tally">1</span>
+            <a href='https://blog.fcch.xyz/en/tags/kubernetes/' class=" post_tag button button_translucent" data-position=2 title="kubernetes">KUBERNETES<span class="button_tally">2</span>
             </a>
             
             

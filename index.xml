@@ -9,6 +9,134 @@
     <copyright>Fcch Blog | 2019 - 2021</copyright>
     <lastBuildDate>Tue, 07 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>K3s Apuntes - Parte 2</title>
+      <link>https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/</link>
+      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/</guid>
+      <description>
+        
+          &lt;p&gt;Continuamos con las pruebas en nuestro pequeño cluster con &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; armado en las &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, para las pruebas utlizamos la documentación oficial de &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/&#34;&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; y también la documentación oficial de &lt;a href=&#34;https://kubernetes.io/docs/tutorials/kubernetes-basics/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;En la imagen tenemos como detalle:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Tres Raspberry Pi 4, Modelo B&lt;/strong&gt; (1 Server Node y 2 Worker Nodes).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dos Raspberry Pi 3, Modelo B&lt;/strong&gt; (2 Worker Nodes, ).&lt;/li&gt;
+&lt;li&gt;Un &lt;strong&gt;Switch Desktop Gigabit Tp-Link TL-SG1008D&lt;/strong&gt; de 8 puertos.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;conceptos-básicos&#34;&gt;Conceptos Básicos&lt;/h2&gt;
+&lt;p&gt;Con los componentes de Kubernetes:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/components-of-kubernetes.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Podemos describir algunos componentes importantes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;kube-apiserver&lt;/strong&gt;: El servidor de API es un componente del plano de control de Kubernetes que expone la API de Kubernetes. El servidor de API es la interfaz del plano de control de Kubernetes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;etcd&lt;/strong&gt;: Base de datos de tipo &lt;em&gt;clave-valor&lt;/em&gt; consistente y de alta disponibilidad utilizado como almacén de respaldo de Kubernetes para todos los datos del clúster.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;kube-scheduler&lt;/strong&gt;: Componente del plano de control que busca pods recién creados sin un nodo asignado y selecciona un nodo para que se ejecuten.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;kube-controller-manager&lt;/strong&gt;: Componente del plano de control que ejecuta los procesos del controlador.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Controlador de nodo&lt;/em&gt;: Responsable de notar y responder cuando los nodos se caen.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Controlador de trabajo&lt;/em&gt;: Busca objetos de trabajo que representan tareas únicas y luego crea pods para ejecutar esas tareas hasta su finalización.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Controlador de puntos finales&lt;/em&gt;: Completa el objeto de puntos finales (es decir, se une a servicios y pods).&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Controladores de cuentas de servicio y tokens&lt;/em&gt;: Crea cuentas predeterminadas y tokens de acceso a la API para nuevos espacios de nombres.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;cloud-controller-manager&lt;/strong&gt;: Un componente del plano de control de Kubernetes que incorpora una lógica de control específica de la nube (se ejecuta en un solo proceso con &lt;em&gt;kube-controller-manager&lt;/em&gt;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Controlador de nodo&lt;/em&gt;: Para verificar el proveedor de la nube para determinar si un nodo se ha eliminado en la nube después de que deja de responder.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Controlador de ruta&lt;/em&gt;: Para configurar rutas en la infraestructura de nube subyacente.&lt;/li&gt;
+&lt;li&gt;Controlador de servicio*: Para crear, actualizar y eliminar equilibradores de carga de proveedores de nube.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;kubelet&lt;/strong&gt;: Un agente que se ejecuta en cada nodo del clúster, se asegura de que los contenedores se ejecuten en un Pod.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;kube-proxy&lt;/strong&gt;: Es un proxy de red que se ejecuta en cada nodo de su clúster, implementando parte del concepto de servicio de Kubernetes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;container runtime&lt;/strong&gt;: El tiempo de ejecución del contenedor es el software responsable de ejecutar los contenedores.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;kube-scheduler&lt;/strong&gt;: Componente del plano de control que busca pods recién creados sin un nodo asignado y selecciona un nodo para que se ejecuten.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;instalación-kubectl&#34;&gt;Instalación Kubectl&lt;/h2&gt;
+&lt;p&gt;Para poder trabajar con nuestro cluter &lt;strong&gt;RPI&lt;/strong&gt; de &lt;a href=&#34;https://k3s.io/&#34;&gt;K3s&lt;/a&gt;, podemos trabajar desde el &lt;strong&gt;Server Node&lt;/strong&gt; o instalar &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&#34;&gt;kubectl&lt;/a&gt; en nuestra computadora personal, para este caso instalaremos el paquete para una distribución &lt;a href=&#34;https://www.gnu.org/home.es.html&#34;&gt;GNU/Linux&lt;/a&gt;, &lt;a href=&#34;https://debian.org&#34;&gt;Debian Buster 10&lt;/a&gt; agregando el repositorio de la siguiente forma:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Actualizar e instalar los paquetes necesarios&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;$ sudo apt-get update
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;$ sudo apt-get install -y apt-transport-https ca-certificates curl
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Descargamos la clave de firma pública&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Agregar el repositorio oficial&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;$ &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/kubernetes.list
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Actualizar nuevamente e instalamos el paquete&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;$ sudo apt install update
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;$ sudo apt install -y kubectl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configuración-de-kubectl-con-el-cluster-k3s&#34;&gt;Configuración de Kubectl con el Cluster K3s&lt;/h2&gt;
+&lt;p&gt;Para trabajar desde nuestra computadora personal, tenemos que crear un archivo de configuración dentro de la carpeta &lt;strong&gt;.kube&lt;/strong&gt; el archivo de configuración debe tener el nombre &lt;strong&gt;config&lt;/strong&gt;, la carpeta y el archivo deben ser creados con los permisos adecuados:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ mkdir ~/.kube
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ touch ~/.kube/config
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ chmod &lt;span class=&#34;m&#34;&gt;775&lt;/span&gt; ~/.kube
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ chmod &lt;span class=&#34;m&#34;&gt;420&lt;/span&gt; ~/.kube/config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El contenido del archivo &lt;strong&gt;config&lt;/strong&gt; debe ser similar a este:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;apiVersion&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;v1&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;clusters&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;cluster&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;certificate-authority-data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;CONTENIDO_DEL_CERTIFICADO&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;https&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;//IP_O_DOMINIO&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;6443&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;default&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;contexts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;cluster&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;default&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;default&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;default&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;current-context&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;default&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;Config&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;preferences&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;{}&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;users&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;- &lt;span class=&#34;k&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;default&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;client-certificate-data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;CONTENIDO_DEL_CERTIFICADO&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;client-key-data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;CONTENIDO_DE_LA_CLAVE_DEL_CERTIFICADO&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Estos datos se pueden obtener desde el &lt;strong&gt;Server Node&lt;/strong&gt;, exactamente el dato se encuentra en &lt;strong&gt;/etc/rancher/k3s/k3s.yaml&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;pruebas-después-de-la-instalación&#34;&gt;Pruebas Después de la Instalación&lt;/h2&gt;
+&lt;p&gt;Desde nuestra computadora local podemos ejecutar los siguientes comandos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ kubectl version
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Si existe algún problema con el anterior comando podemos ejecutar:&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ kubectl version --client&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Si todo está correcto tendremos una salida similar a esta:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/kubectl-version-tests-v2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Useful commands to start:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# Get help&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ kubectl --help
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# List all contexts in your kubeconfig file&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ kubectl config get-contexts
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# List all available nodes&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;$ kubectl get nodes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/quick-start/&#34;&gt;&lt;strong&gt;Inicio Rápido&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/&#34;&gt;&lt;strong&gt;Kube Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/&#34;&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/concepts/_print/&#34;&gt;&lt;strong&gt;Conceptos Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tutorials/kubernetes-basics/&#34;&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://etcd.io/&#34;&gt;&lt;strong&gt;etcd&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/&#34;&gt;&lt;strong&gt;Cluster Admin Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/cluster-access/&#34;&gt;&lt;strong&gt;Cluster Accesss&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Bandit Soluciones</title>
       <link>https://blog.fcch.xyz/post/notes/bandit-solved/</link>
       <pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
@@ -474,7 +602,7 @@
       <description>
         
           &lt;p&gt;Experimentando con &lt;a href=&#34;https://docs.docker.com/engine/swarm/&#34;&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt; me puse a la tarea de armar algo con los &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, luego de estar googleando y charlando con &lt;a href=&#34;https://twitter.com/donkeysharp&#34;&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, me recomendó usar &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; que es una distribución de &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; con backend de almacenamiento ligero basado en &lt;a href=&#34;https://www.sqlite.org/index.html&#34;&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; compatible con arquitectura &lt;a href=&#34;https://en.wikipedia.org/wiki/ARM_architecture&#34;&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Revisamos la documentación oficial de &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; y pude armar mi laboratorio, el tipo de ejercicio que se desarrollara sera un &lt;strong&gt;Server node&lt;/strong&gt; y cuatro &lt;strong&gt;Worker nodes&lt;/strong&gt; con la  base de datos &lt;a href=&#34;https://www.sqlite.org/index.html&#34;&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;arquitectura&#34;&gt;Arquitectura&lt;/h2&gt;
 &lt;p&gt;Existen dos tipos de nodos:&lt;/p&gt;
