@@ -1,8 +1,8 @@
 +++
-title = "K3s Apuntes - Parte 2"
+title = "K3s Notes - Part 2"
 author = "Fcch"
 date = "2021-07-24"
-description = "Apuntes para Kubernetes con K3s en Raspberry Pi"
+description = "Notes for Kubernetes with K3s on Raspberry Pi"
 featured = true
 tags = [
     "kubernetes",
@@ -10,9 +10,9 @@ tags = [
     "docker"
 ]
 categories = [
-    "Infraestructura",
+    "Infrastructure",
 ]
-series = ["Servidores"]
+series = ["Servers"]
 thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-2.png"
 +++
 
