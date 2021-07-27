@@ -125,14 +125,14 @@ If everything is correct we will have an output similar to this:
 
 ![](/images/k3s-kubernetes/kubectl-version-tests-v2.png)
 
-Comandos útiles para iniciar:
+Useful commands to start:
 
 ```bash
-# Obtener ayuda
+# Get help
 $ kubectl --help
-# Listar todos los contextos en su archivo kubeconfig
+# List all contexts in your kubeconfig file
 $ kubectl config get-contexts
-# Listar todos los nodos disponibles
+# List all available nodes
 $ kubectl get nodes
 ```
 
