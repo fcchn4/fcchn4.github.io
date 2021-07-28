@@ -226,6 +226,7 @@ $ kubectl describe svc kubernetes
 1. [**K3s - Parte 1**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/)
 2. [**K3s - Parte 2**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/)
 3. [**K3s - Parte 3**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-third/)
+4. [**K3s - Parte 4**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-fourth/)
 
 ## Referencias
 
