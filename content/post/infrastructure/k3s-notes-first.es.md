@@ -1,7 +1,7 @@
 +++
 title = "K3s Apuntes - Parte 1"
 author = "Fcch"
-date = "2021-06-26"
+date = "2021-07-15"
 description = "Apuntes para Kubernetes con K3s en Raspberry Pi"
 featured = true
 tags = [

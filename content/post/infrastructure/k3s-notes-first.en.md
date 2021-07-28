@@ -1,7 +1,7 @@
 +++
 title = "K3s Notes - Part 1"
 author = "Fcch"
-date = "2021-06-26"
+date = "2021-07-15"
 description = "Notes for Kubernetes with K3s on Raspberry Pi"
 featured = true
 tags = [
