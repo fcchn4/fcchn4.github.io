@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
-<html lang="es" data-figures="">
+<html lang="es" data-figures="" class="page">
   <head>
-<title>aws | Fcch Blog | Apuntes, guías y recordatorios</title>
+<title>K3s Apuntes - Parte 3 | Fcch Blog | Apuntes, guías y recordatorios</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,26 +13,26 @@
   gtag('js', new Date());
   gtag('config', 'UA-154973733-1');
 </script>
+  
 <meta property="og:locale" content="es" />
 
 <meta property="og:locale:alternate" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="">
+<meta name="description" content="Apuntes para Kubernetes con K3s en Raspberry Pi">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@fcchn4">
-<meta name="twitter:title" content="aws" />
-<meta property="og:url" content="https://blog.fcch.xyz/tags/aws/" />
-<meta property="og:title" content="aws" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="https://blog.fcch.xyz/images/thumbnail.png" />
+<meta name="twitter:title" content="K3s Apuntes - Parte 3" />
+<meta property="og:url" content="https://blog.fcch.xyz/post/infrastructure/k3s-notes-third/" />
+<meta property="og:title" content="K3s Apuntes - Parte 3" />
+<meta property="og:description" content="Apuntes para Kubernetes con K3s en Raspberry Pi" />
+<meta property="og:image" content="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-3.png" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://blog.fcch.xyz/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://blog.fcch.xyz/icons/favicon-32x32.png">
 <link rel="manifest" href="https://blog.fcch.xyz/icons/site.webmanifest">
 
-<link rel="canonical" href="https://blog.fcch.xyz/tags/aws/">
-<link rel="alternate" type="application/rss+xml" href="https://blog.fcch.xyz/tags/aws/index.xml" title="Fcch Blog | Apuntes, guías y recordatorios" />
+<link rel="canonical" href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-third/">
 
     
 
@@ -140,29 +140,25 @@
 </header>
 
     <main>
-
+  
 <div class="grid-inverse wrap content">
-  <ul class="posts" id="posts">
-      <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://blog.fcch.xyz/post/notes/learning-path/" title="Ruta de Aprendizaje">Ruta de Aprendizaje</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">K3s Apuntes - Parte 3</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <use xlink:href="#calendar"></use>
 </svg></span>
     <span class="post_date">
-      May 10, 2021</span>
-    <span class="post_time"> · 4 min read</span><span>&nbsp;· <a href='https://blog.fcch.xyz/tags/aws' title="aws" class="post_tag button button_translucent">aws
+      Jul 27, 2021</span>
+    <span class="post_time"> · 4 min read</span><span>&nbsp;· <a href='https://blog.fcch.xyz/tags/kubernetes' title="kubernetes" class="post_tag button button_translucent">kubernetes
+        </a><a href='https://blog.fcch.xyz/tags/k3s' title="k3s" class="post_tag button button_translucent">k3s
+        </a><a href='https://blog.fcch.xyz/tags/docker' title="docker" class="post_tag button button_translucent">docker
         </a>
     </span>
     <span class="page_only">&nbsp;·
   <div class="post_share">
     Compartir:
-    <a href="https://twitter.com/intent/tweet?text=Ruta%20de%20Aprendizaje&url=https%3a%2f%2fblog.fcch.xyz%2fpost%2fnotes%2flearning-path%2f&tw_p=tweetbutton" class="twitter" title="Compartir Twitter" target="_blank" rel="nofollow">
+    <a href="https://twitter.com/intent/tweet?text=K3s%20Apuntes%20-%20Parte%203&url=https%3a%2f%2fblog.fcch.xyz%2fpost%2finfrastructure%2fk3s-notes-third%2f&tw_p=tweetbutton" class="twitter" title="Compartir Twitter" target="_blank" rel="nofollow">
       <svg class="icon">
   <use xlink:href="#twitter"></use>
 </svg>
@@ -172,7 +168,7 @@
   <use xlink:href="#linkedin"></use>
 </svg>
     </a>
-    <a href="https://blog.fcch.xyz/post/notes/learning-path/" title="Copy Link" class="link link_yank">
+    <a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-third/" title="Copy Link" class="link link_yank">
       <svg class="icon">
   <use xlink:href="#copy"></use>
 </svg>
@@ -182,30 +178,180 @@
 </span>
   </div>
 
-    </div>
-    <div class="excerpt_footer partition">
-      <div class="excerpt_thumbnail">
-        <img src='https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png' alt="Ruta de Aprendizaje">
-      </div>
-      
-        <div>
-          <p class="pale">
-            
-              Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías AWS, esta guía tiene como objetivo obtener una certificarme AWS en base a las certificaciones disponibles, a corto plazo los objetivos principales son Cloud Practitioner y Solutions Architect:
-En mi busqueda de infromación encontre …
-            
-          </p>
-          <a href="https://blog.fcch.xyz/post/notes/learning-path/" title="Leer más" class="excerpt_more button">Leer más</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    
+    <p>En la <a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/"><strong>Parte 2</strong></a> de <a href="https://k3s.io/"><strong>K3s</strong></a> se hizo una descripción de varios conceptos que se manejan en <a href="https://kubernetes.io/"><strong>Kubernetes</strong></a>, se instaló el client <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/">kubectl</a> y se hizo pruebas de conectividad a el API de <a href="https://kubernetes.io/"><strong>Kubernetes</strong></a>.</p>
+<p><img src="/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt=""></p>
+<p>Ahora ejecutaremos tareas básicas en nuestro pequeño cluster, pero antes seguimos describiendo mas detalles de <strong>Kubernetes</strong>.</p>
+<h2 id="objetos-de-kubernetes">Objetos de Kubernetes</h2>
+<ol>
+<li><strong>Pod</strong>: Es un grupo de uno o más contenedores (como contenedores Docker), con almacenamiento/red compartidos, y unas especificaciones de cómo ejecutar los contenedores.</li>
+<li><strong>Service</strong>: Una forma abstracta de exponer una aplicación que se ejecuta en un conjunto de Pods como un servicio de red.</li>
+<li><strong>Volume</strong>: Tiene una funcionalidad similar al de <a href="https://docs.docker.com/storage/volumes/"><strong>Docker Volume</strong></a>, donde se busca persistencia de datos luego de el reinicio de un contenedor.</li>
+<li><strong>Namespace</strong>: Nos permite aislar recursos para el uso de los distintos usuarios del cluster.</li>
+<li><strong>Manifest</strong>: Es un archivo <strong>yaml</strong> manifiesto que contiene instrucciones que especifican como desplegar una aplicación al nodo o nodos en un cluster de <strong>Kubernetes</strong>.</li>
+</ol>
+<h2 id="controladores-kubernetes">Controladores Kubernetes</h2>
+<p><strong>Kubernetes</strong> contiene abstracciónes de nivel superior llamadas Controladores. Los Controladores se basan en los objetos básicos y proporcionan funcionalidades adicionales sobre ellos.</p>
+<ol>
+<li><strong>Replicaset</strong>: El objeto de un ReplicaSet es el de mantener un conjunto estable de réplicas de Pods ejecutándose en todo momento. Así, se usa en numerosas ocasiones para garantizar la disponibilidad de un número específico de Pods idénticos.</li>
+<li><strong>Deployment</strong>: Un controlador de Deployment proporciona actualizaciones declarativas para los Pods y los ReplicaSets.Cuando describes el estado deseado en un objeto Deployment, el controlador del Deployment se encarga de cambiar el estado actual al estado deseado de forma controlada. Puedes definir Deployments para crear nuevos ReplicaSets, o eliminar Deployments existentes y adoptar todos sus recursos con nuevos Deployments.</li>
+<li><strong>StatefulSet</strong>: Un StatefulSet es el objeto de la API workload que se usa para gestionar aplicaciones con estado.</li>
+<li><strong>DaemonSet</strong>: Un DaemonSet garantiza que todos (o algunos) de los nodos ejecuten una copia de un Pod. Conforme se añade más nodos al clúster, nuevos Pods son añadidos a los mismos. Conforme se elimina nodos del clúster, dichos Pods se destruyen. Al eliminar un DaemonSet se limpian todos los Pods que han sido creados.</li>
+<li><strong>Job</strong>: Un Job crea uno o más Pods y se asegura de que un número específico de ellos termina de forma satisfactoria. Conforme los pods terminan satisfactoriamente, el Job realiza el seguimiento de las ejecuciones satisfactorias. Cuando se alcanza un número específico de ejecuciones satisfactorias, la tarea (esto es, el Job) se completa. Al eliminar un Job se eliminan los Pods que haya creado.</li>
+</ol>
+<h2 id="comandos-kubernetes">Comandos Kubernetes</h2>
+<p>Algunos comandos comunes:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Listar los Namespace disponibles</span>
+<span class="ln">2</span>$ kubectl get ns
+<span class="ln">3</span><span class="c1"># Listar Pods disponibles en un Namespace</span>
+<span class="ln">4</span>$ kubectl -n kube-system get pods
+<span class="ln">5</span><span class="c1"># Listar Pods disponibles en un Namespace con mas detalles</span>
+<span class="ln">6</span>$ kubectl -n kube-system get pods -o wide
+<span class="ln">7</span><span class="c1"># Eliminar un pod</span>
+<span class="ln">8</span>$ kubectl -n kube-system delete pod NAME_RUN_POD
+</code></pre></div><p>Como detalle extra si existe algún problema con el archivo de configuración al node podemos ejecutar:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ <span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>PATH_CONFIG_FILE
+</code></pre></div><h2 id="ejemplos-de-archivos-yaml">Ejemplos de Archivos Yaml</h2>
+<p><strong>1.</strong> Para nuestro primer ejemplo crearemos y aplicaremos un archivo básico:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln">1</span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
+</span><span class="ln">2</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Pod<span class="w">
+</span><span class="ln">3</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln">4</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>fcch-nginx<span class="w">
+</span><span class="ln">5</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="ln">6</span><span class="w">  </span><span class="k">containers</span><span class="p">:</span><span class="w">
+</span><span class="ln">7</span><span class="w">  </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>fcch-nginx<span class="w">
+</span><span class="ln">8</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>nginx<span class="p">:</span>alpine<span class="w">
+</span></code></pre></div><p>Para ejecutar el contenido de los archivos <strong>yaml</strong> debemos conocer algunos comandos:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl apply -f basic_pod.yaml
+</code></pre></div><p>Para ingresar al contenedor dentro del <strong>pod</strong> podemos ejecutar:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl <span class="nb">exec</span> -it fcch-nginx -- sh
+</code></pre></div><p>Para eliminar los <strong>pod</strong> creados:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl delete pod fcch-nginx
+<span class="ln">2</span><span class="c1"># Para verificar</span> 
+<span class="ln">3</span>$ kubectl get pods
+</code></pre></div><p><strong>2.</strong> Para este ejemplo utilizaremos variables de entorno y asignaremos recursos.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
+</span><span class="ln"> 2</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Pod<span class="w">
+</span><span class="ln"> 3</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>fcch-nginx<span class="w">
+</span><span class="ln"> 5</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">  </span><span class="k">containers</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">  </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>fcch-nginx<span class="w">
+</span><span class="ln"> 8</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>nginx<span class="p">:</span>alpine<span class="w">
+</span><span class="ln"> 9</span><span class="w">    </span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="ln">10</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>NAME_VARIABLE<span class="w">
+</span><span class="ln">11</span><span class="w">      </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;fcch&#34;</span><span class="w">
+</span><span class="ln">12</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>NAME_VARIABLE_OTHER<span class="w">
+</span><span class="ln">13</span><span class="w">      </span><span class="k">value</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;fcch-blog&#34;</span><span class="w">
+</span><span class="ln">14</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>DD_AGENT_HOST<span class="w">
+</span><span class="ln">15</span><span class="w">      </span><span class="k">valueFrom</span><span class="p">:</span><span class="w">
+</span><span class="ln">16</span><span class="w">        </span><span class="k">fieldRef</span><span class="p">:</span><span class="w">
+</span><span class="ln">17</span><span class="w">          </span><span class="k">fieldPath</span><span class="p">:</span><span class="w"> </span>status.hostIP<span class="w">
+</span><span class="ln">18</span><span class="w">    </span><span class="k">resources</span><span class="p">:</span><span class="w">
+</span><span class="ln">19</span><span class="w">      </span><span class="k">requests</span><span class="p">:</span><span class="w">
+</span><span class="ln">20</span><span class="w">        </span><span class="k">memory</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;64Mi&#34;</span><span class="w">
+</span><span class="ln">21</span><span class="w">        </span><span class="k">cpu</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;200m&#34;</span><span class="w">
+</span><span class="ln">22</span><span class="w">      </span><span class="k">limits</span><span class="p">:</span><span class="w">
+</span><span class="ln">23</span><span class="w">        </span><span class="k">memory</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;128Mi&#34;</span><span class="w">
+</span><span class="ln">24</span><span class="w">        </span><span class="k">cpu</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;500m&#34;</span><span class="w">
+</span><span class="ln">25</span><span class="w">    </span><span class="k">readinessProbe</span><span class="p">:</span><span class="w">
+</span><span class="ln">26</span><span class="w">      </span><span class="k">httpGet</span><span class="p">:</span><span class="w">
+</span><span class="ln">27</span><span class="w">        </span><span class="k">path</span><span class="p">:</span><span class="w"> </span>/<span class="w">
+</span><span class="ln">28</span><span class="w">        </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span><span class="ln">29</span><span class="w">      </span><span class="k">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span><span class="ln">30</span><span class="w">      </span><span class="k">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span><span class="ln">31</span><span class="w">    </span><span class="k">livenessProbe</span><span class="p">:</span><span class="w">
+</span><span class="ln">32</span><span class="w">      </span><span class="k">tcpSocket</span><span class="p">:</span><span class="w">
+</span><span class="ln">33</span><span class="w">        </span><span class="k">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span><span class="ln">34</span><span class="w">      </span><span class="k">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="m">15</span><span class="w">
+</span><span class="ln">35</span><span class="w">      </span><span class="k">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span><span class="ln">36</span><span class="w">    </span><span class="k">ports</span><span class="p">:</span><span class="w">
+</span><span class="ln">37</span><span class="w">    </span>- <span class="k">containerPort</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></code></pre></div><p>Si deseamos verificar el archivo <strong>yaml</strong> que se ejecuto podemos ejecutar:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl get pod fcch-nginx -o yaml
+</code></pre></div><p>Si se necesita ver los detalles de un <strong>pod</strong>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl describe pod fcch-nginx
+</code></pre></div><p><strong>3.</strong> En este ejemplo utilizaremos volumenes, el tipo será <strong>StatefulSet</strong> y utlizaremos <strong>replicas</strong>.</p>
+<p>Un detalle antes de continuar, <strong>PVC</strong>: Persistent Volume Clain.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>apps/v1<span class="w">
+</span><span class="ln"> 2</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>StatefulSet<span class="w">
+</span><span class="ln"> 3</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>app-test<span class="w">
+</span><span class="ln"> 5</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">  </span><span class="k">selector</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">    </span><span class="k">matchLabels</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">      </span><span class="k">app</span><span class="p">:</span><span class="w"> </span>apppod<span class="w">
+</span><span class="ln"> 9</span><span class="w">  </span><span class="k">serviceName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;first-frontend&#34;</span><span class="w">
+</span><span class="ln">10</span><span class="w">  </span><span class="k">replicas</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="ln">11</span><span class="w">  </span><span class="k">template</span><span class="p">:</span><span class="w">
+</span><span class="ln">12</span><span class="w">    </span><span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln">13</span><span class="w">      </span><span class="k">labels</span><span class="p">:</span><span class="w">
+</span><span class="ln">14</span><span class="w">        </span><span class="k">app</span><span class="p">:</span><span class="w"> </span>apppod<span class="w">
+</span><span class="ln">15</span><span class="w">    </span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="ln">16</span><span class="w">      </span><span class="k">containers</span><span class="p">:</span><span class="w">
+</span><span class="ln">17</span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>first-frontend<span class="w">
+</span><span class="ln">18</span><span class="w">        </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>busybox<span class="w">
+</span><span class="ln">19</span><span class="w">        </span><span class="k">args</span><span class="p">:</span><span class="w">
+</span><span class="ln">20</span><span class="w">        </span>- sleep<span class="w">
+</span><span class="ln">21</span><span class="w">        </span>- infinity<span class="w">
+</span><span class="ln">22</span><span class="w">        </span><span class="k">volumeMounts</span><span class="p">:</span><span class="w">
+</span><span class="ln">23</span><span class="w">        </span>- <span class="k">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/data&#34;</span><span class="w">
+</span><span class="ln">24</span><span class="w">          </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>app-pvc<span class="w">
+</span><span class="ln">25</span><span class="w">  </span><span class="k">volumeClaimTemplates</span><span class="p">:</span><span class="w">
+</span><span class="ln">26</span><span class="w">  </span>- <span class="k">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln">27</span><span class="w">      </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>app-pvc<span class="w">
+</span><span class="ln">28</span><span class="w">    </span><span class="k">spec</span><span class="p">:</span><span class="w">
+</span><span class="ln">29</span><span class="w">      </span><span class="k">accessModes</span><span class="p">:</span><span class="w">
+</span><span class="ln">30</span><span class="w">      </span>- ReadWriteOnce<span class="w">
+</span><span class="ln">31</span><span class="w">      </span><span class="k">resources</span><span class="p">:</span><span class="w">
+</span><span class="ln">32</span><span class="w">        </span><span class="k">requests</span><span class="p">:</span><span class="w">
+</span><span class="ln">33</span><span class="w">          </span><span class="k">storage</span><span class="p">:</span><span class="w"> </span>5Gi<span class="w">
+</span><span class="ln">34</span><span class="w">      </span><span class="k">storageClassName</span><span class="p">:</span><span class="w"> </span>do-block-storage<span class="w">
+</span></code></pre></div><p>Para trabajar con <strong>Volumenes</strong> podemos ejecutar los siguientes comandos:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># Listar volumenes</span>
+<span class="ln"> 2</span>$ kubectl get pvc
+<span class="ln"> 3</span><span class="c1"># Mostrar detalles del PVC</span>
+<span class="ln"> 4</span>$ kubectl describe pvc app-pvc-app-test-0
+<span class="ln"> 5</span><span class="c1"># Listar Pods de tipo StatefulSet</span>
+<span class="ln"> 6</span>$ kubectl get statefulsets
+<span class="ln"> 7</span><span class="c1"># Listar Pods de tipo StatefulSet</span>
+<span class="ln"> 8</span>$ kubectl get stss
+<span class="ln"> 9</span><span class="c1"># Eliminar Pod de tipo StatefulSet</span>
+<span class="ln">10</span>$ kubectl delete sts app-test
+<span class="ln">11</span><span class="c1"># Eliminar PVC</span>
+<span class="ln">12</span>$ kubectl delete pvc app-pvc-app-test-0
+</code></pre></div><p>Algunos comandos que nos pueden servir:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Listado completo</span>
+<span class="ln">2</span>$ kubectl get all
+<span class="ln">3</span><span class="c1"># Listar servicios</span>
+<span class="ln">4</span>$ kubectl get svc
+<span class="ln">5</span><span class="c1"># Detalle del servicio</span>
+<span class="ln">6</span>$ kubectl describe svc kubernetes
+</code></pre></div><h2 id="artículos-k3s">Artículos K3s</h2>
+<ol>
+<li><a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/"><strong>K3s - Parte 1</strong></a></li>
+<li><a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/"><strong>K3s - Parte 2</strong></a></li>
+<li><a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-third/"><strong>K3s - Parte 3</strong></a></li>
+</ol>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://rancher.com/docs/k3s/latest/en/quick-start/"><strong>Inicio Rápido</strong></a></li>
+<li><a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"><strong>Kube Dashboard</strong></a></li>
+<li><a href="https://rancher.com/docs/"><strong>Docs K3S</strong></a></li>
+<li><a href="https://kubernetes.io/es/docs/concepts/"><strong>Conceptos Kubernetes</strong></a></li>
+<li><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"><strong>Docs Kubernetes</strong></a></li>
+</ul>
 
+<h3>Traducciones:</h3>
+<ul>
+  
     <li>
-
-
+      <a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/">&#34;English&#34; |</a>
     </li>
-  </ul>
+  
+</ul> 
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
         <h2>Fcch</h2>
@@ -215,9 +361,6 @@ En mi busqueda de infromación encontre …
       <a href='https://blog.fcch.xyz/about/' class="button mt-1" role="button" title='Leer más'>Leer más</a>
     <h2 class="mt-4">Posts destacados</h2>
     <ul>
-      <li>
-        <a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-third/" class="nav-link" title="K3s Apuntes - Parte 3">K3s Apuntes - Parte 3</a>
-      </li>
       <li>
         <a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/" class="nav-link" title="K3s Apuntes - Parte 2">K3s Apuntes - Parte 2</a>
       </li>
@@ -243,9 +386,6 @@ En mi busqueda de infromación encontre …
     <h2 class="mt-4">Posts recientes</h2>
     <ul class="flex-column">
       <li>
-        <a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-third/" class="nav-link" title="K3s Apuntes - Parte 3">K3s Apuntes - Parte 3</a>
-      </li>
-      <li>
         <a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/" class="nav-link" title="K3s Apuntes - Parte 2">K3s Apuntes - Parte 2</a>
       </li>
       <li>
@@ -265,6 +405,9 @@ En mi busqueda de infromación encontre …
       </li>
       <li>
         <a href="https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/" class="nav-link" title="Doctl Cli - Digitalocean">Doctl Cli - Digitalocean</a>
+      </li>
+      <li>
+        <a href="https://blog.fcch.xyz/post/infrastructure/limite-memoria-docker/" class="nav-link" title="Limite de Memoria en Docker">Limite de Memoria en Docker</a>
       </li>
     </ul>
     <div>
@@ -490,9 +633,8 @@ En mi busqueda de infromación encontre …
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
