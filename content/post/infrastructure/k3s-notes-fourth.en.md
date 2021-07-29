@@ -165,7 +165,7 @@ If everything ran without problems our **Dashboard** would be similar to this:
 
 ![](/images/k3s-kubernetes/kubernetes-dashboard-3.png)
 
-Comandos útiles:
+Useful commands:
 
 ```bash
 $ kubectl config view
