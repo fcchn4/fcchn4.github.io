@@ -109,7 +109,7 @@
 &lt;li&gt;Dashboard Configuration&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Comandos útiles:&lt;/p&gt;
+&lt;p&gt;Useful commands:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ kubectl config view
 &lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ kubectl get services --all-namespaces
 &lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
