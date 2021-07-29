@@ -253,8 +253,8 @@
 </code></pre></div><p>Finally we can expose the service locally with:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ sudo k3s kubectl proxy
 </code></pre></div><p>If we need to edit the <strong>Namespace</strong> of <strong>kubernetes-dashboard</strong> we can execute:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl -n kube-system edit service kubernetes-dashboard
-<span class="ln">2</span>$ kubectl -n kube-system get services
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+<span class="ln">2</span>$ kubectl -n kubernetes-dashboard get services
 </code></pre></div><p>In the example the <strong>Server Node</strong> is without a graphical environment, and for the example an SSH tunnel was created for port 8001:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ssh -L 8001:127.0.0.1:8001 -N -f -l USER IP-DOMAIN
 </code></pre></div><p>And to enter the <strong>Dashboard</strong> from the web browser the path would be:</p>
@@ -272,7 +272,12 @@
 <li>Dashboard Configuration</li>
 </ul>
 <p><img src="/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt=""></p>
-<h2 id="interesting-tools">Interesting Tools</h2>
+<p>Comandos útiles:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl config view
+<span class="ln">2</span>$ kubectl get services --all-namespaces
+<span class="ln">3</span>$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+<span class="ln">4</span>$ kubectl -n kubernetes-dashboard get svc
+</code></pre></div><h2 id="interesting-tools">Interesting Tools</h2>
 <ol>
 <li><a href="https://k8slens.dev/"><strong>Lens</strong></a>: It is a system that takes control of your Kubernetes clusters.</li>
 <li><a href="https://kind.sigs.k8s.io/"><strong>Kind</strong></a>: This is a tool for running local Kubernetes clusters through Docker container &quot;nodes&quot;.</li>

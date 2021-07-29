@@ -90,8 +90,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por último podemos exponer el servicio de manera local con:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ sudo k3s kubectl proxy
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Si se necesita editar el &lt;strong&gt;Namespace&lt;/strong&gt; de &lt;strong&gt;kubernetes-dashboard&lt;/strong&gt; podemos ejecutar:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ kubectl -n kube-system edit service kubernetes-dashboard
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ kubectl -n kube-system get services
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ kubectl -n kubernetes-dashboard get services
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En el ejemplo el &lt;strong&gt;Server Node&lt;/strong&gt; se encuentra sin entorno gráfico, y para el ejemplo se creó un tunel SSH para el puerto 8001:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ ssh -L 8001:127.0.0.1:8001 -N -f -l USER IP-DOMAIN
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y para ingresar al &lt;strong&gt;Dashboard&lt;/strong&gt; desde el navegador web la ruta seria:&lt;/p&gt;
@@ -109,7 +109,12 @@
 &lt;li&gt;Configuración del Dashboard&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;herramientas-interesantes&#34;&gt;Herramientas Interesantes&lt;/h2&gt;
+&lt;p&gt;Comandos útiles:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ kubectl config view
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ kubectl get services --all-namespaces
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ kubectl -n kubernetes-dashboard get svc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;herramientas-interesantes&#34;&gt;Herramientas Interesantes&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://k8slens.dev/&#34;&gt;&lt;strong&gt;Lens&lt;/strong&gt;&lt;/a&gt;: Es un sistema que toma el control de sus clústeres de Kubernetes.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://kind.sigs.k8s.io/&#34;&gt;&lt;strong&gt;Kind&lt;/strong&gt;&lt;/a&gt;: Es una herramienta para ejecutar clústeres de Kubernetes locales mediante los &amp;quot;nodos&amp;quot; de contenedor de Docker.&lt;/li&gt;

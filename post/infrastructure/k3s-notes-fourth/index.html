@@ -150,7 +150,7 @@
 </svg></span>
     <span class="post_date">
       Jul 28, 2021</span>
-    <span class="post_time"> · 4 min read</span><span>&nbsp;· <a href='https://blog.fcch.xyz/tags/kubernetes' title="kubernetes" class="post_tag button button_translucent">kubernetes
+    <span class="post_time"> · 5 min read</span><span>&nbsp;· <a href='https://blog.fcch.xyz/tags/kubernetes' title="kubernetes" class="post_tag button button_translucent">kubernetes
         </a><a href='https://blog.fcch.xyz/tags/k3s' title="k3s" class="post_tag button button_translucent">k3s
         </a><a href='https://blog.fcch.xyz/tags/docker' title="docker" class="post_tag button button_translucent">docker
         </a>
@@ -253,8 +253,8 @@
 </code></pre></div><p>Por último podemos exponer el servicio de manera local con:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ sudo k3s kubectl proxy
 </code></pre></div><p>Si se necesita editar el <strong>Namespace</strong> de <strong>kubernetes-dashboard</strong> podemos ejecutar:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl -n kube-system edit service kubernetes-dashboard
-<span class="ln">2</span>$ kubectl -n kube-system get services
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+<span class="ln">2</span>$ kubectl -n kubernetes-dashboard get services
 </code></pre></div><p>En el ejemplo el <strong>Server Node</strong> se encuentra sin entorno gráfico, y para el ejemplo se creó un tunel SSH para el puerto 8001:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ ssh -L 8001:127.0.0.1:8001 -N -f -l USER IP-DOMAIN
 </code></pre></div><p>Y para ingresar al <strong>Dashboard</strong> desde el navegador web la ruta seria:</p>
@@ -272,7 +272,12 @@
 <li>Configuración del Dashboard</li>
 </ul>
 <p><img src="/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt=""></p>
-<h2 id="herramientas-interesantes">Herramientas Interesantes</h2>
+<p>Comandos útiles:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl config view
+<span class="ln">2</span>$ kubectl get services --all-namespaces
+<span class="ln">3</span>$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+<span class="ln">4</span>$ kubectl -n kubernetes-dashboard get svc
+</code></pre></div><h2 id="herramientas-interesantes">Herramientas Interesantes</h2>
 <ol>
 <li><a href="https://k8slens.dev/"><strong>Lens</strong></a>: Es un sistema que toma el control de sus clústeres de Kubernetes.</li>
 <li><a href="https://kind.sigs.k8s.io/"><strong>Kind</strong></a>: Es una herramienta para ejecutar clústeres de Kubernetes locales mediante los &quot;nodos&quot; de contenedor de Docker.</li>
