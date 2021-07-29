@@ -135,8 +135,8 @@ $ sudo k3s kubectl proxy
 Si se necesita editar el **Namespace** de **kubernetes-dashboard** podemos ejecutar:
 
 ```bash
-$ kubectl -n kube-system edit service kubernetes-dashboard
-$ kubectl -n kube-system get services
+$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+$ kubectl -n kubernetes-dashboard get services
 ```
 
 En el ejemplo el **Server Node** se encuentra sin entorno gráfico, y para el ejemplo se creó un tunel SSH para el puerto 8001:
@@ -164,6 +164,15 @@ Si todo se ejecutó sin problemas nuestro **Dashboard** seria similar a esto:
 - Configuración del Dashboard
 
 ![](/images/k3s-kubernetes/kubernetes-dashboard-3.png)
+
+Comandos útiles:
+
+```bash
+$ kubectl config view
+$ kubectl get services --all-namespaces
+$ kubectl -n kubernetes-dashboard edit service kubernetes-dashboard
+$ kubectl -n kubernetes-dashboard get svc
+```
 
 ## Herramientas Interesantes
 
