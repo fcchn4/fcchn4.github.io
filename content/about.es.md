@@ -14,14 +14,11 @@ featured = true
 #series = ["Fcch Blog"]
 thumbnail = "images/logo/site-logo-fcch-400.png"
 +++
-Me gusta aprender sobre tecnología y participar en comunidades de Software Libre, aprendo sobre:
+Me gusta aprender sobre tecnología y participar en comunidades de Software Libre y Open Source.
 
-- Software Libre y Open Source
-- DevOps
-- Cloud Computing 
-- SecOps
-- Seguridad Informática
-- Infraestructura
+Inicie mi carrera profesional como **sysadmin**, administrando servidores **GNU/Linux**, trabaje en proyectos de Gobierno para la migración a **Software Libre**, realice trabajos de Seguridad Informática en equipos de Blueteam, actualmente trabajo en proyectos personales realizando trabajos en Infraestructura en la Nube, Integración Continua y Automatización.
+
+Soy usuario de Software Libre por mas de 10 años, la primera distribución **GNU/Linux** que utilice de manera informal fue el desaparecido **Mandrake**, luego de ingresar a la universidad conocí a miembros de la comunidad de [**Software Libre Bolivia**](https://www.softwarelibre.org.bo/) donde me presentaron a **BoliviaOS**, una distribución boliviana basada en [**Ubuntu**](https://ubuntu.com/), luego de esto fui usuario de [**Debian**](https://www.debian.org/), [**Archlinux**](https://archlinux.org/) y por último soy usuario de [**Fedora**](https://getfedora.org/) gracias a la invitación de un buen amigo, me ayudo a formar parte de la comunidad de [**Fedora**](https://getfedora.org/) hasta llegar a ser un [**Embajador Fedora**](https://fedoraproject.org/wiki/User:Barto).
 
 ## Comunidades
 
