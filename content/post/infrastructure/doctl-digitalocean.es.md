@@ -1,7 +1,7 @@
 +++
 title = "Doctl Cli - Digitalocean"
 author = "Fcch"
-date = "2020-12-30"
+date = "2021-11-02"
 description = "Guía Servidores e Infraestructura"
 featured = false
 tags = [
@@ -89,6 +89,33 @@ $ doctl compute droplet list
 $ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <NOMBRE_DROPLET>
 ```
 
+- **Listar Imágenes Droplet Disponibles**
+
+```cmd
+$ doctl compute image list --public | grep -i 'debian'
+```
+
+- **Listar Tamaños Droplet Disponibles**
+
+```cmd
+$ doctl compute size list
+```
+
+- **Formtato a la Salida de DOCTL**
+
+```cmd 
+$ doctl compute droplet list --format "ID,Name,PublicIPv4"
+```
+
+- **Crear un Drorplet con mas detalles**
+
+```cmd
+$ doctl compute droplet create --region <REGION_CODE> \
+  --image <IMAGE_CODE> --size <SIZE_NAME> \
+  --enable-monitoring true --enable-private-networking true \
+  --tag-name <TAG> --ssh-keys <FINGERPRINT>
+```
+
 - **Eliminar Droplet**
 
 ```cmd
@@ -99,3 +126,8 @@ $ doctl compute droplet delete <ID_DROPLET>
 
 - [**APIS CLIS**](https://www.digitalocean.com/docs/apis-clis/)
 - [**DOCTL CLI**](https://www.digitalocean.com/docs/apis-clis/doctl/)
+
+## DigitalOcean
+
+| [![](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=b7713eda7925&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) | [![](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=b7713eda7925&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) | [![](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=b7713eda7925&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
