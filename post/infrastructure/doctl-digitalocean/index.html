@@ -149,7 +149,7 @@
   <use xlink:href="#calendar"></use>
 </svg></span>
     <span class="post_date">
-      Dec 30, 2020</span>
+      Nov 2, 2021</span>
     <span class="post_time"> · 2 min read</span><span>&nbsp;· <a href='https://blog.fcch.xyz/tags/cloud' title="cloud" class="post_tag button button_translucent">cloud
         </a><a href='https://blog.fcch.xyz/tags/digitalocean' title="digitalocean" class="post_tag button button_translucent">digitalocean
         </a><a href='https://blog.fcch.xyz/tags/doctl' title="doctl" class="post_tag button button_translucent">doctl
@@ -217,6 +217,25 @@
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb <span class="p">&lt;</span>NOMBRE_DROPLET&gt;
 </code></pre></div><ul>
+<li><strong>Listar Imágenes Droplet Disponibles</strong></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute image list --public <span class="p">|</span> grep -i &#39;debian&#39;
+</code></pre></div><ul>
+<li><strong>Listar Tamaños Droplet Disponibles</strong></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute size list
+</code></pre></div><ul>
+<li><strong>Formtato a la Salida de DOCTL</strong></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute droplet list --format <span class="s2">&#34;ID,Name,PublicIPv4&#34;</span>
+</code></pre></div><ul>
+<li><strong>Crear un Drorplet con mas detalles</strong></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute droplet create --region <span class="p">&lt;</span>REGION_CODE<span class="p">&gt;</span> \
+<span class="ln">2</span>  --image <span class="p">&lt;</span>IMAGE_CODE<span class="p">&gt;</span> --size <span class="p">&lt;</span>SIZE_NAME<span class="p">&gt;</span> \
+<span class="ln">3</span>  --enable-monitoring true --enable-private-networking true \
+<span class="ln">4</span>  --tag-name <span class="p">&lt;</span>TAG<span class="p">&gt;</span> --ssh-keys <span class="p">&lt;</span>FINGERPRINT&gt;
+</code></pre></div><ul>
 <li><strong>Eliminar Droplet</strong></li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-cmd" data-lang="cmd"><span class="ln">1</span>$ doctl compute droplet delete <span class="p">&lt;</span>ID_DROPLET&gt;
@@ -225,6 +244,16 @@
 <li><a href="https://www.digitalocean.com/docs/apis-clis/"><strong>APIS CLIS</strong></a></li>
 <li><a href="https://www.digitalocean.com/docs/apis-clis/doctl/"><strong>DOCTL CLI</strong></a></li>
 </ul>
+<h2 id="digitalocean">DigitalOcean</h2>
+<table>
+<thead>
+<tr>
+<th><a href="https://www.digitalocean.com/?refcode=b7713eda7925&amp;utm_campaign=Referral_Invite&amp;utm_medium=Referral_Program&amp;utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt=""></a></th>
+<th><a href="https://www.digitalocean.com/?refcode=b7713eda7925&amp;utm_campaign=Referral_Invite&amp;utm_medium=Referral_Program&amp;utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt=""></a></th>
+<th><a href="https://www.digitalocean.com/?refcode=b7713eda7925&amp;utm_campaign=Referral_Invite&amp;utm_medium=Referral_Program&amp;utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt=""></a></th>
+</tr>
+</thead>
+</table>
 
 <h3>Traducciones:</h3>
 <ul>

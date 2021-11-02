@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Fcch Blog | 2019 - 2021</copyright>
-    <lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Doctl Cli - Digitalocean</title>
       <link>https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/</link>
-      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/</guid>
       <description>
@@ -54,6 +54,25 @@
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_DROPLET&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Listar Imágenes Droplet Disponibles&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute image list --public &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &amp;#39;debian&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Listar Tamaños Droplet Disponibles&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute size list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Formtato a la Salida de DOCTL&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet list --format &lt;span class=&#34;s2&#34;&gt;&amp;#34;ID,Name,PublicIPv4&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Crear un Drorplet con mas detalles&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet create --region &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;REGION_CODE&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; \
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  --image &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;IMAGE_CODE&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; --size &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;SIZE_NAME&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; \
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  --enable-monitoring true --enable-private-networking true \
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;  --tag-name &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;TAG&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; --ssh-keys &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;FINGERPRINT&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Eliminar Droplet&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet delete &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;ID_DROPLET&amp;gt;
@@ -62,6 +81,16 @@
 &lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/&#34;&gt;&lt;strong&gt;APIS CLIS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/&#34;&gt;&lt;strong&gt;DOCTL CLI&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;digitalocean&#34;&gt;DigitalOcean&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;a href=&#34;https://www.digitalocean.com/?refcode=b7713eda7925&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge&#34;&gt;&lt;img src=&#34;https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;https://www.digitalocean.com/?refcode=b7713eda7925&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge&#34;&gt;&lt;img src=&#34;https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;https://www.digitalocean.com/?refcode=b7713eda7925&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge&#34;&gt;&lt;img src=&#34;https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
         
       </description>
     </item>

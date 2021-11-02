@@ -7,7 +7,94 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Fcch Blog | 2019 - 2021</copyright>
-    <lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/series/servers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/series/servers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Doctl Cli - Digitalocean</title>
+      <link>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</guid>
+      <description>
+        
+          &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; also has a CLI to manage the &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot; infrastructure, which works similarly to &lt;strong&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html&#34;&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, this tool allows us to avoid using the web interface of this provider.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;install-binary-tools&#34;&gt;Install Binary Tools&lt;/h2&gt;
+&lt;p&gt;The first thing I have to do is download and install the binary, this for the current version &lt;strong&gt;1.54.0&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cd ~
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ sudo mv ~/doctl /usr/local/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;create-token-api&#34;&gt;Create Token API&lt;/h2&gt;
+&lt;p&gt;Before using &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot;, you need to create a &lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; API Token for your account, with read and write access from the &lt;strong&gt;Applications&lt;/strong&gt; and &lt;strong&gt;API&lt;/strong&gt; page in the control panel.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/token-api-name.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The token string is only shown once, so please copy and keep in a safe place.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/token-api-value.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;account-access-with-token-api-and-doctl&#34;&gt;Account Access with Token API and doctl&lt;/h2&gt;
+&lt;p&gt;The Token API grants access to &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; for your &lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; account. Pass the Token string when prompted, when executing the &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; command.&lt;/p&gt;
+&lt;p&gt;You can use multiple accounts, using different names, for this function the &lt;strong&gt;--context&lt;/strong&gt; parameter allows it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl auth init --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA1&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ doctl auth init --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA2&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ doctl auth init --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA3&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All accounts can be listed with the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl auth list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To switch between the different existing accounts:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl auth switch --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA_DISPONIBLE&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;examples-of-use&#34;&gt;Examples of use&lt;/h2&gt;
+&lt;p&gt;We can use &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; in different cases.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Account verify&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl account get
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;List Droplets&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create Droplet&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_DROPLET&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;List Available Droplet Images&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute image list --public &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &amp;#39;debian&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;List Available Droplet Sizes&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute size list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Format DOCTL Output&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet list --format &lt;span class=&#34;s2&#34;&gt;&amp;#34;ID,Name,PublicIPv4&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create a Droplet with more details&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet create --region &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;REGION_CODE&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; \
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;  --image &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;IMAGE_CODE&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; --size &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;SIZE_NAME&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; \
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;  --enable-monitoring true --enable-private-networking true \
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;  --tag-name &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;TAG&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; --ssh-keys &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;FINGERPRINT&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Delete Droplet&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet delete &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;ID_DROPLET&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/&#34;&gt;&lt;strong&gt;APIS CLIS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/&#34;&gt;&lt;strong&gt;DOCTL CLI&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;digitalocean&#34;&gt;DigitalOcean&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;a href=&#34;https://www.digitalocean.com/?refcode=b7713eda7925&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge&#34;&gt;&lt;img src=&#34;https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;https://www.digitalocean.com/?refcode=b7713eda7925&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge&#34;&gt;&lt;img src=&#34;https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;https://www.digitalocean.com/?refcode=b7713eda7925&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge&#34;&gt;&lt;img src=&#34;https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+        
+      </description>
+    </item>
+    
     <item>
       <title>K3s Notes - Part 4</title>
       <link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/</link>
@@ -552,64 +639,6 @@
 &lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/&#34;&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/architecture/&#34;&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Doctl Cli - Digitalocean</title>
-      <link>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</link>
-      <pubDate>Wed, 30 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</guid>
-      <description>
-        
-          &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; also has a CLI to manage the &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot; infrastructure, which works similarly to &lt;strong&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html&#34;&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, this tool allows us to avoid using the web interface of this provider.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;install-binary-tools&#34;&gt;Install Binary Tools&lt;/h2&gt;
-&lt;p&gt;The first thing I have to do is download and install the binary, this for the current version &lt;strong&gt;1.54.0&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ cd ~
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;$ sudo mv ~/doctl /usr/local/bin
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;create-token-api&#34;&gt;Create Token API&lt;/h2&gt;
-&lt;p&gt;Before using &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot;, you need to create a &lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; API Token for your account, with read and write access from the &lt;strong&gt;Applications&lt;/strong&gt; and &lt;strong&gt;API&lt;/strong&gt; page in the control panel.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/token-api-name.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The token string is only shown once, so please copy and keep in a safe place.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/doctl-digitalocean/token-api-value.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;account-access-with-token-api-and-doctl&#34;&gt;Account Access with Token API and doctl&lt;/h2&gt;
-&lt;p&gt;The Token API grants access to &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; for your &lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; account. Pass the Token string when prompted, when executing the &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; command.&lt;/p&gt;
-&lt;p&gt;You can use multiple accounts, using different names, for this function the &lt;strong&gt;--context&lt;/strong&gt; parameter allows it.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl auth init --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA1&amp;gt;
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;$ doctl auth init --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA2&amp;gt;
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;$ doctl auth init --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA3&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;All accounts can be listed with the following command:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl auth list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To switch between the different existing accounts:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl auth switch --context &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_CUENTA_DISPONIBLE&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;examples-of-use&#34;&gt;Examples of use&lt;/h2&gt;
-&lt;p&gt;We can use &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; in different cases.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Account verify&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl account get
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;List Droplets&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create Droplet&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet create --region sfo2 --image ubuntu-18-04-x64 --size s-1vcpu-1gb &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_DROPLET&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Delete Droplet&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ doctl compute droplet delete &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;ID_DROPLET&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/&#34;&gt;&lt;strong&gt;APIS CLIS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/&#34;&gt;&lt;strong&gt;DOCTL CLI&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
         
       </description>
