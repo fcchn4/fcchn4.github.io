@@ -9,6 +9,52 @@
     <copyright>Fcch Blog | 2019 - 2021</copyright>
     <lastBuildDate>Tue, 07 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hugo Framework - Templates Internos</title>
+      <link>https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/</link>
+      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/</guid>
+      <description>
+        
+          &lt;p&gt;Crear sitios web con &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; hizo que explore mas sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de &lt;a href=&#34;https://ogp.me/&#34;&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt;, la primera idea fue editar los archivos HTML del &lt;strong&gt;theme&lt;/strong&gt; y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución mas adecuada en esta &lt;a href=&#34;https://gohugo.io/templates/internal/&#34;&gt;&lt;strong&gt;sección&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Existen diferentes templates internos, cada template tiene los ejemplos para el archivo &lt;strong&gt;config&lt;/strong&gt; en los formatos disponibles &lt;strong&gt;yaml&lt;/strong&gt;, &lt;strong&gt;toml&lt;/strong&gt; y &lt;strong&gt;json&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;templates-disponibles&#34;&gt;Templates Disponibles&lt;/h2&gt;
+&lt;p&gt;Estos son los templates internos que puedes utilizar en tus proyectos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;disqus&lt;/strong&gt; ➜ _internal/disqus.html&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;google analytics&lt;/strong&gt; ➜ _internal/google_analytics.html&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;google analytics async&lt;/strong&gt; ➜ _internal/google_analytics_async.html&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;open graph&lt;/strong&gt; ➜ _internal/opengraph.html&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pagination&lt;/strong&gt; ➜ _internal/pagination.html&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;schema&lt;/strong&gt; ➜ _internal/schema.html&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;twitter cards&lt;/strong&gt; ➜ _internal/twitter_cards.html&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ejemplo-de-uso-con-open-graph&#34;&gt;Ejemplo de uso con Open Graph&lt;/h2&gt;
+&lt;p&gt;Para este ejemplo tenemos el archivo &lt;strong&gt;config.yaml&lt;/strong&gt; con los datos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;Texto&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;de&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;descripción&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;images&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- site-feature-image.jpg&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;Titulo&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;de&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;la&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;publicación&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para agregar el template podemos editar el &lt;strong&gt;theme&lt;/strong&gt;, en el ejemplo el theme tiene como ruta &lt;strong&gt;theme/name_theme/layouts/index.html&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;head&amp;gt;
+&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;{{ template &lt;span class=&#34;s2&#34;&gt;&amp;#34;_internal/opengraph.html&amp;#34;&lt;/span&gt; . }}
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;...
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El resultado es similar a esto:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-es.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ogp.me/&#34;&gt;&lt;strong&gt;Open Graph&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/templates/internal/&#34;&gt;&lt;strong&gt;Hugo Documentación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+    <item>
       <title>Doctl Cli - Digitalocean</title>
       <link>https://blog.fcch.xyz/post/infrastructure/doctl-digitalocean/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
