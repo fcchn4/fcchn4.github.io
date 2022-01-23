@@ -6,7 +6,7 @@ description = "Guías Web"
 featured = true
 tags = [
     "git",
-    "gitlab"
+    "hugo"
 ]
 categories = [
     "web",
