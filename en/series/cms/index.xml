@@ -20,29 +20,29 @@
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/wordpress-detalles/logo-wordpress-400.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;wordpress-migration&#34;&gt;Wordpress Migration&lt;/h2&gt;
 &lt;p&gt;Previously the websites were hosted by &lt;strong&gt;hosting providers (web hosting)&lt;/strong&gt;, the new servers where they are currently hosted have web services performing &lt;strong&gt;reverse-proxy&lt;/strong&gt; or &lt;strong&gt;load balancing&lt;/strong&gt;, for this In case it was necessary to specify some instances in the configuration file &lt;strong&gt;wp-config.php&lt;/strong&gt; so that the &lt;strong&gt;CSS&lt;/strong&gt; and &lt;strong&gt;JS&lt;/strong&gt; files load correctly, another problem that existed was that the security for the &lt;strong&gt;HTTPS&lt;/strong&gt; protocol showed the error of &amp;quot;Mixed content&amp;quot;, then the solution of these problems was added the following:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;# wp-config.php
-&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;define( &amp;#39;DB_COLLATE&amp;#39;, &amp;#39;&amp;#39; );
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;.....
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;/** Solución al problema */
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;define(&amp;#39;WP_HOME&amp;#39;,&amp;#39;https://www.dominio.com&amp;#39;);
-&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;define(&amp;#39;WP_SITEURL&amp;#39;,&amp;#39;https://www.dominio.com&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# wp-config.php
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;DB_COLLATE&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.....&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;sd&#34;&gt;/** Solución al problema */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;WP_HOME&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://www.dominio.com&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;WP_SITEURL&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://www.dominio.com&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;if (strpos($_SERVER[&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;], &amp;#39;https&amp;#39;) !== false)
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;       $_SERVER[&amp;#39;HTTPS&amp;#39;]=&amp;#39;on&amp;#39;;
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;.....
+&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;strpos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTP_X_FORWARDED_PROTO&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!==&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;       &lt;span class=&#34;nv&#34;&gt;$_SERVER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;HTTPS&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;on&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.....&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;wordpress-update&#34;&gt;Wordpress Update&lt;/h2&gt;
 &lt;p&gt;As is normal, &lt;strong&gt;hosting&lt;/strong&gt; providers provide an FTP service to upload files, the update method was also done via FTP, the new servers did not have an FTP service, the first solution that was wanted was using SSH ( with public and private keys), but in the end it was decided to carry out the updates directly from &lt;strong&gt;Wordpress&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# wp-config.php
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;....
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;/** Actualizaciones directas */
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;define(‘FS_METHOD’,’direct’);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# wp-config.php
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;....&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;sd&#34;&gt;/** Actualizaciones directas */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;define&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;‘FS_METHOD’&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;’direct’&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;hide-sensitive-wordpress-information&#34;&gt;Hide Sensitive Wordpress Information&lt;/h2&gt;
 &lt;p&gt;Another detail that existed was that sensitive CMS information was shown, such as the version used and the &lt;strong&gt;readme.html&lt;/strong&gt; file, for these cases two files &lt;strong&gt;functions.php&lt;/strong&gt; and &lt;strong&gt;.htaccess&lt;/strong&gt; (or, failing that, the web server configuration file).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;# wp-content/themes/nombre_tema/functions.php
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;....
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;/** Ocultar version */
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;remove_action(&amp;#39;wp_head&amp;#39;, &amp;#39;wp_generator&amp;#39;);
-&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;add_filter(&amp;#39;the_generator&amp;#39;, &amp;#39;__return_false&amp;#39;);
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;# wp-content/themes/nombre_tema/functions.php
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;....&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;sd&#34;&gt;/** Ocultar version */&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;remove_action&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;wp_head&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;wp_generator&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;add_filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;the_generator&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;__return_false&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The configuration can be done in &lt;strong&gt;.htaccess&lt;/strong&gt; as in the web server configuration file.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;## For Apache
 &lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;# .htaccess

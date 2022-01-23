@@ -39,8 +39,8 @@
     
     
     <link rel="preload" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity = "sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" as="script" integrity=
-    "sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous">
+    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" as="script" integrity=
+    "sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity="sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" crossorigin="anonymous">
@@ -250,25 +250,25 @@
 <span class="ln">3</span>$ chmod <span class="m">775</span> ~/.kube
 <span class="ln">4</span>$ chmod <span class="m">420</span> ~/.kube/config
 </code></pre></div><p>El contenido del archivo <strong>config</strong> debe ser similar a este:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="ln"> 2</span><span class="w"></span><span class="k">clusters</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 3</span><span class="w"></span>- <span class="k">cluster</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">    </span><span class="k">certificate-authority-data</span><span class="p">:</span><span class="w"> </span>CONTENIDO_DEL_CERTIFICADO<span class="w">
-</span><span class="ln"> 5</span><span class="w">    </span><span class="k">server</span><span class="p">:</span><span class="w"> </span>https<span class="p">:</span>//IP_O_DOMINIO<span class="p">:</span><span class="m">6443</span><span class="w">
-</span><span class="ln"> 6</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>default<span class="w">
-</span><span class="ln"> 7</span><span class="w"></span><span class="k">contexts</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 8</span><span class="w"></span>- <span class="k">context</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 9</span><span class="w">    </span><span class="k">cluster</span><span class="p">:</span><span class="w"> </span>default<span class="w">
-</span><span class="ln">10</span><span class="w">    </span><span class="k">user</span><span class="p">:</span><span class="w"> </span>default<span class="w">
-</span><span class="ln">11</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>default<span class="w">
-</span><span class="ln">12</span><span class="w"></span><span class="k">current-context</span><span class="p">:</span><span class="w"> </span>default<span class="w">
-</span><span class="ln">13</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Config<span class="w">
-</span><span class="ln">14</span><span class="w"></span><span class="k">preferences</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
-</span><span class="ln">15</span><span class="w"></span><span class="k">users</span><span class="p">:</span><span class="w">
-</span><span class="ln">16</span><span class="w"></span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>default<span class="w">
-</span><span class="ln">17</span><span class="w">  </span><span class="k">user</span><span class="p">:</span><span class="w">
-</span><span class="ln">18</span><span class="w">    </span><span class="k">client-certificate-data</span><span class="p">:</span><span class="w"> </span>CONTENIDO_DEL_CERTIFICADO<span class="w">
-</span><span class="ln">19</span><span class="w">    </span><span class="k">client-key-data</span><span class="p">:</span><span class="w"> </span>CONTENIDO_DE_LA_CLAVE_DEL_CERTIFICADO<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="ln"> 2</span><span class="w"></span><span class="nt">clusters</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 3</span><span class="w"></span>- <span class="nt">cluster</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">    </span><span class="nt">certificate-authority-data</span><span class="p">:</span><span class="w"> </span><span class="l">CONTENIDO_DEL_CERTIFICADO</span><span class="w">
+</span><span class="ln"> 5</span><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l">https://IP_O_DOMINIO:6443</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span><span class="ln"> 7</span><span class="w"></span><span class="nt">contexts</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 8</span><span class="w"></span>- <span class="nt">context</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">    </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span><span class="ln">10</span><span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span><span class="ln">11</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span><span class="ln">12</span><span class="w"></span><span class="nt">current-context</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span><span class="ln">13</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Config</span><span class="w">
+</span><span class="ln">14</span><span class="w"></span><span class="nt">preferences</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span><span class="ln">15</span><span class="w"></span><span class="nt">users</span><span class="p">:</span><span class="w">
+</span><span class="ln">16</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span><span class="ln">17</span><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w">
+</span><span class="ln">18</span><span class="w">    </span><span class="nt">client-certificate-data</span><span class="p">:</span><span class="w"> </span><span class="l">CONTENIDO_DEL_CERTIFICADO</span><span class="w">
+</span><span class="ln">19</span><span class="w">    </span><span class="nt">client-key-data</span><span class="p">:</span><span class="w"> </span><span class="l">CONTENIDO_DE_LA_CLAVE_DEL_CERTIFICADO</span><span class="w">
 </span></code></pre></div><p>Estos datos se pueden obtener desde el <strong>Server Node</strong>, exactamente el dato se encuentra en <strong>/etc/rancher/k3s/k3s.yaml</strong>.</p>
 <h2 id="pruebas-después-de-la-instalación">Pruebas Después de la Instalación</h2>
 <p>Desde nuestra computadora local podemos ejecutar los siguientes comandos:</p>
@@ -350,6 +350,9 @@
     <h2 class="mt-4">Posts recientes</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://blog.fcch.xyz/post/infrastructure/vuejs-laravel-mix/" class="nav-link" title="VueJS &#43; Laravel, Deploy">VueJS &#43; Laravel, Deploy</a>
+      </li>
+      <li>
         <a href="https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/" class="nav-link" title="Hugo Framework - Templates Internos">Hugo Framework - Templates Internos</a>
       </li>
       <li>
@@ -370,16 +373,13 @@
       <li>
         <a href="https://blog.fcch.xyz/post/notes/tmux-moment/" class="nav-link" title="Momento Tmux">Momento Tmux</a>
       </li>
-      <li>
-        <a href="https://blog.fcch.xyz/post/notes/learning-path/" class="nav-link" title="Ruta de Aprendizaje">Ruta de Aprendizaje</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categorías</h2>
       <nav class="tags_nav">
         <a href='https://blog.fcch.xyz/categories/infraestructura/' class="post_tag button button_translucent" title="infraestructura">
           INFRAESTRUCTURA
-          <span class="button_tally">9</span>
+          <span class="button_tally">10</span>
         </a>
         
         <a href='https://blog.fcch.xyz/categories/web/' class="post_tag button button_translucent" title="web">
@@ -400,7 +400,7 @@
       <nav class="tags_nav">
         <a href='https://blog.fcch.xyz/series/servidores/' class="post_tag button button_translucent" title="servidores">
           SERVIDORES
-          <span class="button_tally">7</span>
+          <span class="button_tally">8</span>
         </a>
         
         <a href='https://blog.fcch.xyz/series/hugo/' class="post_tag button button_translucent" title="hugo">
@@ -459,11 +459,6 @@
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/tags/gitlab/' class="post_tag button button_translucent" title="gitlab">
-          GITLAB
-          <span class="button_tally">2</span>
-        </a>
-        
         <a href='https://blog.fcch.xyz/tags/php/' class="post_tag button button_translucent" title="php">
           PHP
           <span class="button_tally">2</span>
@@ -501,6 +496,11 @@
         
         <a href='https://blog.fcch.xyz/tags/github/' class="post_tag button button_translucent" title="github">
           GITHUB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://blog.fcch.xyz/tags/gitlab/' class="post_tag button button_translucent" title="gitlab">
+          GITLAB
           <span class="button_tally">1</span>
         </a>
         
@@ -550,11 +550,15 @@
             </a>
             
             
-            <a href='https://blog.fcch.xyz/tags/gitlab/' class=" post_tag button button_translucent" data-position=2 title="gitlab">GITLAB<span class="button_tally">2</span>
+            <a href='https://blog.fcch.xyz/tags/gitlab/' class=" post_tag button button_translucent" data-position=1 title="gitlab">GITLAB<span class="button_tally">1</span>
             </a>
             
             
             <a href='https://blog.fcch.xyz/tags/grub/' class=" post_tag button button_translucent" data-position=1 title="grub">GRUB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/hugo/' class=" post_tag button button_translucent" data-position=1 title="hugo">HUGO<span class="button_tally">1</span>
             </a>
             
             
@@ -563,6 +567,10 @@
             
             
             <a href='https://blog.fcch.xyz/tags/kubernetes/' class=" post_tag button button_translucent" data-position=4 title="kubernetes">KUBERNETES<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/laravel/' class=" post_tag button button_translucent" data-position=1 title="laravel">LARAVEL<span class="button_tally">1</span>
             </a>
             
             
@@ -579,6 +587,14 @@
             
             
             <a href='https://blog.fcch.xyz/tags/spip/' class=" post_tag button button_translucent" data-position=1 title="spip">SPIP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/ubuntu/' class=" post_tag button button_translucent" data-position=1 title="ubuntu">UBUNTU<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/vuejs/' class=" post_tag button button_translucent" data-position=1 title="vuejs">VUEJS<span class="button_tally">1</span>
             </a>
             
             
@@ -674,7 +690,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" integrity="sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" integrity="sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous"></script>
     
   </body>
 </html>

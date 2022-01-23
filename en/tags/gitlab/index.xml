@@ -7,53 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Fcch Blog | 2019 - 2021</copyright>
-    <lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hugo Framework - Internal Templates</title>
-      <link>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</link>
-      <pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</guid>
-      <description>
-        
-          &lt;p&gt;Building websites with &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; made me explore more about this very useful tool. An important necessary functionality was to add the properties of &lt;a href=&#34;https://ogp.me/&#34;&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt; to a project, the first idea was to edit the HTML files of the &lt;strong&gt;theme&lt;/strong&gt; and add the corresponding tags, but after consulting the official documentation we found the most appropriate solution in this &lt;a href=&#34;https://gohugo.io/templates/internal/&#34;&gt;&lt;strong&gt;section&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;There are different internal templates, each template has the examples for the &lt;strong&gt;config&lt;/strong&gt; file in the available formats &lt;strong&gt;yaml&lt;/strong&gt;, &lt;strong&gt;toml&lt;/strong&gt; and &lt;strong&gt;json&lt;/strong&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;available-templates&#34;&gt;Available Templates&lt;/h2&gt;
-&lt;p&gt;These are the internal templates that you can use in your projects:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;disqus&lt;/strong&gt; ➜ _internal/disqus.html&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;google analytics&lt;/strong&gt; ➜ _internal/google_analytics.html&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;google analytics async&lt;/strong&gt; ➜ _internal/google_analytics_async.html&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;open graph&lt;/strong&gt; ➜ _internal/opengraph.html&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;pagination&lt;/strong&gt; ➜ _internal/pagination.html&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;schema&lt;/strong&gt; ➜ _internal/schema.html&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;twitter cards&lt;/strong&gt; ➜ _internal/twitter_cards.html&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;example-of-use-with-open-graph&#34;&gt;Example of use with Open Graph&lt;/h2&gt;
-&lt;p&gt;For this example we have the file &lt;strong&gt;config.yaml&lt;/strong&gt; with the data:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;Text&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;of&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;description&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;images&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- site-feature-image.jpg&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;Title&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;post&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To add the template we can edit the &lt;strong&gt;theme&lt;/strong&gt;, in the example the theme has the path &lt;strong&gt;theme/name_theme/layouts/index.html&lt;/strong&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;head&amp;gt;
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;...
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;{{ template &lt;span class=&#34;s2&#34;&gt;&amp;#34;_internal/opengraph.html&amp;#34;&lt;/span&gt; . }}
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;...
-&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;/head&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The result is similar to this:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-en.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://ogp.me/&#34;&gt;&lt;strong&gt;Open Graph&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/templates/internal/&#34;&gt;&lt;strong&gt;Hugo Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-        
-      </description>
-    </item>
-    
+    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Framework and Gitlab Pages</title>
       <link>https://blog.fcch.xyz/en/post/web/hugo-framework-gitlab-pages/</link>

@@ -39,8 +39,8 @@
     
     
     <link rel="preload" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity = "sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" as="script" integrity=
-    "sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous">
+    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" as="script" integrity=
+    "sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity="sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" crossorigin="anonymous">
@@ -194,28 +194,28 @@
 <li><strong>Ingress</strong>: Expone rutas HTTP y HTTPS desde fuera del clúster a servicios dentro del clúster, el enrutamiento del tráfico se controla mediante reglas definidas en el recurso Ingress.</li>
 </ol>
 <h2 id="ejemplo-simple">Ejemplo Simple</h2>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>networking.k8s.io/v1<span class="w">
-</span><span class="ln"> 2</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>Ingress<span class="w">
-</span><span class="ln"> 3</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>fcch-app<span class="w">
-</span><span class="ln"> 5</span><span class="w"></span><span class="k">spec</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 6</span><span class="w">  </span><span class="k">rules</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 7</span><span class="w">  </span>- <span class="k">http</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 8</span><span class="w">      </span><span class="k">paths</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 9</span><span class="w">      </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/v1<span class="w">
-</span><span class="ln">10</span><span class="w">        </span><span class="k">pathType</span><span class="p">:</span><span class="w"> </span>Prefix<span class="w">
-</span><span class="ln">11</span><span class="w">        </span><span class="k">backend</span><span class="p">:</span><span class="w">
-</span><span class="ln">12</span><span class="w">          </span><span class="k">service</span><span class="p">:</span><span class="w">
-</span><span class="ln">13</span><span class="w">            </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>fcch-v1<span class="w">
-</span><span class="ln">14</span><span class="w">            </span><span class="k">port</span><span class="p">:</span><span class="w">
-</span><span class="ln">15</span><span class="w">              </span><span class="k">number</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">
-</span><span class="ln">16</span><span class="w">      </span>- <span class="k">path</span><span class="p">:</span><span class="w"> </span>/v2<span class="w">
-</span><span class="ln">17</span><span class="w">        </span><span class="k">pathType</span><span class="p">:</span><span class="w"> </span>Prefix<span class="w">
-</span><span class="ln">18</span><span class="w">        </span><span class="k">backend</span><span class="p">:</span><span class="w">
-</span><span class="ln">19</span><span class="w">          </span><span class="k">service</span><span class="p">:</span><span class="w">
-</span><span class="ln">20</span><span class="w">            </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>fcch-v2<span class="w">
-</span><span class="ln">21</span><span class="w">            </span><span class="k">port</span><span class="p">:</span><span class="w">
-</span><span class="ln">22</span><span class="w">              </span><span class="k">number</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">networking.k8s.io/v1</span><span class="w">
+</span><span class="ln"> 2</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Ingress</span><span class="w">
+</span><span class="ln"> 3</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">fcch-app</span><span class="w">
+</span><span class="ln"> 5</span><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">  </span>- <span class="nt">http</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">      </span><span class="nt">paths</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 9</span><span class="w">      </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/v1</span><span class="w">
+</span><span class="ln">10</span><span class="w">        </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l">Prefix</span><span class="w">
+</span><span class="ln">11</span><span class="w">        </span><span class="nt">backend</span><span class="p">:</span><span class="w">
+</span><span class="ln">12</span><span class="w">          </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="ln">13</span><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">fcch-v1</span><span class="w">
+</span><span class="ln">14</span><span class="w">            </span><span class="nt">port</span><span class="p">:</span><span class="w">
+</span><span class="ln">15</span><span class="w">              </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">
+</span><span class="ln">16</span><span class="w">      </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/v2</span><span class="w">
+</span><span class="ln">17</span><span class="w">        </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l">Prefix</span><span class="w">
+</span><span class="ln">18</span><span class="w">        </span><span class="nt">backend</span><span class="p">:</span><span class="w">
+</span><span class="ln">19</span><span class="w">          </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span><span class="ln">20</span><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">fcch-v2</span><span class="w">
+</span><span class="ln">21</span><span class="w">            </span><span class="nt">port</span><span class="p">:</span><span class="w">
+</span><span class="ln">22</span><span class="w">              </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span><span class="w">
 </span></code></pre></div><p>Algunos comandos útiles:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Listar tipos Ingress</span>
 <span class="ln">2</span>$ kubectl get ing
@@ -228,24 +228,24 @@
 <span class="ln">3</span>sudo k3s kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/<span class="si">${</span><span class="nv">VERSION_KUBE_DASHBOARD</span><span class="si">}</span>/aio/deploy/recommended.yaml
 </code></pre></div><p>Se debe crear los archivos:</p>
 <p><strong>dashboard.admin-user.yml</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln">1</span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
-</span><span class="ln">2</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ServiceAccount<span class="w">
-</span><span class="ln">3</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="ln">4</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>admin-user<span class="w">
-</span><span class="ln">5</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kubernetes-dashboard<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln">1</span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span><span class="ln">2</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ServiceAccount</span><span class="w">
+</span><span class="ln">3</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln">4</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">admin-user</span><span class="w">
+</span><span class="ln">5</span><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kubernetes-dashboard</span><span class="w">
 </span></code></pre></div><p><strong>dashboard.admin-user-role.yml</strong></p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>rbac.authorization.k8s.io/v1<span class="w">
-</span><span class="ln"> 2</span><span class="w"></span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ClusterRoleBinding<span class="w">
-</span><span class="ln"> 3</span><span class="w"></span><span class="k">metadata</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>admin-user<span class="w">
-</span><span class="ln"> 5</span><span class="w"></span><span class="k">roleRef</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 6</span><span class="w">  </span><span class="k">apiGroup</span><span class="p">:</span><span class="w"> </span>rbac.authorization.k8s.io<span class="w">
-</span><span class="ln"> 7</span><span class="w">  </span><span class="k">kind</span><span class="p">:</span><span class="w"> </span>ClusterRole<span class="w">
-</span><span class="ln"> 8</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>cluster-admin<span class="w">
-</span><span class="ln"> 9</span><span class="w"></span><span class="k">subjects</span><span class="p">:</span><span class="w">
-</span><span class="ln">10</span><span class="w"></span>- <span class="k">kind</span><span class="p">:</span><span class="w"> </span>ServiceAccount<span class="w">
-</span><span class="ln">11</span><span class="w">  </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>admin-user<span class="w">
-</span><span class="ln">12</span><span class="w">  </span><span class="k">namespace</span><span class="p">:</span><span class="w"> </span>kubernetes-dashboard<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">rbac.authorization.k8s.io/v1</span><span class="w">
+</span><span class="ln"> 2</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ClusterRoleBinding</span><span class="w">
+</span><span class="ln"> 3</span><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 4</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">admin-user</span><span class="w">
+</span><span class="ln"> 5</span><span class="w"></span><span class="nt">roleRef</span><span class="p">:</span><span class="w">
+</span><span class="ln"> 6</span><span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l">rbac.authorization.k8s.io</span><span class="w">
+</span><span class="ln"> 7</span><span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ClusterRole</span><span class="w">
+</span><span class="ln"> 8</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">cluster-admin</span><span class="w">
+</span><span class="ln"> 9</span><span class="w"></span><span class="nt">subjects</span><span class="p">:</span><span class="w">
+</span><span class="ln">10</span><span class="w"></span>- <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">ServiceAccount</span><span class="w">
+</span><span class="ln">11</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">admin-user</span><span class="w">
+</span><span class="ln">12</span><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kubernetes-dashboard</span><span class="w">
 </span></code></pre></div><p>Luego se debe ejecutar el comando para aplicar los archivos <strong>yaml</strong>.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ sudo k3s kubectl create -f dashboard.admin-user.yml -f dashboard.admin-user-role.yml
 </code></pre></div><p>Tenemos que obtener el token para poder ingresar al dashboard con el usuario <strong>admin-user</strong>:</p>
@@ -349,6 +349,9 @@
     <h2 class="mt-4">Posts recientes</h2>
     <ul class="flex-column">
       <li>
+        <a href="https://blog.fcch.xyz/post/infrastructure/vuejs-laravel-mix/" class="nav-link" title="VueJS &#43; Laravel, Deploy">VueJS &#43; Laravel, Deploy</a>
+      </li>
+      <li>
         <a href="https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/" class="nav-link" title="Hugo Framework - Templates Internos">Hugo Framework - Templates Internos</a>
       </li>
       <li>
@@ -369,16 +372,13 @@
       <li>
         <a href="https://blog.fcch.xyz/post/notes/tmux-moment/" class="nav-link" title="Momento Tmux">Momento Tmux</a>
       </li>
-      <li>
-        <a href="https://blog.fcch.xyz/post/notes/learning-path/" class="nav-link" title="Ruta de Aprendizaje">Ruta de Aprendizaje</a>
-      </li>
     </ul>
     <div>
       <h2 class="mt-4 taxonomy" id="categories-section">Categorías</h2>
       <nav class="tags_nav">
         <a href='https://blog.fcch.xyz/categories/infraestructura/' class="post_tag button button_translucent" title="infraestructura">
           INFRAESTRUCTURA
-          <span class="button_tally">9</span>
+          <span class="button_tally">10</span>
         </a>
         
         <a href='https://blog.fcch.xyz/categories/web/' class="post_tag button button_translucent" title="web">
@@ -399,7 +399,7 @@
       <nav class="tags_nav">
         <a href='https://blog.fcch.xyz/series/servidores/' class="post_tag button button_translucent" title="servidores">
           SERVIDORES
-          <span class="button_tally">7</span>
+          <span class="button_tally">8</span>
         </a>
         
         <a href='https://blog.fcch.xyz/series/hugo/' class="post_tag button button_translucent" title="hugo">
@@ -458,11 +458,6 @@
           <span class="button_tally">2</span>
         </a>
         
-        <a href='https://blog.fcch.xyz/tags/gitlab/' class="post_tag button button_translucent" title="gitlab">
-          GITLAB
-          <span class="button_tally">2</span>
-        </a>
-        
         <a href='https://blog.fcch.xyz/tags/php/' class="post_tag button button_translucent" title="php">
           PHP
           <span class="button_tally">2</span>
@@ -500,6 +495,11 @@
         
         <a href='https://blog.fcch.xyz/tags/github/' class="post_tag button button_translucent" title="github">
           GITHUB
+          <span class="button_tally">1</span>
+        </a>
+        
+        <a href='https://blog.fcch.xyz/tags/gitlab/' class="post_tag button button_translucent" title="gitlab">
+          GITLAB
           <span class="button_tally">1</span>
         </a>
         
@@ -549,11 +549,15 @@
             </a>
             
             
-            <a href='https://blog.fcch.xyz/tags/gitlab/' class=" post_tag button button_translucent" data-position=2 title="gitlab">GITLAB<span class="button_tally">2</span>
+            <a href='https://blog.fcch.xyz/tags/gitlab/' class=" post_tag button button_translucent" data-position=1 title="gitlab">GITLAB<span class="button_tally">1</span>
             </a>
             
             
             <a href='https://blog.fcch.xyz/tags/grub/' class=" post_tag button button_translucent" data-position=1 title="grub">GRUB<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/hugo/' class=" post_tag button button_translucent" data-position=1 title="hugo">HUGO<span class="button_tally">1</span>
             </a>
             
             
@@ -562,6 +566,10 @@
             
             
             <a href='https://blog.fcch.xyz/tags/kubernetes/' class=" post_tag button button_translucent" data-position=4 title="kubernetes">KUBERNETES<span class="button_tally">4</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/laravel/' class=" post_tag button button_translucent" data-position=1 title="laravel">LARAVEL<span class="button_tally">1</span>
             </a>
             
             
@@ -578,6 +586,14 @@
             
             
             <a href='https://blog.fcch.xyz/tags/spip/' class=" post_tag button button_translucent" data-position=1 title="spip">SPIP<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/ubuntu/' class=" post_tag button button_translucent" data-position=1 title="ubuntu">UBUNTU<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://blog.fcch.xyz/tags/vuejs/' class=" post_tag button button_translucent" data-position=1 title="vuejs">VUEJS<span class="button_tally">1</span>
             </a>
             
             
@@ -673,7 +689,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" integrity="sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" integrity="sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous"></script>
     
   </body>
 </html>
