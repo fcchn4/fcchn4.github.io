@@ -39,8 +39,8 @@
     
     
     <link rel="preload" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity = "sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" as="script" integrity=
-    "sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous">
+    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.d0f0362720d4ba914aa22c906d463694ca5445a70923037ec128f108cf4616c6df3dba89902f7d6b8b123a359aaf0485763117871aa780a561c563ed6adfda0e.js" as="script" integrity=
+    "sha512-0PA2JyDUupFKoiyQbUY2lMpURacJIwN&#43;wSjxCM9GFsbfPbqJkC99a4sSOjWarwSFdjEXhxqngKVhxWPtat/aDg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity="sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" crossorigin="anonymous">
@@ -214,21 +214,21 @@
 </li>
 </ul>
 <p><strong>Raspbian Buster</strong> defaults to using <strong>nftables</strong> instead of <strong>iptables</strong>. <strong>K3s</strong> networking features require <strong>iptables</strong> and do not work with <strong>nftables</strong>. Follow the steps below to switch configure Buster to use legacy <strong>iptables</strong>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ sudo iptables -F
-<span class="ln">2</span>$ sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
-<span class="ln">3</span>$ sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
-<span class="ln">4</span>$ sudo reboot
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ sudo iptables -F
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+</span></span><span class="line"><span class="ln">3</span><span class="cl">$ sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+</span></span><span class="line"><span class="ln">4</span><span class="cl">$ sudo reboot
+</span></span></code></pre></div><ul>
 <li><strong>Enabling cgroups for Raspbian Buster</strong></li>
 </ul>
 <p>Standard <strong>Raspbian Buster</strong> installations do not start with <strong>cgroups</strong> enabled. <strong>K3s</strong> needs <strong>cgroups</strong> to start the systemd service. <strong>cgroups</strong> can be enabled by appending <strong>cgroup_memory=1</strong> and <strong>cgroup_enable=memory</strong> to <strong>/boot/cmdline.txt</strong>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span># Inside the file cmdline.txt
-<span class="ln">2</span>console=serial0,115200 console=tty1 root=PARTUUID=58b06195-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory
-</code></pre></div><p>With these changes applied, the operating system must be restarted on the <strong>Raspberry Pi</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl"># Inside the file cmdline.txt
+</span></span><span class="line"><span class="ln">2</span><span class="cl">console=serial0,115200 console=tty1 root=PARTUUID=58b06195-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait cgroup_memory=1 cgroup_enable=memory
+</span></span></code></pre></div><p>With these changes applied, the operating system must be restarted on the <strong>Raspberry Pi</strong>.</p>
 <h2 id="install-server-node">Install Server node</h2>
 <p>According to the official documentation we can use the official scripts to install the binaries for the <strong>K3s</strong> <strong>Server node</strong>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ curl -sfL https://get.k3s.io <span class="p">|</span> sh -
-</code></pre></div><p>This script will install all the necessary tools such as:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ curl -sfL https://get.k3s.io <span class="p">|</span> sh -
+</span></span></code></pre></div><p>This script will install all the necessary tools such as:</p>
 <ul>
 <li><strong>kubectl</strong></li>
 <li><strong>crictl</strong></li>
@@ -239,8 +239,8 @@
 <p>It will also create the configuration file <strong>/etc/rancher/k3s/k3s.yaml</strong></p>
 <h2 id="install-worker-nodes">Install Worker Nodes</h2>
 <p>After the installation of the <strong>K3s</strong> server we can add nodes:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ curl -sfL https://get.k3s.io <span class="p">|</span> <span class="nv">K3S_URL</span><span class="o">=</span>https://myserver:6443 <span class="nv">K3S_TOKEN</span><span class="o">=</span>mynodetoken sh -
-</code></pre></div><p>where:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ curl -sfL https://get.k3s.io <span class="p">|</span> <span class="nv">K3S_URL</span><span class="o">=</span>https://myserver:6443 <span class="nv">K3S_TOKEN</span><span class="o">=</span>mynodetoken sh -
+</span></span></code></pre></div><p>where:</p>
 <ul>
 <li><strong>K3S_URL</strong>: - <strong>K3S_URL</strong>: This is the IP address or domain of the  <strong>K3s</strong> server.</li>
 <li><strong>K3S_TOKEN</strong>: It is a token that is stored in the <strong>K3s</strong> server, <strong>/var/lib/rancher/k3s/server/node-token</strong></li>
@@ -248,14 +248,14 @@
 </ul>
 <h2 id="basic-operations">Basic Operations</h2>
 <p>We can execute the common <strong>Kubernetes</strong> commands or use the <strong>K3s</strong> command, to these two commands we must prepend the <strong>sudo</strong> command so that the orders are executed without problems.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ sudo k3s kubectl get nodes
-<span class="ln">2</span><span class="c1"># or also</span>
-<span class="ln">3</span>$ sudo kubectl get nodes
-<span class="ln">4</span>$ sudo kubectl get pods --all-namespaces
-</code></pre></div><p>Daemon control:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ sudo systemctl status k3s
-<span class="ln">2</span>$ sudo systemctl stop k3s
-</code></pre></div><h2 id="artículos-k3s">Artículos K3s</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ sudo k3s kubectl get nodes
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># or also</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">$ sudo kubectl get nodes
+</span></span><span class="line"><span class="ln">4</span><span class="cl">$ sudo kubectl get pods --all-namespaces
+</span></span></code></pre></div><p>Daemon control:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ sudo systemctl status k3s
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ sudo systemctl stop k3s
+</span></span></code></pre></div><h2 id="artículos-k3s">Artículos K3s</h2>
 <ol>
 <li><a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/"><strong>K3s - Part 1</strong></a></li>
 <li><a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"><strong>K3s - Part 2</strong></a></li>
@@ -665,7 +665,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" integrity="sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.d0f0362720d4ba914aa22c906d463694ca5445a70923037ec128f108cf4616c6df3dba89902f7d6b8b123a359aaf0485763117871aa780a561c563ed6adfda0e.js" integrity="sha512-0PA2JyDUupFKoiyQbUY2lMpURacJIwN&#43;wSjxCM9GFsbfPbqJkC99a4sSOjWarwSFdjEXhxqngKVhxWPtat/aDg==" crossorigin="anonymous"></script>
     
   </body>
 </html>

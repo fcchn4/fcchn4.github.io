@@ -146,7 +146,19 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;some-demos&#34;&gt;Some Demos&lt;/h2&gt;
+&lt;h2 id=&#34;share-terminal&#34;&gt;Share Terminal&lt;/h2&gt;
+&lt;p&gt;It is often necessary to work in the same terminal with different users connected to the same server, &lt;strong&gt;tmux&lt;/strong&gt; allows you to share a terminal with multiple users, you just have to meet some requirements:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The terminal to share must belong to a specific user.&lt;/li&gt;
+&lt;li&gt;A user must create a new &lt;strong&gt;tmux&lt;/strong&gt; session with a name.&lt;/li&gt;
+&lt;li&gt;The user must share the name of the new session.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;First step, create a new &lt;strong&gt;tmux&lt;/strong&gt; session.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ tmux new-session -s fcch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Second step, connect to the new session.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo su - USER_NAME
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ tmux attach-session -t fcch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;some-demos&#34;&gt;Some Demos&lt;/h2&gt;
 &lt;p&gt;We execute &lt;strong&gt;tmux&lt;/strong&gt;, we divide into different panels the terminal:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Panel synchronization:&lt;/p&gt;

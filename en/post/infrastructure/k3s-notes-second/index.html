@@ -39,8 +39,8 @@
     
     
     <link rel="preload" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity = "sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" as="script" integrity=
-    "sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous">
+    <link rel="preload" href="https://blog.fcch.xyz/js/bundle.min.d0f0362720d4ba914aa22c906d463694ca5445a70923037ec128f108cf4616c6df3dba89902f7d6b8b123a359aaf0485763117871aa780a561c563ed6adfda0e.js" as="script" integrity=
+    "sha512-0PA2JyDUupFKoiyQbUY2lMpURacJIwN&#43;wSjxCM9GFsbfPbqJkC99a4sSOjWarwSFdjEXhxqngKVhxWPtat/aDg==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://blog.fcch.xyz/css/styles.7117b48cc25d01a46efcf41126403291211d8a3356f6e82bd58ea4e8e387222764829f5f39347ec2763d5e3d9d4c7e2818622369619626472ab2204772edc872.css" integrity="sha512-cRe0jMJdAaRu/PQRJkAykSEdijNW9ugr1Y6k6OOHIidkgp9fOTR&#43;wnY9Xj2dTH4oGGIjaWGWJkcqsiBHcu3Icg==" crossorigin="anonymous">
@@ -233,58 +233,58 @@
 </ol>
 <h2 id="install-kubectl">Install Kubectl</h2>
 <p>In order to work with our <a href="https://k3s.io/">K3s</a> <strong>RPI</strong> cluster, we can work from the <strong>Server Node</strong> or install <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/">kubectl</a> on our personal computer, in this case we will install the package for a <a href="https://www.gnu.org/home.en.html">GNU/Linux</a> distribution, <a href="https://debian.org"><strong>Debian Buster 10</strong></a>, adding the repository as follows:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln"> 1</span><span class="c1"># Update and install the necessary packages</span>
-<span class="ln"> 2</span>$ sudo apt-get update
-<span class="ln"> 3</span>$ sudo apt-get install -y apt-transport-https ca-certificates curl
-<span class="ln"> 4</span><span class="c1"># We download the public signature key</span>
-<span class="ln"> 5</span>$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-<span class="ln"> 6</span><span class="c1"># Add the official repository</span>
-<span class="ln"> 7</span>$ <span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/kubernetes.list
-<span class="ln"> 8</span><span class="c1"># Update again and install the package</span>
-<span class="ln"> 9</span>$ sudo apt install update
-<span class="ln">10</span>$ sudo apt install -y kubectl
-</code></pre></div><h2 id="kubectl-configuration-with-cluster-k3s">Kubectl Configuration with Cluster K3s</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># Update and install the necessary packages</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">$ sudo apt-get update
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">$ sudo apt-get install -y apt-transport-https ca-certificates curl
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"># We download the public signature key</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"># Add the official repository</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">$ <span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/kubernetes.list
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># Update again and install the package</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">$ sudo apt install update
+</span></span><span class="line"><span class="ln">10</span><span class="cl">$ sudo apt install -y kubectl
+</span></span></code></pre></div><h2 id="kubectl-configuration-with-cluster-k3s">Kubectl Configuration with Cluster K3s</h2>
 <p>To work from our personal computer, we have to create a configuration file inside the <strong>.kube</strong> folder, the configuration file must have the name <strong>config</strong>, the folder and the file must be created with the appropriate permissions :</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ mkdir ~/.kube
-<span class="ln">2</span>$ touch ~/.kube/config
-<span class="ln">3</span>$ chmod <span class="m">775</span> ~/.kube
-<span class="ln">4</span>$ chmod <span class="m">420</span> ~/.kube/config
-</code></pre></div><p>The content of the <strong>config</strong> file should look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="ln"> 1</span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
-</span><span class="ln"> 2</span><span class="w"></span><span class="nt">clusters</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 3</span><span class="w"></span>- <span class="nt">cluster</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 4</span><span class="w">    </span><span class="nt">certificate-authority-data</span><span class="p">:</span><span class="w"> </span><span class="l">CERTIFICATE_CONTENT</span><span class="w">
-</span><span class="ln"> 5</span><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l">https://IP_OR_DOMAIN:6443</span><span class="w">
-</span><span class="ln"> 6</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
-</span><span class="ln"> 7</span><span class="w"></span><span class="nt">contexts</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 8</span><span class="w"></span>- <span class="nt">context</span><span class="p">:</span><span class="w">
-</span><span class="ln"> 9</span><span class="w">    </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
-</span><span class="ln">10</span><span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
-</span><span class="ln">11</span><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
-</span><span class="ln">12</span><span class="w"></span><span class="nt">current-context</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
-</span><span class="ln">13</span><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Config</span><span class="w">
-</span><span class="ln">14</span><span class="w"></span><span class="nt">preferences</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
-</span><span class="ln">15</span><span class="w"></span><span class="nt">users</span><span class="p">:</span><span class="w">
-</span><span class="ln">16</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
-</span><span class="ln">17</span><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w">
-</span><span class="ln">18</span><span class="w">    </span><span class="nt">client-certificate-data</span><span class="p">:</span><span class="w"> </span><span class="l">CERTIFICATE_CONTENT</span><span class="w">
-</span><span class="ln">19</span><span class="w">    </span><span class="nt">client-key-data</span><span class="p">:</span><span class="w"> </span><span class="l">CERTIFICATE_CONTENT_KEY</span><span class="w">
-</span></code></pre></div><p>This data can be obtained from the <strong>Server Node</strong>, exactly the data is in <strong>/etc/rancher/k3s/k3s.yaml</strong>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ mkdir ~/.kube
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ touch ~/.kube/config
+</span></span><span class="line"><span class="ln">3</span><span class="cl">$ chmod <span class="m">775</span> ~/.kube
+</span></span><span class="line"><span class="ln">4</span><span class="cl">$ chmod <span class="m">420</span> ~/.kube/config
+</span></span></code></pre></div><p>The content of the <strong>config</strong> file should look like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">v1</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="w"></span><span class="nt">clusters</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="w"></span>- <span class="nt">cluster</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="w">    </span><span class="nt">certificate-authority-data</span><span class="p">:</span><span class="w"> </span><span class="l">CERTIFICATE_CONTENT</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l">https://IP_OR_DOMAIN:6443</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="w"></span><span class="nt">contexts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w"></span>- <span class="nt">context</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">    </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="w"></span><span class="nt">current-context</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Config</span><span class="w">
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="w"></span><span class="nt">preferences</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="w"></span><span class="nt">users</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="w">    </span><span class="nt">client-certificate-data</span><span class="p">:</span><span class="w"> </span><span class="l">CERTIFICATE_CONTENT</span><span class="w">
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="w">    </span><span class="nt">client-key-data</span><span class="p">:</span><span class="w"> </span><span class="l">CERTIFICATE_CONTENT_KEY</span><span class="w">
+</span></span></span></code></pre></div><p>This data can be obtained from the <strong>Server Node</strong>, exactly the data is in <strong>/etc/rancher/k3s/k3s.yaml</strong>.</p>
 <h2 id="testing-after-installation">Testing After Installation</h2>
 <p>From our local computer we can execute the following commands:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span>$ kubectl version
-<span class="ln">2</span><span class="c1"># If there is a problem with the previous command we can execute:</span>
-<span class="ln">3</span>$ kubectl version --client<span class="o">=</span><span class="nb">true</span>
-</code></pre></div><p>If everything is correct we will have an output similar to this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">$ kubectl version
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># If there is a problem with the previous command we can execute:</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">$ kubectl version --client<span class="o">=</span><span class="nb">true</span>
+</span></span></code></pre></div><p>If everything is correct we will have an output similar to this:</p>
 <p><img src="/images/k3s-kubernetes/kubectl-version-tests-v2.png" alt=""></p>
 <p>Useful commands to start:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="ln">1</span><span class="c1"># Get help</span>
-<span class="ln">2</span>$ kubectl --help
-<span class="ln">3</span><span class="c1"># List all contexts in your kubeconfig file</span>
-<span class="ln">4</span>$ kubectl config get-contexts
-<span class="ln">5</span><span class="c1"># List all available nodes</span>
-<span class="ln">6</span>$ kubectl get nodes
-</code></pre></div><h2 id="articles-k3s">Articles K3s</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># Get help</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">$ kubectl --help
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># List all contexts in your kubeconfig file</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">$ kubectl config get-contexts
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c1"># List all available nodes</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">$ kubectl get nodes
+</span></span></code></pre></div><h2 id="articles-k3s">Articles K3s</h2>
 <ol>
 <li><a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/"><strong>K3s - Part 1</strong></a></li>
 <li><a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"><strong>K3s - Part 2</strong></a></li>
@@ -695,7 +695,7 @@
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.d14fbcd65c3ba32e60cab81f8bbe7aa9b7f8b95ff8290e437fb26ff9ab7f7ea0c928db2dca60aac91f192db906f2d90678f83907e4e3994f6ff9fdb5bdea3369.js" integrity="sha512-0U&#43;81lw7oy5gyrgfi756qbf4uV/4KQ5Df7Jv&#43;at/fqDJKNstymCqyR8ZLbkG8tkGePg5B&#43;TjmU9v&#43;f21veozaQ==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://blog.fcch.xyz/js/bundle.min.d0f0362720d4ba914aa22c906d463694ca5445a70923037ec128f108cf4616c6df3dba89902f7d6b8b123a359aaf0485763117871aa780a561c563ed6adfda0e.js" integrity="sha512-0PA2JyDUupFKoiyQbUY2lMpURacJIwN&#43;wSjxCM9GFsbfPbqJkC99a4sSOjWarwSFdjEXhxqngKVhxWPtat/aDg==" crossorigin="anonymous"></script>
     
   </body>
 </html>
