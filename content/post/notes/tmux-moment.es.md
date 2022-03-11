@@ -60,7 +60,28 @@ Un función muy útil en **tmux** es el **modo comados**, que nos permite ingres
 | Redimencionar panel hacia la izquierda | :resize-pane -L 10          |
 | Redimencionar panel hacia la derecha   | :resize-pane -R 10          |
 
-## Algunas demos
+## Compartir Terminal
+
+A menudo es necesario trabajar en la misma terminal con diferentes usuarios conectados al mismo servidor, **tmux** permite compartir terminal con multiples usuarios, solo a que cumplir algunos requisitos:
+
+1. La terminal a compartir debe ser de un usuario en específico.
+2. Un usuario debe crear una nueva sesión **tmux** con un numbre.
+3. El usuario debe compartir el nombre de la nueva sesión.
+
+Primer paso, crear un nueva sesión **tmux**.
+
+```bash
+$ tmux new-session -s fcch
+```
+
+Segundo paso, conectarse a la nueva sesión.
+
+```bash
+$ sudo su - NOMBRE_USUARIO
+$ tmux attach-session -t fcch
+```
+
+## Algunas Demos
 
 Ejecutamos **tmux**, dividimos en diferentes paneles:
 

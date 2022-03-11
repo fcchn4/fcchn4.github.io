@@ -60,6 +60,27 @@ A very useful function in **tmux** is the **command mode**, which allows us to e
 | Resize panel to the left 10            | :resize-pane -L 10          |
 | Resize panel to the right 10           | :resize-pane -R 10          |
 
+## Share Terminal
+
+It is often necessary to work in the same terminal with different users connected to the same server, **tmux** allows you to share a terminal with multiple users, you just have to meet some requirements:
+
+1. The terminal to share must belong to a specific user.
+2. A user must create a new **tmux** session with a name.
+3. The user must share the name of the new session.
+
+First step, create a new **tmux** session.
+
+```bash
+$ tmux new-session -s fcch
+```
+
+Second step, connect to the new session.
+
+```bash
+$ sudo su - USER_NAME
+$ tmux attach-session -t fcch
+```
+
 ## Some Demos
 
 We execute **tmux**, we divide into different panels the terminal:
