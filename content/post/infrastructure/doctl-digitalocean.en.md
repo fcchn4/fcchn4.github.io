@@ -129,6 +129,5 @@ $ doctl compute droplet delete <ID_DROPLET>
 
 ## DigitalOcean
 
-| [![](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=b7713eda7925&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) | [![](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=b7713eda7925&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) | [![](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=b7713eda7925&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) |
+| [![](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=f3953badd3d5&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) | [![](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=f3953badd3d5&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) | [![](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg)](https://www.digitalocean.com/?refcode=f3953badd3d5&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-
