@@ -8,7 +8,7 @@ tags = [
     "fedora",
 ]
 categories = [
-    "Infrastructure",
+    "Notes",
 ]
 series = ["GNU-Linux"]
 thumbnail = "images/fedora-32/fedora32-400.jpg"

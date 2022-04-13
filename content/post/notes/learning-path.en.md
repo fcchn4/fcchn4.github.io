@@ -8,7 +8,7 @@ tags = [
   "aws",
 ]
 categories = [
-    "Infrastructure",
+    "Notes",
 ]
 series = ["Cloud"]
 thumbnail = "images/aws-learning-path/fcch-route.png"

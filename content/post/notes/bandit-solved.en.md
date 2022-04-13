@@ -8,7 +8,7 @@ tags = [
     "bash"
 ]
 categories = [
-    "apuntes",
+    "notes",
 ]
 series = ["Linux"]
 thumbnail = "images/bandit/otw-bandit.jpg"
