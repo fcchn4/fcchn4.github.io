@@ -7,7 +7,45 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Fcch Blog | 2019 - 2022</copyright>
-    <lastBuildDate>Wed, 07 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/categories/apuntes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/categories/apuntes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apuntes XFCE4</title>
+      <link>https://blog.fcch.xyz/post/notes/notes-xfce4/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/notes-xfce4/</guid>
+      <description>
+        
+          &lt;p&gt;Estuve cambiando de hardware en mi ambiente de trabajo, cambie el teclado a uno en idioma inglés, por este motivo estuve configurando &lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, que es mi entorno gráfico preferido.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;cambio-de-idioma-del-teclado-en-xfce4&#34;&gt;Cambio de Idioma del Teclado en XFCE4&lt;/h2&gt;
+&lt;p&gt;Lo primero fue hacer el cambio de idioma, por lo tanto para llegar al menú de configuración: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, la configuración deberia quedar con en la imagen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Esta configuración no tuvo efecto luego de un reinicio, para solucionar este problema editamos el archivo de configuración general en: &lt;strong&gt;/etc/default/keyboard&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-general.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;La configuración debería quedar similar a la imagen.&lt;/p&gt;
+&lt;p&gt;Teclado abreviado para caracteres especiales:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alt Gr + &#39; + (a, e, i, o, u) = á, é, í, ó, ú &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Alt Gr + Shift + ~ + n = ñ &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;activar-tecla-super--whisker-menu&#34;&gt;Activar Tecla Super + Whisker Menu&lt;/h2&gt;
+&lt;p&gt;Para activar el menú de aplicaciones en XFCE se necesita el complemento &lt;strong&gt;whiskermenu&lt;/strong&gt;, para poder asociarlo a la tecla Super de la Izquierda (Logo Windows).&lt;/p&gt;
+&lt;p&gt;La configuración se debe llevar en: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Application Shortcuts&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt; xfce4-popup-whiskermenu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;conexión-vpn&#34;&gt;Conexión VPN&lt;/h2&gt;
+&lt;p&gt;Por último, la instalación de XFCE para Debian Bullseye o Ubuntu Focal no viene instalado por defecto los utilitarios para OpenVPN, entonces es necesario instalar los paquetes necesarios.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
     <item>
       <title>Bandit Soluciones</title>
       <link>https://blog.fcch.xyz/post/notes/bandit-solved/</link>
@@ -626,6 +664,254 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;&lt;strong&gt;Tmux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Ruta de Aprendizaje</title>
+      <link>https://blog.fcch.xyz/post/notes/learning-path/</link>
+      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/learning-path/</guid>
+      <description>
+        
+          &lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificarme &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;En mi busqueda de infromación encontre esta descripción del camino completo hacia una certificación &lt;strong&gt;Profecional&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aws-certified-cloud-practitioner-clf-c01&#34;&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
+&lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Servicios disponibles y sus casos de uso comunes.&lt;/li&gt;
+&lt;li&gt;Principios de arquitectura de AWS Cloud (a nivel conceptual).&lt;/li&gt;
+&lt;li&gt;Seguridad de la cuenta y cumplimiento.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Los candidatos también deben demostrar una comprensión de la economía de la nube de AWS, como:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Costos.&lt;/li&gt;
+&lt;li&gt;Facturación y análisis.&lt;/li&gt;
+&lt;li&gt;La propuesta de valor de AWS Cloud.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Con estos conocimientos los candidatos podran validar la capacidad para:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Explicar el valor de AWS Cloud.&lt;/li&gt;
+&lt;li&gt;Comprender y explicar el modelo de responsabilidad compartida de AWS.&lt;/li&gt;
+&lt;li&gt;Comprender las mejores prácticas de seguridad en la nube de AWS.&lt;/li&gt;
+&lt;li&gt;Comprender los costos, la economía y las prácticas de facturación de AWS Cloud.&lt;/li&gt;
+&lt;li&gt;Describir y posicionar los servicios centrales de AWS, incluidos el procesamiento, la red, las bases de datos y el almacenamiento.&lt;/li&gt;
+&lt;li&gt;Identificar los servicios de AWS para casos de uso comunes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tipos-de-respuesta&#34;&gt;Tipos de respuesta&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Opción múltiple: Tienen una respuesta correcta y tres respuestas incorrectas.&lt;/li&gt;
+&lt;li&gt;Respuesta múltiple: Tiene dos o más respuestas correctas de cinco o más opciones.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;contenido-del-examen&#34;&gt;Contenido del examen&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Etapa&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;% de Calificación&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 1: Conceptos en la nube&lt;/td&gt;
+&lt;td&gt;26%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 2: Seguridad y cumplimiento&lt;/td&gt;
+&lt;td&gt;25%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 3: Tecnología&lt;/td&gt;
+&lt;td&gt;33%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Etapa 4: Facturación y precios&lt;/td&gt;
+&lt;td&gt;16%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;TOTAL&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;100%&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 1: Conceptos de la nube&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[1.1] Definir la nube de AWS y su propuesta de valor.&lt;/li&gt;
+&lt;li&gt;[1.2] Identificar aspectos de la economía de la nube de AWS.&lt;/li&gt;
+&lt;li&gt;[1.3] Enumere los diferentes principios de diseño de la arquitectura en la nube.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 2: Seguridad y cumplimiento&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[2.1] Definir el modelo de responsabilidad compartida de AWS.&lt;/li&gt;
+&lt;li&gt;[2.2] Definir los conceptos de cumplimiento y seguridad de la nube de AWS.&lt;/li&gt;
+&lt;li&gt;[2.3] Identificar las capacidades de administración de acceso de AWS.&lt;/li&gt;
+&lt;li&gt;[2.4] Identificar recursos para soporte de seguridad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 3: Tecnología&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[3.1] Definir métodos de implementación y operación en la nube de AWS.&lt;/li&gt;
+&lt;li&gt;[3.2] Definir la infraestructura global de AWS.&lt;/li&gt;
+&lt;li&gt;[3.3] Identificar los servicios centrales de AWS.&lt;/li&gt;
+&lt;li&gt;[3.4] Identificar recursos para el apoyo tecnológico.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etapa 4: Facturación y precios&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[4.1] Comparar y contrastar los distintos modelos de precios de AWS.&lt;/li&gt;
+&lt;li&gt;[4.2] Reconocer las diversas estructuras de cuentas en relación con la facturación y los precios de AWS.&lt;/li&gt;
+&lt;li&gt;[4.3] Identificar los recursos disponibles para soporte de facturación.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;aws-certified-solutions-architect-associate&#34;&gt;AWS Certified Solutions Architect Associate&lt;/h2&gt;
+&lt;p&gt;Los conocimientos para esta certificación se dividen en aproximadamente 14 capítulos, estos son:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introducción AWS.&lt;/li&gt;
+&lt;li&gt;Amazon Simple Storage Service (Amazon S3) y Amazon Glacier Storage.&lt;/li&gt;
+&lt;li&gt;Amazon Elastic Compute Cloud (Amazon EC2) y Amazon Elastic Block Store (Amazon EBS).&lt;/li&gt;
+&lt;li&gt;Amazon Virtual Private Cloud (Amazon VPC).&lt;/li&gt;
+&lt;li&gt;Elastic Load Balancing, Amazon CloudWatch y Auto Scaling.&lt;/li&gt;
+&lt;li&gt;AWS Identity y Access Management (IAM).&lt;/li&gt;
+&lt;li&gt;Databases y AWS.&lt;/li&gt;
+&lt;li&gt;SOS, SWF y SNS.&lt;/li&gt;
+&lt;li&gt;Domain Name System (DNS) y Amazon Route 53.&lt;/li&gt;
+&lt;li&gt;Amazon ElastiCache.&lt;/li&gt;
+&lt;li&gt;Additional Key Services.&lt;/li&gt;
+&lt;li&gt;Security on AWS.&lt;/li&gt;
+&lt;li&gt;AWS Risk y Compliance.&lt;/li&gt;
+&lt;li&gt;Architecture Best practices.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;contenido-personal&#34;&gt;Contenido Personal&lt;/h2&gt;
+&lt;p&gt;Contenido en español, conceptos de los servicios de AWS:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Módulo 1 - Introducción a la nube de AWS&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introducción a la Nube de AWS.&lt;/li&gt;
+&lt;li&gt;Introducción a las Interfaces de AWS.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Módulo 2 - Servicios principales de AWS&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon Elastic Compute Cloud - EC2.&lt;/li&gt;
+&lt;li&gt;Amazon Elastic Block Store - EBS.&lt;/li&gt;
+&lt;li&gt;Amazon Simple Storage Service - S3.&lt;/li&gt;
+&lt;li&gt;Infraestructura Global de AWS.&lt;/li&gt;
+&lt;li&gt;Amazon Virtual Private Cloud - VPC.&lt;/li&gt;
+&lt;li&gt;Grupos de Seguridad.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Módulo 3 - Servicios integrados de AWS&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Balanceador de Carga de Aplicaciones.&lt;/li&gt;
+&lt;li&gt;Auto Scaling.&lt;/li&gt;
+&lt;li&gt;Amazon Route 53.&lt;/li&gt;
+&lt;li&gt;Amazon Relational Database Service - RDS.&lt;/li&gt;
+&lt;li&gt;AWS Lambda.&lt;/li&gt;
+&lt;li&gt;AWS Elastic BeanStalk.&lt;/li&gt;
+&lt;li&gt;Amazon Simple Notification Service - SNS.&lt;/li&gt;
+&lt;li&gt;Amazon CloudWatch.&lt;/li&gt;
+&lt;li&gt;Amazon CloudFront.&lt;/li&gt;
+&lt;li&gt;AWS CloudFormation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Módulo 4 - Arquitectura de AWS&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;El Marco de Buena Infraestructura de AWS.&lt;/li&gt;
+&lt;li&gt;Tolerancia a Errores y Alta Disponibilidad.&lt;/li&gt;
+&lt;li&gt;Alojamiento Web.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Módulo 5 - Seguridad de AWS&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Introducción a los Recursos de Seguridad de AWS.&lt;/li&gt;
+&lt;li&gt;El Modelo de Responsabilidad Compartida.&lt;/li&gt;
+&lt;li&gt;Indentity and Access Managment - IAM.&lt;/li&gt;
+&lt;li&gt;Amazon Inspector.&lt;/li&gt;
+&lt;li&gt;AWS Shield.&lt;/li&gt;
+&lt;li&gt;Conformidad de Seguridad de AWS.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Módulo 6 - Precios y soporte&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Aspectos Fundamentales de los Precios.&lt;/li&gt;
+&lt;li&gt;Información sobre los precios.&lt;/li&gt;
+&lt;li&gt;AWS Thusted Advisor.&lt;/li&gt;
+&lt;li&gt;Planes de AWS Support.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/fcchn4/aws-practitioner&#34;&gt;&lt;strong&gt;Repositorio de Contenido&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/&#34;&gt;&lt;strong&gt;AWS Certificación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-cloud-practitioner/&#34;&gt;&lt;strong&gt;AWS Certified Cloud Practitioner&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-solutions-architect-associate/&#34;&gt;&lt;strong&gt;AWS Certified Solutions Architect – Associate&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34;&gt;&lt;strong&gt;AWS Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/es/certification/certification-prep/&#34;&gt;&lt;strong&gt;Prepárese para los exámenes de AWS Certification&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.aws.training/&#34;&gt;&lt;strong&gt;Cloud Fundamentals&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/es/certification/faqs/&#34;&gt;&lt;strong&gt;Preguntas Frecuentes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/es/certification/benefits/&#34;&gt;&lt;strong&gt;AWS Beneficios&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Apuntes Fedora 32</title>
+      <link>https://blog.fcch.xyz/post/notes/notes-fedora-32/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/notes-fedora-32/</guid>
+      <description>
+        
+          &lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prompt-terminal&#34;&gt;Prompt Terminal&lt;/h2&gt;
+&lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href=&#34;https://github.com/ohmybash/oh-my-bash&#34;&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
+&lt;p&gt;Buscando me encontré con &lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedo de esta forma:&lt;/p&gt;
+&lt;p&gt;Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Instalción Git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo dnf install git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Script /usr/share/git-core/contrib/completion/git-prompt.sh  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para colorear el prompt y obtener los datos deseados tenemos que agregar los siguientes datos:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Descripción de los datos:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- __git_ps1: Variable del script.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- t: Obtiene la hora, minutos y segundos.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- W: Muestra el nombre de carpeta actual.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- source: Ruta del script __git_ps1.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- export GIT_PS1_SHOWCOLORHINTS: Color para los datos git.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- export GIT_PS1_SHOWDIRTYSTATE: Muestra el estado actual del repo.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- export GIT_PS1_SHOWUNTRACKEDFILES: Mostrar archivos sin seguimiento.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- export PROMPT_COMMAND: Personalización del prompt.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- \[\033[0;31m\]: Color Rojo.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- \[\033[0;33m\]: Color Amarillo.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;- \[\033[0;32m\]: Color Verde.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Prompt personalizado ~/.bashrc&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /usr/share/git-core/contrib/completion/git-prompt.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWCOLORHINTS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWDIRTYSTATE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;GIT_PS1_SHOWUNTRACKEDFILES&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;__git_ps1 &amp;#34;\[\033[01;33m\]\t\[\033[00m\] \[\033[01;31m\][\W]\[\033[00m\]&amp;#34; &amp;#34; \\\$ &amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-ce&#34;&gt;Docker CE&lt;/h2&gt;
+&lt;p&gt;Luego de instalar Docker CE desde el repositorio &lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;oficial&lt;/strong&gt;&lt;/a&gt; y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.&lt;/p&gt;
+&lt;p&gt;Para solucionar el problema agregamos la interface &lt;strong&gt;docker0&lt;/strong&gt; en la zona de confianza del firewall.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo firewall-cmd --reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;cinnamon&#34;&gt;Cinnamon&lt;/h2&gt;
+&lt;p&gt;Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es &lt;strong&gt;NOUVEAU&lt;/strong&gt; controlador de código abierto, instalamos el controlador &lt;strong&gt;NVIDIA Corporation GF119 [NVS 310]&lt;/strong&gt; para mejorar el rendimiento en el vídeo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NVIDIA Driver 390xxx - repositorio RPMFusion&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Habilitando NVIDIA RPM Fusion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Listando controladores disponibles
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo dnf repository-packages rpmfusion-nonfree-nvidia-driver info
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Instalación del controlador
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo dnf install xorg-x11-drv-nvidia-390xx akmod-nvidia-390xx
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo dnf install xorg-x11-drv-nvidia-390xx-cuda
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;# Pruebas y control de rendimiento
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo dnf install -y gwe
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/engine/install/fedora/&#34;&gt;&lt;strong&gt;Docker Fedora&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://fedoraproject.org/wiki/Git_quick_reference&#34;&gt;&lt;strong&gt;Fedora Git Reference&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
         
       </description>

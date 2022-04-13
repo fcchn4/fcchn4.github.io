@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xfce on Fcch Blog | Apuntes, guías y recordatorios</title>
+    <link>https://blog.fcch.xyz/tags/xfce/</link>
+    <description>Recent content in xfce on Fcch Blog | Apuntes, guías y recordatorios</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Fcch Blog | 2019 - 2022</copyright>
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/xfce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apuntes XFCE4</title>
+      <link>https://blog.fcch.xyz/post/notes/notes-xfce4/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/post/notes/notes-xfce4/</guid>
+      <description>
+        
+          &lt;p&gt;Estuve cambiando de hardware en mi ambiente de trabajo, cambie el teclado a uno en idioma inglés, por este motivo estuve configurando &lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, que es mi entorno gráfico preferido.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;cambio-de-idioma-del-teclado-en-xfce4&#34;&gt;Cambio de Idioma del Teclado en XFCE4&lt;/h2&gt;
+&lt;p&gt;Lo primero fue hacer el cambio de idioma, por lo tanto para llegar al menú de configuración: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, la configuración deberia quedar con en la imagen.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Esta configuración no tuvo efecto luego de un reinicio, para solucionar este problema editamos el archivo de configuración general en: &lt;strong&gt;/etc/default/keyboard&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-general.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;La configuración debería quedar similar a la imagen.&lt;/p&gt;
+&lt;p&gt;Teclado abreviado para caracteres especiales:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alt Gr + &#39; + (a, e, i, o, u) = á, é, í, ó, ú &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Alt Gr + Shift + ~ + n = ñ &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;activar-tecla-super--whisker-menu&#34;&gt;Activar Tecla Super + Whisker Menu&lt;/h2&gt;
+&lt;p&gt;Para activar el menú de aplicaciones en XFCE se necesita el complemento &lt;strong&gt;whiskermenu&lt;/strong&gt;, para poder asociarlo a la tecla Super de la Izquierda (Logo Windows).&lt;/p&gt;
+&lt;p&gt;La configuración se debe llevar en: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Application Shortcuts&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt; xfce4-popup-whiskermenu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;conexión-vpn&#34;&gt;Conexión VPN&lt;/h2&gt;
+&lt;p&gt;Por último, la instalación de XFCE para Debian Bullseye o Ubuntu Focal no viene instalado por defecto los utilitarios para OpenVPN, entonces es necesario instalar los paquetes necesarios.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

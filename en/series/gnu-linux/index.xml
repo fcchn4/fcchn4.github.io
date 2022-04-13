@@ -7,13 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Fcch Blog | 2019 - 2022</copyright>
-    <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/series/gnu-linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/series/gnu-linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes XFCE4</title>
+      <link>https://blog.fcch.xyz/en/post/notes/notes-xfce4/</link>
+      <pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.fcch.xyz/en/post/notes/notes-xfce4/</guid>
+      <description>
+        
+          &lt;p&gt;I was changing hardware in my work environment, I changed the keyboard to an English language one, for this reason I was configuring &lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, which is my preferred graphical environment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;change-keyboard-language-in-xfce4&#34;&gt;Change Keyboard Language in XFCE4&lt;/h2&gt;
+&lt;p&gt;The first thing was to change the language, therefore to get to the configuration menu: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, the configuration should be in the image.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This configuration did not take effect after a reboot, to solve this problem we edited the general configuration file in: &lt;strong&gt;/etc/default/keyboard&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-general.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The configuration should look similar to the image.&lt;/p&gt;
+&lt;p&gt;Keyboard shortcut for special characters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Alt Gr + &#39; + (a, e, i, o, u) = á, é, í, ó, ú &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Alt Gr + Shift + ~ + n = ñ &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;activate-super-key--whisker-menu&#34;&gt;Activate Super Key + Whisker Menu&lt;/h2&gt;
+&lt;p&gt;To activate the applications menu in XFCE you need the plugin &lt;strong&gt;whiskermenu&lt;/strong&gt;, to be able to associate it to the Left Super key (Windows Logo).&lt;/p&gt;
+&lt;p&gt;The configuration must be carried out in: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Application Shortcuts&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt; xfce4-popup-whiskermenu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;vpn-connection&#34;&gt;VPN Connection&lt;/h2&gt;
+&lt;p&gt;Finally, the installation of &lt;strong&gt;XFCE&lt;/strong&gt; for &lt;strong&gt;Debian Bullseye&lt;/strong&gt; or &lt;strong&gt;Ubuntu Focal&lt;/strong&gt; does not come with the OpenVPN utilities installed by default, so it is necessary to install the necessary packages.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+        
+      </description>
+    </item>
+    
     <item>
       <title>Notes Fedora 32</title>
-      <link>https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/</link>
+      <link>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</link>
       <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.fcch.xyz/en/post/notes/apuntes-fedora-32/</guid>
+      <guid>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</guid>
       <description>
         
           &lt;p&gt;When after update my Operating System &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
