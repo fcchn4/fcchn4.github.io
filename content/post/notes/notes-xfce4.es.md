@@ -62,3 +62,4 @@ $ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gn
 ## Referencias
 
 - [**XFCE**](https://xfce.org/)
+- [**Compose Key**](https://help.ubuntu.com/community/ComposeKey)
