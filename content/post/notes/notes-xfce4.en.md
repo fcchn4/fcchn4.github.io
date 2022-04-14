@@ -34,8 +34,8 @@ The configuration should look similar to the image.
 
 Keyboard shortcut for special characters:
 
-- Alt Gr + ' + (a, e, i, o, u) = á, é, í, ó, ú **✓**
-- Alt Gr + Shift + ~ + n = ñ **✓**
+- **Alt Gr** + **'** + **(a, e, i, o, u)** = **á, é, í, ó, ú** **✓**
+- **Alt Gr** + **Shift** + **~** + **n** = **ñ** **✓**
 
 ## Activate Super Key + Whisker Menu
 

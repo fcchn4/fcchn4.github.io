@@ -34,8 +34,8 @@ La configuración debería quedar similar a la imagen.
 
 Teclado abreviado para caracteres especiales:
 
-- Alt Gr + ' + (a, e, i, o, u) = á, é, í, ó, ú **✓**
-- Alt Gr + Shift + ~ + n = ñ **✓**
+- **Alt Gr** + **'** + **(a, e, i, o, u)** = **á, é, í, ó, ú** **✓**
+- **Alt Gr** + **Shift** + **~** + **n** = **ñ** **✓**
 
 ## Activar Tecla Super + Whisker Menu
 
