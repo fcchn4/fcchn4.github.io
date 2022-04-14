@@ -26,8 +26,8 @@
 &lt;p&gt;La configuración debería quedar similar a la imagen.&lt;/p&gt;
 &lt;p&gt;Teclado abreviado para caracteres especiales:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Alt Gr + &#39; + (a, e, i, o, u) = á, é, í, ó, ú &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Alt Gr + Shift + ~ + n = ñ &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alt Gr&lt;/strong&gt; + &lt;strong&gt;&#39;&lt;/strong&gt; + &lt;strong&gt;(a, e, i, o, u)&lt;/strong&gt; = &lt;strong&gt;á, é, í, ó, ú&lt;/strong&gt; &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alt Gr&lt;/strong&gt; + &lt;strong&gt;Shift&lt;/strong&gt; + &lt;strong&gt;~&lt;/strong&gt; + &lt;strong&gt;n&lt;/strong&gt; = &lt;strong&gt;ñ&lt;/strong&gt; &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;activar-tecla-super--whisker-menu&#34;&gt;Activar Tecla Super + Whisker Menu&lt;/h2&gt;
 &lt;p&gt;Para activar el menú de aplicaciones en XFCE se necesita el complemento &lt;strong&gt;whiskermenu&lt;/strong&gt;, para poder asociarlo a la tecla Super de la Izquierda (Logo Windows).&lt;/p&gt;

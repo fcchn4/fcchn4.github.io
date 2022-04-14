@@ -26,8 +26,8 @@
 &lt;p&gt;The configuration should look similar to the image.&lt;/p&gt;
 &lt;p&gt;Keyboard shortcut for special characters:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Alt Gr + &#39; + (a, e, i, o, u) = á, é, í, ó, ú &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Alt Gr + Shift + ~ + n = ñ &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alt Gr&lt;/strong&gt; + &lt;strong&gt;&#39;&lt;/strong&gt; + &lt;strong&gt;(a, e, i, o, u)&lt;/strong&gt; = &lt;strong&gt;á, é, í, ó, ú&lt;/strong&gt; &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Alt Gr&lt;/strong&gt; + &lt;strong&gt;Shift&lt;/strong&gt; + &lt;strong&gt;~&lt;/strong&gt; + &lt;strong&gt;n&lt;/strong&gt; = &lt;strong&gt;ñ&lt;/strong&gt; &lt;strong&gt;✓&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;activate-super-key--whisker-menu&#34;&gt;Activate Super Key + Whisker Menu&lt;/h2&gt;
 &lt;p&gt;To activate the applications menu in XFCE you need the plugin &lt;strong&gt;whiskermenu&lt;/strong&gt;, to be able to associate it to the Left Super key (Windows Logo).&lt;/p&gt;
