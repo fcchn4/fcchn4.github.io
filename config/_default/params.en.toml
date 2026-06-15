@@ -72,6 +72,7 @@ iconsDir = "icons/"
 # website author
 [author]
 name = "Fcch"
+email = ""
 # photo = "images/jane-doe.png"
 
 [plausible_analytics]
