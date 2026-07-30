@@ -1,10 +1,10 @@
-[es]
+[languages.es]
   title = "Fcch Blog | Apuntes, guías y recordatorios"
-  LanguageName = "Spanish"
+  label = "Spanish"
   weight = 1
   
-[en]
+[languages.en]
   title = "Fcch Blog | Notes, guides and reminders"
-  LanguageName = "English"
+  label = "English"
   weight = 2
  

@@ -2,6 +2,14 @@
 
 - [Fcch How To](https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/)
 
+## Requisitos
+
+```bash
+$ hugo version
+```
+
+Usar una version reciente de Hugo Extended (actualmente el proyecto compila con `v0.163.x`).
+
 ## Iniciando Proyecto 
 
 ```bash
@@ -19,11 +27,14 @@ $ git remote add origin git@github.com:fcchn4/fcchn4.github.io.git
 
 ```bash
 # Agregando Theme como un submodulo
-$ git submodule add git@github.com:fcchn4/hugo-theme-hello-friend-ng.git themes/hello-friend-ng
-$ echo 'theme = "hello-friend-ng"' >> config.toml
+$ git submodule add git@github.com:fcchn4/hugo-clarity.git themes/hugo-clarity
+$ echo 'theme = "hugo-clarity"' >> config.toml
 
 # Para Probar el nuevo proyecto Hugo
-$ hugo server --watch -D
+$ hugo server -D --logLevel info
+
+# Build de validacion (local)
+$ hugo --gc --minify --logLevel warn
 
 # Subir cuerpo completo del proyecto
 $ git add .
@@ -62,3 +73,21 @@ $ cd fcchn4.github.io
 $ mkdir public
 $ git worktree add -B deploy public origin/deploy
 ```
+
+## Comandos utiles
+
+```bash
+# Servidor local
+$ hugo server -D --disableFastRender --logLevel info
+
+# Build produccion
+$ hugo --gc --minify --logLevel warn
+
+# Config efectiva que Hugo esta aplicando
+$ hugo config
+```
+
+## Nota de compatibilidad
+
+- Evitar `--verbose` (flag removida en Hugo moderno).
+- Usar `--logLevel` con valores: `debug`, `info`, `warn`, `error`.
