@@ -1,26 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>aws on Fcch Blog | Apuntes, guías y recordatorios</title>
-    <link>https://blog.fcch.xyz/tags/aws/</link>
-    <description>Recent content in aws on Fcch Blog | Apuntes, guías y recordatorios</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Fcch Blog | 2019 - 2022</copyright>
-    <lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/aws/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ruta de Aprendizaje</title>
-      <link>https://blog.fcch.xyz/post/notes/learning-path/</link>
-      <pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.fcch.xyz/post/notes/learning-path/</guid>
-      <description>
-        
-          &lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificarme &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aws on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/tags/aws/</link><description>Recent content in Aws on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fcch Blog | 2019 - 2022</copyright><lastBuildDate>Mon, 10 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Ruta de Aprendizaje</title><link>https://blog.fcch.xyz/post/notes/learning-path/</link><pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/learning-path/</guid><description>
+&lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificarme &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;En mi busqueda de infromación encontre esta descripción del camino completo hacia una certificación &lt;strong&gt;Profecional&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;aws-certified-cloud-practitioner-clf-c01&#34;&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="aws-certified-cloud-practitioner-clf-c01"&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
 &lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Servicios disponibles y sus casos de uso comunes.&lt;/li&gt;
@@ -42,12 +25,12 @@
 &lt;li&gt;Describir y posicionar los servicios centrales de AWS, incluidos el procesamiento, la red, las bases de datos y el almacenamiento.&lt;/li&gt;
 &lt;li&gt;Identificar los servicios de AWS para casos de uso comunes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;tipos-de-respuesta&#34;&gt;Tipos de respuesta&lt;/h4&gt;
+&lt;h4 id="tipos-de-respuesta"&gt;Tipos de respuesta&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;Opción múltiple: Tienen una respuesta correcta y tres respuestas incorrectas.&lt;/li&gt;
 &lt;li&gt;Respuesta múltiple: Tiene dos o más respuestas correctas de cinco o más opciones.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;contenido-del-examen&#34;&gt;Contenido del examen&lt;/h4&gt;
+&lt;h4 id="contenido-del-examen"&gt;Contenido del examen&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -104,7 +87,7 @@
 &lt;li&gt;[4.2] Reconocer las diversas estructuras de cuentas en relación con la facturación y los precios de AWS.&lt;/li&gt;
 &lt;li&gt;[4.3] Identificar los recursos disponibles para soporte de facturación.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;aws-certified-solutions-architect-associate&#34;&gt;AWS Certified Solutions Architect Associate&lt;/h2&gt;
+&lt;h2 id="aws-certified-solutions-architect-associate"&gt;AWS Certified Solutions Architect Associate&lt;/h2&gt;
 &lt;p&gt;Los conocimientos para esta certificación se dividen en aproximadamente 14 capítulos, estos son:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introducción AWS.&lt;/li&gt;
@@ -122,7 +105,7 @@
 &lt;li&gt;AWS Risk y Compliance.&lt;/li&gt;
 &lt;li&gt;Architecture Best practices.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;contenido-personal&#34;&gt;Contenido Personal&lt;/h2&gt;
+&lt;h2 id="contenido-personal"&gt;Contenido Personal&lt;/h2&gt;
 &lt;p&gt;Contenido en español, conceptos de los servicios de AWS:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Módulo 1 - Introducción a la nube de AWS&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -173,22 +156,15 @@
 &lt;li&gt;AWS Thusted Advisor.&lt;/li&gt;
 &lt;li&gt;Planes de AWS Support.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/fcchn4/aws-practitioner&#34;&gt;&lt;strong&gt;Repositorio de Contenido&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/fcchn4/aws-practitioner"&gt;&lt;strong&gt;Repositorio de Contenido&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/&#34;&gt;&lt;strong&gt;AWS Certificación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-cloud-practitioner/&#34;&gt;&lt;strong&gt;AWS Certified Cloud Practitioner&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/certification/certified-solutions-architect-associate/&#34;&gt;&lt;strong&gt;AWS Certified Solutions Architect – Associate&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/&#34;&gt;&lt;strong&gt;AWS Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/es/certification/certification-prep/&#34;&gt;&lt;strong&gt;Prepárese para los exámenes de AWS Certification&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.aws.training/&#34;&gt;&lt;strong&gt;Cloud Fundamentals&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/es/certification/faqs/&#34;&gt;&lt;strong&gt;Preguntas Frecuentes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/es/certification/benefits/&#34;&gt;&lt;strong&gt;AWS Beneficios&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;li&gt;&lt;a href="https://aws.amazon.com/certification/"&gt;&lt;strong&gt;AWS Certificación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/certification/certified-cloud-practitioner/"&gt;&lt;strong&gt;AWS Certified Cloud Practitioner&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/"&gt;&lt;strong&gt;AWS Certified Solutions Architect – Associate&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.aws.amazon.com/"&gt;&lt;strong&gt;AWS Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/es/certification/certification-prep/"&gt;&lt;strong&gt;Prepárese para los exámenes de AWS Certification&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.aws.training/"&gt;&lt;strong&gt;Cloud Fundamentals&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/es/certification/faqs/"&gt;&lt;strong&gt;Preguntas Frecuentes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/es/certification/benefits/"&gt;&lt;strong&gt;AWS Beneficios&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "styles.css",
-	"sourceRoot": "/home/freddy/Fcch/fcch-dev/fcchn4.github.io",
+	"sourceRoot": "/home/freddy/Fcch/dev/fcchn4.github.io",
 	"sources": [
 		"themes/hugo-clarity/assets/sass/main.sass",
 		"themes/hugo-clarity/assets/sass/_variables.sass",

@@ -1,50 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>npm on Fcch Blog | Notes, guides and reminders</title>
-    <link>https://blog.fcch.xyz/en/tags/npm/</link>
-    <description>Recent content in npm on Fcch Blog | Notes, guides and reminders</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Fcch Blog | 2019 - 2022</copyright>
-    <lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/npm/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>NPM EACCES</title>
-      <link>https://blog.fcch.xyz/en/post/notes/npm-eacces/</link>
-      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.fcch.xyz/en/post/notes/npm-eacces/</guid>
-      <description>
-        
-          &lt;p&gt;I had to test the implementation of a &lt;strong&gt;NodeJS&lt;/strong&gt; application where I needed to install global packages, the installation of global &lt;strong&gt;NodeJS&lt;/strong&gt; packages in the operating system does not seem to be a good practice, so we found a solution to this problem.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Npm on Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/tags/npm/</link><description>Recent content in Npm on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Fcch Blog | 2019 - 2022</copyright><lastBuildDate>Wed, 12 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/npm/index.xml" rel="self" type="application/rss+xml"/><item><title>NPM EACCES</title><link>https://blog.fcch.xyz/en/post/notes/npm-eacces/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/npm-eacces/</guid><description>
+&lt;p&gt;I had to test the implementation of a &lt;strong&gt;NodeJS&lt;/strong&gt; application where I needed to install global packages, the installation of global &lt;strong&gt;NodeJS&lt;/strong&gt; packages in the operating system does not seem to be a good practice, so we found a solution to this problem.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;When running the command:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ npm install -g &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The problem is for permissions with &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; and to solve the problem immediately it was to execute it with &lt;strong&gt;sudo&lt;/strong&gt;, this practice is common but it&#39;s not a good practice.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm install -g &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The problem is for permissions with &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; and to solve the problem immediately it was to execute it with &lt;strong&gt;sudo&lt;/strong&gt;, this practice is common but it's not a good practice.&lt;/p&gt;
 &lt;p&gt;Searching I found that the solution to avoid the sudo command is to manually change the default &lt;strong&gt;NPM&lt;/strong&gt; directory.&lt;/p&gt;
-&lt;h2 id=&#34;create-the-new-directory&#34;&gt;Create the New Directory&lt;/h2&gt;
+&lt;h2 id="create-the-new-directory"&gt;Create the New Directory&lt;/h2&gt;
 &lt;p&gt;We create a new folder where the new programs will be installed:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ mkdir ~/.npm-global
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configure-npm-for-the-new-directory-path&#34;&gt;Configure NPM for the New Directory Path&lt;/h2&gt;
-&lt;p&gt;With the &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;/a&gt; command we change the path of the package installation directory:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ npm config set prefix &amp;#39;~/.npm-global&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;environment-variables&#34;&gt;Environment Variables&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ mkdir ~/.npm-global
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configure-npm-for-the-new-directory-path"&gt;Configure NPM for the New Directory Path&lt;/h2&gt;
+&lt;p&gt;With the &lt;a href="https://nodejs.org/en/"&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;/a&gt; command we change the path of the package installation directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm config set prefix &amp;#39;~/.npm-global&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="environment-variables"&gt;Environment Variables&lt;/h2&gt;
 &lt;p&gt;In some cases, there are guides that suggest you create a &lt;strong&gt;.profile&lt;/strong&gt; file to create the variable, in this example we add the variable to the &lt;strong&gt;.bashrc&lt;/strong&gt; file:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ echo &amp;#39;NPM_CONFIG_PREFIX=~/.npm-global&amp;#39; &lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;update-variables&#34;&gt;Update Variables&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ echo &amp;#39;NPM_CONFIG_PREFIX=~/.npm-global&amp;#39; &lt;span class="p"&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="update-variables"&gt;Update Variables&lt;/h2&gt;
 &lt;p&gt;We update the variables with the following command:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ source ~/.bashrc
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;we-test-the-installation-without-sudo&#34;&gt;We test the Installation without sudo&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ source ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="we-test-the-installation-without-sudo"&gt;We test the Installation without sudo&lt;/h2&gt;
 &lt;p&gt;To test the new functionality we execute the same command without prepending &lt;strong&gt;sudo&lt;/strong&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ npm install -g &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm install -g &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://nodejs.org/en/docs/guides/&#34;&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://nodejs.org/api/errors.html&#34;&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;li&gt;&lt;a href="https://nodejs.org/en/docs/guides/"&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nodejs.org/api/errors.html"&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
