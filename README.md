@@ -74,6 +74,29 @@ $ mkdir public
 $ git worktree add -B deploy public origin/deploy
 ```
 
+## Despliegue de un nuevo artículo
+
+```bash
+# 1. Asegúrate de tener el worktree configurado
+#    (solo la primera vez o después de clonar)
+$ mkdir -p public
+$ git worktree add -B deploy public origin/deploy
+
+# 2. Genera el sitio (desde la raíz del proyecto en main)
+$ hugo --gc --minify --logLevel warn
+
+# 3. Entra al directorio public (que es la rama deploy)
+$ cd public
+
+# 4. Commit y push (el CNAME ya existe ahí y no se toca)
+$ git add .
+$ git commit -m "Nuevo artículo: título del artículo"
+$ git push origin deploy
+
+# 5. Vuelve a la raíz
+$ cd ..
+```
+
 ## Comandos utiles
 
 ```bash
