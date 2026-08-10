@@ -18,6 +18,8 @@ I like learning about technology and participating in Free Software and Open Sou
 
 I started my professional career as a **sysadmin**, managing **GNU/Linux** servers, I worked in Government projects for the migration to **Free Software**, I did IT Security work in Blueteam teams, I currently work in personal projects doing work in Cloud Infrastructure, Continuous Integration and Automation.
 
+![](/images/about-me/fcch-about-me-collage.png)
+
 I have been a Free Software user for more than 10 years, the first **GNU/Linux** distribution that I used informally was the disappeared **Mandrake**, after entering university I met members of the [**Software Libre Bolivia**](https://www.softwarelibre.org.bo/) community where they introduced me to **BoliviaOS**, a Bolivian distribution based on [**Ubuntu**](https://ubuntu.com/), after this I was a user of [**Debian**](https://www.debian.org/), [**Archlinux**](https://archlinux.org/) and finally I am a user of [**Fedora**](https://getfedora.org/) thanks to the invitation of a good friend, he helped me to be part of the Fedora community until I became a [**Embajador Fedora**](https://fedoraproject.org/wiki/User:Barto).
 
 ## Communities
