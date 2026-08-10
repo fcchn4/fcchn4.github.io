@@ -45,11 +45,11 @@
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute size list
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Formtato a la Salida de DOCTL&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formato a la Salida de DOCTL&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute droplet list --format &lt;span class="s2"&gt;&amp;#34;ID,Name,PublicIPv4&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Crear un Drorplet con mas detalles&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Crear un Droplet con mas detalles&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute droplet create --region &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;REGION_CODE&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; \
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; --image &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;IMAGE_CODE&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; --size &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;SIZE_NAME&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; \

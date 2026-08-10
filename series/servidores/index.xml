@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Servidores on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/series/servidores/</link><description>Recent content in Servidores on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fcch Blog | 2019 - 2022</copyright><lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/series/servidores/index.xml" rel="self" type="application/rss+xml"/><item><title>VueJS + Laravel, Deploy</title><link>https://blog.fcch.xyz/post/infrastructure/vuejs-laravel-mix/</link><pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/infrastructure/vuejs-laravel-mix/</guid><description>
-&lt;p&gt;En el trabajo nos toco desplegar un proyecto desarrollado con &lt;strong&gt;&lt;a href="https://vuejs.org"&gt;VueJS&lt;/a&gt;&lt;/strong&gt; y &lt;strong&gt;&lt;a href="https://laravel.com/"&gt;Laravel&lt;/a&gt;&lt;/strong&gt; en un servidor &lt;strong&gt;&lt;a href="https://ubuntu.com/"&gt;Ubuntu&lt;/a&gt;&lt;/strong&gt;, con &lt;strong&gt;&lt;a href="https://ws.apache.org/"&gt;Apache&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://www.php.net/"&gt;PHP&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://mariadb.org/"&gt;MariaDB&lt;/a&gt;&lt;/strong&gt;, donde todo estaba versionado en &lt;strong&gt;&lt;a href="https://github.com/"&gt;github&lt;/a&gt;&lt;/strong&gt;, no tenia ramas de desarrollo, ni tampoco repositorios fork. Desplegar el projecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.&lt;/p&gt;
+&lt;p&gt;En el trabajo nos toco desplegar un proyecto desarrollado con &lt;strong&gt;&lt;a href="https://vuejs.org"&gt;VueJS&lt;/a&gt;&lt;/strong&gt; y &lt;strong&gt;&lt;a href="https://laravel.com/"&gt;Laravel&lt;/a&gt;&lt;/strong&gt; en un servidor &lt;strong&gt;&lt;a href="https://ubuntu.com/"&gt;Ubuntu&lt;/a&gt;&lt;/strong&gt;, con &lt;strong&gt;&lt;a href="https://ws.apache.org/"&gt;Apache&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://www.php.net/"&gt;PHP&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://mariadb.org/"&gt;MariaDB&lt;/a&gt;&lt;/strong&gt;, donde todo estaba versionado en &lt;strong&gt;&lt;a href="https://github.com/"&gt;github&lt;/a&gt;&lt;/strong&gt;, no tenia ramas de desarrollo, ni tampoco repositorios fork. Desplegar el proyecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/vuejs-laravel-mix/vuejs-laravel-logo.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="detalle-de-versiones"&gt;Detalle de Versiones&lt;/h2&gt;
 &lt;p&gt;Las versiones que se utilizaron para el desarrollo y despliegue del proyecto son:&lt;/p&gt;
@@ -26,7 +26,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt-key adv --fetch-keys &lt;span class="s1"&gt;&amp;#39;https://mariadb.org/mariadb_release_signing_key.asc&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo add-apt-repository &lt;span class="s1"&gt;&amp;#39;deb [arch=amd64,arm64,ppc64el,s390x] https://mirror1.cl.netactuate.com/mariadb/repo/10.6/ubuntu focal main&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Agreamos el repositorio PPA para PHP8:&lt;/li&gt;
+&lt;li&gt;Agregamos el repositorio PPA para PHP8:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo add-apt-repository ppa:ondrej/php
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
@@ -102,10 +102,10 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan key:generate
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan install
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan serve
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para el desplieqgue en el servidor de producción la ejecución de los comandos anteriores ya no son necesarios.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para el despliegue en el servidor de producción la ejecución de los comandos anteriores ya no son necesarios.&lt;/p&gt;
 &lt;p&gt;Inicialmente es necesario clonar el repositorio con un nombre similar al que figura en el archivo de configuración del VirtualHost.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo -u www-data git clone git@github.com:username/vuejs-laravel.git /var/www/html/demo-web
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Antes de ejecutar los comandos necesarios, verificamos que los archivos &lt;strong&gt;modules&lt;/strong&gt;, &lt;strong&gt;vendor&lt;/strong&gt; y &lt;strong&gt;.env&lt;/strong&gt; no esten versionados, y que el archivo &lt;strong&gt;.gitignore&lt;/strong&gt; los tenga en su lista.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Antes de ejecutar los comandos necesarios, verificamos que los archivos &lt;strong&gt;modules&lt;/strong&gt;, &lt;strong&gt;vendor&lt;/strong&gt; y &lt;strong&gt;.env&lt;/strong&gt; no estén versionados, y que el archivo &lt;strong&gt;.gitignore&lt;/strong&gt; los tenga en su lista.&lt;/p&gt;
 &lt;p&gt;Para finalizar ejecutamos los siguientes comandos:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ cp /path/.env /var/www/html/demo-web/
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /var/www/html/demo-web
@@ -162,11 +162,11 @@
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute size list
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Formtato a la Salida de DOCTL&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formato a la Salida de DOCTL&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute droplet list --format &lt;span class="s2"&gt;&amp;#34;ID,Name,PublicIPv4&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Crear un Drorplet con mas detalles&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Crear un Droplet con mas detalles&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute droplet create --region &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;REGION_CODE&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; \
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; --image &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;IMAGE_CODE&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; --size &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;SIZE_NAME&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; \
@@ -202,7 +202,7 @@
 &lt;p&gt;&lt;strong&gt;Calico&lt;/strong&gt;: Es una solución de seguridad de redes y redes de código abierto para contenedores, máquinas virtuales y cargas de trabajo nativas basadas en host. Calico admite varios planos de datos, incluidos: un plano de datos eBPF puro de Linux, un plano de datos de red Linux estándar y un plano de datos HNS de Windows. Calico proporciona una pila de redes completa, pero también se puede utilizar junto con los CNI del proveedor de la nube para proporcionar la aplicación de políticas de red.&lt;/p&gt;
 &lt;h2 id="servicios-kubernetes"&gt;Servicios Kubernetes&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Cluester IP&lt;/strong&gt;: Asigna una IP Fija dentro de un cluster, funciona con un pequeño Load Balancer.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cluster IP&lt;/strong&gt;: Asigna una IP Fija dentro de un cluster, funciona con un pequeño Load Balancer.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Node Port&lt;/strong&gt;: Similar al anterior, pero a nivel de puertos, crea un puerto en cada nodo recibe todo el tráfico y direcciona al servicio deseado.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Load Balancer&lt;/strong&gt;: Crea un Balanceador de Carga en un proveedor de nube y redirecciona el tráfico de los Pods.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Ingress&lt;/strong&gt;: Expone rutas HTTP y HTTPS desde fuera del clúster a servicios dentro del clúster, el enrutamiento del tráfico se controla mediante reglas definidas en el recurso Ingress.&lt;/li&gt;
@@ -407,8 +407,8 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl get pod fcch-nginx -o yaml
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Si se necesita ver los detalles de un &lt;strong&gt;pod&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl describe pod fcch-nginx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; En este ejemplo utilizaremos volumenes, el tipo será &lt;strong&gt;StatefulSet&lt;/strong&gt; y utlizaremos &lt;strong&gt;replicas&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Un detalle antes de continuar, &lt;strong&gt;PVC&lt;/strong&gt;: Persistent Volume Clain.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; En este ejemplo se utilizará volúmenes, el tipo será &lt;strong&gt;StatefulSet&lt;/strong&gt; y utilizamos &lt;strong&gt;replicas&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Un detalle antes de continuar, &lt;strong&gt;PVC&lt;/strong&gt;: Persistent Volume Claim.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;apiVersion&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;apps/v1&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;StatefulSet&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;metadata&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
@@ -478,7 +478,7 @@
 &lt;li&gt;&lt;a href="https://kubernetes.io/es/docs/concepts/"&gt;&lt;strong&gt;Conceptos Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Apuntes - Parte 2</title><link>https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/</link><pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/</guid><description>
-&lt;p&gt;Continuamos con las pruebas en nuestro pequeño cluster con &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; armado en las &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, para las pruebas utlizamos la documentación oficial de &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; y también la documentación oficial de &lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Continuamos con las pruebas en nuestro pequeño cluster con &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; armado en las &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, para las pruebas utilizamos la documentación oficial de &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; y también la documentación oficial de &lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;En la imagen tenemos como detalle:&lt;/p&gt;
 &lt;ol&gt;
@@ -514,7 +514,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Controlador de nodo&lt;/em&gt;: Para verificar el proveedor de la nube para determinar si un nodo se ha eliminado en la nube después de que deja de responder.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Controlador de ruta&lt;/em&gt;: Para configurar rutas en la infraestructura de nube subyacente.&lt;/li&gt;
-&lt;li&gt;Controlador de servicio*: Para crear, actualizar y eliminar equilibradores de carga de proveedores de nube.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Controlador de servicio&lt;/em&gt;: Para crear, actualizar y eliminar equilibradores de carga de proveedores de nube.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -531,7 +531,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="instalación-kubectl"&gt;Instalación Kubectl&lt;/h2&gt;
-&lt;p&gt;Para poder trabajar con nuestro cluter &lt;strong&gt;RPI&lt;/strong&gt; de &lt;a href="https://k3s.io/"&gt;K3s&lt;/a&gt;, podemos trabajar desde el &lt;strong&gt;Server Node&lt;/strong&gt; o instalar &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; en nuestra computadora personal, para este caso instalaremos el paquete para una distribución &lt;a href="https://www.gnu.org/home.es.html"&gt;GNU/Linux&lt;/a&gt;, &lt;a href="https://debian.org"&gt;Debian Buster 10&lt;/a&gt; agregando el repositorio de la siguiente forma:&lt;/p&gt;
+&lt;p&gt;Para poder trabajar con nuestro cluster &lt;strong&gt;RPI&lt;/strong&gt; de &lt;a href="https://k3s.io/"&gt;K3s&lt;/a&gt;, podemos trabajar desde el &lt;strong&gt;Server Node&lt;/strong&gt; o instalar &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; en nuestra computadora personal, para este caso instalaremos el paquete para una distribución &lt;a href="https://www.gnu.org/home.es.html"&gt;GNU/Linux&lt;/a&gt;, &lt;a href="https://debian.org"&gt;Debian Buster 10&lt;/a&gt; agregando el repositorio de la siguiente forma:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Actualizar e instalar los paquetes necesarios&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt-get update
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -540,7 +540,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Agregar el repositorio oficial&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/kubernetes.list
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Actualizar nuevamente e instalamos el paquete&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt install update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt update
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt install -y kubectl
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configuración-de-kubectl-con-el-cluster-k3s"&gt;Configuración de Kubectl con el Cluster K3s&lt;/h2&gt;
 &lt;p&gt;Para trabajar desde nuestra computadora personal, tenemos que crear un archivo de configuración dentro de la carpeta &lt;strong&gt;.kube&lt;/strong&gt; el archivo de configuración debe tener el nombre &lt;strong&gt;config&lt;/strong&gt;, la carpeta y el archivo deben ser creados con los permisos adecuados:&lt;/p&gt;
@@ -599,11 +599,11 @@
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://etcd.io/"&gt;&lt;strong&gt;etcd&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/"&gt;&lt;strong&gt;Cluster Admin Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access/"&gt;&lt;strong&gt;Cluster Accesss&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access/"&gt;&lt;strong&gt;Cluster Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Apuntes - Parte 1</title><link>https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/</guid><description>
 &lt;p&gt;Experimentando con &lt;a href="https://docs.docker.com/engine/swarm/"&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt; me puse a la tarea de armar algo con los &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, luego de estar googleando y charlando con &lt;a href="https://twitter.com/donkeysharp"&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, me recomendó usar &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; que es una distribución de &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; con backend de almacenamiento ligero basado en &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; compatible con arquitectura &lt;a href="https://en.wikipedia.org/wiki/ARM_architecture"&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;Revisamos la documentación oficial de &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; y pude armar mi laboratorio, el tipo de ejercicio que se desarrollara sera un &lt;strong&gt;Server node&lt;/strong&gt; y cuatro &lt;strong&gt;Worker nodes&lt;/strong&gt; con la base de datos &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Revisamos la documentación oficial de &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; y pude armar mi laboratorio, el tipo de ejercicio que se desarrollará sera un &lt;strong&gt;Server node&lt;/strong&gt; y cuatro &lt;strong&gt;Worker nodes&lt;/strong&gt; con la base de datos &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="arquitectura"&gt;Arquitectura&lt;/h2&gt;
 &lt;p&gt;Existen dos tipos de nodos:&lt;/p&gt;
 &lt;ol&gt;
@@ -679,7 +679,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Control daemon:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl status k3s
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl stop k3s
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="articles-k3s"&gt;Articles K3s&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="artículos-k3s"&gt;Artículos K3s&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/"&gt;&lt;strong&gt;K3s - Parte 1&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;K3s - Parte 2&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

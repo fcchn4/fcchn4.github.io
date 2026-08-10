@@ -2,7 +2,7 @@
 &lt;p&gt;Una de las primeras ideas para tener un sitio web o blog es utilizar algún &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; como &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; o el buen &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, todos estos desarrollados con &lt;a href="https://www.php.net"&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; y requieren de una base de datos para funcionar, un servidor o hosting.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Una de las soluciones que existen para evitar comprar un hosting o servidor, es generar sitios estáticos con alguna herramienta como &lt;a href="https://jekyllrb.com/"&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/a&gt; o mi preferido &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, estos combinados con &lt;a href="https://about.gitlab.com/stages-devops-lifecycle/pages/"&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt; o &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Ya hicimos un post para crear un blog con &lt;a href="https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, en esta oportunidad haremos un pequeño demo para utilizar &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, utilizando el dominio por defecto como &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; y luego personalizaremos el dominio a uno propio.&lt;/p&gt;
+&lt;p&gt;Ya hicimos un post para crear un blog con &lt;a href="https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, en esta oportunidad haremos un pequeño demo para utilizar &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, utilizando el dominio por defecto como &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; y luego personalizaremos el dominio a uno propio.&lt;/p&gt;
 &lt;h2 id="paso-1-iniciamos-el-proyecto-hugo-en-local"&gt;Paso 1: Iniciamos el proyecto Hugo en local&lt;/h2&gt;
 &lt;p&gt;Luego de instalar &lt;a href="https://github.com/gohugoio/hugo/releases"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, podemos utilizar el comando &lt;strong&gt;hugo&lt;/strong&gt; desde una terminal para inicializar el proyecto.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ hugo new site usuario.gitlab.io --force
@@ -53,20 +53,20 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;-- only:
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;-- - master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="--repositorio-gitlab"&gt;- Repositorio Gitlab&lt;/h3&gt;
-&lt;p&gt;Para crear el repositorio debemos hacerlo con el nombre &lt;strong&gt;usuario.gitlab.io&lt;/strong&gt; donde ¨usuario¨ es el nombre de usuario de &lt;strong&gt;Gitlab&lt;/strong&gt;, tambien se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio &lt;strong&gt;grupo.gitlab.io&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Luego de crear el repositorio agreamos el código, luego de agregar el URL al proyecto:&lt;/p&gt;
+&lt;p&gt;Para crear el repositorio debemos hacerlo con el nombre &lt;strong&gt;usuario.gitlab.io&lt;/strong&gt; donde ¨usuario¨ es el nombre de usuario de &lt;strong&gt;Gitlab&lt;/strong&gt;, también se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio &lt;strong&gt;grupo.gitlab.io&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Luego de crear el repositorio agregamos el código, luego de agregar el URL al proyecto:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ git add .
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ git commit -m &amp;#39;Hugo gitlab page&amp;#39;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ git push origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="--verificamos-el-despliegue-en-el-repositorio"&gt;- Verificamos el despliegue en el repositorio&lt;/h3&gt;
-&lt;p&gt;Si todo salió bien deberiamos tener una salida similar a la imagen, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Si todo salió bien deberíamos tener una salida similar a la imagen, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Luego podemos verificar con la URL: &lt;strong&gt;&lt;a href="http://usuario.gitlab.io"&gt;http://usuario.gitlab.io&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="paso-2-gitlab-dominio-personalizado"&gt;Paso 2: Gitlab Dominio personalizado&lt;/h2&gt;
 &lt;p&gt;Con lo realizado anteriormente y si no existió algún problema podemos personalizar el dominio a uno que elijamos nosotros, para el ejemplo utilizaremos el dominio &lt;strong&gt;dominio.com&lt;/strong&gt; y &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id="--creando-dominios"&gt;- Creando Dominios&lt;/h3&gt;
-&lt;p&gt;En &lt;strong&gt;Gitlab&lt;/strong&gt; podemos ingresar al espacio &lt;strong&gt;Repositorio -&amp;gt; Settings -&amp;gt; Papes&lt;/strong&gt; y agregar el dominio y subdominio elegidos:&lt;/p&gt;
+&lt;p&gt;En &lt;strong&gt;Gitlab&lt;/strong&gt; podemos ingresar al espacio &lt;strong&gt;Repositorio -&amp;gt; Settings -&amp;gt; Pages&lt;/strong&gt; y agregar el dominio y subdominio elegidos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Para dominio.com&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;

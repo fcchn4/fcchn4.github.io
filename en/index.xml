@@ -13,7 +13,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ fuser -n tcp &lt;span class="m"&gt;7070&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# We look for the process name based on the ID&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ ps aux &lt;span class="p"&gt;|&lt;/span&gt; grep ID_PROCESS
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="identificar-detalle-de-hardware"&gt;Identificar Detalle de Hardware&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="identify-hardware-details"&gt;Identify Hardware Details&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;$ inxi -Fxz
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Common: lsblk, lsusb, lsscsi, lspci, lscpu&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;$ hwinfo --short
@@ -125,7 +125,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;TiMidity_Config&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; /etc/timidity.cfg
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;Theme&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; transparent-background
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;XTermTheme&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; transparent-background
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Privilegios&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Permissions&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;$ chmod &lt;span class="m"&gt;644&lt;/span&gt; config
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="create-file-with-cat"&gt;Create file with CAT&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ cat &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; shell.sh
@@ -142,7 +142,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Second option&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl disable cloud-init.service
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl stop cloud-init.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://manpages.ubuntu.com/manpages/jammy/man1/gsettings.1.html"&gt;&lt;strong&gt;Gsettings&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding"&gt;&lt;strong&gt;SSH&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -411,7 +411,7 @@
 &lt;p&gt;&lt;strong&gt;Calico&lt;/strong&gt;: It is an open source network and network security solution for containers, virtual machines, and native host-based workloads. Calico supports several data planes, including: a pure Linux eBPF data plane, a standard Linux network data plane, and a Windows HNS data plane. Calico provides a complete network stack, but can also be used in conjunction with cloud provider CNIs to provide network policy enforcement.&lt;/p&gt;
 &lt;h2 id="kubernetes-services"&gt;Kubernetes Services&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Cluester IP&lt;/strong&gt;: Assign a Fixed IP within a cluster, it works with a small Load Balancer.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cluster IP&lt;/strong&gt;: Assign a Fixed IP within a cluster, it works with a small Load Balancer.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Node Port&lt;/strong&gt;: Similar to the previous one, but at the port level, it creates a port on each node that receives all the traffic and directs it to the desired service.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Load Balancer&lt;/strong&gt;: Create a Load Balancer in a cloud provider and redirect the Pods traffic.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Ingress&lt;/strong&gt;: It exposes HTTP and HTTPS routes from outside the cluster to services within the cluster, the routing of the traffic is controlled by rules defined in the Ingress resource.&lt;/li&gt;
@@ -508,14 +508,14 @@
 &lt;li&gt;&lt;a href="https://helm.sh/"&gt;&lt;strong&gt;Helm&lt;/strong&gt;&lt;/a&gt;: Functions like a packaging manager for Kubernetes, Helm is the best way to find, share, and use software built for Kubernetes.&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://supervisord.org/"&gt;&lt;strong&gt;Supervisord&lt;/strong&gt;&lt;/a&gt;: It is a client/server system that allows its users to monitor and control a series of processes in operating systems similar to UNIX (It is not recommended to run two processes per container, but if necessary we can use this tool).&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="artículos-k3s"&gt;Artículos K3s&lt;/h2&gt;
+&lt;h2 id="articles-k3s"&gt;Articles K3s&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/"&gt;&lt;strong&gt;K3s - Part 1&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;K3s - Part 2&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/"&gt;&lt;strong&gt;K3s - Part 3&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/"&gt;&lt;strong&gt;K3s - Part 4&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
+&lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/quick-start/"&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"&gt;&lt;strong&gt;Kube Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -524,7 +524,7 @@
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https:kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 3</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</link><pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</guid><description>
-&lt;p&gt;In &lt;a href="https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Parte 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
+&lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Parte 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Now we will execute basic tasks in our small cluster, but before we continue describing more details of &lt;strong&gt;Kubernetes&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="kubernetes-objects"&gt;Kubernetes objects&lt;/h2&gt;
@@ -672,7 +672,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl get svc
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Service detail&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl describe svc kubernetes
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="artículos-k3s"&gt;Artículos K3s&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="articles-k3s"&gt;Articles K3s&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/"&gt;&lt;strong&gt;K3s - Part 1&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;K3s - Part 2&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -681,10 +681,10 @@
 &lt;/ol&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/quick-start/"&gt;&lt;strong&gt;Inicio Rápido&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/quick-start/"&gt;&lt;strong&gt;Quick Start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"&gt;&lt;strong&gt;Kube Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/"&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kubernetes.io/es/docs/concepts/"&gt;&lt;strong&gt;Conceptos Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes.io/es/docs/concepts/"&gt;&lt;strong&gt;Kubernetes Concepts&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 2</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</link><pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</guid><description>
 &lt;p&gt;We continue with the tests in our small cluster with &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; built on the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my laboratory, for the tests we use the official &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; documentation and also the official &lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; documentation.&lt;/p&gt;
@@ -749,7 +749,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Add the official repository&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;$ &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/kubernetes.list
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Update again and install the package&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt install update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt update
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt install -y kubectl
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="kubectl-configuration-with-cluster-k3s"&gt;Kubectl Configuration with Cluster K3s&lt;/h2&gt;
 &lt;p&gt;To work from our personal computer, we have to create a configuration file inside the &lt;strong&gt;.kube&lt;/strong&gt; folder, the configuration file must have the name &lt;strong&gt;config&lt;/strong&gt;, the folder and the file must be created with the appropriate permissions :&lt;/p&gt;
@@ -799,7 +799,7 @@
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/"&gt;&lt;strong&gt;K3s - Part 3&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/"&gt;&lt;strong&gt;K3s - Part 4&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
+&lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/quick-start/"&gt;&lt;strong&gt;Quick start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"&gt;&lt;strong&gt;Kube Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -808,7 +808,7 @@
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://etcd.io/"&gt;&lt;strong&gt;etcd&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/"&gt;&lt;strong&gt;Cluster Admin Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access/"&gt;&lt;strong&gt;Cluster Accesss&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access/"&gt;&lt;strong&gt;Cluster Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 1</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</guid><description>
 &lt;p&gt;Experimenting with &lt;a href="https://docs.docker.com/engine/swarm/"&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt;, I got to the task of building something with the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my lab, after googling a lot and chatting with my friend &lt;a href="https://twitter.com/donkeysharp"&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, he recommended using &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; which is a &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; distribution with backend &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; based lightweight storage system compatible with &lt;a href="https://en.wikipedia.org/wiki/ARM_architecture"&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt; architecture.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt=""&gt;&lt;/p&gt;
@@ -873,7 +873,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ curl -sfL https://get.k3s.io &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nv"&gt;K3S_URL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;https://myserver:6443 &lt;span class="nv"&gt;K3S_TOKEN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;mynodetoken sh -
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;K3S_URL&lt;/strong&gt;: - &lt;strong&gt;K3S_URL&lt;/strong&gt;: This is the IP address or domain of the &lt;strong&gt;K3s&lt;/strong&gt; server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;K3S_URL&lt;/strong&gt;: This is the IP address or domain of the &lt;strong&gt;K3s&lt;/strong&gt; server.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;K3S_TOKEN&lt;/strong&gt;: It is a token that is stored in the &lt;strong&gt;K3s&lt;/strong&gt; server, &lt;strong&gt;/var/lib/rancher/k3s/server/node-token&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;The hostname of the new nodes must be different.&lt;/li&gt;
 &lt;/ul&gt;
@@ -886,7 +886,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Daemon control:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl status k3s
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl stop k3s
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="artículos-k3s"&gt;Artículos K3s&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="articles-k3s"&gt;Articles K3s&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/"&gt;&lt;strong&gt;K3s - Part 1&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;K3s - Part 2&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1646,7 +1646,7 @@
 &lt;ol&gt;
 &lt;li&gt;Introduction to AWS Security Resources.&lt;/li&gt;
 &lt;li&gt;The Shared Responsibility Model.&lt;/li&gt;
-&lt;li&gt;Indentity and Access Management - IAM.&lt;/li&gt;
+&lt;li&gt;Identity and Access Management - IAM.&lt;/li&gt;
 &lt;li&gt;Amazon Inspector.&lt;/li&gt;
 &lt;li&gt;AWS Shield.&lt;/li&gt;
 &lt;li&gt;AWS Security Compliance.&lt;/li&gt;
@@ -1655,7 +1655,7 @@
 &lt;ol&gt;
 &lt;li&gt;Fundamental Aspects of Prices.&lt;/li&gt;
 &lt;li&gt;Information about prices.&lt;/li&gt;
-&lt;li&gt;AWS Thusted Advisor.&lt;/li&gt;
+&lt;li&gt;AWS Trusted Advisor.&lt;/li&gt;
 &lt;li&gt;AWS Support plans.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href="https://github.com/fcchn4/aws-practitioner"&gt;&lt;strong&gt;Spanish content repository&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1673,7 +1673,7 @@
 &lt;p&gt;One of the first ideas to have a website or blog is to use a &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; like &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; or the good &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, all of these developed with &lt;a href="https://www.php.net"&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; and require a database to function, a server or hosting.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;One of the solutions that exist to avoid buying a hosting or server is to generate static sites with a tool like &lt;a href="https://jekyllrb.com/"&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/a&gt; or my favorite &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, these combined with &lt;a href="https://about.gitlab.com/stages-devops-lifecycle/pages/"&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt; or &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;We already made a post to create a blog with &lt;a href="https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, this time we will make a small demo to use &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, using the default domain as &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; and then we will customize the domain to our own.&lt;/p&gt;
+&lt;p&gt;We already made a post to create a blog with &lt;a href="https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, this time we will make a small demo to use &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, using the default domain as &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; and then we will customize the domain to our own.&lt;/p&gt;
 &lt;h2 id="step-1-we-started-the-hugo-project-locally"&gt;Step 1: We started the Hugo Project Locally&lt;/h2&gt;
 &lt;p&gt;After installing &lt;a href="https://github.com/gohugoio/hugo/releases"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, we can use the &lt;strong&gt;hugo&lt;/strong&gt; command from a terminal to initialize the project.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ hugo new site usuario.gitlab.io --force
@@ -1737,7 +1737,7 @@
 &lt;h2 id="step-2-gitlab-custom-domain"&gt;Step 2: Gitlab Custom Domain&lt;/h2&gt;
 &lt;p&gt;With what has been done previously and if there was no problem we can customize the domain to one of our own choosing, for the example we will use the domain &lt;strong&gt;domain.com&lt;/strong&gt; and &lt;strong&gt;&lt;a href="https://www.domain.com"&gt;www.domain.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;h3 id="--creating-domains"&gt;- Creating Domains&lt;/h3&gt;
-&lt;p&gt;In &lt;strong&gt;Gitlab&lt;/strong&gt; we can enter the &lt;strong&gt;Repository -&amp;gt; Settings -&amp;gt; Papes&lt;/strong&gt; space and add the chosen domain and subdomain:&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;Gitlab&lt;/strong&gt; we can enter the &lt;strong&gt;Repository -&amp;gt; Settings -&amp;gt; Pages&lt;/strong&gt; space and add the chosen domain and subdomain:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;For dominio.com&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1827,10 +1827,10 @@
 &lt;li&gt;&lt;a href="https://nodejs.org/en/docs/guides/"&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nodejs.org/api/errors.html"&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Notes Fedora 32</title><link>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</link><pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</guid><description>
-&lt;p&gt;When after update my Operating System &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After updating my Operating System &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="prompt-terminal"&gt;Prompt Terminal&lt;/h2&gt;
-&lt;p&gt;Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective is not use &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, which is a set of scripts to customize the prompt where you can choose between various stiles options.&lt;/p&gt;
+&lt;p&gt;Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective was not to use &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, which is a set of scripts to customize the prompt where you can choose between various styles options.&lt;/p&gt;
 &lt;p&gt;Searching, I found &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt;, which is a script that allows you to obtain information about a git repository, it shows you the branch you are currently in, or if there is any change in said repository, I already had a problem solved and I only have to color the prompt get the time and the current directory path, I add these changes to my configuration file &lt;strong&gt;~/.bashrc&lt;/strong&gt;, and it looks like this:&lt;/p&gt;
 &lt;p&gt;When you have the git package installed, then you have the script in the operating system, if you don't have git installed then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;# Install Git
@@ -1888,7 +1888,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-config.php
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;DB_COLLATE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;.....&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Solución al problema */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Solution to the problem */&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;WP_HOME&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://www.dominio.com&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;WP_SITEURL&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;https://www.dominio.com&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;
@@ -1899,13 +1899,13 @@
 &lt;p&gt;As is normal, &lt;strong&gt;hosting&lt;/strong&gt; providers provide an FTP service to upload files, the update method was also done via FTP, the new servers did not have an FTP service, the first solution that was wanted was using SSH ( with public and private keys), but in the end it was decided to carry out the updates directly from &lt;strong&gt;Wordpress&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-config.php
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;....&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Actualizaciones directas */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Direct updates */&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;‘FS_METHOD’&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;’direct’&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="hide-sensitive-wordpress-information"&gt;Hide Sensitive Wordpress Information&lt;/h2&gt;
 &lt;p&gt;Another detail that existed was that sensitive CMS information was shown, such as the version used and the &lt;strong&gt;readme.html&lt;/strong&gt; file, for these cases two files &lt;strong&gt;functions.php&lt;/strong&gt; and &lt;strong&gt;.htaccess&lt;/strong&gt; (or, failing that, the web server configuration file).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-content/themes/nombre_tema/functions.php
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;....&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Ocultar version */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Hide version */&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;remove_action&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;wp_head&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wp_generator&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;add_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;the_generator&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__return_false&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The configuration can be done in &lt;strong&gt;.htaccess&lt;/strong&gt; as in the web server configuration file.&lt;/p&gt;

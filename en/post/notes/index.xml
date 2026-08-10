@@ -13,7 +13,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ fuser -n tcp &lt;span class="m"&gt;7070&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# We look for the process name based on the ID&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ ps aux &lt;span class="p"&gt;|&lt;/span&gt; grep ID_PROCESS
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="identificar-detalle-de-hardware"&gt;Identificar Detalle de Hardware&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="identify-hardware-details"&gt;Identify Hardware Details&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;$ inxi -Fxz
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Common: lsblk, lsusb, lsscsi, lspci, lscpu&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;$ hwinfo --short
@@ -125,7 +125,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;TiMidity_Config&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; /etc/timidity.cfg
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;Theme&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; transparent-background
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;XTermTheme&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; transparent-background
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Privilegios&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Permissions&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;$ chmod &lt;span class="m"&gt;644&lt;/span&gt; config
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="create-file-with-cat"&gt;Create file with CAT&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ cat &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF &amp;gt;&amp;gt; shell.sh
@@ -142,7 +142,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Second option&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl disable cloud-init.service
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;$ sudo systemctl stop cloud-init.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://manpages.ubuntu.com/manpages/jammy/man1/gsettings.1.html"&gt;&lt;strong&gt;Gsettings&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding"&gt;&lt;strong&gt;SSH&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -917,7 +917,7 @@
 &lt;ol&gt;
 &lt;li&gt;Introduction to AWS Security Resources.&lt;/li&gt;
 &lt;li&gt;The Shared Responsibility Model.&lt;/li&gt;
-&lt;li&gt;Indentity and Access Management - IAM.&lt;/li&gt;
+&lt;li&gt;Identity and Access Management - IAM.&lt;/li&gt;
 &lt;li&gt;Amazon Inspector.&lt;/li&gt;
 &lt;li&gt;AWS Shield.&lt;/li&gt;
 &lt;li&gt;AWS Security Compliance.&lt;/li&gt;
@@ -926,7 +926,7 @@
 &lt;ol&gt;
 &lt;li&gt;Fundamental Aspects of Prices.&lt;/li&gt;
 &lt;li&gt;Information about prices.&lt;/li&gt;
-&lt;li&gt;AWS Thusted Advisor.&lt;/li&gt;
+&lt;li&gt;AWS Trusted Advisor.&lt;/li&gt;
 &lt;li&gt;AWS Support plans.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href="https://github.com/fcchn4/aws-practitioner"&gt;&lt;strong&gt;Spanish content repository&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
@@ -967,10 +967,10 @@
 &lt;li&gt;&lt;a href="https://nodejs.org/en/docs/guides/"&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nodejs.org/api/errors.html"&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Notes Fedora 32</title><link>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</link><pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</guid><description>
-&lt;p&gt;When after update my Operating System &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After updating my Operating System &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="prompt-terminal"&gt;Prompt Terminal&lt;/h2&gt;
-&lt;p&gt;Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective is not use &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, which is a set of scripts to customize the prompt where you can choose between various stiles options.&lt;/p&gt;
+&lt;p&gt;Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective was not to use &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, which is a set of scripts to customize the prompt where you can choose between various styles options.&lt;/p&gt;
 &lt;p&gt;Searching, I found &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt;, which is a script that allows you to obtain information about a git repository, it shows you the branch you are currently in, or if there is any change in said repository, I already had a problem solved and I only have to color the prompt get the time and the current directory path, I add these changes to my configuration file &lt;strong&gt;~/.bashrc&lt;/strong&gt;, and it looks like this:&lt;/p&gt;
 &lt;p&gt;When you have the git package installed, then you have the script in the operating system, if you don't have git installed then:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;# Install Git

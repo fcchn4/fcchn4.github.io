@@ -20,7 +20,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Actualizaciones directas */&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;‘FS_METHOD’&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;’direct’&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="ocultar-información-sensible--de-wordpress"&gt;Ocultar Información Sensible de Wordpress&lt;/h2&gt;
-&lt;p&gt;Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utliza y el archivo &lt;strong&gt;readme.html&lt;/strong&gt;, para estos casos se tuvo que modificar dos archivos &lt;strong&gt;functions.php&lt;/strong&gt; y &lt;strong&gt;.htaccess (o en su defecto el archivo de configuración del servidor web)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utiliza y el archivo &lt;strong&gt;readme.html&lt;/strong&gt;, para estos casos se tuvo que modificar dos archivos &lt;strong&gt;functions.php&lt;/strong&gt; y &lt;strong&gt;.htaccess (o en su defecto el archivo de configuración del servidor web)&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-content/themes/nombre_tema/functions.php
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;....&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Ocultar version */&lt;/span&gt;
@@ -48,7 +48,7 @@
 &lt;p&gt;&lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; es un &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;CMS&lt;/a&gt; francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Existen diferentes métodos de instalación en el &lt;a href="https://www.spip.net/es_download"&gt;sitio oficial&lt;/a&gt;, se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la &lt;strong&gt;Instalación Automática&lt;/strong&gt; que consiste en descargar el archivo &lt;strong&gt;spip_loader.php&lt;/strong&gt; y ejecutarlo desde un navegador web.&lt;/p&gt;
-&lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola linea de comando.&lt;/p&gt;
+&lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.&lt;/p&gt;
 &lt;h2 id="descarga-spip"&gt;Descarga SPIP&lt;/h2&gt;
 &lt;p&gt;Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la maquina local o con algun proveedor de su preferencia.&lt;/p&gt;
 &lt;p&gt;Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama &lt;a href="https://www.spip.net/es_download"&gt;&lt;strong&gt;spip-3.2&lt;/strong&gt;&lt;/a&gt; ejecutando:&lt;/p&gt;
@@ -75,7 +75,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La estructura de directorios debería quedar de la siguiente forma:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="instalación-spip"&gt;Instalación SPIP&lt;/h2&gt;
-&lt;p&gt;Con todos los preparativos listos podemos inicar la instalación de &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Con todos los preparativos listos podemos iniciar la instalación de &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para iniciar la instalación de &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; abrimos el navegador web de nuestra preferencia y dependiendo al caso ingresamos a la URL:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;http://localhost/ecrire&lt;/li&gt;
@@ -99,7 +99,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rapida.&lt;/p&gt;
+&lt;p&gt;Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rápida.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png" alt=""&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -128,7 +128,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="6"&gt;
-&lt;li&gt;Si todo salio bien deberiamos poder ingresar al espacio de Administración &lt;strong&gt;espacio privado&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Si todo salió bien deberíamos poder ingresar al espacio de Administración &lt;strong&gt;espacio privado&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

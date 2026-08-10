@@ -664,11 +664,11 @@
 &lt;td style="text-align: left"&gt;ctrl + b + o&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Cerra panel actual&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Cerrar panel actual&lt;/td&gt;
 &lt;td style="text-align: left"&gt;ctrl + b + x&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Cerra la ventana actual&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Cerrar la ventana actual&lt;/td&gt;
 &lt;td style="text-align: left"&gt;ctrl + b + &amp;amp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -676,7 +676,7 @@
 &lt;td style="text-align: left"&gt;ctrl + b + space&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Cerra panel actual&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Cerrar panel actual&lt;/td&gt;
 &lt;td style="text-align: left"&gt;ctrl + b + x&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -716,35 +716,35 @@
 &lt;td style="text-align: left"&gt;:setw synchronize-panes off&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia arriba&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia arriba&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -U&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia abajo&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia abajo&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -D&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia la izquierda&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia la izquierda&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -L&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia la derecha&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia la derecha&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -R&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia arriba&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia arriba&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -U 10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia abajo&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia abajo&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -D 10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia la izquierda&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia la izquierda&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -L 10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align: left"&gt;Redimencionar panel hacia la derecha&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Redimensionar panel hacia la derecha&lt;/td&gt;
 &lt;td style="text-align: left"&gt;:resize-pane -R 10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -753,7 +753,7 @@
 &lt;p&gt;A menudo es necesario trabajar en la misma terminal con diferentes usuarios conectados al mismo servidor, &lt;strong&gt;tmux&lt;/strong&gt; permite compartir terminal con multiples usuarios, solo a que cumplir algunos requisitos:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;La terminal a compartir debe ser de un usuario en específico.&lt;/li&gt;
-&lt;li&gt;Un usuario debe crear una nueva sesión &lt;strong&gt;tmux&lt;/strong&gt; con un numbre.&lt;/li&gt;
+&lt;li&gt;Un usuario debe crear una nueva sesión &lt;strong&gt;tmux&lt;/strong&gt; con un nombre.&lt;/li&gt;
 &lt;li&gt;El usuario debe compartir el nombre de la nueva sesión.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Primer paso, crear un nueva sesión &lt;strong&gt;tmux&lt;/strong&gt;.&lt;/p&gt;
@@ -773,9 +773,9 @@
 &lt;li&gt;&lt;a href="https://github.com/tmux/tmux/wiki"&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/tmux/tmux"&gt;&lt;strong&gt;Tmux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Ruta de Aprendizaje</title><link>https://blog.fcch.xyz/post/notes/learning-path/</link><pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/learning-path/</guid><description>
-&lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificarme &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificación &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;En mi busqueda de infromación encontre esta descripción del camino completo hacia una certificación &lt;strong&gt;Profecional&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;En mi busqueda de información encontre esta descripción del camino completo hacia una certificación &lt;strong&gt;Profesional&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="aws-certified-cloud-practitioner-clf-c01"&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
 &lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;
@@ -927,7 +927,7 @@
 &lt;ol&gt;
 &lt;li&gt;Aspectos Fundamentales de los Precios.&lt;/li&gt;
 &lt;li&gt;Información sobre los precios.&lt;/li&gt;
-&lt;li&gt;AWS Thusted Advisor.&lt;/li&gt;
+&lt;li&gt;AWS Trusted Advisor.&lt;/li&gt;
 &lt;li&gt;Planes de AWS Support.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href="https://github.com/fcchn4/aws-practitioner"&gt;&lt;strong&gt;Repositorio de Contenido&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
@@ -948,7 +948,7 @@
 &lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
 &lt;p&gt;Buscando me encontré con &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedo de esta forma:&lt;/p&gt;
 &lt;p&gt;Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;# Instalción Git
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;# Instalación Git
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo dnf install git
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;# Script /usr/share/git-core/contrib/completion/git-prompt.sh
