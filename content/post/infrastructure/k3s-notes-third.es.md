@@ -152,9 +152,9 @@ Si se necesita ver los detalles de un **pod**:
 $ kubectl describe pod fcch-nginx
 ```
 
-**3.** En este ejemplo utilizaremos volumenes, el tipo será **StatefulSet** y utlizaremos **replicas**.
+**3.** En este ejemplo se utilizará volúmenes, el tipo será **StatefulSet** y utilizamos **replicas**.
 
-Un detalle antes de continuar, **PVC**: Persistent Volume Clain.
+Un detalle antes de continuar, **PVC**: Persistent Volume Claim.
 
 ```yaml
 apiVersion: apps/v1

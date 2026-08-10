@@ -23,7 +23,7 @@ Una de las primeras ideas para tener un sitio web o blog es utilizar algún [**C
 
 Una de las soluciones que existen para evitar comprar un hosting o servidor, es generar sitios estáticos con alguna herramienta como [**Jekyll**](https://jekyllrb.com/) o mi preferido [**Hugo Framework**](https://gohugo.io/), estos combinados con [**Gitlab Pages**](https://about.gitlab.com/stages-devops-lifecycle/pages/) o [**Github Pages**](https://pages.github.com/).
 
-Ya hicimos un post para crear un blog con [**Hugo Framework + Github Pages**](https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/), en esta oportunidad haremos un pequeño demo para utilizar **Hugo Framework + Gitlab Pages**, utilizando el dominio por defecto como **USUARIO.gitlab.io** y luego personalizaremos el dominio a uno propio.
+Ya hicimos un post para crear un blog con [**Hugo Framework + Github Pages**](https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/), en esta oportunidad haremos un pequeño demo para utilizar **Hugo Framework + Gitlab Pages**, utilizando el dominio por defecto como **USUARIO.gitlab.io** y luego personalizaremos el dominio a uno propio.
 
 ## Paso 1: Iniciamos el proyecto Hugo en local
 
@@ -96,9 +96,9 @@ $ vim .gitlab-ci.yml
 
 ### - Repositorio Gitlab
 
-Para crear el repositorio debemos hacerlo con el nombre **usuario.gitlab.io** donde ¨usuario¨ es el nombre de usuario de **Gitlab**, tambien se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio **grupo.gitlab.io**.
+Para crear el repositorio debemos hacerlo con el nombre **usuario.gitlab.io** donde ¨usuario¨ es el nombre de usuario de **Gitlab**, también se puede crear un grupo y utilizar el nombre del grupo para el nombre de repositorio **grupo.gitlab.io**.
 
-Luego de crear el repositorio agreamos el código, luego de agregar el URL al proyecto:
+Luego de crear el repositorio agregamos el código, luego de agregar el URL al proyecto:
 
 ```cmd
 $ git remote add origin git@gitlab.com:usuario/usuario.gitlab.io.git
@@ -109,7 +109,7 @@ $ git push origin master
 
 ### - Verificamos el despliegue en el repositorio
 
-Si todo salió bien deberiamos tener una salida similar a la imagen, **Repositorio -> CI/CD -> Pipelines**.
+Si todo salió bien deberíamos tener una salida similar a la imagen, **Repositorio -> CI/CD -> Pipelines**.
 
 ![](/images/hugo-gitlab/gitlab-ci-deploy.png)
 
@@ -121,7 +121,7 @@ Con lo realizado anteriormente y si no existió algún problema podemos personal
 
 ### - Creando Dominios
 
-En **Gitlab** podemos ingresar al espacio **Repositorio -> Settings -> Papes** y agregar el dominio y subdominio elegidos:
+En **Gitlab** podemos ingresar al espacio **Repositorio -> Settings -> Pages** y agregar el dominio y subdominio elegidos:
 
 - **Para dominio.com**
 

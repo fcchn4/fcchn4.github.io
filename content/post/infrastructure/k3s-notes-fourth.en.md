@@ -34,7 +34,7 @@ In the context of Kubernetes, the CNI integrates seamlessly with the kubelet to 
 
 ## Kubernetes Services
 
-1. **Cluester IP**: Assign a Fixed IP within a cluster, it works with a small Load Balancer.
+1. **Cluster IP**: Assign a Fixed IP within a cluster, it works with a small Load Balancer.
 2. **Node Port**: Similar to the previous one, but at the port level, it creates a port on each node that receives all the traffic and directs it to the desired service.
 3. **Load Balancer**: Create a Load Balancer in a cloud provider and redirect the Pods traffic.
 4. **Ingress**: It exposes HTTP and HTTPS routes from outside the cluster to services within the cluster, the routing of the traffic is controlled by rules defined in the Ingress resource.
@@ -182,14 +182,14 @@ $ kubectl -n kubernetes-dashboard get svc
 4. [**Helm**](https://helm.sh/): Functions like a packaging manager for Kubernetes, Helm is the best way to find, share, and use software built for Kubernetes.
 5. [**Supervisord**](http://supervisord.org/): It is a client/server system that allows its users to monitor and control a series of processes in operating systems similar to UNIX (It is not recommended to run two processes per container, but if necessary we can use this tool).
 
-## Artículos K3s
+## Articles K3s
 
 1. [**K3s - Part 1**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/)
 2. [**K3s - Part 2**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/)
 3. [**K3s - Part 3**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/)
 4. [**K3s - Part 4**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/)
 
-## Referencias
+## References
 
 - [**Quick Start**](https://rancher.com/docs/k3s/latest/en/quick-start/)
 - [**Kube Dashboard**](https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/)

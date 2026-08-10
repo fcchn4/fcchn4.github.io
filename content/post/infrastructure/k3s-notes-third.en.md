@@ -16,7 +16,7 @@ series = ["Servers"]
 thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-3.png"
 +++
 
-In [**Parte 2**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/) of [**K3s**](https://k3s.io/), a description of various concepts that are handled in [**Kubernetes**](https://kubernetes.io/) was made, the [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) client was installed and connectivity tests to the [**Kubernetes**](https://kubernetes.io/) API were done.
+In [**Parte 2**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/) of [**K3s**](https://k3s.io/), a description of various concepts that are handled in [**Kubernetes**](https://kubernetes.io/) was made, the [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) client was installed and connectivity tests to the [**Kubernetes**](https://kubernetes.io/) API were done.
 
 <!--more-->
 
@@ -221,7 +221,7 @@ $ kubectl get svc
 $ kubectl describe svc kubernetes
 ```
 
-## Artículos K3s
+## Articles K3s
 
 1. [**K3s - Part 1**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/)
 2. [**K3s - Part 2**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/)
@@ -230,8 +230,8 @@ $ kubectl describe svc kubernetes
 
 ## References
 
-- [**Inicio Rápido**](https://rancher.com/docs/k3s/latest/en/quick-start/)
+- [**Quick Start**](https://rancher.com/docs/k3s/latest/en/quick-start/)
 - [**Kube Dashboard**](https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/)
 - [**Docs K3S**](https://rancher.com/docs/)
-- [**Conceptos Kubernetes**](https://kubernetes.io/es/docs/concepts/)
+- [**Kubernetes Concepts**](https://kubernetes.io/es/docs/concepts/)
 - [**Docs Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/)

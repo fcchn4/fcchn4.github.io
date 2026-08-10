@@ -1,6 +1,6 @@
 +++
 title = "Fcch Blog"
-description = "Fcch Blog, this is my personal space where tried to share everything I learn."
+description = "Fcch Blog, this is my personal space where I try to share everything I learn."
 date = "2020-01-07"
 aliases = ["about-me", "contact"]
 author = "Fcch"

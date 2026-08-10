@@ -14,11 +14,11 @@ series = ["Cloud"]
 thumbnail = "images/aws-learning-path/fcch-route.png"
 +++
 
-Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías **AWS**, esta guía tiene como objetivo obtener una certificarme **AWS** en base a las certificaciones disponibles, a corto plazo los objetivos principales son **Cloud Practitioner** y **Solutions Architect**: 
+Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías **AWS**, esta guía tiene como objetivo obtener una certificación **AWS** en base a las certificaciones disponibles, a corto plazo los objetivos principales son **Cloud Practitioner** y **Solutions Architect**: 
 
 ![](/images/aws-learning-path/fcch-route.png)
 
-En mi busqueda de infromación encontre esta descripción del camino completo hacia una certificación **Profecional**.
+En mi busqueda de información encontre esta descripción del camino completo hacia una certificación **Profesional**.
 
 ![](/images/aws-learning-path/aws-route-complete.png)
 
@@ -156,7 +156,7 @@ Contenido en español, conceptos de los servicios de AWS:
 
 1. Aspectos Fundamentales de los Precios.
 2. Información sobre los precios.
-3. AWS Thusted Advisor.
+3. AWS Trusted Advisor.
 4. Planes de AWS Support.
 
 [**Repositorio de Contenido**](https://github.com/fcchn4/aws-practitioner)

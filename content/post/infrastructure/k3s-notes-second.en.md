@@ -70,7 +70,7 @@ $ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://pa
 # Add the official repository
 $ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 # Update again and install the package
-$ sudo apt install update
+$ sudo apt update
 $ sudo apt install -y kubectl
 ```
 
@@ -143,7 +143,7 @@ $ kubectl get nodes
 3. [**K3s - Part 3**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/)
 4. [**K3s - Part 4**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/)
 
-## Referencias
+## References
 
 - [**Quick start**](https://rancher.com/docs/k3s/latest/en/quick-start/)
 - [**Kube Dashboard**](https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/)
@@ -152,4 +152,4 @@ $ kubectl get nodes
 - [**Docs Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 - [**etcd**](https://etcd.io/)
 - [**Cluster Admin Access**](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/)
-- [**Cluster Accesss**](https://rancher.com/docs/k3s/latest/en/cluster-access/)
+- [**Cluster Access**](https://rancher.com/docs/k3s/latest/en/cluster-access/)

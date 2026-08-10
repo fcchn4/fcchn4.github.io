@@ -40,7 +40,7 @@ $ fuser -n tcp 7070
 $ ps aux | grep ID_PROCESS
 ```
 
-## Identificar Detalle de Hardware
+## Identify Hardware Details
 
 ```bash
 $ inxi -Fxz
@@ -194,7 +194,7 @@ $ shred -u file.txt
 TiMidity_Config = /etc/timidity.cfg
 Theme = transparent-background 
 XTermTheme = transparent-background
-# Privilegios
+# Permissions
 $ chmod 644 config
 ```
 
@@ -221,7 +221,7 @@ $ sudo systemctl disable cloud-init.service
 $ sudo systemctl stop cloud-init.service
 ```
 
-## Referencias
+## References
 
 - [**Gsettings**](https://manpages.ubuntu.com/manpages/jammy/man1/gsettings.1.html)
 - [**SSH**](https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding)

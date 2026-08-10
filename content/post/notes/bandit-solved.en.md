@@ -2,7 +2,7 @@
 title = "Bandit Solved"
 author = "Fcch"
 date = "2021-07-07"
-description = "Bandit challenge solutionary of Over The Wire"
+description = "Bandit challenge solutions of Over The Wire"
 featured = false
 tags = [
     "bash"

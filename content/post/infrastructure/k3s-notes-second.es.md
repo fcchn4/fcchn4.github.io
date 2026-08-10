@@ -16,7 +16,7 @@ series = ["Servidores"]
 thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-2.png"
 +++
 
-Continuamos con las pruebas en nuestro pequeño cluster con [**K3s**](https://k3s.io/) armado en las [**Raspberry Pi (RPI v3, RPI v4)**](https://www.raspberrypi.org/) que tengo en mi laboratorio, para las pruebas utlizamos la documentación oficial de [**K3s - Rancher**](https://rancher.com/docs/k3s/latest/en/) y también la documentación oficial de [**Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/).
+Continuamos con las pruebas en nuestro pequeño cluster con [**K3s**](https://k3s.io/) armado en las [**Raspberry Pi (RPI v3, RPI v4)**](https://www.raspberrypi.org/) que tengo en mi laboratorio, para las pruebas utilizamos la documentación oficial de [**K3s - Rancher**](https://rancher.com/docs/k3s/latest/en/) y también la documentación oficial de [**Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/).
 
 <!--more-->
 
@@ -50,7 +50,7 @@ Podemos describir algunos componentes importantes:
 
     - *Controlador de nodo*: Para verificar el proveedor de la nube para determinar si un nodo se ha eliminado en la nube después de que deja de responder.
     - *Controlador de ruta*: Para configurar rutas en la infraestructura de nube subyacente.
-    - Controlador de servicio*: Para crear, actualizar y eliminar equilibradores de carga de proveedores de nube.
+    - *Controlador de servicio*: Para crear, actualizar y eliminar equilibradores de carga de proveedores de nube.
 
 6. **kubelet**: Un agente que se ejecuta en cada nodo del clúster, se asegura de que los contenedores se ejecuten en un Pod.
 7. **kube-proxy**: Es un proxy de red que se ejecuta en cada nodo de su clúster, implementando parte del concepto de servicio de Kubernetes.
@@ -59,7 +59,7 @@ Podemos describir algunos componentes importantes:
 
 ## Instalación Kubectl
 
-Para poder trabajar con nuestro cluter **RPI** de [K3s](https://k3s.io/), podemos trabajar desde el **Server Node** o instalar [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) en nuestra computadora personal, para este caso instalaremos el paquete para una distribución [GNU/Linux](https://www.gnu.org/home.es.html), [Debian Buster 10](https://debian.org) agregando el repositorio de la siguiente forma:
+Para poder trabajar con nuestro cluster **RPI** de [K3s](https://k3s.io/), podemos trabajar desde el **Server Node** o instalar [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) en nuestra computadora personal, para este caso instalaremos el paquete para una distribución [GNU/Linux](https://www.gnu.org/home.es.html), [Debian Buster 10](https://debian.org) agregando el repositorio de la siguiente forma:
 
 ```bash
 # Actualizar e instalar los paquetes necesarios
@@ -70,7 +70,7 @@ $ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://pa
 # Agregar el repositorio oficial
 $ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 # Actualizar nuevamente e instalamos el paquete
-$ sudo apt install update
+$ sudo apt update
 $ sudo apt install -y kubectl
 ```
 
@@ -152,4 +152,4 @@ $ kubectl get nodes
 - [**Docs Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
 - [**etcd**](https://etcd.io/)
 - [**Cluster Admin Access**](https://rancher.com/docs/rancher/v2.x/en/cluster-admin/cluster-access/kubectl/)
-- [**Cluster Accesss**](https://rancher.com/docs/k3s/latest/en/cluster-access/)
+- [**Cluster Access**](https://rancher.com/docs/k3s/latest/en/cluster-access/)

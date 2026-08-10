@@ -16,7 +16,7 @@ series = ["Servidores"]
 thumbnail = "images/vuejs-laravel-mix/vuejs-laravel-logo.png"
 +++
 
-En el trabajo nos toco desplegar un proyecto desarrollado con **[VueJS](https://vuejs.org)** y **[Laravel](https://laravel.com/)** en un servidor **[Ubuntu](https://ubuntu.com/)**, con **[Apache](https://ws.apache.org/)**, **[PHP](https://www.php.net/)**, **[MariaDB](https://mariadb.org/)**, donde todo estaba versionado en **[github](https://github.com/)**, no tenia ramas de desarrollo, ni tampoco repositorios fork. Desplegar el projecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.
+En el trabajo nos toco desplegar un proyecto desarrollado con **[VueJS](https://vuejs.org)** y **[Laravel](https://laravel.com/)** en un servidor **[Ubuntu](https://ubuntu.com/)**, con **[Apache](https://ws.apache.org/)**, **[PHP](https://www.php.net/)**, **[MariaDB](https://mariadb.org/)**, donde todo estaba versionado en **[github](https://github.com/)**, no tenia ramas de desarrollo, ni tampoco repositorios fork. Desplegar el proyecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.
 
 <!--more-->
 
@@ -54,7 +54,7 @@ $ sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key
 $ sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el,s390x] https://mirror1.cl.netactuate.com/mariadb/repo/10.6/ubuntu focal main'
 ```
 
-- Agreamos el repositorio PPA para PHP8:
+- Agregamos el repositorio PPA para PHP8:
 
 ```bash
 $ sudo add-apt-repository ppa:ondrej/php
@@ -162,7 +162,7 @@ $ php artisan install
 $ php artisan serve
 ```
 
-Para el desplieqgue en el servidor de producción la ejecución de los comandos anteriores ya no son necesarios.
+Para el despliegue en el servidor de producción la ejecución de los comandos anteriores ya no son necesarios.
 
 Inicialmente es necesario clonar el repositorio con un nombre similar al que figura en el archivo de configuración del VirtualHost.
 
@@ -170,7 +170,7 @@ Inicialmente es necesario clonar el repositorio con un nombre similar al que fig
 $ sudo -u www-data git clone git@github.com:username/vuejs-laravel.git /var/www/html/demo-web
 ```
 
-Antes de ejecutar los comandos necesarios, verificamos que los archivos **modules**, **vendor** y **.env** no esten versionados, y que el archivo **.gitignore** los tenga en su lista.
+Antes de ejecutar los comandos necesarios, verificamos que los archivos **modules**, **vendor** y **.env** no estén versionados, y que el archivo **.gitignore** los tenga en su lista.
 
 Para finalizar ejecutamos los siguientes comandos:
 

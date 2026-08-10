@@ -50,7 +50,7 @@ define(‘FS_METHOD’,’direct’);
 
 ## Ocultar Información Sensible  de Wordpress
 
-Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utliza y el archivo **readme.html**, para estos casos se tuvo que modificar dos archivos **functions.php** y **.htaccess (o en su defecto el archivo de configuración del servidor web)**.
+Otro de los detalles que existieron fue que se mostraba información sensible del CMS, como la versión que se utiliza y el archivo **readme.html**, para estos casos se tuvo que modificar dos archivos **functions.php** y **.htaccess (o en su defecto el archivo de configuración del servidor web)**.
 
 ```php
 # wp-content/themes/nombre_tema/functions.php

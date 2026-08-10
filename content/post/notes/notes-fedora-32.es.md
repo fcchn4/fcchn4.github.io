@@ -29,7 +29,7 @@ Buscando me encontré con [**__git_ps1**](https://fedoraproject.org/wiki/Git_qui
 Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces: 
 
 ```cmd
-# Instalción Git
+# Instalación Git
 $ sudo dnf install git
 
 # Script /usr/share/git-core/contrib/completion/git-prompt.sh  

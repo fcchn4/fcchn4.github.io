@@ -147,7 +147,7 @@ Content in Spanish, concepts of AWS services:
 
 1. Introduction to AWS Security Resources.
 2. The Shared Responsibility Model.
-3. Indentity and Access Management - IAM.
+3. Identity and Access Management - IAM.
 4. Amazon Inspector.
 5. AWS Shield.
 6. AWS Security Compliance.
@@ -156,7 +156,7 @@ Content in Spanish, concepts of AWS services:
 
 1. Fundamental Aspects of Prices.
 2. Information about prices.
-3. AWS Thusted Advisor.
+3. AWS Trusted Advisor.
 4. AWS Support plans.
 
 [**Spanish content repository**](https://github.com/fcchn4/aws-practitioner)

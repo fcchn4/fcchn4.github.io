@@ -101,13 +101,13 @@ $ doctl compute image list --public | grep -i 'debian'
 $ doctl compute size list
 ```
 
-- **Formtato a la Salida de DOCTL**
+- **Formato a la Salida de DOCTL**
 
 ```cmd 
 $ doctl compute droplet list --format "ID,Name,PublicIPv4"
 ```
 
-- **Crear un Drorplet con mas detalles**
+- **Crear un Droplet con mas detalles**
 
 ```cmd
 $ doctl compute droplet create --region <REGION_CODE> \

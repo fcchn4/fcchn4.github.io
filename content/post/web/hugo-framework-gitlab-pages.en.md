@@ -23,7 +23,7 @@ One of the first ideas to have a website or blog is to use a [**CMS**](https://e
 
 One of the solutions that exist to avoid buying a hosting or server is to generate static sites with a tool like [**Jekyll**](https://jekyllrb.com/) or my favorite [**Hugo Framework**](https://gohugo.io/), these combined with [**Gitlab Pages**](https://about.gitlab.com/stages-devops-lifecycle/pages/) or [**Github Pages**](https://pages.github.com/).
 
-We already made a post to create a blog with [**Hugo Framework + Github Pages**](https://blog.fcch.xyz/posts/2020/01/blog-con-hugo-framework-y-github-pages/), this time we will make a small demo to use **Hugo Framework + Gitlab Pages**, using the default domain as **USUARIO.gitlab.io** and then we will customize the domain to our own.
+We already made a post to create a blog with [**Hugo Framework + Github Pages**](https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/), this time we will make a small demo to use **Hugo Framework + Gitlab Pages**, using the default domain as **USUARIO.gitlab.io** and then we will customize the domain to our own.
 
 ## Step 1: We started the Hugo Project Locally
 
@@ -121,7 +121,7 @@ With what has been done previously and if there was no problem we can customize 
 
 ### - Creating Domains
 
-In **Gitlab** we can enter the **Repository -> Settings -> Papes** space and add the chosen domain and subdomain:
+In **Gitlab** we can enter the **Repository -> Settings -> Pages** space and add the chosen domain and subdomain:
 
 - **For dominio.com**
 

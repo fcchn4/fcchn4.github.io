@@ -28,7 +28,7 @@ Previously the websites were hosted by **hosting providers (web hosting)**, the 
 # wp-config.php
 define( 'DB_COLLATE', '' );
 .....
-/** Solución al problema */
+/** Solution to the problem */
 define('WP_HOME','https://www.dominio.com');
 define('WP_SITEURL','https://www.dominio.com');
 
@@ -44,7 +44,7 @@ As is normal, **hosting** providers provide an FTP service to upload files, the 
 ```php
 # wp-config.php
 ....
-/** Actualizaciones directas */
+/** Direct updates */
 define(‘FS_METHOD’,’direct’);
 ```
 
@@ -55,7 +55,7 @@ Another detail that existed was that sensitive CMS information was shown, such a
 ```php
 # wp-content/themes/nombre_tema/functions.php
 ....
-/** Ocultar version */
+/** Hide version */
 remove_action('wp_head', 'wp_generator');
 add_filter('the_generator', '__return_false');
 ```

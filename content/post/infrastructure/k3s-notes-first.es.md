@@ -22,7 +22,7 @@ Experimentando con [**Docker Swarm**](https://docs.docker.com/engine/swarm/) me 
 
 ![](/images/k3s-kubernetes/k3s-kubernetes-part-1.png)
 
-Revisamos la documentación oficial de [**K3s**](https://rancher.com/docs/k3s/latest/en/) y pude armar mi laboratorio, el tipo de ejercicio que se desarrollara sera un **Server node** y cuatro **Worker nodes** con la  base de datos [**sqlite3**](https://www.sqlite.org/index.html).
+Revisamos la documentación oficial de [**K3s**](https://rancher.com/docs/k3s/latest/en/) y pude armar mi laboratorio, el tipo de ejercicio que se desarrollará sera un **Server node** y cuatro **Worker nodes** con la  base de datos [**sqlite3**](https://www.sqlite.org/index.html).
 
 ## Arquitectura
 
@@ -126,7 +126,7 @@ $ sudo systemctl status k3s
 $ sudo systemctl stop k3s
 ```
 
-## Articles K3s
+## Artículos K3s
 
 1. [**K3s - Parte 1**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-first/)
 2. [**K3s - Parte 2**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/)

@@ -23,7 +23,7 @@ thumbnail = "images/spip-svn/logo-spip-400.png"
 
 Existen diferentes métodos de instalación en el [sitio oficial](https://www.spip.net/es_download), se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la **Instalación Automática** que consiste en descargar el archivo **spip_loader.php** y ejecutarlo desde un navegador web.
 
-El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de [SPIP](https://www.spip.net/) utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola linea de comando.
+El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de [SPIP](https://www.spip.net/) utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.
 
 ## Descarga SPIP
 
@@ -68,7 +68,7 @@ La estructura de directorios debería quedar de la siguiente forma:
 
 ## Instalación SPIP
 
-Con todos los preparativos listos podemos inicar la instalación de [**SPIP**](https://www.spip.net/).
+Con todos los preparativos listos podemos iniciar la instalación de [**SPIP**](https://www.spip.net/).
 
 Para iniciar la instalación de [**SPIP**](https://www.spip.net/) abrimos el navegador web de nuestra preferencia y dependiendo al caso ingresamos a la URL:
 
@@ -86,7 +86,7 @@ esto depende de la configuración del servidor web, si esta trabajando en local 
 
 ![](/images/spip-svn/spip-demo-02.png)
 
-Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rapida.
+Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rápida.
 
 ![](/images/spip-svn/spip-demo-03.png)
 
@@ -102,7 +102,7 @@ Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rapi
 
 ![](/images/spip-svn/spip-demo-06.png)
 
-- 6. Si todo salio bien deberiamos poder ingresar al espacio de Administración **espacio privado**.
+- 6. Si todo salió bien deberíamos poder ingresar al espacio de Administración **espacio privado**.
 
 ![](/images/spip-svn/spip-demo-07.png)
 

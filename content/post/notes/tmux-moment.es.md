@@ -34,10 +34,10 @@ Primero debemos ejecutar el comando **tmux**, dentro del mismo podemos realizar 
 | Cambiar a panel abajo          | ctrl + b + keys abajo     |
 | Ver numero de terminal         | ctrl + b + q              |
 | Saltar de un panel a otro      | ctrl + b + o              |
-| Cerra panel actual             | ctrl + b + x              |
-| Cerra la ventana actual        | ctrl + b + &              |
+| Cerrar panel actual            | ctrl + b + x              |
+| Cerrar la ventana actual       | ctrl + b + &              |
 | Recorre los diseños de paneles | ctrl + b + space          |
-| Cerra panel actual             | ctrl + b + x              |
+| Cerrar panel actual            | ctrl + b + x              |
 | Ayuda tmux                     | ctrl + b + ?              |
 | Listar todas las sesiones      | tmux ls                   |
 | Versión                        | tmux -V                   |
@@ -51,21 +51,21 @@ Un función muy útil en **tmux** es el **modo comados**, que nos permite ingres
 | Modo comando                           | ctrl + b + :                |
 | Activa sincronización de paneles       | :setw synchronize-panes on  |
 | Desactiva sincronización de paneles    | :setw synchronize-panes off |
-| Redimencionar panel hacia arriba       | :resize-pane -U             |
-| Redimencionar panel hacia abajo        | :resize-pane -D             |
-| Redimencionar panel hacia la izquierda | :resize-pane -L             |
-| Redimencionar panel hacia la derecha   | :resize-pane -R             |
-| Redimencionar panel hacia arriba       | :resize-pane -U 10          |
-| Redimencionar panel hacia abajo        | :resize-pane -D 10          |
-| Redimencionar panel hacia la izquierda | :resize-pane -L 10          |
-| Redimencionar panel hacia la derecha   | :resize-pane -R 10          |
+| Redimensionar panel hacia arriba       | :resize-pane -U             |
+| Redimensionar panel hacia abajo        | :resize-pane -D             |
+| Redimensionar panel hacia la izquierda | :resize-pane -L             |
+| Redimensionar panel hacia la derecha   | :resize-pane -R             |
+| Redimensionar panel hacia arriba       | :resize-pane -U 10          |
+| Redimensionar panel hacia abajo        | :resize-pane -D 10          |
+| Redimensionar panel hacia la izquierda | :resize-pane -L 10          |
+| Redimensionar panel hacia la derecha   | :resize-pane -R 10          |
 
 ## Compartir Terminal
 
 A menudo es necesario trabajar en la misma terminal con diferentes usuarios conectados al mismo servidor, **tmux** permite compartir terminal con multiples usuarios, solo a que cumplir algunos requisitos:
 
 1. La terminal a compartir debe ser de un usuario en específico.
-2. Un usuario debe crear una nueva sesión **tmux** con un numbre.
+2. Un usuario debe crear una nueva sesión **tmux** con un nombre.
 3. El usuario debe compartir el nombre de la nueva sesión.
 
 Primer paso, crear un nueva sesión **tmux**.

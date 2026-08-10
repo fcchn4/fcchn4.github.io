@@ -34,7 +34,7 @@ En el contexto de Kubernetes, el CNI se integra a la perfección con el kubelet 
 
 ## Servicios Kubernetes
 
-1. **Cluester IP**: Asigna una IP Fija dentro de un cluster, funciona con un pequeño Load Balancer.
+1. **Cluster IP**: Asigna una IP Fija dentro de un cluster, funciona con un pequeño Load Balancer.
 2. **Node Port**: Similar al anterior, pero a nivel de puertos, crea un puerto en cada nodo recibe todo el tráfico y direcciona al servicio deseado.
 3. **Load Balancer**: Crea un Balanceador de Carga en un proveedor de nube y redirecciona el tráfico de los Pods.
 4. **Ingress**: Expone rutas HTTP y HTTPS desde fuera del clúster a servicios dentro del clúster, el enrutamiento del tráfico se controla mediante reglas definidas en el recurso Ingress.

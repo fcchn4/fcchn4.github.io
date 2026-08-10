@@ -104,7 +104,7 @@ $ curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodet
 
 where:
 
-- **K3S_URL**: - **K3S_URL**: This is the IP address or domain of the  **K3s** server.
+- **K3S_URL**: This is the IP address or domain of the  **K3s** server.
 - **K3S_TOKEN**: It is a token that is stored in the **K3s** server, **/var/lib/rancher/k3s/server/node-token**
 - The hostname of the new nodes must be different.
 
@@ -126,7 +126,7 @@ $ sudo systemctl status k3s
 $ sudo systemctl stop k3s
 ```
 
-## Artículos K3s
+## Articles K3s
 
 1. [**K3s - Part 1**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/)
 2. [**K3s - Part 2**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/)

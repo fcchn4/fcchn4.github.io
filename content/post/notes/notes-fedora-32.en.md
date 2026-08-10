@@ -14,7 +14,7 @@ series = ["GNU-Linux"]
 thumbnail = "images/fedora-32/fedora32-400.jpg"
 +++
 
-When after update my Operating System [**Fedora 30**](https://getfedora.org/es/) to [**Fedora 32**](https://getfedora.org/es/), I was solving some problems with Docker CE, I custom the Prompt in my Console and change [**Gnome 3.36**](https://www.gnome.org/) to [**Cinnamon 4.4**](https://es.wikipedia.org/wiki/Cinnamon).
+After updating my Operating System [**Fedora 30**](https://getfedora.org/es/) to [**Fedora 32**](https://getfedora.org/es/), I was solving some problems with Docker CE, I custom the Prompt in my Console and change [**Gnome 3.36**](https://www.gnome.org/) to [**Cinnamon 4.4**](https://es.wikipedia.org/wiki/Cinnamon).
 
 <!--more-->
 
@@ -22,7 +22,7 @@ When after update my Operating System [**Fedora 30**](https://getfedora.org/es/)
 
 ## Prompt Terminal
 
-Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective is not use [**Oh-my-bash**](https://github.com/ohmybash/oh-my-bash), which is a set of scripts to customize the prompt where you can choose between various stiles options.
+Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective was not to use [**Oh-my-bash**](https://github.com/ohmybash/oh-my-bash), which is a set of scripts to customize the prompt where you can choose between various styles options.
 
 Searching, I found [**__git_ps1**](https://fedoraproject.org/wiki/Git_quick_reference), which is a script that allows you to obtain information about a git repository, it shows you the branch you are currently in, or if there is any change in said repository, I already had a problem solved and I only have to color the prompt get the time and the current directory path, I add these changes to my configuration file **~/.bashrc**, and it looks like this: 
 
