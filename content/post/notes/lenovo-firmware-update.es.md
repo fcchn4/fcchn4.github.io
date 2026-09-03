@@ -73,7 +73,7 @@ fwupdmgr get-devices
 sudo fwupdtool install-blob /ruta/del/archivo.cap <DEVICE-ID>
 ```
 
-(Reemplaza **/ruta/del/archivo.cap** con la ubicación de tu archivo y **<DEVICE-ID>** con el ID de tu firmware).
+(Reemplaza **/ruta/del/archivo.cap** con la ubicación de tu archivo y el ID de tu firmware DEVICE-ID).
 
 Recuerda que en algunos casos para aplicar cambios es necesario ser sudo para que el comando funcione correctamente.
 
