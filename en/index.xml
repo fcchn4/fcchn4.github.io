@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/</link><description>Recent content on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Fcch Blog | 2019 - 2022</copyright><lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Usual Commands</title><link>https://blog.fcch.xyz/en/post/notes/usual-commands/</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/usual-commands/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/</link><description>Recent content on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Fcch Blog | 2019 - 2022</copyright><lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Lenovo BIOS - UEFI Firmware Update</title><link>https://blog.fcch.xyz/en/post/notes/lenovo-firmware-update/</link><pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/lenovo-firmware-update/</guid><description>
+&lt;p&gt;When you are a GNU/Linux user, it is common to run into several obstacles when trying to update or apply security patches to the BIOS - UEFI firmware. Many companies only provide update methods with executables that only work on Windows. Although some methods offer binaries in &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt; or &lt;strong&gt;.cab&lt;/strong&gt; files, or updates that can be stored on USB storage devices, this task is not easy for a user without much experience.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Some brands such as &lt;a href="https://www.lenovo.com/"&gt;Lenovo&lt;/a&gt; rely on the well-known &lt;a href="https://fwupd.org/"&gt;LVFS (Linux Vendor Firmware Service)&lt;/a&gt;, a secure web portal that allows hardware manufacturers to upload firmware updates for machines running GNU/Linux operating systems.&lt;/p&gt;
+&lt;p&gt;For the examples that follow I used a Lenovo ThinkPad Carbon X1 laptop, with the following specifications:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Operating System: &lt;a href="https://www.debian.org/releases/trixie/index.en.html"&gt;Debian 13, Trixie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Architecture: &lt;a href="https://www.debian.org/ports/amd64/"&gt;AMD64, 64 bits&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Desktop Environment: &lt;a href="https://www.xfce.org/about/tour420"&gt;XFCE4, version 4.20&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The utility used is &lt;strong&gt;fwupdmgr&lt;/strong&gt;, which comes in the official &lt;a href="https://www.debian.org/"&gt;Debian&lt;/a&gt; repositories.&lt;/p&gt;
+&lt;h2 id="utility-installation"&gt;Utility installation&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install -y fwupd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After installation, these two commands become available:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;fwupdmgr&lt;/strong&gt;: Automatically downloads updates from LVFS.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;fwupdtool&lt;/strong&gt;: A more advanced management utility that runs as administrator, used for debugging or direct local installations of &lt;strong&gt;.cap&lt;/strong&gt; or &lt;strong&gt;.cab&lt;/strong&gt; files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="standard-and-safe-update-recommended"&gt;Standard and safe update (Recommended)&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;fwupdmgr refresh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="check-for-available-updates"&gt;Check for available updates&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;fwupdmgr get-updates
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="download-and-install-the-firmware-updates"&gt;Download and install the firmware updates&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo fwupdmgr update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With these steps you can keep your &lt;strong&gt;BIOS/UEFI&lt;/strong&gt; firmware up to date. If you need to run the update from .cap or .cab files, it should be something similar to this:&lt;/p&gt;
+&lt;p&gt;Get the ID of your System Firmware:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;fwupdmgr get-devices
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(Look for the GUID or Device ID corresponding to System Firmware in the command output). Install the firmware file locally:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo fwupdtool install-blob /path/to/file.cap DEVICE_ID
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(Replace /path/to/file.cap with the location of your file and &lt;strong&gt;DEVICE_ID&lt;/strong&gt; with the ID of your firmware).&lt;/p&gt;
+&lt;p&gt;Remember that in some cases, to apply changes you need to run the command as sudo for it to work correctly.&lt;/p&gt;
+&lt;h2 id="visual-alternatives"&gt;Visual alternatives&lt;/h2&gt;
+&lt;p&gt;When I was a Gnome user, updates ran automatically; the tool used was &lt;strong&gt;gnome-firmware&lt;/strong&gt;. With XFCE4 I prefer to run them from the terminal whenever it is necessary.&lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://fwupd.org/"&gt;Linux Vendor Firmware Service&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Simple Usual Commands</title><link>https://blog.fcch.xyz/en/post/notes/usual-commands/</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/usual-commands/</guid><description>
 &lt;p&gt;Every day we learn commands that allow us to perform certain tasks at work, so as not to forget any of these commands that served, create a list as a memory aid.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/usual-cmd/linux-cmd-post.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="check-os-install-date"&gt;Check OS Install Date&lt;/h2&gt;
