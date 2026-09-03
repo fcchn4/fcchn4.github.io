@@ -70,10 +70,10 @@ fwupdmgr get-devices
 (Busca el GUID o Device ID correspondiente a System Firmware en la salida del comando). Instala el archivo de firmware localmente:
 
 ```bash
-sudo fwupdtool install-blob /ruta/del/archivo.cap DEVICE_ID
+sudo fwupdtool install-blob /ruta/del/archivo.cap <DEVICE_ID>
 ```
 
-(Reemplaza /ruta/del/archivo.cap con la ubicación de tu archivo y **DEVICE_ID** con el ID de tu firmware).
+(Reemplaza **/ruta/del/archivo.cap** con la ubicación de tu archivo y **<DEVICE_ID>** con el ID de tu firmware).
 
 Recuerda que en algunos casos para aplicar cambios es necesario ser sudo para que el comando funcione correctamente.
 
