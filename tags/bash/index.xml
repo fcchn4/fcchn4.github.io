@@ -26,8 +26,8 @@
 &lt;p&gt;Obtén el ID de tu System Firmware:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;fwupdmgr get-devices
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(Busca el GUID o Device ID correspondiente a System Firmware en la salida del comando). Instala el archivo de firmware localmente:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo fwupdtool install-blob /ruta/del/archivo.cap DEVICE_ID
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(Reemplaza /ruta/del/archivo.cap con la ubicación de tu archivo y &lt;strong&gt;DEVICE_ID&lt;/strong&gt; con el ID de tu firmware).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo fwupdtool install-blob /ruta/del/archivo.cap &amp;lt;DEVICE_ID&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(Reemplaza &lt;strong&gt;/ruta/del/archivo.cap&lt;/strong&gt; con la ubicación de tu archivo y &lt;strong&gt;&amp;lt;DEVICE_ID&amp;gt;&lt;/strong&gt; con el ID de tu firmware).&lt;/p&gt;
 &lt;p&gt;Recuerda que en algunos casos para aplicar cambios es necesario ser sudo para que el comando funcione correctamente.&lt;/p&gt;
 &lt;h2 id="alternativas-visuales"&gt;Alternativas visuales&lt;/h2&gt;
 &lt;p&gt;Cuando era usuario de Gnome, las actualizaciones se ejecutaban de forma automática; la herramienta que se usaba era &lt;strong&gt;gnome-firmware&lt;/strong&gt;. Con XFCE4 prefiero ejecutarlas desde la terminal cuando sea necesario.&lt;/p&gt;
