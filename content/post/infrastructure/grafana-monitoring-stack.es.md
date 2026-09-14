@@ -1,5 +1,5 @@
 +++
-title = "Monitoreo de Servidores con Grafana, Loki y Promtail"
+title = "Apuntes monitoreo con Grafana, Loki y Promtail"
 author = "Fcch"
 date = "2026-09-14"
 description = "Monitoreo basado en logs con el stack de Grafana en servidores on-premise"
