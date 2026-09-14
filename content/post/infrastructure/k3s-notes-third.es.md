@@ -16,31 +16,31 @@ series = ["Servidores"]
 thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-3.png"
 +++
 
-En la [**Parte 2**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/) de [**K3s**](https://k3s.io/) se hizo una descripción de varios conceptos que se manejan en [**Kubernetes**](https://kubernetes.io/), se instaló el client [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) y se hizo pruebas de conectividad a el API de [**Kubernetes**](https://kubernetes.io/).
+En la [**Parte 2**](https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/) de [**K3s**](https://k3s.io/) se hizo una descripción de varios conceptos que se manejan en [**Kubernetes**](https://kubernetes.io/), se instaló el cliente [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) y se hizo pruebas de conectividad al API de [**Kubernetes**](https://kubernetes.io/).
 
 <!--more-->
 
 ![](/images/k3s-kubernetes/k3s-rpi-part-3.jpg)
 
-Ahora ejecutaremos tareas básicas en nuestro pequeño cluster, pero antes seguimos describiendo mas detalles de **Kubernetes**.
+Ahora ejecutaremos tareas básicas en nuestro pequeño cluster, pero antes seguimos describiendo más detalles de **Kubernetes**.
 
 ## Objetos de Kubernetes
 
 1. **Pod**: Es un grupo de uno o más contenedores (como contenedores Docker), con almacenamiento/red compartidos, y unas especificaciones de cómo ejecutar los contenedores.
 2. **Service**: Una forma abstracta de exponer una aplicación que se ejecuta en un conjunto de Pods como un servicio de red.
-3. **Volume**: Tiene una funcionalidad similar al de [**Docker Volume**](https://docs.docker.com/storage/volumes/), donde se busca persistencia de datos luego de el reinicio de un contenedor.
-2. **Namespace**: Nos permite aislar recursos para el uso de los distintos usuarios del cluster.
-3. **Manifest**: Es un archivo **yaml** manifiesto que contiene instrucciones que especifican como desplegar una aplicación al nodo o nodos en un cluster de **Kubernetes**.
+3. **Volume**: Tiene una funcionalidad similar al de [**Docker Volume**](https://docs.docker.com/storage/volumes/), donde se busca persistencia de datos luego del reinicio de un contenedor.
+4. **Namespace**: Nos permite aislar recursos para el uso de los distintos usuarios del cluster.
+5. **Manifest**: Es un archivo **yaml** manifiesto que contiene instrucciones que especifican cómo desplegar una aplicación al nodo o nodos en un cluster de **Kubernetes**.
 
 ## Controladores Kubernetes
 
-**Kubernetes** contiene abstracciónes de nivel superior llamadas Controladores. Los Controladores se basan en los objetos básicos y proporcionan funcionalidades adicionales sobre ellos.
+**Kubernetes** contiene abstracciones de nivel superior llamadas Controladores. Los Controladores se basan en los objetos básicos y proporcionan funcionalidades adicionales sobre ellos.
 
 1. **Replicaset**: El objeto de un ReplicaSet es el de mantener un conjunto estable de réplicas de Pods ejecutándose en todo momento. Así, se usa en numerosas ocasiones para garantizar la disponibilidad de un número específico de Pods idénticos.
-2. **Deployment**: Un controlador de Deployment proporciona actualizaciones declarativas para los Pods y los ReplicaSets.Cuando describes el estado deseado en un objeto Deployment, el controlador del Deployment se encarga de cambiar el estado actual al estado deseado de forma controlada. Puedes definir Deployments para crear nuevos ReplicaSets, o eliminar Deployments existentes y adoptar todos sus recursos con nuevos Deployments.
+2. **Deployment**: Un controlador de Deployment proporciona actualizaciones declarativas para los Pods y los ReplicaSets. Cuando describes el estado deseado en un objeto Deployment, el controlador del Deployment se encarga de cambiar el estado actual al estado deseado de forma controlada. Puedes definir Deployments para crear nuevos ReplicaSets, o eliminar Deployments existentes y adoptar todos sus recursos con nuevos Deployments.
 3. **StatefulSet**: Un StatefulSet es el objeto de la API workload que se usa para gestionar aplicaciones con estado.
-4. **DaemonSet**: Un DaemonSet garantiza que todos (o algunos) de los nodos ejecuten una copia de un Pod. Conforme se añade más nodos al clúster, nuevos Pods son añadidos a los mismos. Conforme se elimina nodos del clúster, dichos Pods se destruyen. Al eliminar un DaemonSet se limpian todos los Pods que han sido creados.
-5. **Job**: Un Job crea uno o más Pods y se asegura de que un número específico de ellos termina de forma satisfactoria. Conforme los pods terminan satisfactoriamente, el Job realiza el seguimiento de las ejecuciones satisfactorias. Cuando se alcanza un número específico de ejecuciones satisfactorias, la tarea (esto es, el Job) se completa. Al eliminar un Job se eliminan los Pods que haya creado.
+4. **DaemonSet**: Un DaemonSet garantiza que todos (o algunos) de los nodos ejecuten una copia de un Pod. Conforme se añaden más nodos al clúster, nuevos Pods son añadidos a los mismos. Conforme se eliminan nodos del clúster, dichos Pods se destruyen. Al eliminar un DaemonSet se limpian todos los Pods que han sido creados.
+5. **Job**: Un Job crea uno o más Pods y se asegura de que un número específico de ellos terminen de forma satisfactoria. Conforme los pods terminan satisfactoriamente, el Job realiza el seguimiento de las ejecuciones satisfactorias. Cuando se alcanza un número específico de ejecuciones satisfactorias, la tarea (esto es, el Job) se completa. Al eliminar un Job se eliminan los Pods que haya creado.
 
 ## Comandos Kubernetes
 
@@ -57,7 +57,7 @@ $ kubectl -n kube-system get pods -o wide
 $ kubectl -n kube-system delete pod NAME_RUN_POD
 ```
 
-Como detalle extra si existe algún problema con el archivo de configuración al node podemos ejecutar:
+Como detalle extra si existe algún problema con el archivo de configuración del nodo podemos ejecutar:
 
 ```bash
 $ export KUBECONFIG=PATH_CONFIG_FILE

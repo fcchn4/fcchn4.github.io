@@ -35,7 +35,7 @@ El primer paso fue crear un nuevo repositorio en Github, algunas guías recomien
 
 ![](/images/hugo-github/github-page.png)
 
-Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.
+Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.
 
 ## Configuración DNS Bind9
 

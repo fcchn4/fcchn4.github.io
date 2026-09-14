@@ -15,7 +15,7 @@ series = ["Hugo"]
 thumbnail = "images/hugo-framework-internal-templates/hugo-article-image.png"
 +++
 
-Crear sitios web con [**Hugo Framework**](https://gohugo.io/) hizo que explore mas sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de [**The Open Graph Protocol**](https://ogp.me/), la primera idea fue editar los archivos HTML del **theme** y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución mas adecuada en esta [**sección**](https://gohugo.io/templates/internal/).
+Crear sitios web con [**Hugo Framework**](https://gohugo.io/) hizo que explorase más sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de [**The Open Graph Protocol**](https://ogp.me/), la primera idea fue editar los archivos HTML del **theme** y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución más adecuada en esta [**sección**](https://gohugo.io/templates/internal/).
 
 <!--more-->
 

@@ -23,11 +23,11 @@ thumbnail = "images/spip-svn/logo-spip-400.png"
 
 Existen diferentes métodos de instalación en el [sitio oficial](https://www.spip.net/es_download), se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la **Instalación Automática** que consiste en descargar el archivo **spip_loader.php** y ejecutarlo desde un navegador web.
 
-El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de [SPIP](https://www.spip.net/) utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.
+El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de [SPIP](https://www.spip.net/) utilizando el viejo y confiable Subversion (SVN), este método de instalación es el que se utiliza comúnmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.
 
 ## Descarga SPIP
 
-Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la maquina local o con algun proveedor de su preferencia.
+Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la máquina local o con algún proveedor de su preferencia.
 
 Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama [**spip-3.2**](https://www.spip.net/es_download) ejecutando:
 
@@ -76,13 +76,13 @@ Para iniciar la instalación de [**SPIP**](https://www.spip.net/) abrimos el nav
 - https://dominio.com/ecrire
 - http://IP-server/ecrire
 
-esto depende de la configuración del servidor web, si esta trabajando en local o desde un proveedor del servicio.
+esto depende de la configuración del servidor web, si está trabajando en local o desde un proveedor del servicio.
 
 - 1. Cuando ingresamos a la URL tenemos la bienvenida de SPIP, donde se puede elegir el idioma de instalación:
 
 ![](/images/spip-svn/spip-demo-01.png)
 
-- 2. Luego tenemos el menu para la conexión a la base de datos, en este caso se dan dos opciones, la primera es **MySQL** donde se deben ingresar el usuario y contraseña.
+- 2. Luego tenemos el menú para la conexión a la base de datos, en este caso se dan dos opciones, la primera es **MySQL** donde se deben ingresar el usuario y contraseña.
 
 ![](/images/spip-svn/spip-demo-02.png)
 

@@ -394,7 +394,7 @@ $ vim genpass.sh
 -- do
 --    echo $pass $i >> pass25.txt
 -- done
-$ cat pass25,txt | nc localhost 30001
+$ cat pass25.txt | nc localhost 30001
 uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 ```
 

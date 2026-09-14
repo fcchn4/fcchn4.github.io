@@ -162,7 +162,7 @@ $ php artisan install
 $ php artisan serve
 ```
 
-For the deployment on the production server the execution of the previous commands are no longer necessary.
+For the deployment on the production server the execution of the previous commands is no longer necessary.
 
 Initially it is necessary to clone the repository with a name similar to the one that appears in the VirtualHost configuration file.
 
@@ -185,4 +185,4 @@ With this we can now test and verify the operation of our project.
 
 ## References
 
-- [Laravel Frontend](https://laravel.com/docs/7.x/frontend)
+- [Laravel Frontend](https://laravel.com/docs/8.x/frontend)

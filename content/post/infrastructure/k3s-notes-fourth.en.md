@@ -26,11 +26,11 @@ To finish the small lab and finish the last part of [**K3s**](https://k3s.io/), 
 
 Each Pod is assigned a unique IP address for each address family. Each container in a Pod shares the network namespace, including the IP address and network ports. Inside a Pod (and only then), the containers that belong to the Pod can communicate with each other using localhost. When containers in a Pod communicate with entities outside the Pod, they must coordinate how they use shared network resources (such as ports). Inside a Pod, containers share an IP address and port space, and can find each other via localhost. The containers in a Pod can also communicate with each other using standard interprocess communications, such as SystemV semaphores or POSIX shared memory. Containers in different Pods have different IP addresses and cannot communicate over IPC without special configuration. Containers that want to interact with a container running on a different Pod can use IP networks to communicate.
 
-**CNI - Cluster Networking Interface**: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.
+**CNI - Container Networking Interface**: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.
 
 In the context of Kubernetes, the CNI integrates seamlessly with the kubelet to allow automatic network configuration between pods using an underlying or overlay network. An underlying network is defined at the physical level of the network layer made up of routers and switches.
 
-**Calico**: It is an open source network and network security solution for containers, virtual machines, and native host-based workloads. Calico supports several data planes, including: a pure Linux eBPF data plane, a standard Linux network data plane, and a Windows HNS data plane. Calico provides a complete network stack, but can also be used in conjunction with cloud provider CNIs to provide network policy enforcement.
+**Calico**: It is an open source network security solution for containers, virtual machines, and native host-based workloads. Calico supports several data planes, including: a pure Linux eBPF data plane, a standard Linux network data plane, and a Windows HNS data plane. Calico provides a complete network stack, but can also be used in conjunction with cloud provider CNIs to provide network policy enforcement.
 
 ## Kubernetes Services
 
@@ -196,4 +196,4 @@ $ kubectl -n kubernetes-dashboard get svc
 - [**Docs K3S**](https://rancher.com/docs/)
 - [**Concepts Kubernetes**](https://kubernetes.io/es/docs/concepts/)
 - [**Docs Kubernetes**](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
-- [**Kubernetes Proxy**](https:kubernetes-dashboard:/proxy/)
+- [**Kubernetes Proxy**](https://kubernetes-dashboard:/proxy/)

@@ -16,7 +16,7 @@ series = ["Servidores"]
 thumbnail = "images/vuejs-laravel-mix/vuejs-laravel-logo.png"
 +++
 
-En el trabajo nos toco desplegar un proyecto desarrollado con **[VueJS](https://vuejs.org)** y **[Laravel](https://laravel.com/)** en un servidor **[Ubuntu](https://ubuntu.com/)**, con **[Apache](https://ws.apache.org/)**, **[PHP](https://www.php.net/)**, **[MariaDB](https://mariadb.org/)**, donde todo estaba versionado en **[github](https://github.com/)**, no tenia ramas de desarrollo, ni tampoco repositorios fork. Desplegar el proyecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.
+En el trabajo nos tocó desplegar un proyecto desarrollado con **[VueJS](https://vuejs.org)** y **[Laravel](https://laravel.com/)** en un servidor **[Ubuntu](https://ubuntu.com/)**, con **[Apache](https://ws.apache.org/)**, **[PHP](https://www.php.net/)**, **[MariaDB](https://mariadb.org/)**, donde todo estaba versionado en **[github](https://github.com/)**, no tenía ramas de desarrollo, ni tampoco repositorios fork. Desplegar el proyecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.
 
 <!--more-->
 
@@ -142,7 +142,7 @@ $ sudo systemctl restart apache2.service
 
 ## Despliegue del Proyecto
 
-Este proyecto es un caso especial, donde [**VueJS**](https://vuejs.org/) no genera una carpeta **dist**, en el proceso de desarrollo todo el proyecto final se genera en la carpeta **public**, luego de crear la aplicación Laravel reqiere de la instalación **laravel/ui** con **composer**, luego se ejecuta **php artisan ui vue** para instalar **VueJS**, con estos pasos se tiene un proyecto **mix** entre [**Laravel**](https://laravel.com/) y [**VueJS**](https://vuejs.org/).
+Este proyecto es un caso especial, donde [**VueJS**](https://vuejs.org/) no genera una carpeta **dist**, en el proceso de desarrollo todo el proyecto final se genera en la carpeta **public**, luego de crear la aplicación Laravel requiere de la instalación **laravel/ui** con **composer**, luego se ejecuta **php artisan ui vue** para instalar **VueJS**, con estos pasos se tiene un proyecto **mix** entre [**Laravel**](https://laravel.com/) y [**VueJS**](https://vuejs.org/).
 
 Es normal que los desarrolladores para las pruebas en local utilicen comandos como:
 
@@ -162,7 +162,7 @@ $ php artisan install
 $ php artisan serve
 ```
 
-Para el despliegue en el servidor de producción la ejecución de los comandos anteriores ya no son necesarios.
+Para el despliegue en el servidor de producción la ejecución de los comandos anteriores ya no es necesaria.
 
 Inicialmente es necesario clonar el repositorio con un nombre similar al que figura en el archivo de configuración del VirtualHost.
 
@@ -185,4 +185,4 @@ Con esto ya podemos probar y verificar el funcionamiento de nuestro proyecto.
 
 ## Referencias
 
-- [Laravel Frontend](https://laravel.com/docs/7.x/frontend)
+- [Laravel Frontend](https://laravel.com/docs/8.x/frontend)

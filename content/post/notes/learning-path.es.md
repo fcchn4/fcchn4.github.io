@@ -18,7 +18,7 @@ Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnol
 
 ![](/images/aws-learning-path/fcch-route.png)
 
-En mi busqueda de información encontre esta descripción del camino completo hacia una certificación **Profesional**.
+En mi búsqueda de información encontré esta descripción del camino completo hacia una certificación **Profesional**.
 
 ![](/images/aws-learning-path/aws-route-complete.png)
 
@@ -36,7 +36,7 @@ Los candidatos también deben demostrar una comprensión de la economía de la n
 2. Facturación y análisis.
 3. La propuesta de valor de AWS Cloud.
 
-Con estos conocimientos los candidatos podran validar la capacidad para: 
+Con estos conocimientos los candidatos podrán validar la capacidad para: 
 
 - Explicar el valor de AWS Cloud.
 - Comprender y explicar el modelo de responsabilidad compartida de AWS.
@@ -98,7 +98,7 @@ Los conocimientos para esta certificación se dividen en aproximadamente 14 cap�
 5. Elastic Load Balancing, Amazon CloudWatch y Auto Scaling.
 6. AWS Identity y Access Management (IAM).
 7. Databases y AWS.
-8. SOS, SWF y SNS.
+8. SQS, SWF y SNS.
 9. Domain Name System (DNS) y Amazon Route 53.
 10. Amazon ElastiCache.
 11. Additional Key Services.
@@ -147,7 +147,7 @@ Contenido en español, conceptos de los servicios de AWS:
 
 1. Introducción a los Recursos de Seguridad de AWS.
 2. El Modelo de Responsabilidad Compartida.
-3. Indentity and Access Managment - IAM.
+3. Identity and Access Management - IAM.
 4. Amazon Inspector.
 5. AWS Shield.
 6. Conformidad de Seguridad de AWS.

@@ -45,7 +45,7 @@ As is normal, **hosting** providers provide an FTP service to upload files, the 
 # wp-config.php
 ....
 /** Direct updates */
-define(‘FS_METHOD’,’direct’);
+define('FS_METHOD','direct');
 ```
 
 ## Hide Sensitive Wordpress Information

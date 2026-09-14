@@ -2,20 +2,20 @@
 title = "NPM EACCES"
 author = "Fcch"
 date = "2020-08-12"
-description = "Guía Servidores e Infraestructura"
+description = "Problemas comunes con NodeJS"
 featured = false
 tags = [
     "nodejs",
     "npm"
 ]
 categories = [
-    "Infraestructura",
+    "apuntes",
 ]
 series = ["Servidores"]
 thumbnail = "images/npm-eacces/npm-error-img.png"
 +++
 
-Me toco probar el despliegue de aplicaciones **NodeJS** donde necesitaba instalar paquetes globales, instalar paquetes **NodeJS** globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.
+Me tocó probar el despliegue de aplicaciones **NodeJS** donde necesitaba instalar paquetes globales, instalar paquetes **NodeJS** globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.
 
 <!--more-->
 
@@ -27,7 +27,7 @@ Al ejecutar el comando:
 $ npm install -g <NOMBRE_PAQUETE>
 ```
 
-Se presento un problema de permisos **npm ERR! code EACCES** y para solucionar el problema de forma inmediata era ejecutarlo con **sudo**, esta práctica es común pero no es lo que buscamos.
+Se presentó un problema de permisos **npm ERR! code EACCES** y para solucionar el problema de forma inmediata era ejecutarlo con **sudo**, esta práctica es común pero no es lo que buscamos.
 
 Buscando encontré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de [**NPM**](https://nodejs.org/en/).
 

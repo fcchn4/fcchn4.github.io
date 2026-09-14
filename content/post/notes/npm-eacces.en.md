@@ -2,14 +2,14 @@
 title = "NPM EACCES"
 author = "Fcch"
 date = "2020-08-12"
-description = "Servers and Infrastructure Guide"
+description = "Common issues with NodeJS"
 featured = false
 tags = [
     "nodejs",
     "npm"
 ]
 categories = [
-    "Infrastructure",
+    "notes",
 ]
 series = ["Servers"]
 thumbnail = "images/npm-eacces/npm-error-img.png"

@@ -25,7 +25,7 @@ We continue with the tests in our small cluster with [**K3s**](https://k3s.io/) 
 In the image we have as a detail:
 
 1. **Three Raspberry Pi 4, Model B** (1 Server Node and 2 Worker Nodes).
-2. **Two Raspberry Pi 3, Model B** (2 Worker Nodes,).
+2. **Two Raspberry Pi 3, Model B** (2 Worker Nodes).
 3. One **8-port Tp-Link TL-SG1008D Gigabit Desktop Switch**.
 
 ## Basic concepts
@@ -55,7 +55,6 @@ We can describe some important components:
 6. **kubelet**: An agent running on each node in the cluster ensures that the containers run on a Pod.
 7. **kube-proxy**: It is a network proxy that runs on every node in your cluster, implementing part of the Kubernetes service concept.
 8. **container runtime**: The container runtime is the software responsible for running the containers.
-9. **kube-scheduler**: A control plane component that searches for newly created pods without an assigned node and selects a node to run.
 
 ## Install Kubectl
 

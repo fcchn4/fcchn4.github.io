@@ -16,7 +16,7 @@ series = ["Servers"]
 thumbnail = "images/k3s-kubernetes/k3s-kubernetes-part-3.png"
 +++
 
-In [**Parte 2**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/) of [**K3s**](https://k3s.io/), a description of various concepts that are handled in [**Kubernetes**](https://kubernetes.io/) was made, the [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) client was installed and connectivity tests to the [**Kubernetes**](https://kubernetes.io/) API were done.
+In [**Part 2**](https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/) of [**K3s**](https://k3s.io/), a description of various concepts that are handled in [**Kubernetes**](https://kubernetes.io/) was made, the [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) client was installed and connectivity tests to the [**Kubernetes**](https://kubernetes.io/) API were done.
 
 <!--more-->
 
@@ -29,10 +29,10 @@ Now we will execute basic tasks in our small cluster, but before we continue des
 1. **Pod**: It is a group of one or more containers (such as Docker containers), with shared storage/network, and some specifications of how to run the containers.
 2. **Service**: An abstract way to expose an application running on a set of Pods as a network service.
 3. **Volume**: It has a functionality similar to that of [**Docker Volume**](https://docs.docker.com/storage/volumes/), where data persistence is searched after restarting one container.
-2. **Namespace**: It allows us to isolate resources for the use of the different users of the cluster.
-3. **Manifest**: It is a **yaml** manifest file that contains instructions that specify how to deploy an application to the node or nodes in a **Kubernetes** cluster.
+4. **Namespace**: It allows us to isolate resources for the use of the different users of the cluster.
+5. **Manifest**: It is a **yaml** manifest file that contains instructions that specify how to deploy an application to the node or nodes in a **Kubernetes** cluster.
 
-## Kubernetes Drivers
+## Kubernetes Controllers
 
 **Kubernetes** contains top-level abstractions called Controllers. The Controllers are based on the basic objects and provide additional functionality on top of them.
 

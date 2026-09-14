@@ -69,7 +69,7 @@ $ git submodule update
 
 ### - Gitlab CI
 
-Creamos el archivo **.gitlab-ci.yml** para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo seria el siguiente:
+Creamos el archivo **.gitlab-ci.yml** para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo sería el siguiente:
 
 ```cmd
 $ vim .gitlab-ci.yml
@@ -131,15 +131,15 @@ En **Gitlab** podemos ingresar al espacio **Repositorio -> Settings -> Pages** y
 
 ![](/images/hugo-gitlab/gitlab-domain-add-www.png)
 
-Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.
+Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.
 
 ### - Registros DNS y Verificaciones Gitlab
 
-Para el dominio raiz **dominio.com** se debe crear un registro **A** con los siguientes datos:
+Para el dominio raíz **dominio.com** se debe crear un registro **A** con los siguientes datos:
 
 ![](/images/hugo-gitlab/gitlab-dns-record-root.png)
 
-El registro **A** para el dominio raiz **dominio.com** con el valor **35.185.44.232**, luego un registro **TXT** con los valores que facilita **Gitlab Pages**.
+El registro **A** para el dominio raíz **dominio.com** con el valor **35.185.44.232**, luego un registro **TXT** con los valores que facilita **Gitlab Pages**.
 
 Luego de crear los registros podemos verificar desde **Gitlab**:
 

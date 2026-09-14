@@ -14,7 +14,7 @@ series = ["GNU-Linux"]
 thumbnail = "images/notes-xfce/xfce-hero.jpg"
 +++
 
-Estuve cambiando de hardware en mi ambiente de trabajo, cambie el teclado a uno en idioma inglés, por este motivo estuve configurando [**XFCE**](https://xfce.org/), que es mi entorno gráfico preferido.
+Estuve cambiando de hardware en mi ambiente de trabajo, cambié el teclado a uno en idioma inglés, por este motivo estuve configurando [**XFCE**](https://xfce.org/), que es mi entorno gráfico preferido.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ Estuve cambiando de hardware en mi ambiente de trabajo, cambie el teclado a uno 
 
 ## Cambio de Idioma del Teclado en XFCE4
 
-Lo primero fue hacer el cambio de idioma, por lo tanto para llegar al menú de configuración: **Settings** > **Keyboard** > **Layout**, la configuración deberia quedar con en la imagen.
+Lo primero fue hacer el cambio de idioma, por lo tanto para llegar al menú de configuración: **Settings** > **Keyboard** > **Layout**, la configuración debería quedar como en la imagen.
 
 ![](/images/notes-xfce/xfce-keyboard.png)
 

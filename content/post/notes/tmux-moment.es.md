@@ -22,7 +22,7 @@ thumbnail = "images/tmux-moment/tmux-00.png"
 
 ## Lo Básico
 
-Primero debemos ejecutar el comando **tmux**, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a **tmux**, en mi caso utilizare la combinación **ctrl + b** que es la configuración por defecto luego de la instalación:
+Primero debemos ejecutar el comando **tmux**, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a **tmux**, en mi caso utilizaré la combinación **ctrl + b** que es la configuración por defecto luego de la instalación:
 
 | **Descripción**                | **Comando**               |
 | :----------------------------- | :------------------------ |
@@ -44,7 +44,7 @@ Primero debemos ejecutar el comando **tmux**, dentro del mismo podemos realizar 
 
 ## Funcionalidades muy útiles
 
-Un función muy útil en **tmux** es el **modo comados**, que nos permite ingresar comandos que nos faciliten tareas de forma mas simple.
+Una función muy útil en **tmux** es el **modo comandos**, que nos permite ingresar comandos que nos faciliten tareas de forma más simple.
 
 | **Descripción**                        | **Comando**                 |
 | :------------------------------------- | :-------------------------- |
@@ -62,13 +62,13 @@ Un función muy útil en **tmux** es el **modo comados**, que nos permite ingres
 
 ## Compartir Terminal
 
-A menudo es necesario trabajar en la misma terminal con diferentes usuarios conectados al mismo servidor, **tmux** permite compartir terminal con multiples usuarios, solo a que cumplir algunos requisitos:
+A menudo es necesario trabajar en la misma terminal con diferentes usuarios conectados al mismo servidor, **tmux** permite compartir terminal con múltiples usuarios, solo hay que cumplir algunos requisitos:
 
 1. La terminal a compartir debe ser de un usuario en específico.
 2. Un usuario debe crear una nueva sesión **tmux** con un nombre.
 3. El usuario debe compartir el nombre de la nueva sesión.
 
-Primer paso, crear un nueva sesión **tmux**.
+Primer paso, crear una nueva sesión **tmux**.
 
 ```bash
 $ tmux new-session -s fcch
@@ -91,7 +91,7 @@ Sincronización de paneles:
 
 ![](/images/tmux-moment/tmux-02.gif)
 
-Trabajo con paneles y redimenciones con **ctrl + b + space** y **ctrl + b + q**:
+Trabajo con paneles y redimensiones con **ctrl + b + space** y **ctrl + b + q**:
 
 ![](/images/tmux-moment/tmux-03.gif)
 

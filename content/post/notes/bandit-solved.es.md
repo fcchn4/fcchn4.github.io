@@ -22,7 +22,7 @@ El enlace para poder jugar un momento: [**Over the wire, Bandit**](https://overt
 
 ![](/images/bandit/otw-bandit.jpg)
 
-**Iniciamos!!!**
+**¡¡¡Iniciamos!!!**
 
 * Usuario: bandit0 
 * Puerto: 2220
@@ -398,7 +398,7 @@ $ vim genpass.sh
 -- do
 --    echo $pass $i >> pass25.txt
 -- done
-$ cat pass25,txt | nc localhost 30001
+$ cat pass25.txt | nc localhost 30001
 uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 ```
 

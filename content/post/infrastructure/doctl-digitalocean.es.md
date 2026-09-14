@@ -24,7 +24,7 @@ thumbnail = "images/doctl-digitalocean/doctl.png"
 
 ## Instalación del Binario
 
-Lo primero que toco hacer es descargar e instalar el binario, esto para la versión actual **1.54.0**:
+Lo primero que tocó hacer es descargar e instalar el binario, esto para la versión actual **1.54.0**:
 
 ```cmd
 $ cd ~
@@ -107,7 +107,7 @@ $ doctl compute size list
 $ doctl compute droplet list --format "ID,Name,PublicIPv4"
 ```
 
-- **Crear un Droplet con mas detalles**
+- **Crear un Droplet con más detalles**
 
 ```cmd
 $ doctl compute droplet create --region <REGION_CODE> \

@@ -14,7 +14,7 @@ series = ["Linux"]
 thumbnail = "images/lenovo-firmware-update/lenovo-tp-cx1.png"
 +++
 
-Cuando eres usuario de algún GNU/Linux es normal toparse con varios impedimentos para actualizar o aplicar parches de seguridad en firmware BIOS, muchas empresas solo facilitan métodos de actualización con ejecutables que solo funcionan en Windows, aunque algunos métodos facilitan binarios en archivos **.iso**, **.cap** o **.cab** o actualizaciones que se pueden almacenar en dispositivos de almacenamiento USB, esta tarea no es fácil para un usuario sin mucha experiencia.
+Cuando eres usuario de algún GNU/Linux es normal toparse con varios impedimentos para actualizar o aplicar parches de seguridad en firmware BIOS, muchas empresas solo facilitan métodos de actualización con ejecutables que solo funcionan en Windows, aunque algunos métodos facilitan binarios en archivos **.iso**, **.cap**, **.cab** o actualizaciones que se pueden almacenar en dispositivos de almacenamiento USB, esta tarea no es fácil para un usuario sin mucha experiencia.
 
 <!--more-->
 
@@ -28,7 +28,7 @@ Para los ejemplos que siguen utilicé una laptop Lenovo ThinkPad Carbon X1, con 
 - Arquitectura: [AMD64, 64 bits](https://www.debian.org/ports/amd64/)
 - Entorno Gráfico: [XFCE4, versión 4.20](https://www.xfce.org/about/tour420)
 
-El utilitario que sevamos a ejecutar es **fwupdmgr**, que viene en los repositorios oficiales de [Debian](https://www.debian.org/).
+El utilitario que vamos a ejecutar es **fwupdmgr**, que viene en los repositorios oficiales de [Debian](https://www.debian.org/).
 
 ## Instalación utilitario
 
@@ -39,7 +39,7 @@ sudo apt install -y fwupd
 Luego de la instalación se agregan estos dos comandos:
 
 - **fwupdmgr**: Descarga automáticamente las actualizaciones desde LVFS.
-- **fwupdtool**: Utilidad de administración más avanzada que se ejecuta como administrador para debug o instalaciones locales directas de archivos **.cap** o **.cab**
+- **fwupdtool**: Utilidad de administración más avanzada que se ejecuta como administrador para debug o instalaciones locales directas de archivos **.cap** o **.cab**.
 
 ## Actualización estándar y segura (Recomendada)
 

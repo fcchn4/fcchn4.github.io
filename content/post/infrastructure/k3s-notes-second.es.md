@@ -25,7 +25,7 @@ Continuamos con las pruebas en nuestro pequeño cluster con [**K3s**](https://k3
 En la imagen tenemos como detalle:
 
 1. **Tres Raspberry Pi 4, Modelo B** (1 Server Node y 2 Worker Nodes).
-2. **Dos Raspberry Pi 3, Modelo B** (2 Worker Nodes, ).
+2. **Dos Raspberry Pi 3, Modelo B** (2 Worker Nodes).
 3. Un **Switch Desktop Gigabit Tp-Link TL-SG1008D** de 8 puertos.
 
 ## Conceptos Básicos
@@ -37,7 +37,7 @@ Con los componentes de Kubernetes:
 Podemos describir algunos componentes importantes: 
 
 1. **kube-apiserver**: El servidor de API es un componente del plano de control de Kubernetes que expone la API de Kubernetes. El servidor de API es la interfaz del plano de control de Kubernetes.
-2. **etcd**: Base de datos de tipo *clave-valor* consistente y de alta disponibilidad utilizado como almacén de respaldo de Kubernetes para todos los datos del clúster.
+2. **etcd**: Base de datos de tipo *clave-valor* consistente y de alta disponibilidad utilizada como almacén de respaldo de Kubernetes para todos los datos del clúster.
 3. **kube-scheduler**: Componente del plano de control que busca pods recién creados sin un nodo asignado y selecciona un nodo para que se ejecuten.
 4. **kube-controller-manager**: Componente del plano de control que ejecuta los procesos del controlador.
 
@@ -55,7 +55,6 @@ Podemos describir algunos componentes importantes:
 6. **kubelet**: Un agente que se ejecuta en cada nodo del clúster, se asegura de que los contenedores se ejecuten en un Pod.
 7. **kube-proxy**: Es un proxy de red que se ejecuta en cada nodo de su clúster, implementando parte del concepto de servicio de Kubernetes.
 8. **container runtime**: El tiempo de ejecución del contenedor es el software responsable de ejecutar los contenedores.
-9. **kube-scheduler**: Componente del plano de control que busca pods recién creados sin un nodo asignado y selecciona un nodo para que se ejecuten.
 
 ## Instalación Kubectl
 

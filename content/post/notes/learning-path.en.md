@@ -98,7 +98,7 @@ The knowledge for this certification is divided into approximately 14 chapters, 
 5. Elastic Load Balancing, Amazon CloudWatch and Auto Scaling.
 6. AWS Identity and Access Management (IAM).
 7. Databases and AWS.
-8. SOS, SWF and SNS.
+8. SQS, SWF and SNS.
 9. Domain Name System (DNS) and Amazon Route 53.
 10. Amazon ElastiCache.
 11. Additional Key Services.

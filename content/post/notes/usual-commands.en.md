@@ -160,7 +160,7 @@ $ find . -name \*\.php -exec chmod 644 {} \;
 $ journalctl -t setroubleshoot
 $ dmesg | grep -i -e tipo = 1300 -e tipo = 1400
 $ semodule -DB
-$ emodule -B
+$ semodule -B
 $ sealert -l "*"
 
 # NGINX - Selinux

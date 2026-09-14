@@ -1,5 +1,5 @@
 +++
-title = "Limite de Memoria en Docker"
+title = "Límite de Memoria en Docker"
 author = "Fcch"
 date = "2020-08-12"
 description = "Guía Servidores e Infraestructura"
@@ -50,7 +50,7 @@ En las pruebas existieron problemas en sistemas operativos Debian y Ubuntu:
 
 ![](/images/docker-limite-mem/docker-kernel-fail.png)
 
-Este problema se debe a que el [**cgroup**](https://en.wikipedia.org/wiki/Cgroups) no esta montado en el sistema, para que se monte editamos el archivo archivo **grub**.
+Este problema se debe a que el [**cgroup**](https://en.wikipedia.org/wiki/Cgroups) no está montado en el sistema, para que se monte editamos el archivo **grub**.
 
 ```cmd
 $ sudo vim /etc/default/grub
