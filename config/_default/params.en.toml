@@ -39,7 +39,7 @@ figurePositionLabel = "Figure"
 # Set the collapsed mobile navigation to either appear from the left or the right
 mobileNavigation = "left"
 
-enforceLightMode = false
+enforceLightMode = true
 # enforceDarkMode = false
 
 # customize footer icon. see issue https://github.com/chipzoller/hugo-clarity/issues/77
