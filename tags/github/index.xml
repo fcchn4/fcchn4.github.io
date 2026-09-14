@@ -12,7 +12,7 @@
 &lt;li&gt;&lt;strong&gt;Configurando el Repositorio&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.&lt;/p&gt;
+&lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.&lt;/p&gt;
 &lt;h2 id="configuración-dns-bind9"&gt;Configuración DNS Bind9&lt;/h2&gt;
 &lt;p&gt;Muchos utilizan servidores DNS de los proveedores como &lt;a href="https://www.digitalocean.com/"&gt;&lt;strong&gt;digitalocean&lt;/strong&gt;&lt;/a&gt; o &lt;a href="https://www.linode.com/"&gt;&lt;strong&gt;linode&lt;/strong&gt;&lt;/a&gt; para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt=""&gt;&lt;/p&gt;

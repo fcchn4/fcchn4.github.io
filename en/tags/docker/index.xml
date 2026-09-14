@@ -3,9 +3,9 @@
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="pod-networking"&gt;Pod Networking&lt;/h2&gt;
 &lt;p&gt;Each Pod is assigned a unique IP address for each address family. Each container in a Pod shares the network namespace, including the IP address and network ports. Inside a Pod (and only then), the containers that belong to the Pod can communicate with each other using localhost. When containers in a Pod communicate with entities outside the Pod, they must coordinate how they use shared network resources (such as ports). Inside a Pod, containers share an IP address and port space, and can find each other via localhost. The containers in a Pod can also communicate with each other using standard interprocess communications, such as SystemV semaphores or POSIX shared memory. Containers in different Pods have different IP addresses and cannot communicate over IPC without special configuration. Containers that want to interact with a container running on a different Pod can use IP networks to communicate.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;CNI - Cluster Networking Interface&lt;/strong&gt;: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CNI - Container Networking Interface&lt;/strong&gt;: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.&lt;/p&gt;
 &lt;p&gt;In the context of Kubernetes, the CNI integrates seamlessly with the kubelet to allow automatic network configuration between pods using an underlying or overlay network. An underlying network is defined at the physical level of the network layer made up of routers and switches.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Calico&lt;/strong&gt;: It is an open source network and network security solution for containers, virtual machines, and native host-based workloads. Calico supports several data planes, including: a pure Linux eBPF data plane, a standard Linux network data plane, and a Windows HNS data plane. Calico provides a complete network stack, but can also be used in conjunction with cloud provider CNIs to provide network policy enforcement.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Calico&lt;/strong&gt;: It is an open source network security solution for containers, virtual machines, and native host-based workloads. Calico supports several data planes, including: a pure Linux eBPF data plane, a standard Linux network data plane, and a Windows HNS data plane. Calico provides a complete network stack, but can also be used in conjunction with cloud provider CNIs to provide network policy enforcement.&lt;/p&gt;
 &lt;h2 id="kubernetes-services"&gt;Kubernetes Services&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Cluster IP&lt;/strong&gt;: Assign a Fixed IP within a cluster, it works with a small Load Balancer.&lt;/li&gt;
@@ -119,9 +119,9 @@
 &lt;li&gt;&lt;a href="https://rancher.com/docs/"&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://kubernetes.io/es/docs/concepts/"&gt;&lt;strong&gt;Concepts Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https:kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 3</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</link><pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</guid><description>
-&lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Parte 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
+&lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Part 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Now we will execute basic tasks in our small cluster, but before we continue describing more details of &lt;strong&gt;Kubernetes&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="kubernetes-objects"&gt;Kubernetes objects&lt;/h2&gt;
@@ -132,7 +132,7 @@
 &lt;li&gt;&lt;strong&gt;Namespace&lt;/strong&gt;: It allows us to isolate resources for the use of the different users of the cluster.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Manifest&lt;/strong&gt;: It is a &lt;strong&gt;yaml&lt;/strong&gt; manifest file that contains instructions that specify how to deploy an application to the node or nodes in a &lt;strong&gt;Kubernetes&lt;/strong&gt; cluster.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="kubernetes-drivers"&gt;Kubernetes Drivers&lt;/h2&gt;
+&lt;h2 id="kubernetes-controllers"&gt;Kubernetes Controllers&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt; contains top-level abstractions called Controllers. The Controllers are based on the basic objects and provide additional functionality on top of them.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Replicaset&lt;/strong&gt;: The purpose of a ReplicaSet is to keep a stable set of replicas of Pods running at all times. Thus, it is used numerous times to ensure the availability of a specific number of identical Pods.&lt;/li&gt;
@@ -289,7 +289,7 @@
 &lt;p&gt;In the image we have as a detail:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Three Raspberry Pi 4, Model B&lt;/strong&gt; (1 Server Node and 2 Worker Nodes).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Two Raspberry Pi 3, Model B&lt;/strong&gt; (2 Worker Nodes,).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Two Raspberry Pi 3, Model B&lt;/strong&gt; (2 Worker Nodes).&lt;/li&gt;
 &lt;li&gt;One &lt;strong&gt;8-port Tp-Link TL-SG1008D Gigabit Desktop Switch&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="basic-concepts"&gt;Basic concepts&lt;/h2&gt;
@@ -331,9 +331,6 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;container runtime&lt;/strong&gt;: The container runtime is the software responsible for running the containers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;kube-scheduler&lt;/strong&gt;: A control plane component that searches for newly created pods without an assigned node and selects a node to run.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="install-kubectl"&gt;Install Kubectl&lt;/h2&gt;

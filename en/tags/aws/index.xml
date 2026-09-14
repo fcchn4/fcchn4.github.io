@@ -97,7 +97,7 @@
 &lt;li&gt;Elastic Load Balancing, Amazon CloudWatch and Auto Scaling.&lt;/li&gt;
 &lt;li&gt;AWS Identity and Access Management (IAM).&lt;/li&gt;
 &lt;li&gt;Databases and AWS.&lt;/li&gt;
-&lt;li&gt;SOS, SWF and SNS.&lt;/li&gt;
+&lt;li&gt;SQS, SWF and SNS.&lt;/li&gt;
 &lt;li&gt;Domain Name System (DNS) and Amazon Route 53.&lt;/li&gt;
 &lt;li&gt;Amazon ElastiCache.&lt;/li&gt;
 &lt;li&gt;Additional Key Services.&lt;/li&gt;

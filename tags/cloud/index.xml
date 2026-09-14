@@ -2,7 +2,7 @@
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://digitalocean.com"&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; también dispone de un CLI para manejar la infraestructura &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot;, que tiene un funcionamiento similar a &lt;strong&gt;&lt;a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html"&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="instalación-del-binario"&gt;Instalación del Binario&lt;/h2&gt;
-&lt;p&gt;Lo primero que toco hacer es descargar e instalar el binario, esto para la versión actual &lt;strong&gt;1.54.0&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Lo primero que tocó hacer es descargar e instalar el binario, esto para la versión actual &lt;strong&gt;1.54.0&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ cd ~
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
@@ -49,7 +49,7 @@
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute droplet list --format &lt;span class="s2"&gt;&amp;#34;ID,Name,PublicIPv4&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Crear un Droplet con mas detalles&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Crear un Droplet con más detalles&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ doctl compute droplet create --region &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;REGION_CODE&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; \
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; --image &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;IMAGE_CODE&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; --size &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;SIZE_NAME&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; \

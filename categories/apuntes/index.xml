@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apuntes on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/categories/apuntes/</link><description>Recent content in Apuntes on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fcch Blog | 2019 - 2022</copyright><lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/categories/apuntes/index.xml" rel="self" type="application/rss+xml"/><item><title>Lenovo Actualización Firmware BIOS - UEFI</title><link>https://blog.fcch.xyz/post/notes/lenovo-firmware-update/</link><pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/lenovo-firmware-update/</guid><description>
-&lt;p&gt;Cuando eres usuario de algún GNU/Linux es normal toparse con varios impedimentos para actualizar o aplicar parches de seguridad en firmware BIOS, muchas empresas solo facilitan métodos de actualización con ejecutables que solo funcionan en Windows, aunque algunos métodos facilitan binarios en archivos &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt; o &lt;strong&gt;.cab&lt;/strong&gt; o actualizaciones que se pueden almacenar en dispositivos de almacenamiento USB, esta tarea no es fácil para un usuario sin mucha experiencia.&lt;/p&gt;
+&lt;p&gt;Cuando eres usuario de algún GNU/Linux es normal toparse con varios impedimentos para actualizar o aplicar parches de seguridad en firmware BIOS, muchas empresas solo facilitan métodos de actualización con ejecutables que solo funcionan en Windows, aunque algunos métodos facilitan binarios en archivos &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt;, &lt;strong&gt;.cab&lt;/strong&gt; o actualizaciones que se pueden almacenar en dispositivos de almacenamiento USB, esta tarea no es fácil para un usuario sin mucha experiencia.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Algunas marcas como &lt;a href="https://www.lenovo.com/"&gt;Lenovo&lt;/a&gt; cuentan con el famoso &lt;a href="https://fwupd.org/"&gt;LVFS (Linux Vendor Firmware Service)&lt;/a&gt;, un portal web seguro que permite a los fabricantes de hardware subir actualizaciones de firmware para equipos que utilizan sistemas operativos GNU/Linux.&lt;/p&gt;
 &lt;p&gt;Para los ejemplos que siguen utilicé una laptop Lenovo ThinkPad Carbon X1, con las siguientes características:&lt;/p&gt;
@@ -8,13 +8,13 @@
 &lt;li&gt;Arquitectura: &lt;a href="https://www.debian.org/ports/amd64/"&gt;AMD64, 64 bits&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Entorno Gráfico: &lt;a href="https://www.xfce.org/about/tour420"&gt;XFCE4, versión 4.20&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;El utilitario que sevamos a ejecutar es &lt;strong&gt;fwupdmgr&lt;/strong&gt;, que viene en los repositorios oficiales de &lt;a href="https://www.debian.org/"&gt;Debian&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;El utilitario que vamos a ejecutar es &lt;strong&gt;fwupdmgr&lt;/strong&gt;, que viene en los repositorios oficiales de &lt;a href="https://www.debian.org/"&gt;Debian&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="instalación-utilitario"&gt;Instalación utilitario&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install -y fwupd
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Luego de la instalación se agregan estos dos comandos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;fwupdmgr&lt;/strong&gt;: Descarga automáticamente las actualizaciones desde LVFS.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;fwupdtool&lt;/strong&gt;: Utilidad de administración más avanzada que se ejecuta como administrador para debug o instalaciones locales directas de archivos &lt;strong&gt;.cap&lt;/strong&gt; o &lt;strong&gt;.cab&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;fwupdtool&lt;/strong&gt;: Utilidad de administración más avanzada que se ejecuta como administrador para debug o instalaciones locales directas de archivos &lt;strong&gt;.cap&lt;/strong&gt; o &lt;strong&gt;.cab&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="actualización-estándar-y-segura-recomendada"&gt;Actualización estándar y segura (Recomendada)&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;fwupdmgr refresh
@@ -139,7 +139,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;$ journalctl -t setroubleshoot
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;$ dmesg &lt;span class="p"&gt;|&lt;/span&gt; grep -i -e &lt;span class="nv"&gt;tipo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1300&lt;/span&gt; -e &lt;span class="nv"&gt;tipo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1400&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;$ semodule -DB
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;$ emodule -B
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;$ semodule -B
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;$ sealert -l &lt;span class="s2"&gt;&amp;#34;*&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# NGINX - Selinux&lt;/span&gt;
@@ -183,10 +183,10 @@
 &lt;li&gt;&lt;a href="https://manpages.ubuntu.com/manpages/jammy/man1/gsettings.1.html"&gt;&lt;strong&gt;Gsettings&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding"&gt;&lt;strong&gt;SSH&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Apuntes XFCE4</title><link>https://blog.fcch.xyz/post/notes/notes-xfce4/</link><pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/notes-xfce4/</guid><description>
-&lt;p&gt;Estuve cambiando de hardware en mi ambiente de trabajo, cambie el teclado a uno en idioma inglés, por este motivo estuve configurando &lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, que es mi entorno gráfico preferido.&lt;/p&gt;
+&lt;p&gt;Estuve cambiando de hardware en mi ambiente de trabajo, cambié el teclado a uno en idioma inglés, por este motivo estuve configurando &lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, que es mi entorno gráfico preferido.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="cambio-de-idioma-del-teclado-en-xfce4"&gt;Cambio de Idioma del Teclado en XFCE4&lt;/h2&gt;
-&lt;p&gt;Lo primero fue hacer el cambio de idioma, por lo tanto para llegar al menú de configuración: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, la configuración deberia quedar con en la imagen.&lt;/p&gt;
+&lt;p&gt;Lo primero fue hacer el cambio de idioma, por lo tanto para llegar al menú de configuración: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, la configuración debería quedar como en la imagen.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Esta configuración no tuvo efecto luego de un reinicio, para solucionar este problema editamos el archivo de configuración general en: &lt;strong&gt;/etc/default/keyboard&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-general.png" alt=""&gt;&lt;/p&gt;
@@ -213,7 +213,7 @@
 &lt;p&gt;Son juegos de guerra ofrecidos por la comunidad OverTheWire que nos ayudan a aprender y practicar conceptos de seguridad en forma de juegos divertidos.&lt;/p&gt;
 &lt;p&gt;El enlace para poder jugar un momento: &lt;a href="https://overthewire.org/wargames/bandit/"&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/bandit/otw-bandit.jpg" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Iniciamos!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;¡¡¡Iniciamos!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Usuario: bandit0&lt;/li&gt;
 &lt;li&gt;Puerto: 2220&lt;/li&gt;
@@ -522,7 +522,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;-- &lt;span class="k"&gt;do&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;-- &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$pass&lt;/span&gt; &lt;span class="nv"&gt;$i&lt;/span&gt; &amp;gt;&amp;gt; pass25.txt
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;-- &lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;$ cat pass25,txt &lt;span class="p"&gt;|&lt;/span&gt; nc localhost &lt;span class="m"&gt;30001&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;$ cat pass25.txt &lt;span class="p"&gt;|&lt;/span&gt; nc localhost &lt;span class="m"&gt;30001&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="bandit-level-25--level-26"&gt;Bandit Level 25 → Level 26&lt;/h2&gt;
 &lt;ul&gt;
@@ -658,7 +658,7 @@
 &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="lo-básico"&gt;Lo Básico&lt;/h2&gt;
-&lt;p&gt;Primero debemos ejecutar el comando &lt;strong&gt;tmux&lt;/strong&gt;, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a &lt;strong&gt;tmux&lt;/strong&gt;, en mi caso utilizare la combinación &lt;strong&gt;ctrl + b&lt;/strong&gt; que es la configuración por defecto luego de la instalación:&lt;/p&gt;
+&lt;p&gt;Primero debemos ejecutar el comando &lt;strong&gt;tmux&lt;/strong&gt;, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a &lt;strong&gt;tmux&lt;/strong&gt;, en mi caso utilizaré la combinación &lt;strong&gt;ctrl + b&lt;/strong&gt; que es la configuración por defecto luego de la instalación:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -730,7 +730,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="funcionalidades-muy-útiles"&gt;Funcionalidades muy útiles&lt;/h2&gt;
-&lt;p&gt;Un función muy útil en &lt;strong&gt;tmux&lt;/strong&gt; es el &lt;strong&gt;modo comados&lt;/strong&gt;, que nos permite ingresar comandos que nos faciliten tareas de forma mas simple.&lt;/p&gt;
+&lt;p&gt;Una función muy útil en &lt;strong&gt;tmux&lt;/strong&gt; es el &lt;strong&gt;modo comandos&lt;/strong&gt;, que nos permite ingresar comandos que nos faciliten tareas de forma más simple.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -786,13 +786,13 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="compartir-terminal"&gt;Compartir Terminal&lt;/h2&gt;
-&lt;p&gt;A menudo es necesario trabajar en la misma terminal con diferentes usuarios conectados al mismo servidor, &lt;strong&gt;tmux&lt;/strong&gt; permite compartir terminal con multiples usuarios, solo a que cumplir algunos requisitos:&lt;/p&gt;
+&lt;p&gt;A menudo es necesario trabajar en la misma terminal con diferentes usuarios conectados al mismo servidor, &lt;strong&gt;tmux&lt;/strong&gt; permite compartir terminal con múltiples usuarios, solo hay que cumplir algunos requisitos:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;La terminal a compartir debe ser de un usuario en específico.&lt;/li&gt;
 &lt;li&gt;Un usuario debe crear una nueva sesión &lt;strong&gt;tmux&lt;/strong&gt; con un nombre.&lt;/li&gt;
 &lt;li&gt;El usuario debe compartir el nombre de la nueva sesión.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Primer paso, crear un nueva sesión &lt;strong&gt;tmux&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Primer paso, crear una nueva sesión &lt;strong&gt;tmux&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ tmux new-session -s fcch
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Segundo paso, conectarse a la nueva sesión.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo su - NOMBRE_USUARIO
@@ -802,7 +802,7 @@
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Sincronización de paneles:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;Trabajo con paneles y redimenciones con &lt;strong&gt;ctrl + b + space&lt;/strong&gt; y &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Trabajo con paneles y redimensiones con &lt;strong&gt;ctrl + b + space&lt;/strong&gt; y &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
@@ -811,7 +811,7 @@
 &lt;/ul&gt;</description></item><item><title>Ruta de Aprendizaje</title><link>https://blog.fcch.xyz/post/notes/learning-path/</link><pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/learning-path/</guid><description>
 &lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificación &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;En mi busqueda de información encontre esta descripción del camino completo hacia una certificación &lt;strong&gt;Profesional&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;En mi búsqueda de información encontré esta descripción del camino completo hacia una certificación &lt;strong&gt;Profesional&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="aws-certified-cloud-practitioner-clf-c01"&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
 &lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;
@@ -826,7 +826,7 @@
 &lt;li&gt;Facturación y análisis.&lt;/li&gt;
 &lt;li&gt;La propuesta de valor de AWS Cloud.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Con estos conocimientos los candidatos podran validar la capacidad para:&lt;/p&gt;
+&lt;p&gt;Con estos conocimientos los candidatos podrán validar la capacidad para:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Explicar el valor de AWS Cloud.&lt;/li&gt;
 &lt;li&gt;Comprender y explicar el modelo de responsabilidad compartida de AWS.&lt;/li&gt;
@@ -907,7 +907,7 @@
 &lt;li&gt;Elastic Load Balancing, Amazon CloudWatch y Auto Scaling.&lt;/li&gt;
 &lt;li&gt;AWS Identity y Access Management (IAM).&lt;/li&gt;
 &lt;li&gt;Databases y AWS.&lt;/li&gt;
-&lt;li&gt;SOS, SWF y SNS.&lt;/li&gt;
+&lt;li&gt;SQS, SWF y SNS.&lt;/li&gt;
 &lt;li&gt;Domain Name System (DNS) y Amazon Route 53.&lt;/li&gt;
 &lt;li&gt;Amazon ElastiCache.&lt;/li&gt;
 &lt;li&gt;Additional Key Services.&lt;/li&gt;
@@ -954,7 +954,7 @@
 &lt;ol&gt;
 &lt;li&gt;Introducción a los Recursos de Seguridad de AWS.&lt;/li&gt;
 &lt;li&gt;El Modelo de Responsabilidad Compartida.&lt;/li&gt;
-&lt;li&gt;Indentity and Access Managment - IAM.&lt;/li&gt;
+&lt;li&gt;Identity and Access Management - IAM.&lt;/li&gt;
 &lt;li&gt;Amazon Inspector.&lt;/li&gt;
 &lt;li&gt;AWS Shield.&lt;/li&gt;
 &lt;li&gt;Conformidad de Seguridad de AWS.&lt;/li&gt;
@@ -977,12 +977,38 @@
 &lt;li&gt;&lt;a href="https://www.aws.training/"&gt;&lt;strong&gt;Cloud Fundamentals&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://aws.amazon.com/es/certification/faqs/"&gt;&lt;strong&gt;Preguntas Frecuentes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://aws.amazon.com/es/certification/benefits/"&gt;&lt;strong&gt;AWS Beneficios&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>NPM EACCES</title><link>https://blog.fcch.xyz/post/notes/npm-eacces/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/npm-eacces/</guid><description>
+&lt;p&gt;Me tocó probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Al ejecutar el comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm install -g &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se presentó un problema de permisos &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; y para solucionar el problema de forma inmediata era ejecutarlo con &lt;strong&gt;sudo&lt;/strong&gt;, esta práctica es común pero no es lo que buscamos.&lt;/p&gt;
+&lt;p&gt;Buscando encontré que la solución para evitar el comando sudo es cambiar manualmente el directorio predeterminado de &lt;a href="https://nodejs.org/en/"&gt;&lt;strong&gt;NPM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="creación-del-nuevo-directorio"&gt;Creación del Nuevo Directorio&lt;/h2&gt;
+&lt;p&gt;Creamos una carpeta nueva donde se instalarán los nuevos programas:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ mkdir ~/.npm-global
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="configure-npm-para-la-nueva-ruta-del-directorio"&gt;Configure NPM para la Nueva Ruta del Directorio&lt;/h2&gt;
+&lt;p&gt;Con el comando &lt;a href="https://nodejs.org/en/"&gt;&lt;strong&gt;npm&lt;/strong&gt;&lt;/a&gt; cambiamos la ruta del directorio de instalación de paquetes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm config set prefix &amp;#39;~/.npm-global&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="variables-de-entorno"&gt;Variables de Entorno&lt;/h2&gt;
+&lt;p&gt;En algunos casos, hay guías que te sugieren crear un archivo &lt;strong&gt;.profile&lt;/strong&gt; para crear la variable, en este ejemplo agregamos la variable al archivo &lt;strong&gt;.bashrc&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ echo &amp;#39;NPM_CONFIG_PREFIX=~/.npm-global&amp;#39; &lt;span class="p"&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="actualizamos-variables"&gt;Actualizamos Variables&lt;/h2&gt;
+&lt;p&gt;Actualizamos las variables con el siguiente comando:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ source ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="probamos-la-instalación-sin-sudo"&gt;Probamos la Instalación sin sudo&lt;/h2&gt;
+&lt;p&gt;Para probar la nueva funcionalidad ejecutamos el mismo comando sin anteponer &lt;strong&gt;sudo&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm install -g &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://nodejs.org/en/docs/guides/"&gt;&lt;strong&gt;NodeJS&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nodejs.org/api/errors.html"&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Apuntes Fedora 32</title><link>https://blog.fcch.xyz/post/notes/notes-fedora-32/</link><pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/notes-fedora-32/</guid><description>
-&lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalice el Prompt para mi Terminal y me cambié de &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalicé el Prompt para mi Terminal y me cambié de &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="prompt-terminal"&gt;Prompt Terminal&lt;/h2&gt;
 &lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
-&lt;p&gt;Buscando me encontré con &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenia un problema solucionado y solo quedo colorear el prompt obtener la hora y la ruta actual de directorio, estos cambios los agregue a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedo de esta forma:&lt;/p&gt;
+&lt;p&gt;Buscando me encontré con &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenía un problema solucionado, solo quedó colorear el prompt, obtener la hora y la ruta actual de directorio, estos cambios los agregué a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedó de esta forma:&lt;/p&gt;
 &lt;p&gt;Cuando se tiene instalado el paquete de Git, entonces se cuenta con el script en el sistema operativo, si no se tiene instalado Git entonces:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;# Instalación Git
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo dnf install git
@@ -1008,12 +1034,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GIT_PS1_SHOWUNTRACKEDFILES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;__git_ps1 &amp;#34;\[\033[01;33m\]\t\[\033[00m\] \[\033[01;31m\][\W]\[\033[00m\]&amp;#34; &amp;#34; \\\$ &amp;#34;&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="docker-ce"&gt;Docker CE&lt;/h2&gt;
-&lt;p&gt;Luego de instalar Docker CE desde el repositorio &lt;a href="https://docs.docker.com/engine/install/fedora/"&gt;&lt;strong&gt;oficial&lt;/strong&gt;&lt;/a&gt; y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenia un error con el firewall.&lt;/p&gt;
+&lt;p&gt;Luego de instalar Docker CE desde el repositorio &lt;a href="https://docs.docker.com/engine/install/fedora/"&gt;&lt;strong&gt;oficial&lt;/strong&gt;&lt;/a&gt; y realizar las configuraciones necesarias, resulta que los contenedores no tenían salida a internet, después de verificar el DNS interno de Docker, encontré que tenía un error con el firewall.&lt;/p&gt;
 &lt;p&gt;Para solucionar el problema agregamos la interface &lt;strong&gt;docker0&lt;/strong&gt; en la zona de confianza del firewall.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo firewall-cmd --reload
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="cinnamon"&gt;Cinnamon&lt;/h2&gt;
-&lt;p&gt;Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opte por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es &lt;strong&gt;NOUVEAU&lt;/strong&gt; controlador de código abierto, instalamos el controlador &lt;strong&gt;NVIDIA Corporation GF119 [NVS 310]&lt;/strong&gt; para mejorar el rendimiento en el vídeo.&lt;/p&gt;
+&lt;p&gt;Antes de actualizarme a Fedora 32, el entorno gráfico que usaba era Gnome 3, al presentar problemas de rendimiento y el alto consumo de memoria opté por cambiar a Cinnamon 4.4, uno de los detalles importantes es que el controlador por defecto para la tarjeta de vídeo es &lt;strong&gt;NOUVEAU&lt;/strong&gt; controlador de código abierto, instalamos el controlador &lt;strong&gt;NVIDIA Corporation GF119 [NVS 310]&lt;/strong&gt; para mejorar el rendimiento en el vídeo.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NVIDIA Driver 390xxx - repositorio RPMFusion&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;# Habilitando NVIDIA RPM Fusion
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver

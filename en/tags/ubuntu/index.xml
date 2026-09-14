@@ -102,7 +102,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan key:generate
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan install
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan serve
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the deployment on the production server the execution of the previous commands are no longer necessary.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the deployment on the production server the execution of the previous commands is no longer necessary.&lt;/p&gt;
 &lt;p&gt;Initially it is necessary to clone the repository with a name similar to the one that appears in the VirtualHost configuration file.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo -u www-data git clone git@github.com:username/vuejs-laravel.git /var/www/html/demo-web
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Before running the necessary commands, we verify that the &lt;strong&gt;modules&lt;/strong&gt;, &lt;strong&gt;vendor&lt;/strong&gt; and &lt;strong&gt;.env&lt;/strong&gt; files are not versioned, and that the &lt;strong&gt;.gitignore&lt;/strong&gt; file has them listed.&lt;/p&gt;
@@ -114,5 +114,5 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With this we can now test and verify the operation of our project.&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://laravel.com/docs/7.x/frontend"&gt;Laravel Frontend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://laravel.com/docs/8.x/frontend"&gt;Laravel Frontend&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item></channel></rss>

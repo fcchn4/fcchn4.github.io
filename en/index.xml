@@ -139,7 +139,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;$ journalctl -t setroubleshoot
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;$ dmesg &lt;span class="p"&gt;|&lt;/span&gt; grep -i -e &lt;span class="nv"&gt;tipo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1300&lt;/span&gt; -e &lt;span class="nv"&gt;tipo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;1400&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;$ semodule -DB
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;$ emodule -B
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;$ semodule -B
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;$ sealert -l &lt;span class="s2"&gt;&amp;#34;*&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# NGINX - Selinux&lt;/span&gt;
@@ -313,7 +313,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan key:generate
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan install
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ php artisan serve
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the deployment on the production server the execution of the previous commands are no longer necessary.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the deployment on the production server the execution of the previous commands is no longer necessary.&lt;/p&gt;
 &lt;p&gt;Initially it is necessary to clone the repository with a name similar to the one that appears in the VirtualHost configuration file.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo -u www-data git clone git@github.com:username/vuejs-laravel.git /var/www/html/demo-web
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Before running the necessary commands, we verify that the &lt;strong&gt;modules&lt;/strong&gt;, &lt;strong&gt;vendor&lt;/strong&gt; and &lt;strong&gt;.env&lt;/strong&gt; files are not versioned, and that the &lt;strong&gt;.gitignore&lt;/strong&gt; file has them listed.&lt;/p&gt;
@@ -325,7 +325,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With this we can now test and verify the operation of our project.&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://laravel.com/docs/7.x/frontend"&gt;Laravel Frontend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://laravel.com/docs/8.x/frontend"&gt;Laravel Frontend&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Hugo Framework - Internal Templates</title><link>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</link><pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</guid><description>
 &lt;p&gt;Building websites with &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; made me explore more about this very useful tool. An important necessary functionality was to add the properties of &lt;a href="https://ogp.me/"&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt; to a project, the first idea was to edit the HTML files of the &lt;strong&gt;theme&lt;/strong&gt; and add the corresponding tags, but after consulting the official documentation we found the most appropriate solution in this &lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;section&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt=""&gt;&lt;/p&gt;
@@ -442,9 +442,9 @@
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="pod-networking"&gt;Pod Networking&lt;/h2&gt;
 &lt;p&gt;Each Pod is assigned a unique IP address for each address family. Each container in a Pod shares the network namespace, including the IP address and network ports. Inside a Pod (and only then), the containers that belong to the Pod can communicate with each other using localhost. When containers in a Pod communicate with entities outside the Pod, they must coordinate how they use shared network resources (such as ports). Inside a Pod, containers share an IP address and port space, and can find each other via localhost. The containers in a Pod can also communicate with each other using standard interprocess communications, such as SystemV semaphores or POSIX shared memory. Containers in different Pods have different IP addresses and cannot communicate over IPC without special configuration. Containers that want to interact with a container running on a different Pod can use IP networks to communicate.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;CNI - Cluster Networking Interface&lt;/strong&gt;: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CNI - Container Networking Interface&lt;/strong&gt;: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.&lt;/p&gt;
 &lt;p&gt;In the context of Kubernetes, the CNI integrates seamlessly with the kubelet to allow automatic network configuration between pods using an underlying or overlay network. An underlying network is defined at the physical level of the network layer made up of routers and switches.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Calico&lt;/strong&gt;: It is an open source network and network security solution for containers, virtual machines, and native host-based workloads. Calico supports several data planes, including: a pure Linux eBPF data plane, a standard Linux network data plane, and a Windows HNS data plane. Calico provides a complete network stack, but can also be used in conjunction with cloud provider CNIs to provide network policy enforcement.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Calico&lt;/strong&gt;: It is an open source network security solution for containers, virtual machines, and native host-based workloads. Calico supports several data planes, including: a pure Linux eBPF data plane, a standard Linux network data plane, and a Windows HNS data plane. Calico provides a complete network stack, but can also be used in conjunction with cloud provider CNIs to provide network policy enforcement.&lt;/p&gt;
 &lt;h2 id="kubernetes-services"&gt;Kubernetes Services&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Cluster IP&lt;/strong&gt;: Assign a Fixed IP within a cluster, it works with a small Load Balancer.&lt;/li&gt;
@@ -558,9 +558,9 @@
 &lt;li&gt;&lt;a href="https://rancher.com/docs/"&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://kubernetes.io/es/docs/concepts/"&gt;&lt;strong&gt;Concepts Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https:kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 3</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</link><pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</guid><description>
-&lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Parte 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
+&lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Part 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Now we will execute basic tasks in our small cluster, but before we continue describing more details of &lt;strong&gt;Kubernetes&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="kubernetes-objects"&gt;Kubernetes objects&lt;/h2&gt;
@@ -571,7 +571,7 @@
 &lt;li&gt;&lt;strong&gt;Namespace&lt;/strong&gt;: It allows us to isolate resources for the use of the different users of the cluster.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Manifest&lt;/strong&gt;: It is a &lt;strong&gt;yaml&lt;/strong&gt; manifest file that contains instructions that specify how to deploy an application to the node or nodes in a &lt;strong&gt;Kubernetes&lt;/strong&gt; cluster.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="kubernetes-drivers"&gt;Kubernetes Drivers&lt;/h2&gt;
+&lt;h2 id="kubernetes-controllers"&gt;Kubernetes Controllers&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt; contains top-level abstractions called Controllers. The Controllers are based on the basic objects and provide additional functionality on top of them.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Replicaset&lt;/strong&gt;: The purpose of a ReplicaSet is to keep a stable set of replicas of Pods running at all times. Thus, it is used numerous times to ensure the availability of a specific number of identical Pods.&lt;/li&gt;
@@ -728,7 +728,7 @@
 &lt;p&gt;In the image we have as a detail:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Three Raspberry Pi 4, Model B&lt;/strong&gt; (1 Server Node and 2 Worker Nodes).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Two Raspberry Pi 3, Model B&lt;/strong&gt; (2 Worker Nodes,).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Two Raspberry Pi 3, Model B&lt;/strong&gt; (2 Worker Nodes).&lt;/li&gt;
 &lt;li&gt;One &lt;strong&gt;8-port Tp-Link TL-SG1008D Gigabit Desktop Switch&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="basic-concepts"&gt;Basic concepts&lt;/h2&gt;
@@ -770,9 +770,6 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;container runtime&lt;/strong&gt;: The container runtime is the software responsible for running the containers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;kube-scheduler&lt;/strong&gt;: A control plane component that searches for newly created pods without an assigned node and selects a node to run.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id="install-kubectl"&gt;Install Kubectl&lt;/h2&gt;
@@ -1250,7 +1247,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;-- &lt;span class="k"&gt;do&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;-- &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$pass&lt;/span&gt; &lt;span class="nv"&gt;$i&lt;/span&gt; &amp;gt;&amp;gt; pass25.txt
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;-- &lt;span class="k"&gt;done&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;$ cat pass25,txt &lt;span class="p"&gt;|&lt;/span&gt; nc localhost &lt;span class="m"&gt;30001&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;$ cat pass25.txt &lt;span class="p"&gt;|&lt;/span&gt; nc localhost &lt;span class="m"&gt;30001&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="bandit-level-25--level-26"&gt;Bandit Level 25 → Level 26&lt;/h2&gt;
 &lt;ul&gt;
@@ -1635,7 +1632,7 @@
 &lt;li&gt;Elastic Load Balancing, Amazon CloudWatch and Auto Scaling.&lt;/li&gt;
 &lt;li&gt;AWS Identity and Access Management (IAM).&lt;/li&gt;
 &lt;li&gt;Databases and AWS.&lt;/li&gt;
-&lt;li&gt;SOS, SWF and SNS.&lt;/li&gt;
+&lt;li&gt;SQS, SWF and SNS.&lt;/li&gt;
 &lt;li&gt;Domain Name System (DNS) and Amazon Route 53.&lt;/li&gt;
 &lt;li&gt;Amazon ElastiCache.&lt;/li&gt;
 &lt;li&gt;Additional Key Services.&lt;/li&gt;
@@ -1936,7 +1933,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-config.php
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;....&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="sd"&gt;/** Direct updates */&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;‘FS_METHOD’&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;’direct’&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;define&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;FS_METHOD&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;direct&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="hide-sensitive-wordpress-information"&gt;Hide Sensitive Wordpress Information&lt;/h2&gt;
 &lt;p&gt;Another detail that existed was that sensitive CMS information was shown, such as the version used and the &lt;strong&gt;readme.html&lt;/strong&gt; file, for these cases two files &lt;strong&gt;functions.php&lt;/strong&gt; and &lt;strong&gt;.htaccess&lt;/strong&gt; (or, failing that, the web server configuration file).&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-content/themes/nombre_tema/functions.php

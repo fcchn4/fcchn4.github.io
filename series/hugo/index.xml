@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/series/hugo/</link><description>Recent content in Hugo on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Fcch Blog | 2019 - 2022</copyright><lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/series/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Framework - Templates Internos</title><link>https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/</link><pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/</guid><description>
-&lt;p&gt;Crear sitios web con &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; hizo que explore mas sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de &lt;a href="https://ogp.me/"&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt;, la primera idea fue editar los archivos HTML del &lt;strong&gt;theme&lt;/strong&gt; y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución mas adecuada en esta &lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;sección&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Crear sitios web con &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; hizo que explorase más sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de &lt;a href="https://ogp.me/"&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt;, la primera idea fue editar los archivos HTML del &lt;strong&gt;theme&lt;/strong&gt; y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución más adecuada en esta &lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;sección&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Existen diferentes templates internos, cada template tiene los ejemplos para el archivo &lt;strong&gt;config&lt;/strong&gt; en los formatos disponibles &lt;strong&gt;yaml&lt;/strong&gt;, &lt;strong&gt;toml&lt;/strong&gt; y &lt;strong&gt;json&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="templates-disponibles"&gt;Templates Disponibles&lt;/h2&gt;
@@ -65,7 +65,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;## Actualizamos los submódulos
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;$ git submodule update
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="--gitlab-ci"&gt;- Gitlab CI&lt;/h3&gt;
-&lt;p&gt;Creamos el archivo &lt;strong&gt;.gitlab-ci.yml&lt;/strong&gt; para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo seria el siguiente:&lt;/p&gt;
+&lt;p&gt;Creamos el archivo &lt;strong&gt;.gitlab-ci.yml&lt;/strong&gt; para desplegar el proyecto al realizar push al repositorio, el contenido para este archivo sería el siguiente:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;$ vim .gitlab-ci.yml
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;-- image: registry.gitlab.com/pages/hugo:latest
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;--
@@ -109,11 +109,11 @@
 &lt;li&gt;&lt;strong&gt;Para &lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.&lt;/p&gt;
+&lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.&lt;/p&gt;
 &lt;h3 id="--registros-dns-y-verificaciones-gitlab"&gt;- Registros DNS y Verificaciones Gitlab&lt;/h3&gt;
-&lt;p&gt;Para el dominio raiz &lt;strong&gt;dominio.com&lt;/strong&gt; se debe crear un registro &lt;strong&gt;A&lt;/strong&gt; con los siguientes datos:&lt;/p&gt;
+&lt;p&gt;Para el dominio raíz &lt;strong&gt;dominio.com&lt;/strong&gt; se debe crear un registro &lt;strong&gt;A&lt;/strong&gt; con los siguientes datos:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;El registro &lt;strong&gt;A&lt;/strong&gt; para el dominio raiz &lt;strong&gt;dominio.com&lt;/strong&gt; con el valor &lt;strong&gt;35.185.44.232&lt;/strong&gt;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;El registro &lt;strong&gt;A&lt;/strong&gt; para el dominio raíz &lt;strong&gt;dominio.com&lt;/strong&gt; con el valor &lt;strong&gt;35.185.44.232&lt;/strong&gt;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Luego de crear los registros podemos verificar desde &lt;strong&gt;Gitlab&lt;/strong&gt;:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Para el subdominio &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; se debe crear un registro &lt;strong&gt;CNAME&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
@@ -147,7 +147,7 @@
 &lt;li&gt;&lt;strong&gt;Configurando el Repositorio&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt=""&gt;&lt;/p&gt;
-&lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se deberia crear los registros necesario en el servidor DNS.&lt;/p&gt;
+&lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.&lt;/p&gt;
 &lt;h2 id="configuración-dns-bind9"&gt;Configuración DNS Bind9&lt;/h2&gt;
 &lt;p&gt;Muchos utilizan servidores DNS de los proveedores como &lt;a href="https://www.digitalocean.com/"&gt;&lt;strong&gt;digitalocean&lt;/strong&gt;&lt;/a&gt; o &lt;a href="https://www.linode.com/"&gt;&lt;strong&gt;linode&lt;/strong&gt;&lt;/a&gt; para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt=""&gt;&lt;/p&gt;

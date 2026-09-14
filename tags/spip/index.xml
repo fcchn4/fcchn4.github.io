@@ -2,9 +2,9 @@
 &lt;p&gt;&lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; es un &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;CMS&lt;/a&gt; francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt=""&gt;&lt;/p&gt;
 &lt;p&gt;Existen diferentes métodos de instalación en el &lt;a href="https://www.spip.net/es_download"&gt;sitio oficial&lt;/a&gt;, se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la &lt;strong&gt;Instalación Automática&lt;/strong&gt; que consiste en descargar el archivo &lt;strong&gt;spip_loader.php&lt;/strong&gt; y ejecutarlo desde un navegador web.&lt;/p&gt;
-&lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es la que se utiliza comunmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.&lt;/p&gt;
+&lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es el que se utiliza comúnmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.&lt;/p&gt;
 &lt;h2 id="descarga-spip"&gt;Descarga SPIP&lt;/h2&gt;
-&lt;p&gt;Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la maquina local o con algun proveedor de su preferencia.&lt;/p&gt;
+&lt;p&gt;Iniciamos la descarga suponiendo que ya se cuenta con algún servidor web en la máquina local o con algún proveedor de su preferencia.&lt;/p&gt;
 &lt;p&gt;Para iniciar la descarga de SPIP, para tener la última versión estable 3.2.7 debemos descargar la rama &lt;a href="https://www.spip.net/es_download"&gt;&lt;strong&gt;spip-3.2&lt;/strong&gt;&lt;/a&gt; ejecutando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ mkdir spip-core
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ cd spip-core
@@ -36,7 +36,7 @@
 &lt;li&gt;&lt;a href="https://dominio.com/ecrire"&gt;https://dominio.com/ecrire&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;http://IP-server/ecrire&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;esto depende de la configuración del servidor web, si esta trabajando en local o desde un proveedor del servicio.&lt;/p&gt;
+&lt;p&gt;esto depende de la configuración del servidor web, si está trabajando en local o desde un proveedor del servicio.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol&gt;
@@ -48,7 +48,7 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="2"&gt;
-&lt;li&gt;Luego tenemos el menu para la conexión a la base de datos, en este caso se dan dos opciones, la primera es &lt;strong&gt;MySQL&lt;/strong&gt; donde se deben ingresar el usuario y contraseña.&lt;/li&gt;
+&lt;li&gt;Luego tenemos el menú para la conexión a la base de datos, en este caso se dan dos opciones, la primera es &lt;strong&gt;MySQL&lt;/strong&gt; donde se deben ingresar el usuario y contraseña.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
