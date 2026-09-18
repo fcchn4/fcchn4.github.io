@@ -1,7 +1,7 @@
 +++
 title = "Apuntes monitoreo con Grafana, Loki y Promtail"
 author = "Fcch"
-date = "2026-09-14"
+date = "2026-09-17"
 description = "Monitoreo basado en logs con el stack de Grafana en servidores on-premise"
 featured = true
 tags = [
@@ -18,201 +18,175 @@ series = ["Servidores"]
 thumbnail = "images/grafana-stack/grafana-stack-logo.png"
 +++
 
-Tener un servidor funcionando sin monitoreo es como manejar un auto sin tablero de instrumentos: todo parece bien hasta que deja de funcionar. No importa si administras un servidor personal, un VPS o una infraestructura pequeña, contar con un sistema de monitoreo básico es fundamental para saber qué está pasando, detectar problemas a tiempo y tomar decisiones informadas.
+A lo largo de la vida profesional es normal ver muchos tipos de implementaciones en cuanto a desarrollo e infraestructura, en pocas palabras para infraestructura es normal que no exista monitoreo de servicios en servidores de alguna organización, esto más común en servidores on-premise, por este motivo me hice algunas preguntas.
 
 <!--more-->
 
-En este artículo comparto la implementación de un sistema de monitoreo basado en el stack de **Grafana** para servidores on-premise, utilizando exclusivamente logs del sistema operativo y de servicios críticos como SSH, Nginx y Fail2ban.
+![](/images/grafana-stack/grafana-stack-logo.png)
 
-## ¿Por qué es importante monitorear?
+- ¿Cuánto tiempo toma armar un sistema de monitoreo?
+- ¿Qué tan complicado puede ser implementar un sistema de monitoreo?
+- ¿Qué capacidades de cómputo necesito para tener un sistema de monitoreo?
+- ¿Cuántos sistemas de monitoreo existen y puedo utilizar?
 
-Muchos administradores de servidores, especialmente los que manejan infraestructura pequeña, postergan el monitoreo porque lo consideran complejo o innecesario. Sin embargo, un monitoreo básico permite:
+Para este artículo hice una prueba de concepto aprovechando una rebaja en servidores VPS de [**CONTABO**](https://contabo.com/en/), armamos infraestructura simple, instalamos algunos honeypot para obtener datos, generamos tráficos para obtener métricas y crear gráficas.
 
-- **Detectar ataques en curso**: intentos de fuerza bruta por SSH, escaneos de puertos, IPs maliciosas.
-- **Identificar problemas antes de que escalen**: errores 5xx en Nginx, certificados SSL a punto de vencer, servicios caídos.
-- **Entender el comportamiento del servidor**: picos de tráfico, patrones de uso, dominios más consultados.
-- **Tener evidencia para tomar decisiones**: datos reales sobre qué está pasando, no suposiciones.
-- **Responder más rápido ante incidentes**: con dashboards centralizados la información está a un vistazo.
+## ¿Por qué tenemos que monitorear?
 
-No se trata de armar un sistema de monitoreo empresarial con cientos de métricas. Se trata de tener lo mínimo necesario para no estar a ciegas.
+Tenemos que monitorear porque necesitamos enterarnos de lo que sucede en nuestra infraestructura antes de que los problemas aparezcan, los reclamos lleguen y existan incidentes de seguridad, monitorear nos permite:
 
-## El stack: Grafana + Loki + Promtail
+- **Detectar ataques en curso**, desde ataques de fuerza bruta, escaneos de puertos, IPs maliciosas.
+- **Identificar problemas antes de que escalen**, errores 5xx en servidores web, certificados SSL a punto de vencer, servicios caídos.
+- **Entender el comportamiento del servidor**, tráficos y demanda de red, patrones de uso, dominios más consultados.
+- **Tener evidencia para tomar decisiones**, datos reales sobre qué está pasando, no suposiciones.
+- **Responder más rápido ante incidentes**, con dashboards centralizados la información está a un vistazo.
+
+Muchas veces se piensa que armar un sistema de monitoreo trata de un sistema complejo que necesita de hardware especializado, licencias de uso para el software y conocimientos avanzados de seguridad, pero la idea es tener lo mínimo necesario para no estar a ciegas (para infraestructuras pequeñas).
+
+## Sistemas de monitoreo
+
+Existen diferentes tipos de sistemas de monitoreo, algunos de propósito general, otros con propósito específico:
+
+- [**Zabbix**](https://www.zabbix.com/), plataforma de monitoreo de infraestructura que permite supervisar servidores, redes, aplicaciones, bases de datos y servicios. Utiliza agentes, SNMP y otros protocolos para recopilar métricas y generar alertas.
+- [**Nagios**](https://www.nagios.org/) **\- [Icinga](https://icinga.com/)**, soluciones de monitorización de infraestructura y servicios. Permiten verificar disponibilidad, estado y rendimiento mediante plugins. Icinga nació como un fork de Nagios y mantiene compatibilidad con gran parte de su ecosistema.
+- [**PandoraFMS**](https://pandorafms.com/), plataforma de monitorización integral para infraestructura, redes, servidores, aplicaciones y servicios. Permite recopilar métricas, generar alertas, visualizar estados y realizar monitorización tanto local como remota.
+- [**Grafana**](https://grafana.com/docs/grafana/latest/) **\- [Loki](https://grafana.com/docs/loki/latest/) \- [Promtail](https://grafana.com/docs/loki/latest/send-data/promtail/)**, stack orientado principalmente a observabilidad y gestión de logs. **Grafana** proporciona dashboards con visualización, **Loki** almacena, consulta logs, y **Promtail** recopila y envía los logs hacia **Loki**.
+- [**Wazuh**](https://wazuh.com/), permite monitorizar endpoints, analizar logs, detectar amenazas, realizar análisis de vulnerabilidades, file integrity monitoring (FIM) y generar alertas de seguridad.
+- [**ELK Stack**](https://www.elastic.co/elastic-stack) **(Elasticsearch, Kibana, beats y logstash)**, plataforma de gestión y análisis de logs y datos. Elasticsearch almacena e indexa datos, Logstash realiza ingesta y transformación, Beats recopila información desde sistemas y servicios, y Kibana proporciona visualización, dashboards y análisis.
+
+No queremos alargar este artículo, el monitoreo simple que haremos será con [Grafana](https://grafana.com/docs/grafana/latest/) **\-** [Loki](https://grafana.com/docs/loki/latest/) **\-** [Promtail](https://grafana.com/docs/loki/latest/send-data/promtail/), con datos de los registros de sistema, utilizando agentes con acceso a los datos de los servicios que queremos monitorear.
+
+**Nota importante:** Actualmente, **Promtail** está en proceso de reemplazo dentro del ecosistema Grafana por [Grafana Alloy](https://grafana.com/docs/alloy/latest/).
+
+## Grafana - Loki - Promtail
 
 La solución se compone de tres herramientas del ecosistema de [Grafana](https://grafana.com/), todas de código abierto:
 
 | Componente   | Función                                                  | Puerto |
-| ------------ | -------------------------------------------------------- | ------ |
+| :----------- | :------------------------------------------------------- | :----- |
 | **Promtail** | Agente que recolecta logs del sistema y los envía a Loki | 9080   |
 | **Loki**     | Motor de almacenamiento e indexación de logs             | 3100   |
-| **Grafana**  | Interfaz web para visualización y dashboards             | 3011   |
+| **Grafana**  | Interfaz web para visualización y dashboards             | 3000   |
 
 El flujo es simple: **Promtail** lee los archivos de log y el journal de systemd, los envía a **Loki** que los almacena e indexa, y **Grafana** consulta a Loki para mostrar la información en dashboards.
 
-```
-┌──────────────────────────────────────────────────────┐
-│                   Servidor Debian 13                 │
-│                                                      │
-│  ┌──────────┐    ┌──────────┐    ┌────────────────┐  │
-│  │ Promtail │───▶│   Loki   │◀───│    Grafana     │  │
-│  │  :9080   │    │  :3100   │    │    :3011       │  │
-│  └──────────┘    └──────────┘    └────────────────┘  │
-│       │                                              │
-│       ▼                                              │
-│  ┌────────────────────────────────────────────────┐  │
-│  │           Fuentes de Logs                      │  │
-│  │                                                │  │
-│  │  • /var/log/journal      (systemd journal)     │  │
-│  │  • /var/log/nginx/*.log  (access + error)      │  │
-│  │  • /var/log/fail2ban.log (bloqueos)            │  │
-│  │  • /var/log/letsencrypt/ (certificados)        │  │
-│  └────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────┘
-```
+![](/images/grafana-stack/grafana-loki-promtail-workflow.png)
 
-### ¿Por qué este stack y no otro?
+### ¿Por qué solo Grafana - Loki - Promtail?
 
-- **No requiere agentes de métricas adicionales**: toda la información proviene de logs que ya existen en el servidor.
-- **Bajo consumo de recursos**: Loki no indexa el contenido completo de los logs, solo los labels, lo que lo hace mucho más ligero que Elasticsearch.
-- **Instalación simple**: los tres componentes se instalan desde el repositorio oficial de Grafana con `apt`.
-- **LogQL**: el lenguaje de consultas de Loki es potente y permite extraer métricas directamente de los logs.
+- **No requiere agentes de métricas adicionales**, toda la información proviene de logs que ya existen en el servidor.
+- **Bajo consumo de recursos**, loki no indexa el contenido completo de los logs, solo los labels, lo que lo hace mucho más ligero que Elasticsearch.
+- **Instalación simple**, los tres componentes se instalan desde el repositorio oficial de Grafana con `apt`.
+- **LogQL**, el lenguaje de consultas de Loki es potente y permite extraer métricas directamente de los logs.
 
-## Datos mínimos para un monitoreo útil
+### ¿Qué vamos a monitorear?
 
-No es necesario monitorear todo. Con las siguientes fuentes de datos ya se tiene una visión clara del estado del servidor:
+Nuestra prueba solo va a monitorear servicios como SSH, Nginx, Fail2ban y Docker:
 
-### 1. SSH: seguridad de acceso
+### 1. [SSH](https://www.openssh.org/)
 
-El monitoreo de SSH es probablemente el más importante. Permite detectar:
+Muchos conocemos SSH, nos permite conectar de forma remota a un servidor que tiene instalado este servicio, el puerto por defecto es el 22. Monitorear este servicio es muy importante porque permite detectar:
 
-- **Intentos de login fallidos** (fuerza bruta)
-- **Logins exitosos** (verificar que solo acceden usuarios autorizados)
-- **IPs de origen** de cada intento
-- **Usuarios probados** por atacantes
+- **Intentos de login fallidos**, fuerza bruta.
+- **Logins exitosos**, verificar que sólo acceden usuarios autorizados.
+- **IPs de origen**, de cada intento.
+- **Usuarios probados**, por atacantes.
 
-Promtail lee directamente del journal de systemd y extrae campos estructurados mediante pipeline stages:
+![](/images/grafana-stack/grafana-ssh-dashboard.png)
 
-```yaml
-- job_name: journal
-  journal:
-    path: /var/log/journal
-    max_age: 12h
-  pipeline_stages:
-    - match:
-        selector: '{unit="ssh.service"}'
-        stages:
-          - regex:
-              expression: 'Accepted publickey for (?P<user>\S+) from (?P<ip>[0-9.]+) port (?P<port>[0-9]+)'
-          - labels:
-              user:
-              ip:
-              port:
-          - static_labels:
-              result: accepted
-              method: publickey
+### 2. [Nginx](https://nginx.org/en/docs/index.html)
+
+Para servidores web lo mínimo que conviene monitorear son los tráficos:
+
+- **Requests por segundo/minuto**, detectar alta o baja demanda de tráfico.
+- **Códigos de estado HTTP**, cuántos errores 4xx y 5xx se están produciendo.
+- **Top IPs**, identificar quién está generando más tráfico.
+- **Top URLs**, qué recursos son los más solicitados.
+- **Error logs**, visualizar errores del servidor en tiempo real.
+
+![](/images/grafana-stack/grafana-nginx-dashboard-v2.png)
+
+### 3. [Fail2ban](https://fail2ban.readthedocs.io/en/latest/)
+
+Protección contra ataques de fuerza bruta, complementa el monitoreo mostrando las acciones de defensa automática:
+
+- **IPs baneadas**, quién fue bloqueado y cuándo.
+- **IPs detectadas**, intentos sospechosos antes del baneo.
+- **Tendencias**, si los ataques están aumentando o disminuyendo.
+
+![](/images/grafana-stack/grafama-fail2ban-dashboard-v1.png)
+
+### 4. [Docker](https://www.docker.com/)
+
+Para un monitoreo de contenedores simple, podemos pedirle a docker que escriba sus registros de sistema en journal de systemd, con una configuración no muy compleja podremos monitorear los contenedores, códigos de estado, volúmenes.
+
+Por defecto el **Logging Driver** de Docker está configurado para “**json-file**“, esta configuración debe estar con “**journald**”, se puede verificar con algunos comandos.
+
+```bash
+# Ver el driver de logs activo
+docker info --format '{{.LoggingDriver}}'
+
+# Ver si ya existe el archivo de config del daemon
+sudo cat /etc/docker/daemon.json 2>/dev/null || echo "No existe daemon.json todavía"
 ```
 
-Con esta configuración se pueden construir consultas como:
+Comúnmente el archivo “**daemon.json**”, si es necesario se debe crear.
 
-```logql
-# Intentos de SSH fallidos
-{unit="ssh.service"} |= "Failed password"
-
-# Logins exitosos con llave pública
-{unit="ssh.service"} |= "Accepted publickey"
-
-# Top 10 IPs atacantes en los últimos 15 minutos
-topk(10, sum by (ip)(
-  count_over_time({unit="ssh.service"}
-    | regexp "from (?P<ip>[0-9.]+)"
-    [15m]
-  )
-))
+```bash
+sudo tee /etc/docker/daemon.json > /dev/null <<'EOF'
+{
+ "log-driver": "journald"
+}
+EOF
 ```
 
-### 2. Nginx: tráfico web
+Si el archivo ya existe con otros datos, no se debe sobrescribir, se debe editar el contenido en base al comando anterior. Ruta del archivo a editar **/etc/docker/daemon.json**
 
-Para los servidores web, lo mínimo que conviene monitorear:
+Recomendable validar si el JSON es correcto.
 
-- **Requests por segundo/minuto**: detectar picos de tráfico.
-- **Códigos de estado HTTP**: cuántos errores 4xx y 5xx se están produciendo.
-- **Top IPs**: identificar quién está generando más tráfico.
-- **Top URLs**: qué recursos son los más solicitados.
-- **Error logs**: visualizar errores del servidor en tiempo real.
-
-Promtail se configura con static_configs apuntando a los archivos de log de cada dominio:
-
-```yaml
-- job_name: nginx-pad-access
-  static_configs:
-    - targets:
-        - localhost
-      labels:
-        job: nginx
-        domain: pad.xnibble.com
-        service: nginx
-        log_type: access
-        host: fcch-xn
-        __path__: /var/log/nginx/pad-xn-access.log
+```bash
+sudo python3 -c "import json; json.load(open('/etc/docker/daemon.json')); print('JSON válido')"
 ```
 
-Consultas útiles:
+Aplicando cambios y verificando los datos:
 
-```logql
-# Requests por segundo por dominio
-sum by (domain)(rate({job="nginx", log_type="access"}[1m]))
-
-# Errores 4xx en los últimos 5 minutos
-sum(count_over_time(
-  {job="nginx", log_type="access"}
-  | regexp "^[^ ]+ .*\" [^ ]+ (?P<status>[0-9]{3}) "
-  | status=~"4.."
-  [5m]
-))
-
-# Error logs en tiempo real
-{job="nginx", log_type="error"}
+```bash
+sudo systemctl restart docker
+docker info --format '{{.LoggingDriver}}' # Salida: “journald”
 ```
 
-### 3. Fail2ban: protección activa
+**Nota importante:** El driver de registro de sistema, se asigna al crear contenedores, es posible que se deba recrear contenedores existentes para que se creen con el nuevo driver.
 
-Fail2ban complementa el monitoreo mostrando las acciones de defensa automática:
+```bash
+# Para un contenedor suelto
+docker stop <nombre> && docker rm <nombre>
+# y volver a lanzarlo
 
-- **IPs baneadas**: quién fue bloqueado y cuándo.
-- **IPs detectadas**: intentos sospechosos antes del baneo.
-- **Tendencias**: si los ataques están aumentando o disminuyendo.
-
-```logql
-# Top 10 IPs baneadas en la última hora
-topk(10, sum by (ip)(
-  count_over_time({job="fail2ban"}
-    | regexp "Ban (?P<ip>[0-9.]+)"
-    [1h]
-  )
-))
+# Si usas docker compose
+docker compose up -d --force-recreate
 ```
 
-### 4. Let's Encrypt: certificados SSL
+Por último se debe verificar los cambios:
 
-Un monitoreo simple pero importante: verificar que las renovaciones de certificados se ejecutan correctamente.
-
-```logql
-# Renovaciones de certificados
-{service="certbot"} |= "renewal"
-
-# Errores en renovación
-{service="certbot"} |= "error"
+```bash
+docker inspect --format '{{.HostConfig.LogConfig.Type}}' <nombre_o_id>
 ```
 
-## Instalación del stack
+Con estos detalles podemos crear un dashboard para contenedores también.
+
+![](/images/grafana-stack/grafana-docker-dashboard-v1.png)
+
+## Instalación de Grafana y sus componentes
 
 Los tres componentes se instalan desde el repositorio oficial de Grafana mediante `apt` en Debian. Los paquetes `.deb` ya incluyen los archivos de unidad para systemd.
 
-### Agregar el repositorio de Grafana
+### Repositorio de Grafana
 
 ```bash
-sudo apt install -y apt-transport-https software-properties-common wget
+sudo apt install -y apt-transport-https wget gnupg
 sudo mkdir -p /etc/apt/keyrings
-wget -qO - https://apt.grafana.com/gpg.key | sudo tee /etc/apt/keyrings/grafana.asc > /dev/null
+sudo wget -O /etc/apt/keyrings/grafana.asc https://apt.grafana.com/gpg-full.key
+sudo chmod 644 /etc/apt/keyrings/grafana.asc
 ```
 
 Crear el archivo `/etc/apt/sources.list.d/grafana.sources`:
@@ -227,21 +201,18 @@ Signed-By: /etc/apt/keyrings/grafana.asc
 Enabled: yes
 ```
 
+Actualizamos e instalamos los paquetes:
+
 ```bash
 sudo apt update
+sudo apt install -y grafana loki promtail
 ```
 
-### Instalar los tres servicios
+### Archivos de configuración
 
-```bash
-sudo apt install grafana loki promtail
-```
-
-Esto instala:
-
-- **Grafana** → servicio `grafana-server`, config en `/etc/grafana/grafana.ini`
-- **Loki** → servicio `loki`, config en `/etc/loki/config.yml`
-- **Promtail** → servicio `promtail`, config en `/etc/promtail/config.yml`
+- **Grafana**, archivo de configuración en `/etc/grafana/grafana.ini`
+- **Loki**, archivo de configuración en `/etc/loki/config.yml`
+- **Promtail**, archivo de configuración en `/etc/promtail/config.yml`
 
 ### Crear directorios de datos para Loki
 
@@ -257,110 +228,38 @@ sudo systemctl enable grafana-server loki promtail
 sudo systemctl start grafana-server loki promtail
 ```
 
-## Configuración de Loki
+## Configuración adicional para Loki
 
-La configuración de Loki define cómo almacena e indexa los logs. Los puntos clave:
-
-```yaml
-auth_enabled: false
-
-server:
-  http_listen_port: 3100
-  grpc_listen_port: 9096
-
-common:
-  instance_addr: 127.0.0.1
-  path_prefix: /var/lib/loki
-  storage:
-    filesystem:
-      chunks_directory: /var/lib/loki/chunks
-      rules_directory: /var/lib/loki/rules
-  replication_factor: 1
-  ring:
-    kvstore:
-      store: inmemory
-
-schema_config:
-  configs:
-    - from: 2026-05-20
-      store: tsdb
-      object_store: filesystem
-      schema: v13
-      index:
-        prefix: index_
-        period: 24h
-
-limits_config:
-  retention_period: 168h
-  ingestion_rate_mb: 8
-  ingestion_burst_size_mb: 16
-  max_streams_per_user: 10000
-  max_query_lookback: 168h
-
-compactor:
-  working_directory: /var/lib/loki/compactor
-  compaction_interval: 10m
-  retention_enabled: true
-  delete_request_store: filesystem
-
-analytics:
-  reporting_enabled: false
-```
+La configuración de Loki define cómo se almacena e indexa los registros de sistema, los puntos clave:
 
 Puntos importantes:
 
 - **Retención de 7 días** (`168h`): suficiente para un servidor personal y no consume demasiado disco.
-- **Esquema v13 con TSDB**: el formato más reciente y eficiente para indexación.
+- **Esquema v13 con TSDB**, el formato más reciente y eficiente para indexación.
 - **Almacenamiento en filesystem**: ideal para un solo servidor, sin necesidad de almacenamiento distribuido.
-- **Telemetría deshabilitada**: no envía datos de uso a Grafana Labs.
+- **Telemetría deshabilitada**, no envía datos de uso a Grafana Labs.
 
 ## Configuración de Promtail
 
-Promtail es el agente que recolecta los logs. Su configuración define qué archivos leer y cómo procesarlos:
+Promtail es el agente que recolecta los registros de sistema, su configuración define qué archivos leer y cómo procesarlos:  
+La sección `scrape_configs` define los jobs de recolección, cada job apunta a una fuente de registro de sistema y asigna labels que permiten filtrar en Grafana:
 
-```yaml
-server:
-  http_listen_port: 9080
-  grpc_listen_port: 0
+| Job             | Fuente                        | Labels clave                |
+| :-------------- | :---------------------------- | :-------------------------- |
+| journal         | `/var/log/journal`            | `unit`, `host`, `level`     |
+| nginx-*-access  | `/var/log/nginx/*-access.log` | `domain`, `log_type=access` |
+| nginx-*-error   | `/var/log/nginx/*-error.log`  | `domain`, `log_type=error`  |
+| fail2ban        | `/var/log/fail2ban.log`       | `service=fail2ban`          |
 
-positions:
-  filename: /var/lib/promtail/positions.yaml
-
-clients:
-  - url: http://localhost:3100/loki/api/v1/push
-```
-
-La sección `scrape_configs` define los jobs de recolección. Cada job apunta a una fuente de logs y asigna labels que permiten filtrar en Grafana:
-
-| Job             | Fuente                                 | Labels clave                |
-| --------------- | -------------------------------------- | --------------------------- |
-| journal         | `/var/log/journal`                     | `unit`, `host`, `level`     |
-| nginx-\*-access | `/var/log/nginx/*-access.log`          | `domain`, `log_type=access` |
-| nginx-\*-error  | `/var/log/nginx/*-error.log`           | `domain`, `log_type=error`  |
-| fail2ban        | `/var/log/fail2ban.log`                | `service=fail2ban`          |
-| letsencrypt     | `/var/log/letsencrypt/letsencrypt.log` | `service=certbot`           |
-
-> **Nota sobre Debian 13:** Trixie ya no incluye `rsyslog` por defecto. No existe `/var/log/syslog` ni `/var/log/messages`. Todos los logs del sistema se gestionan a través de systemd-journald, por eso se usa el scraper de tipo `journal` en Promtail para leer logs de SSH y otras unidades systemd.
+**Nota importante:** Debian 13 (Trixie) ya no incluye `rsyslog` por defecto. No existe `/var/log/syslog` ni `/var/log/messages`. Todos los logs del sistema se gestionan a través de systemd-journald, por eso se usa el scraper de tipo `journal` en Promtail para leer logs de SSH y otras unidades systemd.
 
 ## Verificación del stack
 
 Una vez instalado y configurado, se puede verificar que todo funciona correctamente:
 
-```bash
-# Verificar que los servicios están activos
-sudo systemctl status grafana-server loki promtail
-
-# Verificar que Loki está listo
-curl -s http://localhost:3100/ready
-
-# Verificar labels disponibles en Loki
-curl -s http://localhost:3100/loki/api/v1/labels
-
-# Verificar targets activos de Promtail
-curl -s http://localhost:9080/targets
+```bash 
+curl [http://localhost:3011/login](http://localhost:3011/login)  
 ```
-
-Luego acceder a Grafana en `http://<IP_SERVIDOR>:3011` (credenciales por defecto: `admin` / `admin`), agregar Loki como datasource apuntando a `http://localhost:3100` y comenzar a crear dashboards o importar los que ya existen en el repositorio del proyecto.
 
 ## Dashboards del proyecto
 
@@ -370,21 +269,13 @@ El proyecto incluye dashboards listos para importar:
 - **Web Server**: monitoreo completo de Nginx y Fail2ban con requests por segundo, códigos de estado HTTP, top URLs, top IPs y error logs.
 - **Registry Health**: disponibilidad de providers del Terraform Registry (usando datasource Infinity).
 
+![](/images/grafana-stack/grafana-status-services-dashboard.png)
+
 ## Escalando a múltiples servidores
 
 Esta misma solución se puede escalar para monitorear múltiples servidores instalando solo Promtail en cada servidor remoto y apuntándolo al Loki central:
 
-```yaml
-# En cada servidor remoto, cambiar la URL del cliente
-clients:
-  - url: http://<IP_SERVIDOR_CENTRAL>:3100/loki/api/v1/push
-```
-
-Solo hay que cambiar `instance_addr` de `127.0.0.1` a `0.0.0.0` en Loki y proteger el acceso con firewall:
-
-```bash
-sudo ufw allow from 192.168.1.10 to any port 3100
-```
+Solo hay que cambiar `instance_addr` de `127.0.0.1` a `0.0.0.0` en Loki y proteger el acceso con firewall.
 
 ## Conclusión
 
