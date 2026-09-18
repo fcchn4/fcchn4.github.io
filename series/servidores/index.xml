@@ -246,6 +246,7 @@ La sección &lt;code&gt;scrape_configs&lt;/code&gt; define los jobs de recolecci
 &lt;p&gt;Lo importante es empezar con lo mínimo. Un dashboard con intentos de SSH fallidos y errores de Nginx ya es infinitamente mejor que no tener nada.&lt;/p&gt;
 &lt;p&gt;¿Cuánto tiempo nos tomó? Puedo decir que me tomó más tiempo crear el artículo que desplegar todo lo necesario:&lt;/p&gt;
 &lt;p&gt;Instalación y configuración del servidor, con Ansible 20 minutos, ya tenía un proyecto con todo lo necesario, el sistema de monitoreo fueron como 5 horas y un poco más, ya que no conocíamos la herramienta, tocó leer, probar y preguntar a la IA también.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota importante:&lt;/strong&gt; Este artículo se hizo largo, en otro dejaré las configuraciones de cada servicio incluyendo la configuración del reverse proxy de Nginx para tener más detalle de cada configuración.&lt;/p&gt;
 &lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt;&lt;/li&gt;
