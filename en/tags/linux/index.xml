@@ -1,166 +1,255 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>linux on Fcch Blog | Notes, guides and reminders</title>
-    <link>https://blog.fcch.xyz/en/tags/linux/</link>
-    <description>Recent content in linux on Fcch Blog | Notes, guides and reminders</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>Fcch Blog | 2019 - 2021</copyright>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tmux Moment</title>
-      <link>https://blog.fcch.xyz/en/post/notes/tmux-moment/</link>
-      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.fcch.xyz/en/post/notes/tmux-moment/</guid>
-      <description>
-        
-          &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. &lt;strong&gt;tmux&lt;/strong&gt; may be detached from a screen and continue running in the background, then later reattached.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-00.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;the-basics&#34;&gt;The Basics&lt;/h2&gt;
-&lt;p&gt;First we must execute the command &lt;strong&gt;tmux&lt;/strong&gt;, within it we can perform different actions, for these actions we must send commands to &lt;strong&gt;tmux&lt;/strong&gt;, in my case I will use the combination &lt;strong&gt;ctrl + b&lt;/strong&gt; which is the configuration by default after installation:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Command&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Split terminal horizontally&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + &amp;quot;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Split terminal vertically&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + %&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Switch to left panel&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + keys left&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Switch to right panel&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + keys right&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Switch to panel up&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + keys up&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Switch to panel down&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + keys down&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;See terminal number&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + q&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Jump from one panel to another&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + o&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Close current panel&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + x&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Close the current window&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + &amp;amp;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Cycle through panel layouts&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + space&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Close current panel&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + x&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Help tmux&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + ?&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;List all sessions&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;tmux ls&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Version&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;tmux -V&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;very-useful-features&#34;&gt;Very Useful Features&lt;/h2&gt;
-&lt;p&gt;A very useful function in &lt;strong&gt;tmux&lt;/strong&gt; is the &lt;strong&gt;command mode&lt;/strong&gt;, which allows us to enter commands that facilitate tasks in a simpler way.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;strong&gt;Command&lt;/strong&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Command mode&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ctrl + b + :&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Activate panel synchronization&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:setw synchronize-panes on&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Turn off panel sync&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:setw synchronize-panes off&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel up&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -U&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel down&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -D&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel to the left&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -L&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel to the right&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -R&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel up 10&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -U 10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel down 10&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -D 10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel to the left 10&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -L 10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Resize panel to the right 10&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;:resize-pane -R 10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;some-demos&#34;&gt;Some Demos&lt;/h2&gt;
-&lt;p&gt;We execute &lt;strong&gt;tmux&lt;/strong&gt;, we divide into different panels the terminal:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Panel synchronization:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Work with panels and resizes with &lt;strong&gt;ctrl + b + space&lt;/strong&gt; and &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/tags/linux/</link><description>Recent content in Linux on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Thu, 17 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring notes with Grafana, Loki and Promtail</title><link>https://blog.fcch.xyz/en/post/infrastructure/grafana-monitoring-stack/</link><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/grafana-monitoring-stack/</guid><description>
+&lt;p&gt;Throughout my professional life it is common to see many types of implementations regarding development and infrastructure; in short, when it comes to infrastructure it is common that there is no service monitoring on an organization's servers, this is more common on on-premise servers, and for this reason I asked myself a few questions.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo.png" alt=""&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux/wiki&#34;&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/tmux/tmux&#34;&gt;&lt;strong&gt;Tmux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;How long does it take to build a monitoring system?&lt;/li&gt;
+&lt;li&gt;How complex can it be to implement a monitoring system?&lt;/li&gt;
+&lt;li&gt;What computing capacity do I need to have a monitoring system?&lt;/li&gt;
+&lt;li&gt;How many monitoring systems exist and can I use?&lt;/li&gt;
 &lt;/ul&gt;
-        
-      </description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;For this article I made a proof of concept taking advantage of a discount on &lt;a href="https://contabo.com/en/"&gt;&lt;strong&gt;CONTABO&lt;/strong&gt;&lt;/a&gt; VPS servers, we built simple infrastructure, installed some honeypots to collect data, and generated traffic to obtain metrics and create graphs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Server&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Specification&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;CPU&lt;/td&gt;
+&lt;td style="text-align: left"&gt;AMD 4 Cores&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;RAM&lt;/td&gt;
+&lt;td style="text-align: left"&gt;8GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;SSD&lt;/td&gt;
+&lt;td style="text-align: left"&gt;150 GB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;OS&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Debian Trixie 13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="why-do-we-have-to-monitor"&gt;Why do we have to monitor?&lt;/h2&gt;
+&lt;p&gt;We have to monitor because we need to be aware of what is happening in our infrastructure before problems appear, complaints arrive and security incidents occur. Monitoring allows us to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Detect ongoing attacks&lt;/strong&gt;, from brute force attacks, port scans, malicious IPs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Identify problems before they escalate&lt;/strong&gt;, 5xx errors on web servers, SSL certificates about to expire, downed services.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Understand the server's behavior&lt;/strong&gt;, traffic and network demand, usage patterns, most queried domains.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Have evidence to make decisions&lt;/strong&gt;, real data about what is happening, not assumptions.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Respond faster to incidents&lt;/strong&gt;, with centralized dashboards the information is a glance away.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is often thought that building a monitoring system is about a complex system that requires specialized hardware, software licenses and advanced security knowledge, but the idea is to have the minimum necessary so as not to be blind (for small infrastructures).&lt;/p&gt;
+&lt;h2 id="monitoring-systems"&gt;Monitoring systems&lt;/h2&gt;
+&lt;p&gt;There are different types of monitoring systems, some general-purpose, others with a specific purpose:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.zabbix.com/"&gt;&lt;strong&gt;Zabbix&lt;/strong&gt;&lt;/a&gt;, an infrastructure monitoring platform that allows you to supervise servers, networks, applications, databases and services. It uses agents, SNMP and other protocols to collect metrics and generate alerts.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nagios.org/"&gt;&lt;strong&gt;Nagios&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;- &lt;a href="https://icinga.com/"&gt;Icinga&lt;/a&gt;&lt;/strong&gt;, infrastructure and service monitoring solutions. They allow you to verify availability, status and performance through plugins. Icinga started as a fork of Nagios and maintains compatibility with much of its ecosystem.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pandorafms.com/"&gt;&lt;strong&gt;PandoraFMS&lt;/strong&gt;&lt;/a&gt;, a comprehensive monitoring platform for infrastructure, networks, servers, applications and services. It allows you to collect metrics, generate alerts, visualize states and perform both local and remote monitoring.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://grafana.com/docs/grafana/latest/"&gt;&lt;strong&gt;Grafana&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;- &lt;a href="https://grafana.com/docs/loki/latest/"&gt;Loki&lt;/a&gt; - &lt;a href="https://grafana.com/docs/loki/latest/send-data/promtail/"&gt;Promtail&lt;/a&gt;&lt;/strong&gt;, a stack mainly oriented to observability and log management. &lt;strong&gt;Grafana&lt;/strong&gt; provides dashboards with visualization, &lt;strong&gt;Loki&lt;/strong&gt; stores and queries logs, and &lt;strong&gt;Promtail&lt;/strong&gt; collects and sends the logs to &lt;strong&gt;Loki&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wazuh.com/"&gt;&lt;strong&gt;Wazuh&lt;/strong&gt;&lt;/a&gt;, allows you to monitor endpoints, analyze logs, detect threats, perform vulnerability analysis, file integrity monitoring (FIM) and generate security alerts.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.elastic.co/elastic-stack"&gt;&lt;strong&gt;ELK Stack&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;(Elasticsearch, Kibana, Beats and Logstash)&lt;/strong&gt;, a log and data management and analysis platform. Elasticsearch stores and indexes data, Logstash performs ingestion and transformation, Beats collects information from systems and services, and Kibana provides visualization, dashboards and analysis.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We do not want to make this article too long; the simple monitoring we will do will be with &lt;a href="https://grafana.com/docs/grafana/latest/"&gt;Grafana&lt;/a&gt; &lt;strong&gt;-&lt;/strong&gt; &lt;a href="https://grafana.com/docs/loki/latest/"&gt;Loki&lt;/a&gt; &lt;strong&gt;-&lt;/strong&gt; &lt;a href="https://grafana.com/docs/loki/latest/send-data/promtail/"&gt;Promtail&lt;/a&gt;, using data from the system logs, with agents that have access to the data of the services we want to monitor.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important note:&lt;/strong&gt; Currently, &lt;strong&gt;Promtail&lt;/strong&gt; is in the process of being replaced within the Grafana ecosystem by &lt;a href="https://grafana.com/docs/alloy/latest/"&gt;Grafana Alloy&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="grafana---loki---promtail"&gt;Grafana - Loki - Promtail&lt;/h2&gt;
+&lt;p&gt;The solution is made up of three tools from the &lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt; ecosystem, all of them open source:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Component&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Function&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Port&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Promtail&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Agent that collects system logs and sends them to Loki&lt;/td&gt;
+&lt;td style="text-align: left"&gt;9080&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Loki&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Storage and indexing engine for logs&lt;/td&gt;
+&lt;td style="text-align: left"&gt;3100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;&lt;strong&gt;Grafana&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;Web interface for visualization and dashboards&lt;/td&gt;
+&lt;td style="text-align: left"&gt;3000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The flow is simple: &lt;strong&gt;Promtail&lt;/strong&gt; reads the log files and the systemd journal, sends them to &lt;strong&gt;Loki&lt;/strong&gt; which stores and indexes them, and &lt;strong&gt;Grafana&lt;/strong&gt; queries Loki to display the information in dashboards.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-loki-promtail-workflow-en.png" alt=""&gt;&lt;/p&gt;
+&lt;h3 id="why-only-grafana---loki---promtail"&gt;Why only Grafana - Loki - Promtail?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;No additional metrics agents required&lt;/strong&gt;, all the information comes from logs that already exist on the server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Low resource consumption&lt;/strong&gt;, Loki does not index the full content of the logs, only the labels, which makes it much lighter than Elasticsearch.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Simple installation&lt;/strong&gt;, the three components are installed from the official Grafana repository with &lt;code&gt;apt&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LogQL&lt;/strong&gt;, Loki's query language is powerful and lets you extract metrics directly from the logs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="what-are-we-going-to-monitor"&gt;What are we going to monitor?&lt;/h3&gt;
+&lt;p&gt;Our test will only monitor services such as SSH, Nginx, Fail2ban and Docker.&lt;/p&gt;
+&lt;h3 id="1-ssh"&gt;1. &lt;a href="https://www.openssh.org/"&gt;SSH&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Many of us know SSH; it lets us connect remotely to a server that has this service installed, the default port is 22. Monitoring this service is very important because it allows us to detect:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Failed login attempts&lt;/strong&gt;, brute force.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Successful logins&lt;/strong&gt;, verify that only authorized users are accessing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Source IPs&lt;/strong&gt;, of each attempt.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Attempted usernames&lt;/strong&gt;, by attackers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-ssh-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;h3 id="2-nginx"&gt;2. &lt;a href="https://nginx.org/en/docs/index.html"&gt;Nginx&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For web servers the minimum worth monitoring is the traffic:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Requests per second/minute&lt;/strong&gt;, detect high or low traffic demand.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTTP status codes&lt;/strong&gt;, how many 4xx and 5xx errors are being produced.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Top IPs&lt;/strong&gt;, identify who is generating the most traffic.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Top URLs&lt;/strong&gt;, which resources are the most requested.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Error logs&lt;/strong&gt;, visualize server errors in real time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-nginx-dashboard-v2.png" alt=""&gt;&lt;/p&gt;
+&lt;h3 id="3-fail2ban"&gt;3. &lt;a href="https://fail2ban.readthedocs.io/en/latest/"&gt;Fail2ban&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Protection against brute force attacks, it complements the monitoring by showing the automatic defense actions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Banned IPs&lt;/strong&gt;, who was blocked and when.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Detected IPs&lt;/strong&gt;, suspicious attempts before the ban.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trends&lt;/strong&gt;, whether attacks are increasing or decreasing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-fail2ban-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;h3 id="4-docker"&gt;4. &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For simple container monitoring, we can ask docker to write its system logs to the systemd journal; with a not-too-complex configuration we will be able to monitor the containers, status codes and volumes.&lt;/p&gt;
+&lt;p&gt;By default Docker's &lt;strong&gt;Logging Driver&lt;/strong&gt; is configured to &amp;quot;&lt;strong&gt;json-file&lt;/strong&gt;&amp;quot;, this setting should be &amp;quot;&lt;strong&gt;journald&lt;/strong&gt;&amp;quot;, which can be verified with a few commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Check the active log driver&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;docker info --format &lt;span class="s1"&gt;&amp;#39;{{.LoggingDriver}}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Check whether the daemon config file already exists&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;sudo cat /etc/docker/daemon.json 2&amp;gt;/dev/null &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;daemon.json does not exist yet&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Commonly the &amp;quot;&lt;strong&gt;daemon.json&lt;/strong&gt;&amp;quot; file; if necessary it must be created.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo tee /etc/docker/daemon.json &amp;gt; /dev/null &lt;span class="s"&gt;&amp;lt;&amp;lt;&amp;#39;EOF&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt; &amp;#34;log-driver&amp;#34;: &amp;#34;journald&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If the file already exists with other data, it must not be overwritten; the content must be edited based on the command above. Path of the file to edit &lt;strong&gt;/etc/docker/daemon.json&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;It is recommended to validate that the JSON is correct.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo python3 -c &lt;span class="s2"&gt;&amp;#34;import json; json.load(open(&amp;#39;/etc/docker/daemon.json&amp;#39;)); print(&amp;#39;Valid JSON&amp;#39;)&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Applying changes and verifying the data:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo systemctl restart docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;docker info --format &lt;span class="s1"&gt;&amp;#39;{{.LoggingDriver}}&amp;#39;&lt;/span&gt; &lt;span class="c1"&gt;# Output: &amp;#34;journald&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Important note:&lt;/strong&gt; The system log driver is assigned when containers are created; you may need to recreate existing containers so that they are created with the new driver.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# For a standalone container&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;docker stop &amp;lt;name&amp;gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; docker rm &amp;lt;name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# and launch it again&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# If you use docker compose&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;docker compose up -d --force-recreate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, the changes must be verified:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;docker inspect --format &lt;span class="s1"&gt;&amp;#39;{{.HostConfig.LogConfig.Type}}&amp;#39;&lt;/span&gt; &amp;lt;name_or_id&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With these details we can create a dashboard for containers as well.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-docker-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="installing-grafana-and-its-components"&gt;Installing Grafana and its components&lt;/h2&gt;
+&lt;p&gt;The three components are installed from the official Grafana repository via &lt;code&gt;apt&lt;/code&gt; on Debian. The &lt;code&gt;.deb&lt;/code&gt; packages already include the systemd unit files.&lt;/p&gt;
+&lt;h3 id="grafana-repository"&gt;Grafana repository&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install -y apt-transport-https wget gnupg
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;sudo mkdir -p /etc/apt/keyrings
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;sudo wget -O /etc/apt/keyrings/grafana.asc https://apt.grafana.com/gpg-full.key
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;sudo chmod &lt;span class="m"&gt;644&lt;/span&gt; /etc/apt/keyrings/grafana.asc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create the file &lt;code&gt;/etc/apt/sources.list.d/grafana.sources&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;X-Repolib-Name: grafana
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;Types: deb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;Components: main
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;Suites: stable
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;URIs: https://apt.grafana.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;6&lt;/span&gt;&lt;span class="cl"&gt;Signed-By: /etc/apt/keyrings/grafana.asc
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;7&lt;/span&gt;&lt;span class="cl"&gt;Enabled: yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We update and install the packages:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;sudo apt install -y grafana loki promtail
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="configuration-files"&gt;Configuration files&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Grafana&lt;/strong&gt;, configuration file at &lt;code&gt;/etc/grafana/grafana.ini&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Loki&lt;/strong&gt;, configuration file at &lt;code&gt;/etc/loki/config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Promtail&lt;/strong&gt;, configuration file at &lt;code&gt;/etc/promtail/config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="create-data-directories-for-loki"&gt;Create data directories for Loki&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo mkdir -p /var/lib/loki/&lt;span class="o"&gt;{&lt;/span&gt;chunks,rules,compactor&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;sudo chown -R loki:loki /var/lib/loki
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="enable-and-start-services"&gt;Enable and start services&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; grafana-server loki promtail
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;sudo systemctl start grafana-server loki promtail
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="additional-configuration-for-loki"&gt;Additional configuration for Loki&lt;/h2&gt;
+&lt;p&gt;Loki's configuration defines how the system logs are stored and indexed.&lt;/p&gt;
+&lt;p&gt;Key points:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;7-day retention&lt;/strong&gt; (&lt;code&gt;168h&lt;/code&gt;): enough for a personal server and does not consume too much disk.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;v13 schema with TSDB&lt;/strong&gt;, the most recent and efficient format for indexing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Filesystem storage&lt;/strong&gt;: ideal for a single server, without the need for distributed storage.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Telemetry disabled&lt;/strong&gt;, it does not send usage data to Grafana Labs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="promtail-configuration"&gt;Promtail configuration&lt;/h2&gt;
+&lt;p&gt;Promtail is the agent that collects the system logs; its configuration defines which files to read and how to process them.&lt;br&gt;
+The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs; each job points to a system log source and assigns labels that allow filtering in Grafana:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;Job&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Source&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Key labels&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;journal&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;/var/log/journal&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;unit&lt;/code&gt;, &lt;code&gt;host&lt;/code&gt;, &lt;code&gt;level&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;nginx-*-access&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;/var/log/nginx/*-access.log&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;domain&lt;/code&gt;, &lt;code&gt;log_type=access&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;nginx-*-error&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;/var/log/nginx/*-error.log&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;domain&lt;/code&gt;, &lt;code&gt;log_type=error&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;fail2ban&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;/var/log/fail2ban.log&lt;/code&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;&lt;code&gt;service=fail2ban&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Important note:&lt;/strong&gt; Debian 13 (Trixie) no longer includes &lt;code&gt;rsyslog&lt;/code&gt; by default. There is no &lt;code&gt;/var/log/syslog&lt;/code&gt; nor &lt;code&gt;/var/log/messages&lt;/code&gt;. All system logs are managed through systemd-journald, which is why the &lt;code&gt;journal&lt;/code&gt; type scraper is used in Promtail to read logs from SSH and other systemd units.&lt;/p&gt;
+&lt;h2 id="verifying-the-stack"&gt;Verifying the stack&lt;/h2&gt;
+&lt;p&gt;Once installed and configured, you can verify that everything works correctly:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;curl http://localhost:3000/login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="project-dashboards"&gt;Project dashboards&lt;/h2&gt;
+&lt;p&gt;The project includes dashboards ready to import:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Login Users&lt;/strong&gt;: SSH security with panels for successful and failed logins, top attacking IPs and attempted usernames.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web Server&lt;/strong&gt;: complete monitoring of Nginx and Fail2ban with requests per second, HTTP status codes, top URLs, top IPs and error logs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Registry Health&lt;/strong&gt;: availability of Terraform Registry providers (using the Infinity datasource).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-status-services-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="scaling-to-multiple-servers"&gt;Scaling to multiple servers&lt;/h2&gt;
+&lt;p&gt;This same solution can be scaled to monitor multiple servers by installing only Promtail on each remote server and pointing it to the central Loki.&lt;/p&gt;
+&lt;p&gt;You just have to change &lt;code&gt;instance_addr&lt;/code&gt; from &lt;code&gt;127.0.0.1&lt;/code&gt; to &lt;code&gt;0.0.0.0&lt;/code&gt; in Loki and protect access with a firewall.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;You do not need a complex infrastructure to have visibility into what happens on a server. With Grafana, Loki and Promtail you can implement a log-based monitoring system that covers the essentials: access security, web traffic, protection against attacks and certificate status.&lt;/p&gt;
+&lt;p&gt;The important thing is to start with the minimum. A dashboard with failed SSH attempts and Nginx errors is already infinitely better than having nothing.&lt;/p&gt;
+&lt;p&gt;How long did it take us? I can say that creating the article took me more time than deploying everything needed:&lt;/p&gt;
+&lt;p&gt;Server installation and configuration, with Ansible 20 minutes, since I already had a project with everything needed; the monitoring system took around 5 hours and a bit more, since we did not know the tool, so we had to read, test and also ask the AI.&lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://grafana.com/"&gt;Grafana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://grafana.com/docs/loki/latest/"&gt;Loki - Official Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://grafana.com/docs/loki/latest/send-data/promtail/"&gt;Promtail - Official Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://grafana.com/docs/loki/latest/query/"&gt;LogQL - Loki's Query Language&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
