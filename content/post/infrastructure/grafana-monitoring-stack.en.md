@@ -294,6 +294,8 @@ How long did it take us? I can say that creating the article took me more time t
 
 Server installation and configuration, with Ansible 20 minutes, since I already had a project with everything needed; the monitoring system took around 5 hours and a bit more, since we did not know the tool, so we had to read, test and also ask the AI.
 
+**Important note:** This article got long; in another one I will leave the configurations of each service, including the Nginx reverse proxy configuration, to give more detail about each setup.
+
 ## References
 
 - [Grafana](https://grafana.com/)

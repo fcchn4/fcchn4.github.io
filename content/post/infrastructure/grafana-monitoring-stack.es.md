@@ -294,6 +294,8 @@ Lo importante es empezar con lo mínimo. Un dashboard con intentos de SSH fallid
 
 Instalación y configuración del servidor, con Ansible 20 minutos, ya tenía un proyecto con todo lo necesario, el sistema de monitoreo fueron como 5 horas y un poco más, ya que no conocíamos la herramienta, tocó leer, probar y preguntar a la IA también.
 
+**Nota importante:** Este artículo se hizo largo, en otro dejaré las configuraciones de cada servicio incluyendo la configuración del reverse proxy de Nginx para tener más detalle de cada configuración.
+
 ## Referencias
 
 - [Grafana](https://grafana.com/)
