@@ -496,7 +496,7 @@
 &lt;li&gt;&lt;a href="https://rancher.com/docs/"&gt;&lt;strong&gt;Docs K3S&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://k3s.io/"&gt;&lt;strong&gt;Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/architecture/"&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Memory Limit in Docker</title><link>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/limite-memoria-docker/</guid><description>
+&lt;/ul&gt;</description></item><item><title>Memory Limit in Docker</title><link>https://blog.fcch.xyz/en/post/infrastructure/docker-limit-memory/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/docker-limit-memory/</guid><description>
 &lt;p&gt;When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.&lt;/p&gt;
 &lt;p&gt;Docker has the ability to apply a memory limit to a specific container.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg" alt=""&gt;&lt;/p&gt;
