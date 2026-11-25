@@ -1,14 +1,59 @@
 {{- $s := .Site.Params }}
 {{- $p := .Params }}
-{{- /* Description: page description, then plain-text summary, then site intro. Escaped by the template engine. */ -}}
+{{- $isEs := eq .Language.Lang "es" }}
+{{- $short := $s.shortTitle | default .Site.Title }}
+{{- /* Title: same base as <title> (translated taxonomy names), without the site suffix. */ -}}
+{{- $title := .Title | default .Site.Title }}
+{{- if and .Title (eq .Kind "taxonomy") }}{{ $title = default .Title (T (lower .Title)) }}{{ end }}
+{{- /* Page number for paginated lists (2+), same page set as head.html. */ -}}
+{{- $pageNumber := 1 }}
+{{- if in (slice "home" "section" "taxonomy" "term") .Kind }}
+  {{- $listPages := .Pages }}
+  {{- if .IsHome }}{{ $listPages = where site.RegularPages "Type" "in" site.Params.mainSections }}{{ end }}
+  {{- $pageNumber = (.Paginate $listPages).PageNumber }}
+{{- end }}
+{{- $suffix := "" }}
+{{- if gt $pageNumber 1 }}
+  {{- $suffix = printf " - %s %d" (cond $isEs "Página" "Page") $pageNumber }}
+  {{- $title = printf "%s%s" $title $suffix }}
+{{- end }}
+{{- /* Description chain: page description, generated text for list pages, plain-text summary, site intro. Escaped by the template engine. */ -}}
 {{- $desc := "" }}
 {{- with $p.description }}
-  {{- $desc = . | plainify | htmlUnescape | truncate 160 }}
-{{- else }}
-  {{- $desc = .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 160 }}
+  {{- $desc = . | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
 {{- end }}
-{{- if not $desc }}{{ $desc = $s.introDescription | plainify | htmlUnescape }}{{ end }}
-{{- $title := .Title | default .Site.Title }}
+{{- if not $desc }}
+  {{- $tail := cond $isEs " Tecnología, seguridad informática y software libre." " Technology, cybersecurity and free software." }}
+  {{- $count := len .Pages }}
+  {{- $name := .Title }}
+  {{- if eq .Kind "term" }}
+    {{- if eq .Data.Plural "tags" }}
+      {{- $desc = cond $isEs (printf "Artículos etiquetados con %s: %d publicados en %s." $name $count $short) (printf "Posts tagged %s: %d published on %s." $name $count $short) }}
+    {{- else if eq .Data.Plural "categories" }}
+      {{- $desc = cond $isEs (printf "Artículos de la categoría %s: %d publicados en %s." $name $count $short) (printf "Posts in the %s category: %d published on %s." $name $count $short) }}
+    {{- else if eq .Data.Plural "series" }}
+      {{- $desc = cond $isEs (printf "Artículos de la serie %s: %d publicados en %s." $name $count $short) (printf "Posts in the %s series: %d published on %s." $name $count $short) }}
+    {{- end }}
+  {{- else if eq .Kind "taxonomy" }}
+    {{- if eq .Data.Plural "tags" }}
+      {{- $desc = cond $isEs (printf "Todas las etiquetas de %s: %d temas para explorar los artículos." $short $count) (printf "All tags on %s: %d topics to browse the posts." $short $count) }}
+    {{- else if eq .Data.Plural "categories" }}
+      {{- $desc = cond $isEs (printf "Todas las categorías de %s: %d categorías para explorar los artículos." $short $count) (printf "All categories on %s: %d categories to browse the posts." $short $count) }}
+    {{- else if eq .Data.Plural "series" }}
+      {{- $desc = cond $isEs (printf "Todas las series de %s: %d series de artículos relacionados." $short $count) (printf "All series on %s: %d series of related posts." $short $count) }}
+    {{- end }}
+  {{- end }}
+  {{- if $desc }}{{ $desc = print $desc $tail }}{{ end }}
+{{- end }}
+{{- if not $desc }}
+  {{- $desc = .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+{{- end }}
+{{- if and (not $desc) (eq .Kind "section") }}
+  {{- $desc = cond $isEs (printf "Artículos de la sección %s en %s: %d publicados." .Title $short (len .Pages)) (printf "Posts in the %s section of %s: %d published." .Title $short (len .Pages)) }}
+  {{- $desc = print $desc (cond $isEs " Tecnología, seguridad informática y software libre." " Technology, cybersecurity and free software.") }}
+{{- end }}
+{{- if not $desc }}{{ $desc = $s.introDescription | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}{{ end }}
+{{- $desc = printf "%s%s" (truncate (sub 160 (len $suffix)) $desc | htmlUnescape) $suffix }}
 {{- $isPost := and .IsPage (in ($s.mainSections | default (slice "post")) .Section) }}
 {{- $author := $s.author.name }}
 {{- with $p.author }}{{ $author = . }}{{ end }}
