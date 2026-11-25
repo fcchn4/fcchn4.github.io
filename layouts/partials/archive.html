@@ -8,8 +8,10 @@
 {{ end }}
 <div class="grid-inverse wrap content">
   <ul class="posts" id="posts">
+    {{- $seenThumb := false }}
     {{- range (.Paginate $pages).Pages }}
-      {{ partial "excerpt" . }}
+      {{ partial "excerpt" (dict "page" . "eager" (and (not $seenThumb) (ne (.Params.thumbnail | default "") ""))) }}
+      {{- if .Params.thumbnail }}{{ $seenThumb = true }}{{ end }}
     {{- end }}
     <li>
       {{- template "_internal/pagination.html" . }}

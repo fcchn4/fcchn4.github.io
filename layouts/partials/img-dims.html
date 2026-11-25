@@ -1,0 +1,14 @@
+{{- /* Input: site-relative or absolute-path image URL (string). Returns dict "w"/"h", or nil when unknown.
+       Reads from static/ only; skips external URLs, SVG, GIF and missing files. Never fails the build for those. */ -}}
+{{- $res := dict -}}
+{{- $u := urls.Parse (. | string) -}}
+{{- if and (not $u.IsAbs) (not (hasPrefix (. | string) "//")) $u.Path -}}
+  {{- $f := path.Join "static" $u.Path -}}
+  {{- if and (in (slice ".png" ".jpg" ".jpeg" ".webp") (lower (path.Ext $f))) (fileExists $f) -}}
+    {{- $c := imageConfig $f -}}
+    {{- if and $c.Width $c.Height -}}
+      {{- $res = dict "w" $c.Width "h" $c.Height -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $res -}}

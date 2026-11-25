@@ -1,0 +1,10 @@
+{{- /* Same <img> Hugo emits by default (src, alt, title, attributes) plus width/height (read from static/),
+       decoding="async" and loading="lazy". LCP rule: the first markdown image of a page (.Ordinal 0) stays eager
+       (loading omitted) unless the page has a featureImage, which is then the top image. */ -}}
+{{- $dest := .Destination -}}
+{{- $dims := partial "img-dims.html" $dest -}}
+{{- $eager := and (eq .Ordinal 0) (not .Page.Params.featureImage) -}}
+<img src="{{ $dest | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}
+  {{- range $k, $v := .Attributes }}{{ if $v }} {{ printf "%s=%q" $k ($v | transform.HTMLEscape) | safeHTMLAttr }}{{ end }}{{ end }}
+  {{- with $dims }} width="{{ .w }}" height="{{ .h }}"{{ end }}
+  {{- if not $eager }} loading="lazy"{{ end }} decoding="async">

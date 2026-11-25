@@ -1,0 +1,36 @@
+{{- /* Context: dict "page" <page> "eager" <bool>. "eager" marks the first card with a thumbnail (likely LCP). */ -}}
+{{- $eager := .eager }}{{ $pg := .page }}{{ with $pg }}
+<li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
+        <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title  }}</a>
+      </h3>
+      {{ partial "post-meta" . }}
+    </div>
+    {{- with .Params.thumbnail }}
+    <div class="excerpt_footer partition">
+      <div class="excerpt_thumbnail">
+        {{- $dims := partial "img-dims.html" . }}
+        <img src='{{ if (hasPrefix . "http") }}{{ . }}{{ else }}{{ absURL . }}{{ end }}' alt="{{ $pg.Title }}"{{ with $dims }} width="{{ .w }}" height="{{ .h }}"{{ end }}{{ if not $eager }} loading="lazy"{{ end }} decoding="async">
+      </div>
+      {{ else }}
+      <div class="excerpt_footer">
+        {{- end }}
+        <div>
+          <p class="pale">
+            {{ if .Params.summary }}
+              {{ .Params.summary }}
+            {{ else if .Params.abstract }}
+              {{ .Params.abstract }}
+            {{ else if .Summary }}
+              {{ truncate 320 .Summary }}
+            {{ end }}
+          </p>
+          {{- $r := T "read_more" }}
+          <a href="{{ .Permalink }}" title="{{ $r }}" class="excerpt_more button">{{ $r }}</a>
+        </div>
+      </div>
+    </div>
+  </li>
+{{ end }}
