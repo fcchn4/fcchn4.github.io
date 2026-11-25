@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Promtail on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/tags/promtail/</link><description>Recent content in Promtail on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>es-ES</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/promtail/index.xml" rel="self" type="application/rss+xml"/><item><title>Apuntes monitoreo con Grafana, Loki y Promtail - Ejemplos de Configuración</title><link>https://blog.fcch.xyz/post/infrastructure/grafana-stack-two/</link><pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/infrastructure/grafana-stack-two/</guid><description>
 &lt;p&gt;En la primera parte, se hablo sobre monitoreo de ciertos servicios, el artículo se alargó mucho, agregar las configuraciones de ejemplo hubiera alargado mucho más el atículo, en esta segunda parte dejaremos varios ejemplos de configuración para cada servicio, con una breve descripción.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo-n2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo-n2.png" alt="" width="654" height="399" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Antes de entrar a cada servicio, conviene recordar el flujo general. &lt;strong&gt;Promtail&lt;/strong&gt; lee los archivos de log y el journal de systemd, asigna labels y envía todo a &lt;strong&gt;Loki&lt;/strong&gt;, que los almacena e indexa. &lt;strong&gt;Grafana&lt;/strong&gt; consulta a Loki con &lt;strong&gt;LogQL&lt;/strong&gt; para armar dashboards. Los ejemplos de esta parte se enfocan en dos cosas:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Qué debe emitir cada servicio para que sus registros sean útiles (formato de logs, driver de logging, rutas).&lt;/li&gt;
@@ -208,7 +208,7 @@
 &lt;li&gt;&lt;a href="https://docs.docker.com/engine/logging/drivers/journald/"&gt;Docker - Logging Drivers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Apuntes monitoreo con Grafana, Loki y Promtail</title><link>https://blog.fcch.xyz/post/infrastructure/grafana-stack-one/</link><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/infrastructure/grafana-stack-one/</guid><description>
 &lt;p&gt;A lo largo de la vida profesional es normal ver muchos tipos de implementaciones en cuanto a desarrollo e infraestructura, en pocas palabras para infraestructura es normal que no exista monitoreo de servicios en servidores de alguna organización, esto es más común en servidores on-premise, por este motivo me hice algunas preguntas.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo.png" alt="" width="654" height="399" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;¿Cuánto tiempo toma armar un sistema de monitoreo?&lt;/li&gt;
 &lt;li&gt;¿Qué tan complicado puede ser implementar un sistema de monitoreo?&lt;/li&gt;
@@ -293,7 +293,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;El flujo es simple: &lt;strong&gt;Promtail&lt;/strong&gt; lee los archivos de log y el journal de systemd, los envía a &lt;strong&gt;Loki&lt;/strong&gt; que los almacena e indexa, y &lt;strong&gt;Grafana&lt;/strong&gt; consulta a Loki para mostrar la información en dashboards.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-loki-promtail-workflow.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-loki-promtail-workflow.png" alt="" width="1521" height="928" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="por-qué-solo-grafana---loki---promtail"&gt;¿Por qué solo Grafana - Loki - Promtail?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;No requiere agentes de métricas adicionales&lt;/strong&gt;, toda la información proviene de logs que ya existen en el servidor.&lt;/li&gt;
@@ -311,7 +311,7 @@
 &lt;li&gt;&lt;strong&gt;IPs de origen&lt;/strong&gt;, de cada intento.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Usuarios probados&lt;/strong&gt;, por atacantes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-ssh-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-ssh-dashboard.png" alt="" width="1552" height="1205" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="2-nginx"&gt;2. &lt;a href="https://nginx.org/en/docs/index.html"&gt;Nginx&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Para servidores web lo mínimo que conviene monitorear es el tráfico:&lt;/p&gt;
 &lt;ul&gt;
@@ -321,7 +321,7 @@
 &lt;li&gt;&lt;strong&gt;Top URLs&lt;/strong&gt;, qué recursos son los más solicitados.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Error logs&lt;/strong&gt;, visualizar errores del servidor en tiempo real.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-nginx-dashboard-v2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-nginx-dashboard-v2.png" alt="" width="1548" height="1306" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="3-fail2ban"&gt;3. &lt;a href="https://fail2ban.readthedocs.io/en/latest/"&gt;Fail2ban&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Protección contra ataques de fuerza bruta, complementa el monitoreo mostrando las acciones de defensa automática:&lt;/p&gt;
 &lt;ul&gt;
@@ -329,7 +329,7 @@
 &lt;li&gt;&lt;strong&gt;IPs detectadas&lt;/strong&gt;, intentos sospechosos antes del baneo.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Tendencias&lt;/strong&gt;, si los ataques están aumentando o disminuyendo.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-fail2ban-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-fail2ban-dashboard-v1.png" alt="" width="1547" height="1180" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="4-docker"&gt;4. &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Para un monitoreo de contenedores simple, podemos pedirle a docker que escriba sus registros de sistema en journal de systemd, con una configuración no muy compleja podremos monitorear los contenedores, códigos de estado, volúmenes.&lt;/p&gt;
 &lt;p&gt;Por defecto el &lt;strong&gt;Logging Driver&lt;/strong&gt; de Docker está configurado para &amp;quot;&lt;strong&gt;json-file&lt;/strong&gt;&amp;quot;, esta configuración debe estar con &amp;quot;&lt;strong&gt;journald&lt;/strong&gt;&amp;quot;, se puede verificar con algunos comandos.&lt;/p&gt;
@@ -360,7 +360,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por último se deben verificar los cambios:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;docker inspect --format &lt;span class="s1"&gt;&amp;#39;{{.HostConfig.LogConfig.Type}}&amp;#39;&lt;/span&gt; &amp;lt;nombre_o_id&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con estos detalles podemos crear un dashboard para contenedores también.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-docker-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-docker-dashboard-v1.png" alt="" width="1544" height="1313" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="instalación-de-grafana-y-sus-componentes"&gt;Instalación de Grafana y sus componentes&lt;/h2&gt;
 &lt;p&gt;Los tres componentes se instalan desde el repositorio oficial de Grafana mediante &lt;code&gt;apt&lt;/code&gt; en Debian. Los paquetes &lt;code&gt;.deb&lt;/code&gt; ya incluyen los archivos de unidad para systemd.&lt;/p&gt;
 &lt;h3 id="repositorio-de-grafana"&gt;Repositorio de Grafana&lt;/h3&gt;
@@ -445,7 +445,7 @@ La sección &lt;code&gt;scrape_configs&lt;/code&gt; define los jobs de recolecci
 &lt;li&gt;&lt;strong&gt;Web Server&lt;/strong&gt;: monitoreo completo de Nginx y Fail2ban con requests por segundo, códigos de estado HTTP, top URLs, top IPs y error logs.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Registry Health&lt;/strong&gt;: disponibilidad de providers del Terraform Registry (usando datasource Infinity).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-status-services-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-status-services-dashboard.png" alt="" width="1544" height="871" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="escalando-a-múltiples-servidores"&gt;Escalando a múltiples servidores&lt;/h2&gt;
 &lt;p&gt;Esta misma solución se puede escalar para monitorear múltiples servidores instalando solo Promtail en cada servidor remoto y apuntándolo al Loki central.&lt;/p&gt;
 &lt;p&gt;Solo hay que cambiar &lt;code&gt;instance_addr&lt;/code&gt; de &lt;code&gt;127.0.0.1&lt;/code&gt; a &lt;code&gt;0.0.0.0&lt;/code&gt; en Loki y proteger el acceso con firewall.&lt;/p&gt;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spip on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/tags/spip/</link><description>Recent content in Spip on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>es-ES</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Mon, 06 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/spip/index.xml" rel="self" type="application/rss+xml"/><item><title>SPIP, Otra Forma de Instalar</title><link>https://blog.fcch.xyz/post/web/spip-otra-forma-instalar/</link><pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/spip-otra-forma-instalar/</guid><description>
 &lt;p&gt;&lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; es un &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;CMS&lt;/a&gt; francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt="" width="400" height="297" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Existen diferentes métodos de instalación en el &lt;a href="https://www.spip.net/es_download"&gt;sitio oficial&lt;/a&gt;, se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la &lt;strong&gt;Instalación Automática&lt;/strong&gt; que consiste en descargar el archivo &lt;strong&gt;spip_loader.php&lt;/strong&gt; y ejecutarlo desde un navegador web.&lt;/p&gt;
 &lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es el que se utiliza comúnmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.&lt;/p&gt;
 &lt;h2 id="descarga-spip"&gt;Descarga SPIP&lt;/h2&gt;
@@ -10,7 +10,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ cd spip-core
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Luego de terminar la descarga tendremos una estructura de archivos similar a esta:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree.png" alt="" width="163" height="287" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Para las actualizaciones del CMS solo se debe ejecutar:&lt;/li&gt;
 &lt;/ul&gt;
@@ -27,7 +27,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ chown -R www-data:www-data IMG tmp local config
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ chmod 777 IMG tmp local config
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La estructura de directorios debería quedar de la siguiente forma:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png" alt="" width="159" height="321" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="instalación-spip"&gt;Instalación SPIP&lt;/h2&gt;
 &lt;p&gt;Con todos los preparativos listos podemos iniciar la instalación de &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para iniciar la instalación de &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; abrimos el navegador web de nuestra preferencia y dependiendo al caso ingresamos a la URL:&lt;/p&gt;
@@ -44,7 +44,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-01.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-01.png" alt="" width="588" height="521" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="2"&gt;
@@ -52,9 +52,9 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png" alt="" width="588" height="821" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rápida.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png" alt="" width="589" height="402" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="3"&gt;
@@ -62,7 +62,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-04.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-04.png" alt="" width="589" height="707" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="4"&gt;
@@ -70,7 +70,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-05.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-05.png" alt="" width="590" height="854" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="5"&gt;
@@ -78,7 +78,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-06.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-06.png" alt="" width="589" height="815" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="6"&gt;
@@ -86,7 +86,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png" alt="" width="792" height="831" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.spip.net/en_rubrique25.html"&gt;&lt;strong&gt;SPIP Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

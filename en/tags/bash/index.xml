@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bash on Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/tags/bash/</link><description>Recent content in Bash on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/bash/index.xml" rel="self" type="application/rss+xml"/><item><title>Lenovo BIOS - UEFI Firmware Update</title><link>https://blog.fcch.xyz/en/post/notes/lenovo-firmware-update/</link><pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/lenovo-firmware-update/</guid><description>
 &lt;p&gt;When you are a GNU/Linux user, it is common to run into several obstacles when trying to update or apply security patches to the BIOS - UEFI firmware. Many companies only provide update methods with executables that only work on Windows. Although some methods offer binaries in &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt; or &lt;strong&gt;.cab&lt;/strong&gt; files, or updates that can be stored on USB storage devices, this task is not easy for a user without much experience.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt="" width="960" height="604" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Some brands such as &lt;a href="https://www.lenovo.com/"&gt;Lenovo&lt;/a&gt; rely on the well-known &lt;a href="https://fwupd.org/"&gt;LVFS (Linux Vendor Firmware Service)&lt;/a&gt;, a secure web portal that allows hardware manufacturers to upload firmware updates for machines running GNU/Linux operating systems.&lt;/p&gt;
 &lt;p&gt;For the examples that follow I used a Lenovo ThinkPad Carbon X1 laptop, with the following specifications:&lt;/p&gt;
 &lt;ul&gt;
@@ -36,7 +36,7 @@
 &lt;li&gt;&lt;a href="https://fwupd.org/"&gt;Linux Vendor Firmware Service&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Bandit Solved</title><link>https://blog.fcch.xyz/en/post/notes/bandit-solved/</link><pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/bandit-solved/</guid><description>
 &lt;p&gt;This is the link to solve and play for a while: &lt;a href="https://overthewire.org/wargames/bandit/"&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/bandit/otw-bandit.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/bandit/otw-bandit.jpg" alt="" width="360" height="168" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Let's start!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;User: bandit0&lt;/li&gt;
@@ -480,7 +480,7 @@
 &lt;li&gt;&lt;a href="https://overthewire.org/wargames/bandit/"&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Tmux Moment</title><link>https://blog.fcch.xyz/en/post/notes/tmux-moment/</link><pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/tmux-moment/</guid><description>
 &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. &lt;strong&gt;tmux&lt;/strong&gt; may be detached from a screen and continue running in the background, then later reattached.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" alt="" width="700" height="480" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="the-basics"&gt;The Basics&lt;/h2&gt;
 &lt;p&gt;First we must execute the command &lt;strong&gt;tmux&lt;/strong&gt;, within it we can perform different actions, for these actions we must send commands to &lt;strong&gt;tmux&lt;/strong&gt;, in my case I will use the combination &lt;strong&gt;ctrl + b&lt;/strong&gt; which is the configuration by default after installation:&lt;/p&gt;
 &lt;table&gt;
@@ -623,11 +623,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ tmux attach-session -t fcch
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="some-demos"&gt;Some Demos&lt;/h2&gt;
 &lt;p&gt;We execute &lt;strong&gt;tmux&lt;/strong&gt;, we divide into different panels the terminal:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Panel synchronization:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Work with panels and resizes with &lt;strong&gt;ctrl + b + space&lt;/strong&gt; and &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/tmux/tmux/wiki"&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

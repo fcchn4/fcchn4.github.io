@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apuntes on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/categories/apuntes/</link><description>Recent content in Apuntes on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>es-ES</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/categories/apuntes/index.xml" rel="self" type="application/rss+xml"/><item><title>Lenovo Actualización Firmware BIOS - UEFI</title><link>https://blog.fcch.xyz/post/notes/lenovo-firmware-update/</link><pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/lenovo-firmware-update/</guid><description>
 &lt;p&gt;Cuando eres usuario de algún GNU/Linux es normal toparse con varios impedimentos para actualizar o aplicar parches de seguridad en firmware BIOS, muchas empresas solo facilitan métodos de actualización con ejecutables que solo funcionan en Windows, aunque algunos métodos facilitan binarios en archivos &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt;, &lt;strong&gt;.cab&lt;/strong&gt; o actualizaciones que se pueden almacenar en dispositivos de almacenamiento USB, esta tarea no es fácil para un usuario sin mucha experiencia.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt="" width="960" height="604" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Algunas marcas como &lt;a href="https://www.lenovo.com/"&gt;Lenovo&lt;/a&gt; cuentan con el famoso &lt;a href="https://fwupd.org/"&gt;LVFS (Linux Vendor Firmware Service)&lt;/a&gt;, un portal web seguro que permite a los fabricantes de hardware subir actualizaciones de firmware para equipos que utilizan sistemas operativos GNU/Linux.&lt;/p&gt;
 &lt;p&gt;Para los ejemplos que siguen utilicé una laptop Lenovo ThinkPad Carbon X1, con las siguientes características:&lt;/p&gt;
 &lt;ul&gt;
@@ -36,7 +36,7 @@
 &lt;li&gt;&lt;a href="https://fwupd.org/"&gt;Linux Vendor Firmware Service&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Comandos Usuales Simples</title><link>https://blog.fcch.xyz/post/notes/usual-commands/</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/usual-commands/</guid><description>
 &lt;p&gt;Cada día aprendemos comandos que nos permiten realizar determinadas tareas en el trabajo, para no olvidar alguno de estos comandos que sirvieron cree una lista como ayuda memoria.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/usual-cmd/linux-cmd-post.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/usual-cmd/linux-cmd-post.jpg" alt="" width="500" height="333" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="verificar-la-fecha-de-instalación-del-so"&gt;Verificar la Fecha de Instalación del SO&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Primera opción&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ ls -lct /etc &lt;span class="p"&gt;|&lt;/span&gt; tail -1 &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $6, $7, $8}&amp;#39;&lt;/span&gt;
@@ -184,12 +184,12 @@
 &lt;li&gt;&lt;a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding"&gt;&lt;strong&gt;SSH&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Apuntes XFCE4</title><link>https://blog.fcch.xyz/post/notes/notes-xfce4/</link><pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/notes-xfce4/</guid><description>
 &lt;p&gt;Estuve cambiando de hardware en mi ambiente de trabajo, cambié el teclado a uno en idioma inglés, por este motivo estuve configurando &lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, que es mi entorno gráfico preferido.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg" alt="" width="500" height="286" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="cambio-de-idioma-del-teclado-en-xfce4"&gt;Cambio de Idioma del Teclado en XFCE4&lt;/h2&gt;
 &lt;p&gt;Lo primero fue hacer el cambio de idioma, por lo tanto para llegar al menú de configuración: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, la configuración debería quedar como en la imagen.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png" alt="" width="400" height="462" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Esta configuración no tuvo efecto luego de un reinicio, para solucionar este problema editamos el archivo de configuración general en: &lt;strong&gt;/etc/default/keyboard&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-general.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-general.png" alt="" width="400" height="216" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;La configuración debería quedar similar a la imagen.&lt;/p&gt;
 &lt;p&gt;Teclado abreviado para caracteres especiales:&lt;/p&gt;
 &lt;ul&gt;
@@ -199,12 +199,12 @@
 &lt;h2 id="activar-tecla-super--whisker-menu"&gt;Activar Tecla Super + Whisker Menu&lt;/h2&gt;
 &lt;p&gt;Para activar el menú de aplicaciones en XFCE se necesita el complemento &lt;strong&gt;whiskermenu&lt;/strong&gt;, para poder asociarlo a la tecla Super de la Izquierda (Logo Windows).&lt;/p&gt;
 &lt;p&gt;La configuración se debe llevar en: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Application Shortcuts&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png" alt="" width="400" height="461" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; xfce4-popup-whiskermenu
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="conexión-vpn"&gt;Conexión VPN&lt;/h2&gt;
 &lt;p&gt;Por último, la instalación de XFCE para Debian Bullseye o Ubuntu Focal no viene instalado por defecto los utilitarios para OpenVPN, entonces es necesario instalar los paquetes necesarios.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png" alt=""&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png" alt="" width="400" height="513" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -212,7 +212,7 @@
 &lt;/ul&gt;</description></item><item><title>Bandit Soluciones</title><link>https://blog.fcch.xyz/post/notes/bandit-solved/</link><pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/bandit-solved/</guid><description>
 &lt;p&gt;Son juegos de guerra ofrecidos por la comunidad OverTheWire que nos ayudan a aprender y practicar conceptos de seguridad en forma de juegos divertidos.&lt;/p&gt;
 &lt;p&gt;El enlace para poder jugar un momento: &lt;a href="https://overthewire.org/wargames/bandit/"&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/bandit/otw-bandit.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/bandit/otw-bandit.jpg" alt="" width="360" height="168" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;¡¡¡Iniciamos!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Usuario: bandit0&lt;/li&gt;
@@ -656,7 +656,7 @@
 &lt;li&gt;&lt;a href="https://overthewire.org/wargames/bandit/"&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Momento Tmux</title><link>https://blog.fcch.xyz/post/notes/tmux-moment/</link><pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/tmux-moment/</guid><description>
 &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" alt="" width="700" height="480" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="lo-básico"&gt;Lo Básico&lt;/h2&gt;
 &lt;p&gt;Primero debemos ejecutar el comando &lt;strong&gt;tmux&lt;/strong&gt;, dentro del mismo podemos realizar diferentes acciones, para estas acciones debemos enviarle comandos a &lt;strong&gt;tmux&lt;/strong&gt;, en mi caso utilizaré la combinación &lt;strong&gt;ctrl + b&lt;/strong&gt; que es la configuración por defecto luego de la instalación:&lt;/p&gt;
 &lt;table&gt;
@@ -799,20 +799,20 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ tmux attach-session -t fcch
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="algunas-demos"&gt;Algunas Demos&lt;/h2&gt;
 &lt;p&gt;Ejecutamos &lt;strong&gt;tmux&lt;/strong&gt;, dividimos en diferentes paneles:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Sincronización de paneles:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Trabajo con paneles y redimensiones con &lt;strong&gt;ctrl + b + space&lt;/strong&gt; y &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/tmux/tmux/wiki"&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/tmux/tmux"&gt;&lt;strong&gt;Tmux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Ruta de Aprendizaje</title><link>https://blog.fcch.xyz/post/notes/learning-path/</link><pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/learning-path/</guid><description>
 &lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificación &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png" alt="" width="933" height="438" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;En mi búsqueda de información encontré esta descripción del camino completo hacia una certificación &lt;strong&gt;Profesional&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png" alt="" width="1498" height="180" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="aws-certified-cloud-practitioner-clf-c01"&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
 &lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;
 &lt;ol&gt;
@@ -979,7 +979,7 @@
 &lt;li&gt;&lt;a href="https://aws.amazon.com/es/certification/benefits/"&gt;&lt;strong&gt;AWS Beneficios&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>NPM EACCES</title><link>https://blog.fcch.xyz/post/notes/npm-eacces/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/npm-eacces/</guid><description>
 &lt;p&gt;Me tocó probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png" alt="" width="1157" height="485" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Al ejecutar el comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm install -g &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se presentó un problema de permisos &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; y para solucionar el problema de forma inmediata era ejecutarlo con &lt;strong&gt;sudo&lt;/strong&gt;, esta práctica es común pero no es lo que buscamos.&lt;/p&gt;
@@ -1005,7 +1005,7 @@
 &lt;li&gt;&lt;a href="https://nodejs.org/api/errors.html"&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Apuntes Fedora 32</title><link>https://blog.fcch.xyz/post/notes/notes-fedora-32/</link><pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/notes/notes-fedora-32/</guid><description>
 &lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalicé el Prompt para mi Terminal y me cambié de &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt="" width="400" height="240" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="prompt-terminal"&gt;Prompt Terminal&lt;/h2&gt;
 &lt;p&gt;Hace tiempo estuve buscando una forma de tener un prompt que me muestre la hora, la ubicación de directorio y datos sobre el estado en un repositorio git (ramas, cambios), el objetivo era no usar &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, que es un conjunto de scripts para personalizar el prompt donde se puede elegir entre varias opciones de apariencia.&lt;/p&gt;
 &lt;p&gt;Buscando me encontré con &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt; que es un script que te permite obtener información sobre algún repositorio git, te muestra la rama en la que te encuentras actualmente, o si existe algún cambio en dicho repositorio, ya tenía un problema solucionado, solo quedó colorear el prompt, obtener la hora y la ruta actual de directorio, estos cambios los agregué a mi archivo de configuración &lt;strong&gt;~/.bashrc&lt;/strong&gt;, y quedó de esta forma:&lt;/p&gt;

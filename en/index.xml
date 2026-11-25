@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/</link><description>Recent content on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring notes with Grafana, Loki and Promtail - Configuration Examples</title><link>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-two/</link><pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-two/</guid><description>
 &lt;p&gt;In the first part, we talked about monitoring certain services; the article got quite long, and adding the example configurations would have made it much longer, so in this second part we leave several configuration examples for each service, with a short description.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo-n2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo-n2.png" alt="" width="654" height="399" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Before diving into each service, it is worth recalling the general flow. &lt;strong&gt;Promtail&lt;/strong&gt; reads the log files and the systemd journal, assigns labels and sends everything to &lt;strong&gt;Loki&lt;/strong&gt;, which stores and indexes them. &lt;strong&gt;Grafana&lt;/strong&gt; queries Loki with &lt;strong&gt;LogQL&lt;/strong&gt; to build dashboards. The examples in this part focus on two things:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;What each service must emit so that its logs are useful (log format, logging driver, paths).&lt;/li&gt;
@@ -208,7 +208,7 @@
 &lt;li&gt;&lt;a href="https://docs.docker.com/engine/logging/drivers/journald/"&gt;Docker - Logging Drivers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Monitoring notes with Grafana, Loki and Promtail</title><link>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-one/</link><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-one/</guid><description>
 &lt;p&gt;Throughout my professional life it is common to see many types of implementations regarding development and infrastructure; in short, when it comes to infrastructure it is common that there is no service monitoring on an organization's servers, this is more common on on-premise servers, and for this reason I asked myself a few questions.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo.png" alt="" width="654" height="399" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How long does it take to build a monitoring system?&lt;/li&gt;
 &lt;li&gt;How complex can it be to implement a monitoring system?&lt;/li&gt;
@@ -293,7 +293,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The flow is simple: &lt;strong&gt;Promtail&lt;/strong&gt; reads the log files and the systemd journal, sends them to &lt;strong&gt;Loki&lt;/strong&gt; which stores and indexes them, and &lt;strong&gt;Grafana&lt;/strong&gt; queries Loki to display the information in dashboards.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-loki-promtail-workflow-en.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-loki-promtail-workflow-en.png" alt="" width="1524" height="948" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="why-only-grafana---loki---promtail"&gt;Why only Grafana - Loki - Promtail?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;No additional metrics agents required&lt;/strong&gt;, all the information comes from logs that already exist on the server.&lt;/li&gt;
@@ -311,7 +311,7 @@
 &lt;li&gt;&lt;strong&gt;Source IPs&lt;/strong&gt;, of each attempt.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Attempted usernames&lt;/strong&gt;, by attackers.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-ssh-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-ssh-dashboard.png" alt="" width="1552" height="1205" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="2-nginx"&gt;2. &lt;a href="https://nginx.org/en/docs/index.html"&gt;Nginx&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;For web servers the minimum worth monitoring is the traffic:&lt;/p&gt;
 &lt;ul&gt;
@@ -321,7 +321,7 @@
 &lt;li&gt;&lt;strong&gt;Top URLs&lt;/strong&gt;, which resources are the most requested.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Error logs&lt;/strong&gt;, visualize server errors in real time.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-nginx-dashboard-v2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-nginx-dashboard-v2.png" alt="" width="1548" height="1306" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="3-fail2ban"&gt;3. &lt;a href="https://fail2ban.readthedocs.io/en/latest/"&gt;Fail2ban&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Protection against brute force attacks, it complements the monitoring by showing the automatic defense actions:&lt;/p&gt;
 &lt;ul&gt;
@@ -329,7 +329,7 @@
 &lt;li&gt;&lt;strong&gt;Detected IPs&lt;/strong&gt;, suspicious attempts before the ban.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Trends&lt;/strong&gt;, whether attacks are increasing or decreasing.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-fail2ban-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-fail2ban-dashboard-v1.png" alt="" width="1547" height="1180" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="4-docker"&gt;4. &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;For simple container monitoring, we can ask docker to write its system logs to the systemd journal; with a not-too-complex configuration we will be able to monitor the containers, status codes and volumes.&lt;/p&gt;
 &lt;p&gt;By default Docker's &lt;strong&gt;Logging Driver&lt;/strong&gt; is configured to &amp;quot;&lt;strong&gt;json-file&lt;/strong&gt;&amp;quot;, this setting should be &amp;quot;&lt;strong&gt;journald&lt;/strong&gt;&amp;quot;, which can be verified with a few commands.&lt;/p&gt;
@@ -360,7 +360,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, the changes must be verified:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;docker inspect --format &lt;span class="s1"&gt;&amp;#39;{{.HostConfig.LogConfig.Type}}&amp;#39;&lt;/span&gt; &amp;lt;name_or_id&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With these details we can create a dashboard for containers as well.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-docker-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-docker-dashboard-v1.png" alt="" width="1544" height="1313" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="installing-grafana-and-its-components"&gt;Installing Grafana and its components&lt;/h2&gt;
 &lt;p&gt;The three components are installed from the official Grafana repository via &lt;code&gt;apt&lt;/code&gt; on Debian. The &lt;code&gt;.deb&lt;/code&gt; packages already include the systemd unit files.&lt;/p&gt;
 &lt;h3 id="grafana-repository"&gt;Grafana repository&lt;/h3&gt;
@@ -445,7 +445,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;strong&gt;Web Server&lt;/strong&gt;: complete monitoring of Nginx and Fail2ban with requests per second, HTTP status codes, top URLs, top IPs and error logs.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Registry Health&lt;/strong&gt;: availability of Terraform Registry providers (using the Infinity datasource).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-status-services-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-status-services-dashboard.png" alt="" width="1544" height="871" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="scaling-to-multiple-servers"&gt;Scaling to multiple servers&lt;/h2&gt;
 &lt;p&gt;This same solution can be scaled to monitor multiple servers by installing only Promtail on each remote server and pointing it to the central Loki.&lt;/p&gt;
 &lt;p&gt;You just have to change &lt;code&gt;instance_addr&lt;/code&gt; from &lt;code&gt;127.0.0.1&lt;/code&gt; to &lt;code&gt;0.0.0.0&lt;/code&gt; in Loki and protect access with a firewall.&lt;/p&gt;
@@ -463,7 +463,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://grafana.com/docs/loki/latest/query/"&gt;LogQL - Loki's Query Language&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Lenovo BIOS - UEFI Firmware Update</title><link>https://blog.fcch.xyz/en/post/notes/lenovo-firmware-update/</link><pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/lenovo-firmware-update/</guid><description>
 &lt;p&gt;When you are a GNU/Linux user, it is common to run into several obstacles when trying to update or apply security patches to the BIOS - UEFI firmware. Many companies only provide update methods with executables that only work on Windows. Although some methods offer binaries in &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt; or &lt;strong&gt;.cab&lt;/strong&gt; files, or updates that can be stored on USB storage devices, this task is not easy for a user without much experience.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/lenovo-firmware-update/lenovo-tp-cx1.png" alt="" width="960" height="604" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Some brands such as &lt;a href="https://www.lenovo.com/"&gt;Lenovo&lt;/a&gt; rely on the well-known &lt;a href="https://fwupd.org/"&gt;LVFS (Linux Vendor Firmware Service)&lt;/a&gt;, a secure web portal that allows hardware manufacturers to upload firmware updates for machines running GNU/Linux operating systems.&lt;/p&gt;
 &lt;p&gt;For the examples that follow I used a Lenovo ThinkPad Carbon X1 laptop, with the following specifications:&lt;/p&gt;
 &lt;ul&gt;
@@ -499,7 +499,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://fwupd.org/"&gt;Linux Vendor Firmware Service&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Simple Usual Commands</title><link>https://blog.fcch.xyz/en/post/notes/usual-commands/</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/usual-commands/</guid><description>
 &lt;p&gt;Every day we learn commands that allow us to perform certain tasks at work, so as not to forget any of these commands that served, create a list as a memory aid.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/usual-cmd/linux-cmd-post.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/usual-cmd/linux-cmd-post.jpg" alt="" width="500" height="333" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="check-os-install-date"&gt;Check OS Install Date&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# First option&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ ls -lct /etc &lt;span class="p"&gt;|&lt;/span&gt; tail -1 &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $6, $7, $8}&amp;#39;&lt;/span&gt;
@@ -647,12 +647,12 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding"&gt;&lt;strong&gt;SSH&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Notes XFCE4</title><link>https://blog.fcch.xyz/en/post/notes/notes-xfce4/</link><pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/notes-xfce4/</guid><description>
 &lt;p&gt;I was changing hardware in my work environment, I changed the keyboard to an English language one, for this reason I was configuring &lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, which is my preferred graphical environment.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg" alt="" width="500" height="286" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="change-keyboard-language-in-xfce4"&gt;Change Keyboard Language in XFCE4&lt;/h2&gt;
 &lt;p&gt;The first thing was to change the language, therefore to get to the configuration menu: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, the configuration should be in the image.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png" alt="" width="400" height="462" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;This configuration did not take effect after a reboot, to solve this problem we edited the general configuration file in: &lt;strong&gt;/etc/default/keyboard&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-general.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-general.png" alt="" width="400" height="216" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The configuration should look similar to the image.&lt;/p&gt;
 &lt;p&gt;Keyboard shortcut for special characters:&lt;/p&gt;
 &lt;ul&gt;
@@ -662,19 +662,19 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;h2 id="activate-super-key--whisker-menu"&gt;Activate Super Key + Whisker Menu&lt;/h2&gt;
 &lt;p&gt;To activate the applications menu in XFCE you need the plugin &lt;strong&gt;whiskermenu&lt;/strong&gt;, to be able to associate it to the Left Super key (Windows Logo).&lt;/p&gt;
 &lt;p&gt;The configuration must be carried out in: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Application Shortcuts&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png" alt="" width="400" height="461" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; xfce4-popup-whiskermenu
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="vpn-connection"&gt;VPN Connection&lt;/h2&gt;
 &lt;p&gt;Finally, the installation of &lt;strong&gt;XFCE&lt;/strong&gt; for &lt;strong&gt;Debian Bullseye&lt;/strong&gt; or &lt;strong&gt;Ubuntu Focal&lt;/strong&gt; does not come with the OpenVPN utilities installed by default, so it is necessary to install the necessary packages.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png" alt=""&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png" alt="" width="400" height="513" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://help.ubuntu.com/community/ComposeKey"&gt;&lt;strong&gt;Compose Key&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>VueJS + Laravel, Deploy</title><link>https://blog.fcch.xyz/en/post/infrastructure/vuejs-laravel-mix/</link><pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/vuejs-laravel-mix/</guid><description>
 &lt;p&gt;At work we had to deploy a project developed with &lt;strong&gt;&lt;a href="https://vuejs.org"&gt;VueJS&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href="https://laravel.com/"&gt;Laravel&lt;/a&gt;&lt;/strong&gt; on an &lt;strong&gt;&lt;a href="https://ubuntu.com/"&gt;Ubuntu&lt;/a&gt;&lt;/strong&gt; server, with &lt;strong&gt;&lt;a href="https://ws.apache.org/"&gt;Apache&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://www.php.net/"&gt;PHP&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://mariadb.org/"&gt;MariaDB&lt;/a&gt;&lt;/strong&gt;, where everything was versioned on &lt;strong&gt;&lt;a href="https://github.com/"&gt;github&lt;/a&gt;&lt;/strong&gt;, it had no development branches, nor fork repositories. Deploying the project had some details that we need to understand and learn so as not to make mistakes in the deployment to production.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/vuejs-laravel-mix/vuejs-laravel-logo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/vuejs-laravel-mix/vuejs-laravel-logo.png" alt="" width="563" height="299" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="version-details"&gt;Version Details&lt;/h2&gt;
 &lt;p&gt;The versions that were used for the development and deployment of the project are:&lt;/p&gt;
 &lt;ol&gt;
@@ -791,7 +791,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://laravel.com/docs/8.x/frontend"&gt;Laravel Frontend&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Hugo Framework - Internal Templates</title><link>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</link><pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</guid><description>
 &lt;p&gt;Building websites with &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; made me explore more about this very useful tool. An important necessary functionality was to add the properties of &lt;a href="https://ogp.me/"&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt; to a project, the first idea was to edit the HTML files of the &lt;strong&gt;theme&lt;/strong&gt; and add the corresponding tags, but after consulting the official documentation we found the most appropriate solution in this &lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;section&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt="" width="478" height="258" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;There are different internal templates, each template has the examples for the &lt;strong&gt;config&lt;/strong&gt; file in the available formats &lt;strong&gt;yaml&lt;/strong&gt;, &lt;strong&gt;toml&lt;/strong&gt; and &lt;strong&gt;json&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="available-templates"&gt;Available Templates&lt;/h2&gt;
 &lt;p&gt;These are the internal templates that you can use in your projects:&lt;/p&gt;
@@ -818,14 +818,14 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;/head&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The result is similar to this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-en.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-en.png" alt="" width="1024" height="285" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://ogp.me/"&gt;&lt;strong&gt;Open Graph&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;Hugo Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Doctl Cli - Digitalocean</title><link>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</link><pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</guid><description>
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://digitalocean.com"&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; also has a CLI to manage the &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot; infrastructure, which works similarly to &lt;strong&gt;&lt;a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html"&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, this tool allows us to avoid using the web interface of this provider.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png" alt="" width="750" height="400" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="install-binary-tools"&gt;Install Binary Tools&lt;/h2&gt;
 &lt;p&gt;The first thing I have to do is download and install the binary, this for the current version &lt;strong&gt;1.54.0&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ cd ~
@@ -834,9 +834,9 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ sudo mv ~/doctl /usr/local/bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="create-token-api"&gt;Create Token API&lt;/h2&gt;
 &lt;p&gt;Before using &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot;, you need to create a &lt;strong&gt;&lt;a href="https://digitalocean.com"&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; API Token for your account, with read and write access from the &lt;strong&gt;Applications&lt;/strong&gt; and &lt;strong&gt;API&lt;/strong&gt; page in the control panel.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-name.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-name.png" alt="" width="592" height="438" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The token string is only shown once, so please copy and keep in a safe place.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-value.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-value.png" alt="" width="1131" height="457" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="account-access-with-token-api-and-doctl"&gt;Account Access with Token API and doctl&lt;/h2&gt;
 &lt;p&gt;The Token API grants access to &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; for your &lt;strong&gt;&lt;a href="https://digitalocean.com"&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; account. Pass the Token string when prompted, when executing the &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; command.&lt;/p&gt;
 &lt;p&gt;You can use multiple accounts, using different names, for this function the &lt;strong&gt;--context&lt;/strong&gt; parameter allows it.&lt;/p&gt;
@@ -893,16 +893,16 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt=""&gt;&lt;/a&gt;&lt;/th&gt;
-&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt=""&gt;&lt;/a&gt;&lt;/th&gt;
-&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt=""&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/a&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>K3s Notes - Part 4</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/</guid><description>
 &lt;p&gt;To finish the small lab and finish the last part of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, we will name some important details, install and create the service for &lt;a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"&gt;&lt;strong&gt;Kubernetes Dashboard&lt;/strong&gt;&lt;/a&gt; and finally we will list some interesting tools.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt="" width="500" height="530" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="pod-networking"&gt;Pod Networking&lt;/h2&gt;
 &lt;p&gt;Each Pod is assigned a unique IP address for each address family. Each container in a Pod shares the network namespace, including the IP address and network ports. Inside a Pod (and only then), the containers that belong to the Pod can communicate with each other using localhost. When containers in a Pod communicate with entities outside the Pod, they must coordinate how they use shared network resources (such as ports). Inside a Pod, containers share an IP address and port space, and can find each other via localhost. The containers in a Pod can also communicate with each other using standard interprocess communications, such as SystemV semaphores or POSIX shared memory. Containers in different Pods have different IP addresses and cannot communicate over IPC without special configuration. Containers that want to interact with a container running on a different Pod can use IP networks to communicate.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CNI - Container Networking Interface&lt;/strong&gt;: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.&lt;/p&gt;
@@ -985,15 +985,15 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;ul&gt;
 &lt;li&gt;Nodes List&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-1.png" alt="" width="1913" height="922" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Namespaces List&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-2.png" alt="" width="1907" height="452" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Dashboard Configuration&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt="" width="1920" height="984" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Useful commands:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl config view
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl get services --all-namespaces
@@ -1024,7 +1024,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 3</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</link><pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</guid><description>
 &lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Part 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt="" width="600" height="587" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Now we will execute basic tasks in our small cluster, but before we continue describing more details of &lt;strong&gt;Kubernetes&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="kubernetes-objects"&gt;Kubernetes objects&lt;/h2&gt;
 &lt;ol&gt;
@@ -1187,7 +1187,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 2</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</link><pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</guid><description>
 &lt;p&gt;We continue with the tests in our small cluster with &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; built on the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my laboratory, for the tests we use the official &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; documentation and also the official &lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg" alt="" width="500" height="523" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;In the image we have as a detail:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Three Raspberry Pi 4, Model B&lt;/strong&gt; (1 Server Node and 2 Worker Nodes).&lt;/li&gt;
@@ -1196,7 +1196,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;h2 id="basic-concepts"&gt;Basic concepts&lt;/h2&gt;
 &lt;p&gt;With the Kubernetes components:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/components-of-kubernetes.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/components-of-kubernetes.png" alt="" width="1209" height="555" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;We can describe some important components:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1280,7 +1280,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# If there is a problem with the previous command we can execute:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl version --client&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If everything is correct we will have an output similar to this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubectl-version-tests-v2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubectl-version-tests-v2.png" alt="" width="1262" height="176" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Useful commands to start:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Get help&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl --help
@@ -1307,7 +1307,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access/"&gt;&lt;strong&gt;Cluster Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 1</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</guid><description>
 &lt;p&gt;Experimenting with &lt;a href="https://docs.docker.com/engine/swarm/"&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt;, I got to the task of building something with the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my lab, after googling a lot and chatting with my friend &lt;a href="https://twitter.com/donkeysharp"&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, he recommended using &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; which is a &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; distribution with backend &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; based lightweight storage system compatible with &lt;a href="https://en.wikipedia.org/wiki/ARM_architecture"&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt; architecture.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt="" width="600" height="338" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;I reviewed the official &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; documentation and I was able to set up my laboratory, the type of exercise that will be developed will be a &lt;strong&gt;Server node&lt;/strong&gt; and four &lt;strong&gt;Worker nodes&lt;/strong&gt; with the &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; database.&lt;/p&gt;
 &lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
 &lt;p&gt;There are two types of nodes:&lt;/p&gt;
@@ -1319,7 +1319,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Single-server Setup with an Embedded DB&lt;/strong&gt;, in this configuration, each agent node is registered on the same &lt;strong&gt;Server node&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-single-server.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-single-server.png" alt="" width="5488" height="2844" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ol start="2"&gt;
 &lt;li&gt;&lt;strong&gt;High-Availability K3s Server with an External DB&lt;/strong&gt;, Which consists of:&lt;/li&gt;
 &lt;/ol&gt;
@@ -1327,10 +1327,10 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;Two or more &lt;strong&gt;Server nodes&lt;/strong&gt; that will serve the &lt;strong&gt;Kubernetes&lt;/strong&gt; API and run other control plane services.&lt;/li&gt;
 &lt;li&gt;An &lt;strong&gt;external data store&lt;/strong&gt; (as opposed to the built-in SQLite data store used in single server configurations).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-ha-server.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-ha-server.png" alt="" width="6430" height="2844" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;2.1 &lt;strong&gt;Fixed Registration Address for Agent Nodes&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;In the high availability server configuration, each node must also register with the &lt;strong&gt;Kubernetes&lt;/strong&gt; API using a fixed registration address, after registration, the agent nodes establish a connection directly with one of the &lt;strong&gt;Server nodes&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-production-setup.svg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-production-setup.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="previous-configurations"&gt;Previous Configurations&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1400,7 +1400,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/architecture/"&gt;&lt;strong&gt;Architecture&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Bandit Solved</title><link>https://blog.fcch.xyz/en/post/notes/bandit-solved/</link><pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/bandit-solved/</guid><description>
 &lt;p&gt;This is the link to solve and play for a while: &lt;a href="https://overthewire.org/wargames/bandit/"&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/bandit/otw-bandit.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/bandit/otw-bandit.jpg" alt="" width="360" height="168" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Let's start!!!&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;User: bandit0&lt;/li&gt;
@@ -1844,7 +1844,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://overthewire.org/wargames/bandit/"&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Tmux Moment</title><link>https://blog.fcch.xyz/en/post/notes/tmux-moment/</link><pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/tmux-moment/</guid><description>
 &lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. &lt;strong&gt;tmux&lt;/strong&gt; may be detached from a screen and continue running in the background, then later reattached.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-00.png" alt="" width="700" height="480" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="the-basics"&gt;The Basics&lt;/h2&gt;
 &lt;p&gt;First we must execute the command &lt;strong&gt;tmux&lt;/strong&gt;, within it we can perform different actions, for these actions we must send commands to &lt;strong&gt;tmux&lt;/strong&gt;, in my case I will use the combination &lt;strong&gt;ctrl + b&lt;/strong&gt; which is the configuration by default after installation:&lt;/p&gt;
 &lt;table&gt;
@@ -1987,20 +1987,20 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ tmux attach-session -t fcch
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="some-demos"&gt;Some Demos&lt;/h2&gt;
 &lt;p&gt;We execute &lt;strong&gt;tmux&lt;/strong&gt;, we divide into different panels the terminal:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-01.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Panel synchronization:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-02.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Work with panels and resizes with &lt;strong&gt;ctrl + b + space&lt;/strong&gt; and &lt;strong&gt;ctrl + b + q&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/tmux-moment/tmux-03.gif" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/tmux/tmux/wiki"&gt;&lt;strong&gt;Tmux Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/tmux/tmux"&gt;&lt;strong&gt;Tmux&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Learning Path AWS</title><link>https://blog.fcch.xyz/en/post/notes/learning-path/</link><pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/learning-path/</guid><description>
 &lt;p&gt;This is a personal learning guide to obtain knowledge about &lt;strong&gt;AWS&lt;/strong&gt; technologies, this guide aims to certify me in &lt;strong&gt;AWS&lt;/strong&gt; based on the available certifications, in the short term the main objectives are &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; and &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/fcch-route.png" alt="" width="933" height="438" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;In my search for information I found this description of the complete path to a &lt;strong&gt;Professional&lt;/strong&gt; certification.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/aws-learning-path/aws-route-complete.png" alt="" width="1498" height="180" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="aws-certified-cloud-practitioner-clf-c01"&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;
 &lt;p&gt;The &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exam requires the knowledge and skills to demonstrate basic knowledge of the AWS platform, such as:&lt;/p&gt;
 &lt;ol&gt;
@@ -2167,7 +2167,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://aws.amazon.com/es/certification/benefits/"&gt;&lt;strong&gt;AWS Benefits&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Hugo Framework and Gitlab Pages</title><link>https://blog.fcch.xyz/en/post/web/hugo-framework-gitlab-pages/</link><pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/hugo-framework-gitlab-pages/</guid><description>
 &lt;p&gt;One of the first ideas to have a website or blog is to use a &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; like &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; or the good &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, all of these developed with &lt;a href="https://www.php.net"&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; and require a database to function, a server or hosting.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt="" width="750" height="220" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;One of the solutions that exist to avoid buying a hosting or server is to generate static sites with a tool like &lt;a href="https://jekyllrb.com/"&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/a&gt; or my favorite &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, these combined with &lt;a href="https://about.gitlab.com/stages-devops-lifecycle/pages/"&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt; or &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We already made a post to create a blog with &lt;a href="https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, this time we will make a small demo to use &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, using the default domain as &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; and then we will customize the domain to our own.&lt;/p&gt;
 &lt;h2 id="step-1-we-started-the-hugo-project-locally"&gt;Step 1: We started the Hugo Project Locally&lt;/h2&gt;
@@ -2228,7 +2228,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ git push origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="--we-verify-the-deployment-in-the-repository"&gt;- We verify the deployment in the repository&lt;/h3&gt;
 &lt;p&gt;If everything went well we should have an output similar to the image, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt="" width="1256" height="240" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Then we can check with the URL: &lt;strong&gt;&lt;a href="http://usuario.gitlab.io"&gt;http://usuario.gitlab.io&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="step-2-gitlab-custom-domain"&gt;Step 2: Gitlab Custom Domain&lt;/h2&gt;
 &lt;p&gt;With what has been done previously and if there was no problem we can customize the domain to one of our own choosing, for the example we will use the domain &lt;strong&gt;domain.com&lt;/strong&gt; and &lt;strong&gt;&lt;a href="https://www.domain.com"&gt;www.domain.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -2237,20 +2237,20 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;For dominio.com&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt="" width="1260" height="520" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;For &lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt="" width="1266" height="532" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;With these two steps completed we will have the repository and the subdomain with the user ready to work, in the case of the personal subdomain, the necessary records should be created in the DNS server.&lt;/p&gt;
 &lt;h3 id="--dns-records-and-gitlab-checks"&gt;- DNS Records and Gitlab Checks&lt;/h3&gt;
 &lt;p&gt;For the root domain &lt;strong&gt;domain.com&lt;/strong&gt; an &lt;strong&gt;A&lt;/strong&gt; record must be created with the following data:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt="" width="1047" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;A&lt;/strong&gt; record for the root domain &lt;strong&gt;domain.com&lt;/strong&gt; with the value &lt;strong&gt;35.185.44.232&lt;/strong&gt;, then a &lt;strong&gt;TXT&lt;/strong&gt; record with the values provided by &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;After creating the records we can verify from &lt;strong&gt;Gitlab&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt="" width="1262" height="761" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;For the subdomain &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; a record &lt;strong&gt;CNAME&lt;/strong&gt; must be created with the values provided by &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt="" width="1046" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;CNAME&lt;/strong&gt; record for the subdomain &lt;strong&gt;&lt;a href="https://www.domain.com"&gt;www.domain.com&lt;/a&gt;&lt;/strong&gt; with the value &amp;quot;&lt;strong&gt;usuario.gitlab.io.&lt;/strong&gt;&amp;quot;, then a &lt;strong&gt;TXT&lt;/strong&gt; record with the values provided &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="clone-repository"&gt;Clone repository&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
@@ -2269,17 +2269,17 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ul&gt;</description></item><item><title>Memory Limit in Docker</title><link>https://blog.fcch.xyz/en/post/infrastructure/docker-limit-memory/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/docker-limit-memory/</guid><description>
 &lt;p&gt;When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.&lt;/p&gt;
 &lt;p&gt;Docker has the ability to apply a memory limit to a specific container.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg" alt="" width="727" height="384" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="creating-a-container"&gt;Creating a Container&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ docker run --name dell -it debian bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="obtaining-container-information"&gt;Obtaining Container Information&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ docker inspect dell &lt;span class="p"&gt;|&lt;/span&gt; grep -i &amp;#39;Memory&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png" alt=""&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png" alt="" width="583" height="157" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;For &lt;strong&gt;&amp;quot;Memory&amp;quot;: 0&lt;/strong&gt; the value &lt;strong&gt;0&lt;/strong&gt; indicates that the container doesn't have a limited memory value, that is, it will use everything that the host has available, possibly affecting other containers that are within the same host.&lt;/p&gt;
 &lt;h2 id="update-container-memory"&gt;Update Container Memory&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ docker update -m 256MB dell
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In testing there were problems on Debian and Ubuntu operating systems:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png" alt="" width="1332" height="75" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;This problem is due to the fact that the &lt;a href="https://en.wikipedia.org/wiki/Cgroups"&gt;&lt;strong&gt;cgroup&lt;/strong&gt;&lt;/a&gt; is not mounted on the system, to mount it we edit the file &lt;strong&gt;grub&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo vim /etc/default/grub
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; ...
@@ -2291,14 +2291,14 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo update-grub2
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ sudo reboot
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally we run the command to update the memory again and check the memory status:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-update-mem.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-update-mem.png" alt="" width="676" height="176" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://fedoramagazine.org/docker-and-fedora-32/"&gt;&lt;strong&gt;Fedora Magazine&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://fedoraproject.org/wiki/Changes/CGroupsV2"&gt;&lt;strong&gt;Fedora Wiki&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>NPM EACCES</title><link>https://blog.fcch.xyz/en/post/notes/npm-eacces/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/npm-eacces/</guid><description>
 &lt;p&gt;I had to test the implementation of a &lt;strong&gt;NodeJS&lt;/strong&gt; application where I needed to install global packages, the installation of global &lt;strong&gt;NodeJS&lt;/strong&gt; packages in the operating system does not seem to be a good practice, so we found a solution to this problem.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/npm-eacces/npm-error-img.png" alt="" width="1157" height="485" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;When running the command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ npm install -g &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;NOMBRE_PAQUETE&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The problem is for permissions with &lt;strong&gt;npm ERR! code EACCES&lt;/strong&gt; and to solve the problem immediately it was to execute it with &lt;strong&gt;sudo&lt;/strong&gt;, this practice is common but it's not a good practice.&lt;/p&gt;
@@ -2324,7 +2324,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://nodejs.org/api/errors.html"&gt;&lt;strong&gt;NodeJs Errors&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Notes Fedora 32</title><link>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</link><pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</guid><description>
 &lt;p&gt;After updating my Operating System &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt="" width="400" height="240" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="prompt-terminal"&gt;Prompt Terminal&lt;/h2&gt;
 &lt;p&gt;Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective was not to use &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, which is a set of scripts to customize the prompt where you can choose between various styles options.&lt;/p&gt;
 &lt;p&gt;Searching, I found &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt;, which is a script that allows you to obtain information about a git repository, it shows you the branch you are currently in, or if there is any change in said repository, I already had a problem solved and I only have to color the prompt get the time and the current directory path, I add these changes to my configuration file &lt;strong&gt;~/.bashrc&lt;/strong&gt;, and it looks like this:&lt;/p&gt;
@@ -2378,7 +2378,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;Fedora Git Reference&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Wordpress, Some Details</title><link>https://blog.fcch.xyz/en/post/web/wordpress-algunos-detalles/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/wordpress-algunos-detalles/</guid><description>
 &lt;p&gt;I was collaborating with some companies that made changes to their websites, where &lt;a href="https://wordpress.org/"&gt;Wordpress&lt;/a&gt; was used as the base &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;CMS&lt;/a&gt;, these websites were being changed servers, updating to the most current version or verifying updates in their add-ons, in the process different problems arose , I had to see the official &lt;a href="https://codex.wordpress.org/"&gt;Wordpress Codex&lt;/a&gt; documentation and Google to give them a solution.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/wordpress-detalles/logo-wordpress-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/wordpress-detalles/logo-wordpress-400.png" alt="" width="400" height="249" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="wordpress-migration"&gt;Wordpress Migration&lt;/h2&gt;
 &lt;p&gt;Previously the websites were hosted by &lt;strong&gt;hosting providers (web hosting)&lt;/strong&gt;, the new servers where they are currently hosted have web services performing &lt;strong&gt;reverse-proxy&lt;/strong&gt; or &lt;strong&gt;load balancing&lt;/strong&gt;, for this In case it was necessary to specify some instances in the configuration file &lt;strong&gt;wp-config.php&lt;/strong&gt; so that the &lt;strong&gt;CSS&lt;/strong&gt; and &lt;strong&gt;JS&lt;/strong&gt; files load correctly, another problem that existed was that the security for the &lt;strong&gt;HTTPS&lt;/strong&gt; protocol showed the error of &amp;quot;Mixed content&amp;quot;, then the solution of these problems was added the following:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-config.php
@@ -2424,22 +2424,22 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://codex.wordpress.org/"&gt;&lt;strong&gt;Wordpress Codex&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Blog with Hugo Framework and Github Pages</title><link>https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/</link><pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/</guid><description>
 &lt;p&gt;For some time I was trying to create a personal blog, the first idea was to use a &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; known as &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt; or &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; but I didn't like any of them, then I used &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; for a while where I could learn a lot about this French &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt;, but keep a site of only publications with text and some images was not the most appropriate.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/logo-hugo-github-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/logo-hugo-github-400.png" alt="" width="400" height="200" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Then I was looking at the blogs of friends and the one that caught my attention was &lt;a href="https://blog.donkeysharp.xyz/"&gt;&lt;strong&gt;donkeysharp&lt;/strong&gt;&lt;/a&gt; where &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; is used, a static page generator from default templates, it also uses &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt; that allows you to create a static site in a user type &lt;strong&gt;usuario.github.io&lt;/strong&gt;, it also allows you to create a site with a personal domain or subdomain in the form &lt;strong&gt;&lt;a href="https://www.dominio.info"&gt;www.dominio.info&lt;/a&gt;&lt;/strong&gt; or also &lt;strong&gt;blog.dominio.info&lt;/strong&gt;, with this information I started to work on the new blog.&lt;/p&gt;
 &lt;h2 id="github-and-github-pages"&gt;Github and Github Pages&lt;/h2&gt;
 &lt;p&gt;The first step was to create a new repository on Github, some guides recommend that the repository has the name of the form &lt;strong&gt;user.github.io&lt;/strong&gt;, in my case just use a personal sub-domain.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Creating the New Repository&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-repo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-repo.png" alt="" width="712" height="675" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Configuring the Repository&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt="" width="741" height="658" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;With these two steps completed we will have the repository and the subdomain with the user ready to work, in the case of the personal subdomain, the necessary records should be created in the DNS server.&lt;/p&gt;
 &lt;h2 id="configuration-dns-bind9"&gt;Configuration DNS Bind9&lt;/h2&gt;
 &lt;p&gt;Many use DNS servers from providers such as &lt;a href="https://www.digitalocean.com/"&gt;&lt;strong&gt;digitalocean&lt;/strong&gt;&lt;/a&gt; or &lt;a href="https://www.linode.com/"&gt;&lt;strong&gt;linode&lt;/strong&gt;&lt;/a&gt; to manage their domain, in the case of using Bind9 the following records must be created:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt="" width="668" height="179" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;You can check the new records with the following command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ dig subdominio.dominio.info +nostats +nocomments +nocmd
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="start-hugo-website"&gt;Start Hugo Website&lt;/h2&gt;
@@ -2501,7 +2501,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://gohugo.io/getting-started/quick-start/"&gt;&lt;strong&gt;Hugo Quick Start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>SPIP, Another Way to Install</title><link>https://blog.fcch.xyz/en/post/web/spip-otra-forma-instalar/</link><pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/spip-otra-forma-instalar/</guid><description>
 &lt;p&gt;&lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; is a French &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;CMS&lt;/a&gt; with simple installation, you do not need PHP and MySQL knowledge to proceed with the installation, it contains a web configuration menu and a simple administration space.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt="" width="400" height="297" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;There are different installation methods on the &lt;a href="https://www.spip.net/es_download"&gt;official site&lt;/a&gt;, you can download the Zip file to unzip and prepare the installation, another way that exists is to start the &lt;strong&gt;Automatic Installation&lt;/strong&gt; which consists of downloading the &lt;strong&gt;spip_loader.php&lt;/strong&gt; file and running it from a web browser.&lt;/p&gt;
 &lt;p&gt;The method that is not used very often is to download from an official &lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; repository using the old and reliable Subversion (SVN), this installation method is the one that is commonly used to be able to perform updates automatically in a single line command.&lt;/p&gt;
 &lt;h2 id="download-spip"&gt;Download SPIP&lt;/h2&gt;
@@ -2511,7 +2511,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ cd spip-core
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After finishing the download we will have a file structure similar to this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree.png" alt="" width="163" height="287" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;For CMS updates, just run:&lt;/li&gt;
 &lt;/ul&gt;
@@ -2528,7 +2528,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ chown -R www-data:www-data IMG tmp local config
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ chmod 777 IMG tmp local config
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The directory structure should be as follows:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png" alt="" width="159" height="321" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="install-spip"&gt;Install SPIP&lt;/h2&gt;
 &lt;p&gt;With all the preparations ready we can start the installation of &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;To start the installation of &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; we open the web browser of our preference and depending on the case we enter the URL:&lt;/p&gt;
@@ -2545,7 +2545,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-01.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-01.png" alt="" width="588" height="521" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="2"&gt;
@@ -2553,9 +2553,9 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png" alt="" width="588" height="821" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;For the example we will use the SQLite3 database for a quick installation.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png" alt="" width="589" height="402" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="3"&gt;
@@ -2563,7 +2563,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-04.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-04.png" alt="" width="589" height="707" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="4"&gt;
@@ -2571,7 +2571,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-05.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-05.png" alt="" width="590" height="854" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="5"&gt;
@@ -2579,7 +2579,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-06.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-06.png" alt="" width="589" height="815" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="6"&gt;
@@ -2587,7 +2587,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png" alt="" width="792" height="831" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.spip.net/en_rubrique25.html"&gt;&lt;strong&gt;SPIP Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

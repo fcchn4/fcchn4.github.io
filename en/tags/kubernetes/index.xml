@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/tags/kubernetes/</link><description>Recent content in Kubernetes on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>K3s Notes - Part 4</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/</guid><description>
 &lt;p&gt;To finish the small lab and finish the last part of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, we will name some important details, install and create the service for &lt;a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"&gt;&lt;strong&gt;Kubernetes Dashboard&lt;/strong&gt;&lt;/a&gt; and finally we will list some interesting tools.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt="" width="500" height="530" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="pod-networking"&gt;Pod Networking&lt;/h2&gt;
 &lt;p&gt;Each Pod is assigned a unique IP address for each address family. Each container in a Pod shares the network namespace, including the IP address and network ports. Inside a Pod (and only then), the containers that belong to the Pod can communicate with each other using localhost. When containers in a Pod communicate with entities outside the Pod, they must coordinate how they use shared network resources (such as ports). Inside a Pod, containers share an IP address and port space, and can find each other via localhost. The containers in a Pod can also communicate with each other using standard interprocess communications, such as SystemV semaphores or POSIX shared memory. Containers in different Pods have different IP addresses and cannot communicate over IPC without special configuration. Containers that want to interact with a container running on a different Pod can use IP networks to communicate.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CNI - Container Networking Interface&lt;/strong&gt;: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.&lt;/p&gt;
@@ -83,15 +83,15 @@
 &lt;ul&gt;
 &lt;li&gt;Nodes List&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-1.png" alt="" width="1913" height="922" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Namespaces List&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-2.png" alt="" width="1907" height="452" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Dashboard Configuration&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt="" width="1920" height="984" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Useful commands:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl config view
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl get services --all-namespaces
@@ -122,7 +122,7 @@
 &lt;li&gt;&lt;a href="https://kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 3</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</link><pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</guid><description>
 &lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Part 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt="" width="600" height="587" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Now we will execute basic tasks in our small cluster, but before we continue describing more details of &lt;strong&gt;Kubernetes&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="kubernetes-objects"&gt;Kubernetes objects&lt;/h2&gt;
 &lt;ol&gt;
@@ -285,7 +285,7 @@
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 2</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</link><pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</guid><description>
 &lt;p&gt;We continue with the tests in our small cluster with &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; built on the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my laboratory, for the tests we use the official &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; documentation and also the official &lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg" alt="" width="500" height="523" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;In the image we have as a detail:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Three Raspberry Pi 4, Model B&lt;/strong&gt; (1 Server Node and 2 Worker Nodes).&lt;/li&gt;
@@ -294,7 +294,7 @@
 &lt;/ol&gt;
 &lt;h2 id="basic-concepts"&gt;Basic concepts&lt;/h2&gt;
 &lt;p&gt;With the Kubernetes components:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/components-of-kubernetes.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/components-of-kubernetes.png" alt="" width="1209" height="555" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;We can describe some important components:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -378,7 +378,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# If there is a problem with the previous command we can execute:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl version --client&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If everything is correct we will have an output similar to this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubectl-version-tests-v2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubectl-version-tests-v2.png" alt="" width="1262" height="176" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Useful commands to start:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Get help&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl --help
@@ -405,7 +405,7 @@
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access/"&gt;&lt;strong&gt;Cluster Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 1</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</guid><description>
 &lt;p&gt;Experimenting with &lt;a href="https://docs.docker.com/engine/swarm/"&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt;, I got to the task of building something with the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my lab, after googling a lot and chatting with my friend &lt;a href="https://twitter.com/donkeysharp"&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, he recommended using &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; which is a &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; distribution with backend &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; based lightweight storage system compatible with &lt;a href="https://en.wikipedia.org/wiki/ARM_architecture"&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt; architecture.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt="" width="600" height="338" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;I reviewed the official &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; documentation and I was able to set up my laboratory, the type of exercise that will be developed will be a &lt;strong&gt;Server node&lt;/strong&gt; and four &lt;strong&gt;Worker nodes&lt;/strong&gt; with the &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; database.&lt;/p&gt;
 &lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
 &lt;p&gt;There are two types of nodes:&lt;/p&gt;
@@ -417,7 +417,7 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Single-server Setup with an Embedded DB&lt;/strong&gt;, in this configuration, each agent node is registered on the same &lt;strong&gt;Server node&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-single-server.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-single-server.png" alt="" width="5488" height="2844" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ol start="2"&gt;
 &lt;li&gt;&lt;strong&gt;High-Availability K3s Server with an External DB&lt;/strong&gt;, Which consists of:&lt;/li&gt;
 &lt;/ol&gt;
@@ -425,10 +425,10 @@
 &lt;li&gt;Two or more &lt;strong&gt;Server nodes&lt;/strong&gt; that will serve the &lt;strong&gt;Kubernetes&lt;/strong&gt; API and run other control plane services.&lt;/li&gt;
 &lt;li&gt;An &lt;strong&gt;external data store&lt;/strong&gt; (as opposed to the built-in SQLite data store used in single server configurations).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-ha-server.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-ha-server.png" alt="" width="6430" height="2844" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;2.1 &lt;strong&gt;Fixed Registration Address for Agent Nodes&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;In the high availability server configuration, each node must also register with the &lt;strong&gt;Kubernetes&lt;/strong&gt; API using a fixed registration address, after registration, the agent nodes establish a connection directly with one of the &lt;strong&gt;Server nodes&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-production-setup.svg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-production-setup.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="previous-configurations"&gt;Previous Configurations&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;

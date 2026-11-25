@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/tags/git/</link><description>Recent content in Git on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Framework - Internal Templates</title><link>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</link><pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/hugo-framework-internal-templates/</guid><description>
 &lt;p&gt;Building websites with &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; made me explore more about this very useful tool. An important necessary functionality was to add the properties of &lt;a href="https://ogp.me/"&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt; to a project, the first idea was to edit the HTML files of the &lt;strong&gt;theme&lt;/strong&gt; and add the corresponding tags, but after consulting the official documentation we found the most appropriate solution in this &lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;section&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt="" width="478" height="258" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;There are different internal templates, each template has the examples for the &lt;strong&gt;config&lt;/strong&gt; file in the available formats &lt;strong&gt;yaml&lt;/strong&gt;, &lt;strong&gt;toml&lt;/strong&gt; and &lt;strong&gt;json&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="available-templates"&gt;Available Templates&lt;/h2&gt;
 &lt;p&gt;These are the internal templates that you can use in your projects:&lt;/p&gt;
@@ -27,14 +27,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;/head&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The result is similar to this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-en.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-en.png" alt="" width="1024" height="285" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://ogp.me/"&gt;&lt;strong&gt;Open Graph&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;Hugo Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Hugo Framework and Gitlab Pages</title><link>https://blog.fcch.xyz/en/post/web/hugo-framework-gitlab-pages/</link><pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/hugo-framework-gitlab-pages/</guid><description>
 &lt;p&gt;One of the first ideas to have a website or blog is to use a &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; like &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; or the good &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, all of these developed with &lt;a href="https://www.php.net"&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; and require a database to function, a server or hosting.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt="" width="750" height="220" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;One of the solutions that exist to avoid buying a hosting or server is to generate static sites with a tool like &lt;a href="https://jekyllrb.com/"&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/a&gt; or my favorite &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, these combined with &lt;a href="https://about.gitlab.com/stages-devops-lifecycle/pages/"&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt; or &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We already made a post to create a blog with &lt;a href="https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, this time we will make a small demo to use &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, using the default domain as &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; and then we will customize the domain to our own.&lt;/p&gt;
 &lt;h2 id="step-1-we-started-the-hugo-project-locally"&gt;Step 1: We started the Hugo Project Locally&lt;/h2&gt;
@@ -95,7 +95,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ git push origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="--we-verify-the-deployment-in-the-repository"&gt;- We verify the deployment in the repository&lt;/h3&gt;
 &lt;p&gt;If everything went well we should have an output similar to the image, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt="" width="1256" height="240" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Then we can check with the URL: &lt;strong&gt;&lt;a href="http://usuario.gitlab.io"&gt;http://usuario.gitlab.io&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="step-2-gitlab-custom-domain"&gt;Step 2: Gitlab Custom Domain&lt;/h2&gt;
 &lt;p&gt;With what has been done previously and if there was no problem we can customize the domain to one of our own choosing, for the example we will use the domain &lt;strong&gt;domain.com&lt;/strong&gt; and &lt;strong&gt;&lt;a href="https://www.domain.com"&gt;www.domain.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -104,20 +104,20 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;For dominio.com&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt="" width="1260" height="520" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;For &lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt="" width="1266" height="532" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;With these two steps completed we will have the repository and the subdomain with the user ready to work, in the case of the personal subdomain, the necessary records should be created in the DNS server.&lt;/p&gt;
 &lt;h3 id="--dns-records-and-gitlab-checks"&gt;- DNS Records and Gitlab Checks&lt;/h3&gt;
 &lt;p&gt;For the root domain &lt;strong&gt;domain.com&lt;/strong&gt; an &lt;strong&gt;A&lt;/strong&gt; record must be created with the following data:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt="" width="1047" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;A&lt;/strong&gt; record for the root domain &lt;strong&gt;domain.com&lt;/strong&gt; with the value &lt;strong&gt;35.185.44.232&lt;/strong&gt;, then a &lt;strong&gt;TXT&lt;/strong&gt; record with the values provided by &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;After creating the records we can verify from &lt;strong&gt;Gitlab&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt="" width="1262" height="761" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;For the subdomain &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; a record &lt;strong&gt;CNAME&lt;/strong&gt; must be created with the values provided by &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt="" width="1046" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;CNAME&lt;/strong&gt; record for the subdomain &lt;strong&gt;&lt;a href="https://www.domain.com"&gt;www.domain.com&lt;/a&gt;&lt;/strong&gt; with the value &amp;quot;&lt;strong&gt;usuario.gitlab.io.&lt;/strong&gt;&amp;quot;, then a &lt;strong&gt;TXT&lt;/strong&gt; record with the values provided &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="clone-repository"&gt;Clone repository&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
@@ -135,22 +135,22 @@
 &lt;li&gt;&lt;a href="https://gitlab.com/pages"&gt;&lt;strong&gt;GitLab Pages examples&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Blog with Hugo Framework and Github Pages</title><link>https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/</link><pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/web/blog-hugo-framework-github-pages/</guid><description>
 &lt;p&gt;For some time I was trying to create a personal blog, the first idea was to use a &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; known as &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt; or &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; but I didn't like any of them, then I used &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; for a while where I could learn a lot about this French &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt;, but keep a site of only publications with text and some images was not the most appropriate.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/logo-hugo-github-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/logo-hugo-github-400.png" alt="" width="400" height="200" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Then I was looking at the blogs of friends and the one that caught my attention was &lt;a href="https://blog.donkeysharp.xyz/"&gt;&lt;strong&gt;donkeysharp&lt;/strong&gt;&lt;/a&gt; where &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; is used, a static page generator from default templates, it also uses &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt; that allows you to create a static site in a user type &lt;strong&gt;usuario.github.io&lt;/strong&gt;, it also allows you to create a site with a personal domain or subdomain in the form &lt;strong&gt;&lt;a href="https://www.dominio.info"&gt;www.dominio.info&lt;/a&gt;&lt;/strong&gt; or also &lt;strong&gt;blog.dominio.info&lt;/strong&gt;, with this information I started to work on the new blog.&lt;/p&gt;
 &lt;h2 id="github-and-github-pages"&gt;Github and Github Pages&lt;/h2&gt;
 &lt;p&gt;The first step was to create a new repository on Github, some guides recommend that the repository has the name of the form &lt;strong&gt;user.github.io&lt;/strong&gt;, in my case just use a personal sub-domain.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Creating the New Repository&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-repo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-repo.png" alt="" width="712" height="675" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Configuring the Repository&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt="" width="741" height="658" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;With these two steps completed we will have the repository and the subdomain with the user ready to work, in the case of the personal subdomain, the necessary records should be created in the DNS server.&lt;/p&gt;
 &lt;h2 id="configuration-dns-bind9"&gt;Configuration DNS Bind9&lt;/h2&gt;
 &lt;p&gt;Many use DNS servers from providers such as &lt;a href="https://www.digitalocean.com/"&gt;&lt;strong&gt;digitalocean&lt;/strong&gt;&lt;/a&gt; or &lt;a href="https://www.linode.com/"&gt;&lt;strong&gt;linode&lt;/strong&gt;&lt;/a&gt; to manage their domain, in the case of using Bind9 the following records must be created:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt="" width="668" height="179" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;You can check the new records with the following command:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ dig subdominio.dominio.info +nostats +nocomments +nocmd
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="start-hugo-website"&gt;Start Hugo Website&lt;/h2&gt;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/categories/web/</link><description>Recent content in Web on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>es-ES</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Framework - Templates Internos</title><link>https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/</link><pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/hugo-framework-internal-templates/</guid><description>
 &lt;p&gt;Crear sitios web con &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; hizo que explorase más sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de &lt;a href="https://ogp.me/"&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt;, la primera idea fue editar los archivos HTML del &lt;strong&gt;theme&lt;/strong&gt; y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución más adecuada en esta &lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;sección&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-post-image.png" alt="" width="478" height="258" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Existen diferentes templates internos, cada template tiene los ejemplos para el archivo &lt;strong&gt;config&lt;/strong&gt; en los formatos disponibles &lt;strong&gt;yaml&lt;/strong&gt;, &lt;strong&gt;toml&lt;/strong&gt; y &lt;strong&gt;json&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="templates-disponibles"&gt;Templates Disponibles&lt;/h2&gt;
 &lt;p&gt;Estos son los templates internos que puedes utilizar en tus proyectos:&lt;/p&gt;
@@ -27,14 +27,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;5&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;/head&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El resultado es similar a esto:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-es.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-framework-internal-templates/hugo-opengraph-es.png" alt="" width="1042" height="281" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://ogp.me/"&gt;&lt;strong&gt;Open Graph&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gohugo.io/templates/internal/"&gt;&lt;strong&gt;Hugo Documentación&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Hugo Framework y Gitlab Pages</title><link>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</link><pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</guid><description>
 &lt;p&gt;Una de las primeras ideas para tener un sitio web o blog es utilizar algún &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; como &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; o el buen &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, todos estos desarrollados con &lt;a href="https://www.php.net"&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; y requieren de una base de datos para funcionar, un servidor o hosting.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt="" width="750" height="220" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Una de las soluciones que existen para evitar comprar un hosting o servidor, es generar sitios estáticos con alguna herramienta como &lt;a href="https://jekyllrb.com/"&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/a&gt; o mi preferido &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, estos combinados con &lt;a href="https://about.gitlab.com/stages-devops-lifecycle/pages/"&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt; o &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Ya hicimos un post para crear un blog con &lt;a href="https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, en esta oportunidad haremos un pequeño demo para utilizar &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, utilizando el dominio por defecto como &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; y luego personalizaremos el dominio a uno propio.&lt;/p&gt;
 &lt;h2 id="paso-1-iniciamos-el-proyecto-hugo-en-local"&gt;Paso 1: Iniciamos el proyecto Hugo en local&lt;/h2&gt;
@@ -95,7 +95,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ git push origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="--verificamos-el-despliegue-en-el-repositorio"&gt;- Verificamos el despliegue en el repositorio&lt;/h3&gt;
 &lt;p&gt;Si todo salió bien deberíamos tener una salida similar a la imagen, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt="" width="1256" height="240" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Luego podemos verificar con la URL: &lt;strong&gt;&lt;a href="http://usuario.gitlab.io"&gt;http://usuario.gitlab.io&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="paso-2-gitlab-dominio-personalizado"&gt;Paso 2: Gitlab Dominio personalizado&lt;/h2&gt;
 &lt;p&gt;Con lo realizado anteriormente y si no existió algún problema podemos personalizar el dominio a uno que elijamos nosotros, para el ejemplo utilizaremos el dominio &lt;strong&gt;dominio.com&lt;/strong&gt; y &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -104,20 +104,20 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Para dominio.com&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt="" width="1260" height="520" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Para &lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt="" width="1266" height="532" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.&lt;/p&gt;
 &lt;h3 id="--registros-dns-y-verificaciones-gitlab"&gt;- Registros DNS y Verificaciones Gitlab&lt;/h3&gt;
 &lt;p&gt;Para el dominio raíz &lt;strong&gt;dominio.com&lt;/strong&gt; se debe crear un registro &lt;strong&gt;A&lt;/strong&gt; con los siguientes datos:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt="" width="1047" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;El registro &lt;strong&gt;A&lt;/strong&gt; para el dominio raíz &lt;strong&gt;dominio.com&lt;/strong&gt; con el valor &lt;strong&gt;35.185.44.232&lt;/strong&gt;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Luego de crear los registros podemos verificar desde &lt;strong&gt;Gitlab&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt="" width="1262" height="761" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Para el subdominio &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; se debe crear un registro &lt;strong&gt;CNAME&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt="" width="1046" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;El registro &lt;strong&gt;CNAME&lt;/strong&gt; para el subdominio &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; con el valor &amp;quot;&lt;strong&gt;usuario.gitlab.io.&lt;/strong&gt;&amp;quot;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="clonación-del-repositorio"&gt;Clonación del repositorio&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git
@@ -135,7 +135,7 @@
 &lt;li&gt;&lt;a href="https://gitlab.com/pages"&gt;&lt;strong&gt;GitLab Pages examples&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Wordpress, Algunos Detalles</title><link>https://blog.fcch.xyz/post/web/wordpress-algunos-detalles/</link><pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/wordpress-algunos-detalles/</guid><description>
 &lt;p&gt;Estuve colaborando con algunas empresas que realizaban cambios en sus sitios web, donde se utilizaba &lt;a href="https://wordpress.org/"&gt;Wordpress&lt;/a&gt; como &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;CMS&lt;/a&gt; base, estos sitios web estaban siendo cambiados de servidor, actualizando a la versión más actual o verificando actualizaciones en sus complementos, en el proceso se presentaron diferentes problemas, me tocó ver la documentación oficial &lt;a href="https://codex.wordpress.org/"&gt;Wordpress Codex&lt;/a&gt; y en Google para darles solución.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/wordpress-detalles/logo-wordpress-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/wordpress-detalles/logo-wordpress-400.png" alt="" width="400" height="249" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="migración-de-wordpress"&gt;Migración de Wordpress&lt;/h2&gt;
 &lt;p&gt;Anteriormente los sitios web estaban alojados en proveedores de &lt;strong&gt;hosting (hospedaje web)&lt;/strong&gt;, los nuevos servidores donde se encuentran actualmente alojados cuentan con servicios web realizando &lt;strong&gt;reverse-proxy&lt;/strong&gt; o &lt;strong&gt;balanceo de carga&lt;/strong&gt;, para este caso fue necesario especificar algunas instancias en el archivo de configuración &lt;strong&gt;wp-config.php&lt;/strong&gt; para que los archivos &lt;strong&gt;CSS&lt;/strong&gt; y &lt;strong&gt;JS&lt;/strong&gt; carguen de forma de correcta, otro problema que existió fue que la seguridad para el protocolo &lt;strong&gt;HTTPS&lt;/strong&gt; mostraba el error de &amp;quot;Contenido mixto&amp;quot;, entonces la solución de estos problemas se agregó lo siguiente:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-php" data-lang="php"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# wp-config.php
@@ -181,22 +181,22 @@
 &lt;li&gt;&lt;a href="https://codex.wordpress.org/"&gt;&lt;strong&gt;Wordpress Codex&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Blog con Hugo Framework y Github Pages</title><link>https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/</link><pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/</guid><description>
 &lt;p&gt;Desde hace un tiempo estuve intentando crear un blog personal, la primera idea fue usar algún &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; conocido como &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt; o &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; pero ninguno llego a gustarme, luego use &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; por un tiempo donde pude aprender mucho de este &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; Francés, pero mantener un sitio de solo publicaciones con texto y algunas imágenes no era el mas apropiado.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/logo-hugo-github-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/logo-hugo-github-400.png" alt="" width="400" height="200" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Luego estuve viendo los blogs de amigos y el que me llamo la atención fue de &lt;a href="https://blog.donkeysharp.xyz/"&gt;&lt;strong&gt;donkeysharp&lt;/strong&gt;&lt;/a&gt; donde se utiliza &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, un generador páginas estáticas a partir de plantillas predeterminadas, también utiliza &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt; que te permite crear un sitio estático en un subdominio del tipo &lt;strong&gt;usuario.github.io&lt;/strong&gt;, el mismo también te permite crear un sitio con un dominio o subdominio personal de la forma &lt;strong&gt;&lt;a href="https://www.dominio.info"&gt;www.dominio.info&lt;/a&gt;&lt;/strong&gt; o también &lt;strong&gt;blog.dominio.info&lt;/strong&gt;, con esta información me puse a trabajar en el nuevo blog.&lt;/p&gt;
 &lt;h2 id="github-y-github-pages"&gt;Github y Github Pages&lt;/h2&gt;
 &lt;p&gt;El primer paso fue crear un nuevo repositorio en Github, algunas guías recomiendan que el repositorio tenga el nombre de la forma &lt;strong&gt;usuario.github.io&lt;/strong&gt;, en mi caso solo utilice un subdomino personal.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Creando el Repositorio Nuevo&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-repo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-repo.png" alt="" width="712" height="675" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Configurando el Repositorio&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/github-page.png" alt="" width="741" height="658" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.&lt;/p&gt;
 &lt;h2 id="configuración-dns-bind9"&gt;Configuración DNS Bind9&lt;/h2&gt;
 &lt;p&gt;Muchos utilizan servidores DNS de los proveedores como &lt;a href="https://www.digitalocean.com/"&gt;&lt;strong&gt;digitalocean&lt;/strong&gt;&lt;/a&gt; o &lt;a href="https://www.linode.com/"&gt;&lt;strong&gt;linode&lt;/strong&gt;&lt;/a&gt; para administrar su dominio, en el caso de utilizar Bind9 se tiene que crear los siguientes registros:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-github/bind9-subdomain.png" alt="" width="668" height="179" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Puede verificar los nuevos registros con el siguiente comando:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ dig subdominio.dominio.info +nostats +nocomments +nocmd
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="iniciamos-el-sitio-con-hugo"&gt;Iniciamos el Sitio con Hugo&lt;/h2&gt;
@@ -258,7 +258,7 @@
 &lt;li&gt;&lt;a href="https://gohugo.io/getting-started/quick-start/"&gt;&lt;strong&gt;Hugo Quick Start&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>SPIP, Otra Forma de Instalar</title><link>https://blog.fcch.xyz/post/web/spip-otra-forma-instalar/</link><pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/spip-otra-forma-instalar/</guid><description>
 &lt;p&gt;&lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; es un &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;CMS&lt;/a&gt; francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/logo-spip-400.png" alt="" width="400" height="297" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Existen diferentes métodos de instalación en el &lt;a href="https://www.spip.net/es_download"&gt;sitio oficial&lt;/a&gt;, se puede descargar el archivo Zip para descomprimir y preparar la instalación, otra forma que existe es iniciar la &lt;strong&gt;Instalación Automática&lt;/strong&gt; que consiste en descargar el archivo &lt;strong&gt;spip_loader.php&lt;/strong&gt; y ejecutarlo desde un navegador web.&lt;/p&gt;
 &lt;p&gt;El método que no se utiliza muy seguido es hacer una descarga desde un repositorio oficial de &lt;a href="https://www.spip.net/"&gt;SPIP&lt;/a&gt; utilizando el viejo y confiable Subversion (SVN), este método de instalación es el que se utiliza comúnmente para poder realizar las actualizaciones de forma automática en una sola línea de comando.&lt;/p&gt;
 &lt;h2 id="descarga-spip"&gt;Descarga SPIP&lt;/h2&gt;
@@ -268,7 +268,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ cd spip-core
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ svn checkout svn://trac.rezo.net/spip/branches/spip-3.2 .
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Luego de terminar la descarga tendremos una estructura de archivos similar a esta:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree.png" alt="" width="163" height="287" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Para las actualizaciones del CMS solo se debe ejecutar:&lt;/li&gt;
 &lt;/ul&gt;
@@ -285,7 +285,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ chown -R www-data:www-data IMG tmp local config
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ chmod 777 IMG tmp local config
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La estructura de directorios debería quedar de la siguiente forma:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-tree-complete.png" alt="" width="159" height="321" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="instalación-spip"&gt;Instalación SPIP&lt;/h2&gt;
 &lt;p&gt;Con todos los preparativos listos podemos iniciar la instalación de &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Para iniciar la instalación de &lt;a href="https://www.spip.net/"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; abrimos el navegador web de nuestra preferencia y dependiendo al caso ingresamos a la URL:&lt;/p&gt;
@@ -302,7 +302,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-01.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-01.png" alt="" width="588" height="521" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="2"&gt;
@@ -310,9 +310,9 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-02.png" alt="" width="588" height="821" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Para el ejemplo utilizaremos la base de datos SQLite3 para una instalación rápida.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-03.png" alt="" width="589" height="402" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="3"&gt;
@@ -320,7 +320,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-04.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-04.png" alt="" width="589" height="707" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="4"&gt;
@@ -328,7 +328,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-05.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-05.png" alt="" width="590" height="854" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="5"&gt;
@@ -336,7 +336,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-06.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-06.png" alt="" width="589" height="815" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ol start="6"&gt;
@@ -344,7 +344,7 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/spip-svn/spip-demo-07.png" alt="" width="792" height="831" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.spip.net/en_rubrique25.html"&gt;&lt;strong&gt;SPIP Official Website&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

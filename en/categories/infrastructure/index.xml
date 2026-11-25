@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Infrastructure on Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/categories/infrastructure/</link><description>Recent content in Infrastructure on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/categories/infrastructure/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring notes with Grafana, Loki and Promtail - Configuration Examples</title><link>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-two/</link><pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-two/</guid><description>
 &lt;p&gt;In the first part, we talked about monitoring certain services; the article got quite long, and adding the example configurations would have made it much longer, so in this second part we leave several configuration examples for each service, with a short description.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo-n2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo-n2.png" alt="" width="654" height="399" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Before diving into each service, it is worth recalling the general flow. &lt;strong&gt;Promtail&lt;/strong&gt; reads the log files and the systemd journal, assigns labels and sends everything to &lt;strong&gt;Loki&lt;/strong&gt;, which stores and indexes them. &lt;strong&gt;Grafana&lt;/strong&gt; queries Loki with &lt;strong&gt;LogQL&lt;/strong&gt; to build dashboards. The examples in this part focus on two things:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;What each service must emit so that its logs are useful (log format, logging driver, paths).&lt;/li&gt;
@@ -208,7 +208,7 @@
 &lt;li&gt;&lt;a href="https://docs.docker.com/engine/logging/drivers/journald/"&gt;Docker - Logging Drivers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Monitoring notes with Grafana, Loki and Promtail</title><link>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-one/</link><pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/grafana-stack-one/</guid><description>
 &lt;p&gt;Throughout my professional life it is common to see many types of implementations regarding development and infrastructure; in short, when it comes to infrastructure it is common that there is no service monitoring on an organization's servers, this is more common on on-premise servers, and for this reason I asked myself a few questions.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-stack-logo.png" alt="" width="654" height="399" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;How long does it take to build a monitoring system?&lt;/li&gt;
 &lt;li&gt;How complex can it be to implement a monitoring system?&lt;/li&gt;
@@ -293,7 +293,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;The flow is simple: &lt;strong&gt;Promtail&lt;/strong&gt; reads the log files and the systemd journal, sends them to &lt;strong&gt;Loki&lt;/strong&gt; which stores and indexes them, and &lt;strong&gt;Grafana&lt;/strong&gt; queries Loki to display the information in dashboards.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-loki-promtail-workflow-en.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-loki-promtail-workflow-en.png" alt="" width="1524" height="948" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="why-only-grafana---loki---promtail"&gt;Why only Grafana - Loki - Promtail?&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;No additional metrics agents required&lt;/strong&gt;, all the information comes from logs that already exist on the server.&lt;/li&gt;
@@ -311,7 +311,7 @@
 &lt;li&gt;&lt;strong&gt;Source IPs&lt;/strong&gt;, of each attempt.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Attempted usernames&lt;/strong&gt;, by attackers.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-ssh-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-ssh-dashboard.png" alt="" width="1552" height="1205" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="2-nginx"&gt;2. &lt;a href="https://nginx.org/en/docs/index.html"&gt;Nginx&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;For web servers the minimum worth monitoring is the traffic:&lt;/p&gt;
 &lt;ul&gt;
@@ -321,7 +321,7 @@
 &lt;li&gt;&lt;strong&gt;Top URLs&lt;/strong&gt;, which resources are the most requested.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Error logs&lt;/strong&gt;, visualize server errors in real time.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-nginx-dashboard-v2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-nginx-dashboard-v2.png" alt="" width="1548" height="1306" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="3-fail2ban"&gt;3. &lt;a href="https://fail2ban.readthedocs.io/en/latest/"&gt;Fail2ban&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Protection against brute force attacks, it complements the monitoring by showing the automatic defense actions:&lt;/p&gt;
 &lt;ul&gt;
@@ -329,7 +329,7 @@
 &lt;li&gt;&lt;strong&gt;Detected IPs&lt;/strong&gt;, suspicious attempts before the ban.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Trends&lt;/strong&gt;, whether attacks are increasing or decreasing.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-fail2ban-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-fail2ban-dashboard-v1.png" alt="" width="1547" height="1180" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h3 id="4-docker"&gt;4. &lt;a href="https://www.docker.com/"&gt;Docker&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;For simple container monitoring, we can ask docker to write its system logs to the systemd journal; with a not-too-complex configuration we will be able to monitor the containers, status codes and volumes.&lt;/p&gt;
 &lt;p&gt;By default Docker's &lt;strong&gt;Logging Driver&lt;/strong&gt; is configured to &amp;quot;&lt;strong&gt;json-file&lt;/strong&gt;&amp;quot;, this setting should be &amp;quot;&lt;strong&gt;journald&lt;/strong&gt;&amp;quot;, which can be verified with a few commands.&lt;/p&gt;
@@ -360,7 +360,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, the changes must be verified:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;docker inspect --format &lt;span class="s1"&gt;&amp;#39;{{.HostConfig.LogConfig.Type}}&amp;#39;&lt;/span&gt; &amp;lt;name_or_id&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With these details we can create a dashboard for containers as well.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-docker-dashboard-v1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-docker-dashboard-v1.png" alt="" width="1544" height="1313" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="installing-grafana-and-its-components"&gt;Installing Grafana and its components&lt;/h2&gt;
 &lt;p&gt;The three components are installed from the official Grafana repository via &lt;code&gt;apt&lt;/code&gt; on Debian. The &lt;code&gt;.deb&lt;/code&gt; packages already include the systemd unit files.&lt;/p&gt;
 &lt;h3 id="grafana-repository"&gt;Grafana repository&lt;/h3&gt;
@@ -445,7 +445,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;strong&gt;Web Server&lt;/strong&gt;: complete monitoring of Nginx and Fail2ban with requests per second, HTTP status codes, top URLs, top IPs and error logs.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Registry Health&lt;/strong&gt;: availability of Terraform Registry providers (using the Infinity datasource).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-status-services-dashboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/grafana-stack/grafana-status-services-dashboard.png" alt="" width="1544" height="871" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="scaling-to-multiple-servers"&gt;Scaling to multiple servers&lt;/h2&gt;
 &lt;p&gt;This same solution can be scaled to monitor multiple servers by installing only Promtail on each remote server and pointing it to the central Loki.&lt;/p&gt;
 &lt;p&gt;You just have to change &lt;code&gt;instance_addr&lt;/code&gt; from &lt;code&gt;127.0.0.1&lt;/code&gt; to &lt;code&gt;0.0.0.0&lt;/code&gt; in Loki and protect access with a firewall.&lt;/p&gt;
@@ -463,7 +463,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://grafana.com/docs/loki/latest/query/"&gt;LogQL - Loki's Query Language&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>VueJS + Laravel, Deploy</title><link>https://blog.fcch.xyz/en/post/infrastructure/vuejs-laravel-mix/</link><pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/vuejs-laravel-mix/</guid><description>
 &lt;p&gt;At work we had to deploy a project developed with &lt;strong&gt;&lt;a href="https://vuejs.org"&gt;VueJS&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href="https://laravel.com/"&gt;Laravel&lt;/a&gt;&lt;/strong&gt; on an &lt;strong&gt;&lt;a href="https://ubuntu.com/"&gt;Ubuntu&lt;/a&gt;&lt;/strong&gt; server, with &lt;strong&gt;&lt;a href="https://ws.apache.org/"&gt;Apache&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://www.php.net/"&gt;PHP&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href="https://mariadb.org/"&gt;MariaDB&lt;/a&gt;&lt;/strong&gt;, where everything was versioned on &lt;strong&gt;&lt;a href="https://github.com/"&gt;github&lt;/a&gt;&lt;/strong&gt;, it had no development branches, nor fork repositories. Deploying the project had some details that we need to understand and learn so as not to make mistakes in the deployment to production.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/vuejs-laravel-mix/vuejs-laravel-logo.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/vuejs-laravel-mix/vuejs-laravel-logo.png" alt="" width="563" height="299" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="version-details"&gt;Version Details&lt;/h2&gt;
 &lt;p&gt;The versions that were used for the development and deployment of the project are:&lt;/p&gt;
 &lt;ol&gt;
@@ -580,7 +580,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://laravel.com/docs/8.x/frontend"&gt;Laravel Frontend&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Doctl Cli - Digitalocean</title><link>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</link><pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/doctl-digitalocean/</guid><description>
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://digitalocean.com"&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; also has a CLI to manage the &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot; infrastructure, which works similarly to &lt;strong&gt;&lt;a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html"&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, this tool allows us to avoid using the web interface of this provider.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/doctl.png" alt="" width="750" height="400" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="install-binary-tools"&gt;Install Binary Tools&lt;/h2&gt;
 &lt;p&gt;The first thing I have to do is download and install the binary, this for the current version &lt;strong&gt;1.54.0&lt;/strong&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ cd ~
@@ -589,9 +589,9 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ sudo mv ~/doctl /usr/local/bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="create-token-api"&gt;Create Token API&lt;/h2&gt;
 &lt;p&gt;Before using &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot;, you need to create a &lt;strong&gt;&lt;a href="https://digitalocean.com"&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; API Token for your account, with read and write access from the &lt;strong&gt;Applications&lt;/strong&gt; and &lt;strong&gt;API&lt;/strong&gt; page in the control panel.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-name.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-name.png" alt="" width="592" height="438" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The token string is only shown once, so please copy and keep in a safe place.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-value.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/doctl-digitalocean/token-api-value.png" alt="" width="1131" height="457" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="account-access-with-token-api-and-doctl"&gt;Account Access with Token API and doctl&lt;/h2&gt;
 &lt;p&gt;The Token API grants access to &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; for your &lt;strong&gt;&lt;a href="https://digitalocean.com"&gt;digitalocean&lt;/a&gt;&lt;/strong&gt; account. Pass the Token string when prompted, when executing the &amp;quot;&lt;strong&gt;&lt;a href="https://www.digitalocean.com/docs/apis-clis/doctl/reference/"&gt;doctl&lt;/a&gt;&lt;/strong&gt;&amp;quot; command.&lt;/p&gt;
 &lt;p&gt;You can use multiple accounts, using different names, for this function the &lt;strong&gt;--context&lt;/strong&gt; parameter allows it.&lt;/p&gt;
@@ -648,16 +648,16 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt=""&gt;&lt;/a&gt;&lt;/th&gt;
-&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt=""&gt;&lt;/a&gt;&lt;/th&gt;
-&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt=""&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href="https://www.digitalocean.com/?refcode=f3953badd3d5&amp;amp;utm_campaign=Referral_Invite&amp;amp;utm_medium=Referral_Program&amp;amp;utm_source=badge"&gt;&lt;img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/a&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>K3s Notes - Part 4</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/</link><pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-fourth/</guid><description>
 &lt;p&gt;To finish the small lab and finish the last part of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, we will name some important details, install and create the service for &lt;a href="https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/"&gt;&lt;strong&gt;Kubernetes Dashboard&lt;/strong&gt;&lt;/a&gt; and finally we will list some interesting tools.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-4.jpg" alt="" width="500" height="530" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="pod-networking"&gt;Pod Networking&lt;/h2&gt;
 &lt;p&gt;Each Pod is assigned a unique IP address for each address family. Each container in a Pod shares the network namespace, including the IP address and network ports. Inside a Pod (and only then), the containers that belong to the Pod can communicate with each other using localhost. When containers in a Pod communicate with entities outside the Pod, they must coordinate how they use shared network resources (such as ports). Inside a Pod, containers share an IP address and port space, and can find each other via localhost. The containers in a Pod can also communicate with each other using standard interprocess communications, such as SystemV semaphores or POSIX shared memory. Containers in different Pods have different IP addresses and cannot communicate over IPC without special configuration. Containers that want to interact with a container running on a different Pod can use IP networks to communicate.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;CNI - Container Networking Interface&lt;/strong&gt;: It is a network framework that allows dynamic configuration of network resources through a group of libraries and specifications written by Go. The aforementioned specification for the plug-in describes an interface that would configure the network, provision IP addresses, and maintain connectivity for multiple hosts.&lt;/p&gt;
@@ -740,15 +740,15 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;ul&gt;
 &lt;li&gt;Nodes List&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-1.png" alt="" width="1913" height="922" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Namespaces List&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-2.png" alt="" width="1907" height="452" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Dashboard Configuration&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubernetes-dashboard-3.png" alt="" width="1920" height="984" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Useful commands:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl config view
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl get services --all-namespaces
@@ -779,7 +779,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://kubernetes-dashboard:/proxy/"&gt;&lt;strong&gt;Kubernetes Proxy&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 3</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</link><pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-third/</guid><description>
 &lt;p&gt;In &lt;a href="https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/"&gt;&lt;strong&gt;Part 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-part-3.jpg" alt="" width="600" height="587" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Now we will execute basic tasks in our small cluster, but before we continue describing more details of &lt;strong&gt;Kubernetes&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="kubernetes-objects"&gt;Kubernetes objects&lt;/h2&gt;
 &lt;ol&gt;
@@ -942,7 +942,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Docs Kubernetes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 2</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</link><pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/</guid><description>
 &lt;p&gt;We continue with the tests in our small cluster with &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; built on the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my laboratory, for the tests we use the official &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; documentation and also the official &lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; documentation.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-rpi-v3-v4.jpg" alt="" width="500" height="523" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;In the image we have as a detail:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Three Raspberry Pi 4, Model B&lt;/strong&gt; (1 Server Node and 2 Worker Nodes).&lt;/li&gt;
@@ -951,7 +951,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ol&gt;
 &lt;h2 id="basic-concepts"&gt;Basic concepts&lt;/h2&gt;
 &lt;p&gt;With the Kubernetes components:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/components-of-kubernetes.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/components-of-kubernetes.png" alt="" width="1209" height="555" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;We can describe some important components:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1035,7 +1035,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# If there is a problem with the previous command we can execute:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl version --client&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If everything is correct we will have an output similar to this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubectl-version-tests-v2.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/kubectl-version-tests-v2.png" alt="" width="1262" height="176" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Useful commands to start:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Get help&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ kubectl --help
@@ -1062,7 +1062,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;&lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access/"&gt;&lt;strong&gt;Cluster Access&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>K3s Notes - Part 1</title><link>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</link><pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-first/</guid><description>
 &lt;p&gt;Experimenting with &lt;a href="https://docs.docker.com/engine/swarm/"&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt;, I got to the task of building something with the &lt;a href="https://www.raspberrypi.org/"&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my lab, after googling a lot and chatting with my friend &lt;a href="https://twitter.com/donkeysharp"&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, he recommended using &lt;a href="https://k3s.io/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; which is a &lt;a href="https://kubernetes.io/"&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; distribution with backend &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; based lightweight storage system compatible with &lt;a href="https://en.wikipedia.org/wiki/ARM_architecture"&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt; architecture.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-kubernetes-part-1.png" alt="" width="600" height="338" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;I reviewed the official &lt;a href="https://rancher.com/docs/k3s/latest/en/"&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; documentation and I was able to set up my laboratory, the type of exercise that will be developed will be a &lt;strong&gt;Server node&lt;/strong&gt; and four &lt;strong&gt;Worker nodes&lt;/strong&gt; with the &lt;a href="https://www.sqlite.org/index.html"&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; database.&lt;/p&gt;
 &lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
 &lt;p&gt;There are two types of nodes:&lt;/p&gt;
@@ -1074,7 +1074,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Single-server Setup with an Embedded DB&lt;/strong&gt;, in this configuration, each agent node is registered on the same &lt;strong&gt;Server node&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-single-server.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-single-server.png" alt="" width="5488" height="2844" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ol start="2"&gt;
 &lt;li&gt;&lt;strong&gt;High-Availability K3s Server with an External DB&lt;/strong&gt;, Which consists of:&lt;/li&gt;
 &lt;/ol&gt;
@@ -1082,10 +1082,10 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;li&gt;Two or more &lt;strong&gt;Server nodes&lt;/strong&gt; that will serve the &lt;strong&gt;Kubernetes&lt;/strong&gt; API and run other control plane services.&lt;/li&gt;
 &lt;li&gt;An &lt;strong&gt;external data store&lt;/strong&gt; (as opposed to the built-in SQLite data store used in single server configurations).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-ha-server.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-architecture-ha-server.png" alt="" width="6430" height="2844" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;2.1 &lt;strong&gt;Fixed Registration Address for Agent Nodes&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;In the high availability server configuration, each node must also register with the &lt;strong&gt;Kubernetes&lt;/strong&gt; API using a fixed registration address, after registration, the agent nodes establish a connection directly with one of the &lt;strong&gt;Server nodes&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-production-setup.svg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/k3s-kubernetes/k3s-production-setup.svg" alt="" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="previous-configurations"&gt;Previous Configurations&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1156,17 +1156,17 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/ul&gt;</description></item><item><title>Memory Limit in Docker</title><link>https://blog.fcch.xyz/en/post/infrastructure/docker-limit-memory/</link><pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/infrastructure/docker-limit-memory/</guid><description>
 &lt;p&gt;When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.&lt;/p&gt;
 &lt;p&gt;Docker has the ability to apply a memory limit to a specific container.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/kernel-panic.jpg" alt="" width="727" height="384" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="creating-a-container"&gt;Creating a Container&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ docker run --name dell -it debian bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="obtaining-container-information"&gt;Obtaining Container Information&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ docker inspect dell &lt;span class="p"&gt;|&lt;/span&gt; grep -i &amp;#39;Memory&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png" alt=""&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-memory.png" alt="" width="583" height="157" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;For &lt;strong&gt;&amp;quot;Memory&amp;quot;: 0&lt;/strong&gt; the value &lt;strong&gt;0&lt;/strong&gt; indicates that the container doesn't have a limited memory value, that is, it will use everything that the host has available, possibly affecting other containers that are within the same host.&lt;/p&gt;
 &lt;h2 id="update-container-memory"&gt;Update Container Memory&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ docker update -m 256MB dell
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In testing there were problems on Debian and Ubuntu operating systems:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-kernel-fail.png" alt="" width="1332" height="75" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;This problem is due to the fact that the &lt;a href="https://en.wikipedia.org/wiki/Cgroups"&gt;&lt;strong&gt;cgroup&lt;/strong&gt;&lt;/a&gt; is not mounted on the system, to mount it we edit the file &lt;strong&gt;grub&lt;/strong&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo vim /etc/default/grub
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt; ...
@@ -1178,7 +1178,7 @@ The &lt;code&gt;scrape_configs&lt;/code&gt; section defines the collection jobs;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;$ sudo update-grub2
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;3&lt;/span&gt;&lt;span class="cl"&gt;$ sudo reboot
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally we run the command to update the memory again and check the memory status:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-update-mem.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/docker-limite-mem/docker-update-mem.png" alt="" width="676" height="176" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://fedoramagazine.org/docker-and-fedora-32/"&gt;&lt;strong&gt;Fedora Magazine&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

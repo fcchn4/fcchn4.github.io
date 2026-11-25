@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gitlab on Fcch Blog | Apuntes, guías y recordatorios</title><link>https://blog.fcch.xyz/tags/gitlab/</link><description>Recent content in Gitlab on Fcch Blog | Apuntes, guías y recordatorios</description><generator>Hugo -- gohugo.io</generator><language>es-ES</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/tags/gitlab/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Framework y Gitlab Pages</title><link>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</link><pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/post/web/hugo-framework-gitlab-pages/</guid><description>
 &lt;p&gt;Una de las primeras ideas para tener un sitio web o blog es utilizar algún &lt;a href="https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos"&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; como &lt;a href="https://es.wordpress.org/"&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href="https://www.drupal.org/"&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; o el buen &lt;a href="https://www.spip.net/es_rubrique23.html"&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, todos estos desarrollados con &lt;a href="https://www.php.net"&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; y requieren de una base de datos para funcionar, un servidor o hosting.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/hugo-gitlab.png" alt="" width="750" height="220" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Una de las soluciones que existen para evitar comprar un hosting o servidor, es generar sitios estáticos con alguna herramienta como &lt;a href="https://jekyllrb.com/"&gt;&lt;strong&gt;Jekyll&lt;/strong&gt;&lt;/a&gt; o mi preferido &lt;a href="https://gohugo.io/"&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt;, estos combinados con &lt;a href="https://about.gitlab.com/stages-devops-lifecycle/pages/"&gt;&lt;strong&gt;Gitlab Pages&lt;/strong&gt;&lt;/a&gt; o &lt;a href="https://pages.github.com/"&gt;&lt;strong&gt;Github Pages&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Ya hicimos un post para crear un blog con &lt;a href="https://blog.fcch.xyz/post/web/blog-hugo-framework-github-pages/"&gt;&lt;strong&gt;Hugo Framework + Github Pages&lt;/strong&gt;&lt;/a&gt;, en esta oportunidad haremos un pequeño demo para utilizar &lt;strong&gt;Hugo Framework + Gitlab Pages&lt;/strong&gt;, utilizando el dominio por defecto como &lt;strong&gt;USUARIO.gitlab.io&lt;/strong&gt; y luego personalizaremos el dominio a uno propio.&lt;/p&gt;
 &lt;h2 id="paso-1-iniciamos-el-proyecto-hugo-en-local"&gt;Paso 1: Iniciamos el proyecto Hugo en local&lt;/h2&gt;
@@ -61,7 +61,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;4&lt;/span&gt;&lt;span class="cl"&gt;$ git push origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="--verificamos-el-despliegue-en-el-repositorio"&gt;- Verificamos el despliegue en el repositorio&lt;/h3&gt;
 &lt;p&gt;Si todo salió bien deberíamos tener una salida similar a la imagen, &lt;strong&gt;Repositorio -&amp;gt; CI/CD -&amp;gt; Pipelines&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-ci-deploy.png" alt="" width="1256" height="240" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Luego podemos verificar con la URL: &lt;strong&gt;&lt;a href="http://usuario.gitlab.io"&gt;http://usuario.gitlab.io&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id="paso-2-gitlab-dominio-personalizado"&gt;Paso 2: Gitlab Dominio personalizado&lt;/h2&gt;
 &lt;p&gt;Con lo realizado anteriormente y si no existió algún problema podemos personalizar el dominio a uno que elijamos nosotros, para el ejemplo utilizaremos el dominio &lt;strong&gt;dominio.com&lt;/strong&gt; y &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -70,20 +70,20 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Para dominio.com&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add.png" alt="" width="1260" height="520" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Para &lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain-add-www.png" alt="" width="1266" height="532" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Con estos dos pasos terminados tendremos el repositorio y el subdominio con el usuario listos para funcionar, en el caso del subdominio personal se debería crear los registros necesarios en el servidor DNS.&lt;/p&gt;
 &lt;h3 id="--registros-dns-y-verificaciones-gitlab"&gt;- Registros DNS y Verificaciones Gitlab&lt;/h3&gt;
 &lt;p&gt;Para el dominio raíz &lt;strong&gt;dominio.com&lt;/strong&gt; se debe crear un registro &lt;strong&gt;A&lt;/strong&gt; con los siguientes datos:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-dns-record-root.png" alt="" width="1047" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;El registro &lt;strong&gt;A&lt;/strong&gt; para el dominio raíz &lt;strong&gt;dominio.com&lt;/strong&gt; con el valor &lt;strong&gt;35.185.44.232&lt;/strong&gt;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Luego de crear los registros podemos verificar desde &lt;strong&gt;Gitlab&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-domain.png" alt="" width="1262" height="761" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;Para el subdominio &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; se debe crear un registro &lt;strong&gt;CNAME&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/hugo-gitlab/gitlab-subdominio-cname.png" alt="" width="1046" height="151" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;El registro &lt;strong&gt;CNAME&lt;/strong&gt; para el subdominio &lt;strong&gt;&lt;a href="https://www.dominio.com"&gt;www.dominio.com&lt;/a&gt;&lt;/strong&gt; con el valor &amp;quot;&lt;strong&gt;usuario.gitlab.io.&lt;/strong&gt;&amp;quot;, luego un registro &lt;strong&gt;TXT&lt;/strong&gt; con los valores que facilita &lt;strong&gt;Gitlab Pages&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="clonación-del-repositorio"&gt;Clonación del repositorio&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ git clone --recurse-submodules git@gitlab.com:usuario/usuario.gitlab.io.git

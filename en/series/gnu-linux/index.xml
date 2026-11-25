@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GNU-Linux on Fcch Blog | Notes, guides and reminders</title><link>https://blog.fcch.xyz/en/series/gnu-linux/</link><description>Recent content in GNU-Linux on Fcch Blog | Notes, guides and reminders</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><copyright>Fcch Technology Blog</copyright><lastBuildDate>Wed, 13 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.fcch.xyz/en/series/gnu-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Notes XFCE4</title><link>https://blog.fcch.xyz/en/post/notes/notes-xfce4/</link><pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/notes-xfce4/</guid><description>
 &lt;p&gt;I was changing hardware in my work environment, I changed the keyboard to an English language one, for this reason I was configuring &lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, which is my preferred graphical environment.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-hero.jpg" alt="" width="500" height="286" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="change-keyboard-language-in-xfce4"&gt;Change Keyboard Language in XFCE4&lt;/h2&gt;
 &lt;p&gt;The first thing was to change the language, therefore to get to the configuration menu: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Layout&lt;/strong&gt;, the configuration should be in the image.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-keyboard.png" alt="" width="400" height="462" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;This configuration did not take effect after a reboot, to solve this problem we edited the general configuration file in: &lt;strong&gt;/etc/default/keyboard&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-general.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-general.png" alt="" width="400" height="216" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;p&gt;The configuration should look similar to the image.&lt;/p&gt;
 &lt;p&gt;Keyboard shortcut for special characters:&lt;/p&gt;
 &lt;ul&gt;
@@ -15,19 +15,19 @@
 &lt;h2 id="activate-super-key--whisker-menu"&gt;Activate Super Key + Whisker Menu&lt;/h2&gt;
 &lt;p&gt;To activate the applications menu in XFCE you need the plugin &lt;strong&gt;whiskermenu&lt;/strong&gt;, to be able to associate it to the Left Super key (Windows Logo).&lt;/p&gt;
 &lt;p&gt;The configuration must be carried out in: &lt;strong&gt;Settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Keyboard&lt;/strong&gt; &amp;gt; &lt;strong&gt;Application Shortcuts&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-menu.png" alt="" width="400" height="461" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&amp;gt; xfce4-popup-whiskermenu
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="vpn-connection"&gt;VPN Connection&lt;/h2&gt;
 &lt;p&gt;Finally, the installation of &lt;strong&gt;XFCE&lt;/strong&gt; for &lt;strong&gt;Debian Bullseye&lt;/strong&gt; or &lt;strong&gt;Ubuntu Focal&lt;/strong&gt; does not come with the OpenVPN utilities installed by default, so it is necessary to install the necessary packages.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;$ sudo apt install -y openvpn network-manager-openvpn network-manager-openvpn-gnome
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png" alt=""&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/notes-xfce/xfce-vpn.png" alt="" width="400" height="513" loading="lazy" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://xfce.org/"&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://help.ubuntu.com/community/ComposeKey"&gt;&lt;strong&gt;Compose Key&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Notes Fedora 32</title><link>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</link><pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate><guid>https://blog.fcch.xyz/en/post/notes/notes-fedora-32/</guid><description>
 &lt;p&gt;After updating my Operating System &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://getfedora.org/es/"&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href="https://www.gnome.org/"&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href="https://es.wikipedia.org/wiki/Cinnamon"&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.fcch.xyz/images/fedora-32/fedora32-400.jpg" alt="" width="400" height="240" decoding="async"&gt;&lt;/p&gt;
 &lt;h2 id="prompt-terminal"&gt;Prompt Terminal&lt;/h2&gt;
 &lt;p&gt;Some time ago I was looking for a way to have a prompt that shows me the time, the directory location and data about the state in a git repository (branches, changes), the objective was not to use &lt;a href="https://github.com/ohmybash/oh-my-bash"&gt;&lt;strong&gt;Oh-my-bash&lt;/strong&gt;&lt;/a&gt;, which is a set of scripts to customize the prompt where you can choose between various styles options.&lt;/p&gt;
 &lt;p&gt;Searching, I found &lt;a href="https://fedoraproject.org/wiki/Git_quick_reference"&gt;&lt;strong&gt;__git_ps1&lt;/strong&gt;&lt;/a&gt;, which is a script that allows you to obtain information about a git repository, it shows you the branch you are currently in, or if there is any change in said repository, I already had a problem solved and I only have to color the prompt get the time and the current directory path, I add these changes to my configuration file &lt;strong&gt;~/.bashrc&lt;/strong&gt;, and it looks like this:&lt;/p&gt;
