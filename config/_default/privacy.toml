@@ -1,0 +1,12 @@
+[x]
+  disabled = false
+  enableDNT = true
+  simple = true
+
+[instagram]
+  disabled = false
+  simple = true
+
+[youtube]
+  disabled = false
+  privacyEnhanced = true
