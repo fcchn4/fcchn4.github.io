@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Git on Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/tags/git/</link>
+		<description>Recent content in Git on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Fri, 07 Jan 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/tags/git/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Hugo Framework - Templates Internos</title>
+				<link>http://localhost:1313/es/post/web/hugo-framework-internal-templates/</link>
+				<pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/hugo-framework-internal-templates/</guid>
+				<description>&lt;p&gt;Crear sitios web con &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; hizo que explorase más sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de &lt;a href=&#34;https://ogp.me/&#34;&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt;, la primera idea fue editar los archivos HTML del &lt;strong&gt;theme&lt;/strong&gt; y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución más adecuada en esta &lt;a href=&#34;https://gohugo.io/templates/internal/&#34;&gt;&lt;strong&gt;sección&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Hugo Framework y Gitlab Pages</title>
+				<link>http://localhost:1313/es/post/web/hugo-framework-gitlab-pages/</link>
+				<pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/hugo-framework-gitlab-pages/</guid>
+				<description>&lt;p&gt;Una de las primeras ideas para tener un sitio web o blog es utilizar algún &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; como &lt;a href=&#34;https://es.wordpress.org/&#34;&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://www.drupal.org/&#34;&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; o el buen &lt;a href=&#34;https://www.spip.net/es_rubrique23.html&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, todos estos desarrollados con &lt;a href=&#34;https://www.php.net&#34;&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; y requieren de una base de datos para funcionar, un servidor o hosting.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Blog con Hugo Framework y Github Pages</title>
+				<link>http://localhost:1313/es/post/web/blog-hugo-framework-github-pages/</link>
+				<pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/blog-hugo-framework-github-pages/</guid>
+				<description>&lt;p&gt;Desde hace un tiempo estuve intentando crear un blog personal, la primera idea fue usar algún &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; conocido como &lt;a href=&#34;https://es.wordpress.org/&#34;&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt; o &lt;a href=&#34;https://www.drupal.org/&#34;&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; pero ninguno llego a gustarme, luego use &lt;a href=&#34;https://www.spip.net/es_rubrique23.html&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; por un tiempo donde pude aprender mucho de este &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; Francés, pero mantener un sitio de solo publicaciones con texto y algunas imágenes no era el mas apropiado.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

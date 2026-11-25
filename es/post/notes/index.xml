@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/post/notes/</link>
+		<description>Recent content on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/post/notes/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Lenovo Actualización Firmware BIOS - UEFI</title>
+				<link>http://localhost:1313/es/post/notes/lenovo-firmware-update/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/lenovo-firmware-update/</guid>
+				<description>&lt;p&gt;Cuando eres usuario de algún GNU/Linux es normal toparse con varios impedimentos para actualizar o aplicar parches de seguridad en firmware BIOS, muchas empresas solo facilitan métodos de actualización con ejecutables que solo funcionan en Windows, aunque algunos métodos facilitan binarios en archivos &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt;, &lt;strong&gt;.cab&lt;/strong&gt; o actualizaciones que se pueden almacenar en dispositivos de almacenamiento USB, esta tarea no es fácil para un usuario sin mucha experiencia.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Comandos Usuales Simples</title>
+				<link>http://localhost:1313/es/post/notes/usual-commands/</link>
+				<pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/usual-commands/</guid>
+				<description>&lt;p&gt;Cada día aprendemos comandos que nos permiten realizar determinadas tareas en el trabajo, para no olvidar alguno de estos comandos que sirvieron cree una lista como ayuda memoria.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Apuntes XFCE4</title>
+				<link>http://localhost:1313/es/post/notes/notes-xfce4/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/notes-xfce4/</guid>
+				<description>&lt;p&gt;Estuve cambiando de hardware en mi ambiente de trabajo, cambié el teclado a uno en idioma inglés, por este motivo estuve configurando &lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, que es mi entorno gráfico preferido.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Bandit Soluciones</title>
+				<link>http://localhost:1313/es/post/notes/bandit-solved/</link>
+				<pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/bandit-solved/</guid>
+				<description>&lt;p&gt;Son juegos de guerra ofrecidos por la comunidad OverTheWire que nos ayudan a aprender y practicar conceptos de seguridad en forma de juegos divertidos.&lt;/p&gt;&#xA;&lt;p&gt;El enlace para poder jugar un momento: &lt;a href=&#34;https://overthewire.org/wargames/bandit/&#34;&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Momento Tmux</title>
+				<link>http://localhost:1313/es/post/notes/tmux-moment/</link>
+				<pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/tmux-moment/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ruta de Aprendizaje</title>
+				<link>http://localhost:1313/es/post/notes/learning-path/</link>
+				<pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/learning-path/</guid>
+				<description>&lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificación &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/aws-learning-path/fcch-route.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;En mi búsqueda de información encontré esta descripción del camino completo hacia una certificación &lt;strong&gt;Profesional&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/aws-learning-path/aws-route-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;aws-certified-cloud-practitioner-clf-c01&#34;&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;&#xA;&lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>NPM EACCES</title>
+				<link>http://localhost:1313/es/post/notes/npm-eacces/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/npm-eacces/</guid>
+				<description>&lt;p&gt;Me tocó probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Apuntes Fedora 32</title>
+				<link>http://localhost:1313/es/post/notes/notes-fedora-32/</link>
+				<pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/notes-fedora-32/</guid>
+				<description>&lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalicé el Prompt para mi Terminal y me cambié de &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

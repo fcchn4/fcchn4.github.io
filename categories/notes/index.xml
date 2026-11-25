@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Notes on Fcch Blog | Notes, guides and reminders</title>
+		<link>http://localhost:1313/categories/notes/</link>
+		<description>Recent content in Notes on Fcch Blog | Notes, guides and reminders</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Lenovo BIOS - UEFI Firmware Update</title>
+				<link>http://localhost:1313/post/notes/lenovo-firmware-update/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/lenovo-firmware-update/</guid>
+				<description>&lt;p&gt;When you are a GNU/Linux user, it is common to run into several obstacles when trying to update or apply security patches to the BIOS - UEFI firmware. Many companies only provide update methods with executables that only work on Windows. Although some methods offer binaries in &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt; or &lt;strong&gt;.cab&lt;/strong&gt; files, or updates that can be stored on USB storage devices, this task is not easy for a user without much experience.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Simple Usual Commands</title>
+				<link>http://localhost:1313/post/notes/usual-commands/</link>
+				<pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/usual-commands/</guid>
+				<description>&lt;p&gt;Every day we learn commands that allow us to perform certain tasks at work, so as not to forget any of these commands that served, create a list as a memory aid.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Notes XFCE4</title>
+				<link>http://localhost:1313/post/notes/notes-xfce4/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/notes-xfce4/</guid>
+				<description>&lt;p&gt;I was changing hardware in my work environment, I changed the keyboard to an English language one, for this reason I was configuring &lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, which is my preferred graphical environment.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Bandit Solved</title>
+				<link>http://localhost:1313/post/notes/bandit-solved/</link>
+				<pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/bandit-solved/</guid>
+				<description>&lt;p&gt;This is the link to solve and play for a while: &lt;a href=&#34;https://overthewire.org/wargames/bandit/&#34;&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/bandit/otw-bandit.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Let&#39;s start!!!&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;User: bandit0&lt;/li&gt;&#xA;&lt;li&gt;Port: 2220&lt;/li&gt;&#xA;&lt;li&gt;Password: bandit0&lt;/li&gt;&#xA;&lt;li&gt;URL: banditlabs.overthewire.org&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;bandit-level-0--level-1&#34;&gt;Bandit Level 0 → Level 1&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;SSH : ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit0@bandit.labs.overthewire.org&#34;&gt;bandit0@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Solution:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ cat readme&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;boJ9jbbUNNfktd78OOpsqOltutMc3MY1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-1--level-2&#34;&gt;Bandit Level 1 → Level 2&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SSH:  ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit1@bandit.labs.overthewire.org&#34;&gt;bandit1@bandit.labs.overthewire.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Solution:&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ cat /home/bandit1/-&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-2--level-3&#34;&gt;Bandit Level 2 → Level 3&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit2@bandit.labs.overthewire.org&#34;&gt;bandit2@bandit.labs.overthewire.org&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Solution:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ cat spaces&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;in&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;this&lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;filename&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;bandit-level-3--level-4&#34;&gt;Bandit Level 3 → Level 4&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SSH: ssh -o PubkeyAuthentication=no -p2220 &lt;a href=&#34;mailto:bandit3@bandit.labs.overthewire.org&#34;&gt;bandit3@bandit.labs.overthewire.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Solution:&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+			</item>
+			<item>
+				<title>Tmux Moment</title>
+				<link>http://localhost:1313/post/notes/tmux-moment/</link>
+				<pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/tmux-moment/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; is a terminal multiplexer, it enables a number of terminals to be created, accessed, and controlled from a single screen. &lt;strong&gt;tmux&lt;/strong&gt; may be detached from a screen and continue running in the background, then later reattached.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Learning Path AWS</title>
+				<link>http://localhost:1313/post/notes/learning-path/</link>
+				<pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/learning-path/</guid>
+				<description>&lt;p&gt;This is a personal learning guide to obtain knowledge about &lt;strong&gt;AWS&lt;/strong&gt; technologies, this guide aims to certify me in &lt;strong&gt;AWS&lt;/strong&gt; based on the available certifications, in the short term the main objectives are &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; and &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/aws-learning-path/fcch-route.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;In my search for information I found this description of the complete path to a &lt;strong&gt;Professional&lt;/strong&gt; certification.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/aws-learning-path/aws-route-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;aws-certified-cloud-practitioner-clf-c01&#34;&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exam requires the knowledge and skills to demonstrate basic knowledge of the AWS platform, such as:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>NPM EACCES</title>
+				<link>http://localhost:1313/post/notes/npm-eacces/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/npm-eacces/</guid>
+				<description>&lt;p&gt;I had to test the implementation of a &lt;strong&gt;NodeJS&lt;/strong&gt; application where I needed to install global packages, the installation of global &lt;strong&gt;NodeJS&lt;/strong&gt; packages in the operating system does not seem to be a good practice, so we found a solution to this problem.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Notes Fedora 32</title>
+				<link>http://localhost:1313/post/notes/notes-fedora-32/</link>
+				<pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/notes/notes-fedora-32/</guid>
+				<description>&lt;p&gt;After updating my Operating System &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, I was solving some problems with Docker CE, I custom the Prompt in my Console and change &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; to &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Series on Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/series/</link>
+		<description>Recent content in Series on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/series/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Servidores</title>
+				<link>http://localhost:1313/es/series/servidores/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/series/servidores/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Linux</title>
+				<link>http://localhost:1313/es/series/linux/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/series/linux/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>GNU-Linux</title>
+				<link>http://localhost:1313/es/series/gnu-linux/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/series/gnu-linux/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>http://localhost:1313/es/series/hugo/</link>
+				<pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/series/hugo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cloud</title>
+				<link>http://localhost:1313/es/series/cloud/</link>
+				<pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/series/cloud/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CMS</title>
+				<link>http://localhost:1313/es/series/cms/</link>
+				<pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/series/cms/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

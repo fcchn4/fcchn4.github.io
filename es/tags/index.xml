@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/tags/</link>
+		<description>Recent content in Tags on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Grafana</title>
+				<link>http://localhost:1313/es/tags/grafana/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/grafana/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Linux</title>
+				<link>http://localhost:1313/es/tags/linux/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/linux/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Loki</title>
+				<link>http://localhost:1313/es/tags/loki/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/loki/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Monitoreo</title>
+				<link>http://localhost:1313/es/tags/monitoreo/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/monitoreo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Promtail</title>
+				<link>http://localhost:1313/es/tags/promtail/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/promtail/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Bash</title>
+				<link>http://localhost:1313/es/tags/bash/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/bash/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cmd</title>
+				<link>http://localhost:1313/es/tags/cmd/</link>
+				<pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/cmd/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Xfce</title>
+				<link>http://localhost:1313/es/tags/xfce/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/xfce/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Laravel</title>
+				<link>http://localhost:1313/es/tags/laravel/</link>
+				<pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/laravel/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Ubuntu</title>
+				<link>http://localhost:1313/es/tags/ubuntu/</link>
+				<pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/ubuntu/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Vuejs</title>
+				<link>http://localhost:1313/es/tags/vuejs/</link>
+				<pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/vuejs/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Git</title>
+				<link>http://localhost:1313/es/tags/git/</link>
+				<pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/git/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>http://localhost:1313/es/tags/hugo/</link>
+				<pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/hugo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cloud</title>
+				<link>http://localhost:1313/es/tags/cloud/</link>
+				<pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/cloud/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Digitalocean</title>
+				<link>http://localhost:1313/es/tags/digitalocean/</link>
+				<pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/digitalocean/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Doctl</title>
+				<link>http://localhost:1313/es/tags/doctl/</link>
+				<pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/doctl/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Docker</title>
+				<link>http://localhost:1313/es/tags/docker/</link>
+				<pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/docker/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>K3s</title>
+				<link>http://localhost:1313/es/tags/k3s/</link>
+				<pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/k3s/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Kubernetes</title>
+				<link>http://localhost:1313/es/tags/kubernetes/</link>
+				<pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/kubernetes/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Aws</title>
+				<link>http://localhost:1313/es/tags/aws/</link>
+				<pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/aws/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Gitlab</title>
+				<link>http://localhost:1313/es/tags/gitlab/</link>
+				<pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/gitlab/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Cgroup</title>
+				<link>http://localhost:1313/es/tags/cgroup/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/cgroup/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Grub</title>
+				<link>http://localhost:1313/es/tags/grub/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/grub/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Nodejs</title>
+				<link>http://localhost:1313/es/tags/nodejs/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/nodejs/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Npm</title>
+				<link>http://localhost:1313/es/tags/npm/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/npm/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Fedora</title>
+				<link>http://localhost:1313/es/tags/fedora/</link>
+				<pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/fedora/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Php</title>
+				<link>http://localhost:1313/es/tags/php/</link>
+				<pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/php/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Wordpress</title>
+				<link>http://localhost:1313/es/tags/wordpress/</link>
+				<pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/wordpress/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Github</title>
+				<link>http://localhost:1313/es/tags/github/</link>
+				<pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/github/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Spip</title>
+				<link>http://localhost:1313/es/tags/spip/</link>
+				<pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/tags/spip/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

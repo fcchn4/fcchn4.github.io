@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Infrastructure on Fcch Blog | Notes, guides and reminders</title>
+		<link>http://localhost:1313/categories/infrastructure/</link>
+		<description>Recent content in Infrastructure on Fcch Blog | Notes, guides and reminders</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Monitoring notes with Grafana, Loki and Promtail - Configuration Examples</title>
+				<link>http://localhost:1313/post/infrastructure/grafana-stack-two/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/grafana-stack-two/</guid>
+				<description>&lt;p&gt;In the first part, we talked about monitoring certain services; the article got quite long, and adding the example configurations would have made it much longer, so in this second part we leave several configuration examples for each service, with a short description.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Monitoring notes with Grafana, Loki and Promtail</title>
+				<link>http://localhost:1313/post/infrastructure/grafana-stack-one/</link>
+				<pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/grafana-stack-one/</guid>
+				<description>&lt;p&gt;Throughout my professional life it is common to see many types of implementations regarding development and infrastructure; in short, when it comes to infrastructure it is common that there is no service monitoring on an organization&#39;s servers, this is more common on on-premise servers, and for this reason I asked myself a few questions.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>VueJS &#43; Laravel, Deploy</title>
+				<link>http://localhost:1313/post/infrastructure/vuejs-laravel-mix/</link>
+				<pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/vuejs-laravel-mix/</guid>
+				<description>&lt;p&gt;At work we had to deploy a project developed with &lt;strong&gt;&lt;a href=&#34;https://vuejs.org&#34;&gt;VueJS&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&#34;https://laravel.com/&#34;&gt;Laravel&lt;/a&gt;&lt;/strong&gt; on an &lt;strong&gt;&lt;a href=&#34;https://ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;&lt;/strong&gt; server, with &lt;strong&gt;&lt;a href=&#34;https://ws.apache.org/&#34;&gt;Apache&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;https://www.php.net/&#34;&gt;PHP&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;https://mariadb.org/&#34;&gt;MariaDB&lt;/a&gt;&lt;/strong&gt;, where everything was versioned on &lt;strong&gt;&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;&lt;/strong&gt;, it had no development branches, nor fork repositories. Deploying the project had some details that we need to understand and learn so as not to make mistakes in the deployment to production.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Doctl Cli - Digitalocean</title>
+				<link>http://localhost:1313/post/infrastructure/doctl-digitalocean/</link>
+				<pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/doctl-digitalocean/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; also has a CLI to manage the &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot; infrastructure, which works similarly to &lt;strong&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html&#34;&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, this tool allows us to avoid using the web interface of this provider.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Notes - Part 4</title>
+				<link>http://localhost:1313/post/infrastructure/k3s-notes-fourth/</link>
+				<pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/k3s-notes-fourth/</guid>
+				<description>&lt;p&gt;To finish the small lab and finish the last part of &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, we will name some important details, install and create the service for &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/&#34;&gt;&lt;strong&gt;Kubernetes Dashboard&lt;/strong&gt;&lt;/a&gt; and finally we will list some interesting tools.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Notes - Part 3</title>
+				<link>http://localhost:1313/post/infrastructure/k3s-notes-third/</link>
+				<pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/k3s-notes-third/</guid>
+				<description>&lt;p&gt;In &lt;a href=&#34;https://blog.fcch.xyz/en/post/infrastructure/k3s-notes-second/&#34;&gt;&lt;strong&gt;Part 2&lt;/strong&gt;&lt;/a&gt; of &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, a description of various concepts that are handled in &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; was made, the &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&#34;&gt;kubectl&lt;/a&gt; client was installed and connectivity tests to the &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; API were done.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Notes - Part 2</title>
+				<link>http://localhost:1313/post/infrastructure/k3s-notes-second/</link>
+				<pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/k3s-notes-second/</guid>
+				<description>&lt;p&gt;We continue with the tests in our small cluster with &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; built on the &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my laboratory, for the tests we use the official &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/&#34;&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; documentation and also the official &lt;a href=&#34;https://kubernetes.io/docs/tutorials/kubernetes-basics/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; documentation.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Notes - Part 1</title>
+				<link>http://localhost:1313/post/infrastructure/k3s-notes-first/</link>
+				<pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/k3s-notes-first/</guid>
+				<description>&lt;p&gt;Experimenting with &lt;a href=&#34;https://docs.docker.com/engine/swarm/&#34;&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt;, I got to the task of building something with the &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; that I have in my lab, after googling a lot and chatting with my friend &lt;a href=&#34;https://twitter.com/donkeysharp&#34;&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, he recommended using &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; which is a &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; distribution with backend &lt;a href=&#34;https://www.sqlite.org/index.html&#34;&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; based lightweight storage system compatible with &lt;a href=&#34;https://en.wikipedia.org/wiki/ARM_architecture&#34;&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt; architecture.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Memory Limit in Docker</title>
+				<link>http://localhost:1313/post/infrastructure/docker-limit-memory/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/post/infrastructure/docker-limit-memory/</guid>
+				<description>&lt;p&gt;When we create a new container, it has unlimited access to system resources, so if one occupies all the memory, the other containers will be affected or, failing that, the operating system runs out of resources.&lt;/p&gt;&#xA;&lt;p&gt;Docker has the ability to apply a memory limit to a specific container.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

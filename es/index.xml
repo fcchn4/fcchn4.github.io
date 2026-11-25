@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/</link>
+		<description>Recent content on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Apuntes monitoreo con Grafana, Loki y Promtail - Ejemplos de Configuración</title>
+				<link>http://localhost:1313/es/post/infrastructure/grafana-stack-two/</link>
+				<pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/grafana-stack-two/</guid>
+				<description>&lt;p&gt;En la primera parte, se hablo sobre monitoreo de ciertos servicios, el artículo se alargó mucho, agregar las configuraciones de ejemplo hubiera alargado mucho más el atículo, en esta segunda parte dejaremos varios ejemplos de configuración para cada servicio, con una breve descripción.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Apuntes monitoreo con Grafana, Loki y Promtail</title>
+				<link>http://localhost:1313/es/post/infrastructure/grafana-stack-one/</link>
+				<pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/grafana-stack-one/</guid>
+				<description>&lt;p&gt;A lo largo de la vida profesional es normal ver muchos tipos de implementaciones en cuanto a desarrollo e infraestructura, en pocas palabras para infraestructura es normal que no exista monitoreo de servicios en servidores de alguna organización, esto es más común en servidores on-premise, por este motivo me hice algunas preguntas.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Lenovo Actualización Firmware BIOS - UEFI</title>
+				<link>http://localhost:1313/es/post/notes/lenovo-firmware-update/</link>
+				<pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/lenovo-firmware-update/</guid>
+				<description>&lt;p&gt;Cuando eres usuario de algún GNU/Linux es normal toparse con varios impedimentos para actualizar o aplicar parches de seguridad en firmware BIOS, muchas empresas solo facilitan métodos de actualización con ejecutables que solo funcionan en Windows, aunque algunos métodos facilitan binarios en archivos &lt;strong&gt;.iso&lt;/strong&gt;, &lt;strong&gt;.cap&lt;/strong&gt;, &lt;strong&gt;.cab&lt;/strong&gt; o actualizaciones que se pueden almacenar en dispositivos de almacenamiento USB, esta tarea no es fácil para un usuario sin mucha experiencia.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Comandos Usuales Simples</title>
+				<link>http://localhost:1313/es/post/notes/usual-commands/</link>
+				<pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/usual-commands/</guid>
+				<description>&lt;p&gt;Cada día aprendemos comandos que nos permiten realizar determinadas tareas en el trabajo, para no olvidar alguno de estos comandos que sirvieron cree una lista como ayuda memoria.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Apuntes XFCE4</title>
+				<link>http://localhost:1313/es/post/notes/notes-xfce4/</link>
+				<pubDate>Wed, 13 Apr 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/notes-xfce4/</guid>
+				<description>&lt;p&gt;Estuve cambiando de hardware en mi ambiente de trabajo, cambié el teclado a uno en idioma inglés, por este motivo estuve configurando &lt;a href=&#34;https://xfce.org/&#34;&gt;&lt;strong&gt;XFCE&lt;/strong&gt;&lt;/a&gt;, que es mi entorno gráfico preferido.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>VueJS &#43; Laravel, Deploy</title>
+				<link>http://localhost:1313/es/post/infrastructure/vuejs-laravel-mix/</link>
+				<pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/vuejs-laravel-mix/</guid>
+				<description>&lt;p&gt;En el trabajo nos tocó desplegar un proyecto desarrollado con &lt;strong&gt;&lt;a href=&#34;https://vuejs.org&#34;&gt;VueJS&lt;/a&gt;&lt;/strong&gt; y &lt;strong&gt;&lt;a href=&#34;https://laravel.com/&#34;&gt;Laravel&lt;/a&gt;&lt;/strong&gt; en un servidor &lt;strong&gt;&lt;a href=&#34;https://ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;&lt;/strong&gt;, con &lt;strong&gt;&lt;a href=&#34;https://ws.apache.org/&#34;&gt;Apache&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;https://www.php.net/&#34;&gt;PHP&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;https://mariadb.org/&#34;&gt;MariaDB&lt;/a&gt;&lt;/strong&gt;, donde todo estaba versionado en &lt;strong&gt;&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;&lt;/strong&gt;, no tenía ramas de desarrollo, ni tampoco repositorios fork. Desplegar el proyecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Hugo Framework - Templates Internos</title>
+				<link>http://localhost:1313/es/post/web/hugo-framework-internal-templates/</link>
+				<pubDate>Fri, 07 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/hugo-framework-internal-templates/</guid>
+				<description>&lt;p&gt;Crear sitios web con &lt;a href=&#34;https://gohugo.io/&#34;&gt;&lt;strong&gt;Hugo Framework&lt;/strong&gt;&lt;/a&gt; hizo que explorase más sobre esta herramienta tan útil. Una funcionalidad necesaria importante fue agregar a un proyecto las propiedades de &lt;a href=&#34;https://ogp.me/&#34;&gt;&lt;strong&gt;The Open Graph Protocol&lt;/strong&gt;&lt;/a&gt;, la primera idea fue editar los archivos HTML del &lt;strong&gt;theme&lt;/strong&gt; y agregar las etiquetas correspondientes, pero luego de consultar la documentación oficial encontramos la solución más adecuada en esta &lt;a href=&#34;https://gohugo.io/templates/internal/&#34;&gt;&lt;strong&gt;sección&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Doctl Cli - Digitalocean</title>
+				<link>http://localhost:1313/es/post/infrastructure/doctl-digitalocean/</link>
+				<pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/doctl-digitalocean/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; también dispone de un CLI para manejar la infraestructura &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot;, que tiene un funcionamiento similar a &lt;strong&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html&#34;&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Apuntes - Parte 4</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-fourth/</link>
+				<pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-fourth/</guid>
+				<description>&lt;p&gt;Para terminar el pequeño laboratorio y finalizar la última parte de &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, nombraremos algunos detalles importantes, instalaremos y crearemos el servicio para &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/&#34;&gt;&lt;strong&gt;Kubernetes Dashboard&lt;/strong&gt;&lt;/a&gt; y por último listaremos algunas herramientas interesantes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Apuntes - Parte 3</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-third/</link>
+				<pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-third/</guid>
+				<description>&lt;p&gt;En la &lt;a href=&#34;https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/&#34;&gt;&lt;strong&gt;Parte 2&lt;/strong&gt;&lt;/a&gt; de &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; se hizo una descripción de varios conceptos que se manejan en &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;, se instaló el cliente &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&#34;&gt;kubectl&lt;/a&gt; y se hizo pruebas de conectividad al API de &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Apuntes - Parte 2</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-second/</link>
+				<pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-second/</guid>
+				<description>&lt;p&gt;Continuamos con las pruebas en nuestro pequeño cluster con &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; armado en las &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, para las pruebas utilizamos la documentación oficial de &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/&#34;&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; y también la documentación oficial de &lt;a href=&#34;https://kubernetes.io/docs/tutorials/kubernetes-basics/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Apuntes - Parte 1</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-first/</link>
+				<pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-first/</guid>
+				<description>&lt;p&gt;Experimentando con &lt;a href=&#34;https://docs.docker.com/engine/swarm/&#34;&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt; me puse a la tarea de armar algo con los &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, luego de estar googleando y charlando con &lt;a href=&#34;https://twitter.com/donkeysharp&#34;&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, me recomendó usar &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; que es una distribución de &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; con backend de almacenamiento ligero basado en &lt;a href=&#34;https://www.sqlite.org/index.html&#34;&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; compatible con arquitectura &lt;a href=&#34;https://en.wikipedia.org/wiki/ARM_architecture&#34;&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Bandit Soluciones</title>
+				<link>http://localhost:1313/es/post/notes/bandit-solved/</link>
+				<pubDate>Wed, 07 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/bandit-solved/</guid>
+				<description>&lt;p&gt;Son juegos de guerra ofrecidos por la comunidad OverTheWire que nos ayudan a aprender y practicar conceptos de seguridad en forma de juegos divertidos.&lt;/p&gt;&#xA;&lt;p&gt;El enlace para poder jugar un momento: &lt;a href=&#34;https://overthewire.org/wargames/bandit/&#34;&gt;&lt;strong&gt;Over the wire, Bandit&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Momento Tmux</title>
+				<link>http://localhost:1313/es/post/notes/tmux-moment/</link>
+				<pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/tmux-moment/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;tmux&lt;/strong&gt; es un multiplexor de terminales, permite crear, acceder y controlar varios terminales desde una única pantalla. &lt;strong&gt;tmux&lt;/strong&gt; puede desconectarse de una pantalla y continuar ejecutándose en segundo plano, y luego se vuelve a colocar.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ruta de Aprendizaje</title>
+				<link>http://localhost:1313/es/post/notes/learning-path/</link>
+				<pubDate>Mon, 10 May 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/learning-path/</guid>
+				<description>&lt;p&gt;Esta es una guía personal de aprendizaje para obtener conocimiento sobre tecnologías &lt;strong&gt;AWS&lt;/strong&gt;, esta guía tiene como objetivo obtener una certificación &lt;strong&gt;AWS&lt;/strong&gt; en base a las certificaciones disponibles, a corto plazo los objetivos principales son &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; y &lt;strong&gt;Solutions Architect&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/aws-learning-path/fcch-route.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;En mi búsqueda de información encontré esta descripción del camino completo hacia una certificación &lt;strong&gt;Profesional&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/aws-learning-path/aws-route-complete.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;aws-certified-cloud-practitioner-clf-c01&#34;&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/h2&gt;&#xA;&lt;p&gt;El examen &lt;strong&gt;AWS Certified Cloud Practitioner (CLF-C01)&lt;/strong&gt; exige los conocimientos y habilidades para demostrar conocimientos básicos de la plataforma AWS, como:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Hugo Framework y Gitlab Pages</title>
+				<link>http://localhost:1313/es/post/web/hugo-framework-gitlab-pages/</link>
+				<pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/hugo-framework-gitlab-pages/</guid>
+				<description>&lt;p&gt;Una de las primeras ideas para tener un sitio web o blog es utilizar algún &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; como &lt;a href=&#34;https://es.wordpress.org/&#34;&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://www.drupal.org/&#34;&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; o el buen &lt;a href=&#34;https://www.spip.net/es_rubrique23.html&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt;, todos estos desarrollados con &lt;a href=&#34;https://www.php.net&#34;&gt;&lt;strong&gt;PHP&lt;/strong&gt;&lt;/a&gt; y requieren de una base de datos para funcionar, un servidor o hosting.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Límite de Memoria en Docker</title>
+				<link>http://localhost:1313/es/post/infrastructure/docker-limit-memory/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/docker-limit-memory/</guid>
+				<description>&lt;p&gt;Cuando creamos un nuevo contenedor, el mismo tiene acceso ilimitado a los recursos del sistema, así que si uno ocupa toda la memoria los demás contenedores serán afectados o en su defecto el sistema operativo se queda sin recursos.&lt;/p&gt;&#xA;&lt;p&gt;Docker tiene la posibilidad de aplicar un límite de memoria a un contenedor específico.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>NPM EACCES</title>
+				<link>http://localhost:1313/es/post/notes/npm-eacces/</link>
+				<pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/npm-eacces/</guid>
+				<description>&lt;p&gt;Me tocó probar el despliegue de aplicaciones &lt;strong&gt;NodeJS&lt;/strong&gt; donde necesitaba instalar paquetes globales, instalar paquetes &lt;strong&gt;NodeJS&lt;/strong&gt; globales en el sistema operativo no parece ser una buena práctica, entonces encontramos una solución a este problema.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Apuntes Fedora 32</title>
+				<link>http://localhost:1313/es/post/notes/notes-fedora-32/</link>
+				<pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/notes/notes-fedora-32/</guid>
+				<description>&lt;p&gt;Después de actualizar mi Sistema Operativo &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 30&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://getfedora.org/es/&#34;&gt;&lt;strong&gt;Fedora 32&lt;/strong&gt;&lt;/a&gt;, estuve solucionando algunos problemas con Docker CE, personalicé el Prompt para mi Terminal y me cambié de &lt;a href=&#34;https://www.gnome.org/&#34;&gt;&lt;strong&gt;Gnome 3.36&lt;/strong&gt;&lt;/a&gt; a &lt;a href=&#34;https://es.wikipedia.org/wiki/Cinnamon&#34;&gt;&lt;strong&gt;Cinnamon 4.4&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Wordpress, Algunos Detalles</title>
+				<link>http://localhost:1313/es/post/web/wordpress-algunos-detalles/</link>
+				<pubDate>Thu, 09 Apr 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/wordpress-algunos-detalles/</guid>
+				<description>&lt;p&gt;Estuve colaborando con algunas empresas que realizaban cambios en sus sitios web, donde se utilizaba &lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt; como &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt; base, estos sitios web estaban siendo cambiados de servidor, actualizando a la versión más actual o verificando actualizaciones en sus complementos, en el proceso se presentaron diferentes problemas, me tocó ver la documentación oficial &lt;a href=&#34;https://codex.wordpress.org/&#34;&gt;Wordpress Codex&lt;/a&gt; y en Google para darles solución.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Blog con Hugo Framework y Github Pages</title>
+				<link>http://localhost:1313/es/post/web/blog-hugo-framework-github-pages/</link>
+				<pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/blog-hugo-framework-github-pages/</guid>
+				<description>&lt;p&gt;Desde hace un tiempo estuve intentando crear un blog personal, la primera idea fue usar algún &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; conocido como &lt;a href=&#34;https://es.wordpress.org/&#34;&gt;&lt;strong&gt;Wordpress&lt;/strong&gt;&lt;/a&gt; o &lt;a href=&#34;https://www.drupal.org/&#34;&gt;&lt;strong&gt;Drupal&lt;/strong&gt;&lt;/a&gt; pero ninguno llego a gustarme, luego use &lt;a href=&#34;https://www.spip.net/es_rubrique23.html&#34;&gt;&lt;strong&gt;SPIP&lt;/strong&gt;&lt;/a&gt; por un tiempo donde pude aprender mucho de este &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;&lt;strong&gt;CMS&lt;/strong&gt;&lt;/a&gt; Francés, pero mantener un sitio de solo publicaciones con texto y algunas imágenes no era el mas apropiado.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Fcch Blog</title>
+				<link>http://localhost:1313/es/about/</link>
+				<pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/about/</guid>
+				<description>&lt;p&gt;Me gusta aprender sobre tecnología y participar en comunidades de Software Libre y Open Source.&lt;/p&gt;&#xA;&lt;p&gt;Inicié mi carrera profesional como &lt;strong&gt;sysadmin&lt;/strong&gt;, administrando servidores &lt;strong&gt;GNU/Linux&lt;/strong&gt;, trabajé en proyectos de Gobierno para la migración a &lt;strong&gt;Software Libre&lt;/strong&gt;, realicé trabajos de Seguridad Informática en equipos de Blueteam, actualmente trabajo en proyectos personales realizando trabajos en Infraestructura en la Nube, Integración Continua y Automatización.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/about-me/fcch-about-me-collage.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Soy usuario de Software Libre por más de 10 años, la primera distribución &lt;strong&gt;GNU/Linux&lt;/strong&gt; que utilicé de manera informal fue el desaparecido &lt;strong&gt;Mandrake&lt;/strong&gt;, luego de ingresar a la universidad conocí a miembros de la comunidad de &lt;a href=&#34;https://www.softwarelibre.org.bo/&#34;&gt;&lt;strong&gt;Software Libre Bolivia&lt;/strong&gt;&lt;/a&gt; donde me presentaron a &lt;strong&gt;BoliviaOS&lt;/strong&gt;, una distribución boliviana basada en &lt;a href=&#34;https://ubuntu.com/&#34;&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;&lt;/a&gt;, luego de esto fui usuario de &lt;a href=&#34;https://www.debian.org/&#34;&gt;&lt;strong&gt;Debian&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://archlinux.org/&#34;&gt;&lt;strong&gt;Archlinux&lt;/strong&gt;&lt;/a&gt; y por último soy usuario de &lt;a href=&#34;https://getfedora.org/&#34;&gt;&lt;strong&gt;Fedora&lt;/strong&gt;&lt;/a&gt; gracias a la invitación de un buen amigo, me ayudo a formar parte de la comunidad de &lt;a href=&#34;https://getfedora.org/&#34;&gt;&lt;strong&gt;Fedora&lt;/strong&gt;&lt;/a&gt; hasta llegar a ser un &lt;a href=&#34;https://fedoraproject.org/wiki/User:Barto&#34;&gt;&lt;strong&gt;Embajador Fedora&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>SPIP, Otra Forma de Instalar</title>
+				<link>http://localhost:1313/es/post/web/spip-otra-forma-instalar/</link>
+				<pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/web/spip-otra-forma-instalar/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://www.spip.net/&#34;&gt;SPIP&lt;/a&gt; es un &lt;a href=&#34;https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos&#34;&gt;CMS&lt;/a&gt; francés de instalación simple, no necesita de conocimientos de PHP y MySQL para proceder en la instalación, contiene un menú de configuración web y un espacio de administración simple.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

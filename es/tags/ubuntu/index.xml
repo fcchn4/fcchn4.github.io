@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Ubuntu on Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/tags/ubuntu/</link>
+		<description>Recent content in Ubuntu on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>VueJS &#43; Laravel, Deploy</title>
+				<link>http://localhost:1313/es/post/infrastructure/vuejs-laravel-mix/</link>
+				<pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/vuejs-laravel-mix/</guid>
+				<description>&lt;p&gt;En el trabajo nos tocó desplegar un proyecto desarrollado con &lt;strong&gt;&lt;a href=&#34;https://vuejs.org&#34;&gt;VueJS&lt;/a&gt;&lt;/strong&gt; y &lt;strong&gt;&lt;a href=&#34;https://laravel.com/&#34;&gt;Laravel&lt;/a&gt;&lt;/strong&gt; en un servidor &lt;strong&gt;&lt;a href=&#34;https://ubuntu.com/&#34;&gt;Ubuntu&lt;/a&gt;&lt;/strong&gt;, con &lt;strong&gt;&lt;a href=&#34;https://ws.apache.org/&#34;&gt;Apache&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;https://www.php.net/&#34;&gt;PHP&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;https://mariadb.org/&#34;&gt;MariaDB&lt;/a&gt;&lt;/strong&gt;, donde todo estaba versionado en &lt;strong&gt;&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;&lt;/strong&gt;, no tenía ramas de desarrollo, ni tampoco repositorios fork. Desplegar el proyecto tuvo algunos detalles que necesitamos entender y aprender para no cometer errores en el despliegue a producción.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

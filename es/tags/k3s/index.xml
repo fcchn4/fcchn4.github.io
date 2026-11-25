@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>K3s on Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/tags/k3s/</link>
+		<description>Recent content in K3s on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/tags/k3s/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>K3s Apuntes - Parte 4</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-fourth/</link>
+				<pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-fourth/</guid>
+				<description>&lt;p&gt;Para terminar el pequeño laboratorio y finalizar la última parte de &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt;, nombraremos algunos detalles importantes, instalaremos y crearemos el servicio para &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/installation/kube-dashboard/&#34;&gt;&lt;strong&gt;Kubernetes Dashboard&lt;/strong&gt;&lt;/a&gt; y por último listaremos algunas herramientas interesantes.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Apuntes - Parte 3</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-third/</link>
+				<pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-third/</guid>
+				<description>&lt;p&gt;En la &lt;a href=&#34;https://blog.fcch.xyz/post/infrastructure/k3s-notes-second/&#34;&gt;&lt;strong&gt;Parte 2&lt;/strong&gt;&lt;/a&gt; de &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; se hizo una descripción de varios conceptos que se manejan en &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;, se instaló el cliente &lt;a href=&#34;https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/&#34;&gt;kubectl&lt;/a&gt; y se hizo pruebas de conectividad al API de &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Apuntes - Parte 2</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-second/</link>
+				<pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-second/</guid>
+				<description>&lt;p&gt;Continuamos con las pruebas en nuestro pequeño cluster con &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; armado en las &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, para las pruebas utilizamos la documentación oficial de &lt;a href=&#34;https://rancher.com/docs/k3s/latest/en/&#34;&gt;&lt;strong&gt;K3s - Rancher&lt;/strong&gt;&lt;/a&gt; y también la documentación oficial de &lt;a href=&#34;https://kubernetes.io/docs/tutorials/kubernetes-basics/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>K3s Apuntes - Parte 1</title>
+				<link>http://localhost:1313/es/post/infrastructure/k3s-notes-first/</link>
+				<pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/k3s-notes-first/</guid>
+				<description>&lt;p&gt;Experimentando con &lt;a href=&#34;https://docs.docker.com/engine/swarm/&#34;&gt;&lt;strong&gt;Docker Swarm&lt;/strong&gt;&lt;/a&gt; me puse a la tarea de armar algo con los &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;&lt;strong&gt;Raspberry Pi (RPI v3, RPI v4)&lt;/strong&gt;&lt;/a&gt; que tengo en mi laboratorio, luego de estar googleando y charlando con &lt;a href=&#34;https://twitter.com/donkeysharp&#34;&gt;&lt;strong&gt;Sergio&lt;/strong&gt;&lt;/a&gt;, me recomendó usar &lt;a href=&#34;https://k3s.io/&#34;&gt;&lt;strong&gt;K3s&lt;/strong&gt;&lt;/a&gt; que es una distribución de &lt;a href=&#34;https://kubernetes.io/&#34;&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;&lt;/a&gt; con backend de almacenamiento ligero basado en &lt;a href=&#34;https://www.sqlite.org/index.html&#34;&gt;&lt;strong&gt;sqlite3&lt;/strong&gt;&lt;/a&gt; compatible con arquitectura &lt;a href=&#34;https://en.wikipedia.org/wiki/ARM_architecture&#34;&gt;&lt;strong&gt;ARM&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

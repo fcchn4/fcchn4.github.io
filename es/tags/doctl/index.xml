@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Doctl on Fcch Blog | Apuntes, guías y recordatorios</title>
+		<link>http://localhost:1313/es/tags/doctl/</link>
+		<description>Recent content in Doctl on Fcch Blog | Apuntes, guías y recordatorios</description>
+		<generator>Hugo</generator>
+		<language>es-ES</language>
+		
+		
+		
+			<copyright>Fcch Technology Blog</copyright>
+		
+		
+			<lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/es/tags/doctl/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Doctl Cli - Digitalocean</title>
+				<link>http://localhost:1313/es/post/infrastructure/doctl-digitalocean/</link>
+				<pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/es/post/infrastructure/doctl-digitalocean/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://digitalocean.com&#34;&gt;Digitalocean&lt;/a&gt;&lt;/strong&gt; también dispone de un CLI para manejar la infraestructura &amp;quot;&lt;strong&gt;&lt;a href=&#34;https://www.digitalocean.com/docs/apis-clis/doctl/reference/&#34;&gt;DOCTL&lt;/a&gt;&lt;/strong&gt;&amp;quot;, que tiene un funcionamiento similar a &lt;strong&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html&#34;&gt;AWS CLI&lt;/a&gt;&lt;/strong&gt;, esta herramienta nos permite evitar utilizar la interfaz web de este proveedor.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
