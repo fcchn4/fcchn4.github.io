@@ -1,0 +1,19 @@
+{{- /* Visually hidden <h1> (clip technique, keeps no layout space). Inline style: the site sets no CSP and the theme CSS is fingerprinted. */ -}}
+{{- $h1 := .Title }}
+{{- if .IsHome }}{{ $h1 = .Site.Title }}{{ else if eq .Kind "taxonomy" }}{{ $h1 = default .Title ( T (lower .Title) ) }}{{ end }}
+<h1 style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0">{{ $h1 }}</h1>
+{{ $pages := .Pages }}
+{{ if .IsHome }}
+  {{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ end }}
+<div class="grid-inverse wrap content">
+  <ul class="posts" id="posts">
+    {{- range (.Paginate $pages).Pages }}
+      {{ partial "excerpt" . }}
+    {{- end }}
+    <li>
+      {{- template "_internal/pagination.html" . }}
+    </li>
+  </ul>
+  {{- partial "sidebar" . }}
+</div>
