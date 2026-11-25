@@ -1,4 +1,3 @@
-baseURL = "http://blog.fcch.xyz/"
-locale = "en-us"
+baseURL = "https://blog.fcch.xyz/"
 title = "Fcch - Blog"
 theme = "hugo-clarity"

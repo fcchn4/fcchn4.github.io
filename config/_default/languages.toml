@@ -2,9 +2,11 @@
   title = "Fcch Blog | Apuntes, guías y recordatorios"
   label = "Spanish"
   weight = 1
+  locale = "es-ES"
   
 [languages.en]
   title = "Fcch Blog | Notes, guides and reminders"
   label = "English"
   weight = 2
+  locale = "en-US"
  
