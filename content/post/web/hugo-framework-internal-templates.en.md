@@ -2,7 +2,7 @@
 title = "Hugo Framework - Internal Templates"
 author = "Fcch"
 date = "2022-01-07"
-description = "Web Guide"
+description = "List of Hugo's built-in templates (Disqus, Google Analytics, Open Graph, pagination, schema, Twitter Cards) with a usage example for Open Graph in a theme."
 featured = true
 tags = [
     "git",

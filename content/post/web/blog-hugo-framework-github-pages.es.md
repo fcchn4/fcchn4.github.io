@@ -2,7 +2,7 @@
 title = "Blog con Hugo Framework y Github Pages"
 author = "Fcch"
 date = "2020-01-11"
-description = "Guía Web"
+description = "Cómo crear un blog personal con Hugo y Github Pages: repositorio, subdominio con DNS Bind9, ramas de desarrollo y publicación del sitio estático."
 featured = true
 tags = [
     "git",

@@ -2,7 +2,7 @@
 title = "Tmux Moment"
 author = "Fcch"
 date = "2021-05-25"
-description = "Simple guide for Tmux commands"
+description = "Introduction to tmux, the terminal multiplexer: basic commands for panes and windows, useful features, sharing a terminal session and a few demos."
 featured = true
 tags = [
     "bash",

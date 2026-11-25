@@ -2,7 +2,7 @@
 title = "K3s Apuntes - Parte 2"
 author = "Fcch"
 date = "2021-07-24"
-description = "Apuntes para Kubernetes con K3s en Raspberry Pi"
+description = "Segunda parte del laboratorio K3s en Raspberry Pi: componentes básicos de Kubernetes, instalación de kubectl, conexión al cluster y pruebas posteriores."
 featured = true
 tags = [
     "kubernetes",

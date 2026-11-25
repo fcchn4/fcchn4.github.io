@@ -2,7 +2,7 @@
 title = "Hugo Framework y Gitlab Pages"
 author = "Fcch"
 date = "2021-01-20"
-description = "Guías Web"
+description = "Demo para publicar un sitio Hugo en Gitlab Pages: proyecto local, submódulos Git con URL relativas, pipeline .gitlab-ci.yml y verificación del despliegue."
 featured = true
 tags = [
     "git",

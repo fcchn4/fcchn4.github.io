@@ -2,7 +2,7 @@
 title = "Apuntes Fedora 32"
 author = "Fcch"
 date = "2020-05-25"
-description = "Algunos apuntes para Fedora y la versión 32"
+description = "Notas tras actualizar a Fedora 32: prompt de terminal con git, contenedores Docker CE sin salida a red por el firewall y cambio de Gnome a Cinnamon."
 featured = false
 tags = [
     "fedora",

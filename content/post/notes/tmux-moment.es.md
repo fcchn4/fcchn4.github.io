@@ -2,7 +2,7 @@
 title = "Momento Tmux"
 author = "Fcch"
 date = "2021-05-25"
-description = "Guía simple de comandos Tmux"
+description = "Introducción a tmux, el multiplexor de terminales: comandos básicos para paneles y ventanas, funciones útiles, compartir una terminal y algunas demos."
 featured = true
 tags = [
     "bash",

@@ -2,7 +2,7 @@
 title = "SPIP, Otra Forma de Instalar"
 author = "Fcch"
 date = "2020-01-06"
-description = "Guía Web"
+description = "Instalación del CMS SPIP 3.2 con la rama oficial vía Subversion (SVN): preparación de directorios y permisos, actualizaciones y asistente de instalación."
 featured = true
 tags = [
     "spip",

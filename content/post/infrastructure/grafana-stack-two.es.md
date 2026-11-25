@@ -2,7 +2,7 @@
 title = "Apuntes monitoreo con Grafana, Loki y Promtail - Ejemplos de Configuración"
 author = "Fcch"
 date = "2026-09-21"
-description = "Monitoreo basado en logs con el stack de Grafana en servidores on-premise"
+description = "Configuración de Promtail y Loki en Debian 13 para recolectar logs de SSH, Nginx, Fail2ban y Docker desde journald, con labels y consultas LogQL."
 featured = true
 tags = [
     "grafana",

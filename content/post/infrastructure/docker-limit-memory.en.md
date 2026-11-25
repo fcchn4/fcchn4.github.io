@@ -2,7 +2,7 @@
 title = "Memory Limit in Docker"
 author = "Fcch"
 date = "2020-08-12"
-description = "Servers and Infrastructure Guide"
+description = "How to limit the memory of a Docker container, inspect its settings and update the limit, including mounting cgroup on Debian and Ubuntu by editing grub."
 featured = false
 tags = [
     "docker",

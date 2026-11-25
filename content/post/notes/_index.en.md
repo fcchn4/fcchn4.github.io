@@ -1,4 +1,5 @@
 +++
 author = "Fcch"
-description = "Space for articles about GNU/Linux, Notes and Learn"
+title = "Notes"
+description = "Articles about GNU/Linux, notes and learning: Fedora, XFCE4, tmux, everyday commands, Lenovo firmware, Bandit challenges and an AWS study path."
 +++

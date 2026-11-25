@@ -2,7 +2,7 @@
 title = "K3s Apuntes - Parte 3"
 author = "Fcch"
 date = "2021-07-27"
-description = "Apuntes para Kubernetes con K3s en Raspberry Pi"
+description = "Tercera parte del laboratorio K3s: objetos y controladores de Kubernetes (Pod, Service, Deployment, StatefulSet), comandos básicos y ejemplos yaml."
 featured = true
 tags = [
     "kubernetes",

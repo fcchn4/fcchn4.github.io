@@ -2,7 +2,7 @@
 title = "Simple Usual Commands"
 author = "Fcch"
 date = "2022-05-01"
-description = "List of commonly used commands"
+description = "A cheat sheet of frequently used commands: open ports, hardware details, DNF on Fedora, gsettings, SSH, SELinux, firewall-cmd and secure file deletion."
 featured = true
 tags = [
     "cmd",

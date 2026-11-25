@@ -1,4 +1,5 @@
 +++
 author = "Fcch"
-description = "Space for articles about Infrastructure, Cloud Computing, GNU/Linux"
+title = "Infrastructure"
+description = "Articles about infrastructure, cloud computing and GNU/Linux: Docker, Kubernetes with K8s, monitoring with Grafana and application deployment."
 +++

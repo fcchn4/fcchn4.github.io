@@ -2,7 +2,7 @@
 title = "K3s Apuntes - Parte 4"
 author = "Fcch"
 date = "2021-07-28"
-description = "Apuntes para Kubernetes con K3s en Raspberry Pi"
+description = "Cuarta parte del laboratorio K3s: redes de Pods con CNI y Calico, tipos de servicios Kubernetes, instalación del Dashboard y herramientas de interés."
 featured = true
 tags = [
     "kubernetes",

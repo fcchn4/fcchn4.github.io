@@ -2,7 +2,7 @@
 title = "Límite de Memoria en Docker"
 author = "Fcch"
 date = "2020-08-12"
-description = "Guía Servidores e Infraestructura"
+description = "Cómo limitar la memoria de un contenedor Docker, consultar su configuración y actualizarla, incluido el montaje de cgroup en Debian y Ubuntu editando grub."
 featured = false
 tags = [
     "docker",

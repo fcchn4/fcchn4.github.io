@@ -2,7 +2,7 @@
 title = "Comandos Usuales Simples"
 author = "Fcch"
 date = "2022-05-01"
-description = "Lista de comandos comunmente utilizados"
+description = "Lista de comandos de uso frecuente como ayuda memoria: puertos abiertos, hardware, DNF en Fedora, gsettings, SSH, SELinux, firewall-cmd y borrado seguro."
 featured = true
 tags = [
     "cmd",

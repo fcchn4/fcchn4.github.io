@@ -2,7 +2,7 @@
 title = "Apuntes XFCE4"
 author = "Fcch"
 date = "2022-04-13"
-description = "Apuntes para configuraciones XFCE4"
+description = "Configuraciones de XFCE4: cambiar el idioma del teclado de forma permanente, abrir Whisker Menu con la tecla Super e instalar paquetes para VPN."
 featured = false
 tags = [
     "xfce",

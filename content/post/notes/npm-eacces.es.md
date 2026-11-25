@@ -2,7 +2,7 @@
 title = "NPM EACCES"
 author = "Fcch"
 date = "2020-08-12"
-description = "Problemas comunes con NodeJS"
+description = "Cómo solucionar el error EACCES de npm al instalar paquetes globales de NodeJS sin sudo, cambiando el directorio de instalación y una variable de entorno."
 featured = false
 tags = [
     "nodejs",

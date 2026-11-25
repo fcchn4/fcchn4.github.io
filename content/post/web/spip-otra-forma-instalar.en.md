@@ -2,7 +2,7 @@
 title = "SPIP, Another Way to Install"
 author = "Fcch"
 date = "2020-01-06"
-description = "Web Guide"
+description = "Installing the SPIP 3.2 CMS by checking out the official branch with Subversion (SVN): directory and permission setup, updates and the installation wizard."
 featured = true
 tags = [
     "spip",

@@ -2,7 +2,7 @@
 title = "Doctl Cli - Digitalocean"
 author = "Fcch"
 date = "2021-11-02"
-description = "Servers and Infrastructure Guide"
+description = "Using doctl, the Digitalocean CLI: installing the binary, creating an API token, handling several accounts with contexts and managing droplets."
 featured = false
 tags = [
     "cloud",

@@ -1,5 +1,5 @@
 +++
-title = "Fcch Blog"
+title = "Sobre mí"
 description = "Fcch Blog, es mi espacio personal donde intento compartir todo lo que aprendo."
 date = "2020-01-07"
 aliases = ["about-me", "contact"]

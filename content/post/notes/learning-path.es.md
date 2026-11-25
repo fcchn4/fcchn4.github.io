@@ -2,7 +2,7 @@
 title = "Ruta de Aprendizaje"
 author = "Fcch"
 date = "2021-05-10"
-description = "Una guía personal de aprendizaje con metas"
+description = "Guía personal para prepararse en AWS: temario de los exámenes Cloud Practitioner (CLF-C01) y Solutions Architect Associate, con notas y referencias."
 featured = true
 tags = [
   "aws",

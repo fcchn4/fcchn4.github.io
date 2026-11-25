@@ -2,7 +2,7 @@
 title = "Monitoring notes with Grafana, Loki and Promtail"
 author = "Fcch"
 date = "2026-09-17"
-description = "Log-based monitoring with the Grafana stack on on-premise servers"
+description = "Proof of concept for log monitoring on VPS servers with Grafana, Loki and Promtail: why monitor, stack installation and services to watch."
 featured = true
 tags = [
     "grafana",

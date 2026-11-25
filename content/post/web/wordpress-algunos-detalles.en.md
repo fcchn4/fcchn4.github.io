@@ -2,7 +2,7 @@
 title = "Wordpress, Some Details"
 author = "Fcch"
 date = "2020-04-09"
-description = "Web Guide"
+description = "Details from migrating Wordpress sites to new servers: updating without an FTP service and hiding the version and the readme.html file."
 featured = false
 tags = [
     "wordpress",

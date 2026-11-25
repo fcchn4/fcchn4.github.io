@@ -2,7 +2,7 @@
 title = "NPM EACCES"
 author = "Fcch"
 date = "2020-08-12"
-description = "Common issues with NodeJS"
+description = "How to fix the npm EACCES error when installing global NodeJS packages without sudo, by changing the install directory and an environment variable."
 featured = false
 tags = [
     "nodejs",

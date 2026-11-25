@@ -2,7 +2,7 @@
 title = "K3s Notes - Part 3"
 author = "Fcch"
 date = "2021-07-27"
-description = "Notes for Kubernetes with K3s on Raspberry Pi"
+description = "Part 3 of the K3s lab: Kubernetes objects and controllers (Pod, Service, Deployment, StatefulSet), basic commands and examples of yaml manifest files."
 featured = true
 tags = [
     "kubernetes",

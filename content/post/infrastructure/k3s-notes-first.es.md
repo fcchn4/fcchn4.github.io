@@ -2,7 +2,7 @@
 title = "K3s Apuntes - Parte 1"
 author = "Fcch"
 date = "2021-07-15"
-description = "Apuntes para Kubernetes con K3s en Raspberry Pi"
+description = "Primera parte de un laboratorio K3s en Raspberry Pi: tipos de nodos y arquitectura, configuración previa e instalación del server node y los worker nodes."
 featured = true
 tags = [
     "kubernetes",

@@ -2,7 +2,7 @@
 title = "Bandit Soluciones"
 author = "Fcch"
 date = "2021-07-07"
-description = "Un solucionario a los retos Bandit de Over The Wire"
+description = "Soluciones paso a paso de los 34 niveles del wargame Bandit de OverTheWire, con los comandos SSH y las pistas usadas para obtener cada contraseña."
 featured = false
 tags = [
     "bash"

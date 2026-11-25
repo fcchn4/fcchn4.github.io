@@ -2,7 +2,7 @@
 title = "K3s Notes - Part 4"
 author = "Fcch"
 date = "2021-07-28"
-description = "Notes for Kubernetes with K3s on Raspberry Pi"
+description = "Part 4 of the K3s lab: Pod networking with CNI and Calico, Kubernetes service types, installing the Dashboard and a list of interesting tools."
 featured = true
 tags = [
     "kubernetes",

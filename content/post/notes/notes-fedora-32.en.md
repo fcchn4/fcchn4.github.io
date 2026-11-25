@@ -2,7 +2,7 @@
 title = "Notes Fedora 32"
 author = "Fcch"
 date = "2020-05-25"
-description = "Some notes for Fedora and version 32"
+description = "Notes after upgrading to Fedora 32: a terminal prompt with git info, Docker CE containers without network access, and the move from Gnome to Cinnamon."
 featured = false
 tags = [
     "fedora",

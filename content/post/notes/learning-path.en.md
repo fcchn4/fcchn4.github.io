@@ -2,7 +2,7 @@
 title = "Learning Path AWS"
 author = "Fcch"
 date = "2021-05-10"
-description = "A personal learning guide with goals"
+description = "A personal AWS study guide: exam outlines for Cloud Practitioner (CLF-C01) and Solutions Architect Associate, with study notes and references."
 featured = true
 tags = [
   "aws",

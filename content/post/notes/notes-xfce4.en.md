@@ -2,7 +2,7 @@
 title = "Notes XFCE4"
 author = "Fcch"
 date = "2022-04-13"
-description = "Notes for configurations in XFCE4."
+description = "XFCE4 configuration notes: making a keyboard layout change persistent, opening the Whisker Menu with the Super key and installing VPN packages."
 featured = false
 tags = [
     "xfce",

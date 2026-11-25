@@ -2,7 +2,7 @@
 title = "VueJS + Laravel, Deploy"
 author = "Fcch"
 date = "2022-01-22"
-description = "Servers and Infrastructure Guide"
+description = "Deploying a VueJS 2 and Laravel 8 project on Ubuntu Server 20.04 with Apache, PHP 8 and MariaDB, automating installation and configuration with Ansible."
 featured = false
 tags = [
     "vuejs",

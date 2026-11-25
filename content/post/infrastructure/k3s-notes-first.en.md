@@ -2,7 +2,7 @@
 title = "K3s Notes - Part 1"
 author = "Fcch"
 date = "2021-07-15"
-description = "Notes for Kubernetes with K3s on Raspberry Pi"
+description = "Part 1 of a K3s lab on Raspberry Pi: node types and architecture, prerequisites, and installing the server node and the worker nodes."
 featured = true
 tags = [
     "kubernetes",

@@ -1,14 +1,35 @@
 {{- $params := .Site.Params }}
 {{- $separator := default "|" $params.titleSeparator }}
+{{- $siteTitle := .Site.Title }}
+{{- $shortTitle := default $siteTitle $params.shortTitle }}
 {{- $title := "" }}
-{{- if and .Title (ne (trim (lower .Site.Title) "") (trim (lower .Title) "")) }}
+{{- if .Title }}
   {{- if eq .Kind "taxonomy" }}
     {{- $title = default .Title ( T (lower .Title) ) }}
   {{- else }}
     {{- $title = .Title }}
   {{- end }}
 {{- end }}
-<title>{{ with $title }}{{ . }} {{ $separator }} {{ end }}{{ .Site.Title }}</title>
+{{- /* Home keeps the full site title. Other pages: "<title> | <short site name>", without repeating the site name when the page title already is the site name. */ -}}
+{{- $fullTitle := $siteTitle }}
+{{- if and $title (not .IsHome) }}
+  {{- $t := trim (lower $title) "" }}
+  {{- if or (eq $t (trim (lower $shortTitle) "")) (eq $t (trim (lower $siteTitle) "")) }}
+    {{- $fullTitle = $title }}
+  {{- else }}
+    {{- $fullTitle = printf "%s %s %s" $title $separator $shortTitle }}
+  {{- end }}
+{{- end }}
+{{- /* Paginated pages (2+) get a page number so they do not share the <title> of page 1. Same page set as the theme's archive partial. */ -}}
+{{- if in (slice "home" "section" "taxonomy" "term") .Kind }}
+  {{- $listPages := .Pages }}
+  {{- if .IsHome }}{{ $listPages = where site.RegularPages "Type" "in" site.Params.mainSections }}{{ end }}
+  {{- $pageNumber := (.Paginate $listPages).PageNumber }}
+  {{- if gt $pageNumber 1 }}
+    {{- $fullTitle = printf "%s - %s %d" $fullTitle (cond (eq .Language.Lang "es") "Página" "Page") $pageNumber }}
+  {{- end }}
+{{- end }}
+<title>{{ $fullTitle }}</title>
 <meta charset="utf-8">
 {{- with $params.ga_verify }}
   <meta name="google-site-verification" content="{{ . }}">

@@ -2,7 +2,7 @@
 title = "Wordpress, Algunos Detalles"
 author = "Fcch"
 date = "2020-04-09"
-description = "Guía Web"
+description = "Detalles de una migración de sitios Wordpress a nuevos servidores: actualizaciones sin servicio FTP y cómo ocultar la versión y el archivo readme.html."
 featured = false
 tags = [
     "wordpress",

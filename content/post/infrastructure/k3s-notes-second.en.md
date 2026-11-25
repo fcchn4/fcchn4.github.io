@@ -2,7 +2,7 @@
 title = "K3s Notes - Part 2"
 author = "Fcch"
 date = "2021-07-24"
-description = "Notes for Kubernetes with K3s on Raspberry Pi"
+description = "Part 2 of the K3s lab on Raspberry Pi: core Kubernetes components, installing kubectl, connecting it to the K3s cluster and running post-install tests."
 featured = true
 tags = [
     "kubernetes",
