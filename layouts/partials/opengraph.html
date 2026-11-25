@@ -7,10 +7,12 @@
 {{- if and .Title (eq .Kind "taxonomy") }}{{ $title = default .Title (T (lower .Title)) }}{{ end }}
 {{- /* Page number for paginated lists (2+), same page set as head.html. */ -}}
 {{- $pageNumber := 1 }}
+{{- $pageURL := .Permalink }}
 {{- if in (slice "home" "section" "taxonomy" "term") .Kind }}
   {{- $listPages := .Pages }}
   {{- if .IsHome }}{{ $listPages = where site.RegularPages "Type" "in" site.Params.mainSections }}{{ end }}
   {{- $pageNumber = (.Paginate $listPages).PageNumber }}
+  {{- if gt $pageNumber 1 }}{{ $pageURL = (.Paginate $listPages).URL | absURL }}{{ end }}
 {{- end }}
 {{- $suffix := "" }}
 {{- if gt $pageNumber 1 }}
@@ -76,7 +78,7 @@
 <meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}">
 {{- end }}
 <meta property="og:type" content="{{ if $isPost }}article{{ else }}website{{ end }}">
-<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:url" content="{{ $pageURL }}">
 <meta property="og:title" content="{{ $title }}">
 {{- with $desc }}
 <meta property="og:description" content="{{ . }}">

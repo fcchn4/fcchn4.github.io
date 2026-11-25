@@ -41,7 +41,28 @@
 {{- end }}
 {{- partial "opengraph" . }}
 {{- partialCached "favicon" . }}
-<link rel="canonical" href="{{ .Permalink }}">
+{{- /* Canonical: self-referential on paginated pages (2+); rel=prev/next between pages of the same list. */ -}}
+{{- $canonical := .Permalink }}
+{{- $pager := false }}
+{{- if in (slice "home" "section" "taxonomy" "term") .Kind }}
+  {{- $listPages := .Pages }}
+  {{- if .IsHome }}{{ $listPages = where site.RegularPages "Type" "in" site.Params.mainSections }}{{ end }}
+  {{- $pager = .Paginate $listPages }}
+  {{- if gt $pager.PageNumber 1 }}{{ $canonical = $pager.URL | absURL }}{{ end }}
+{{- end }}
+<link rel="canonical" href="{{ $canonical }}">
+{{- with $pager }}
+  {{- if .HasPrev }}
+<link rel="prev" href="{{ .Prev.URL | absURL }}">
+  {{- end }}
+  {{- if .HasNext }}
+<link rel="next" href="{{ .Next.URL | absURL }}">
+  {{- end }}
+{{- end }}
+{{- /* tags and series: kept out of the index, links still followed. */ -}}
+{{- if and (in (slice "taxonomy" "term") .Kind) (in (slice "tags" "series") .Data.Plural) }}
+<meta name="robots" content="noindex,follow">
+{{- end }}
 {{- /* hreflang: only for pages that have translations; skipped on paginated pages (2+), whose translations are not paired. */ -}}
 {{- $hreflang := and .IsTranslated (ne .Kind "404") }}
 {{- if and $hreflang (in (slice "home" "section" "taxonomy" "term") .Kind) }}
