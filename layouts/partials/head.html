@@ -63,6 +63,9 @@
 {{- if and (in (slice "taxonomy" "term") .Kind) (in (slice "tags" "series") .Data.Plural) }}
 <meta name="robots" content="noindex,follow">
 {{- end }}
+{{- if eq .Kind "404" }}
+<meta name="robots" content="noindex">
+{{- end }}
 {{- /* hreflang: only for pages that have translations; skipped on paginated pages (2+), whose translations are not paired. */ -}}
 {{- $hreflang := and .IsTranslated (ne .Kind "404") }}
 {{- if and $hreflang (in (slice "home" "section" "taxonomy" "term") .Kind) }}

@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="never wrap">
+  <h1>{{ T "404_title" }}</h1>
+  <p class="pale">{{ T "could_not_find" }}</p><br>
+  <div class="button btn_back">{{ T "go_back" }}</div>
+  <p class="pale"><a href="{{ "/" | absURL }}">Volver al inicio</a> · <a href="{{ "/en/" | absURL }}">Back to home</a></p>
+</div>
+{{ end }}
+

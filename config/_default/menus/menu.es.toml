@@ -28,7 +28,7 @@
   name = "twitter"
   type = "social"
   weight = 1
-  url = "https://twitter.com/fcchn4"
+  url = "https://x.com/fcchn4"
 [[social]]
   name = "instagram"
   weight = 2

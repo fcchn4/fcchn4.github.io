@@ -1,0 +1,26 @@
+{{- $base := absURL "" }}
+{{- $items := hugo.Data.social }}
+{{- $social := .Site.Menus.social }}
+{{- with $social }}
+  {{- $items = . }}
+{{- end }}
+<div class='follow'>
+  {{- range $items }}
+  {{- $url := .URL }}
+  {{- $label := lower .Name }}
+  {{- if eq $social nil }}
+    {{ $url = .url }}
+    {{ $label = lower .item }}
+  {{- end }}
+  {{- if and (eq (hasPrefix $url $base) false) (eq (hasPrefix $url "http") false) }}
+    {{ $url = absLangURL $url }}
+  {{- end }}
+  {{- $rel := "" }}
+  {{- $own := slice "x.com/fcchn4" "instagram.com/fcchn4" "linkedin.com/in/freddy-fcch" "github.com/fcchn4" "gitlab.com/fcch" }}
+  {{- range $own }}{{ if in $url . }}{{ $rel = ` rel="me noopener"` }}{{ end }}{{ end }}
+  <a href="{{ $url }}"{{ $rel | safeHTMLAttr }}>
+    {{ partial "sprite" (dict "icon" $label) }}
+  </a>
+  {{- end }}
+  {{- partialCached "mode" . }}
+</div>
