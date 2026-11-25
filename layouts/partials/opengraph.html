@@ -1,48 +1,73 @@
-{{- $summary := truncate 160 .Summary }}
 {{- $s := .Site.Params }}
 {{- $p := .Params }}
+{{- /* Description: page description, then plain-text summary, then site intro. Escaped by the template engine. */ -}}
+{{- $desc := "" }}
 {{- with $p.description }}
-  {{- $summary = truncate 160 . }}
+  {{- $desc = . | plainify | htmlUnescape | truncate 160 }}
+{{- else }}
+  {{- $desc = .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 160 }}
 {{- end }}
-{{- if .IsHome }}
-  {{- $summary = $s.description }}
-  {{- with $p.description }}
-    {{- $summary = . }}
+{{- if not $desc }}{{ $desc = $s.introDescription | plainify | htmlUnescape }}{{ end }}
+{{- $title := .Title | default .Site.Title }}
+{{- $isPost := and .IsPage (in ($s.mainSections | default (slice "post")) .Section) }}
+{{- $author := $s.author.name }}
+{{- with $p.author }}{{ $author = . }}{{ end }}
+{{- $imagePath := $s.fallBackOgImage }}
+{{- with $p.featureImage }}{{ $imagePath = . }}{{ end }}
+{{- with $p.thumbnail }}{{ $imagePath = . }}{{ end }}
+{{- with $p.shareImage }}{{ $imagePath = . }}{{ end }}
+{{- $image := absURL $imagePath }}
+{{- /* Image dimensions: only for local files under static/ that Hugo can decode. */ -}}
+{{- $width := 0 }}{{ $height := 0 }}
+{{- if and $imagePath (not (hasPrefix $imagePath "http")) (in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") (lower (path.Ext $imagePath))) }}
+  {{- $file := path.Join "static" $imagePath }}
+  {{- if fileExists $file }}
+    {{- with imageConfig $file }}{{ $width = .Width }}{{ $height = .Height }}{{ end }}
   {{- end }}
 {{- end }}
-{{- $site := .Site.Title }}
-{{- $title := .Title }}
-{{- $permalink := .Permalink }}
-{{- $logo := absURL $s.logo }}
-{{- $author := $s.author }}
-{{- with $p.author }}
-  {{ $author := . }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ replace .Language.Locale "-" "_" }}">
+{{- range .Translations }}
+<meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}">
 {{- end }}
-{{- $image := absURL $s.fallBackOgImage }}
-{{- with $p.featureImage }}
-  {{- $image = absURL .  }}
+<meta property="og:type" content="{{ if $isPost }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ $title }}">
+{{- with $desc }}
+<meta property="og:description" content="{{ . }}">
+<meta name="description" content="{{ . }}">
 {{- end }}
-{{- with $p.thumbnail }}
-  {{- $image = absURL .  }}
+{{- with $image }}
+<meta property="og:image" content="{{ . }}">
+  {{- if and $width $height }}
+<meta property="og:image:width" content="{{ $width }}">
+<meta property="og:image:height" content="{{ $height }}">
+  {{- end }}
+<meta property="og:image:alt" content="{{ $title }}">
 {{- end }}
-{{- with $p.shareImage }}
-  {{- $image = absURL .  }}
+{{- if $isPost }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- with $author }}
+<meta property="article:author" content="{{ . }}">
+  {{- end }}
+  {{- with .Section }}
+<meta property="article:section" content="{{ . }}">
+  {{- end }}
+  {{- range .Params.tags }}
+<meta property="article:tag" content="{{ . }}">
+  {{- end }}
 {{- end }}
-<meta property="og:locale" content="{{ .Lang }}" />
-{{ range .Translations }}
-<meta property="og:locale:alternate" content="{{ .Lang }}" />
-{{ end }}
-{{- if .IsHome }}
-<meta property="og:type" content="website">
-{{- else }}
-<meta property="og:type" content="article">
+<meta name="twitter:card" content="{{ if $s.largeTwitterCard }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+{{- with $desc }}
+<meta name="twitter:description" content="{{ . }}">
 {{- end }}
-<meta name="description" content="{{ $summary }}">
-<meta name="twitter:card" content="{{ if $s.largeTwitterCard }}summary_large_image{{ else }}summary{{ end }}" />
-<meta name="twitter:creator" content="{{ $s.twitter }}">
-<meta name="twitter:title" content="{{ .Title }}" />
-<meta property="og:url" content="{{ $permalink }}" />
-<meta property="og:title" content="{{ $title }}" />
-<meta property="og:description" content="{{ $summary }}" />
-<meta property="og:image" content="{{ $image }}" />
+{{- with $image }}
+<meta name="twitter:image" content="{{ . }}">
+{{- end }}
+{{- with $s.twitter }}
+<meta name="twitter:site" content="{{ . }}">
+<meta name="twitter:creator" content="{{ . }}">
+{{- end }}
 {{- partial "schema.html" . }}
