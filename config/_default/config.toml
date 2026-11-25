@@ -4,9 +4,7 @@ baseurl = "https://blog.fcch.xyz/"
 # alternatively, uncomment this and remove `title` entry from the aforemention file.
 copyright = "Fcch Technology Blog"
 # canonifyurls = true
-paginate = 10
 theme = "hugo-clarity"
-disqusShortname = ""
 
 DefaultContentLanguage = "es"
 # [languages]
@@ -19,3 +17,6 @@ DefaultContentLanguage = "es"
 category = "categories"
 tag = "tags"
 series = "series"
+
+[pagination]
+  pagerSize = 10

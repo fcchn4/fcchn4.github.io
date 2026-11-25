@@ -8,7 +8,7 @@
 $ hugo version
 ```
 
-Usar una version reciente de Hugo Extended (actualmente el proyecto compila con `v0.163.x`).
+Usar una version reciente de Hugo Extended (actualmente el proyecto compila con `v0.169.x`).
 
 ## Iniciando Proyecto 
 
